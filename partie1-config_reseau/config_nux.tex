@@ -114,7 +114,7 @@ Il existe dans ces distributions une interface graphique pour configurer le rése
 
 Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
 
-Tu as autant de ?eth0, eth1...? que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
+Tu as autant de "eth0, eth1..." que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
 
 \begin{description}
 	\item[Adresse IP] entre celle que tu as calculée : 129.104.AAA.BBB (cf. page \pageref{calcul_ip})
@@ -192,38 +192,38 @@ COMMIT}
 
 Pour activer ton firewall, tu n'as plus qu'à faire :
 
-\cmdline{iptables-restore < le_fichier_ci_dessus}
+\cmdline{iptables-restore < le\_fichier\_ci\_dessus}
 
 
 \subsubsection{Configuration navigateur web}
 
 Que tu utilises Konqueror (fourni par défaut avec kde et bénéficiant donc d'un preload d'où un démarrage rapide), ou Mozilla / Mozilla-firefox (beaucoup plus stable que Konqueror, surtout sur les distributions réputées instables), la seule configuration à mettre est celle du proxy:
 Le script de configuration automatique du Proxy se trouve sur http://frankiz/proxy.pac.
-Dans Konqueror, on le charge dans l'onglet ?Proxy? ou ?serveur de proximité? dans ?Settings? et ?Configure Konqueror?, ou ?Configuration? et ?Configurer Konqueror?.
+Dans Konqueror, on le charge dans l'onglet "Proxy" ou "serveur de proximité" dans "Settings" et "Configure Konqueror", ou "Configuration" et "Configurer Konqueror".
 
-Dans Mozilla / Mozilla-firefox, il faut aller dans ?Tools? ?Options...?, et dans l'onglet ?General? cliquer sur ?Connection Settings?.
+Dans Mozilla / Mozilla-firefox, il faut aller dans "Tools" "Options...", et dans l'onglet "General" cliquer sur "Connection Settings".
  
 \subsubsection{Configuration mail}
 Le client mail le plus utilisé est kmail, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi par exemple.
 Les serveurs sont:
 Envoi du courrier: poly, pas de SSL (port par défaut, le 25)
 Réception du courrier: poly, SSL. (Type de serveur: POP3; le port, par défaut, est le 995). Tu peux compléter le login et le password qui sont ton login/password poly, fournis par la DSI en ce début d'année.
-Sous Knode, il faut aller dans l'onglet ?Extras?, et dans le cadre ?Encryption? pour cocher uniquement la case ?Use SSL?.
+Sous Knode, il faut aller dans l'onglet "Extras", et dans le cadre "Encryption" pour cocher uniquement la case "Use SSL".
 
 \subsubsection{Configuration news}
 Le client news le plus utilisé est knode, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi.
-Sous Knode, c'est dans le menu ?Configuration? (?settings?), puis ?Configurer Knode?.
-Pour accéder aux fora de discussion des élèves, ici appelés par abus de langage ?les br?, il faudra choisir ?frankiz? comme nom de serveur (le port est le port par défaut, le 119). De plus, les fora mondiaux ?Usenet? sont accessibles via le serveur ?polynews? de la DSI.
+Sous Knode, c'est dans le menu "Configuration" ("settings"), puis "Configurer Knode".
+Pour accéder aux fora de discussion des élèves, ici appelés par abus de langage "les br", il faudra choisir "frankiz" comme nom de serveur (le port est le port par défaut, le 119). De plus, les fora mondiaux "Usenet" sont accessibles via le serveur "polynews" de la DSI.
 Tu peux y mettre ton identité/signature par défaut pour tous les serveurs auxquels tu t'abonneras (certains élèves hébergent aussi des fora de discussion privés ou non), et chaque serveur peut bénéficier d'une identité particulière, qui peut même être le résultat d'un programme ou d'un script (par exemple pour une signature aléatoire). Les signatures commencent généralement par:
 --<espace><retour à la ligne>
-De manière à ce que les ?bons? clients news l'interprètent comme telle, la mettant par exemple en grisé et ainsi ils évitent de la recopier lorsque tu réponds à un message.
-Dans l'onglet ?Comptes? ou ?Accounts?, puis l'onglet ?News?, tu peux choisir le(s) serveur(s) que tu veux consulter.
-Enfin, pour que Knode puisse envoyer des mails, il est bon aussi d'aller dans l'onglet ?Comptes? et ?Mail?, et de mettre le serveur ?poly? sur le port ?25?.
+De manière à ce que les "bons" clients news l'interprètent comme telle, la mettant par exemple en grisé et ainsi ils évitent de la recopier lorsque tu réponds à un message.
+Dans l'onglet "Comptes" ou "Accounts", puis l'onglet "News", tu peux choisir le(s) serveur(s) que tu veux consulter.
+Enfin, pour que Knode puisse envoyer des mails, il est bon aussi d'aller dans l'onglet "Comptes" et "Mail", et de mettre le serveur "poly" sur le port "25".
 Il ne te reste plus qu'à t'inscrire sur des fora et à y participer! ... en respectant le binet idoine :)
 
 Pour se connecter à un serveur de news en SSL  sous Knode (par exemple au serveur de polytechnique.org  ssl.polytechnique.org)
 Sous Knode, il y a une petite subtilité puisqu'il ne gère pas le SSL.
-Il faut installer ?stunnel? pour mettre une redirection SSL de port ainsi:
+Il faut installer "stunnel" pour mettre une redirection SSL de port ainsi:
 Dans /etc/stunnel.conf ou /etc/stunnel/stunnel.conf (selon la distribution), mettre les lignes suivantes (les trois premières y sont en principe déjà):
 
 
