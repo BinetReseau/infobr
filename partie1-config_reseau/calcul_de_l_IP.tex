@@ -4,7 +4,7 @@
 
 \label{calcul_ip}
 
-Une adresse IP est une suite de quatre chiffres compris entre $0$ et $255$ séparés par des points ; en gros, elle identifie de manière unique toute machine connectée au réseau mondial. Exemple : l'IP de \fkz est $129.104.201.51$.
+Une adresse IP est une suite de quatre nombres compris entre $0$ et $255$ séparés par des points ; en gros, elle identifie de manière unique toute machine connectée au réseau mondial. Exemple : l'IP de \fkz est $129.104.201.51$.
 
 Les IP de l'X sont toutes de la forme $129.104.AAA.BBB$. Tu vas devoir calculer quoi mettre à la place de $AAA$ et $BBB$ afin que ton ordinateur ait son adresse unique.
 
@@ -24,7 +24,7 @@ $D0 \Rightarrow 219$ & $D1 \Rightarrow 220$ & $D2 \Rightarrow 221$ & $D3 \Righta
 \end{tabular}
 \end{center}
 
-\item [pour les nouveaux caserts] regarde ta prise réseau et note les deux premiers chiffres --- par exemple : $71$. Le tableau suivant te donne la valeur de $AAA$ :
+\item [Pour les nouveaux caserts] regarde ta prise réseau et note les deux premiers chiffres --- par exemple : $71$. Le tableau suivant te donne la valeur de $AAA$ :
 \begin{center}
 \begin{tabular}{cccccc}
 $70 \Rightarrow 224$ & $71 \Rightarrow 224$ & $72 \Rightarrow 228$ & $73 \Rightarrow 225$ & $74 \Rightarrow 225$ & $75 \Rightarrow 226$ \\
@@ -44,19 +44,19 @@ Remplaçons maintenant le groupe $BBB$.
 
 \begin{description}
 
-\item [pour Fayolle, Maunoury, Joffre et Foch] tu relèves les 2 derniers chiffres de ta prise réseau et tu rajoutes $120$.
+\item [Pour Fayolle, Maunoury, Joffre et Foch] tu relèves les 2 derniers chiffres de ta prise réseau et tu rajoutes $120$.
 
-\emph{Exemple :} l'IP associée à la prise est la $B145$ est $129.104.216.165$ ($165 = 120 + 45$).
+\emph{Exemple :} l'IP associée à la prise $B145$ est $129.104.216.165$ ($165 = 120 + 45$).
 
-\item [pour les nouveaux caserts] ta prise réseau porte un numéro de la forme $xx\ yy\ zz$. Relève les deux permiers chiffres $xx$ et les deux derniers $zz$. Si $xx$ est un nombre pair, alors $BBB=128+zz$ ; si $xx$ est un nombre impair, $BBB=zz$.
+\item [Pour les nouveaux caserts] ta prise réseau porte un numéro de la forme $xx\ yy\ zz$. Relève les deux permiers chiffres $xx$ et les deux derniers $zz$. Si $xx$ est un nombre pair, alors $BBB=128+zz$ ; si $xx$ est un nombre impair, $BBB=zz$.
 
 \emph{Exemple :} l'IP associée à la prise $74\ 00\ 21$ est $129.104.225.149$ où $149 = 128 + 21$.
  
-\item [pour le PEM] si tu habites au rez-de-chaussée, $BBB = 15 +$le numéro de ta chambre ; au premier étage, $BBB = 70 +$le numéro de ta chambre. 
+\item [Pour le PEM] si tu habites au rez-de-chaussée, $BBB = 15 +$le numéro de ta chambre ; au premier étage, $BBB = 70 +$le numéro de ta chambre. 
 
-\emph{Exemple :} si tu as la chambre $14$ du au rez-de-chaussée, ton IP est $129.104.214.29$.
+\emph{Exemple :} si tu as la chambre $14$ au rez-de-chaussée, ton IP est $129.104.214.29$.
 
-\item [pour le BEM] $BBB = 50 +$les deux derniers chiffres de ton numéro de chambre.
+\item [Pour le BEM] $BBB = 50 +$les deux derniers chiffres de ton numéro de chambre.
 
 \emph{Exemple :} l'IP de la chambre $D6604$ est $129.104.204.54$.
 
@@ -76,13 +76,14 @@ Remplaçons maintenant le groupe $BBB$.
 
 La passerelle est une machine par laquelle passent toutes les communications entre ton ordinateur et les autres sous-réseaux. Elle se situe au niveau de ton sous-réseau.
 
-Ainsi, \emph{pour tous les bâtiments sauf les nouveaux caserts}, remplace le dernier nombre de ton IP --- celui noté $BBB$ ci-dessus --- par $13$ pour obtenir l'IP ta passerelle.
-
-\emph{Pour les nouveaux caserts}, tu as à nouveau besoin des deux permiers chiffres $xx$ du numéro de ta prise réseau. Si $xx$ est un nombre pair, remplace $BBB$ par $254$ ; si $xx$ est un nombre impair, remplace $BBB$ par $126$ dans ton IP pour obtenir l'IP de ta passerelle.
+\begin{description}
+  \item[Pour tous les bâtiments sauf les nouveaux caserts] remplace le dernier nombre de ton IP --- celui noté $BBB$ ci-dessus --- par $13$ pour obtenir l'IP ta passerelle.
+  \item[Pour les nouveaux caserts] regarde les deux premiers chiffres $xx$ du numéro de ta prise réseau. Si $xx$ est un nombre pair, remplace $BBB$ par $254$ ; si $xx$ est un nombre impair, remplace $BBB$ par $126$ dans ton IP pour obtenir l'IP de ta passerelle.
+\end{description}
 
 \subsubsection{Calcul du masque de sous-réseau}
 
-Il vaut $255.255.255.128$ dans les nouveaux caserts et $255.255.255.0$ partout ailleurs !
+Il vaut $255.255.255.128$ dans les nouveaux caserts et $255.255.255.0$ partout ailleurs.
 
 \subsubsection{IP des serveurs DNS}
 

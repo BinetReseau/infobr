@@ -14,13 +14,14 @@ Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- 
   \item [ton masque de sous-réseau] $255.255.255.DDD$
   \item [ton broadcast] $129.104.AAA.EEE$ avec $EEE = 255 - DDD$.
 \end{description}
-Toutes les informations nécessaires se trouvent page \pageref{calcul_ip}
+
+Toutes les informations nécessaires se trouvent page \pageref{calcul_ip}.
 
 Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
 
-\paragraph{Sous Mandrake}
+\paragraph{\distrib{Sous Mandrake}}
 
-Il existe dans cette distributions une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/}.
+Il existe dans cette distribution une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/}.
 
 Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
 
@@ -41,7 +42,7 @@ Ensuite, tu dois encore entrer :
  
 Voilà, c'est bon ! Tu peux passer au paragraphe 2 !
 
-\paragraph{Sous Gentoo}
+\paragraph{\distrib{Sous Gentoo}}
 
 Si tu n'as jamais fait de configuration réseau sur ta Gentoo, il faudra certainement créer les fichiers qui suivent.
 
@@ -82,7 +83,7 @@ Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta li
 
 Lors de l'installation d'une nouvelle Debian, le programme d'installation te propose logiquement de rentrer ces informations de manière interactive ; sinon, il est toujours possible de les modifier ainsi :
 
-Le fichier \file{/etc/hostname} contient ton nom de machine. De même que sous Gentoo, tu peux l'éditer  avec ton éditeur préféré ou utiliser la commande :
+Le fichier \file{/etc/hostname} contient ton nom de machine. De même que sous Gentoo, tu peux l'éditer avec ton éditeur préféré ou utiliser la commande :
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
@@ -91,7 +92,7 @@ Comme sous Gentoo, le fichier \file{/etc/resolv.conf} décrit comment résoudre le
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
 
-Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :) ), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, et la passerelle pour sortir de ton sous-réseau :
+Enfin, le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :-) ), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, et la passerelle pour sortir de ton sous-réseau :
 
 \cmdline{auto lo\\
 iface lo inet loopback\\
@@ -119,7 +120,7 @@ Une dernière chose spécifique à Debian, pour utiliser \app{apt-get} et \app{apt-
 \cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
 
 Attention, le \file{apt.conf} ne gère pas le protocole ftp via le proxy http.
-Pour utiliser des \url{ftp:// }dans ton \file{/etc/apt/sources.list}, il faut rajouter :
+Pour utiliser des \url{ftp://} dans ton \file{/etc/apt/sources.list}, il faut rajouter :
 
 \cmdline{ftp\_proxy = http://kuzh:8080}
 
@@ -141,7 +142,7 @@ deb ftp://miroir/debian-marillat [flavour] main}
 
 La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables. Pour ceci la première étape est d'installer le paquet \app{iptables} pour ta distribution. Ensuite, la configuration peut paraître délicate mais en fait ce ne sont que des règles simples, il suffit de comprendre le principe.
 
-Configurer les iptables c'est définir une série de règles. Chaque règle a une forme simple, elle défini une action à effecter dans des conditions données. Ces conditions portent sur l'origine du paquet (l'unité élémentaire de ce qui circule sur le réseau), le format du paquet, le sens de circulation...
+Configurer les iptables c'est définir une série de règles. Chaque règle a une forme simple, elle définit une action à effectuer dans des conditions données. Ces conditions portent sur l'origine du paquet (l'unité élémentaire de ce qui circule sur le réseau), le format du paquet, le sens de circulation\ldots
 
 Un exemple de règle serait :
 
@@ -150,18 +151,18 @@ Un exemple de règle serait :
 Cette règle accepte les paquets que l'on reçoit de \fkz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
 \begin{itemize}
 	\item[\texttt{-A}] définit la chaîne à filtrer. La chaîne indique d'où provient la requête : \texttt{INPUT} pour un paquet entrant, \texttt{OUTPUT} pour un paquet sortant sont les principales.
-	\item[\texttt{-i}] définit l'interface réseau... en gros la carte réseau (\texttt{eth0} le plus souvent, mais il y a aussi \texttt{lo} pour la boucle locale - localhost).
+	\item[\texttt{-i}] définit l'interface réseau, en gros la carte réseau (\texttt{eth0} le plus souvent, mais il y a aussi \texttt{lo} pour la boucle locale - localhost).
 	\item[\texttt{-s}] IP source du paquet à filtrer.
 	\item[\texttt{-d}] IP destination du paquet à filtrer.
 	\item[\texttt{-p}] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
 	\item[\texttt{-m}] définit un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp, multiport ou state.
-	\item[\texttt{-{}-dport}] port de destination du paquet (avec -m udp ou -m tcp)
-	\item[\texttt{-{}-sport}] port d'origine du paquet (avec -m udp ou -m tcp)
-	\item[\texttt{-{}-state}] définit l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont \texttt{NEW} (nouvelle connexion), \texttt{ESTABLISHED} (connexion déjà établie), \texttt{RELATED} (connexion dépendante d'une autre...)
+	\item[\texttt{-{}-dport}] port de destination du paquet (avec -m udp ou -m tcp).
+	\item[\texttt{-{}-sport}] port d'origine du paquet (avec -m udp ou -m tcp).
+	\item[\texttt{-{}-state}] définit l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont \texttt{NEW} (nouvelle connexion), \texttt{ESTABLISHED} (connexion déjà établie), \texttt{RELATED} (connexion dépendante d'une autre).
 	\item[\texttt{-j}] définit l'action à entreprendre (\texttt{ACCEPT} pour accepter le paquet, \texttt{REJECT} pour refuser le paquet et en informer l'emmeteur, \texttt{DROP} pour faire comme si le paquet n'existait pas, \texttt{LOG} pour logguer la réception du paquet.
 \end{itemize}
 
-Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul (on te comprend :). Voici un petit firewall basique pour le réseau de l'X :
+Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul --- on te comprend :-). Voici un petit firewall basique pour le réseau de l'X :
 
 \cmdline{\# Comportement par défaut pour les différentes chaines\\
 *filter\\
@@ -172,8 +173,8 @@ Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire u
 \# Pour que tout se passe bien avec localhost\\
 -A INPUT -i lo -j ACCEPT\\
 \# Pour que les connexions sur les ports > 1024 soit autorisées\\
-\# pour les programmes qui les utilisent comme connexion secondaire\\
-\# (Exemple : serveur ftp)\\
+\# pour les programmes qui les utilisent comme connexions\\
+\# secondaires (Exemple : serveur ftp)\\
 -A INPUT -p tcp -m tcp -{}-dport 1024:65535 -m state $\backslash$ \\
  -{}-state RELATED,ESTABLISHED -j ACCEPT\\
 -A INPUT -p udp -m udp -{}-dport 1024:65535 -m state $\backslash$ \\
@@ -186,7 +187,7 @@ Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire u
 \# Pour profiter de la télé sur le réseau :\\
 -A INPUT -p upd -m udp -{}-dport 1234 -j ACCEPT\\
 \\
-\# Pour que les demande de connexion vers l'extérieur (impossible) ne ralentissent pas\\
+\# Pour que les demandes de connexion vers l'extérieur (impossible) ne ralentissent pas\\
 -A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j REJECT\\
 \\
 \# Pour pouvoir être 'pingable'\\
@@ -216,7 +217,7 @@ Le BR te conseille d'utiliser \app{Firefox}, qui est maintenant tout à fait opér
 \flimage{partie1-config_reseau/nux_kmail_icon}{0.12}{l}
 Le client mail le plus utilisé est \app{Kmail}, mais il en existe bien sûr d'autres comme \app{Thunderbird}.
 
-Va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la rubrique \menu{Réseau}. Commence par créer un nouveau compte dans l'onglet \menu{Réception des messages} en cliquant sur le bouton \menu{Ajouter...} et choisis le type POP3.
+Va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la rubrique \menu{Réseau}. Commence par créer un nouveau compte dans l'onglet \menu{Réception des messages} en cliquant sur le bouton \menu{Ajouter\ldots} et choisis le type POP3.
 
 \image{partie1-config_reseau/nux_config_kmail_pop}{0.66}{Configuration de la réception des messages sous Kmail}
 
@@ -233,7 +234,7 @@ Ensuite, va dans l'onglet \menu{Extras} et coche la case \menu{Utiliser SSL pour
 
 \image{partie1-config_reseau/nux_config_kmail_smtp}{0.66}{Configuration de l'envoi des messages sous Kmail}
 
-Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le bouton \menu{Ajouter...}. Utilise les paramètres suivants pour le configurer :
+Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le bouton \menu{Ajouter\ldots}. Utilise les paramètres suivants pour le configurer :
 \begin{description}
   \item[Nom] le même nom de compte que précédemment
   \item[Serveur] \server{poly.polytechnique.fr}
@@ -249,7 +250,7 @@ Le client news le plus utilisé est \app{Knode}. Parmi les autres clients news, c
 
 \image{partie1-config_reseau/nux_config_knode}{0.7}{Configuration de Knode}
 
-Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et crée un compte en cliquant sur \menu{Nouveau...}.
+Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et crée un compte en cliquant sur \menu{Nouveau\ldots}.
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
@@ -267,11 +268,11 @@ Ensuite occupe-toi de l'onglet \menu{Identité} :
 
 Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller dans la rubrique \menu{Comptes}, sous-rubrique \menu{Courrier électronique}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr}, port 25 --- c'est exactement la même configuration SMTP que \app{Kmail}.
 
-Si tu veux mettre une signature à la fin des messages que tu posteras, il te suffit de la mettre dans l'onglet \menu{Identité}. Sur la plupart des clients la signature est interprétée comme extérieure au message et n'est en particuliers pas incluse dans le texte cité lorsque tu réponds à un message. Pour définir une signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
+Si tu veux mettre une signature à la fin des messages que tu posteras, il te suffit de la mettre dans l'onglet \menu{Identité}. Sur la plupart des clients la signature est interprétée comme extérieure au message et n'est en particulier pas incluse dans le texte cité lorsque tu réponds à un message. Pour définir une signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
 
-Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
+Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte-toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
-Pour te connecter aux serveur news de Polytechnique.org, qui a un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
+Pour te connecter aux serveurs de news de Polytechnique.org, qui ont un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
@@ -291,10 +292,10 @@ connect = ssl.polytechnique.org:563\\
 TIMEOUTclose = 0\\
 }
 
-Il ne te reste plus qu'à lancer stunnel par :
+Il ne te reste plus qu'à lancer \app{stunnel} par :
 
 \cmdline{/etc/init.d/stunnel start}
 
-Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et \server{1119} comme port. Il faut aussi que tu coche \menu{Le serveur exige une identification} et que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir sur \url{http://www.polytechnique.org/acces\_smtp.php}.
+Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et \server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir sur \url{http://www.polytechnique.org/acces\_smtp.php}.
 
 \vfill
