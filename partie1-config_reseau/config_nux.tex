@@ -7,7 +7,14 @@
 \subsection{Configuration sous Linux}
 
 \subsubsection{Configuration IP}
-Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général. Tu as également besoin de connaître ton adresse IP. L'explication de comment la calculer se trouve page \pageref{calcul_ip} ; elle est notée dorénavant $129.104.AAA.BBB$.
+Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général. Tu as également besoin de connaître les informations suivantes :
+\begin{description}
+  \item [ton adresse IP] notée dorénavant $129.104.AAA.BBB$
+  \item [l'IP de ta passerelle (\emph{gateway})] notée $129.104.AAA.CCC$
+  \item [ton masque de sous-réseau] $255.255.255.DDD$
+  \item [ton broadcast] $129.104.AAA.EEE$ avec $EEE = 255 - DDD$.
+\end{description}
+Toutes les informations nécessaires se trouvent page \pageref{calcul_ip}
 
 Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
 
@@ -49,7 +56,7 @@ nameserver 129.104.201.52 129.104.201.51}
 
 Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, ton masque de sous-réseau et la passerelle pour sortir de ton sous-réseau :
 
-\cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255 $\backslash$\\
+\cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.EEE $\backslash$\\
                             netmask 255.255.255.DDD"\\
                             gateway="eth0/129.104.AAA.CCC"}
 
@@ -61,8 +68,7 @@ puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme :
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
+64 bytes from frankiz (129.104.201.51): ...}
 
 Pour pouvoir utiliser \app{emerge} à travers le proxy de l'école, il faut définir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
 
@@ -94,8 +100,8 @@ auto eth0\\
 iface eth0 inet static\\
 address 129.104.AAA.BBB\\
 netmask 255.255.255.DDD\\
-network 129.104.AAA.0\\
-broadcast 129.104.AAA.255\\
+network 129.104.AAA.DDD\\
+broadcast 129.104.AAA.EEE\\
 gateway 129.104.AAA.CCC}
 
 Toujours comme sous Gentoo, recharge ta configuration réseau par :
@@ -105,10 +111,8 @@ Toujours comme sous Gentoo, recharge ta configuration réseau par :
 puis essaye de pinger \fkz par exemple. Tu dois obtenir quelque chose comme:
 
 \cmdline{root:~\# ping frankiz\\
-PING frankiz (129.104.201.51) 56(84) bytes of data.\\}
-
-\cmdline{64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
+PING frankiz (129.104.201.51) 56(84) bytes of data.\\
+64 bytes from frankiz (129.104.201.51): ...}
 
 Une dernière chose spécifique à Debian, pour utiliser \app{apt-get} et \app{apt-cache} à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
 
