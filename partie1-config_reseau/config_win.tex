@@ -12,7 +12,7 @@ Va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration} et double-cliqu
 
 La coche simplement les deux cases \menu{Client pour les réseaux Microsoft} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot.
 
-\imagepos{partie1-config_reseau/win_config_connexion}{0.6}{Configurer la connexion au réseau local}{!h}
+\imagepos{partie1-config_reseau/win_config_connexion}{0.75}{Configurer la connexion au réseau local}{!h}
 
 Clique ensuite sur la ligne \menu{Protocole Internet (TCP/IP)}, puis sur le bouton \menu{Propriétés} qui vient de se dégriser.
 
@@ -21,15 +21,15 @@ Tu tombes alors sur l'écran de configuration de ta connexion vers l'extérieur.
 \emph{screenshot à refaire, les IP sont trivialement fausses sur le précédent !!! (DNS principal 129.104.211.52 !!!!!}
 
  
-Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les cinq champs d'IP. Tu trouveras toutes les valeurs nécessaires à la configuration IP en page \pageref{calcul_ip} ou en te reportant au screenshot suivant. Si une partie d'IP est grisée sur le screenshot, c'est qu'elle t'es personnelle et que tu dois la calculer !
+Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les cinq champs d'IP. Tu trouveras toutes les valeurs d'IP nécessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant au screenshot suivant. Si une partie d'IP est grisée sur le screenshot, c'est qu'elle t'es personnelle et que tu dois la calculer !
 
 Ensuite, clique sur \menu{Avancé}. Puis clique sur l'onglet \menu{DNS} en haut. Il n'y a plus qu'à remplir les différents champs exactement comme sur le screenshot !
 
 \subsubsection{Configuration de l'ordinateur}
 
-\paragraph{Le domaine Windows, qu'est ce que c'est ?}
+\paragraph{Le domaine Windows} est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. Notamment, il installe et configure automatiquement l'antivirus et effectue automatiquement les mises à jour de Windows Update. Sinon, il met aussi l'ordinateur à l'heure, etc.
 
-le domaine sébien. et sétout.
+En fait, c'est un outil d'administration, conçu par exemple pour des entreprises où un service informatique doit gérer de nombreuses machines ; il permet d'appliquer des modifications de configuration à toutes les machines du domaine directement depuis le serveur de domaine. Le BR possède un serveur dédié au domaine Windows, \url{enez}.
 
 \paragraph{Alors, domaine ou pas domaine ?}
 
@@ -37,10 +37,9 @@ le domaine sébien. et sétout.
 
 Avantages :
 \begin{itemize}
-  \item Tous tes logiciels, y compris Windows, sont mis à jour automatiquement par un serveur du BR (ca va plus vite). Tu as toujours les dernières versions et les derniers patches de sécurité.
-  \item Tu as Windows XP Pro fourni gratuitement par le BR
-  \item Tu n'as presque rien à configurer, tout est automatique
-  \item Tu es en principe mieux protégé contre les virus
+  \item Windows est mis à jour automatiquement par \server{enez} (ca va plus vite). Tu as toujours la dernière version, les derniers patches de sécurité et un antivirus à jour. Donc tu es en principe mieux protégé contre les virus. Mais surtout, tu n'as plus à t'en occuper !
+  \item Tu as Windows XP Pro fourni gratuitement par le BR.
+  \item Tu n'as presque rien à configurer, tout est automatique.
   \item Un BRman peut prendre le contrôle de ton ordinateur à distance pour essayer de t'aider si tu as des problèmes
 \end{itemize}
 
@@ -60,20 +59,20 @@ Avantages :
 
 Inconvénients :
 \begin{itemize}
-  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus qui fait sauter le réseau, ledit réseau reviendra peut-ête plus vite pour les autres que pour toi...
+  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus qui fait sauter le réseau, ledit réseau reviendra peut-ête plus vite pour les autres que pour toi\ldots
 \end{itemize}
 
 \begin{center}
   \fbox{
     \begin{minipage}{.7\textwidth}
       \begin{center}
-Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de choisir l'installation simplifiée, sauf si tu maîtrises bien Windows et que tu es sûr de ce que tu fais !
+Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de choisir l'installation simplifiée !
       \end{center}
     \end{minipage}
   }
 \end{center}
 
-\paragraph{Installation simplifiée --- configuration automatique}
+\paragraph{Installation simplifiée} --- configuration automatique
 
 Tout d'abord : \textbf{désinstalle tous les antivirus que tu pourrais avoir !}
 
@@ -87,7 +86,7 @@ Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, ouvre \me
 
 Ensuite, tu vas t'inscrire sur le domaine :
 
-Clique sur le \menu{Menu Démarrer} puis clique-droit sur \menu{Poste de travail}, \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre textellement \url{windows.eleves.polytechnique.fr}.
+Clique sur le \menu{Menu Démarrer} puis clique-droit sur \menu{Poste de travail}, \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre \url{windows.eleves.polytechnique.fr}.
  
 Si tu es Rouje 2002 : tu tapes
 Nom	rouje02
@@ -96,7 +95,7 @@ Si tu es Jone 2003 : tu tapes
 Nom	jone03
 Mot de Passe	jone.2003
 
-\paragraph{Installation personnalisée --- configuration manuelle}
+\paragraph{Installation personnalisée} --- configuration manuelle
 
 Commence par désinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqué dans le paragraphe \og Installation simplifiée --- configuration automatique \fg.
 
@@ -107,14 +106,14 @@ Ensuite, voici les logiciels de sécurité que le BR te propose :
 alors là on rigole plus ! Quand la sécurité du réseau est en jeu, on prend cinq minutes pour configurer proprement le bordel !
 
 Ouvre ton explorateur Windows et tape : 
-\url{$\backslash\backslash$enez$\backslash\backslash$antivirus}
+\url{$\backslash\backslash$enez$\backslash$antivirus}
 et double-clique sur le fichier \file{symantec.exe}
 
 Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école. Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, il sera toujours à jour.
 
 \subparagraph{Configuration firewall :}
 
-si tu veux mettre un firewall sur ton ordinateur, ouvre ton explorateur Windows et tape : \url{$\backslash\backslash$enez$\backslash\backslash$firewall} et télécharge puis exécute le fichier \file{ZoneAlarm}.
+si tu veux mettre un firewall sur ton ordinateur, ouvre ton explorateur Windows et tape : \url{$\backslash\backslash$enez$\backslash$firewall} et télécharge puis exécute le fichier \file{ZoneAlarm}.
 
 Lance le programme et ajoute dans firewall -> Zone -> IPRange -> de 129.104.0.0 à 129.104.255.255. avec comme nom : X.
 
@@ -184,6 +183,17 @@ Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de part
 Un des plus simples et \app{FileZilla}, qui est libre de surcroît. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais il y a un FAQ sur \fkz où tout ca est très bien expliqué !
 
 \subsubsection{Autres logiciels utiles}
+
+qrezix
+
+IRC ??
+
+??
+
+
+\subsubsection{Les licences MSDNAA}
+
+\url{$\backslash\backslash$enez$\backslash$msdnaa}
 
 \vfill
 
