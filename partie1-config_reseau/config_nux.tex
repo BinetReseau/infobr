@@ -15,7 +15,7 @@ Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer \fil
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
-Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \server{frankiz} ou \server{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
+Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \server{frankiz} ou \server{ton\_pseudo} aux IP \server{129.104.201.51} ou \server{'ton\_ip'} Le fichier contient donc :
 
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
@@ -48,12 +48,11 @@ SYNC=rsync://rsync/gentoo-portage}
 
 Lors de l'installation d'une nouvelle Debian, le programme d'installation te propose logiquement de rentrer ces informations de manière interactive ; sinon, il est toujours possible de les modifier ainsi :
 
-Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer 
-\file{/etc/hostname} avec ton éditeur préféré (\app{vi} ou \app{vim}, \app{pico}, voire \app{emacs} si tu aimes), mais la commande ci-dessous est suffisante:
+Le fichier \file{/etc/hostname} contient ton nom de machine. De même que sous Gentoo, tu peux l'éditer  avec ton éditeur préféré ou utiliser la commande :
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
-Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \url{frankiz} ou \url{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
+Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \server{frankiz} ou \server{ton\_pseudo} aux IP \server{'129.104.201.51'} ou \server{'ton\_ip'} Le fichier contient donc :
 
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
@@ -87,7 +86,7 @@ Une dernière chose spécifique à Debian, pour pouvoir utiliser 'apt-get' et 'apt-
 
 \cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
 
-Attention, le apt.conf ne gère pas le protocole ftp via le proxy http.
+Attention, le \file{apt.conf} ne gère pas le protocole ftp via le proxy http.
 Pour utiliser des \url{ftp:// }dans ton \file{/etc/apt/sources.list}, il faut rajouter :
 
 \cmdline{ftp\_proxy = http://kuzh:8080}
@@ -191,9 +190,10 @@ Pour activer ton firewall, tu n'as plus qu'à faire :
 ou tu remplaces \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sauvegardé ce fichier de configuration de firewall.
 
 
+\pagebreak %esthétique...
 \subsubsection{Configuration navigateur web}
 
-\image{partie1-config_reseau/nux_proxy_firefox}{0.6}{Configuration du proxy sous Firefox}
+\image{partie1-config_reseau/nux_proxy_firefox}{0.66}{Configuration du proxy sous Firefox}
 
 \flimage{partie1-config_reseau/nux_firefox_icon}{0.12}{l}
 Le BR te conseille d'utiliser \app{Firefox}, qui est maintenant tout à fait opérationnel. Il est beaucoup plus stable que \app{Konqueror} --- le navigateur fourni par défaut avec KDE --- surtout sur les distributions réputées instables. Dans tous les cas, la seule configuration à mettre est celle du proxy. À l'adresse \url{http://frankiz/proxy.pac} se trouve un script de configuration automatique du proxy, écrit par le BR. Dans \app{Firefox}, il faut aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General} cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{Configuration automatique de proxy} et tu rentres cette URL.
@@ -206,7 +206,7 @@ Le client mail le plus utilisé est \app{Kmail}, mais il en existe bien sûr d'aut
 
 Va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la rubrique \menu{Réseau}. Commence par créer un nouveau compte dans l'onglet \menu{Réception des messages} en cliquant sur le bouton \menu{Ajouter...} et choisis le type POP3.
 
-\image{partie1-config_reseau/nux_config_kmail_pop}{0.65}{Configuration de la réception des messages sous Kmail}
+\image{partie1-config_reseau/nux_config_kmail_pop}{0.66}{Configuration de la réception des messages sous Kmail}
 
 Utilise les paramètres suivants pour configurer l'onglet \menu{Général} :
 \begin{description}
@@ -219,7 +219,7 @@ Utilise les paramètres suivants pour configurer l'onglet \menu{Général} :
 
 Ensuite, va dans l'onglet \menu{Extras} et coche la case \menu{Utiliser SSL pour sécuriser les téléchargements}.
 
-\image{partie1-config_reseau/nux_config_kmail_smtp}{0.65}{Configuration de l'envoi des messages sous Kmail}
+\image{partie1-config_reseau/nux_config_kmail_smtp}{0.66}{Configuration de l'envoi des messages sous Kmail}
 
 Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le bouton \menu{Ajouter...}. Utilise les paramètres suivants pour le configurer :
 \begin{description}
