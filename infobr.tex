@@ -1,6 +1,6 @@
 %$Id$
 
-\documentclass[a4paper,11pt]{article}
+\documentclass[11pt,twoside,a4paper,openright]{article}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
@@ -20,29 +20,24 @@
 \usepackage{epstopdf}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
-\documentclass{book}
-\usepackage{fancyhdr} %Declares the package fancyhdr
-\pagestyle{fancy} %Forces the page to use the fancy template
-\renewcommand{\chaptermark}[1]{\markboth{\textbf{\thesection}\ \emph{#1}}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesubsection.\ #1}}
-%The text used in the header is determined by the arguments to the \markboth
-%and \markright commands used here. The chapter information will appear as the
-%chapter number in bold, followed by a space, followed by the chapter title
-%(dealt with by LaTeX - no user intervention needed here) in italics. The section
-%information will appear as the section number followed by a dot and a space and
-%then the section title (again generated automatically).
-\fancyhf{} %Clears all header and footer fields, in preparation.
-\fancyhead[LE,RO]{\textbf{\thepage}} %Displays the page number in bold in the header,
-%to the left on even pages and to the right on odd pages.
-\fancyhead[RE]{\nouppercase{\leftmark}} %Displays the upper-level (section) information -
-%as determined above - in non-upper case in the header, to the left on odd pages.
-\fancyhead[LO]{\rightmark} %Displays the lower-level (chapter) information - as
-%determined above - in the header, to the left on odd pages.
-\renewcommand{\headrulewidth}{0.5pt} %Underlines the header. (Set to 0pt if not required).
-\renewcommand{\footrulewidth}{0.5pt} %Underlines the footer. (Set to 0pt if not required).
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\addtolength{\headwidth}{80pt}
+\addtolength{\headheight}{3pt}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\fancypagestyle{plain}{%
+  \fancyhead{} % get rid of headers
+  \renewcommand{\headrulewidth}{0pt} % and the line
+} 
 
 
-\addtolength{\hoffset}{-25pt}
+\addtolength{\evensidemargin}{-60pt}
 \addtolength{\voffset}{-40pt}
 \addtolength{\textheight}{85pt}
 \addtolength{\textwidth}{60pt}
