@@ -264,12 +264,11 @@ Ensuite occupe-toi de l'onglet \menu{Identité} :
 
 Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller dans la rubrique \menu{Comptes}, sous-rubrique \menu{Courrier électronique}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr}, port 25 --- c'est exactement la même configuration SMTP que \app{Kmail}.
 
-Tu peux mettre ton identité/signature par défaut pour tous les serveurs auxquels tu t'abonneras (certains élèves hébergent aussi des fora de discussion privés ou non), et chaque serveur peut bénéficier d'une identité particulière, qui peut même être le résultat d'un programme ou d'un script (par exemple pour une signature aléatoire). Les signatures commencent généralement par :
-\verb*+-- +\P\ c'est à dire --<espace><retour à la ligne> de manière à ce que les \og bons \fg clients news l'interprètent comme telle, la mettent par exemple en grisé et évitent de la recopier lorsque tu réponds à un message.
+Si tu veux mettre une signature à la fin des messages que tu posteras, il te suffit de la mettre dans l'onglet Identité. Sur la plupart des clients la signature est interprétée comme extérieure au message et n'est en particuliers pas incluse dans le texte cité lorsque tu réponds à un message. Pour définir une signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
 
 Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
-Pour se connecter à un serveur de news en SSL sous \app{Knode} --- par exemple à \server{ssl.polytechnique.org}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer "stunnel" pour mettre une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
+Pour te connecter aux serveur news de Polytechnique.org, qui a un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer "stunnel" quit permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
@@ -284,13 +283,15 @@ client = yes\\
 \# sample service-level configuration\\
 \\
 {[}nntps{]}\\
-accept  = 119\\
+accept  = 1119\\
 connect = ssl.polytechnique.org:563\\
 TIMEOUTclose = 0\\
 }
 
-Et tu peux lancer stunnel par :
+Il ne te reste plus qu'à lancer stunnel par :
 
 \cmdline{/etc/init.d/stunnel start}
+
+Et tu peux ainsi lire les news de polytechnique.org en mettant \server{localhost} comme serveur et \server{1119} comme port. Il faut aussi que tu coche 'Le serveur exige une identification' et que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe que tu peux définir sur \url{http://www.polytechnique.org/acces\_smtp.php}.
 
 \vfill
