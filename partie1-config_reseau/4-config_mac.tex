@@ -1,3 +1,45 @@
 %$Id$
 
 \subsection{Configuration sous Mac OS X}
+
+Voici une présentation des divers logiciels utiles pour utiliser les différnets services proposés sur le réseau avec MacOS X (les logiciels non intégrés à MacOS X et cités ici sont quasiment tous téléchargeables sur frankiz : lien Télécharger -> Mac -> Réseau), ainsi que leur configuration.
+
+\subsubsection{Configuration IP/DHCP}
+
+Préférences Réseau, accessible depuis l'article de menu Préférences Système… du menu pomme, permet, comme son nom l'indique de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse gentiment et utilise la procédure que le BR te propose.
+
+La gestion des configuration réseau de MacOS X permet de créer plusieurs configurations et de passer en un clic de l'une vers une autre (avec le sous-menu Configuration Réseau du menu pomme) ce qui est très pratique pour les machines vouées à être connectées à plusieurs réseaux successivement (les portables par exemple). On commencera donc par créer une nouvelle configuration réseau.
+
+\includegraphics{partie1-config_reseau/mac_nouvelle_config}
+
+Une fois la nouvelle configuration créée et sélectionnée, on va configurer l'interface réseau ethernet. Tu trouveras les valeurs des groupes AAA et BBB dans le chapitre [1.1]. Pour avoir accès au web mondial, il faut ensuite rentrer les proxies à utiliser pour y accéder. MacOS X 10.3 utilise un script automatique pour paramétrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'était le cas avec MacOS X 10.2 (dans quel cas il faut mettre kuzh.polytechnique.fr port 8080).
+
+\includegraphics{partie1-config_reseau/mac_config_ip}
+
+\includegraphics{partie1-config_reseau/mac_config_proxy}
+
+\subsubsection{Configuration Web}
+
+Safari, le navigateur web d'Apple est maintenant entièrement opérationnel.
+Un conseil : pense à activer le blocage des fenêtres popup (dans le menu Safari) et la navigation par onglets (dans les Préférences -> Onglets).
+Certains lui préfèrent OmniWeb, Camino ou FireFox, à toi de choisir.
+
+\subsubsection{Configuration Mail}
+
+Mail… un client mail. Contient un filtre antispam bayésien qui est capable d'apprendre quels types de mails sont du spam. Il sait aussi regrouper les mails correspondant à une même discussion.
+
+Au premier lancement, Mail te demandera de remplir les informations concernant ton compte mail sur poly, il suffit de le remplir comme indiqué sur la première image. Si tu as déjà créé un compte précédemment, il faut aller dans les préférences, onglet Comptes (accessible depuis le menu Mail), créer un autre compte est remplir comme dans la deuxième image.
+
+\includegraphics{partie1-config_reseau/mac_mail_config}
+
+\includegraphics{partie1-config_reseau/mac_mail_description}
+
+Dans les deux cas il faut aussi activer le cryptage SSL (sinon, ça ne marchera pas) :
+
+\includegraphics{partie1-config_reseau/mac_mail_ssl}
+
+Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer.
+
+\subsubsection{Configuration News}
+
+Application restant à définir...
