@@ -176,8 +176,9 @@ Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire u
  -{}-state RELATED,ESTABLISHED -j ACCEPT\\
 \\
 \# Pour ouvrir les ports des utilitaires standards :\\
-\# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix\\
--A INPUT -p tcp -m multiport -{}-dports 20,21,22,80,119,5050 -j ACCEPT\\
+\# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix, 5054:Xplo\\
+-A INPUT -p tcp -m multiport $\backslash$ \\
+ -{}-dports 20,21,22,80,119,5050,5054 -j ACCEPT\\
 \# Pour profiter de la télé sur le réseau :\\
 -A INPUT -p upd -m udp -{}-dport 1234 -j ACCEPT\\
 \\
