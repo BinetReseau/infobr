@@ -37,14 +37,11 @@ PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
 
-Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut exporter les variables d'environnement ci-dessous (éventuellement à mettre dans \file{/etc/profile}) :
+Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut définir les variables d'environnement ci-dessous dans \file{/etc/make.conf} :
 
-\cmdline{export http\_proxy=http://kuzh.polytechnique.fr:8080\\
-export ftp\_proxy=ftp://kuzh.polytechnique.fr:8080}
-
-Et si tu n'utilises pas le miroir rsync du BR :
-
-\cmdline{export SYNC=rsync://rsync/gentoo-portage}
+\cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
+ftp\_proxy=ftp://kuzh.polytechnique.fr:8080\\
+SYNC=rsync://rsync/gentoo-portage}
 
 
 \paragraph{Sous Debian}
