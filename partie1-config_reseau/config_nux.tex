@@ -40,7 +40,7 @@ PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut définir les variables d'environnement ci-dessous dans \file{/etc/make.conf} :
 
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
-GENTOO_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
+GENTOO\_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
 Tu peux évidemment ajouter d'autres miroirs dans ta liste (en les séparant par les espaces)... mais ftp://miroir étant interne il sera toujours beaucoup plus rapide que les autres. On te conseille ici http://gentoo.osuosl.org/ qui est un miroir très complet (mais très lent).
@@ -141,16 +141,16 @@ Un exemple de règle serait :
 
 Cette règle accepte les paquets que l'on reçoit de \fkz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
 \begin{itemize}
-	\item[-A] définit la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
-	\item[-i] définit l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
-	\item[-s] ip source du paquet à filtrer.
-	\item[-d] ip destination du paquet à filtrer.
-	\item[-p] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
-	\item[-m] définit un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp, multiport ou state.
-	\item[--dport] port de destination du paquet (avec -m udp ou -m tcp)
-	\item[--sport] port d'origine du paquet (avec -m udp ou -m tcp)
-	\item[--state] défini l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont NEW (nouvelle connexion), ESTABLISHED (connexion déjà établie), RELATED (connexion dépendante d'une autre...)
-	\item[-j] défini l'action à entreprendre (ACCEPT pour accepter le paquet, REJECT pour refuser le paquet et en informer l'emmeteur, DROP pour faire comme si le paquet n'existait pas, LOG pour loggeur la réception du paquet.
+	\item[\texttt{-A}] définit la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
+	\item[\texttt{-i}] définit l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
+	\item[\texttt{-s}] ip source du paquet à filtrer.
+	\item[\texttt{-d}] ip destination du paquet à filtrer.
+	\item[\texttt{-p}] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
+	\item[\texttt{-m}] définit un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp, multiport ou state.
+	\item[\texttt{-{}-dport}] port de destination du paquet (avec -m udp ou -m tcp)
+	\item[\texttt{-{}-sport}] port d'origine du paquet (avec -m udp ou -m tcp)
+	\item[\texttt{-{}-state}] définit l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont NEW (nouvelle connexion), ESTABLISHED (connexion déjà établie), RELATED (connexion dépendante d'une autre...)
+	\item[\texttt{-j}] défini l'action à entreprendre (ACCEPT pour accepter le paquet, REJECT pour refuser le paquet et en informer l'emmeteur, DROP pour faire comme si le paquet n'existait pas, LOG pour logguer la réception du paquet.
 \end{itemize}
 
 Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul (on te comprend :). Voici un petit firewall basique qui convient à la plupart des utilisations sur le réseau de l'X :
@@ -166,14 +166,16 @@ Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire u
 \# Pour que les connexions sur les ports > 1024 soit autorisées\\
 \# pour les programmes qui les utilisent comme connexion secondaire\\
 \# (Exemple : serveur ftp)\\
--A INPUT -p tcp -m tcp --dport 1024:65535 -m state --state RELATED,ESTABLISHED -j ACCEPT\\
--A INPUT -p udp -m udp --dport 1024:65535 -m state --state RELATED,ESTABLISHED -j ACCEPT\\
+-A INPUT -p tcp -m tcp -{}-dport 1024:65535 -m state $\backslash$ \\
+ -{}-state RELATED,ESTABLISHED -j ACCEPT\\
+-A INPUT -p udp -m udp -{}-dport 1024:65535 -m state $\backslash$ \\
+ -{}-state RELATED,ESTABLISHED -j ACCEPT\\
 \\
 \# Pour ouvrir les ports des utilitaires standards :\\
 \# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix\\
--A INPUT -p tcp -m multiport --dports 20,21,22,80,119,5050 -j ACCEPT\\
+-A INPUT -p tcp -m multiport -{}-dports 20,21,22,80,119,5050 -j ACCEPT\\
 \# Pour profiter de la télé sur le réseau :\\
--A INPUT -p upd -m udp --dport 1234 -j ACCEPT\\
+-A INPUT -p upd -m udp -{}-dport 1234 -j ACCEPT\\
 \\
 \# Pour que les demande de connexion vers l'extérieur (impossible) ne ralentissent pas\\
 -A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j REJECT\\
@@ -182,7 +184,8 @@ Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire u
 -A INPUT -p icmp -j ACCEPT\\
 \\
 \# Fin du fichier\\
-COMMIT}
+COMMIT
+}
 
 Pour activer ton firewall, tu n'as plus qu'à faire :
 
@@ -260,8 +263,6 @@ Tu peux mettre ton identité/signature par défaut pour tous les serveurs auxquels
 \verb*+-- +\P\ c'est à dire --<espace><retour à la ligne> de manière à ce que les \og bons \fg clients news l'interprètent comme telle, la mettent par exemple en grisé et évitent de la recopier lorsque tu réponds à un message.
 
 Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
-
-\image{partie1-config_reseau/nux_knode}{1.0}{Knode}
 
 Pour se connecter à un serveur de news en SSL sous \app{Knode} --- par exemple à \server{ssl.polytechnique.org}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer "stunnel" pour mettre une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
