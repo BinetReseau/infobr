@@ -89,36 +89,3 @@ Là il n'y a rien de compliqué ; le BR offre quatre serveurs DNS redondants qui o
   \item Serveur secondaire (3) : $129.104.201.54$
 \end{itemize}
 Tu choisis celui que tu veux !
-
-
-\subsection{Relations entre IP, prises et cartes réseau}
-
-Pour alléger la charge de la matrice (la machine par laquelle passent toutes les communications internes à l'X), la DSI fixe la relation entre les numéros de casert et le cartes réseaux des ordinateurs, identifiées par une adresse appelée MAC (secure MAC). Par ailleurs, pour un fonctionnement sain du réseau, le BR surveille que c'est toujours la même carte réseau qui correspond à une IP (arpwatch). Ceci a plusieurs conséquences :
-\begin{itemize}
-  \item prends l'IP qu'on te donne et ne t'amuse pas à en changer --- on le voit tout de suite !
-  \item tu ne peux pas te connecter avec ton ordinateur chez ton voisin même en prenant son IP à cause du secure MAC.
-  \item si tu as un nouvel ordinateur, tu dois demander une nouvelle IP dans tes \menu{Préférences} sur \fkz puis demander au BR d'autoriser ta carte réseau à se connecter.
-  \item si tu changes d'ordinateur ou même de carte réseau, tu dois également demander au BR d'autoriser ta nouvelle carte réseau.
-\end{itemize}
-
-Pour autoriser une nouvelle carte réseau, poste les informations suivantes sur \ngname{br.binet.br} :
-
-\begin{itemize}
-  \item l'adresse MAC de ta carte réseau. Pour l'obtenir :
-  \begin{description}
-    \item[sous Windows] va dans \menu{menu démarrer -> Exécuter}, rentre 'cmd' puis clique OK. Tape alors
-    \cmdline{ipconfig /all}
-    et fais Entrée. Tu devrais alors voir ton adresse MAC, qui est de la forme $XX-XX-XX-XX-XX-XX$, où $X$ est un caractère hexadécimal.
-     \item[sous linux] dans une console tape
-     \cmdline{ifconfig}
-     l'adresse MAC est de la forme $xx:xx:xx:xx:xx:xx$, où $x$ est un caractère hexadécimal. Celle qui nous intéresse se trouve dans le paragraphe où tu vois aussi ton IP. 
-	\item[sous Mac OS X] lance \app{Terminal} dans \rep{Applications, Utilitaires} puis fais comme sous linux.
-  \end{description}
-  \item ton numéro de casert
-  \item une gentille formule de politesse :)
-\end{itemize}
-
-Ensuite, il suffit qu'un BR-man fasse un tour par là, d'attendre un demi-heure la mise à jour des switches et c'est bon !
-
-
-\vfill

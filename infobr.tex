@@ -110,6 +110,18 @@
   }
   \vspace{4pt}
 }
+\newcommand{\cmdlineshort}[1]{
+  \vspace{4pt}
+  \noindent
+  \colorbox{LightRed}{
+    \parbox[c]{.25\textwidth}{
+    \NoAutoSpaceBeforeFDP
+    \texttt{\color{BrightGreen}#1}
+    \AutoSpaceBeforeFDP
+    }
+  }
+  \vspace{4pt}
+}
 
 % pour les URLs
 \definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}

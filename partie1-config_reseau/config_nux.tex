@@ -106,10 +106,11 @@ puis essaye de pinger \fkz par exemple. Tu dois obtenir quelque chose comme:
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
+64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\}
 
-Une dernière chose spécifique à Debian, pour pouvoir utiliser \app{apt-get} et \app{apt-cache} à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
+\cmdline{64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
+
+Une dernière chose spécifique à Debian, pour utiliser \app{apt-get} et \app{apt-cache} à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
 
 \cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
 
@@ -122,18 +123,15 @@ dans les paramètres de wget (car apt utilise wget), \file{/etc/wgetrc} ou \file{
 
 \cmdline{http\_proxy = http://kuzh:8080}
 
-Le BR maintient par ailleurs un miroir debian : tu peux l'utiliser en rajoutant à ton \file{/etc/sources.list}
+Le BR maintient par ailleurs un miroir debian : tu peux l'utiliser en rajoutant à ton \file{/etc/sources.list} les lignes suivantes, où \texttt{[flavour]} est la saveur de ta debian, à choisir parmi  \texttt{stable}, \texttt{testing}, \texttt{unstable} ou \texttt{experimental} (seulement \texttt{stable} ou \texttt{testing} pour \texttt{debian-security}).
 
 \cmdline{deb ftp://miroir/debian [flavour] main contrib non-free\\
 deb ftp://miroir/debian-non-US [flavour] main contrib non-free\\
 deb ftp://miroir/debian-security [flavour] main contrib non-free\\
 deb ftp://miroir/debian-marillat [flavour] main}
 
-où \texttt{[flavour]} est la saveur de ta debian: \texttt{stable}, \texttt{testing}, \texttt{unstable} ou \texttt{experimental}.
-
-\subsubsection{Configuration antivirus}
-
-Elle est drôle celle-là hein ?
+\subsubsection{Configuration antivirus \footnotesize{(elle est drôle celle-là hein ?)}
+}
 
 \subsubsection{Configuration firewall}
 
