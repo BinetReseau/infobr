@@ -8,22 +8,26 @@
 
 \subsubsection{Configuration IP}
 
-Va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions réseau} puis sur \menu{Connexion au réseau local}. Clique enfin sur \menu{Propriétés}.
+\flimage{partie1-config_reseau/win_connexion_icone}{0.1}{l}
+Va dans le \menu{menu démarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions réseau} puis sur \menu{Connexion au réseau local}. Clique enfin sur \menu{Propriétés}.
 
 La coche simplement les deux cases \menu{Client pour les réseaux Microsoft} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot.
 
 \imagepos{partie1-config_reseau/win_config_connexion}{0.75}{Configurer la connexion au réseau local}{!h}
 
+\imagepos{partie1-config_reseau/win_config_ip}{0.75}{Configuration IP --- Propriétés de protocole Internet (TCP/IP)}{!h}
+
 Clique ensuite sur la ligne \menu{Protocole Internet (TCP/IP)}, puis sur le bouton \menu{Propriétés} qui vient de se dégriser.
 
 Tu tombes alors sur l'écran de configuration de ta connexion vers l'extérieur.
 
-\emph{screenshot à refaire, les IP sont trivialement fausses sur le précédent !!! (DNS principal 129.104.211.52 !!!!!}
+Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les cinq champs d'IP. Tu trouveras toutes les valeurs d'IP nécessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant au screenshot ci-contre. Si une partie d'IP est blanche sur le screenshot, c'est qu'elle t'es personnelle et que tu dois la calculer !
 
- 
-Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les cinq champs d'IP. Tu trouveras toutes les valeurs d'IP nécessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant au screenshot suivant. Si une partie d'IP est grisée sur le screenshot, c'est qu'elle t'es personnelle et que tu dois la calculer !
+Ensuite, clique sur le bouton \menu{Avancé}. Puis clique sur l'onglet \menu{DNS} en haut.
 
-Ensuite, clique sur \menu{Avancé}. Puis clique sur l'onglet \menu{DNS} en haut. Il n'y a plus qu'à remplir les différents champs exactement comme sur le screenshot !
+\imagepos{partie1-config_reseau/win_config_dns}{0.78}{Configuration IP}{!h}
+
+Il n'y a plus qu'à remplir les différents champs comme sur le screenshot ci -dessus, avec les boutons \menu{Ajouter} et les flèches pour réordonner les éléments.
 
 \subsubsection{Configuration de l'ordinateur}
 
@@ -76,7 +80,7 @@ Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de chois
 
 Tout d'abord : \textbf{désinstalle tous les antivirus que tu pourrais avoir !}
 
-Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, ouvre \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as :
+Dans le \menu{menu démarrer}, va dans \menu{Panneau de Configuration}, ouvre \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as :
 \begin{itemize}
   \item Symantec Antivirus,
   \item McAfee Antivirus,
@@ -86,14 +90,20 @@ Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, ouvre \me
 
 Ensuite, tu vas t'inscrire sur le domaine :
 
-Clique sur le \menu{Menu Démarrer} puis clique-droit sur \menu{Poste de travail}, \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre \url{windows.eleves.polytechnique.fr}.
- 
-Si tu es Rouje 2002 : tu tapes
-Nom	rouje02
-Mot de Passe	rouge.2002
-Si tu es Jone 2003 : tu tapes
-Nom	jone03
-Mot de Passe	jone.2003
+Clique sur le \menu{menu démarrer} puis fais un clic-droit sur \menu{Poste de travail} et choisis \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur} et clique le bouton \menu{Modifier}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre \url{windows.eleves.polytechnique.fr}.
+
+\imagepos{partie1-config_reseau/win_config_domaine}{0.6}{S'inscrire sur le domaine windows}{!h}
+
+Si tu es rouJe 2004, tu rentre alors (attention c'est tordu) :
+\begin{description}
+  \item[Nom] rouje04
+  \item[Mot de Passe] rouje.2004
+\end{description}
+et si tu es Jone 2003 :
+\begin{description}
+  \item[Nom] jone03
+  \item[Mot de Passe] jone.2003
+\end{description}
 
 \paragraph{Installation personnalisée} --- configuration manuelle
 
@@ -109,7 +119,7 @@ Ce package contient le paramétrage de la mise à jour automatique de Windows sur 
 
 \subparagraph{Configuration firewall}
 
-Si tu as Windows XP avec le SP1, tu dois activer manuellement ton firewall. Si tu as le SP2, il est activé tout seul et tu dois ouvrir le port 21 pour rendre ton FTP accessible et les ports 5050 à 5053 pour \app{qRezix}.
+Si tu as Windows XP avec le SP1, tu dois activer manuellement ton firewall. Si tu as le SP2, il est activé tout seul et tu dois ouvrir le port 21 pour rendre ton FTP accessible et les ports 5050 et 5053 pour \app{qRezix}.
 
 Si ta version de Windows n'a pas de firewall, tu peux télécharger \app{ZoneAlarm} sur le web ou sur \xshare et le configurer.
 
