@@ -13,11 +13,11 @@ Va dans le \menu{menu démarrer}, \menu{Panneau de configuration} et double-cliqu
 
 Dans cette fenêtre, coche simplement les deux cases \menu{Client pour les réseaux Microsoft} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot.
 
-\imagepos{partie1-config_reseau/win_config_connexion2}{0.75}{Configurer la connexion au réseau local}{!h}
+\imagepos{partie1-config_reseau/win_config_connexion2}{0.74}{Configurer la connexion au réseau local}{!h}
 
-\imagepos{partie1-config_reseau/win_config_ip}{0.75}{Configuration IP --- Propriétés de protocole Internet (TCP/IP)}{!h}
+\imagepos{partie1-config_reseau/win_config_ip}{0.70}{Configuration IP --- Propriétés de protocole Internet (TCP/IP)}{!h}
 
-Clique ensuite sur la ligne \menu{Protocole Internet (TCP/IP)}, puis sur le bouton \menu{Propriétés} qui vient de se dégriser.
+Sélectionne ensuite la ligne \menu{Protocole Internet (TCP/IP)}, puis clique sur le bouton \menu{Propriétés} qui vient de se dégriser.
 
 Tu tombes alors sur l'écran de configuration de ta connexion vers l'extérieur.
 
@@ -41,30 +41,29 @@ En fait, c'est un outil d'administration, conçu par exemple pour des entreprises
 
 Avantages :
 \begin{itemize}
-  \item Windows est mis à jour automatiquement par \server{enez} (ca va plus vite). Tu as toujours la dernière version, les derniers patches de sécurité et un antivirus à jour. Donc tu es en principe mieux protégé contre les virus. Mais surtout, tu n'as plus à t'en occuper !
-  \item Tu as Windows XP Pro fourni gratuitement par le BR.
-  \item Tu n'as presque rien à configurer, tout est automatique.
-  \item Un BRman peut prendre le contrôle de ton ordinateur à distance pour essayer de t'aider si tu as des problèmes
+  \item Windows est mis à jour automatiquement par \server{enez}. Tu as toujours la dernière version, les derniers patches de sécurité et un antivirus à jour. Donc tu es en principe mieux protégé contre les virus.
+  \item Mais surtout, tu n'as plus à t'en occuper, presque tout est automatique.
 \end{itemize}
 
 Inconvénients :
 \begin{itemize}
-  \item Un BRman peut prendre le contrôle de ton ordinateur à distance --- mais on te rassure, quelque chose comme \og un administrateur à pris le contrôle de ton ordinateur \fg s'affichera en gros sur ton écran si ça arrive. DE plus, aucun BRman ne le fera sans ton autorisation, sinon il sera viré sur le champ du BR. Et puis de toute façon tu es déjà fliqué par Micro\$oft :p
+  \item Tu délègues une partie des droits d'administration de ta machine au BR (tout ce qui concerne la sécurité du réseau en particulier). Ce n'est donc plus toi qui gères cette partie, mais si tu ne sais pas le faire, c'est plutôt un avantage de laisser le BR le faire à ta place.
+  \item Cette option n'est disponible que pour Windows 2000, Windows XP Pro ou Windows Server 2003.
 \end{itemize}
 
-Et bien sûr, tu peux sortir du domaine à tout instant en reprenant ta configuration et en suivant l'installation personnalisée.
+Bien sûr, tu peux sortir du domaine à tout instant en reprenant ta configuration et en suivant l'installation personnalisée.
 
 \subparagraph{Soit tu choisis de configurer toi-même ton ordinateur} et tu vas alors au paragraphe \og Installation personnalisée --- configuration manuelle \fg
 
 Avantages :
 \begin{itemize}
-  \item Tu es admin de ton ordinateur.
+  \item Tu es responsable de ton ordinateur. Si ta machine est toujours mise à jour et que tu n'attrapes aucun virus sans être sur le domaine, tant mieux pour toi.
 \end{itemize}
 
 Inconvénients :
 \begin{itemize}
-  \item Tu es responsable de ton ordinateur. Si ta machine devient un foyer pour virus, sache que nous avons les moyens de l'isoler pour éviter qu'il puisse contaminer les ordinateurs des autres\ldots
-  \item Si tu ne maîtrises pas les firewall, antivirus et autres Windows Update, ça ne sert à rien d'envisager cette solution.
+  \item Tu es responsable de ton ordinateur. Si ta machine devient un foyer pour virus, sache que nous avons les moyens de l'isoler pour éviter toute propagation.
+  \item Si tu ne maîtrises pas le firewall, l'antivirus et autres Windows Update, ça ne sert à rien d'envisager cette solution.
 \end{itemize}
 
 \begin{center}
@@ -81,50 +80,59 @@ Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de chois
 
 Tout d'abord : \textbf{désinstalle tous les antivirus que tu pourrais avoir !}
 
-Dans le \menu{menu démarrer}, va dans \menu{Panneau de Configuration}, ouvre \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as :
-\begin{itemize}
-  \item Symantec Antivirus,
-  \item McAfee Antivirus,
-  \item Norton Antivirus,
-  \item tout autre antivirus ou firewall.
-\end{itemize}
+Dans le \menu{menu démarrer}, va dans \menu{Panneau de Configuration}, ouvre \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as \app{Symantec Antivirus}, \app{McAfee Antivirus}, \app{Norton Antivirus}, et tout autre antivirus ou firewall.
 
 Ensuite, tu vas t'inscrire sur le domaine :
 
 Clique sur le \menu{menu démarrer} puis fais un clic-droit sur \menu{Poste de travail} et choisis \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur} et clique le bouton \menu{Modifier}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre \url{windows.eleves.polytechnique.fr}.
 
-\imagepos{partie1-config_reseau/win_config_domaine}{0.66}{S'inscrire sur le domaine windows}{!h}
+\imagepos{partie1-config_reseau/win_config_domaine}{0.56}{S'inscrire sur le domaine windows}{!h}
 
-Si tu es rouJe 2004, tu rentre alors (attention c'est tordu) :
-\begin{description}
-  \item[Nom] rouje04
-  \item[Mot de Passe] rouje.2004
-\end{description}
-et si tu es Jone 2003 :
-\begin{description}
-  \item[Nom] jone03
-  \item[Mot de Passe] jone.2003
-\end{description}
+\begin{center}
+\begin{tabular}{ll}
+  \parbox{.45\textwidth}{
+  Si tu es rouJe 2004, tu rentres :
+  \begin{description}
+    \item[Nom] rouje04
+    \item[Mot de passe] rouje.2004
+  \end{description}
+  }
+& \parbox{.45\textwidth}{
+  et si tu es Jone 2003 :
+  \begin{description}
+    \item[Nom] jone03
+    \item[Mot de passe] jone.2003
+  \end{description}
+  }
+\\
+\end{tabular}
+\end{center}
 
-\emph{Attention, ces mots de passe servent juste à t'inscrire sur le domaine, pas à ouvrir ta session utilisateur quand tu allumes ton ordinateur.}
+\emph{Attention, ces identifiants servent juste à t'inscrire sur le domaine. Pour utiliser ton ordinateur, tu devras rentrer au démarrage les mêmes nom d'utilisateur et mot de passe que tu avais avant d'être sur le domaine.}
 
 \paragraph{Installation personnalisée} --- configuration manuelle
 
 Commence par désinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqué dans le paragraphe \og Installation simplifiée --- configuration automatique \fg.
 
-\subparagraph{Configuration antivirus} Installe l'antivirus que le BR te propose. Et là on rigole plus ! Quand la sécurité du réseau est en jeu, on prend cinq minutes pour configurer proprement le bordel !
+\subparagraph{Configuration antivirus} Installe l'antivirus que le BR te propose. Et là on ne rigole plus ! Quand la sécurité du réseau est en jeu, on prend cinq minutes pour installer proprement tout ça !
 
 Ouvre ton explorateur Windows et tape : 
 \url{$\backslash\backslash$enez$\backslash$antivirus}
 et double-clique sur le fichier \file{Symantec.exe}
 
-Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école. Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, normalement il sera toujours à jour.
+Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école. Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, normalement il sera mis à jour automatiquement.
 
 \subparagraph{Configuration firewall}
 
-Si tu as Windows XP avec le SP1, tu dois activer manuellement ton firewall. Si tu as le SP2, il est activé tout seul et tu dois ouvrir le port 21 pour rendre ton FTP accessible et les ports 5050 et 5053 pour \app{qRezix}.
+Si tu as Windows XP avec le SP2 installé, tu as un firewall automatiquement activé et facile d'utilisation. En effet, à chaque fois qu'un programme tentera d'aller pour la première fois sur Internet, il te demandera si tu veux le laisser faire ou pas.
 
-Si ta version de Windows n'a pas de firewall, tu peux télécharger \app{ZoneAlarm} sur le web ou sur \xshare et le configurer.
+Le firewall commercial \app{ZoneAlarm}, indépendant de Windows, fonctionne sur le même principe. Tu peux le trouver sur \xshare.
+
+Si tu préfères utiliser le firewall intégré à Windows XP (sans le SP2) ou à Windows Server 2003, il te faudra le configurer plus en détails. Va dans le \menu{Menu Démarrer}, place ta souris sur \menu{Paramètres} et clique sur \menu{Connexions Réseau}. Choisis la connexion qui est utilisée par ton ordinateur (souvent il n'y en a qu'une, ou une seule est activée) et double-clique dessus. Clique sur \menu{Propriétés} en bas à gauche, puis sur l'onglet \menu{Avancé}. Tu pourras alors rentrer dans le menu de \menu{Paramètres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'extérieur. Pour cela, clique sur \menu{Ajouter}, et remplis la boîte de dialogue comme indiqué sur la capture d'écran en mettant ton IP dans les trous libres et en remplaçant le numéro du port par celui que tu veux ouvrir, par exemple 5050 et 5053 pour \app{qRezix} et 21 pour ton FTP.
+
+\image{partie1-config_reseau/win_config_firewall}{0.5}{Ouvrir un port dans le firewall Windows}
+
+Comme tu peux le constater, il est beaucoup plus pratique d'aller sur le domaine et de laisser le SP2 faire le gros du boulot à ta place :-).
 
 \subsubsection{Configuration web (proxy)}
 
@@ -136,7 +144,9 @@ Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finalis
 
 Une fois que tu as fait ça, tu n'as plus besoin d'\app{Internet Explorer}, qui est blindé de failles de sécurité et autres portes ouvertes aux logiciels-espions et aux virus. Ce n'est pas une blague, même à l'X les risques ne sont pas nuls. Alors enlève le raccourci de ton bureau et mets à la place \app{Firefox}, disponible sur \xshare ou à l'adresse \url{http://www.mozilla-europe.org/fr/products/firefox/}. Ce n'est pas une garantie ultime --- message subliminal : de toute facon, fais attention à ce que tu fais ;-) --- mais ça limite les risques.
 
-\emph{Vérifier la config Firefox}
+Une fois que tu as fait ça, tu n'as plus forcément besoin d'\app{Internet Explorer}, qui est soumis à certains failles de sécurité importantes. Même sur le réseau de l'X, les risques ne sont pas nuls.
+
+Le BR t'invite donc à installer un navigateur alternatif, Mozilla Firefox, disponible sur \xshare. Ce n'est pas une garantie ultime (de toute facon, tu es le premier garant de la sécurité de ton ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main), mais tu seras sensiblement plus en sécurité. Tes paramètres (en particulier tes favoris) seront directement importés depuis \app{Internet Explorer}, la seule configuration à effectuer étant le proxy. Pour cela, clique sur \menu{Options} dans le menu \app{Outils} puis sur \app{Paramètres de connexion} en bas à droite. La case à remplir est alors la même qu'avec \app{Internet Explorer} (si ce n'est qu'elle se situe en bas de la fenêtre et pas au milieu).
 
 \subsubsection{Configuration mail}
 
@@ -188,22 +198,22 @@ Si tu veux t'inscrire à d'autres serveurs news, refais cette procédure en rentra
 
 \paragraph{Client FTP}
 
-Le BR te conseille SmartFTP --- \url{http://www.smartftp.com/}
-Pour l'installer, télécharge-le sur ce site ou sur \xshare et double-clique sur l'installateur.
+Le BR te conseille SmartFTP ou FileZilla. Pour installer l'un des deux, télécharge-le sur \xshare et double-clique sur l'installateur.
  
 Finis l'installation, et tu peux aller sur tous les FTP du réseau avec une facilité et une rapidité déconcertante. 
 
 \paragraph{Serveur FTP}
 
-Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de partager les différents projets, les films du JTX, ses photos, etc. Donc il est quasiment indispensable que tu installes un serveur FTP.
+Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de partager les différents projets, les films du JTX, ses photos, etc. Donc il est quasiment indispensable que tu en installes un.
 
-Un des plus simples et \app{FileZilla}, qui est libre de surcroît. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais il y a un FAQ sur \fkz où tout ca est très bien expliqué !
+Un des plus simples et \app{GuildFTP}, qui est libre de surcroît. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais il y a une FAQ sur \fkz où tout ca est très bien expliqué !
 
 \subsubsection{Autres logiciels utiles}
 
 \begin{description}
   \item[qRezix] : Un programme développé par le BR pour faciliter la vie sur le réseau, à récupérer sur \xshare. Pour plus de détails, voir le paragraphe consacrée à qRezix à la page \pageref{qrezix}.
-  \item[chombier] un client IRC. Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{blah}.
+  \item[XChat] : Un client IRC directement issu du monde Unix. Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC.
+  \item[Putty] : Un logiciel pratique qui te permet de te connecter en salle info. Tu peux le récupérer lui aussi sur \xshare ; son fonctionnement est expliqué en détails dans la FAQ.
 \end{description}
 
 \subsubsection{Les licences MSDNAA}
@@ -220,7 +230,7 @@ Si tu as encore des questions, plus de détails sont donnés dans la FAQ de \fkz.
 
 \subsubsection{Obtenir Windows XP Pro}
 
-Grâce aux accords négociés par le BR, chaque X a droit à une version de Windows XP Pro gratuite, légale et attibuée à vie ! Pour avoir la tienne, suis tout simplement la procédure expliquée dans le paragraphe précédent :
+Les accords négociés par le BR et décrits ci-dessus donnent à chaque X le droit à une version de Windows XP Pro gratuite et légale ! Pour avoir la tienne, suis tout simplement la procédure expliquée dans le paragraphe précédent :
 \begin{itemize}
   \item obtiens un numéro de licence sur \fkz et note-le.
   \item télécharge l'image disque de Windows comme expliqué ci-dessus et grave-la sur un CD. Elle se trouve à l'adresse \url{$\backslash\backslash$enez$\backslash$msdnaa$\backslash$french$\backslash$fr\_winxp\_sp2.iso}. Si tu as acheté un ordinateur sans OS (intelligent de ta part, tu as gagné 150 \euro), fais tout ça chez un copain !
