@@ -133,7 +133,7 @@ Elle est bonne celle là hein ?
 
 \subsubsection{Configuration firewall}
 
-La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables. Pour ceci la première étape est d'installé le paquet iptables pour ta distribution. Ensuite, la configuration peut paraître délicate mais en fait ce ne sont que des règles simples, il suffit de comprendre le principe.
+La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables. Pour ceci la première étape est d'installer le paquet iptables pour ta distribution. Ensuite, la configuration peut paraître délicate mais en fait ce ne sont que des règles simples, il suffit de comprendre le principe.
 
 Configurer les iptables c'est définir une série de règles. Chaque règle a une forme simple, elle défini une action à effecter dans des conditions données. Ces conditions portent sur l'origine du paquet (l'unité élémentaire de ce qui circule sur le réseau), le format du paquet, le sens de circulation...
 
@@ -143,12 +143,12 @@ Un exemple de règle serait :
 
 Cette règle accepte les paquets que l'on reçoit de Frankiz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
 \begin{itemize}
-	\item[-A] défini la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
-	\item[-i] défini l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
+	\item[-A] définit la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
+	\item[-i] définit l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
 	\item[-s] ip source du paquet à filtrer.
 	\item[-d] ip destination du paquet à filtrer.
 	\item[-p] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
-	\item[-m] défini un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp ou state.
+	\item[-m] définit un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp, multiport ou state.
 	\item[--dport] port de destination du paquet (avec -m udp ou -m tcp)
 	\item[--sport] port d'origine du paquet (avec -m udp ou -m tcp)
 	\item[--state] défini l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont NEW (nouvelle connexion), ESTABLISHED (connexion déjà établie), RELATED (connexion dépendante d'une autre...)
@@ -161,7 +161,7 @@ Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire u
 *filter\\
 :INPUT DROP [0:0]\\
 :FORWARD DROP [0:0]\\
-:OUTPUT ACCEPT [14913241:2845420091]\\
+:OUTPUT ACCEPT [0:0]\\
 \\
 \# Pour que tout se passe bien avec localhost\\
 -A INPUT -i lo -j ACCEPT\\
