@@ -2,11 +2,105 @@
 
 \subsection{Configuration sous Microsoft Windows}
 
-Cette FAQ décrit en parallèle la procédure de configuration mail/news sous Outlook Express et Thunderbird, qui est sensiblement la même à quelques points de détails près.
+\subsubsection{Configuration IP}
 
 
-\subsubsection{Configurer son client mail pour utiliser son adresse @polytechnique.fr}
+\subsubsection{Configuration de l'ordinateur}
 
+\paragraph{Le domaine Windows, qu'est ce que c'est ?}
+
+\paragraph{Alors, domaine ou pas domaine ?}
+
+\subparagraph{Soit tu choisis de te mettre sur le domaine Windows} et tu vas alors au paragraphe \og Installation simplifiée --- configuration automatique \fg
+
+Avantages :
+\begin{itemize}
+  \item Tous tes logiciels, y compris Windows, sont mis à jour automatiquement par un serveur du BR (ca va plus vite). Tu as toujours les dernières versions et les derniers patches de sécurité.
+  \item Tu as Windows XP Pro fourni gratuitement par le BR
+  \item Tu n'as presque rien à configurer, tout est automatique
+  \item Tu es en principe mieux protégé contre les virus
+  \item Un BRman peut prendre le contrôle de ton ordinateur à distance pour essayer de t'aider si tu as des problèmes
+\end{itemize}
+
+Inconvénients :
+\begin{itemize}
+  \item Un BRman peut prendre le contrôle de ton ordinateur à distance --- mais on te rassure, on s'en fiche complètement si tu as des films d'art et d'essai, c'est juste pour surveiller le réseau (ce qui prend déjà assez de temps). Et puis de toute façon tu es déjà fliqué par Micro\$oft :p
+\end{itemize}
+
+Et bien sûr, tu peux sortir du domaine à tout instant en reprenant ta configuration et en suivant l'installation personnalisée.
+
+\subparagraph{Soit tu choisis de rester indépendant} et tu vas alors au paragraphe \og Installation personnalisée --- configuration manuelle \fg
+
+Avantages :
+\begin{itemize}
+  \item Tu es admin de ton ordinateur.
+\end{itemize}
+
+Inconvénients :
+\begin{itemize}
+  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus, qui fait sauter le réseau, il reviendra peut-ête plus vite pour les autres que pour toi...
+\end{itemize}
+
+\vspace{1ex}
+\fbox{
+  \begin{minipage}{.8\textwidth}
+    \begin{center}
+Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de choisir l'installation simplifiée, sauf si tu maîtrises bien Windows et que tu es sûr de ce que tu fais !
+    \end{center}
+  \end{minipage}
+}
+
+\paragraph{Installation simplifiée --- configuration automatique}\\
+
+Tout d'abord : \textbf{désinstalle tous les antivirus que tu pourrais avoir !}
+
+Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, ouvre \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as :
+\begin{itemize}
+  \item Symantec Antivirus,
+  \item McAfee Antivirus,
+  \item Norton Antivirus,
+  \item tout autre antivirus ou firewall.
+\end{itemize}
+
+Ensuite, tu vas t'inscrire sur le domaine :
+
+\paragraph{Installation personnalisée --- configuration manuelle}\\
+
+Commence par désinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqué dans le paragraphe \og Installation simplifiée --- configuration automatique \fg.
+
+Ensuite, voici les logiciels de sécurité que le BR te propose :
+
+\subparagraph{Configuration antivirus}
+
+\subparagraph{Configuration firewall :}
+
+si tu veux mettre un firewall sur ton ordinateur, ouvre ton explorateur Windows et tape : \url{$\backslash\backslash$enez$\backslash\backslash$firewall} et télécharge puis exécute le fichier \file{ZoneAlarm}.
+
+Lance le programme et ajoute dans firewall -> Zone -> IPRange -> de 129.104.0.0 à 129.104.255.255. avec comme nom : X.
+
+Le firewall te demandera alors une autorisation dès qu'un programme souhaite accéder au réseau.
+
+\subsubsection{Configuration Web (proxy)}
+
+Lance \app{Internet Explorer}. Clique sur \menu{Options Internet} dans le menu \menu{Outils}, puis sur l'onglet \menu{Connexions} de la nouvelle fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la fenêtre. 
+
+\emph{chemin dans les menus à vérifier + screenshot à mettre}
+ 
+Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finaliser ta connexion vers Internet ; tu dois alors avoir quelque chose qui ressemble au screenshot.
+
+Une fois que tu as fait ça, tu n'as plus besoin d'\app{Internet Explorer}, qui est blindé de failles de sécurité et autres portes ouvertes aux logiciels-espions et aux virus. Ce n'est pas une blague, même à l'X les risques ne sont pas nuls. Alors enlève le raccourci de ton bureau et mets à la place \app{Firefox}, disponible sur \xshare ou à l'adresse \url{http://www.mozilla-europe.org/fr/products/firefox/}. Ce n'est pas une garantie ultime --- message subliminal : de toute facon, fais attention à ce que tu fais ;-) --- mais ça limite les risques.
+
+\subsubsection{Configuration Mail}
+
+La DSI met à ta disposition une boîte aux lettres électronique, cette section t'explique comment configurer Outlook Express pour y avoir accès.
+Lance Outlook Express
+Va dans le menu `Outils' -> `Comptes...', 
+Clique sur `Ajouter...' (En haut à droite), choisis `Courrier...', 
+Choisis comme type de messagerie entrante « POP3 » et rentre comme serveur pour courrier entrant et sortant « poly.polytechnique.fr »
+Ensuite, rentre le nom de ton compte sur poly, ton mot de passe, vérifie bien que la case `mémoriser le mot de passe' est cochée.
+Reviens alors sur la fenêtre `Comptes Internet', va sur l'onglet `Courrier', clique sur le compte que tu viens de créer puis sur `Propriétés'. Va sur l'onglet avancé et configure comme suit, en cochant BIEN la seconde case `Ce serveur nécessite une connexion sécurisée (SSL)'
+
+Tu peux désormais recevoir des mails, avec une liaison sécurisée vers Poly pour que personne ne puisse les intercepter.
 
 Si aucun compte n'est déjà configuré, la procédure de création d'un nouveau compte est lancée au démarrage du logiciel, sinon il faut aller dans Outils -> Comptes -> Ajouter (OE) ou Outils -> Paramètres des comptes -> Ajouter un compte (Thunderbird).
 
@@ -19,20 +113,46 @@ Ensuite, tu choisis l'option de serveur « POP » (ou « POP3 », c'est pareil). Dan
 
 Ensuite, le « Nom du compte » (ou « Nom d'utilisateur entrant ») est ton login poly (le même que celui de l'adresse @poly.polytechnique.fr). OE te demandera aussi ton mot de passe, alors que Thunderbird ne te le demandera que lorsque tu utiliseras ton compte pour la première fois. Finalement, il te suffit de rentrer un nom pour ton nouveau compte (ce que tu veux) ou d'appuyer sur « Terminer » pour finir la configuration.
 
+\subsubsection{Configuration News}
 
-\subsubsection{Changer son serveur de courrier sortant sous Thunderbird}
+Lance Outlook Express 
+Va dans ?Outils' puis ?Comptes...'
+Clique sur ?Ajouter...' et choisis ?News...'. 
+Remplis les différents champs te concernant. Quand il te demande le nom du serveur, mets ?frankiz.polytechnique.fr', et vérifie que la case `Connexion à mon serveur de news requise' est décochée. 
+Tu es alors abonné au serveur de news des élèves. Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner ceux qui t'intéressent. Enfin, si tu veux t'ouvrir un peu sur l'extérieur, tu peux aussi t'abonner à Polynews, pour cela, tu rajoutes un autre compte news en effectuant la même démarche, et mets ?polynews.polytechnique.fr' en nom de serveur de news.
 
-
-Si tu as déjà un compte sous Thunderbird, et que tu n'as pas pu changer le serveur d'envoi des messages lors de la configuration, il va falloir le faire manuellement. Pour cela, tu vas dans Outils -> Paramètres des comptes (tu y es déjà si tu viens à peine de finir la configuration). Dans la liste à gauche, tu descends tout en bas et tu choisis « Serveur sortant (SMTP) ». Dans la fenêtre à droite, tu remplaces le contenu de la case « Nom du serveur » par poly.polytechnique.fr. Tu peux maintenant appuyer sur « OK » pour appliquer le changement.
-
-
-\subsubsection{Configurer son client news pour consulter les newsgroups}
 
 
 Comme pour le mail, tu vas dans Outils -> Comptes -> Ajouter (OE) ou Outils -> Paramètres des comptes -> Ajouter un compte (Thunderbird) et tu choisis l'option « News » (ou « Forums de discussion »). Là encore, tu dois rentrer ton nom et ton adresse e-mail.
 
 
 On te demande ensuite le nom du serveur, tu tapes \server{frankiz}. Tu n'as plus qu'à donner un nom au compte ou à appuyer sur « Terminer », tu es déjà connecté sur les BR ! Il ne te reste plus qu'à choisir les forums dont tu veux lire les messages (on te propose de les sélectionner dès la fin de la procédure précédente) ; pour cela, tu peux te fier à leur description dans l'article général sur les BR ou à tes affiliations binets/section/goûts.
+
+\subsubsection{Client FTP}
+
+Le BR te conseille SmartFTP --- \url{http://www.smartftp.com/}
+Pour l'installer, télécharge-le sur ce site ou sur \xshare et double-clique sur l'installateur.
+ 
+Finis l'installation, et tu peux aller sur tous les FTP du réseau avec une facilité et une rapidité déconcertante. 
+
+\subsubsection{Serveur FTP}
+
+Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de partager les différents projets, les films du JTX, ses photos, etc. Donc il est quasiment indispensable que tu installes un serveur FTP.
+
+Un des plus simples et \app{FileZilla}, qui est libre de surcroît. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais il y a un FAQ sur \fkz où tout ca est très bien expliqué !
+
+\subsubsection{Autres logiciels utiles}
+
+\vfill
+
+\pagebreak
+
+{\Huge A prtir d'ici c'est le bordel, ne pas lire !!!
+}
+
+
+
+
 
 
 
@@ -63,13 +183,7 @@ Là, tu as le choix :
 ? INSTALLATION SIMPLIFIEE : Soit tu choisis d'accéder au domaine Windows avec Windows XP PRO (version proposée gratuitement par le BR) afin de te simplifier la vie pour ne pas avoir de problème de virus, de mise à jour, et pour bénéficier de l'assistance rapide du BR : Nous pouvons d'assister à distance pour résoudre tes petits tracas ;  tu peux alors sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 Firewall ». Sache que tu peux toujours sortir du domaine plus tard si tu le désires, et sans aucune conséquence.
 ? INSTALLATION AVANCEE :  Soit tu choisis d'être indépendant, mais tu es responsable des mises à jour régulières de ton système (Windows et Antivirus) ; en particulier un infection de ton ordinateur due à une négligence pourrait te priver de réseau quelques jours?
 
-Tout d'abord : 
-DÉSINSTALLE TES ANTIVIRUS ANTÉRIEURS 
-En utilisant « Panneau de Configuration » puis « Ajout Suppression de Programmes »  désinstalle si tu l'as :
-? Symantec Antivirus
-? McAfee Antivirus
-? Norton Antivirus
-? Ou autre?
+
 
 \paragraph{Installation Simplifiée (Configuration Automatique)}
 
@@ -103,57 +217,7 @@ et double-clique sur le fichier : Symantec .exe
 Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école.
 Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, il sera toujours à jour.
 
-\subparagraph{Configuration FireWall}
 
-Si tu veux mettre un FireWall sur ton ordinateur, dans ton explorateur Windows, tape : 
-\\\\norokarel\\firewall
-et télécharge puis exécute le fichier ZoneAlarm.
-Lance le programme et ajoute dans FireWall -> Zone -> IPRange -> de 129.104.0.0 à 129.104.255.255. avec comme nom : X.
-Le Firewall te demandera alors une autorisation dès qu'un programme souhaite accéder au réseau.
 
-\subsubsection{Configuration Internet}
 
-Lance Internet Explorer. 
-Clique sur les « Options Internet? » qui se situent dans le menu « Outils » puis sur l'onglet « Connexions » de la nouvelle fenêtre. 
-Finalement sur « Paramètres réseau » vers le bas de la fenêtre. 
 
- 
-Vous devez avoir quelque chose qui ressemble à ça. (Reste à remplir le champ « Adresse » pour finaliser ta connexion vers Internet !!!!)  
-
-\subsubsection{Configuration Mail}
-
-La DSI met à ta disposition une boîte aux lettres électronique, cette section t'explique comment configurer Outlook Express pour y avoir accès.
-Lance Outlook Express
-Va dans le menu `Outils' -> `Comptes...', 
-Clique sur `Ajouter...' (En haut à droite), choisis `Courrier...', 
-Choisis comme type de messagerie entrante « POP3 » et rentre comme serveur pour courrier entrant et sortant « poly.polytechnique.fr »
-Ensuite, rentre le nom de ton compte sur poly, ton mot de passe, vérifie bien que la case `mémoriser le mot de passe' est cochée.
-Reviens alors sur la fenêtre `Comptes Internet', va sur l'onglet `Courrier', clique sur le compte que tu viens de créer puis sur `Propriétés'. Va sur l'onglet avancé et configure comme suit, en cochant BIEN la seconde case `Ce serveur nécessite une connexion sécurisée (SSL)'
-
- 
-
-Tu peux désormais recevoir des mails, avec une liaison sécurisée vers Poly pour que personne ne puisse les intercepter.
-
-\subsubsection{Configuration News}
-
-Lance Outlook Express 
-Va dans ?Outils' puis ?Comptes...'
-Clique sur ?Ajouter...' et choisis ?News...'. 
-Remplis les différents champs te concernant. Quand il te demande le nom du serveur, mets ?frankiz.polytechnique.fr', et vérifie que la case `Connexion à mon serveur de news requise' est décochée. 
-Tu es alors abonné au serveur de news des élèves. Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner ceux qui t'intéressent. Enfin, si tu veux t'ouvrir un peu sur l'extérieur, tu peux aussi t'abonner à Polynews, pour cela, tu rajoutes un autre compte news en effectuant la même démarche, et mets ?polynews.polytechnique.fr' en nom de serveur de news.
-
-\subsubsection{Installation du Client FTP}
-
-Le BR te conseille SmartFTP (http://www.smartftp.com/ )
-Rien de plus simple pour l'installation donc télécharge le et double clique sur l'install. 
-Enjoy ! Maintenant tu peux aller sur tous les FTP du réseau avec une facilité et une rapidité déconcertante. 
-
-N'hésite pas à aller faire un tour sur la Faq si tu as des problèmes
-
-\subsubsection{Installation du Serveur FTP}
-
-A l'X tu verras rapidement que tout le monde possède un serveur FTP afin de partager les différents projets, les films du JTX ?
-Il est quasiment indispensable que tu t'installes un serveur : Par exemple CesarFTP, très simple à la configuration, il est assez puissant.
-Mon but n'est pas de te dire comment le configurer mais de t'inciter à le faire !
-
-Va sur les FAQs de frankiz pour plus de précisions !

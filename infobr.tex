@@ -52,13 +52,13 @@
 % pour les images de fond sur les headers
 \newcommand{\bghdr}[1]{
   \leftwatermark{
-    \raisebox{-1.3cm}{
+    \raisebox{-1.5cm}{
       \hspace{-2.4cm}
       \includegraphics{#1}
     }
   }
   \rightwatermark{
-    \raisebox{-1.3cm}{
+    \raisebox{-1.5cm}{
       \hspace{13.2cm}
       \includegraphics{#1}
     }
@@ -150,11 +150,10 @@
 \begin{document}
 
 %\maketitle
-
+\thispagestyle{empty}
 \input{mot_du_prez}
-\pagebreak
 
-\bghdr{fond-br}
+\bghdr{fond-infobr}
 
 \tableofcontents
 
@@ -163,7 +162,7 @@
 \pagebreak
 \input{partie1-config_reseau/partie1}
 
-\bghdr{fond-br}
+\bghdr{fond-infobr}
 
 \pagebreak
 \input{partie2-presentation_reseau/partie2}
