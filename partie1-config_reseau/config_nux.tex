@@ -199,35 +199,43 @@ ou tu remplaces \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sa
 
 \subsubsection{Configuration navigateur web}
 
-Le BR te conseille d'utiliser FireFox, qui est maintenant tout à fait opérationnel. Il est beaucoup plus stable que Konqueror --- le navigateur fourni par défaut avec KDE --- surtout sur les distributions réputées instables. bénéficie d'un pré-chargement pour démarrer plus vite. Par contre Konqueror bénéficie d'un pré-chargement pour démarrer plus vite.
+Le BR te conseille d'utiliser \app{FireFox}, qui est maintenant tout à fait opérationnel. Il est beaucoup plus stable que \app{Konqueror} --- le navigateur fourni par défaut avec KDE --- surtout sur les distributions réputées instables. Par contre \app{Konqueror} bénéficie d'un pré-chargement pour démarrer plus vite.
 
 \image{partie1-config_reseau/nux_proxy_firefox}{0.6}{Configuration du proxy sous FireFox}
 
-Dans tous les cas, la seule configuration à mettre est celle du proxy. À l'adresse \url{http://frankiz/proxy.pac} se trouve un script de configuration automatique du proxy, écrit par le BR. Dans FireFox, il faut aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General} cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{Configuration automatique de proxy} et tu rentres cette URL.
+Dans tous les cas, la seule configuration à mettre est celle du proxy. À l'adresse \url{http://frankiz/proxy.pac} se trouve un script de configuration automatique du proxy, écrit par le BR. Dans \app{FireFox}, il faut aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General} cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{Configuration automatique de proxy} et tu rentres cette URL.
  
 \subsubsection{Configuration mail}
-Le client mail le plus utilisé est kmail, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi par exemple.
-Les serveurs sont:
-Envoi du courrier: poly, pas de SSL (port par défaut, le 25)
-Réception du courrier: poly, SSL. (Type de serveur: POP3; le port, par défaut, est le 995). Tu peux compléter le login et le password qui sont ton login/password poly, fournis par la DSI en ce début d'année.
-Sous Knode, il faut aller dans l'onglet "Extras", et dans le cadre "Encryption" pour cocher uniquement la case "Use SSL".
+
+Le client mail le plus utilisé est \app{Kmail}, mais il en existe bien sûr d'autres comme \app{Thunderbird}.
+
+Utilise les paramètres suivants pour le configurer :
+\begin{description}
+  \item[Envoi du courrier] \server{poly}, pas de SSL et port 25 (port par défaut)
+  \item[Réception du courrier] \server{poly}, SSL, serveur de type POP3 et port 995 (port par défaut).
+  \item[login, password] il t'ont été fournis par la DSI à ton arrivée.
+\end{description}
+
+Sous \app{Knode}, il faut aussi aller dans l'onglet \menu{Extras}, et dans le cadre \menu{Encryption} pour cocher uniquement la case \menu{Use SSL}.
+
+\emph{la, je suis pas sur du tout... celui qui relira peut confirmer cette phrase ? pkoi il parle de Knode ???? mYk.}
 
 \subsubsection{Configuration news}
-Le client news le plus utilisé est knode, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi.
-Sous Knode, c'est dans le menu "Configuration" ("settings"), puis "Configurer Knode".
-Pour accéder aux fora de discussion des élèves, ici appelés par abus de langage "les br", il faudra choisir "frankiz" comme nom de serveur (le port est le port par défaut, le 119). De plus, les fora mondiaux "Usenet" sont accessibles via le serveur "polynews" de la DSI.
-Tu peux y mettre ton identité/signature par défaut pour tous les serveurs auxquels tu t'abonneras (certains élèves hébergent aussi des fora de discussion privés ou non), et chaque serveur peut bénéficier d'une identité particulière, qui peut même être le résultat d'un programme ou d'un script (par exemple pour une signature aléatoire). Les signatures commencent généralement par:
---<espace><retour à la ligne>
-De manière à ce que les "bons" clients news l'interprètent comme telle, la mettant par exemple en grisé et ainsi ils évitent de la recopier lorsque tu réponds à un message.
-Dans l'onglet "Comptes" ou "Accounts", puis l'onglet "News", tu peux choisir le(s) serveur(s) que tu veux consulter.
-Enfin, pour que Knode puisse envoyer des mails, il est bon aussi d'aller dans l'onglet "Comptes" et "Mail", et de mettre le serveur "poly" sur le port "25".
-Il ne te reste plus qu'à t'inscrire sur des fora et à y participer! ... en respectant le binet idoine :)
 
-Pour se connecter à un serveur de news en SSL  sous Knode (par exemple au serveur de polytechnique.org  ssl.polytechnique.org)
-Sous Knode, il y a une petite subtilité puisqu'il ne gère pas le SSL.
-Il faut installer "stunnel" pour mettre une redirection SSL de port ainsi:
-Dans /etc/stunnel.conf ou /etc/stunnel/stunnel.conf (selon la distribution), mettre les lignes suivantes (les trois premières y sont en principe déjà):
+Le client news le plus utilisé est \app{Knode}. Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}.
 
+Sous \app{Knode}, c'est dans le menu \menu{Configuration} (\menu{Settings}), puis \menu{Configurer Knode}. Pour accéder aux newsgroups, il faudra choisir \server{frankiz} comme nom de serveur et le port est le port par défaut, le 119. De plus, les fora mondiaux \ngname{Usenet} sont accessibles via le serveur \server{polynews} de la DSI.
+
+Tu peux mettre ton identité/signature par défaut pour tous les serveurs auxquels tu t'abonneras (certains élèves hébergent aussi des fora de discussion privés ou non), et chaque serveur peut bénéficier d'une identité particulière, qui peut même être le résultat d'un programme ou d'un script (par exemple pour une signature aléatoire). Les signatures commencent généralement par :
+\verb*+-- +\P\ c'est à dire --<espace><retour à la ligne> de manière à ce que les \og bons \fg clients news l'interprètent comme telle, la mettent par exemple en grisé et évitent de la recopier lorsque tu réponds à un message.
+
+
+Dans l'onglet \menu{Comptes} (\menu{Accounts}) et l'onglet \menu{News}, tu peux choisir le(s) serveur(s) que tu veux consulter. Enfin, pour que \app{Knode} puisse envoyer des mails, il est bon aussi d'aller dans l'onglet \menu{Mail}, et de mettre le serveur \server{poly}, port 25.
+
+Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
+
+
+Pour se connecter à un serveur de news en SSL sous \app{Knode} --- par exemple à \server{ssl.polytechnique.org}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer "stunnel" pour mettre une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
@@ -241,11 +249,13 @@ client = yes\\
 \\
 \# sample service-level configuration\\
 \\
-[nntps]\\
+{[}nntps{]}\\
 accept  = 119\\
 connect = ssl.polytechnique.org:563\\
 TIMEOUTclose = 0\\
 }
 
 
-Et tu peux lancer stunnel par « /etc/init.d/stunnel start »
+Et tu peux lancer stunnel par :
+
+\cmdline{/etc/init.d/stunnel start}

@@ -55,26 +55,13 @@
   \end{wrapfigure}
 }
 
-% pour les newsgroups
-\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
-\newcommand{\ngname}[1]{\texttt{\color{DarkGreen}#1}\xspace}
+% texttt : ligne de commande, serveurs
+% textsf : tout les reste : url, email, dossiers
+
+
 % pour les serveurs
-\definecolor{DarkRed}{cmyk}{0.1,0.9,0.8,0.4}
-\newcommand{\server}[1]{\texttt{\color{DarkRed}#1}\xspace}
-% pour les URLs
-\definecolor{Blue}{cmyk}{1.0,0.1,0.1,0.0}
-\newcommand{\url}[1]{\NoAutoSpaceBeforeFDP\texttt{\color{Blue}#1}\AutoSpaceBeforeFDP\xspace}
-% pour les mails
-\definecolor{Blue}{cmyk}{1.0,0.1,0.1,0.0}
-\newcommand{\mail}[1]{\texttt{\color{Blue}#1}\xspace}
-% pour les applications
-\newcommand{\app}[1]{\textsf{#1}\xspace}
-% pour les menus et les elements de menu
-\newcommand{\menu}[1]{\textsf{'#1'}\xspace}
-% pour les repertoires
-\newcommand{\rep}[1]{'#1'\xspace}
-% pour les fichiers
-\newcommand{\file}[1]{'#1'\xspace}
+\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
+\newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
 % pour le ligne de commande
 \definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
 \definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
@@ -90,6 +77,30 @@
   }
   \vspace{4pt}
 }
+
+% pour les URLs
+\definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}
+\newcommand{\url}[1]{\NoAutoSpaceBeforeFDP\textsf{\color{Blue}#1}\AutoSpaceBeforeFDP\xspace}
+% pour les mails
+\definecolor{Blue2}{cmyk}{0.6,0.2,0.0,0.0}
+\newcommand{\mail}[1]{\textsf{\color{Blue}#1}\xspace}
+% pour les newsgroups
+\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
+\newcommand{\ngname}[1]{\textsf{\color{DarkGreen}#1}\xspace}
+
+% pour les applications
+\definecolor{GreenApp}{cmyk}{0.7,0.0,1.0,0.8}
+\newcommand{\app}[1]{\textbf{\color{GreenApp}#1}\xspace}
+% pour les menus et les elements de menu
+\definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}
+\newcommand{\menu}[1]{\textsf{\color{GrayMenu}'#1'}\xspace}
+% pour les repertoires
+\definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}
+\newcommand{\rep}[1]{\textsf{\color{Orange}'#1'}\xspace}
+% pour les fichiers
+\definecolor{DarkOrange}{cmyk}{0.,0.4,1.0,0.4}
+\newcommand{\file}[1]{\textsf{\color{DarkOrange}'#1'}\xspace}
+
 % images des OS
 \newcommand{\nux}{\includegraphics{nux}\xspace}
 \newcommand{\win}{\includegraphics{win}\xspace}
