@@ -2,44 +2,53 @@
 
 \subsection{Configuration sous Mac OS X}
 
-Voici une prsentation des divers logiciels utiles pour utiliser les diffrnets services proposs sur le rseau avec MacOS X (les logiciels non intgrs ˆ MacOS X et cits ici sont quasiment tous tlchargeables sur frankiz : lien Tlcharger -> Mac -> Rseau), ainsi que leur configuration.
+Voici une présentation des divers logiciels utiles pour utiliser les différents services proposés sur le réseau avec MacOS X (les logiciels non intégrés  MacOS X et cités ici sont quasiment tous téléchargeables sur frankiz : lien Télécharger -> Mac -> Réseau), ainsi que leur configuration.
 
 \subsubsection{Configuration IP/DHCP}
 
-Prfrences Rseau, accessible depuis l'article de menu Prfrences SystmeÉ du menu pomme, permet, comme son nom l'indique de configurer la connexion au rseau. Par ailleurs, si au dmarrage un assistant te propose de configurer ton rseau, refuse gentiment et utilise la procdure que le BR te propose.
+\includegraphics[width=0.5in]{partie1-config_reseau/mac_prefs_icone}
+\app{Préférences Réseau}, accessible depuis l'article de menu Préférences Système du menu pomme, permet, comme son nom l'indique de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse gentiment et utilise la procédure que le BR te propose.\\
 
-La gestion des configuration rseau de MacOS X permet de crer plusieurs configurations et de passer en un clic de l'une vers une autre (avec le sous-menu Configuration Rseau du menu pomme) ce qui est trs pratique pour les machines voues ˆ tre connectes ˆ plusieurs rseaux successivement (les portables par exemple). On commencera donc par crer une nouvelle configuration rseau.
+La gestion des configuration réseau de MacOS X permet de créer plusieurs configurations et de passer en un clic de l'une vers une autre (avec le sous-menu Configuration Réseau du menu pomme) ce qui est très pratique pour les machines vouées à être connectées  plusieurs réseaux successivement (les portables par exemple). On commencera donc par créer une nouvelle configuration réseau. \\
 
-\includegraphics{partie1-config_reseau/mac_nouvelle_config}
+\begin{center}
+\includegraphics[width=4in]{partie1-config_reseau/mac_nouvelle_config} \\
+\end{center}
 
-Une fois la nouvelle configuration cre et slectionne, on va configurer l'interface rseau ethernet. Tu trouveras les valeurs des groupes AAA et BBB dans le chapitre [1.1]. Pour avoir accs au web mondial, il faut ensuite rentrer les proxies ˆ utiliser pour y accder. MacOS X 10.3 utilise un script automatique pour paramtrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'tait le cas avec MacOS X 10.2 (dans quel cas il faut mettre kuzh.polytechnique.fr port 8080).
+Une fois la nouvelle configuration créée et sélectionnée, on va configurer l'interface réseau ethernet. Tu trouveras les valeurs des groupes AAA et BBB dans le chapitre [1.1]. Pour avoir accès au web mondial, il faut ensuite rentrer les proxies à utiliser pour y accéder. MacOS X 10.3 utilise un script automatique pour paramétrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'était le cas avec MacOS X 10.2 (dans quel cas il faut mettre kuzh.polytechnique.fr port 8080). \\
 
-\includegraphics{partie1-config_reseau/mac_config_ip}
-
-\includegraphics{partie1-config_reseau/mac_config_proxy}
+\begin{center}
+\includegraphics[width=4in]{partie1-config_reseau/mac_config_ip} \\
+\includegraphics[width=4in]{partie1-config_reseau/mac_config_proxy} \\
+\end{center}
 
 \subsubsection{Configuration Web}
 
-Safari, le navigateur web d'Apple est maintenant entirement oprationnel.
-Un conseil : pense ˆ activer le blocage des fentres popup (dans le menu Safari) et la navigation par onglets (dans les Prfrences -> Onglets).
-Certains lui prfrent OmniWeb, Camino ou FireFox, ˆ toi de choisir.
+\includegraphics[width=0.5in]{partie1-config_reseau/mac_safari_icone}
+\app{Safari}, le navigateur web d'Apple est maintenant entièrement opérationnel.
+Un conseil : pense à activer le blocage des fenêtres popup (dans le menu Safari) et la navigation par onglets (dans les Préférences -> Onglets).
+Certains lui préfèrent OmniWeb, Camino ou FireFox,  toi de choisir.
 
 \subsubsection{Configuration Mail}
 
-MailÉ un client mail. Contient un filtre antispam baysien qui est capable d'apprendre quels types de mails sont du spam. Il sait aussi regrouper les mails correspondant ˆ une mme discussion.
+\includegraphics[width=0.5in]{partie1-config_reseau/mac_mail_icone}
+\app{Mail} : un client mail. Contient un filtre antispam bayésien qui est capable d'apprendre quels types de mails sont du spam. Il sait aussi regrouper les mails correspondant  une même discussion. \\
 
-Au premier lancement, Mail te demandera de remplir les informations concernant ton compte mail sur poly, il suffit de le remplir comme indiqu sur la premire image. Si tu as djˆ cr un compte prcdemment, il faut aller dans les prfrences, onglet Comptes (accessible depuis le menu Mail), crer un autre compte est remplir comme dans la deuxime image.
+Au premier lancement, Mail te demandera de remplir les informations concernant ton compte mail sur poly, il suffit de le remplir comme indiqué sur la première image. Si tu as déjà créé un compte précédemment, il faut aller dans les préférences, onglet Comptes (accessible depuis le menu Mail), créer un autre compte et remplir comme dans la deuxième image. \\
 
-\includegraphics{partie1-config_reseau/mac_mail_config}
+\begin{center}
+\includegraphics[width=4in]{partie1-config_reseau/mac_mail_config} \\
+\includegraphics[width=4in]{partie1-config_reseau/mac_mail_description} \\
+\end{center}
 
-\includegraphics{partie1-config_reseau/mac_mail_description}
+Dans les deux cas il faut aussi activer le cryptage SSL (sinon, ça ne marchera pas) : \\
 
-Dans les deux cas il faut aussi activer le cryptage SSL (sinon, a ne marchera pas) :
+\begin{center}
+\includegraphics[width=4in]{partie1-config_reseau/mac_mail_ssl} \\
+\end{center}
 
-\includegraphics{partie1-config_reseau/mac_mail_ssl}
-
-Cette configuration marche pour accder ˆ ses mails depuis l'intrieur de l'X mais aussi de l'extrieur, sans rien changer.
+Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer.
 
 \subsubsection{Configuration News}
 
-Application restant ˆ dfinir...
+Application restant à définir...
