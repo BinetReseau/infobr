@@ -29,36 +29,35 @@ Il n'y a plus qu'à remplir les différents champs comme sur le screenshot ci-dess
 
 \subsubsection{Le domaine Windows}
 
-\paragraph{Qu'est ce que c'est ?}Le domaine Windows est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. Notamment, il installe et configure tout seul l'antivirus et le firewall ; il effectue automatiquement les mises à jour de Windows Update. Il met aussi l'ordinateur à l'heure, etc.
+\paragraph{Qu'est ce que c'est ?}Le domaine Windows est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. En fait, c'est un outil d'administration, conçu par exemple pour des entreprises où un service informatique doit gérer de nombreuses machines ; il permet d'appliquer des modifications de configuration à toutes les machines du domaine directement depuis un serveur. Le BR possède un serveur dédié au domaine, \server{enez}.
 
-En fait, c'est un outil d'administration, conçu par exemple pour des entreprises où un service informatique doit gérer de nombreuses machines ; il permet d'appliquer des modifications de configuration à toutes les machines du domaine directement depuis le serveur de domaine. Le BR possède un serveur dédié au domaine Windows, \server{enez}.
+Le domaine Windows met à jour automatiquement Windows et l'antivirus à partir d'\server{enez} (très rapide !). Il configure le firewall Windows, mais il est toujours possible de le désactiver si on préfère un autre firewall. Enfin il permet le SMS : un système d'assistance à distance et d'installation de logiciels tiers intégré à Windows. En gros, c'est un X-Share dans \menu{Ajout/Suppression de programmes} : un clic \menu{Installer} et c'est tout !
 
 \paragraph{Alors, domaine ou pas domaine ?}
-
 \subparagraph{Soit tu choisis de te mettre sur le domaine Windows} et tu vas alors au paragraphe \og Installation simplifiée --- configuration automatique \fg
 
-Avantages :
+\textbf{Avantages :}
 \begin{itemize}
-  \item Windows est mis à jour automatiquement par \server{enez}. Tu as toujours la dernière version, les derniers patches de sécurité et un antivirus à jour. Donc tu es en principe mieux protégé contre les virus.
+  \item Windows est mis à jour automatiquement ; tu as toujours les derniers patches de sécurité et un antivirus à jour. Donc tu es mieux protégé contre les virus.
   \item Mais surtout, tu n'as plus à t'en occuper, presque tout est automatique.
 \end{itemize}
 
-Inconvénients :
+\textbf{Inconvénients :}
 \begin{itemize}
-  \item Tu délègues une partie des droits d'administration de ta machine au BR (tout ce qui concerne la sécurité du réseau en particulier). Ce n'est donc plus toi qui gères cette partie, mais si tu ne sais pas le faire, c'est plutôt un avantage de laisser le BR le faire à ta place.
-  \item Cette option n'est disponible que pour Windows 2000, Windows XP Pro ou Windows Server 2003.
+  \item Tu délègues une partie des droits d'administration de ta machine au BR (tout ce qui concerne la sécurité du réseau en particulier). Cependant, si tu ne sais pas le faire, c'est plutôt un avantage de laisser le BR s'en occuper à ta place.
+  \item Cela ne marche qu'avec Windows 2000, Windows XP Pro ou Windows Server 2003.
 \end{itemize}
 
 Bien sûr, tu peux sortir du domaine à tout instant en reprenant ta configuration et en suivant l'installation personnalisée.
 
 \subparagraph{Soit tu choisis de configurer toi-même ton ordinateur} et tu vas alors au paragraphe \og Installation personnalisée --- configuration manuelle \fg
 
-Avantages :
+\textbf{Avantages :}
 \begin{itemize}
   \item Tu es responsable de ton ordinateur. Si ta machine est toujours mise à jour et que tu n'attrapes aucun virus sans être sur le domaine, tant mieux pour toi.
 \end{itemize}
 
-Inconvénients :
+\textbf{Inconvénients :}
 \begin{itemize}
   \item Tu es responsable de ton ordinateur. Si ta machine devient un foyer pour virus, sache que nous avons les moyens de l'isoler pour éviter toute propagation.
   \item Si tu ne maîtrises pas le firewall, l'antivirus et autres Windows Update, ça ne sert à rien d'envisager cette solution.
