@@ -99,25 +99,19 @@ Mot de Passe	jone.2003
 
 Commence par désinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqué dans le paragraphe \og Installation simplifiée --- configuration automatique \fg.
 
-Ensuite, voici les logiciels de sécurité que le BR te propose :
-
-\subparagraph{Configuration antivirus}
-
-alors là on rigole plus ! Quand la sécurité du réseau est en jeu, on prend cinq minutes pour configurer proprement le bordel !
+\subparagraph{Configuration antivirus} Installe l'antivirus que le BR te propose. Et là on rigole plus ! Quand la sécurité du réseau est en jeu, on prend cinq minutes pour configurer proprement le bordel !
 
 Ouvre ton explorateur Windows et tape : 
 \url{$\backslash\backslash$enez$\backslash$antivirus}
 et double-clique sur le fichier \file{symantec.exe}
 
-Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école. Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, il sera toujours à jour.
+Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école. Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, normalement il sera toujours à jour.
 
-\subparagraph{Configuration firewall :}
+\subparagraph{Configuration firewall}
 
-si tu veux mettre un firewall sur ton ordinateur, ouvre ton explorateur Windows et tape : \url{$\backslash\backslash$enez$\backslash$firewall} et télécharge puis exécute le fichier \file{ZoneAlarm}.
+Si tu as Windows XP avec le SP1, tu dois activer manuellement ton firewall. Si tu as le SP2, il est activé tout seul et tu dois ouvrir le port 21 pour rendre ton FTP accessible et les ports 5050 à 5053 pour \app{qRezix}.
 
-Lance le programme et ajoute dans firewall -> Zone -> IPRange -> de 129.104.0.0 à 129.104.255.255. avec comme nom : X.
-
-Le firewall te demandera alors une autorisation dès qu'un programme souhaite accéder au réseau.
+Si ta version de Windows n'a pas de firewall, tu peux télécharger \app{ZoneAlarm} sur le web ou sur \xshare et le configurer.
 
 \subsubsection{Configuration web (proxy)}
 
@@ -131,41 +125,49 @@ Une fois que tu as fait ça, tu n'as plus besoin d'\app{Internet Explorer}, qui e
 
 \subsubsection{Configuration mail}
 
-La DSI met à ta disposition une boîte aux lettres électronique, cette section t'explique comment configurer Outlook Express pour y avoir accès.
-Lance Outlook Express
-Va dans le menu `Outils' -> `Comptes...', 
-Clique sur `Ajouter...' (En haut à droite), choisis `Courrier...', 
-Choisis comme type de messagerie entrante « POP3 » et rentre comme serveur pour courrier entrant et sortant « poly.polytechnique.fr »
-Ensuite, rentre le nom de ton compte sur poly, ton mot de passe, vérifie bien que la case `mémoriser le mot de passe' est cochée.
-Reviens alors sur la fenêtre `Comptes Internet', va sur l'onglet `Courrier', clique sur le compte que tu viens de créer puis sur `Propriétés'. Va sur l'onglet avancé et configure comme suit, en cochant BIEN la seconde case `Ce serveur nécessite une connexion sécurisée (SSL)'
+La DSI met à ta disposition une boîte aux lettres électroniques sur le serveur \server{poly} ; cette section t'explique comment configurer \app{Outlook Express} pour y avoir accès. Tu peux bien sûr utiliser \app{Thunderbird} si tu préfères, les données à rentrer pour la configuration sont les mêmes ; quelques détails sont donnés dans la FAQ sur \fkz.
 
-Tu peux désormais recevoir des mails, avec une liaison sécurisée vers Poly pour que personne ne puisse les intercepter.
+Lance \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite, \menu{Courrier\ldots}.
 
-Si aucun compte n'est déjà configuré, la procédure de création d'un nouveau compte est lancée au démarrage du logiciel, sinon il faut aller dans Outils -> Comptes -> Ajouter (OE) ou Outils -> Paramètres des comptes -> Ajouter un compte (Thunderbird).
+Remplis les écrans de configuration suivants avec ces données :
 
+\begin{description}
+  \item[Nom complet] ton nom !
+  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.fr}
+  \item[Type de serveur de messagerie pour le courrier entrant] \menu{POP3}
+  \item[Serveur de messagerie pour le courrier entrant (POP3)] \server{poly.polytechnique.fr}
+  \item[Serveur de messagerie pour le courrier sortant (SMTP)] \server{poly.polytechnique.fr}
+  \item[Nom du compte] ton login \server{poly} (les huit premières lettres de ton nom en général)
+  \item[Mot de passe] ton mot de passe \server{poly} ; vérifie bien que la case \menu{Mémoriser le mot de passe} est cochée.
+\end{description}
 
-Choisir l'option « Courrier » (ou « Courrier électronique »). Le logiciel demande ensuite ton nom et ton adresse (au choix prenom.nom@polytechnique.fr ou login@poly.polytechnique.fr).
+Voilà, clique sur \menu{Continuer}, \menu{Terminer} et c'est bon.
 
+Tu te retrouves alors sur la fenêtre \menu{Comptes Internet}. Va sur l'onglet \menu{Courrier}, clique sur le compte que tu viens de créer puis sur \menu{Propriétés}. Clique sur l'onglet \menu{Avancé} et configure comme sur le screenshor suivant ; en particulier, coche la seconde case \menu{Ce serveur nécessite une connexion sécurisée (SSL)}.
 
-Ensuite, tu choisis l'option de serveur « POP » (ou « POP3 », c'est pareil). Dans la case « Serveur de courrier entrant » (ou « Serveur de réception »), tu tapes poly.polytechnique.fr, idem pour « Serveur de courrier sortant » (Thunderbird peut ne pas proposer l'option si tu as un autre compte, auquel cas il faut aller le remplacer manuellement).
+\imagepos{partie1-config_reseau/win_config_mail_avance}{0.6}{Configuration avancée des serveurs mail}{!h}
 
-
-Ensuite, le « Nom du compte » (ou « Nom d'utilisateur entrant ») est ton login poly (le même que celui de l'adresse @poly.polytechnique.fr). OE te demandera aussi ton mot de passe, alors que Thunderbird ne te le demandera que lorsque tu utiliseras ton compte pour la première fois. Finalement, il te suffit de rentrer un nom pour ton nouveau compte (ce que tu veux) ou d'appuyer sur « Terminer » pour finir la configuration.
+Comme ca, tu peux désormais recevoir des mails, avec une liaison sécurisée vers \menu{poly} pour que personne ne puisse les intercepter.
 
 \subsubsection{Configuration news}
 
-Lance Outlook Express 
-Va dans ?Outils' puis ?Comptes...'
-Clique sur ?Ajouter...' et choisis ?News...'. 
-Remplis les différents champs te concernant. Quand il te demande le nom du serveur, mets ?frankiz.polytechnique.fr', et vérifie que la case `Connexion à mon serveur de news requise' est décochée. 
-Tu es alors abonné au serveur de news des élèves. Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner ceux qui t'intéressent. Enfin, si tu veux t'ouvrir un peu sur l'extérieur, tu peux aussi t'abonner à Polynews, pour cela, tu rajoutes un autre compte news en effectuant la même démarche, et mets ?polynews.polytechnique.fr' en nom de serveur de news.
+Comme pour les mail, ca se passe dans \app{Outlook Express}, mais \app{Thunderbird} offre une solution alternative tout à fait convenable.
 
+Lance \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite, \menu{News\ldots}.
 
+Remplis les écrans de configuration suivants avec ces données :
 
-Comme pour le mail, tu vas dans Outils -> Comptes -> Ajouter (OE) ou Outils -> Paramètres des comptes -> Ajouter un compte (Thunderbird) et tu choisis l'option « News » (ou « Forums de discussion »). Là encore, tu dois rentrer ton nom et ton adresse e-mail.
+\begin{description}
+  \item[Nom complet] ton nom !
+  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.fr}
+  \item[Serveur de news (NNTP)] \fkz ; vérifie à ce moment que la case \menu{Connexion à mon serveur de news requise} n'est pas cochée. 
+\end{description}
 
+Voilà, clique sur \menu{Continuer}, \menu{Terminer} et tu es abonné au serveur news des élèves.
 
-On te demande ensuite le nom du serveur, tu tapes \server{frankiz}. Tu n'as plus qu'à donner un nom au compte ou à appuyer sur « Terminer », tu es déjà connecté sur les BR ! Il ne te reste plus qu'à choisir les forums dont tu veux lire les messages (on te propose de les sélectionner dès la fin de la procédure précédente) ; pour cela, tu peux te fier à leur description dans l'article général sur les BR ou à tes affiliations binets/section/goûts.
+Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner ceux qui t'intéressent. Reporte-toi à la page \pageref{newsgroups} pour plus d'infos sur les newsgroups auquels t'abonner !
+
+Si tu veux t'inscrire à d'autres serveurs news, refais cette procédure en rentrant le nom du serveur qui t'intéresse à la place de \fkz, par exermple \server{polynews.polytechnique.fr} pour les news externes.
 
 \subsubsection{Configuration FTP}
 
