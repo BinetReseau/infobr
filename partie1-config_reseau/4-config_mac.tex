@@ -2,20 +2,20 @@
 
 \subsection{Configuration sous Mac OS X}
 
-Voici une présentation des divers logiciels utiles pour utiliser les différents services proposés sur le réseau avec MacOS X (les logiciels non intégrés  MacOS X et cités ici sont quasiment tous téléchargeables sur frankiz : lien Télécharger -> Mac -> Réseau), ainsi que leur configuration.
+Voici une présentation des divers logiciels utiles pour utiliser les différents services proposés sur le réseau avec Mac OS X, ainsi que leur configuration. Les logiciels non intégrés à Mac OS X et cités ici sont quasiment tous téléchargeables sur \server{frankiz} : rubrique Télécharger -> Mac -> Réseau.
 
 \subsubsection{Configuration IP/DHCP}
 
-\includegraphics[width=0.5in]{partie1-config_reseau/mac_prefs_icone}
-\app{Préférences Réseau}, accessible depuis l'article de menu Préférences Système du menu pomme, permet, comme son nom l'indique de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse gentiment et utilise la procédure que le BR te propose.\\
+\includegraphics[width=0.4in]{partie1-config_reseau/mac_prefs_icone}
+\app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du menu Pomme, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse gentiment et utilise la procédure que le BR te propose.
 
-La gestion des configuration réseau de MacOS X permet de créer plusieurs configurations et de passer en un clic de l'une vers une autre (avec le sous-menu Configuration Réseau du menu pomme) ce qui est très pratique pour les machines vouées à être connectées  plusieurs réseaux successivement (les portables par exemple). On commencera donc par créer une nouvelle configuration réseau. \\
+La gestion des configuration réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une vers une autre avec le sous-menu \menu{Configuration Réseau} du menu Pomme, ce qui est très pratique pour les machines vouées à être connectées  plusieurs réseaux successivement --- les portables par exemple. On commencera donc par créer une nouvelle configuration réseau.
 
 \begin{center}
 \includegraphics[width=4in]{partie1-config_reseau/mac_nouvelle_config} \\
 \end{center}
 
-Une fois la nouvelle configuration créée et sélectionnée, on va configurer l'interface réseau ethernet. Tu trouveras les valeurs des groupes AAA et BBB dans le chapitre [1.1]. Pour avoir accès au web mondial, il faut ensuite rentrer les proxies à utiliser pour y accéder. MacOS X 10.3 utilise un script automatique pour paramétrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'était le cas avec MacOS X 10.2 (dans quel cas il faut mettre kuzh.polytechnique.fr port 8080). \\
+Une fois la nouvelle configuration créée et sélectionnée, on va configurer l'interface réseau ethernet. Tu trouveras les valeurs nécessaires à la configuration IP en page \pageref{calcul_ip}. Pour avoir accès à Internet, il faut configurer le proxy. MacOS X 10.3 utilise un script automatique pour paramétrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'était le cas avec MacOS X 10.2 ; dans ce cas il faut mettre kuzh.polytechnique.fr port 8080).
 
 \begin{center}
 \includegraphics[width=4in]{partie1-config_reseau/mac_config_ip} \\
@@ -26,35 +26,36 @@ Une fois la nouvelle configuration créée et sélectionnée, on va configurer l'int
 
 \includegraphics[width=0.5in]{partie1-config_reseau/mac_safari_icone}
 \app{Safari}, le navigateur web d'Apple est maintenant entièrement opérationnel.
-Un conseil : pense à activer le blocage des fenêtres popup (dans le menu Safari) et la navigation par onglets (dans les Préférences -> Onglets).
-Certains lui préfèrent OmniWeb, Camino ou FireFox,  toi de choisir.
+Un conseil : pense à activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}) et la navigation par onglets (dans les \menu{Préférences -> Onglets}).
 
 \subsubsection{Configuration Mail}
 
-\includegraphics[width=0.5in]{partie1-config_reseau/mac_mail_icone}
-\app{Mail} : un client mail. Contient un filtre antispam bayésien qui est capable d'apprendre quels types de mails sont du spam. Il sait aussi regrouper les mails correspondant  une même discussion. \\
+\includegraphics[width=0.4in]{partie1-config_reseau/mac_mail_icone}
+\app{Mail} : un client mail, offrant les fonctionnalités classiques d'un bon client : filtre antispam, regroupement des mails correspondant à une même discussion.
 
-Au premier lancement, Mail te demandera de remplir les informations concernant ton compte mail sur poly, il suffit de le remplir comme indiqué sur la première image. Si tu as déjà créé un compte précédemment, il faut aller dans les préférences, onglet Comptes (accessible depuis le menu Mail), créer un autre compte et remplir comme dans la deuxième image. \\
+Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur poly, il suffit de le remplir avec les données suivantes :
 
-\begin{center}
-\includegraphics[width=4in]{partie1-config_reseau/mac_mail_config} \\
-\includegraphics[width=4in]{partie1-config_reseau/mac_mail_description} \\
-\end{center}
+\begin{description}
+  \item[Nom complet] ton nom ! 
+  \item[Adresse électronique] prenom.nom@polytechnique.fr
+  \item[Serveur de réception] \server{poly.polytechnique.fr}
+  \item[Type de compte] POP
+  \item[Nom d'utilisateur] ton login poly (les huit premières lettres de ton nom en général)
+  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr}
+\end{description}
 
-Dans les deux cas il faut aussi activer le cryptage SSL (sinon, ça ne marchera pas) : \\
+Si tu as déjà créé un compte précédemment, il faut aller dans les Préférences, onglet Comptes (accessible depuis le menu \menu{Mail}), créer un autre compte en cliquant sur la case '+' et le remplir de la même manière.
 
-\begin{center}
-\includegraphics[width=4in]{partie1-config_reseau/mac_mail_ssl} \\
-\end{center}
+Enfin dans les deux cas, cocher la case \menu{Activer le cryptage SSL} dans l'onglet \menu{Avancé}, port 995.
 
-Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer.
+Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer. Par contre depuis l'extérieur tu ne peux pas envoyer de mails.
 
 \subsubsection{Configuration News}
 
 \includegraphics[width=0.5in]{partie1-config_reseau/mac_mt_icone}
-\app{MT-NewsWatcher} : un client news permettant d'accéder aux forums de discussion de frankiz (mais aussi de usenet grâce au serveur polynews.polytechnique.fr). Dans la même catégorie, tu préféreras peut-être utiliser Unison (attention c'est un shareware) ou Thunderbird qui est le client mail/news distribué par mozilla. La configuration reste la même. \\
+\app{MT-NewsWatcher} : un client news permettant d'accéder aux forums de discussion de \server{frankiz} (mais aussi de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}). Dans la même catégorie, tu préféreras peut-être Thunderbird qui est le client mail/news distribué par Mozilla, très proche d'Outlook Express dans son esprit. La configuration se fait de la même manière.
 
-Au premier lancement, l'application affiche un message de bienvenue et t'invite à configurer ton client.\\
+Au premier lancement, l'application affiche un message de bienvenue et t'invite à configurer ton client.
 
 \begin{center}
 \includegraphics[width=4in]{partie1-config_reseau/mac_mt_bienvenue} \\
@@ -69,7 +70,7 @@ Une fois ceci effectué tu peux commencer à sélectionner les forums de discussion
 \includegraphics[width=2in]{partie1-config_reseau/mac_mt_liste} \\
 \end{center}
 
-Tu peux ensuite enregistrer le profil "sans titre" dans le menu \menu{Fichier->Enregistrer} et le sauvegarder sous le nom "News Frankiz" où tu veux (dans un dossier MT-NewsWatcher dans \rep{~/Documents} par exemple, où \rep{~} correspond à ton dossier utilisateur).\\ \\
+Tu peux ensuite enregistrer le profil "sans titre" dans le menu \menu{Fichier->Enregistrer} et le sauvegarder sous le nom "News Frankiz" où tu veux (dans un dossier MT-NewsWatcher dans \rep{$\sim$/Documents} par exemple, où \rep{$\sim$} correspond à ton dossier utilisateur).\\ \\
 Pour écrire un post sur un des forum, choisir Nouvel article dans le menu Nouvelles.\\
 Pour passer d'un article à un autre dans une enfilade ou entre les enfilades, il suffit d'appuyer sur espace.\\ \\
 Tu peux ajouter des serveurs en sélectionnant Serveurs de nouvelles... dans le menu Spécial et ramnener la liste des forums de discussion de ce serveur le sélectionnant dans le menu \menu{Fenêtres->Afficher la liste de tous les groupes}. \\ \\
@@ -79,27 +80,32 @@ Enfin, si tu veux éviter le profil que tu viens de sauvegarder à chaque démarrag
 \includegraphics[width=4in]{partie1-config_reseau/mac_mt_prefs} \\
 \end{center}
 
- \subsubsection{Configuration Ftp}
+ \subsubsection{Configuration FTP}
  
- \includegraphics[width=0.5in]{partie1-config_reseau/mac_cyberduck_icone}
-\app{Cyberduck} : un client ftp très simple d'utilisant mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs ftp des autres élèves. Dans la même catégorie, il existe aussi Transmit (shareware) qui dispose de plus de fonctionnalités. \\ \\
-La configuration ne pose aucun problème puisqu'il n'y rien à faire. Pour se connecter à un serveur, il suffit de taper son nom (exmple : gwennoz) dans le cadre "Connexion rapide" et appuyer sur entrée. Tu pourras ensuite naviguer sur le serveur et télécharger ou transférer des fichiers. Attention, certains serveurs (intentionnellement) mal configurés ne permettent qu'une connection à la fois. Or, le téléchargement d'un fichier demande l'ouverture d'une nouvelle connection. Il faut donc se déconnecter (bouton "Déconnecter") puis lancer le téléchargement en double-cliquant sur le fichier : \\
+\includegraphics[width=0.5in]{partie1-config_reseau/mac_cyberduck_icone}
+\app{Cyberduck} : un client FTP très simple à utiliser mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs FTP des autres élèves. Dans la même catégorie, il existe aussi Transmit (shareware) qui dispose de plus de fonctionnalités.
+
+La configuration ne pose aucun problème puisqu'il n'y rien à faire. Pour se connecter à un serveur, il suffit de taper son nom (exmple : \server{gwennoz}) dans le cadre \menu{Connexion rapide} et appuyer sur Entrée. Tu pourras ensuite naviguer sur le serveur et télécharger ou transférer des fichiers. Attention, certains serveurs (intentionnellement) configurés spécialement ne permettent qu'une connection à la fois. Or, le téléchargement d'un fichier demande l'ouverture d'une nouvelle connection. Il faut donc se déconnecter (bouton \menu{Déconnecter}) puis lancer le téléchargement en double-cliquant sur le fichier :
 
 \begin{center}
 \includegraphics[width=4in]{partie1-config_reseau/mac_cyberduck_connection} \\
 \end{center}
 
-Les signets de permettent de sauvegarder les serveurs sur lesquels tu te connectes souvent. \\
+Les signets de permettent de sauvegarder les serveurs sur lesquels tu te connectes souvent. Enfin, tu peux éditer des fichiers textes directement en FTP si tu as aussi \app{SubEthaEdit}, ce qui est très commode pour modifier un site web.
+
 
 \subsubsection{Autres logiciels}
 
 Voici plusieurs logiciels que tu voudras sûrement télécharger pour profiter au maximum des possibilités du réseau.\\
 
 \includegraphics[width=0.5in]{partie1-config_reseau/mac_qrezix_icone}
-\app{qRézix} permet de chater avec les x connectés, de savoir s'ils ont un serveur FTP ou Web auquel on peut se connecter. Il dispose aussi d'un moteur de recherche et de téléchargement pour récupérer des fichiers sur les serveurs FTP activés. \\
+\app{qRezix} : voir la page consacrée à qRezix.
+
 \includegraphics[width=0.5in]{partie1-config_reseau/mac_cocoaxnet_icone}
-\app{CocoaXNet} est un équivalent de qRézix moins complet (ne dipose pas de moteur de recherche). \\
+\app{CocoaXNet} est un équivalent de qRezix moins complet --- il ne dipose pas de moteur de recherche --- mais mieux intégré à Mac OS X.
+
 \includegraphics[width=0.5in]{partie1-config_reseau/mac_pureftpd_icone}
-\app{PureFTPd Manager} est une interface graphique qui te permet de configurer aisément un serveur FTP sur ta machine. Il en existe aussi un intégrer à Mac OS X mais celui-ci dispose de plus de foncionnalités. \\
+\app{PureFTPd Manager} est une interface graphique qui te permet de configurer aisément un serveur FTP sur ta machine.
+
 \includegraphics[width=0.5in]{partie1-config_reseau/mac_conversation_icone}
-\app{Conversation}, un client IRC dans le même esprit qu'iChat. Dispose d'une interface très simple ne nécessitant pas de connaître les commandes irc. \\
+\app{Conversation}, un client IRC dans le même esprit qu'iChat. Dispose d'une interface très simple ne nécessitant pas de connaître les commandes IRC.
