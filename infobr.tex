@@ -1,0 +1,42 @@
+%$Id$
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\AddThinSpaceBeforeFootnotes
+\FrenchFootnotes
+\usepackage{xspace}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{pdfsync}
+
+\title{InfoBR 2k3}
+\author{BR 2k3}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\input{mot_du_prez}
+
+\pagebreak
+\tableofcontents
+
+\pagebreak
+\input{partie1-config_reseau/partie1}
+
+\input{partie2-presentation_reseau/partie2}
+
+\input{partie3-reference_rapide/partie3}
+
+\pagebreak
+\input{conclusion}
+
+\end{document} 
