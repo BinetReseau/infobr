@@ -2,12 +2,14 @@ $Id$
 
 Principes d'édition de l'infoBR 2k3 :
 
-Pour faciliter le travail sur la CVS on n'y mettra que des fichiers en texte brut et des images. Si vous voulez formater votre fichier, utilisez les commandes LaTeX. A défaut, signalez les images pas <<nom_de_l_image.png>>. Mettez les images en png
+Pour faciliter le travail sur la CVS on n'y mettra que des fichiers en texte brut et des images. Si vous voulez formater votre fichier, utilisez les commandes LaTeX. A défaut, signalez les images pas <<nom_de_l_image.png>>. Mettez les images en png ou en pdf.
 
-Un architecture de dossiers est créée ; elle correspond au plan proposé par Fruneau (cf. fichier Plan_Fruneau).
+Un architecture de dossiers est créée ; elle correspond à peu de choses près au plan proposé par Fruneau (cf. fichier Plan_Fruneau).
 
 Dans le dossier d'une partie peuvent se trouver l'introduction et la conclusion de la partie ainsi que les dossiers des sous-parties.
 
 Dans le dossier d'une sous-partie se trouvent le texte de la sous-partie et les images à insérer dans le texte.
 
-Le fichier global sera compilé à l'aide d'includes, il se trouve à la racine.
+Le fichier global sera compilé à l'aide d'includes, il se trouve à la racine et se nomme infobr.tex.
+
+N'hésitez pas à contribuer !!
