@@ -18,12 +18,17 @@ Il s'agit de remplacer le $AAA$ ; le sous-réseau correspond en gros à ton étage 
 
 Regarde sur ta prise réseau et note les deux premiers caractères --- exemple : $A0$. Il suffit alors d'utiliser la table de correspondance suivante pour trouver le $AAA$ :
 
+\begin{figure}[!h]
+    \begin{center}
 \begin{tabular}{cccc}
 $A0 \Rightarrow 205$ & $A1 \Rightarrow 206$ & $A2 \Rightarrow 207$ & $A3 \Rightarrow 208$ \\
 $B0 \Rightarrow 215$ & $B1 \Rightarrow 216$ & $B2 \Rightarrow 217$ & $B3 \Rightarrow 218$ \\
 $C0 \Rightarrow 209$ & $C1 \Rightarrow 210$ & $C2 \Rightarrow 211$ & $C3 \Rightarrow 212$ \\
 $D0 \Rightarrow 219$ & $D1 \Rightarrow 220$ & $D2 \Rightarrow 221$ & $D3 \Rightarrow 222$ \\
 \end{tabular}
+    \caption{Correspondance prise - sous-réseau}
+    \end{center}
+\end{figure}
 
 \item Pour le PEM
 
@@ -31,7 +36,11 @@ C'est simple $AAA=214$ !
 
 \item Pour le BEM
 
-Si tu es au bâtiment A, alors $AAA=203$ ; si tu es au bâtiment D, alors $AAA=204$.
+\begin{itemize}
+  \item si tu es au bâtiment A, alors $AAA=203$.
+  \item si tu es au bâtiment D, alors $AAA=204$.
+\end{itemize}
+
 
 \end{itemize}
 
