@@ -11,7 +11,7 @@ Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
 
 Si tu n'as jamais fait de configuration réseau sur ta Gentoo, il faudra certainement créer les fichiers qui suivent.
 
-Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer \file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
+Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer \file{/etc/hostname} avec ton éditeur préféré (\app{vi} ou \app{vim}, \app{pico}, voire \app{emacs} si tu aimes), mais la commande ci-dessous est suffisante :
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
@@ -20,17 +20,17 @@ Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La prem
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
 
-Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage:
+Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage :
 
 \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255\\
                             netmask 255.255.255.0"\\
                             gateway="eth0/129.104.AAA.13"}
 
-Tu fais le grand test en rechargeant ta configuration réseau par:
+Tu fais le grand test en rechargeant ta configuration réseau par :
 
 \cmdline{/etc/init.d/net.eth0 restart}
 
-puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme:
+puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme :
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
@@ -47,24 +47,21 @@ Et si tu n'utilises pas le miroir rsync du BR :
 \cmdline{export SYNC=rsync://rsync/gentoo-portage}
 
 
-
-
 \paragraph{Sous Debian}
 
 Lors de l'installation d'une nouvelle Debian, le programme d'installation te propose logiquement de rentrer ces informations de manière interactive ; sinon, il est toujours possible de les modifier ainsi :
 
 Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer 
-\file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
+\file{/etc/hostname} avec ton éditeur préféré (\app{vi} ou \app{vim}, \app{pico}, voire \app{emacs} si tu aimes), mais la commande ci-dessous est suffisante:
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
-
 
 Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \url{frankiz} ou \url{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
 
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
 
-Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :op), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous réseau (ton étage), et la passerelle pour sortir de ton étage :
+Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :) ), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage :
 
 \cmdline{auto lo\\
 iface lo inet loopback\\
@@ -94,7 +91,7 @@ Une dernière chose spécifique à Debian, pour pouvoir utiliser 'apt-get' et 'apt-
 \cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
 
 Attention, le apt.conf ne gère pas le protocole ftp via le proxy http.
-Pour utiliser des ftp:// dans ton /etc/apt/sources.list, il faut rajouter  
+Pour utiliser des \url{ftp:// }dans ton \file{/etc/apt/sources.list}, il faut rajouter :
 
 \cmdline{ftp\_proxy = http://kuzh:8080}
 
@@ -114,7 +111,7 @@ Il existe dans ces distributions une interface graphique pour configurer le rése
 
 Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
 
-Tu as autant de "eth0, eth1..." que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
+Tu as autant de eth0, eth1... que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
 
 \begin{description}
 	\item[Adresse IP] entre celle que tu as calculée : 129.104.AAA.BBB (cf. page \pageref{calcul_ip})
@@ -133,7 +130,7 @@ Voilà, c'est bon !
 
 \subsubsection{Configuration antivirus}
 
-Elle est bonne celle là hein ?
+Elle est drôle celle-là hein ?
 
 \subsubsection{Configuration firewall}
 
@@ -145,7 +142,7 @@ Un exemple de règle serait :
 
 \cmdline{-A INPUT -i eth0 -s 129.104.201.51 -p tcp -m tcp --dport 80 -j ACCEPT}
 
-Cette règle accepte les paquets que l'on reçoit de Frankiz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
+Cette règle accepte les paquets que l'on reçoit de \fkz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
 \begin{itemize}
 	\item[-A] définit la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
 	\item[-i] définit l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
@@ -199,37 +196,73 @@ ou tu remplaces \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sa
 
 \subsubsection{Configuration navigateur web}
 
-Le BR te conseille d'utiliser \app{FireFox}, qui est maintenant tout à fait opérationnel. Il est beaucoup plus stable que \app{Konqueror} --- le navigateur fourni par défaut avec KDE --- surtout sur les distributions réputées instables. Par contre \app{Konqueror} bénéficie d'un pré-chargement pour démarrer plus vite.
+Le BR te conseille d'utiliser \app{Firefox}, qui est maintenant tout à fait opérationnel. Il est beaucoup plus stable que \app{Konqueror} --- le navigateur fourni par défaut avec KDE --- surtout sur les distributions réputées instables. Par contre \app{Konqueror} bénéficie d'un pré-chargement pour démarrer plus vite.
 
-\image{partie1-config_reseau/nux_proxy_firefox}{0.6}{Configuration du proxy sous FireFox}
+\image{partie1-config_reseau/nux_proxy_firefox}{0.6}{Configuration du proxy sous Firefox}
 
-Dans tous les cas, la seule configuration à mettre est celle du proxy. À l'adresse \url{http://frankiz/proxy.pac} se trouve un script de configuration automatique du proxy, écrit par le BR. Dans \app{FireFox}, il faut aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General} cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{Configuration automatique de proxy} et tu rentres cette URL.
+Dans tous les cas, la seule configuration à mettre est celle du proxy. À l'adresse \url{http://frankiz/proxy.pac} se trouve un script de configuration automatique du proxy, écrit par le BR. Dans \app{Firefox}, il faut aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General} cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{Configuration automatique de proxy} et tu rentres cette URL.
+ 
  
 \subsubsection{Configuration mail}
 
 Le client mail le plus utilisé est \app{Kmail}, mais il en existe bien sûr d'autres comme \app{Thunderbird}.
 
-Utilise les paramètres suivants pour le configurer :
+Va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la rubrique \menu{Réseau}. Commence par créer un nouveau compte dans l'onglet \menu{Réception des messages} en cliquant sur le bouton \menu{Ajouter...} et choisis le type POP3.
+
+\image{partie1-config_reseau/nux_config_kmail_pop}{0.65}{Configuration de la réception des messages sous Kmail}
+
+Utilise les paramètres suivants pour configurer l'onglet \menu{Général} :
 \begin{description}
-  \item[Envoi du courrier] \server{poly}, pas de SSL et port 25 (port par défaut)
-  \item[Réception du courrier] \server{poly}, SSL, serveur de type POP3 et port 995 (port par défaut).
-  \item[login, password] il t'ont été fournis par la DSI à ton arrivée.
+  \item[Nom] le nom du compte, par exemple : Mails Poly
+  \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI à ton arrivée sur le plateau
+  \item[Mot de passe] idem
+  \item[Serveur] \server{poly.polytechnique.fr}
+  \item[Port] 995
 \end{description}
+
+Ensuite, va dans l'onglet \menu{Extras} et coche la case \menu{Utiliser SSL pour sécuriser les téléchargements}.
+
+\image{partie1-config_reseau/nux_config_kmail_smtp}{0.65}{Configuration de l'envoi des messages sous Kmail}
+
+Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le bouton \menu{Ajouter...}. Utilise les paramètres suivants pour le configurer :
+\begin{description}
+  \item[Nom] le même nom de compte que précédemment
+  \item[Serveur] \server{poly.polytechnique.fr}
+  \item[Port] 25
+\end{description}
+Sinon, laisse toutes les cases décochées.
+
 
 \subsubsection{Configuration news}
 
 Le client news le plus utilisé est \app{Knode}. Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}.
 
-Sous \app{Knode}, c'est dans le menu \menu{Configuration} (\menu{Settings}), puis \menu{Configurer Knode}. Pour accéder aux newsgroups, il faudra choisir \server{frankiz} comme nom de serveur et le port est le port par défaut, le 119. De plus, les fora mondiaux \ngname{Usenet} sont accessibles via le serveur \server{polynews} de la DSI.
+Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et clique sur \menu{Nouveau...}
+
+\image{partie1-config_reseau/nux_config_knode}{0.7}{Configuration de Knode}
+
+Remplis l'onglet \menu{Serveur} avec les informations suivantes :
+\begin{description}
+  \item[Nom] ce que tu veux pour décrire ce compte, par exemple News Frankiz
+  \item[Serveur] \server{frankiz.polytechnique.fr}
+  \item[Port] 119
+\end{description}
+
+Ensuite occupe-toi de l'onglet \menu{Identité} :
+\begin{description}
+  \item[Nom] mets ton pseudo dans ce champ
+  \item[Organisation] X, École Polytechnique, comme tu le sens
+  \item[Adresse électronique] ton adresse mail, pour que les gens puissent te répondre par mail.
+\end{description}
+
+Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller dans la rubrique \menu{Comptes}, sous-rubrique \menu{Courrier électronique}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr}, port 25 --- c'est exactement la même configuration SMTP que \app{Kmail}.
 
 Tu peux mettre ton identité/signature par défaut pour tous les serveurs auxquels tu t'abonneras (certains élèves hébergent aussi des fora de discussion privés ou non), et chaque serveur peut bénéficier d'une identité particulière, qui peut même être le résultat d'un programme ou d'un script (par exemple pour une signature aléatoire). Les signatures commencent généralement par :
 \verb*+-- +\P\ c'est à dire --<espace><retour à la ligne> de manière à ce que les \og bons \fg clients news l'interprètent comme telle, la mettent par exemple en grisé et évitent de la recopier lorsque tu réponds à un message.
 
-
-Dans l'onglet \menu{Comptes} (\menu{Accounts}) et l'onglet \menu{News}, tu peux choisir le(s) serveur(s) que tu veux consulter. Enfin, pour que \app{Knode} puisse envoyer des mails, il est bon aussi d'aller dans l'onglet \menu{Mail}, et de mettre le serveur \server{poly}, port 25.
-
 Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
+\image{partie1-config_reseau/nux_knode}{1.0}{Knode}
 
 Pour se connecter à un serveur de news en SSL sous \app{Knode} --- par exemple à \server{ssl.polytechnique.org}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer "stunnel" pour mettre une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
@@ -250,7 +283,6 @@ accept  = 119\\
 connect = ssl.polytechnique.org:563\\
 TIMEOUTclose = 0\\
 }
-
 
 Et tu peux lancer stunnel par :
 
