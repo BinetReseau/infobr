@@ -29,7 +29,7 @@ Il n'y a plus qu'à remplir les différents champs comme sur le screenshot ci-dess
 
 \subsubsection{Configuration de l'ordinateur}
 
-\paragraph{Le domaine Windows} est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. Notamment, il installe et configure automatiquement l'antivirus et effectue automatiquement les mises à jour de Windows Update. Sinon, il met aussi l'ordinateur à l'heure, etc.
+\paragraph{Le domaine Windows} est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. Notamment, il installe et configure tout seul l'antivirus et le firewall ; il effectue automatiquement les mises à jour de Windows Update. Il met aussi l'ordinateur à l'heure, etc.
 
 En fait, c'est un outil d'administration, conçu par exemple pour des entreprises où un service informatique doit gérer de nombreuses machines ; il permet d'appliquer des modifications de configuration à toutes les machines du domaine directement depuis le serveur de domaine. Le BR possède un serveur dédié au domaine Windows, \server{enez}.
 
@@ -76,7 +76,7 @@ Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de chois
 
 \paragraph{Installation simplifiée} --- configuration automatique
 
-Tout d'abord : \textbf{désinstalle tous les antivirus que tu pourrais avoir !}
+Tout d'abord : \emph{désinstalle tous les antivirus que tu pourrais avoir !}
 
 Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton Antivirus, et tout autre antivirus ou firewall.
 
@@ -130,21 +130,19 @@ Le firewall commercial \app{ZoneAlarm}, indépendant de Windows, fonctionne sur l
 
 Si tu préfères utiliser le firewall intégré à Windows XP (sans le SP2) ou à Windows Server 2003, il te faudra le configurer plus en détails. Va dans le \menu{Menu Démarrer}, place ta souris sur \menu{Paramètres} et clique sur \menu{Connexions Réseau}. Choisis la connexion qui est utilisée par ton ordinateur (souvent il n'y en a qu'une, ou une seule est activée) et double-clique dessus. Clique sur \menu{Propriétés} en bas à gauche, puis sur l'onglet \menu{Avancé}. Tu pourras alors rentrer dans le menu de \menu{Paramètres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'extérieur. Pour cela, clique sur \menu{Ajouter}, et remplis la boîte de dialogue en t'aidant de la capture d'écran, en mettant ton IP dans les trous libres et en remplaçant le numéro du port par celui que tu veux ouvrir, par exemple 5050 et 5053 pour \app{qRezix} et 21 pour ton FTP.
 
-\image{partie1-config_reseau/win_config_firewall}{0.5}{Ouvrir un port dans le firewall Windows}
+\imagepos{partie1-config_reseau/win_config_firewall}{0.5}{Ouvrir un port dans le firewall Windows}{!h}
 
 Comme tu peux le constater, il est beaucoup plus pratique d'aller sur le domaine et de laisser le SP2 faire le gros du boulot à ta place :-).
 
 \subsubsection{Configuration web (proxy)}
 
-Lance \app{Internet Explorer}. Clique sur \menu{Options Internet} dans le menu \menu{Outils}, puis sur l'onglet \menu{Connexions} de la nouvelle fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la fenêtre. 
-
 \imagepos{partie1-config_reseau/win_config_proxy}{0.7}{Configuration du proxy}{!h}
- 
-Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finaliser ta connexion vers Internet ; tu dois alors avoir quelque chose qui ressemble au screenshot.
 
-Une fois que tu as fait ça, tu n'as plus forcément besoin d'\app{Internet Explorer}, qui est soumis à certains failles de sécurité importantes. Même sur le réseau de l'X, les risques ne sont pas nuls.
+Lance \app{Internet Explorer}. Clique sur \menu{Options Internet} dans le menu \menu{Outils}, puis sur l'onglet \menu{Connexions} de la nouvelle fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la fenêtre. Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finaliser ta connexion vers Internet ; tu dois alors avoir quelque chose qui ressemble au screenshot.
 
-Le BR t'invite donc à installer un navigateur alternatif, \app{Mozilla Firefox}, disponible sur \xshare. Ce n'est pas une garantie ultime --- de toute facon, tu es le premier garant de la sécurité de ton ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main --- mais tu seras sensiblement plus en sécurité. Tes paramètres (en particulier tes favoris) seront directement importés depuis \app{Internet Explorer}, la seule configuration à effectuer étant le proxy. Pour cela, clique sur \menu{Options} dans le menu \app{Outils} puis sur \app{Paramètres de connexion} en bas à droite. La case à remplir est alors la même qu'avec \app{Internet Explorer}, si ce n'est qu'elle se situe en bas de la fenêtre et pas au milieu.
+Une fois que tu as fait ça, tu n'as plus forcément besoin d'\app{Internet Explorer}, qui est soumis à certains failles de sécurité importantes. Même sur le réseau de l'X, les risques ne sont pas nuls. Le BR t'invite donc à installer un navigateur alternatif, \app{Mozilla Firefox}, disponible sur \xshare. Ce n'est pas une garantie ultime --- de toute facon, tu es le premier garant de la sécurité de ton ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main --- mais tu seras sensiblement plus en sécurité.
+
+Tes paramètres (en particulier tes favoris) seront directement importés depuis \app{Internet Explorer}, la seule configuration à effectuer étant le proxy. Pour cela, clique sur \menu{Options} dans le menu \app{Outils} puis sur \app{Paramètres de connexion} en bas à droite. La case à remplir est alors la même qu'avec \app{Internet Explorer}, si ce n'est qu'elle se situe en bas de la fenêtre et pas au milieu.
 
 \subsubsection{Configuration mail}
 
@@ -153,7 +151,6 @@ La DSI met à ta disposition une boîte aux lettres électroniques sur le serveur \
 Lance \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite, \menu{Courrier\ldots}.
 
 Remplis les écrans de configuration suivants avec ces données :
-
 \begin{description}
   \item[Nom complet] ton nom !
   \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.fr}
@@ -166,6 +163,12 @@ Remplis les écrans de configuration suivants avec ces données :
 
 Voilà, clique sur \menu{Continuer}, \menu{Terminer} et c'est bon.
 
+\noindent\rule{.5\textwidth}{.4pt}
+
+\noindent{\footnotesize Pour des raisons historiques, cette page porte le numéro 37. L'explication se trouve en page 11.}
+
+\setcounter{page}{37}
+
 Tu te retrouves alors sur la fenêtre \menu{Comptes Internet}. Va sur l'onglet \menu{Courrier}, clique sur le compte que tu viens de créer puis sur \menu{Propriétés}. Clique sur l'onglet \menu{Avancé} et configure comme sur le screenshot suivant ; en particulier, coche la seconde case \menu{Ce serveur nécessite une connexion sécurisée (SSL)}.
 
 \imagepos{partie1-config_reseau/win_config_mail_avance}{0.66}{Configuration avancée des serveurs mail}{!h}
@@ -174,12 +177,7 @@ Comme ca, tu peux désormais recevoir des mails, avec une liaison sécurisée vers 
 
 \subsubsection{Configuration news}
 
-Comme pour les mails, ca se passe dans \app{Outlook Express}, mais \app{Thunderbird} offre une solution alternative tout à fait convenable.
-
-Lance \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite, \menu{News\ldots}.
-
-Remplis les écrans de configuration suivants avec ces données :
-
+Comme pour les mails, ca se passe dans \app{Outlook Express}, mais \app{Thunderbird} offre une solution alternative tout à fait convenable. Lance \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite, \menu{News\ldots}. Remplis les écrans de configuration suivants avec ces données :
 \begin{description}
   \item[Nom complet] ton nom !
   \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.fr}
@@ -187,6 +185,8 @@ Remplis les écrans de configuration suivants avec ces données :
 \end{description}
 
 Voilà, clique sur \menu{Continuer}, \menu{Terminer} et tu es abonné au serveur news des élèves.
+
+\setcounter{page}{12}
 
 Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner ceux qui t'intéressent. Reporte-toi à la page \pageref{newsgroups} pour plus d'infos sur les newsgroups auquels t'abonner !
 
@@ -204,12 +204,12 @@ Finis l'installation, et tu peux aller sur tous les FTP du réseau facilement et 
 
 Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de partager les différents projets, les films du JTX, ses photos, etc. Donc il est quasiment indispensable que tu en installes un.
 
-Un des plus simples et \app{GuildFTP}, qui est libre de surcroît. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais il y a une FAQ sur \fkz où tout ca est très bien expliqué !
+Parmi les plus simples on trouve \app{FileZilla} et \app{GuildFTP}, qui sont libres de surcroît. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais il y a une FAQ sur \fkz où tout ca est décrit en détail !
 
 \subsubsection{Autres logiciels utiles}
 
 \begin{description}
-  \item[qRezix] : Un programme développé par le BR pour faciliter la vie sur le réseau, à récupérer sur \xshare. Pour plus de détails, voir le paragraphe consacrée à qRezix à la page \pageref{qrezix}.
+  \item[qRezix] : Un programme développé par le BR pour faciliter la vie sur le réseau, à récupérer sur \xshare. Pour plus de détails, voir le paragraphe consacrée à \app{qRezix} à la page \pageref{qrezix}.
   \item[XChat] : Un client IRC directement issu du monde Unix. Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC.
   \item[Putty] : Un logiciel pratique qui te permet de te connecter en salle info. Tu peux le récupérer lui aussi sur \xshare ; son fonctionnement est expliqué en détails dans la FAQ.
 \end{description}
@@ -234,7 +234,7 @@ Les accords négociés par le BR et décrits ci-dessus donnent à chaque X le droit 
   \item télécharge l'image disque de Windows comme expliqué ci-dessus et grave-la sur un CD. Elle se trouve à l'adresse \url{$\backslash\backslash$enez$\backslash$msdnaa$\backslash$french$\backslash$fr\_winxp\_sp2.iso}. Si tu as acheté un ordinateur sans OS (intelligent de ta part, tu as gagné 150 \euro), fais tout ça chez un copain !
 \end{itemize}
 
-Ensuite, tu as un CD de Windows et un numéro de licence , le tout légal de surcroît, l'installation ne devrait pas te poser de problèmes !
+Ensuite, tu as un CD de Windows et un numéro de licence, le tout légal de surcroît, l'installation ne devrait pas te poser de problèmes !
 
 
 
