@@ -41,13 +41,13 @@ PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
 
-Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut définir les variables d'environnement ci-dessous dans \file{/etc/make.conf} :
+Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut définir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
 
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 GENTOO\_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
-Tu peux évidemment ajouter d'autres miroirs dans ta liste (en les séparant par les espaces)... mais ftp://miroir étant interne il sera toujours beaucoup plus rapide que les autres. On te conseille ici http://gentoo.osuosl.org/ qui est un miroir très complet (mais très lent).
+Tu peux évidemment ajouter d'autres miroirs dans ta liste (en les séparant par les espaces) mais \url{ftp://miroir} étant interne il sera toujours beaucoup plus rapide que les autres. On te conseille ici \url{http://gentoo.osuosl.org/} qui est un miroir très complet (mais très lent).
 
 \paragraph{Sous Debian}
 
