@@ -11,6 +11,8 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+%\usepackage{floatflt}
+\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{epstopdf}
@@ -28,6 +30,33 @@
 \date{\today}
 
 % Commandes speciales definies ici
+
+% pour inclure des images
+\newcommand{\image}[4]{ % arguments : path, largeur (entre 0 et 1), légende, label
+  \begin{figure}
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \caption{#3}
+      \label{#4}
+    \end{center}
+  \end{figure}
+}
+\newcommand{\imagepos}[5]{ % arguments : path, largeur (entre 0 et 1), légende, label, positionnement
+  \begin{figure}[#5]
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \caption{#3}
+      \label{#4}
+    \end{center}
+  \end{figure}
+}
+\newcommand{\flimage}[4]{ % arguments : path, largeur (entre 0 et 1), position, label
+  \begin{wrapfigure}{#3}{0pt}
+    \includegraphics[width=#2\textwidth]{#1}
+    \label{#4}
+  \end{wrapfigure}
+}
+
 
 % pour les newsgroups
 \definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
