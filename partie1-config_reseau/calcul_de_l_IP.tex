@@ -10,7 +10,7 @@ L'X \og posssède \fg toutes les IP de la forme $129.104.AAA.BBB$. Tu vas devoir 
 
 \subsubsection{Calcul du sous-réseau}
 
-Il s'agit de remplacer le $AAA$ ; le sous-réseau correspond en gros à ton étage ou à ton bâtiment.
+Il s'agit de remplacer le $AAA$ ; le sous-réseau correspond en général à ton étage ou à ton bâtiment.
 
 \begin{itemize}
 
@@ -18,7 +18,7 @@ Il s'agit de remplacer le $AAA$ ; le sous-réseau correspond en gros à ton étage 
 
 Regarde sur ta prise réseau et note les deux premiers caractères --- exemple : $A0$. Il suffit alors d'utiliser la table de correspondance suivante pour trouver le $AAA$ :
 
-\begin{figure}[!h]
+\begin{figure*}[!h]
     \begin{center}
 \begin{tabular}{cccc}
 $A0 \Rightarrow 205$ & $A1 \Rightarrow 206$ & $A2 \Rightarrow 207$ & $A3 \Rightarrow 208$ \\
@@ -28,11 +28,15 @@ $D0 \Rightarrow 219$ & $D1 \Rightarrow 220$ & $D2 \Rightarrow 221$ & $D3 \Righta
 \end{tabular}
     \caption{Correspondance prise - sous-réseau}
     \end{center}
-\end{figure}
+\end{figure*}
+
+\item Pour les bâtiments A, B, C et D (les nouveaux caserts)
+
+{\Huge ????}
 
 \item Pour le PEM
 
-C'est simple $AAA=214$ !
+C'est simple, $AAA=214$.
 
 \item Pour le BEM
 
@@ -46,7 +50,7 @@ C'est simple $AAA=214$ !
 
 \subsubsection{Calcul du numéro de machine}
 
-Remplaçons le $BBB$.
+Remplaçons maintenant le groupe $BBB$.
 
 \begin{itemize}
 
@@ -74,5 +78,16 @@ Par exemple l'IP de la chambre $D6604$ sera $129.104.204.54$.
 La passerelle est une machine par laquelle passent toutes les communications entre ton ordinateur et l'extérieur. Elle se situe logiquement au niveau de ton sous-réseau et porte habituellement le numéro $13$. Ainsi, seul le dernier nombre de ton IP --- le groupe noté $BBB$ ci-dessus --- change en $13$ pour obtenir celle de ta passerelle.
 
 Exemple : si ton IP est $129.104.205.125$, alors l'adresse de ta passerelle est $129.104.205.13$.
+
+\subsubsection{IP des serveurs DNS}
+
+Là il n'y a rien de compliqué ; le BR offre trois serveurs DNS redondants qui ont les IP suivantes :
+\begin{itemize}
+  \item 129.104.201.51
+  \item 129.104.201.52
+  \item 129.104.201.53
+\end{itemize}
+Tu choisis celui que tu veux !
+
 
 \vfill

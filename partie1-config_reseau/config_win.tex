@@ -8,26 +8,28 @@
 
 \subsubsection{Configuration IP}
 
-Va dans le panneau de configuration grâce au menu démarrer et double-clique sur « Connexions réseaux » puis sur « Connexion au réseau local. Clique enfin sur « propriétés ».
+Va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions réseau} puis sur \menu{Connexion au réseau local}. Clique enfin sur \menu{Propriétés}.
 
-Là il faut que l'écran sur lequel tu tombes ressemble à ça (En gros décoche toute autre case que les 2 ici)
+La coche simplement les deux cases \menu{Client pour les réseaux Microsoft} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot.
 
-Clique sur « Protocole Internet (TCP/IP) et ensuite sur le bouton Propriétés qui vient de se dégriser.
+\imagepos{partie1-config_reseau/win_config_connexion}{0.6}{Configurer la connexion au réseau local}{!h}
 
-Et tu tombes sur l'écran de configuration de ta connexion vers l'extérieur.
+Clique ensuite sur la ligne \menu{Protocole Internet (TCP/IP)}, puis sur le bouton \menu{Propriétés} qui vient de se dégriser.
+
+Tu tombes alors sur l'écran de configuration de ta connexion vers l'extérieur.
+
+\emph{screenshot à refaire, les IP sont trivialement fausses sur le précédent !!! (DNS principal 129.104.211.52 !!!!!}
 
  
-Bien sur là,  tu rentres :
-? Adresse IP : l'ip 129.104.AAA.BBB que tu as calculé précédemment pour toi,
-? Masque de sous réseau : 255.255.255.0
-? Passerelle par défaut : 129.104.AAA.13 l'adresse de ta passerelle (cf avant)
-? Serveur DNS préféré : 129.104.201.51 et 129.104.201.52
+Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les cinq champs d'IP. Tu trouveras toutes les valeurs nécessaires à la configuration IP en page \pageref{calcul_ip} ou en te reportant au screenshot suivant. Si une partie d'IP est grisée sur le screenshot, c'est qu'elle t'es personnelle et que tu dois la calculer !
 
-Ensuite, clique sur « Avancé? ». Puis clique sur l'onglet « DNS » en haut. L'écran que tu dois obtenir doit ressembler à celui là. Remplis les différents champs afin de le rendre semblable.
+Ensuite, clique sur \menu{Avancé}. Puis clique sur l'onglet \menu{DNS} en haut. Il n'y a plus qu'à remplir les différents champs exactement comme sur le screenshot !
 
 \subsubsection{Configuration de l'ordinateur}
 
 \paragraph{Le domaine Windows, qu'est ce que c'est ?}
+
+le domaine sébien. et sétout.
 
 \paragraph{Alors, domaine ou pas domaine ?}
 
@@ -58,17 +60,18 @@ Avantages :
 
 Inconvénients :
 \begin{itemize}
-  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus qui fait sauter le réseau, il reviendra peut-ête plus vite pour les autres que pour toi...
+  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus qui fait sauter le réseau, ledit réseau reviendra peut-ête plus vite pour les autres que pour toi...
 \end{itemize}
 
-\vspace{1ex}
-\fbox{
-  \begin{minipage}[center]{.7\textwidth}
-    \begin{center}
+\begin{center}
+  \fbox{
+    \begin{minipage}{.7\textwidth}
+      \begin{center}
 Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de choisir l'installation simplifiée, sauf si tu maîtrises bien Windows et que tu es sûr de ce que tu fais !
-    \end{center}
-  \end{minipage}
-}
+      \end{center}
+    \end{minipage}
+  }
+\end{center}
 
 \paragraph{Installation simplifiée --- configuration automatique}
 
@@ -84,8 +87,7 @@ Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, ouvre \me
 
 Ensuite, tu vas t'inscrire sur le domaine :
 
-Clique sur le \menu{Menu Démarrer} puis clique-droit sur \menu{Poste de travail}, \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur}. Dans la case \menu{Nom de l'ordinateur},  
-rentre ton pseudo, puis coche la case \menu{domaine} et rentre textellement \url{windows.eleves.polytechnique.fr}. Tu alors peux sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 FireWall ».
+Clique sur le \menu{Menu Démarrer} puis clique-droit sur \menu{Poste de travail}, \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre textellement \url{windows.eleves.polytechnique.fr}.
  
 Si tu es Rouje 2002 : tu tapes
 Nom	rouje02

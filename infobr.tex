@@ -67,20 +67,20 @@
 
 % pour inclure des images
 \newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
-  \begin{figure}
+  \begin{figure*}
     \begin{center}
       \includegraphics[width=#2\textwidth]{#1}
       \caption{#3}
     \end{center}
-  \end{figure}
+  \end{figure*}
 }
 \newcommand{\imagepos}[4]{ % arguments : path, largeur (entre 0 et 1), légende, positionnement
-  \begin{figure}[#4]
+  \begin{figure*}[#4]
     \begin{center}
       \includegraphics[width=#2\textwidth]{#1}
       \caption{#3}
     \end{center}
-  \end{figure}
+  \end{figure*}
 }
 \newcommand{\flimage}[3]{ % arguments : path, largeur (entre 0 et 1), position
   \begin{wrapfigure}{#3}{0pt}
