@@ -194,14 +194,16 @@ Pour activer ton firewall, tu n'as plus qu'à faire :
 
 \cmdline{iptables-restore < le\_fichier\_ci\_dessus}
 
+ou tu remplaces \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sauvegardé ce fichier de configuration de firewall.
+
 
 \subsubsection{Configuration navigateur web}
 
-Que tu utilises Konqueror (fourni par défaut avec kde et bénéficiant donc d'un preload d'où un démarrage rapide), ou Mozilla / Mozilla-firefox (beaucoup plus stable que Konqueror, surtout sur les distributions réputées instables), la seule configuration à mettre est celle du proxy:
-Le script de configuration automatique du Proxy se trouve sur http://frankiz/proxy.pac.
-Dans Konqueror, on le charge dans l'onglet "Proxy" ou "serveur de proximité" dans "Settings" et "Configure Konqueror", ou "Configuration" et "Configurer Konqueror".
+Le BR te conseille d'utiliser FireFox, qui est maintenant tout à fait opérationnel. Il est beaucoup plus stable que Konqueror --- le navigateur fourni par défaut avec KDE --- surtout sur les distributions réputées instables. bénéficie d'un pré-chargement pour démarrer plus vite. Par contre Konqueror bénéficie d'un pré-chargement pour démarrer plus vite.
 
-Dans Mozilla / Mozilla-firefox, il faut aller dans "Tools" "Options...", et dans l'onglet "General" cliquer sur "Connection Settings".
+\image{partie1-config_reseau/nux_proxy_firefox}{0.6}{Configuration du proxy sous FireFox}
+
+Dans tous les cas, la seule configuration à mettre est celle du proxy. À l'adresse \url{http://frankiz/proxy.pac} se trouve un script de configuration automatique du proxy, écrit par le BR. Dans FireFox, il faut aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General} cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{Configuration automatique de proxy} et tu rentres cette URL.
  
 \subsubsection{Configuration mail}
 Le client mail le plus utilisé est kmail, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi par exemple.
