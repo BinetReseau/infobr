@@ -21,7 +21,7 @@ Tu as autant de \texttt{eth0}, \texttt{eth1}\ldots que de cartes réseau détectée
 
 \begin{description}
 	\item[Adresse IP] entre celle que tu as calculée : $129.104.AAA.BBB$ (cf. page \pageref{calcul_ip})
-	\item[Masque de sous-réseau] $255.255.255.0$
+	\item[Masque de sous-réseau] $255.255.255.0$ ou $255.255.255.128$ (cf. page \pageref{calcul_ip})
 	\item[DHCP] laisse cette case décochée
 \end{description}
 
@@ -47,11 +47,11 @@ Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La prem
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
 
-Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, et la passerelle pour sortir de ton sous-réseau :
+Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, ton masque de sous-réseau et la passerelle pour sortir de ton sous-réseau :
 
-\cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255\\
-                            netmask 255.255.255.0"\\
-                            gateway="eth0/129.104.AAA.13"}
+\cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255 $\backslash$\\
+                            netmask 255.255.255.DDD"\\
+                            gateway="eth0/129.104.AAA.CCC"}
 
 Tu fais le grand test en rechargeant ta configuration réseau par :
 
@@ -93,10 +93,10 @@ iface lo inet loopback\\
 auto eth0\\
 iface eth0 inet static\\
 address 129.104.AAA.BBB\\
-netmask 255.255.255.0\\
+netmask 255.255.255.DDD\\
 network 129.104.AAA.0\\
 broadcast 129.104.AAA.255\\
-gateway 129.104.AAA.13}
+gateway 129.104.AAA.CCC}
 
 Toujours comme sous Gentoo, recharge ta configuration réseau par :
 
@@ -105,10 +105,10 @@ Toujours comme sous Gentoo, recharge ta configuration réseau par :
 puis essaye de pinger \fkz par exemple. Tu dois obtenir quelque chose comme:
 
 \cmdline{root:~\# ping frankiz\\
-PING frankiz (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\}
+PING frankiz (129.104.201.51) 56(84) bytes of data.\\}
 
-\cmdline{64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
+\cmdline{64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
 
 Une dernière chose spécifique à Debian, pour utiliser \app{apt-get} et \app{apt-cache} à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
 
