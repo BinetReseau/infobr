@@ -1,3 +1,241 @@
 %$Id$
 
 \subsection{Configuration sous Linux}
+
+\subsubsection{Configuration IP}
+Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général, pour que l'on puisse facilement te 'tchatter' ou aller sur ton FTP. Tu as également besoin de connaître ton adresse IP. L'explication de comment la calculer de trouve page \pageref{calcul_ip} et notée dorénavant 129.104.AAA.BBB.
+
+Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
+
+\paragraph{Sous Gentoo}
+
+Si tu n'as jamais fait de configuration réseau sur ta Gentoo, il faudra certainement créer les fichiers qui suivent.
+
+Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer 
+\file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
+
+\begin{verbatim}
+echo 'ton_pseudo' > /etc/hostname
+\end{verbatim}
+
+Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \url{frankiz} ou \url{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
+
+\begin{verbatim}
+search eleves.polytechnique.fr polytechnique.fr
+nameserver 129.104.201.52 129.104.201.51
+\end{verbatim}
+
+Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage:
+
+\begin{verbatim}
+iface_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255 netmask 255.255.255.0"
+gateway="eth0/129.104.AAA.13"
+\end{verbatim}
+
+Tu fais le grand test en rechargeant ta configuration réseau par:
+
+\begin{verbatim}
+/etc/init.d/net.eth0 restart
+\end{verbatim}
+
+ou
+
+\begin{verbatim}
+/etc/init.d/net.eth0 start
+\end{verbatim}
+
+puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme:
+
+\begin{verbatim}
+root:~# ping frankiz
+PING frankiz (129.104.201.51) 56(84) bytes of data.
+64 bytes from frankiz (129.104.201.51): icmp_seq=1 ttl=63 time=0.364 ms
+64 bytes from frankiz (129.104.201.51): icmp_seq=2 ttl=63 time=0.269 ms
+\end{verbatim}
+
+Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut exporter les variables d'environnement ci-dessous (éventuellement à mettre dans \file{/etc/profile}) :
+
+\begin{verbatim}
+export http_proxy=http://kuzh.polytechnique.fr:8080
+export ftp_proxy=ftp://kuzh.polytechnique.fr:8080
+export RSYNC_PROXY=rsync://kuzh.polytechnique.fr:8080
+\end{verbatim}
+
+
+
+\paragraph{Sous Debian}
+
+Lors de l'installation d'une nouvelle Debian, le programme d'installation te propose logiquement de rentrer ces informations de manière interactive ; sinon, il est toujours possible de les modifier ainsi :
+
+Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer 
+\file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
+
+\begin{verbatim}
+echo 'ton_pseudo' > /etc/hostname
+\end{verbatim}
+
+
+Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \url{frankiz} ou \url{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
+
+\begin{verbatim}
+search eleves.polytechnique.fr polytechnique.fr
+nameserver 129.104.201.52 129.104.201.51
+\end{verbatim}
+
+Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :op), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous réseau (ton étage), et la passerelle pour sortir de ton étage :
+
+\begin{verbatim}
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 129.104.AAA.BBB
+netmask 255.255.255.0
+network 129.104.AAA.0
+broadcast 129.104.AAA.255
+gateway 129.104.AAA.13
+\end{verbatim}
+
+Tu fais le grand test en rechargeant ta configuration réseau par :
+
+\begin{verbatim}
+/etc/init.d/networking restart
+\end{verbatim}
+
+puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme:
+
+\begin{verbatim}
+root:~# ping frankiz
+PING frankiz (129.104.201.51) 56(84) bytes of data.
+64 bytes from frankiz (129.104.201.51): icmp_seq=1 ttl=63 time=0.364 ms
+64 bytes from frankiz (129.104.201.51): icmp_seq=2 ttl=63 time=0.269 ms
+\end{verbatim}
+
+
+Une dernière chose spécifique à Debian, pour pouvoir utiliser 'apt-get' et 'apt-cache' à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
+
+\begin{verbatim}
+Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";
+\end{verbatim}
+
+Attention, le apt.conf ne gère pas le protocole ftp via le proxy http.
+Pour utiliser des ftp:// dans ton /etc/apt/sources.list, il faut rajouter  
+
+\begin{verbatim}
+ftp_proxy = http://kuzh:8080
+\end{verbatim}
+
+dans les paramètres de wget (car apt utilise wget), \file{/etc/wgetrc} ou \file{/root/.wgetrc}. Tu peux aussi y mettre à ta guise:
+
+\begin{verbatim}
+http_proxy = http://kuzh:8080
+\end{verbatim}
+
+Le BR maintient par ailleurs un miroir debian : tu peux l'utiliser en rajoutant à ton \file{/etc/sources.list}
+\begin{verbatim}
+deb ftp://miroir/debian [flavour] main contrib non-free
+\end{verbatim}
+où 'flavour' est la saveur de ta debian: stable, testing, unstable, experimental
+
+\paragraph{Sous Redhat et Mandrake}
+
+Il existe dans ces distributions une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/} , comme précédemment à quelques différences près.
+
+Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
+
+Tu as autant de ?eth0, eth1...? que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
+
+\begin{description}
+	\item[Adresse IP] entre celle que tu as calculée : 129.104.AAA.BBB (cf. page \pageref{calcul_ip})
+	\item[Masque de sous-réseau] 255.255.255.0
+	\item[DHCP] laisse cette case décochée
+\end{description}
+
+Ensuite, tu dois encore entrer :
+\begin{description}
+	\item[Nom d'hôte] 'ton\_pseudo'.eleves.polytechnique.fr
+	\item[Serveur DNS] 129.104.201.51
+	\item[Passerelle] tu l'as aussi calculée : 129.104.AAA.13 (cf. page \pageref{calcul_ip})
+\end{description}
+ 
+Voilà, c'est bon !
+
+\subsubsection{Configuration antivirus}
+
+Elle est bonne celle là hein ?
+
+\subsubsection{Configuration firewall}
+
+Il existe de multiples façons de gérer un firewall sous linux, et la plus performante est certainement de passer par le « netfilter » du noyau, configurable via la commande « iptables ».
+Certains utilisent des scripts qui fabriquent les règles d'iptables presque automatiquement, d'autres préfèrent travailler directement avec la commande « iptables ». Il faut dire que la syntaxe est assez délicate, du moins les premières fois. Une fois le module netfilter chargé dans le noyau, tu peux utiliser la commande « iptables »:
+
+\begin{verbatim}
+iptables -A INPUT -s 129.104.254.5 -p tcp -m tcp --dport 80 -j DROP
+\end{verbatim}
+
+(Ici pour dropper les paquets entrant, venant de l'ip source 129.104.254.5 (le proxy kuzh), et à destination du port 80 en tcp)
+Tu peux utiliser, dès que tu commences à avoir plus de 5 ou 6 règles, soit un script qui recharge tout en une seule fois, soit un fichier blah qui contient par exemple ceci (les premières lignes correspondent aux politiques par défaut pour la table « filter ») :
+
+\begin{verbatim}
+*filter
+:INPUT DROP [2:120]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [24864827:35635624411]
+-A INPUT -i lo -j ACCEPT
+(etc...)
+-A OUTPUT -d ! 129.104.0.0/255.255.0.0 -m limit --limit 30/min -j LOG --log-prefix "Port access denied : (OUTPUT)"
+-A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j DROP
+COMMIT
+\end{verbatim}
+
+et tu peux le charger par « iptables-restore < blah »  ou  le créer avec « iptables-save > blah »
+Quand un paquet arrive, les règles sont examinées dans l'ordre, et à la première règle trouvée autre que LOG (par exemple: ACCEPT, REJECT, DROP), alors le paquet est traité et les règles suivantes ne sont pas examinées. C'est lorsque aucune règle ne s'applique au paquet que la politique par défaut est utilisée.
+Par exemple, la première ligne accepte ici toutes les connections sur la boucle locale, la seconde ligne logue tous les paquets sortants à destination des ip en dehors du sous réseau 16 bits de l'X: 129.104.0.0/255.255.0.0, et la dernière ligne droppe ces mêmes paquets après la journalisation.
+
+Deux tutorials (parmi de très nombreux!) sur les iptables:
+En Français mais un peu ardus: http://www.tofe.org/iptables.php3
+Très complet, et bien plus détaillé, en Anglais: 
+http://iptables-tutorial.frozentux.net/iptables-tutorial.html
+
+6.4. Configuration navigateur web:
+Que tu utilises Konqueror (fourni par défaut avec kde et bénéficiant donc d'un preload d'où un démarrage rapide), ou Mozilla / Mozilla-firefox (beaucoup plus stable que Konqueror, surtout sur les distributions réputées instables), la seule configuration à mettre est celle du proxy:
+Le script de configuration automatique du Proxy se trouve sur http://frankiz/proxy.pac.
+Dans Konqueror, on le charge dans l'onglet ?Proxy? ou ?serveur de proximité? dans ?Settings? et ?Configure Konqueror?, ou ?Configuration? et ?Configurer Konqueror?.
+
+Dans Mozilla / Mozilla-firefox, il faut aller dans ?Tools? ?Options...?, et dans l'onglet ?General? cliquer sur ?Connection Settings?.
+ 
+\subsubsection{Configuration mail}
+Le client mail le plus utilisé est kmail, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi par exemple.
+Les serveurs sont:
+Envoi du courrier: poly, pas de SSL (port par défaut, le 25)
+Réception du courrier: poly, SSL. (Type de serveur: POP3; le port, par défaut, est le 995). Tu peux compléter le login et le password qui sont ton login/password poly, fournis par la DSI en ce début d'année.
+Sous Knode, il faut aller dans l'onglet ?Extras?, et dans le cadre ?Encryption? pour cocher uniquement la case ?Use SSL?.
+
+\subsubsection{Configuration news}
+Le client news le plus utilisé est knode, mais il en existe d'autres... Mozilla / Mozilla-thunderbird le fait aussi.
+Sous Knode, c'est dans le menu ?Configuration? (?settings?), puis ?Configurer Knode?.
+Pour accéder aux fora de discussion des élèves, ici appelés par abus de langage ?les br?, il faudra choisir ?frankiz? comme nom de serveur (le port est le port par défaut, le 119). De plus, les fora mondiaux ?Usenet? sont accessibles via le serveur ?polynews? de la DSI.
+Tu peux y mettre ton identité/signature par défaut pour tous les serveurs auxquels tu t'abonneras (certains élèves hébergent aussi des fora de discussion privés ou non), et chaque serveur peut bénéficier d'une identité particulière, qui peut même être le résultat d'un programme ou d'un script (par exemple pour une signature aléatoire). Les signatures commencent généralement par:
+--<espace><retour à la ligne>
+De manière à ce que les ?bons? clients news l'interprètent comme telle, la mettant par exemple en grisé et ainsi ils évitent de la recopier lorsque tu réponds à un message.
+Dans l'onglet ?Comptes? ou ?Accounts?, puis l'onglet ?News?, tu peux choisir le(s) serveur(s) que tu veux consulter.
+Enfin, pour que Knode puisse envoyer des mails, il est bon aussi d'aller dans l'onglet ?Comptes? et ?Mail?, et de mettre le serveur ?poly? sur le port ?25?.
+Il ne te reste plus qu'à t'inscrire sur des fora et à y participer! ... en respectant le binet idoine :)
+
+Pour se connecter à un serveur de news en SSL  sous Knode
+(par exemple au serveur de polytechnique.org  ssl.polytechnique.org)
+Sous Knode, il y a une petite subtilité puisqu'il ne gère pas le SSL.
+Il faut installer ?stunnel? pour mettre une redirection SSL de port ainsi:
+Dans /etc/stunnel.conf ou /etc/stunnel/stunnel.conf (selon la distribution), mettre les lignes suivantes (les deux premières y sont en principe déjà):
+
+
+
+
+
+
+
+
+
+
+Et tu peux lancer stunnel par « /etc/init.d/stunnel start »
