@@ -13,9 +13,11 @@ Va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration} et double-cliqu
 
 Dans cette fenêtre, coche les trois cases \menu{Client pour les réseaux Microsoft}, \menu{Partage de fichiers} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot\footnote{Capture d'écran}.
 
-\imagepos{partie1-config_reseau/win_config_connexion2}{0.74}{Configurer la connexion au réseau local}{!h}
+\imagepos{partie1-config_reseau/win_config_connexion2}{0.71}{Configurer la connexion au réseau local}{!h}
 
-\imagepos{partie1-config_reseau/win_config_ip}{0.72}{Configuration IP --- Propriétés de protocole Internet (TCP/IP)}{!h}
+\imagepos{partie1-config_reseau/win_config_ip}{0.71}{Configuration IP --- Propriétés de protocole Internet (TCP/IP)}{!hb}
+
+\imagepos{partie1-config_reseau/win_config_dns2}{0.78}{Configuration IP}{!ht}
 
 Sélectionne ensuite la ligne \menu{Protocole Internet (TCP/IP)}, puis clique sur le bouton \menu{Propriétés} qui vient de se dégriser. Tu tombes alors sur l'écran de configuration de ta connexion vers l'extérieur.
 
@@ -23,13 +25,11 @@ Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utilise
 
 Ensuite, clique sur le bouton \menu{Avancé}, puis sur l'onglet \menu{DNS} en haut.
 
-\imagepos{partie1-config_reseau/win_config_dns2}{0.78}{Configuration IP}{!h}
-
 Il n'y a plus qu'à remplir les différents champs comme sur le screenshot ci-dessus, avec les boutons \menu{Ajouter} et les flèches pour réordonner les éléments.
 
-\subsubsection{Configuration de l'ordinateur}
+\subsubsection{Le domaine Windows}
 
-\paragraph{Le domaine Windows} est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. Notamment, il installe et configure tout seul l'antivirus et le firewall ; il effectue automatiquement les mises à jour de Windows Update. Il met aussi l'ordinateur à l'heure, etc.
+\paragraph{Qu'est ce que c'est ?}Le domaine Windows est un système d'automatisation de la configuration de plusieurs ordinateurs sous Windows situés sur le même réseau. Notamment, il installe et configure tout seul l'antivirus et le firewall ; il effectue automatiquement les mises à jour de Windows Update. Il met aussi l'ordinateur à l'heure, etc.
 
 En fait, c'est un outil d'administration, conçu par exemple pour des entreprises où un service informatique doit gérer de nombreuses machines ; il permet d'appliquer des modifications de configuration à toutes les machines du domaine directement depuis le serveur de domaine. Le BR possède un serveur dédié au domaine Windows, \server{enez}.
 
@@ -74,13 +74,13 @@ Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de chois
   }
 \end{center}
 
+\subsubsection{Configuration de l'ordinateur}
+
 \paragraph{Installation simplifiée} --- configuration automatique
 
-Tout d'abord : \emph{désinstalle tous les antivirus que tu pourrais avoir !}
+Tout d'abord : \emph{désinstalle tous les antivirus que tu pourrais avoir !} Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton Antivirus, et tout autre antivirus ou firewall.
 
-Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, \menu{Ajout/Suppression de Programmes} et désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton Antivirus, et tout autre antivirus ou firewall.
-
-Ensuite, tu vas t'inscrire sur le domaine :
+Ensuite, tu vas t'inscrire sur le domaine. Pour cela, il faut avoir Windows XP Pro que le BR te fournit gratuitement et légalement (cf. page~\pageref{xp}).
 
 Clique sur le \menu{Menu Démarrer} puis fais un clic-droit sur \menu{Poste de travail} et choisis \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur} et clique le bouton \menu{Modifier}. Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et rentre \url{windows.eleves.polytechnique.fr}.
 
@@ -128,7 +128,7 @@ Si tu as Windows XP avec le SP2 installé, tu as un firewall automatiquement acti
 
 Le firewall commercial \app{ZoneAlarm}, indépendant de Windows, fonctionne sur le même principe. Tu peux le trouver sur \xshare.
 
-Si tu préfères utiliser le firewall intégré à Windows XP (sans le SP2) ou à Windows Server 2003, il te faudra le configurer plus en détails. Va dans le \menu{Menu Démarrer}, place ta souris sur \menu{Paramètres} et clique sur \menu{Connexions Réseau}. Choisis la connexion qui est utilisée par ton ordinateur (souvent il n'y en a qu'une, ou une seule est activée) et double-clique dessus. Clique sur \menu{Propriétés} en bas à gauche, puis sur l'onglet \menu{Avancé}. Tu pourras alors rentrer dans le menu de \menu{Paramètres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'extérieur. Pour cela, clique sur \menu{Ajouter}, et remplis la boîte de dialogue en t'aidant de la capture d'écran, en mettant ton IP dans les trous libres et en remplaçant le numéro du port par celui que tu veux ouvrir, par exemple 5050 et 5053 pour \app{qRezix} et 21 pour ton FTP.
+Si tu préfères utiliser le firewall intégré à Windows XP (sans le SP2) ou à Windows Server 2003, il te faudra le configurer en détail. Va dans le \menu{Menu Démarrer}, \menu{Paramètres} et clique sur \menu{Connexions Réseau}. Choisis la connexion qui est utilisée par ton ordinateur (souvent il n'y en a qu'une, ou une seule est activée) et double-clique dessus. Clique sur \menu{Propriétés} en bas à gauche, puis sur l'onglet \menu{Avancé}. Tu pourras alors rentrer dans le menu de \menu{Paramètres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'extérieur. Pour cela, clique sur \menu{Ajouter}, et remplis la boîte de dialogue en t'aidant de la capture d'écran, en mettant ton IP dans les trous libres et en remplaçant le numéro du port par celui que tu veux ouvrir, par exemple 5050, 5053 et 5054 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
 
 \imagepos{partie1-config_reseau/win_config_firewall}{0.5}{Ouvrir un port dans le firewall Windows}{!h}
 
@@ -161,9 +161,9 @@ Remplis les écrans de configuration suivants avec ces données :
   \item[Mot de passe] ton mot de passe \server{poly} ; vérifie bien que la case \menu{Mémoriser le mot de passe} est cochée.
 \end{description}
 
-Voilà, clique sur \menu{Continuer}, \menu{Terminer} et c'est bon.
+Voilà, clique sur \menu{Continuer}, \menu{Terminer}.
 
-\noindent\rule{.5\textwidth}{.4pt}
+\noindent\rule{.4\textwidth}{.4pt}
 
 \noindent{\footnotesize Pour des raisons historiques, cette page porte le numéro 37. L'explication se trouve en page 11.}
 
@@ -227,6 +227,8 @@ La procédure pour obtenir les logiciels et les clés correspondantes est très sim
 Si tu as encore des questions, plus de détails sont donnés dans la FAQ de \fkz.
 
 \subsubsection{Obtenir Windows XP Pro}
+
+\label{xp}
 
 Les accords négociés par le BR et décrits ci-dessus donnent à chaque X le droit à une version de Windows XP Pro gratuite et légale ! Pour avoir la tienne, suis tout simplement la procédure expliquée dans le paragraphe précédent :
 \begin{itemize}

@@ -8,7 +8,7 @@
 
 Voici une présentation des divers logiciels utiles pour utiliser les différents services proposés sur le réseau avec Mac OS X, ainsi que leur configuration. Les logiciels non intégrés à Mac OS X et cités ici sont quasiment tous téléchargeables sur \server{frankiz} : rubrique \menu{Télécharger -> Mac -> Réseau}.
 
-\subsubsection{Configuration IP/DHCP}
+\subsubsection{Configuration IP}
 
 \flimage{partie1-config_reseau/mac_prefs_icone}{0.1}{l}
 \app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du menu Pomme, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse gentiment et utilise la procédure que le BR te propose --- c'est plus simple ;-)
@@ -89,16 +89,16 @@ Tu devrais alors obtenir quelque chose qui ressemble à ça :
 
 Pour t'abonner à des groupes de discussion, il te suffit de sélectionner le compte \menu{News Frankiz} dans la fénêtre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{Gérer les abonnements aux groupes de discussion}. Tu pourras ensuite sélectionner les forums qui t'intéressent parmi la liste proposée. Reporte-toi à la page \pageref{newsgroups} pour plus d'infos sur les newsgroups auquels t'abonner !
 
- \subsubsection{Client FTP}
+\subsubsection{Client FTP}
  
 \flimage{partie1-config_reseau/mac_cyberduck_icone}{0.1}{l}
-\app{Cyberduck} : un client FTP très simple à utiliser mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs FTP des autres élèves. Dans la même catégorie, il existe aussi \app{Transmit} (shareware) qui dispose de plus de fonctionnalités.
+\app{Cyberduck} : un client FTP très simple à utiliser mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs FTP des autres élèves. Il existe aussi \app{Fugu}, que certains préfèrent.
 
 \imagepos{partie1-config_reseau/mac_cyberduck_connection}{0.8}{Cyberduck}{!h}
 
-La configuration ne pose aucun problème puisqu'il n'y rien à faire. Pour se connecter à un serveur, il suffit de taper son nom (exemple : \url{ftp://jtx}) dans le cadre \menu{Connexion rapide} et appuyer sur Entrée.
+Pour se connecter à un serveur, il suffit de taper son nom (exemple : \url{ftp://jtx}) dans le cadre \menu{Connexion rapide} et appuyer sur Entrée.
 
-Tu pourras ensuite naviguer sur le serveur et télécharger ou transférer des fichiers. Attention, certains serveurs (intentionnellement) configurés spécialement ne permettent qu'une connection à la fois. Or, le téléchargement d'un fichier demande l'ouverture d'une nouvelle connection. Il faut donc se déconnecter (bouton \menu{Déconnecter}) puis lancer le téléchargement en double-cliquant sur le fichier.
+Tu pourras ensuite naviguer sur le serveur et télécharger ou transférer des fichiers. Attention, certains serveurs configurés spécialement ne permettent qu'une connection à la fois. Or, le téléchargement d'un fichier demande l'ouverture d'une nouvelle connection. Il faut donc se déconnecter (bouton \menu{Déconnecter}) puis lancer le téléchargement en double-cliquant sur le fichier.
 
 Les signets de permettent de sauvegarder les serveurs sur lesquels tu te connectes souvent. Enfin, tu peux éditer des fichiers textes directement en FTP si tu as aussi \app{SubEthaEdit}, ce qui est très commode pour modifier un site web.
 
@@ -111,12 +111,13 @@ Voici plusieurs logiciels que tu voudras sûrement télécharger pour profiter au m
 
 \flimage{partie1-config_reseau/mac_qrezix_icone}{0.1}{l}
 
-\noindent\app{qRezix} : En deux mots, c'est un programme développé par le BR pour faciliter la vie sur le réseau.
-
-\noindent Tu peux le récupérer dans la partie Mac de \xshare.
+\noindent\app{qRezix} : En deux mots, c'est un programme développé par le BR pour faciliter la vie sur le réseau. Tu peux le récupérer dans la partie Mac de \xshare.
 
 \noindent Pour plus de détails, voir le paragraphe consacrée à qRezix à la page \pageref{qrezix}.
-\\
+
+\noindent Attention, si ton firewall est activé, tu dois ouvrir les ports 5050, 5053 et 5054 en TCP. Pour cela va dans \app{Préférences Système}, page \menu{Sécurité}, onglet \menu{Coupe-feu}. S'il est écrit \menu{Coupe-feu activé}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sue le screenshot ci-dessous pour ouvrir les ports.
+
+\imagepos{partie1-config_reseau/mac_firewall}{0.5}{Ouvrir les ports pour \app{qRezix}}{!h}
 
 \flimage{partie1-config_reseau/mac_cocoaxnet_icone}{0.1}{l}
 \noindent\app{CocoaXNet} est un équivalent de qRezix moins complet --- il ne dipose pas de moteur de recherche --- mais mieux intégré à Mac OS X, car il est développé en Cocoa, une API spécifique à Mac OS X, et non pas en Qt, qui a l'avantage d'être multi-plateformes.
@@ -127,9 +128,6 @@ Voici plusieurs logiciels que tu voudras sûrement télécharger pour profiter au m
 \\ \\
 
 \flimage{partie1-config_reseau/mac_conversation_icone}{0.1}{l}
-\noindent\app{Conversation}, un client IRC dans le même esprit qu'iChat. Dispose d'une interface très simple ne nécessitant pas de connaître les commandes IRC.
-\noindent Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC.
-\noindent Comme autres clients IRC, on peut citer \app{Colloquy}, assez proche de \app{Conversation}, et \app{Irssix}, un portage de \app{Irssi} sur Mac OS X, bref un truc d'énorme geek.
-\\
+\noindent\app{Conversation}, un client IRC dans le même esprit qu'iChat. Il dispose d'une interface très simple ne nécessitant pas de connaître les commandes IRC. Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{Colloquy}, assez proche de \app{Conversation}, et \app{Irssix}.
 
 \vfill
