@@ -49,7 +49,7 @@ Tu peux aussi utiliser \app{Firefox} si tu préfères !
 \flimage{partie1-config_reseau/mac_mail_icone}{0.1}{l}
 \app{Mail} : un client mail, offrant les fonctionnalités classiques d'un bon client : filtre antispam, règles de tri automatique des mails, regroupement des mails correspondant à une même discussion.
 
-Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur poly, il suffit de le remplir avec les données suivantes :
+Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur \server{poly}, il suffit de le remplir avec les données suivantes :
 
 \begin{description}
   \item[Nom complet] ton nom ! 
@@ -65,7 +65,7 @@ Si tu as déjà créé un compte précédemment, il faut aller dans les \menu{Préféren
 
 Enfin dans les deux cas, coche la case \menu{Activer le cryptage SSL} dans l'onglet \menu{Avancé}, port 995.
 
-Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer. Par contre depuis l'extérieur tu ne peux pas envoyer de mails, car le serveur poly ne le permet pas.
+Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer. Par contre depuis l'extérieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas.
 
 \subsubsection{Configuration news}
 
@@ -76,9 +76,9 @@ Au premier lancement, l'application te propose d'importer les paramètres depuis 
 
 \begin{description}
   \item[Votre nom] ton nom ou ton pseudo 
-  \item[Adresse de courrier] prenom.nom@polytechnique.fr
+  \item[Adresse de courrier] \mail{prenom.nom@polytechnique.fr}
   \item[Serveur de forums] \server{frankiz}
-  \item[Nom du compte] News frankiz
+  \item[Nom du compte] News Frankiz
   \item[Nom d'utilisateur] ton login poly (les huit premières lettres de ton nom en général)
   \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr}
 \end{description}
@@ -94,9 +94,9 @@ Pour t'abonner à des groupes de discussion, il te suffit de sélectionner le comp
 \flimage{partie1-config_reseau/mac_cyberduck_icone}{0.1}{l}
 \app{Cyberduck} : un client FTP très simple à utiliser mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs FTP des autres élèves. Dans la même catégorie, il existe aussi \app{Transmit} (shareware) qui dispose de plus de fonctionnalités.
 
-La configuration ne pose aucun problème puisqu'il n'y rien à faire. Pour se connecter à un serveur, il suffit de taper son nom (exmple : \server{gwennoz}) dans le cadre \menu{Connexion rapide} et appuyer sur Entrée.
+\imagepos{partie1-config_reseau/mac_cyberduck_connection}{0.8}{Cyberduck}{!h}
 
-\imagepos{partie1-config_reseau/mac_cyberduck_connection}{0.8}{Cyberduck}{h}
+La configuration ne pose aucun problème puisqu'il n'y rien à faire. Pour se connecter à un serveur, il suffit de taper son nom (exmple : \server{gwennoz}) dans le cadre \menu{Connexion rapide} et appuyer sur Entrée.
 
 Tu pourras ensuite naviguer sur le serveur et télécharger ou transférer des fichiers. Attention, certains serveurs (intentionnellement) configurés spécialement ne permettent qu'une connection à la fois. Or, le téléchargement d'un fichier demande l'ouverture d'une nouvelle connection. Il faut donc se déconnecter (bouton \menu{Déconnecter}) puis lancer le téléchargement en double-cliquant sur le fichier.
 

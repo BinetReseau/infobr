@@ -7,32 +7,32 @@
 \subsection{Configuration sous Linux}
 
 \subsubsection{Configuration IP}
-Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général. Tu as également besoin de connaître ton adresse IP. L'explication de comment la calculer se trouve page \pageref{calcul_ip} ; elle est notée dorénavant 129.104.AAA.BBB.
+Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général. Tu as également besoin de connaître ton adresse IP. L'explication de comment la calculer se trouve page \pageref{calcul_ip} ; elle est notée dorénavant $129.104.AAA.BBB$.
 
 Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
 
 \paragraph{Sous Mandrake}
 
-Il existe dans ces distributions une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/}.
+Il existe dans cette distributions une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/}.
 
 Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
 
 Tu as autant de \texttt{eth0}, \texttt{eth1}\ldots que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
 
 \begin{description}
-	\item[Adresse IP] entre celle que tu as calculée : 129.104.AAA.BBB (cf. page \pageref{calcul_ip})
-	\item[Masque de sous-réseau] 255.255.255.0
+	\item[Adresse IP] entre celle que tu as calculée : $129.104.AAA.BBB$ (cf. page \pageref{calcul_ip})
+	\item[Masque de sous-réseau] $255.255.255.0$
 	\item[DHCP] laisse cette case décochée
 \end{description}
 
 Ensuite, tu dois encore entrer :
 \begin{description}
-	\item[Nom d'hôte] 'ton\_pseudo'.eleves.polytechnique.fr
-	\item[Serveur DNS] 129.104.201.51
-	\item[Passerelle] tu l'as aussi calculée : 129.104.AAA.13 (cf. page \pageref{calcul_ip})
+	\item[Nom d'hôte] \url{'ton\_pseudo'.eleves.polytechnique.fr}
+	\item[Serveur DNS] $129.104.201.51$
+	\item[Passerelle] tu l'as aussi calculée : $129.104.AAA.13$ (cf. page \pageref{calcul_ip})
 \end{description}
  
-Voilà, c'est bon !
+Voilà, c'est bon ! Tu peux passer au paragraphe 2 !
 
 \paragraph{Sous Gentoo}
 
@@ -47,7 +47,7 @@ Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La prem
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
 
-Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage :
+Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, et la passerelle pour sortir de ton sous-réseau :
 
 \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255\\
                             netmask 255.255.255.0"\\
@@ -61,10 +61,10 @@ puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme :
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
+64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
 
-Pour pouvoir utiliser emerge à travers le proxy de l'école, il faut définir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
+Pour pouvoir utiliser \app{emerge} à travers le proxy de l'école, il faut définir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
 
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 GENTOO\_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
@@ -85,7 +85,7 @@ Comme sous Gentoo, le fichier \file{/etc/resolv.conf} décrit comment résoudre le
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
 
-Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :) ), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage :
+Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :) ), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau, et la passerelle pour sortir de ton sous-réseau :
 
 \cmdline{auto lo\\
 iface lo inet loopback\\
@@ -106,10 +106,10 @@ puis essaye de pinger \fkz par exemple. Tu dois obtenir quelque chose comme:
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
-64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
+64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63\\ time=0.364 ms\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63\\ time=0.269 ms}
 
-Une dernière chose spécifique à Debian, pour pouvoir utiliser 'apt-get' et 'apt-cache' à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
+Une dernière chose spécifique à Debian, pour pouvoir utiliser \app{apt-get} et \app{apt-cache} à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
 
 \cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
 
@@ -129,7 +129,7 @@ deb ftp://miroir/debian-non-US [flavour] main contrib non-free\\
 deb ftp://miroir/debian-security [flavour] main contrib non-free\\
 deb ftp://miroir/debian-marillat [flavour] main}
 
-où '[flavour]' est la saveur de ta debian: stable, testing, unstable, experimental
+où \texttt{[flavour]} est la saveur de ta debian: \texttt{stable}, \texttt{testing}, \texttt{unstable} ou \texttt{experimental}.
 
 \subsubsection{Configuration antivirus}
 
@@ -137,7 +137,7 @@ Elle est drôle celle-là hein ?
 
 \subsubsection{Configuration firewall}
 
-La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables. Pour ceci la première étape est d'installer le paquet iptables pour ta distribution. Ensuite, la configuration peut paraître délicate mais en fait ce ne sont que des règles simples, il suffit de comprendre le principe.
+La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables. Pour ceci la première étape est d'installer le paquet \app{iptables} pour ta distribution. Ensuite, la configuration peut paraître délicate mais en fait ce ne sont que des règles simples, il suffit de comprendre le principe.
 
 Configurer les iptables c'est définir une série de règles. Chaque règle a une forme simple, elle défini une action à effecter dans des conditions données. Ces conditions portent sur l'origine du paquet (l'unité élémentaire de ce qui circule sur le réseau), le format du paquet, le sens de circulation...
 
@@ -147,16 +147,16 @@ Un exemple de règle serait :
 
 Cette règle accepte les paquets que l'on reçoit de \fkz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
 \begin{itemize}
-	\item[\texttt{-A}] définit la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
-	\item[\texttt{-i}] définit l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
-	\item[\texttt{-s}] ip source du paquet à filtrer.
-	\item[\texttt{-d}] ip destination du paquet à filtrer.
+	\item[\texttt{-A}] définit la chaîne à filtrer. La chaîne indique d'où provient la requête : \texttt{INPUT} pour un paquet entrant, \texttt{OUTPUT} pour un paquet sortant sont les principales.
+	\item[\texttt{-i}] définit l'interface réseau... en gros la carte réseau (\texttt{eth0} le plus souvent, mais il y a aussi \texttt{lo} pour la boucle locale - localhost).
+	\item[\texttt{-s}] IP source du paquet à filtrer.
+	\item[\texttt{-d}] IP destination du paquet à filtrer.
 	\item[\texttt{-p}] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
 	\item[\texttt{-m}] définit un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp, multiport ou state.
 	\item[\texttt{-{}-dport}] port de destination du paquet (avec -m udp ou -m tcp)
 	\item[\texttt{-{}-sport}] port d'origine du paquet (avec -m udp ou -m tcp)
-	\item[\texttt{-{}-state}] définit l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont NEW (nouvelle connexion), ESTABLISHED (connexion déjà établie), RELATED (connexion dépendante d'une autre...)
-	\item[\texttt{-j}] défini l'action à entreprendre (ACCEPT pour accepter le paquet, REJECT pour refuser le paquet et en informer l'emmeteur, DROP pour faire comme si le paquet n'existait pas, LOG pour logguer la réception du paquet.
+	\item[\texttt{-{}-state}] définit l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont \texttt{NEW} (nouvelle connexion), \texttt{ESTABLISHED} (connexion déjà établie), \texttt{RELATED} (connexion dépendante d'une autre...)
+	\item[\texttt{-j}] définit l'action à entreprendre (\texttt{ACCEPT} pour accepter le paquet, \texttt{REJECT} pour refuser le paquet et en informer l'emmeteur, \texttt{DROP} pour faire comme si le paquet n'existait pas, \texttt{LOG} pour logguer la réception du paquet.
 \end{itemize}
 
 Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul (on te comprend :). Voici un petit firewall basique pour le réseau de l'X :
@@ -251,7 +251,7 @@ Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
-  \item[Nom] ce que tu veux pour décrire ce compte, par exemple News Frankiz
+  \item[Nom] ce que tu veux pour décrire ce compte, par exemple 'News Frankiz'
   \item[Serveur] \server{frankiz.polytechnique.fr}
   \item[Port] 119
 \end{description}
@@ -265,11 +265,11 @@ Ensuite occupe-toi de l'onglet \menu{Identité} :
 
 Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller dans la rubrique \menu{Comptes}, sous-rubrique \menu{Courrier électronique}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr}, port 25 --- c'est exactement la même configuration SMTP que \app{Kmail}.
 
-Si tu veux mettre une signature à la fin des messages que tu posteras, il te suffit de la mettre dans l'onglet Identité. Sur la plupart des clients la signature est interprétée comme extérieure au message et n'est en particuliers pas incluse dans le texte cité lorsque tu réponds à un message. Pour définir une signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
+Si tu veux mettre une signature à la fin des messages que tu posteras, il te suffit de la mettre dans l'onglet \menu{Identité}. Sur la plupart des clients la signature est interprétée comme extérieure au message et n'est en particuliers pas incluse dans le texte cité lorsque tu réponds à un message. Pour définir une signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
 
 Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
-Pour te connecter aux serveur news de Polytechnique.org, qui a un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer "stunnel" quit permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
+Pour te connecter aux serveur news de Polytechnique.org, qui a un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
@@ -293,6 +293,6 @@ Il ne te reste plus qu'à lancer stunnel par :
 
 \cmdline{/etc/init.d/stunnel start}
 
-Et tu peux ainsi lire les news de polytechnique.org en mettant \server{localhost} comme serveur et \server{1119} comme port. Il faut aussi que tu coche 'Le serveur exige une identification' et que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe que tu peux définir sur \url{http://www.polytechnique.org/acces\_smtp.php}.
+Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et \server{1119} comme port. Il faut aussi que tu coche \menu{Le serveur exige une identification} et que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir sur \url{http://www.polytechnique.org/acces\_smtp.php}.
 
 \vfill
