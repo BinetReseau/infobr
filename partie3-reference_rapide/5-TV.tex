@@ -1,4 +1,4 @@
-\subsection{5-La télé sur le réseau}
+\subsection{La télé sur le réseau}
 
 OS concernés \win \nux \mac
 
@@ -6,36 +6,38 @@ OS concernés \win \nux \mac
 
 grâce au lecteur multimédia VLC développé par l'équipe de VIA (équivalent centralien du BR) , nous commençons à mettre un place un service de diffusion de la télé via le réseau élèves. Cette fonctionnalité , pour l'instant en cours de construction te permet de regarder une chaîne nationale choisie par les administrateurs TV (El-Sio et Esope) à la demande des élèves (ça a l'air artisanal comme ça mais c'est déjà une réussite croyez le ! ).
 
-\subsection{5.1 Comment récupérer VLC ?}
+\subsubsection{Comment récupérer VLC ?}
 
 \includegraphics[width=4in]{partie3-reference_rapide/vlcdownload.png}
 
-VLC est disponible dans la section 'Télécharger' sur http://frankiz.
-L'installation est très simple sous windows et sur les distributions linux utilisant des paquets (debian et mandrake) pour les autres distributions , il te faudra peut-être compiler le programme à la main, n'hésite pas alors à demander de l'aide aux devels.
+VLC est disponible dans la section \menu{Télécharger} sur \url{http://frankiz}.
+L'installation est très simple sous windows et sur les distributions linux utilisant des paquets (debian et mandrake) pour les autres distributions, il te faudra peut-être compiler le programme à la main, n'hésite pas alors à demander de l'aide aux devels.
 
-\subsection{5.2 Configurer VLC pour regarder la télé}
+\subsubsection{Configurer VLC pour regarder la télé}
 
 \includegraphics[width=4in]{partie3-reference_rapide/vlcconfig.png}
 
-ouvre VLC et clique sur fichier.
-dans le menu qui apparaît choisit : ouvrir un flux réseau
-choisit l'option multidiffusion RDP/UDP et rentre l'adresse suivante : tv .
-laisse le port par défaut sur 1234.
-cliques ensuite sur OK... et voilà !
+\begin{itemize}
+\item ouvre VLC et clique sur \menu{Fichier}.
+\item dans le menu qui apparaît choisis \menu{Ouvrir un flux réseau}.
+\item choisis l'option \menu{multidiffusion RDP/UDP} et rentre l'adresse suivante : \url{tv} .
+\item laisse le port par défaut sur \url{1234}.
+\item cliques ensuite sur \menu{OK}... et voilà !
+\end{itemize}
 
-\subsection{5.3 Si rien ne se passe}
+\subsubsection{Si rien ne se passe}
 
 Pas de panique ! Vérifie d'abord ces quelques points avant d'apeller un responsable TV :
 
 \begin{itemize}
 \item vérifie que ta prise réseau est bien branchée (ça serait bête quand même ;b ).
-\item vérifie que ton firewall laisse passer les flux sur le port 1234 ainsi que les flux UDP.
-\item essaye en remplaçant l'adresse tv par 225.0.0.1.
+\item vérifie que ton firewall laisse passer les flux sur le port \url{1234} ainsi que les flux UDP.
+\item essaye en remplaçant l'adresse \url{tv} par \url{225.0.0.1}.
 \item essaye de lire un autre fichier vidéo avec VLC (un film qui est sur ta machine).
 \item si tu es sous linux , vérifie que tu as bien activé l'option multicast dans ton noyau (n'hésite pas à demander de l'aide à un linuxien du BR).
 \item enfin, écris nous un mail donnant les résultats de ces quelques tests pour que l'on puisse t'aider à résoudre ton problème.
 \end{itemize}
 
-\subsection{5.4 avertissement}
+\subsubsection{Avertissement}
 
-Comme li a déjà été dit dans cette description, le service télé est actuellement en test et en constante amélioration. Il se peut donc qu'il soit coupé sans que vous soyez prévenus ou que la qualité diminue brutalement. Mais tous les efforts sont faits pour vous offrir au plus vite un serviec avec de nombreuses chaînes différentes en haute qualité. Les remarques et suggestions sont donc les bienvenues.
+Comme li a déjà été dit dans cette description, le service télé est actuellement en test et en constante amélioration. Il se peut donc qu'il soit coupé sans que vous soyez prévenus ou que la qualité diminue brutalement. Mais tous les efforts sont faits pour vous offrir au plus vite un service avec de nombreuses chaînes différentes en haute qualité. Les remarques et suggestions sont donc les bienvenues.
