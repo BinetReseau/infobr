@@ -11,55 +11,37 @@ Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
 
 Si tu n'as jamais fait de configuration réseau sur ta Gentoo, il faudra certainement créer les fichiers qui suivent.
 
-Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer 
-\file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
+Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer \file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
 
-\begin{verbatim}
-echo 'ton_pseudo' > /etc/hostname
-\end{verbatim}
+\cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
-Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \url{frankiz} ou \url{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
+Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \server{frankiz} ou \server{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
 
-\begin{verbatim}
-search eleves.polytechnique.fr polytechnique.fr
-nameserver 129.104.201.52 129.104.201.51
-\end{verbatim}
+\cmdline{search eleves.polytechnique.fr polytechnique.fr\\
+nameserver 129.104.201.52 129.104.201.51}
 
 Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton sous-réseau (ton étage), et la passerelle pour sortir de ton étage:
 
-\begin{verbatim}
-iface_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255 netmask 255.255.255.0"
-gateway="eth0/129.104.AAA.13"
-\end{verbatim}
+\cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.AAA.255\\
+                            netmask 255.255.255.0"\\
+                            gateway="eth0/129.104.AAA.13"}
 
 Tu fais le grand test en rechargeant ta configuration réseau par:
 
-\begin{verbatim}
-/etc/init.d/net.eth0 restart
-\end{verbatim}
-
-ou
-
-\begin{verbatim}
-/etc/init.d/net.eth0 start
-\end{verbatim}
+\cmdline{/etc/init.d/net.eth0 restart}
 
 puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme:
 
-\begin{verbatim}
-root:~# ping frankiz
-PING frankiz (129.104.201.51) 56(84) bytes of data.
-64 bytes from frankiz (129.104.201.51): icmp_seq=1 ttl=63 time=0.364 ms
-64 bytes from frankiz (129.104.201.51): icmp_seq=2 ttl=63 time=0.269 ms
-\end{verbatim}
+\cmdline{root:~\# ping frankiz\\
+PING frankiz (129.104.201.51) 56(84) bytes of data.\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
 
 Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut exporter les variables d'environnement ci-dessous (éventuellement à mettre dans \file{/etc/profile}) :
 
-\begin{verbatim}
-export http_proxy=http://kuzh.polytechnique.fr:8080
-export ftp_proxy=ftp://kuzh.polytechnique.fr:8080
-export RSYNC_PROXY=rsync://kuzh.polytechnique.fr:8080
-\end{verbatim}
+\cmdline{export http\_proxy=http://kuzh.polytechnique.fr:8080\\
+export ftp\_proxy=ftp://kuzh.polytechnique.fr:8080\\
+export SYNC=rsync://rsync/gentoo-portage}
 
 
 
@@ -70,72 +52,56 @@ Lors de l'installation d'une nouvelle Debian, le programme d'installation te pro
 Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux éditer 
 \file{/etc/hostname} avec ton éditeur préféré (vi ou vim, pico, voire emacs si tu aimes), mais la commande ci-dessous est suffisante:
 
-\begin{verbatim}
-echo 'ton_pseudo' > /etc/hostname
-\end{verbatim}
+\cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
 
 Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \url{frankiz} ou \url{ton\_pseudo} aux IP '129.104.201.51' ou 'ton\_ip' Le fichier contient donc :
 
-\begin{verbatim}
-search eleves.polytechnique.fr polytechnique.fr
-nameserver 129.104.201.52 129.104.201.51
-\end{verbatim}
+\cmdline{search eleves.polytechnique.fr polytechnique.fr\\
+nameserver 129.104.201.52 129.104.201.51}
 
 Enfin,le fichier \file{/etc/network/interfaces} contient la description de la boucle locale (si tu veux faire du FTP vers toi-même par exemple :op), de l'interface réseau et les informations de routage. Il indique ton IP, ton sous réseau (ton étage), et la passerelle pour sortir de ton étage :
 
-\begin{verbatim}
-auto lo
-iface lo inet loopback
-
-auto eth0
-iface eth0 inet static
-address 129.104.AAA.BBB
-netmask 255.255.255.0
-network 129.104.AAA.0
-broadcast 129.104.AAA.255
-gateway 129.104.AAA.13
-\end{verbatim}
+\cmdline{auto lo\\
+iface lo inet loopback\\
+\\
+auto eth0\\
+iface eth0 inet static\\
+address 129.104.AAA.BBB\\
+netmask 255.255.255.0\\
+network 129.104.AAA.0\\
+broadcast 129.104.AAA.255\\
+gateway 129.104.AAA.13}
 
 Tu fais le grand test en rechargeant ta configuration réseau par :
 
-\begin{verbatim}
-/etc/init.d/networking restart
-\end{verbatim}
+\cmdline{/etc/init.d/networking restart}
 
 puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme:
 
-\begin{verbatim}
-root:~# ping frankiz
-PING frankiz (129.104.201.51) 56(84) bytes of data.
-64 bytes from frankiz (129.104.201.51): icmp_seq=1 ttl=63 time=0.364 ms
-64 bytes from frankiz (129.104.201.51): icmp_seq=2 ttl=63 time=0.269 ms
-\end{verbatim}
+\cmdline{root:~\# ping frankiz\\
+PING frankiz (129.104.201.51) 56(84) bytes of data.\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
+64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
 
 
 Une dernière chose spécifique à Debian, pour pouvoir utiliser 'apt-get' et 'apt-cache' à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
 
-\begin{verbatim}
-Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";
-\end{verbatim}
+\cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
 
 Attention, le apt.conf ne gère pas le protocole ftp via le proxy http.
 Pour utiliser des ftp:// dans ton /etc/apt/sources.list, il faut rajouter  
 
-\begin{verbatim}
-ftp_proxy = http://kuzh:8080
-\end{verbatim}
+\cmdline{ftp\_proxy = http://kuzh:8080}
 
 dans les paramètres de wget (car apt utilise wget), \file{/etc/wgetrc} ou \file{/root/.wgetrc}. Tu peux aussi y mettre à ta guise:
 
-\begin{verbatim}
-http_proxy = http://kuzh:8080
-\end{verbatim}
+\cmdline{http\_proxy = http://kuzh:8080}
 
 Le BR maintient par ailleurs un miroir debian : tu peux l'utiliser en rajoutant à ton \file{/etc/sources.list}
-\begin{verbatim}
-deb ftp://miroir/debian [flavour] main contrib non-free
-\end{verbatim}
+
+\cmdline{deb ftp://miroir/debian [flavour] main contrib non-free}
+
 où 'flavour' est la saveur de ta debian: stable, testing, unstable, experimental
 
 \paragraph{Sous Redhat et Mandrake}
@@ -167,38 +133,61 @@ Elle est bonne celle là hein ?
 
 \subsubsection{Configuration firewall}
 
-Il existe de multiples façons de gérer un firewall sous linux, et la plus performante est certainement de passer par le « netfilter » du noyau, configurable via la commande « iptables ».
-Certains utilisent des scripts qui fabriquent les règles d'iptables presque automatiquement, d'autres préfèrent travailler directement avec la commande « iptables ». Il faut dire que la syntaxe est assez délicate, du moins les premières fois. Une fois le module netfilter chargé dans le noyau, tu peux utiliser la commande « iptables »:
+La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables. Pour ceci la première étape est d'installé le paquet iptables pour ta distribution. Ensuite, la configuration peut paraître délicate mais en fait ce ne sont que des règles simples, il suffit de comprendre le principe.
 
-\begin{verbatim}
-iptables -A INPUT -s 129.104.254.5 -p tcp -m tcp --dport 80 -j DROP
-\end{verbatim}
+Configurer les iptables c'est définir une série de règles. Chaque règle a une forme simple, elle défini une action à effecter dans des conditions données. Ces conditions portent sur l'origine du paquet (l'unité élémentaire de ce qui circule sur le réseau), le format du paquet, le sens de circulation...
 
-(Ici pour dropper les paquets entrant, venant de l'ip source 129.104.254.5 (le proxy kuzh), et à destination du port 80 en tcp)
-Tu peux utiliser, dès que tu commences à avoir plus de 5 ou 6 règles, soit un script qui recharge tout en une seule fois, soit un fichier blah qui contient par exemple ceci (les premières lignes correspondent aux politiques par défaut pour la table « filter ») :
+Un exemple de règle serait :
 
-\begin{verbatim}
-*filter
-:INPUT DROP [2:120]
-:FORWARD DROP [0:0]
-:OUTPUT ACCEPT [24864827:35635624411]
--A INPUT -i lo -j ACCEPT
-(etc...)
--A OUTPUT -d ! 129.104.0.0/255.255.0.0 -m limit --limit 30/min -j LOG --log-prefix "Port access denied : (OUTPUT)"
--A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j DROP
-COMMIT
-\end{verbatim}
+\cmdline{-A INPUT -i eth0 -s 129.104.201.51 -p tcp -m tcp --dport 80 -j ACCEPT}
 
-et tu peux le charger par « iptables-restore < blah »  ou  le créer avec « iptables-save > blah »
-Quand un paquet arrive, les règles sont examinées dans l'ordre, et à la première règle trouvée autre que LOG (par exemple: ACCEPT, REJECT, DROP), alors le paquet est traité et les règles suivantes ne sont pas examinées. C'est lorsque aucune règle ne s'applique au paquet que la politique par défaut est utilisée.
-Par exemple, la première ligne accepte ici toutes les connections sur la boucle locale, la seconde ligne logue tous les paquets sortants à destination des ip en dehors du sous réseau 16 bits de l'X: 129.104.0.0/255.255.0.0, et la dernière ligne droppe ces mêmes paquets après la journalisation.
+Cette règle accepte les paquets que l'on reçoit de Frankiz (129.104.201.51) sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
+\begin{itemize}
+	\item[-A] défini la chaine à filtrer. La chaine indique d'où provient la requête : INPUT pour un paquet entrant, OUTPUT pour un paquet sortant sont les principales.
+	\item[-i] défini l'interface réseau... en gros la carte réseau (eth0 le plus souvent, mais il y a aussi lo pour la boucle locale - localhost).
+	\item[-s] ip source du paquet à filtrer.
+	\item[-d] ip destination du paquet à filtrer.
+	\item[-p] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
+	\item[-m] défini un module particulier à utiliser pour filtrer plus précisemment. Le plus souvent on utilise les modules tcp, udp ou state.
+	\item[--dport] port de destination du paquet (avec -m udp ou -m tcp)
+	\item[--sport] port d'origine du paquet (avec -m udp ou -m tcp)
+	\item[--state] défini l'état de la connexion (nécessite le module state). Les principales valeurs de test pour ce paramètre sont NEW (nouvelle connexion), ESTABLISHED (connexion déjà établie), RELATED (connexion dépendante d'une autre...)
+	\item[-j] défini l'action à entreprendre (ACCEPT pour accepter le paquet, REJECT pour refuser le paquet et en informer l'emmeteur, DROP pour faire comme si le paquet n'existait pas, LOG pour loggeur la réception du paquet.
+\end{itemize}
 
-Deux tutorials (parmi de très nombreux!) sur les iptables:
-En Français mais un peu ardus: http://www.tofe.org/iptables.php3
-Très complet, et bien plus détaillé, en Anglais: 
-http://iptables-tutorial.frozentux.net/iptables-tutorial.html
+Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul (on te comprend :). Voici un petit firewall basique qui convient à la plupart des utilisations sur le réseau de l'X :
 
-6.4. Configuration navigateur web:
+\cmdline{\# Comportement par défaut pour les différentes chaines\\
+*filter\\
+:INPUT DROP [0:0]\\
+:FORWARD DROP [0:0]\\
+:OUTPUT ACCEPT [14913241:2845420091]\\
+\\
+\# Pour que tout se passe bien avec localhost\\
+-A INPUT -i lo -j ACCEPT\\
+\# Pour que les connexions sur les ports > 1024 soit autorisées\\
+\# pour les programmes qui les utilisent comme connexion secondaire\\
+\# (Exemple : serveur ftp)\\
+-A INPUT -p tcp -m tcp --dport 1024:65535 -m state --state RELATED,ESTABLISHED -j ACCEPT\\
+-A INPUT -p udp -m udp --dport 1024:65535 -m state --state RELATED,ESTABLISHED -j ACCEPT\\
+\\
+\# Pour ouvrir les ports des utilitaires standards :\\
+\# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix\\
+-A INPUT -p tcp -m multiport --dports 20,21,22,80,119,5050\\
+\\
+\# Pour que les demande de connexion vers l'extérieur (impossible) ne ralentissent pas\\
+-A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j REJECT\\
+\\
+\# Fin du fichier\\
+COMMIT}
+
+Pour activer ton firewall, tu n'as plus qu'à faire :
+
+\cmdline{iptables-restore iptbl}
+
+
+\subsubsection{Configuration navigateur web}
+
 Que tu utilises Konqueror (fourni par défaut avec kde et bénéficiant donc d'un preload d'où un démarrage rapide), ou Mozilla / Mozilla-firefox (beaucoup plus stable que Konqueror, surtout sur les distributions réputées instables), la seule configuration à mettre est celle du proxy:
 Le script de configuration automatique du Proxy se trouve sur http://frankiz/proxy.pac.
 Dans Konqueror, on le charge dans l'onglet ?Proxy? ou ?serveur de proximité? dans ?Settings? et ?Configure Konqueror?, ou ?Configuration? et ?Configurer Konqueror?.

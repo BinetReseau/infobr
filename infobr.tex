@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{ifthen}
+\usepackage{alltt}
 \usepackage{wallpaper}
 \usepackage{wrapfig}
 \usepackage{graphicx}
@@ -75,6 +76,16 @@
 \newcommand{\rep}[1]{'#1'\xspace}
 % pour les fichiers
 \newcommand{\file}[1]{'#1'\xspace}
+% pour le ligne de commande
+\definecolor{LightGreen}{cmyk}{0.2,0.0,0.3,0.0}
+\newcommand{\cmdline}[1]{
+  \vspace{4pt}
+  \noindent
+  \colorbox{LightGreen}{
+    \parbox[c]{.9\textwidth}{\texttt{#1}}
+  }
+  \vspace{4pt}
+}
 % images des OS
 \newcommand{\nux}{\includegraphics{nux}\xspace}
 \newcommand{\win}{\includegraphics{win}\xspace}
@@ -82,6 +93,7 @@
 \newcommand{\nuxs}{\includegraphics{nux_s}\xspace}
 \newcommand{\wins}{\includegraphics{win_s}\xspace}
 \newcommand{\macs}{\includegraphics{mac_s}\xspace}
+% divers
 \newcommand{\fkz}{\server{frankiz}}
 \newcommand{\xshare}{la rubrique \menu{télécharger} de \fkz}
 
