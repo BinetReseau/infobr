@@ -2,16 +2,31 @@
 
 \subsection{La structure du réseau et les serveurs}
 
-\subsubsection{Réseau élèves et réseau DSI}
+\subsubsection{Schéma général}
 
-domaine élèves toussa....
+Voici tout ce qu'il y a autour de ton ordinateur sur le réseau !
 
+\imagepos{partie2-presentation_reseau/schema_reseau}{.8}{Schéma du réseau de l'X}{h}
 
-Voilà pour la gestion côté élèves. Mais derrière tout cela il y a aussi la Direction des Systèmes d'Information (DSI), qui gère le réseau physique et les serveurs de l'école. Les services qu'elle offre aux élèves sont : les salles info (comptes moned), le serveur de mails (comptes poly) où tu as ton adresse \mail{prenom.nom@polytechnique.fr}, les proxies qui nous permettent de passer le firewall et de nous connecter à l'extérieur de l'école (kuzh et sil), etc... La DSI apporte également un soutien technique pour certaines manifestations comme le forum de l'école, par exemple.
+\subsubsection{Réseau DSI}
+
+Tu dois l'avoir compris, deux entités se partagent la gestion du réseau pour les élèves : le BR et la DSI.
+
+Et comme le montre le schéma, tous les accès vers l'extérieur de l'X sont contrôlés par la DSI. Elle possède une connexion à 100Mb/s sur le réseau Renater, qui est le réseau scientifique français. Cet accès vers l'extérieur est contrôlé par de puissants firewalls qui empêchent les intrusions de pirates sur le réseau de l'X. Cela a des inconvénients : il faut passer par des serveurs proxy pour passer vers l'extérieur et certaines choses, comme le peer-to-peer, sont impossibles. Rappelle-toi néanmoins que le réseau n'est censé te servir que pour ton travail :), et surtout que c'est grâce à ces firewalls que le réseau interne est à peu près tranquille, qu'on peut y laisser des serveurs FTP ouverts, etc. Bref, c'est une protection et pas du tout une contrainte gratuite.
+
+Le réseau physique (switches, etc.) et les serveurs de l'école sont gérés par la DSI. Elle offre plusieurs services aux élèves : les salles info (comptes \server{moned}), le serveur de mails (comptes \server{poly}) où tu as ton adresse \mail{prenom.nom@polytechnique.fr}, les proxies qui nous permettent de passer le firewall et de nous connecter à l'extérieur de l'école (\server{kuzh} et \server{sil}), deux serveurs DNS, etc. La DSI apporte également un soutien technique pour certaines manifestations comme le forum de l'école, par exemple.
 
 Donc si tu n'arrives pas à te loguer en salle info, ou si tu as perdu ton mot de passe pour tes mails, c'est eux qu'il faut aller voir. Leurs bureaux sont dans le couloir qui relie l'arrière du Grand Hall aux laboratoires. 
 
-Et enfin, c'est la DSI qui t?a fait signer une charte de bon usage du matériel et de tous les services qu'elle met à ta disposition. C'est donc à elle que tu devras rendre des comptes en cas de violation de cette charte.
+Et enfin, c'est la DSI qui t'a fait signer une charte de bon usage du matériel et de tous les services qu'elle met à ta disposition. C'est donc à elle que tu devras rendre des comptes en cas de violation de cette charte.
+
+\subsubsection{Réseau élèves}
+
+Le BR possède plusieurs serveurs et offre des services qui sont largements décrits dans cette partie de l'infoBR : \fkz et notamment sa rubrique \menu{Télécharger}, encore appelée \menu{X-Share}, les newsgroups, \app{qRezix}, le domaine Windows, la télé, l'InfoBR.
+
+Une grosse partie du travail du BR consiste à maintenir ces services en état de marche et à le améliorer. Nous faisons aussi du support, c'est à dire qu'on peut te donner des conseils pour configurer ta machine --- mais \emph{grosso modo} presque tout est déjà écrit dans cet InfoBR...
+
+Enfin, le BR surveille le bon fonctionnement du réseau, en collaboration avec la DSI. Nous restons dépendants de la DSI car c'est eux qui possèdent tout le matériel physique, sauf nos serveurs --- pour l'instant.
 
 \newcommand{\dscserver}[3]{\item \server{#1} (#2) : #3}
 
