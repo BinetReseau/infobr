@@ -11,6 +11,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{ifthen}
 \usepackage{wallpaper}
 \usepackage{wrapfig}
 \usepackage{graphicx}
@@ -31,28 +32,25 @@
 % Commandes speciales definies ici
 
 % pour inclure des images
-\newcommand{\image}[4]{ % arguments : path, largeur (entre 0 et 1), légende, label
+\newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
   \begin{figure}
     \begin{center}
       \includegraphics[width=#2\textwidth]{#1}
       \caption{#3}
-      \label{#4}
     \end{center}
   \end{figure}
 }
-\newcommand{\imagepos}[5]{ % arguments : path, largeur (entre 0 et 1), légende, label, positionnement
-  \begin{figure}[#5]
+\newcommand{\imagepos}[4]{ % arguments : path, largeur (entre 0 et 1), légende, positionnement
+  \begin{figure}[#4]
     \begin{center}
       \includegraphics[width=#2\textwidth]{#1}
       \caption{#3}
-      \label{#4}
     \end{center}
   \end{figure}
 }
-\newcommand{\flimage}[4]{ % arguments : path, largeur (entre 0 et 1), position, label
+\newcommand{\flimage}[3]{ % arguments : path, largeur (entre 0 et 1), position
   \begin{wrapfigure}{#3}{0pt}
     \includegraphics[width=#2\textwidth]{#1}
-    \label{#4}
   \end{wrapfigure}
 }
 
@@ -65,7 +63,7 @@
 \newcommand{\server}[1]{\texttt{\color{DarkRed}#1}\xspace}
 % pour les URLs
 \definecolor{Blue}{cmyk}{1.0,0.1,0.1,0.0}
-\newcommand{\url}[1]{\texttt{\color{Blue}#1}\xspace}
+\newcommand{\url}[1]{\NoAutoSpaceBeforeFDP\texttt{\color{Blue}#1}\xspace\AutoSpaceBeforeFDP}
 % pour les applications
 \newcommand{\app}[1]{\texttt{#1}\xspace}
 % pour les menus et les elements de menu
@@ -78,7 +76,9 @@
 \newcommand{\nux}{\includegraphics{nux}\xspace}
 \newcommand{\win}{\includegraphics{win}\xspace}
 \newcommand{\mac}{\includegraphics{mac}\xspace}
-
+\newcommand{\nuxs}{\includegraphics{nux_s}\xspace}
+\newcommand{\wins}{\includegraphics{win_s}\xspace}
+\newcommand{\macs}{\includegraphics{mac_s}\xspace}
 \newcommand{\fkz}{\server{frankiz}\xspace}
 
 
