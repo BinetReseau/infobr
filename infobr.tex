@@ -77,12 +77,17 @@
 % pour les fichiers
 \newcommand{\file}[1]{'#1'\xspace}
 % pour le ligne de commande
-\definecolor{LightGreen}{cmyk}{0.2,0.0,0.3,0.0}
+\definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
+\definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
 \newcommand{\cmdline}[1]{
   \vspace{4pt}
   \noindent
-  \colorbox{LightGreen}{
-    \parbox[c]{.9\textwidth}{\texttt{#1}}
+  \colorbox{LightRed}{
+    \parbox[c]{.9\textwidth}{
+    \NoAutoSpaceBeforeFDP
+    \texttt{\color{BrightGreen}#1}
+    \AutoSpaceBeforeFDP
+    }
   }
   \vspace{4pt}
 }
