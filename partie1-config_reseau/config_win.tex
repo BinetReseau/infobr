@@ -1,9 +1,29 @@
 %$Id$
 
+\clearpage
+\pagebreak
+\bghdr{fond-win}
+
 \subsection{Configuration sous Microsoft Windows}
 
 \subsubsection{Configuration IP}
 
+Va dans le panneau de configuration grâce au menu démarrer et double-clique sur « Connexions réseaux » puis sur « Connexion au réseau local. Clique enfin sur « propriétés ».
+
+Là il faut que l'écran sur lequel tu tombes ressemble à ça (En gros décoche toute autre case que les 2 ici)
+
+Clique sur « Protocole Internet (TCP/IP) et ensuite sur le bouton Propriétés qui vient de se dégriser.
+
+Et tu tombes sur l'écran de configuration de ta connexion vers l'extérieur.
+
+ 
+Bien sur là,  tu rentres :
+? Adresse IP : l'ip 129.104.AAA.BBB que tu as calculé précédemment pour toi,
+? Masque de sous réseau : 255.255.255.0
+? Passerelle par défaut : 129.104.AAA.13 l'adresse de ta passerelle (cf avant)
+? Serveur DNS préféré : 129.104.201.51 et 129.104.201.52
+
+Ensuite, clique sur « Avancé? ». Puis clique sur l'onglet « DNS » en haut. L'écran que tu dois obtenir doit ressembler à celui là. Remplis les différents champs afin de le rendre semblable.
 
 \subsubsection{Configuration de l'ordinateur}
 
@@ -38,19 +58,19 @@ Avantages :
 
 Inconvénients :
 \begin{itemize}
-  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus, qui fait sauter le réseau, il reviendra peut-ête plus vite pour les autres que pour toi...
+  \item Tu es responsable de ton ordinateur : notamment, si tu ramènes un virus qui fait sauter le réseau, il reviendra peut-ête plus vite pour les autres que pour toi...
 \end{itemize}
 
 \vspace{1ex}
 \fbox{
-  \begin{minipage}{.8\textwidth}
+  \begin{minipage}[center]{.7\textwidth}
     \begin{center}
 Le BR te conseille \emph{très fortement} de te mettre sur le domaine et de choisir l'installation simplifiée, sauf si tu maîtrises bien Windows et que tu es sûr de ce que tu fais !
     \end{center}
   \end{minipage}
 }
 
-\paragraph{Installation simplifiée --- configuration automatique}\\
+\paragraph{Installation simplifiée --- configuration automatique}
 
 Tout d'abord : \textbf{désinstalle tous les antivirus que tu pourrais avoir !}
 
@@ -64,13 +84,31 @@ Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de Configuration}, ouvre \me
 
 Ensuite, tu vas t'inscrire sur le domaine :
 
-\paragraph{Installation personnalisée --- configuration manuelle}\\
+Clique sur le \menu{Menu Démarrer} puis clique-droit sur \menu{Poste de travail}, \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur}. Dans la case \menu{Nom de l'ordinateur},  
+rentre ton pseudo, puis coche la case \menu{domaine} et rentre textellement \url{windows.eleves.polytechnique.fr}. Tu alors peux sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 FireWall ».
+ 
+Si tu es Rouje 2002 : tu tapes
+Nom	rouje02
+Mot de Passe	rouge.2002
+Si tu es Jone 2003 : tu tapes
+Nom	jone03
+Mot de Passe	jone.2003
+
+\paragraph{Installation personnalisée --- configuration manuelle}
 
 Commence par désinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqué dans le paragraphe \og Installation simplifiée --- configuration automatique \fg.
 
 Ensuite, voici les logiciels de sécurité que le BR te propose :
 
 \subparagraph{Configuration antivirus}
+
+alors là on rigole plus ! Quand la sécurité du réseau est en jeu, on prend cinq minutes pour configurer proprement le bordel !
+
+Ouvre ton explorateur Windows et tape : 
+\url{$\backslash\backslash$enez$\backslash\backslash$antivirus}
+et double-clique sur le fichier \file{symantec.exe}
+
+Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école. Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, il sera toujours à jour.
 
 \subparagraph{Configuration firewall :}
 
@@ -80,7 +118,7 @@ Lance le programme et ajoute dans firewall -> Zone -> IPRange -> de 129.104.0.0 
 
 Le firewall te demandera alors une autorisation dès qu'un programme souhaite accéder au réseau.
 
-\subsubsection{Configuration Web (proxy)}
+\subsubsection{Configuration web (proxy)}
 
 Lance \app{Internet Explorer}. Clique sur \menu{Options Internet} dans le menu \menu{Outils}, puis sur l'onglet \menu{Connexions} de la nouvelle fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la fenêtre. 
 
@@ -90,7 +128,7 @@ Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finalis
 
 Une fois que tu as fait ça, tu n'as plus besoin d'\app{Internet Explorer}, qui est blindé de failles de sécurité et autres portes ouvertes aux logiciels-espions et aux virus. Ce n'est pas une blague, même à l'X les risques ne sont pas nuls. Alors enlève le raccourci de ton bureau et mets à la place \app{Firefox}, disponible sur \xshare ou à l'adresse \url{http://www.mozilla-europe.org/fr/products/firefox/}. Ce n'est pas une garantie ultime --- message subliminal : de toute facon, fais attention à ce que tu fais ;-) --- mais ça limite les risques.
 
-\subsubsection{Configuration Mail}
+\subsubsection{Configuration mail}
 
 La DSI met à ta disposition une boîte aux lettres électronique, cette section t'explique comment configurer Outlook Express pour y avoir accès.
 Lance Outlook Express
@@ -113,7 +151,7 @@ Ensuite, tu choisis l'option de serveur « POP » (ou « POP3 », c'est pareil). Dan
 
 Ensuite, le « Nom du compte » (ou « Nom d'utilisateur entrant ») est ton login poly (le même que celui de l'adresse @poly.polytechnique.fr). OE te demandera aussi ton mot de passe, alors que Thunderbird ne te le demandera que lorsque tu utiliseras ton compte pour la première fois. Finalement, il te suffit de rentrer un nom pour ton nouveau compte (ce que tu veux) ou d'appuyer sur « Terminer » pour finir la configuration.
 
-\subsubsection{Configuration News}
+\subsubsection{Configuration news}
 
 Lance Outlook Express 
 Va dans ?Outils' puis ?Comptes...'
@@ -128,14 +166,16 @@ Comme pour le mail, tu vas dans Outils -> Comptes -> Ajouter (OE) ou Outils -> P
 
 On te demande ensuite le nom du serveur, tu tapes \server{frankiz}. Tu n'as plus qu'à donner un nom au compte ou à appuyer sur « Terminer », tu es déjà connecté sur les BR ! Il ne te reste plus qu'à choisir les forums dont tu veux lire les messages (on te propose de les sélectionner dès la fin de la procédure précédente) ; pour cela, tu peux te fier à leur description dans l'article général sur les BR ou à tes affiliations binets/section/goûts.
 
-\subsubsection{Client FTP}
+\subsubsection{Configuration FTP}
+
+\paragraph{Client FTP}
 
 Le BR te conseille SmartFTP --- \url{http://www.smartftp.com/}
 Pour l'installer, télécharge-le sur ce site ou sur \xshare et double-clique sur l'installateur.
  
 Finis l'installation, et tu peux aller sur tous les FTP du réseau avec une facilité et une rapidité déconcertante. 
 
-\subsubsection{Serveur FTP}
+\paragraph{Serveur FTP}
 
 Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de partager les différents projets, les films du JTX, ses photos, etc. Donc il est quasiment indispensable que tu installes un serveur FTP.
 
@@ -147,75 +187,9 @@ Un des plus simples et \app{FileZilla}, qui est libre de surcroît. Expliquer les
 
 \pagebreak
 
-{\Huge A prtir d'ici c'est le bordel, ne pas lire !!!
-}
-
-
-
-
-
-
-
-\subsubsection{Configuration IP}
-
-Va dans le panneau de configuration grâce au menu démarrer et double-clique sur « Connexions réseaux » puis sur « Connexion au réseau local. Clique enfin sur « propriétés ».
-
-Là il faut que l'écran sur lequel tu tombes ressemble à ça (En gros décoche toute autre case que les 2 ici)
-
-Clique sur « Protocole Internet (TCP/IP) et ensuite sur le bouton Propriétés qui vient de se dégriser.
-
-Et tu tombes sur l'écran de configuration de ta connexion vers l'extérieur.
-
- 
-Bien sur là,  tu rentres :
-? Adresse IP : l'ip 129.104.AAA.BBB que tu as calculé précédemment pour toi,
-? Masque de sous réseau : 255.255.255.0
-? Passerelle par défaut : 129.104.AAA.13 l'adresse de ta passerelle (cf avant)
-? Serveur DNS préféré : 129.104.201.51 et 129.104.201.52
-
-Ensuite, clique sur « Avancé? ». Puis clique sur l'onglet « DNS » en haut. L'écran que tu dois obtenir doit ressembler à celui là. Remplis les différents champs afin de le rendre semblable.
-
  
 
-\subsubsection{Configuration de l'ordinateur}
 
-Là, tu as le choix :
-? INSTALLATION SIMPLIFIEE : Soit tu choisis d'accéder au domaine Windows avec Windows XP PRO (version proposée gratuitement par le BR) afin de te simplifier la vie pour ne pas avoir de problème de virus, de mise à jour, et pour bénéficier de l'assistance rapide du BR : Nous pouvons d'assister à distance pour résoudre tes petits tracas ;  tu peux alors sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 Firewall ». Sache que tu peux toujours sortir du domaine plus tard si tu le désires, et sans aucune conséquence.
-? INSTALLATION AVANCEE :  Soit tu choisis d'être indépendant, mais tu es responsable des mises à jour régulières de ton système (Windows et Antivirus) ; en particulier un infection de ton ordinateur due à une négligence pourrait te priver de réseau quelques jours?
-
-
-
-\paragraph{Installation Simplifiée (Configuration Automatique)}
-
-Si tu fais le premier choix : 
-Clique sur « Démarrer » et clique droit sur « Poste de travail », « Propriétés ».
-Puis, clique sur l'onglet « nom de l'ordinateur ». Dans « nom de l'ordinateur »,  rentre ton pseudo, puis clique sur « domaine » et rentre « windows.eleves.polytechnique.fr ». Tu alors peux sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 FireWall ».
- 
-Si tu es Rouje 2002 : tu tapes
-Nom	rouje02
-Mot de Passe	rouge.2002
-Si tu es Jone 2003 : tu tapes
-Nom	jone03
-Mot de Passe	jone.2003
-Si tu fais le deuxième choix, suis donc attentivement les sections suivantes.
-
-\paragraph{Installation Avancée} 
-
-\subparagraph{Configuration Antivirus}
-
-Alors là on rigole plus... Quand la sécurité du réseau est en jeu, on prend 5min pour configurer le bordel !
-Tout d'abord : 
-Si tu ne l'as pas fait, DESINSTALLE TES ANTIVIRUS ANTERIEURS 
-En utilisant « Panneau de Configuration » puis « Ajout Suppression de Programmes »  désinstalle si tu l'as :
-? Symantec Antivirus
-? McAfee Antivirus
-? Norton Antivirus
-? Ou autre?
-Dans ton explorateur Windows, tape : 
-\\\\norokarel\\antivirus
-et double-clique sur le fichier : Symantec .exe
-Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école.
-Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, il sera toujours à jour.
 
 
 
