@@ -33,3 +33,127 @@ Comme pour le mail, tu vas dans Outils -> Comptes -> Ajouter (OE) ou Outils -> P
 
 
 On te demande ensuite le nom du serveur, tu tapes \server{frankiz}. Tu n'as plus qu'à donner un nom au compte ou à appuyer sur « Terminer », tu es déjà connecté sur les BR ! Il ne te reste plus qu'à choisir les forums dont tu veux lire les messages (on te propose de les sélectionner dès la fin de la procédure précédente) ; pour cela, tu peux te fier à leur description dans l'article général sur les BR ou à tes affiliations binets/section/goûts.
+
+
+
+\subsubsection{Configuration IP}
+
+Va dans le panneau de configuration grâce au menu démarrer et double-clique sur « Connexions réseaux » puis sur « Connexion au réseau local. Clique enfin sur « propriétés ».
+
+Là il faut que l'écran sur lequel tu tombes ressemble à ça (En gros décoche toute autre case que les 2 ici)
+
+Clique sur « Protocole Internet (TCP/IP) et ensuite sur le bouton Propriétés qui vient de se dégriser.
+
+Et tu tombes sur l'écran de configuration de ta connexion vers l'extérieur.
+
+ 
+Bien sur là,  tu rentres :
+? Adresse IP : l'ip 129.104.AAA.BBB que tu as calculé précédemment pour toi,
+? Masque de sous réseau : 255.255.255.0
+? Passerelle par défaut : 129.104.AAA.13 l'adresse de ta passerelle (cf avant)
+? Serveur DNS préféré : 129.104.201.51 et 129.104.201.52
+
+Ensuite, clique sur « Avancé? ». Puis clique sur l'onglet « DNS » en haut. L'écran que tu dois obtenir doit ressembler à celui là. Remplis les différents champs afin de le rendre semblable.
+
+ 
+
+\subsubsection{Configuration de l'ordinateur}
+
+Là, tu as le choix :
+? INSTALLATION SIMPLIFIEE : Soit tu choisis d'accéder au domaine Windows avec Windows XP PRO (version proposée gratuitement par le BR) afin de te simplifier la vie pour ne pas avoir de problème de virus, de mise à jour, et pour bénéficier de l'assistance rapide du BR : Nous pouvons d'assister à distance pour résoudre tes petits tracas ;  tu peux alors sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 Firewall ». Sache que tu peux toujours sortir du domaine plus tard si tu le désires, et sans aucune conséquence.
+? INSTALLATION AVANCEE :  Soit tu choisis d'être indépendant, mais tu es responsable des mises à jour régulières de ton système (Windows et Antivirus) ; en particulier un infection de ton ordinateur due à une négligence pourrait te priver de réseau quelques jours?
+
+Tout d'abord : 
+DÉSINSTALLE TES ANTIVIRUS ANTÉRIEURS 
+En utilisant « Panneau de Configuration » puis « Ajout Suppression de Programmes »  désinstalle si tu l'as :
+? Symantec Antivirus
+? McAfee Antivirus
+? Norton Antivirus
+? Ou autre?
+
+\paragraph{Installation Simplifiée (Configuration Automatique)}
+
+Si tu fais le premier choix : 
+Clique sur « Démarrer » et clique droit sur « Poste de travail », « Propriétés ».
+Puis, clique sur l'onglet « nom de l'ordinateur ». Dans « nom de l'ordinateur »,  rentre ton pseudo, puis clique sur « domaine » et rentre « windows.eleves.polytechnique.fr ». Tu alors peux sauter les paragraphes « 3.3 Configuration Antivirus » et « 3.4 FireWall ».
+ 
+Si tu es Rouje 2002 : tu tapes
+Nom	rouje02
+Mot de Passe	rouge.2002
+Si tu es Jone 2003 : tu tapes
+Nom	jone03
+Mot de Passe	jone.2003
+Si tu fais le deuxième choix, suis donc attentivement les sections suivantes.
+
+\paragraph{Installation Avancée} 
+
+\subparagraph{Configuration Antivirus}
+
+Alors là on rigole plus... Quand la sécurité du réseau est en jeu, on prend 5min pour configurer le bordel !
+Tout d'abord : 
+Si tu ne l'as pas fait, DESINSTALLE TES ANTIVIRUS ANTERIEURS 
+En utilisant « Panneau de Configuration » puis « Ajout Suppression de Programmes »  désinstalle si tu l'as :
+? Symantec Antivirus
+? McAfee Antivirus
+? Norton Antivirus
+? Ou autre?
+Dans ton explorateur Windows, tape : 
+\\\\norokarel\\antivirus
+et double-clique sur le fichier : Symantec .exe
+Ce package contient le paramétrage de la mise à jour automatique de Windows sur le serveur de l'école.
+Attends la fin de l'installation et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus, il sera toujours à jour.
+
+\subparagraph{Configuration FireWall}
+
+Si tu veux mettre un FireWall sur ton ordinateur, dans ton explorateur Windows, tape : 
+\\\\norokarel\\firewall
+et télécharge puis exécute le fichier ZoneAlarm.
+Lance le programme et ajoute dans FireWall -> Zone -> IPRange -> de 129.104.0.0 à 129.104.255.255. avec comme nom : X.
+Le Firewall te demandera alors une autorisation dès qu'un programme souhaite accéder au réseau.
+
+\subsubsection{Configuration Internet}
+
+Lance Internet Explorer. 
+Clique sur les « Options Internet? » qui se situent dans le menu « Outils » puis sur l'onglet « Connexions » de la nouvelle fenêtre. 
+Finalement sur « Paramètres réseau » vers le bas de la fenêtre. 
+
+ 
+Vous devez avoir quelque chose qui ressemble à ça. (Reste à remplir le champ « Adresse » pour finaliser ta connexion vers Internet !!!!)  
+
+\subsubsection{Configuration Mail}
+
+La DSI met à ta disposition une boîte aux lettres électronique, cette section t'explique comment configurer Outlook Express pour y avoir accès.
+Lance Outlook Express
+Va dans le menu `Outils' -> `Comptes...', 
+Clique sur `Ajouter...' (En haut à droite), choisis `Courrier...', 
+Choisis comme type de messagerie entrante « POP3 » et rentre comme serveur pour courrier entrant et sortant « poly.polytechnique.fr »
+Ensuite, rentre le nom de ton compte sur poly, ton mot de passe, vérifie bien que la case `mémoriser le mot de passe' est cochée.
+Reviens alors sur la fenêtre `Comptes Internet', va sur l'onglet `Courrier', clique sur le compte que tu viens de créer puis sur `Propriétés'. Va sur l'onglet avancé et configure comme suit, en cochant BIEN la seconde case `Ce serveur nécessite une connexion sécurisée (SSL)'
+
+ 
+
+Tu peux désormais recevoir des mails, avec une liaison sécurisée vers Poly pour que personne ne puisse les intercepter.
+
+\subsubsection{Configuration News}
+
+Lance Outlook Express 
+Va dans ?Outils' puis ?Comptes...'
+Clique sur ?Ajouter...' et choisis ?News...'. 
+Remplis les différents champs te concernant. Quand il te demande le nom du serveur, mets ?frankiz.polytechnique.fr', et vérifie que la case `Connexion à mon serveur de news requise' est décochée. 
+Tu es alors abonné au serveur de news des élèves. Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner ceux qui t'intéressent. Enfin, si tu veux t'ouvrir un peu sur l'extérieur, tu peux aussi t'abonner à Polynews, pour cela, tu rajoutes un autre compte news en effectuant la même démarche, et mets ?polynews.polytechnique.fr' en nom de serveur de news.
+
+\subsubsection{Installation du Client FTP}
+
+Le BR te conseille SmartFTP (http://www.smartftp.com/ )
+Rien de plus simple pour l'installation donc télécharge le et double clique sur l'install. 
+Enjoy ! Maintenant tu peux aller sur tous les FTP du réseau avec une facilité et une rapidité déconcertante. 
+
+N'hésite pas à aller faire un tour sur la Faq si tu as des problèmes
+
+\subsubsection{Installation du Serveur FTP}
+
+A l'X tu verras rapidement que tout le monde possède un serveur FTP afin de partager les différents projets, les films du JTX ?
+Il est quasiment indispensable que tu t'installes un serveur : Par exemple CesarFTP, très simple à la configuration, il est assez puissant.
+Mon but n'est pas de te dire comment le configurer mais de t'inciter à le faire !
+
+Va sur les FAQs de frankiz pour plus de précisions !
