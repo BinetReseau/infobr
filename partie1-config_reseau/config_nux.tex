@@ -40,8 +40,12 @@ PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut exporter les variables d'environnement ci-dessous (éventuellement à mettre dans \file{/etc/profile}) :
 
 \cmdline{export http\_proxy=http://kuzh.polytechnique.fr:8080\\
-export ftp\_proxy=ftp://kuzh.polytechnique.fr:8080\\
-export SYNC=rsync://rsync/gentoo-portage}
+export ftp\_proxy=ftp://kuzh.polytechnique.fr:8080}
+
+Et si tu n'utilises pas le miroir rsync du BR :
+
+\cmdline{export SYNC=rsync://rsync/gentoo-portage}
+
 
 
 
@@ -188,7 +192,7 @@ COMMIT}
 
 Pour activer ton firewall, tu n'as plus qu'à faire :
 
-\cmdline{iptables-restore iptbl}
+\cmdline{iptables-restore < le_fichier_ci_dessus}
 
 
 \subsubsection{Configuration navigateur web}
@@ -217,19 +221,29 @@ Dans l'onglet ?Comptes? ou ?Accounts?, puis l'onglet ?News?, tu peux choisir le(
 Enfin, pour que Knode puisse envoyer des mails, il est bon aussi d'aller dans l'onglet ?Comptes? et ?Mail?, et de mettre le serveur ?poly? sur le port ?25?.
 Il ne te reste plus qu'à t'inscrire sur des fora et à y participer! ... en respectant le binet idoine :)
 
-Pour se connecter à un serveur de news en SSL  sous Knode
-(par exemple au serveur de polytechnique.org  ssl.polytechnique.org)
+Pour se connecter à un serveur de news en SSL  sous Knode (par exemple au serveur de polytechnique.org  ssl.polytechnique.org)
 Sous Knode, il y a une petite subtilité puisqu'il ne gère pas le SSL.
 Il faut installer ?stunnel? pour mettre une redirection SSL de port ainsi:
-Dans /etc/stunnel.conf ou /etc/stunnel/stunnel.conf (selon la distribution), mettre les lignes suivantes (les deux premières y sont en principe déjà):
+Dans /etc/stunnel.conf ou /etc/stunnel/stunnel.conf (selon la distribution), mettre les lignes suivantes (les trois premières y sont en principe déjà):
 
 
-
-
-
-
-
-
+\cmdline{\# location of pid file\\
+pid = /etc/stunnel/stunnel.pid\\
+\\
+\# user to run as\\
+setuid = stunnel\\
+setgid = stunnel\\
+\\
+\# Use it for client mode\\
+client = yes\\
+\\
+\# sample service-level configuration\\
+\\
+[nntps]\\
+accept  = 119\\
+connect = ssl.polytechnique.org:563\\
+TIMEOUTclose = 0\\
+}
 
 
 Et tu peux lancer stunnel par « /etc/init.d/stunnel start »
