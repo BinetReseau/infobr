@@ -1,3 +1,72 @@
 %$Id$
 
 \subsection{Comment calculer votre IP ?}
+
+Une adresse IP est une suite de quatre chiffres compris entre 0 et 255 séparés par des points ; en gros, elle identifie de manière unique toute machine connectés au réseau mondial. Exemple : l'IP de frankiz est 209.104.201.13.
+
+L'X \og posssède \fg toutes les IP de la forme 129.104.AAA.BBB. Pour ton ordinateur il va falloir calculer quoi mettre à la place de AAA et BBB afin qu'il ait son adresse unique.
+
+\subsubsection{Calcul du sous-réseau}
+
+Il s'agit de remplacer le AAA ; le sous-réseau correspond en gros à ton étage ou à ton bâtiment.
+
+\begin{itemize}
+
+\item pour Fayolle, Maunoury, Joffre et Foch.
+
+Regarde sur ta prise réseau et note les deux premiers caractères --- par exemple : A0. Il suffit alors d'utiliser la table de correspondance suivante pour trouver le AAA :
+
+\begin{tabular}{cccc}
+AO \Rightarrow AAA=205 & A1 \Rightarrow AAA=206 & A2 \Rightarrow AAA=207 & A3 \Rightarrow AAA=208 \\
+B0 \Rightarrow AAA=215 & B1 \Rightarrow AAA=216 & B2 \Rightarrow AAA=217 & B3 \Rightarrow AAA=218 \\
+C0 \Rightarrow AAA=209 & C1 \Rightarrow AAA=210 & C2 \Rightarrow AAA=211 & C3 \Rightarrow AAA=212 \\
+D0 \Rightarrow AAA=219 & D1 \Rightarrow AAA=220 & D2 \Rightarrow AAA=221 & D3 \Rightarrow AAA=222 \\
+\end{tabular}
+
+\item Pour le PEM
+
+C’est simple AAA=214 !
+
+\item Pour le BEM
+
+Si tu es au bâtiment A, alors AAA=203 ; si tu es au bâtiment D, alors AAA=204.
+
+\end{itemize}
+
+\subsubsection{}
+
+Remplaçons le BBB.
+
+\begin{itemize}
+
+\item pour Fayolle, Maunoury, Joffre et Foch.
+
+Tu relèves les 2 derniers chiffres de ta prise réseau et tu rajoutes 120.
+Par exemple, si ta prise est la B145 alors ton numéro ip est le 129.104.216.165 où $165 = 120 + 45$.
+
+\item pour le PEM
+
+
+\begin{itemize}
+
+\item Si tu habites au rez-de-chaussée : BBB = 11 + le numéro de ta chambre 
+\item Si tu habites au premier étage : BBB = 66 + le numéro de ta chambre. 
+
+\end{itemize}
+
+Exemple :  si ton numéro de chambre est 14 et au rez-de-chaussée, ton IP est 129.104.214.25.
+
+\item pour le BEM
+
+Pour toi BBB = 50 + les deux derniers chiffres de ton numéro de chambre.
+Par exemple l'IP de la chambre D6604 sera 129.104.204.54.
+
+\end{itemize}
+
+\subsubsection{Quelle est l'IP de ma passerelle ?}
+
+La passerelle est une machine par laquelle passent toutes les communications entre ton ordinateur et l'extérieur. Elle se situe logiquement au niveau de ton sous-réseau et porte habituellement le numéro 13.
+
+Ainsi, seul le dernier nombre de ton IP --- le groupe noté BBB ci-dessus --- change en 13 pour obtenir celle de ta passerelle.
+
+Exemple : si ton IP est 129.104.205.125, alors l'adresse de ta passerelle est 129.104.205.13.
