@@ -27,6 +27,8 @@ Introduction, mot du prez...
 si le DHCP marche pas 
 *I - Calculer mon IP (si le DHCP marche pas)
 
+edit par mYk : je pense que ce n'est pas nécessaire de faire une partie à part pour la calcul de l'IP, il vaut mieux l'inclure dans la partie "configuration du réseau".
+
 
 
 II - Partie comment configurer mon ordinateur

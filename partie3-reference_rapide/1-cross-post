@@ -1,0 +1,46 @@
+$Id$
+
+Il se peut qu'un jour tu aies besoin de poster le même message sur plusieurs newsgroups à la fois !
+
+Surtout \emph{ne fais pas un post dans chacun des newsgroups} en copiant collant ton texte à chaque fois car :
+
+\begin{itemize}
+  \item Tu vas y passer 10 minutes, et il y a tellement de choses beaucoup plus passionnantes à faire sur le plateau !!
+  \item Si tu postes sur 15 newsgroups, tu vas devoir lire les réponses à ton post sur chacun des 15 newsgroups concernés, et tu vas y passer la nuit \ldots
+  \item Si tu fais un cross post, la plupart des clients news marqueront le message du cross-post comme lu sur tous les newsgroups dès que que tu l'auras lu une fois, au lieu d'avoir à le lir 15 fois. Et ce sera pareil pour tous les autres !
+  \item C'est SAAAAALE et nous au BR on n'aime pas :)
+\end{itemize}
+ 
+Quelle est la solution alors ? Un seul mot, le mot magique : CROSS-POST !
+T'inquiètes pas, c'est très simple à faire, tous les lecteurs de News sont prévus pour, voici pas-à-pas comment faire un crosspost dans Outlook Express 6.0 \ldots (Mais les newsmestres te conseillent KNode ou Mozilla quand même !!) Ca marche aussi chez les autres clients news : il faut juste suivre la même philosophie !
+\begin{itemize}
+  \item Clique sur 'Nouveau message'/'New Post'   (eh oui, au BR, on est presque bilingue :)
+  \item Dans le menu 'Affichage', cocher 'Tous les en-têtes' ('View'->'All Headers') A ce niveau-là tu as une fenêtre vide pour taper ton texte avec plein de labels obscurs à remplir au-dessus.
+  \item Ne t'en occupe pas pour l'instant et tape le corps de ton message.
+  \item Dans le premier en-tête en haut de la fenêtre d'édition ('Groupe de discussion' / 'Newsgroup'), mets tous les brs où tu veux que ton message apparaisse, séparés par des ';'. Par exemple, 'br.eleves; br.promo.rouje; br.promo.jone; br.binet.bob' permet d'écrire en une seule fois sur ces 4 newsgroups.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+• Mais l'intéret du crosspost ne réside pas seulement dans le fait de t'épargner un fastidieux copier-coller ! Il permet de rediriger toutes tes réponses vers un seul br parmi ceux que tu as entrés à l'étape précédente. Pour cela, remplis le deuxième en-tête ('Transférer à' / 'Follow-up to') avec le nom du br où tu veux que les réponses soient redirigées (un seul !!! sinon ton message sera refusé par le serveur de news et tu auras le message d'erreur qui va bien...)
+• Ca y est tu peux envoyer ! (tu n'as pas oublié de mettre un sujet au moins ? :)) Tu viens de faire un beau crosspost bien propre. Tu remarqueras dans ton lecteur de news qu'une fois ton post marqué comme lu dans un quelconque des newsgroups où il est apparu, il est automatiquement marqué comme lu dans tous les autres ! C'est un autre avantage du crosspost...
