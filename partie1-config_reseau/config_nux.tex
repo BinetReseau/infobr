@@ -7,9 +7,32 @@
 \subsection{Configuration sous Linux}
 
 \subsubsection{Configuration IP}
-Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général, pour que l'on puisse facilement te 'tchatter' ou aller sur ton FTP. Tu as également besoin de connaître ton adresse IP. L'explication de comment la calculer de trouve page \pageref{calcul_ip} et notée dorénavant 129.104.AAA.BBB.
+Quelle que soit ta distribution, il faut que tu décides d'un nom de machine --- ton pseudo en général. Tu as également besoin de connaître ton adresse IP. L'explication de comment la calculer se trouve page \pageref{calcul_ip} ; elle est notée dorénavant 129.104.AAA.BBB.
 
 Bien sûr, l'ensemble des manipulations doit se faire en tant que root.
+
+\paragraph{Sous Mandrake}
+
+Il existe dans ces distributions une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/}.
+
+Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
+
+Tu as autant de \texttt{eth0}, \texttt{eth1}\ldots que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
+
+\begin{description}
+	\item[Adresse IP] entre celle que tu as calculée : 129.104.AAA.BBB (cf. page \pageref{calcul_ip})
+	\item[Masque de sous-réseau] 255.255.255.0
+	\item[DHCP] laisse cette case décochée
+\end{description}
+
+Ensuite, tu dois encore entrer :
+\begin{description}
+	\item[Nom d'hôte] 'ton\_pseudo'.eleves.polytechnique.fr
+	\item[Serveur DNS] 129.104.201.51
+	\item[Passerelle] tu l'as aussi calculée : 129.104.AAA.13 (cf. page \pageref{calcul_ip})
+\end{description}
+ 
+Voilà, c'est bon !
 
 \paragraph{Sous Gentoo}
 
@@ -41,13 +64,13 @@ PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
 
-Une dernière chose spécifique à Gentoo, pour pouvoir utiliser 'emerge' à travers le proxy de l'école: il faut définir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
+Pour pouvoir utiliser emerge à travers le proxy de l'école, il faut définir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
 
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 GENTOO\_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
-Tu peux évidemment ajouter d'autres miroirs dans ta liste (en les séparant par les espaces) mais \url{ftp://miroir} étant interne il sera toujours beaucoup plus rapide que les autres. On te conseille ici \url{http://gentoo.osuosl.org/} qui est un miroir très complet (mais très lent).
+Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais \url{ftp://miroir} étant interne, il sera toujours beaucoup plus rapide que les autres. On te conseille ici \url{http://gentoo.osuosl.org/} qui est un miroir très complet mais très lent.
 
 \paragraph{Sous Debian}
 
@@ -57,7 +80,7 @@ Le fichier \file{/etc/hostname} contient ton nom de machine. De même que sous Ge
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
-Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne les suffixes à utiliser par défaut, et la seconde ligne indique les serveurs de noms, ceux qui associent le nom \server{frankiz} ou \server{ton\_pseudo} aux IP \server{'129.104.201.51'} ou \server{'ton\_ip'} Le fichier contient donc :
+Comme sous Gentoo, le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS, il doit contenir :
 
 \cmdline{search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.52 129.104.201.51}
@@ -75,17 +98,16 @@ network 129.104.AAA.0\\
 broadcast 129.104.AAA.255\\
 gateway 129.104.AAA.13}
 
-Tu fais le grand test en rechargeant ta configuration réseau par :
+Toujours comme sous Gentoo, recharge ta configuration réseau par :
 
 \cmdline{/etc/init.d/networking restart}
 
-puis en pingant \fkz par exemple. Tu dois obtenir quelque chose comme:
+puis essaye de pinger \fkz par exemple. Tu dois obtenir quelque chose comme:
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=1 ttl=63 time=0.364 ms\\
 64 bytes from frankiz (129.104.201.51): icmp\_seq=2 ttl=63 time=0.269 ms}
-
 
 Une dernière chose spécifique à Debian, pour pouvoir utiliser 'apt-get' et 'apt-cache' à travers le proxy de l'école, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
 
@@ -108,29 +130,6 @@ deb ftp://miroir/debian-security [flavour] main contrib non-free\\
 deb ftp://miroir/debian-marillat [flavour] main}
 
 où '[flavour]' est la saveur de ta debian: stable, testing, unstable, experimental
-
-\paragraph{Sous Redhat et Mandrake}
-
-Il existe dans ces distributions une interface graphique pour configurer le réseau, bien qu'il soit possible, comme sur tout système linux, de le faire à la main à partir des fichiers de configuration dans \file{/etc/} , comme précédemment à quelques différences près.
-
-Lance \app{DrakConf} en tant que root, puis l'outil de gestion du réseau.
-
-Tu as autant de eth0, eth1... que de cartes réseau détectées. Sélectionne la carte sur laquelle est branché ton câble réseau, et lance l'Assistant. Utilise la détection automatique, puis sélectionne \menu{LAN connection} et continue. Tu dois maintenant fournir les paramètres nécessaires à ta connexion :
-
-\begin{description}
-	\item[Adresse IP] entre celle que tu as calculée : 129.104.AAA.BBB (cf. page \pageref{calcul_ip})
-	\item[Masque de sous-réseau] 255.255.255.0
-	\item[DHCP] laisse cette case décochée
-\end{description}
-
-Ensuite, tu dois encore entrer :
-\begin{description}
-	\item[Nom d'hôte] 'ton\_pseudo'.eleves.polytechnique.fr
-	\item[Serveur DNS] 129.104.201.51
-	\item[Passerelle] tu l'as aussi calculée : 129.104.AAA.13 (cf. page \pageref{calcul_ip})
-\end{description}
- 
-Voilà, c'est bon !
 
 \subsubsection{Configuration antivirus}
 
@@ -160,7 +159,7 @@ Cette règle accepte les paquets que l'on reçoit de \fkz (129.104.201.51) sur le 
 	\item[\texttt{-j}] défini l'action à entreprendre (ACCEPT pour accepter le paquet, REJECT pour refuser le paquet et en informer l'emmeteur, DROP pour faire comme si le paquet n'existait pas, LOG pour logguer la réception du paquet.
 \end{itemize}
 
-Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul (on te comprend :). Voici un petit firewall basique qui convient à la plupart des utilisations sur le réseau de l'X :
+Tout ça c'est très bien mais tu n'as pas envie de te casser la tête à te faire un firewall tout seul (on te comprend :). Voici un petit firewall basique pour le réseau de l'X :
 
 \cmdline{\# Comportement par défaut pour les différentes chaines\\
 *filter\\
@@ -199,10 +198,9 @@ Pour activer ton firewall, tu n'as plus qu'à faire :
 
 \cmdline{iptables-restore < le\_fichier\_ci\_dessus}
 
-ou tu remplaces \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sauvegardé ce fichier de configuration de firewall.
+en remplaçant \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sauvegardé ce fichier de configuration de firewall.
 
 
-\pagebreak %esthétique...
 \subsubsection{Configuration navigateur web}
 
 \image{partie1-config_reseau/nux_proxy_firefox}{0.66}{Configuration du proxy sous Firefox}

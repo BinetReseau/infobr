@@ -11,7 +11,7 @@
 \flimage{partie1-config_reseau/win_connexion_icone}{0.1}{l}
 Va dans le \menu{menu démarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions réseau} puis sur \menu{Connexion au réseau local}. Clique enfin sur \menu{Propriétés}.
 
-La coche simplement les deux cases \menu{Client pour les réseaux Microsoft} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot.
+Dans cette fenêtre, coche simplement les deux cases \menu{Client pour les réseaux Microsoft} et \menu{Protocole Internet (TCP/IP)} comme sur le screenshot.
 
 \imagepos{partie1-config_reseau/win_config_connexion}{0.75}{Configurer la connexion au réseau local}{!h}
 
@@ -54,7 +54,7 @@ Inconvénients :
 
 Et bien sûr, tu peux sortir du domaine à tout instant en reprenant ta configuration et en suivant l'installation personnalisée.
 
-\subparagraph{Soit tu choisis de rester indépendant} et tu vas alors au paragraphe \og Installation personnalisée --- configuration manuelle \fg
+\subparagraph{Soit tu choisis de configurer toi-même ton ordinateur} et tu vas alors au paragraphe \og Installation personnalisée --- configuration manuelle \fg
 
 Avantages :
 \begin{itemize}
@@ -106,6 +106,8 @@ et si tu es Jone 2003 :
   \item[Mot de Passe] jone.2003
 \end{description}
 
+\emph{Attention, ces mots de passe servent juste à t'inscrire sur le domaine, pas à ouvrir ta session utilisateur quand tu allumes ton ordinateur.}
+
 \paragraph{Installation personnalisée} --- configuration manuelle
 
 Commence par désinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqué dans le paragraphe \og Installation simplifiée --- configuration automatique \fg.
@@ -133,6 +135,8 @@ Lance \app{Internet Explorer}. Clique sur \menu{Options Internet} dans le menu \
 Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finaliser ta connexion vers Internet ; tu dois alors avoir quelque chose qui ressemble au screenshot.
 
 Une fois que tu as fait ça, tu n'as plus besoin d'\app{Internet Explorer}, qui est blindé de failles de sécurité et autres portes ouvertes aux logiciels-espions et aux virus. Ce n'est pas une blague, même à l'X les risques ne sont pas nuls. Alors enlève le raccourci de ton bureau et mets à la place \app{Firefox}, disponible sur \xshare ou à l'adresse \url{http://www.mozilla-europe.org/fr/products/firefox/}. Ce n'est pas une garantie ultime --- message subliminal : de toute facon, fais attention à ce que tu fais ;-) --- mais ça limite les risques.
+
+\emph{Vérifier la config Firefox}
 
 \subsubsection{Configuration mail}
 
@@ -204,7 +208,27 @@ Un des plus simples et \app{FileZilla}, qui est libre de surcroît. Expliquer les
 
 \subsubsection{Les licences MSDNAA}
 
-\url{$\backslash\backslash$enez$\backslash$msdnaa}
+En partenariat avec Microsoft, le BR te propose d'obtenir des licences pour la plupart des logiciels de la société --- quasiment tous, sauf Office et les jeux --- \emph{gratuitement} ! La seule condition à remplir est d'être étudiant sur le platâl au moment de l'installation du logiciel ; tu pourras ensuite le garder sur ton PC même après ton départ de l'X. Tu peux même bénéficier de deux licences si tu as deux ordinateurs.
+
+La procédure pour obtenir les logiciels et les clés correspondantes est très simple. 
+\begin{itemize}
+  \item d'abord tu vas sur \fkz, tu te connectes, et tu cliques sur le lien \menu{Licences MSDNAA} qui se trouve dans la boîte des liens utiles. Sur cette page, tu choisis le logiciel qui t'intéresse, tu acceptes le contrat de licence, et tu reçois ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que \app{Windows}, soit qu'on a oublié de le mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
+  \item maintenant que tu as ta clé, ou que tu sais que tu n'en as pas besoin pour le logiciel en question, il faut télécharger le logiciel proprement dit. Pour cela, deux méthodes : se connecter par FTP sur \url{ftp://enez/} avec ton client FTP préféré, ou y aller en tapant \url{$\backslash\backslash$enez$\backslash$msdnaa} dans l'\app{Explorateur Windows} ou dans \app{Internet Explorer}. Dans les deux cas, tu peux récupérer soit une image du CD (à graver ou à utiliser avec Daemon Tools), soit directement le contenu du CD. Ensuite, il suffit d'installer le tout comme si tu avais un vrai CD « made in Microsoft ».
+\end{itemize}
+
+Si tu as encore des questions, plus de détails sont donnés dans la FAQ de \fkz.
+
+\subsubsection{Obtenir Windows XP Pro}
+
+Grâce aux accords négociés par le BR, chaque X a droit à une version de Windows XP Pro gratuite, légale et attibuée à vie ! Pour avoir la tienne, suis tout simplement la procédure expliquée dans le paragraphe précédent :
+\begin{itemize}
+  \item obtiens un numéro de licence sur \fkz et note-le.
+  \item télécharge l'image disque de Windows comme expliqué ci-dessus et grave-la sur un CD. Elle se trouve à l'adresse \url{$\backslash\backslash$enez$\backslash$msdnaa$\backslash$french$\backslash$fr\_winxp\_sp2.iso}. Si tu as acheté un ordinateur sans OS (intelligent de ta part, tu as gagné 150 \euro), fais tout ça chez un copain !
+\end{itemize}
+
+Ensuite, tu as un CD de Windows et un numéro de licence , le tout légal de surcroît, l'installation ne devrait pas te poser de problèmes !
+
+
 
 \vfill
 
