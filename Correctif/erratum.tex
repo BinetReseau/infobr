@@ -15,7 +15,6 @@
 \usepackage{ifthen}
 \usepackage{alltt}
 \usepackage{wallpaper}
-\usepackage{watermark}
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{color}
@@ -28,120 +27,7 @@
 
 \title{InfoBR 2k4}
 \author{BR 2k3}
-
 \date{\today}
-
-% Commandes speciales definies ici
-
-% pour les images de fond sur les headers
-\newcommand{\bghdr}[1]{
-  \leftwatermark{
-    \raisebox{-1.5cm}{
-      \hspace{-2.4cm}
-      \includegraphics{#1}
-    }
-  }
-  \rightwatermark{
-    \raisebox{-1.5cm}{
-      \hspace{13.2cm}
-      \includegraphics{#1}
-    }
-  }
-}
-
-% pour inclure des images
-\newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
-  \begin{figure*}
-    \begin{center}
-      \includegraphics[width=#2\textwidth]{#1}
-      \caption{#3}
-    \end{center}
-  \end{figure*}
-}
-\newcommand{\imagepos}[4]{ % arguments : path, largeur (entre 0 et 1), légende, positionnement
-  \begin{figure*}[#4]
-    \begin{center}
-      \includegraphics[width=#2\textwidth]{#1}
-      \caption{#3}
-    \end{center}
-  \end{figure*}
-}
-\newcommand{\flimage}[3]{ % arguments : path, largeur (entre 0 et 1), position
-  \begin{wrapfigure}{#3}{0pt}
-    \includegraphics[width=#2\textwidth]{#1}
-  \end{wrapfigure}
-}
-
-% texttt : ligne de commande, serveurs
-% textsf : tout les reste : url, email, dossiers
-
-% pour les serveurs
-\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
-\newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
-% pour le ligne de commande
-\definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
-\definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
-\newcommand{\cmdline}[1]{
-  \vspace{4pt}
-  \noindent
-  \colorbox{LightRed}{
-    \parbox[c]{.9\textwidth}{
-    \NoAutoSpaceBeforeFDP
-    \texttt{\color{BrightGreen}#1}
-    \AutoSpaceBeforeFDP
-    }
-  }
-  \vspace{4pt}
-}
-\newcommand{\cmdlineshort}[1]{
-  \noindent
-  \colorbox{LightRed}{
-    \parbox{.2\textwidth}{
-    \NoAutoSpaceBeforeFDP
-    \texttt{\color{BrightGreen}#1}
-    \AutoSpaceBeforeFDP
-    }
-  }
-  \vspace{4pt}
-}
-
-% pour les URLs
-\definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}
-\newcommand{\url}[1]{\NoAutoSpaceBeforeFDP\textsf{\color{Blue}#1}\AutoSpaceBeforeFDP\xspace}
-% pour les mails
-\definecolor{Blue2}{cmyk}{0.6,0.2,0.0,0.0}
-\newcommand{\mail}[1]{\textsf{\color{Blue2}#1}\xspace}
-% pour les newsgroups
-\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
-\newcommand{\ngname}[1]{\textsf{\color{DarkGreen}#1}\xspace}
-
-% pour les applications
-\definecolor{GreenApp}{cmyk}{0.7,0.0,1.0,0.8}
-\newcommand{\app}[1]{\textbf{\color{GreenApp}#1}\xspace}
-% pour les menus et les elements de menu
-\definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}
-\newcommand{\menu}[1]{\textsf{\color{GrayMenu}'#1'}\xspace}
-% pour les repertoires
-\definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}
-\newcommand{\rep}[1]{\textsf{\color{Orange}#1}\xspace}
-% pour les fichiers
-\definecolor{DarkOrange}{cmyk}{0.,0.4,1.0,0.4}
-\newcommand{\file}[1]{\textsf{\color{DarkOrange}#1}\xspace}
-% pour les distributions Linux
-\newcommand{\distrib}[1]{{\color{green}#1}}
-
-
-% images des OS
-\newcommand{\nux}{\includegraphics{../nux}\xspace}
-\newcommand{\win}{\includegraphics{../win}\xspace}
-\newcommand{\mac}{\includegraphics{../mac}\xspace}
-\newcommand{\nuxs}{\includegraphics{../nux_s}\xspace}
-\newcommand{\wins}{\includegraphics{../win_s}\xspace}
-\newcommand{\macs}{\includegraphics{../mac_s}\xspace}
-% divers
-\newcommand{\fkz}{\server{frankiz}}
-\newcommand{\xshare}{la rubrique \menu{Télécharger} de \fkz}
-
 
 \begin{document}
 
@@ -166,7 +52,7 @@ mYk, respo InfoBR 2k3,\\
 pour un binet toujours plus mythique ! 
 \end{flushright}
 
-\ThisCenterWallPaper{.9}{../br-light}
+\ThisCenterWallPaper{.9}{br-light-gray}
 
 
 \end{document} 
