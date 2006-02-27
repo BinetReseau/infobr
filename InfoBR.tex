@@ -1,0 +1,54 @@
+% -------------------- Header --------------------
+\documentclass[12pt]{article}
+
+\usepackage[francais]{babel}
+\usepackage{fancyhdr}
+
+\topmargin 5mm
+\headheight 10mm
+\headsep 10mm
+\textheight 210mm
+\evensidemargin 5mm
+\oddsidemargin 5mm
+\marginparwidth 0mm
+\marginparsep 0mm
+\textwidth 150mm
+
+\title{InfoBR 2006}
+\author{Thifu, BR 2k4}
+\date{f\'evrier 2006}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[RO, LE]{\thepage}
+\fancyhead[RE, CE, CO, LO]{}
+\fancyfoot[R, C, L]{}
+\fancyhead[C]{\footnotesize{\textsc{\rightmark}}}
+
+\pagestyle{fancy}
+
+\begin{document}
+
+% -------------------- Le mot du prez: ----- 'motPrez.tex' --------------------
+\thispagestyle{empty}
+\markright{Mot du prez}
+\input{motPrez}
+
+\newpage
+\markright{Table des mati\`eres}
+\tableofcontents
+
+% -------------------- Le mot du rédacteur: ----- 'avertissement.tex' --------------------
+\markright{Introduction}
+\section*{Introduction}
+\input{avertissement}
+
+\newpage
+
+% -------------------- Premiers pas: ----- 'calculip.tex' --------------------
+\markright{Pour bien commencer}
+\section{Premiers pas...}
+\input{calculip}
+
+
+\end{document}
+ 
