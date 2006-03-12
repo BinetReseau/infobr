@@ -3,6 +3,7 @@
 
 \usepackage[francais]{babel}
 \usepackage{fancyhdr}
+\usepackage{color}
 
 \topmargin 5mm
 \headheight 10mm
@@ -25,6 +26,12 @@
 \fancyhead[C]{\footnotesize{\textsc{\rightmark}}}
 
 \pagestyle{fancy}
+
+
+% pour les serveurs
+\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
+\newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
+
 
 \begin{document}
 

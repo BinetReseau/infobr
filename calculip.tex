@@ -1,2 +1,115 @@
-\subsection{Calculer l'adresse \emph{IP} de son casert}
-Bon, et bien voil\`a...
+\subsection{Comment calculer ton IP ?}
+%% Calculer l'adresse \emph{IP} de son casert
+
+\label{calcul_ip}
+
+Une adresse IP est une suite de quatre nombres compris entre $0$ et $255$ s\'epar\'es par des points ;
+en gros, elle identifie de mani\`ere unique toute machine connect\'ee au r\'eseau mondial.
+Exemple : l'IP de \server{frankiz} est $129.104.201.51$.
+
+Les IP de l'X sont toutes de la forme $129.104.AAA.BBB$.
+Tu vas devoir calculer quoi mettre \`a la place de $AAA$ et $BBB$
+afin que ton ordinateur ait son adresse unique.
+
+Au cas o\`u deux personnes ont (par erreur ou pas) la m\^eme adresse,
+cela implique des conflits dans le r\'eseau qui font
+que les deux peuvent perdre l'acc\`es tant que cela n'est pas corrig\'e.
+
+\subsubsection{Calcul du sous-r\'eseau (AAA)}
+
+Le sous-r\'eseau, d\'etermin\'e par le groupe $AAA$,
+correspond en g\'en\'eral à ton \'etage ou à ton b\^atiment.
+
+\begin{description}
+
+\item [Pour Fayolle, Maunoury et Foch] regarde sur ta prise r\'eseau et note les deux premiers caract\`eres
+       --- par exemple : $A0$. Utilise alors le tableau de correspondances ci-dessous pour obtenir la valeur de $AAA$ :
+\begin{center}
+\begin{tabular}{cccc}
+$A0 \Rightarrow 208$ & $A1 \Rightarrow 209$ & $A2 \Rightarrow 210$ & $A3 \Rightarrow 211$ \\
+%%% $B0 \Rightarrow 215$ & $B1 \Rightarrow 216$ & $B2 \Rightarrow 217$ & $B3 \Rightarrow 218$ \\ Ceci est Joffre
+$C0 \Rightarrow 212$ & $C1 \Rightarrow 213$ & $C2 \Rightarrow 214$ & $C3 \Rightarrow 215$ \\
+$D0 \Rightarrow 232$ & $D1 \Rightarrow 233$ & $D2 \Rightarrow 234$ & $D3 \Rightarrow 235$ \\
+\end{tabular}
+\end{center}
+
+\item [Pour les nouveaux caserts] regarde ta prise r\'eseau et note les deux premiers chiffres
+      --- par exemple : $71$. Le tableau suivant te donne la valeur de $AAA$ :
+\begin{center}
+\begin{tabular}{cccccc}
+$70 \Rightarrow 224$ & $71 \Rightarrow 224$ & $72 \Rightarrow 228$ & $73 \Rightarrow 225$ & $74 \Rightarrow 225$ & $75 \Rightarrow 226$ \\
+$76 \Rightarrow 227$ & $77 \Rightarrow 227$ & $78 \Rightarrow 228$ & $79 \Rightarrow 229$ & $80 \Rightarrow 226$ & \\
+\end{tabular}
+\end{center}
+
+\item [Pour le PEM] c'est simple, $AAA=214$.
+
+\item [Pour le BEM] si tu es au b\^atiment A, alors $AAA=203$ ; au b\^atiment D, $AAA=204$.
+
+\end{description}
+
+\subsubsection{Calcul du num\'ero de machine (BBB)}
+
+Remplaçons maintenant le groupe $BBB$.
+
+\begin{description}
+
+\item [Pour Fayolle, Maunoury et Foch] tu rel\`eves les 2 derniers chiffres de ta prise r\'eseau et tu rajoutes $120$.
+
+\emph{Exemple :} l'IP associ\'ee à la prise $A145$ est $129.104.209.165$ ($165 = 120 + 45$).
+
+\item [Pour les nouveaux caserts] ta prise r\'eseau porte un num\'ero de la forme $xx\ yy\ zz$. Rel\`eve les deux permiers chiffres $xx$ et les deux derniers $zz$.  Le tableau suivant te donne la valeur de $BBB$ selon les correspondances
+\`a faire pour les diff\'erentes valeurs de $xx$ et $zz$ :
+$$ \begin{array}{rcc}
+        70, 72, 74, 77, 80 & \Rightarrow BBB = & 128+zz \\
+    71, 73, 75, 76, 78, 79 & \Rightarrow BBB = & zz \\
+    \end{array} $$
+
+\emph{Exemple :} l'IP associ\'ee à la prise $74\ 00\ 21$ est $129.104.225.149$ où $149 = 128 + 21$.
+ 
+\item [Pour le PEM] si tu habites au rez-de-chauss\'ee, $BBB = 15 + \mbox{le num\'ero de ta chambre}$ ;
+                    au premier \'etage, $BBB = 70 + \mbox{le num\'ero de ta chambre}$.
+
+\emph{Exemple :} si tu as la chambre $14$ au rez-de-chauss\'ee, ton IP est $129.104.214.29$.
+
+\item [Pour le BEM] $BBB = 50 + \mbox{les deux derniers chiffres de ton num\'ero de chambre}$.
+
+\emph{Exemple :} l'IP de la chambre $D6604$ est $129.104.204.54$.
+
+\end{description}
+
+\emph{Maintenant, note ton IP ici, et re-v\'erifie que tu ne t'es pas tromp\'e. \c Ca t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !}
+
+\begin{center}
+  \begin{tabular}{|p{10cm}|}
+  \hline
+  \vrule height16pt depth8pt width0pt \textbf{Mon IP :} \\
+  \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Calcul de l'IP de la passerelle}
+
+La passerelle est une machine par laquelle passent toutes les communications entre ton ordinateur et les autres sous-r\'eseaux. Elle se situe au niveau de ton sous-r\'eseau.
+
+\begin{description}
+  \item[Pour les anciens b\^atiments] les passerelles sont : pour Foch $129.104.211.254$,
+                                      pour Fayolle $129.104.215.254$ et pour Maunoury $129.104.235.254$.
+  \item[Pour les nouveaux caserts] Si tu es dans $70$, $72$, $74$, $77$ ou $80$, remplace $BBB$ par $254$ ;
+                                   si tu es dans $71$, $73$, $75$, $76$, $78$ ou $79$, remplace $BBB$ par $126$.
+  \item[Partout ailleurs] remplace $BBB$ par $13$.
+\end{description}
+
+\subsubsection{Calcul du masque de sous-r\'eseau}
+
+Il vaut $255.255.252.0$ dans les anciens b\^atiments (Foch, Fayolle et Maunoury),
+        $255.255.255.128$ dans les nouveaux caserts
+     et $255.255.255.0$ partout ailleurs.
+
+\subsubsection{IP des serveurs DNS}
+
+Le BR offre quatre serveurs DNS redondants qui ont les IP suivantes :
+\begin{itemize}
+  \item Serveur principal : $129.104.201.53$
+  \item Serveurs secondaires : $129.104.201.51$, $129.104.201.52$ et $129.104.201.54$
+\end{itemize}
