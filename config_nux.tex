@@ -1,0 +1,394 @@
+%$Id: config_nux.tex 145 2005-03-25 08:26:35Z myk $
+
+\clearpage
+\pagebreak
+
+\def\distrib#1{{\bf #1}}
+\def\file#1{{\it #1}}
+\def\app#1{{\sl #1}}
+\def\menu#1{{\sl #1}}
+\def\fkz{\server{frankiz}}
+
+\newcommand{\cmdline}[1]{
+  \vspace{4pt}
+  \noindent
+  \colorbox{LightRed}{
+    \parbox[c]{.9\textwidth}{
+    \NoAutoSpaceBeforeFDP
+    \texttt{\color{BrightGreen}#1}
+    \AutoSpaceBeforeFDP
+    }
+  }
+  \vspace{4pt}
+}
+
+% \bghdr{fond-nux}
+
+\subsection{Configuration sous Linux}
+
+\subsubsection{Configuration IP}
+Quelle que soit ta distribution, il faut que tu d\'ecides d'un nom de machine --- ton pseudo en g\'en\'eral.
+Tu as \'egalement besoin de connaître les informations suivantes :
+\begin{description}
+  \item [ton adresse IP] not\'ee dor\'enavant \server{129.104.AAA.BBB}
+  \item [l'IP de ta passerelle (\emph{gateway})] not\'ee \server{129.104.GGG.CCC}
+        (attention, pour Foch, Fayolle et Maunoury ce n'est pas n\'ecessairement vrai que $GGG = AAA$).
+  \item [ton masque de sous-r\'eseau] \server{255.255.FFF.DDD}
+  \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$.
+\end{description}
+
+Toutes les informations n\'ecessaires se trouvent page \pageref{calcul_ip}.
+
+Bien s\^ur, l'ensemble des manipulations doit se faire en tant que root.
+
+\paragraph{\distrib{Sous Mandrake}}
+
+Il existe dans cette distribution une interface graphique pour configurer le r\'eseau, bien qu'il soit possible,
+comme sur tout syst\`eme linux, de le faire \`a la main \`a partir des fichiers de configuration dans \file{/etc/}.
+
+Lance \app{DrakConf} en tant que root, puis l'outil de gestion du r\'eseau.
+
+Tu as autant de \texttt{eth0}, \texttt{eth1}, \ldots que de cartes r\'eseau d\'etect\'ees.
+S\'electionne la carte sur laquelle est branch\'e ton c\^able r\'eseau, et lance l'Assistant.
+Utilise la d\'etection automatique, puis s\'electionne \menu{LAN connection} et continue.
+Tu dois maintenant fournir les param\`etres n\'ecessaires \`a ta connexion :
+
+\begin{description}
+	\item[Adresse IP] entre celle que tu as calcul\'ee : \server{129.104.AAA.BBB} (cf. page \pageref{calcul_ip})
+	\item[Masque de sous-r\'eseau] \server{255.255.FFF.DDD} (cf. page \pageref{calcul_ip})
+	\item[DHCP] laisse cette case d\'ecoch\'ee
+\end{description}
+
+Ensuite, tu dois encore entrer :
+\begin{description}
+	\item[Nom d'h\^ote] \url{'ton\_pseudo'.eleves.polytechnique.fr}
+	\item[Serveur DNS] \server{129.104.201.53}
+	\item[Passerelle] tu l'as aussi calcul\'ee : \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip})
+\end{description}
+ 
+Voil\`a, c'est bon ! Tu peux passer au paragraphe 2 !
+
+\paragraph{\distrib{Sous Gentoo}}
+
+Si tu n'as jamais fait de configuration r\'eseau sur ta Gentoo, il faudra certainement cr\'eer les fichiers qui suivent.
+
+Le fichier \file{/etc/hostname} contient ton nom de machine.
+Tu peux \'editer \file{/etc/hostname} avec ton \'editeur pr\'ef\'er\'e
+(\app{vi} ou \app{vim}, \app{pico}, voire \app{emacs} si tu aimes),
+mais la commande ci-dessous est suffisante :
+
+\cmdline{echo 'ton\_pseudo' > /etc/hostname}
+
+Le fichier \file{/etc/resolv.conf} d\'ecrit comment r\'esoudre les noms DNS.
+La premi\`ere ligne donne le domaine sur lequel ta machine est, 
+ensuite viennent les suffixes \`a utiliser par d\'efaut,
+et les lignes suivantes indiquent les serveurs de noms,
+ceux qui associent le nom \server{frankiz} ou \server{ton\_pseudo}
+aux IP \server{129.104.201.51} ou \server{'ton\_ip'}.
+Le fichier contient donc :
+
+\noindent \cmdline{
+domain eleves.polytechnique.fr\\
+search eleves.polytechnique.fr polytechnique.fr\\
+nameserver 129.104.201.53\\
+namaserver 129.104.201.52}
+
+Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface r\'eseau et les informations de routage.
+Il indique ton IP, ton sous-r\'eseau, ton masque de sous-r\'eseau et la passerelle pour sortir de ton sous-r\'eseau :
+
+\noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.HHH.EEE $\backslash$\\
+                            netmask 255.255.FFF.DDD"\\
+                            gateway="eth0/129.104.GGG.CCC"}
+
+Tu fais le grand test en rechargeant ta configuration r\'eseau par :
+
+\cmdline{/etc/init.d/net.eth0 restart}
+
+puis en pingant \fkz\ par exemple. Tu dois obtenir quelque chose comme :
+
+\cmdline{root:~\# ping frankiz\\
+PING frankiz (129.104.201.51) 56(84) bytes of data.\\
+64 bytes from frankiz (129.104.201.51): ...}
+
+Pour pouvoir utiliser \app{emerge} \`a travers le proxy de l'\'ecole,
+il faut d\'efinir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
+
+\cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
+GENTOO\_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
+SYNC="rsync://rsync/gentoo-portage"}
+
+Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans ta liste
+mais \url{ftp://miroir} \'etant interne, il sera toujours beaucoup plus rapide que les autres.
+On te conseille ici \url{http://gentoo.osuosl.org/} qui est un miroir tr\`es complet mais tr\`es lent.
+
+\input ubuntu.tex
+
+\paragraph{\distrib{Sous Debian}}
+
+Lors de l'installation d'une nouvelle Debian, le programme d'installation
+te propose logiquement de rentrer ces informations de mani\`ere interactive ;
+sinon, il est toujours possible de les modifier ainsi :
+
+Le fichier \file{/etc/hostname} contient ton nom de machine.
+De m\^eme que sous Gentoo, tu peux l'\'editer avec ton \'editeur pr\'ef\'er\'e ou utiliser la commande :
+
+\cmdline{echo 'ton\_pseudo' > /etc/hostname}
+
+Comme sous Gentoo, le fichier \file{/etc/resolv.conf} d\'ecrit comment r\'esoudre les noms DNS, il doit contenir :
+
+\cmdline{search eleves.polytechnique.fr polytechnique.fr\\
+nameserver 129.104.201.53\\
+nameserver 129.104.201.51}
+
+Enfin, le fichier \file{/etc/network/interfaces} contient la description de la boucle locale
+(si tu veux faire du FTP vers toi-m\^eme par exemple :-) ), de l'interface r\'eseau et les informations de routage.
+Il indique ton IP, ton sous-r\'eseau, et la passerelle pour sortir de ton sous-r\'eseau :
+
+\cmdline{auto lo\\
+iface lo inet loopback\\
+\\
+auto eth0\\
+iface eth0 inet static\\
+address 129.104.AAA.BBB\\
+netmask 255.255.255.DDD\\
+network 129.104.AAA.DDD\\
+broadcast 129.104.AAA.EEE\\
+gateway 129.104.GGG.CCC}
+
+Toujours comme sous Gentoo, recharge ta configuration r\'eseau par :
+
+\cmdline{/etc/init.d/networking restart}
+
+puis essaye de pinger \fkz\ par exemple. Tu dois obtenir quelque chose comme:
+
+\cmdline{root:~\# ping frankiz\\
+PING frankiz (129.104.201.51) 56(84) bytes of data.\\
+64 bytes from frankiz (129.104.201.51): ...}
+
+Une derni\`ere chose sp\'ecifique \`a Debian, pour utiliser \app{apt-get} et \app{apt-cache}
+\`a travers le proxy de l'\'ecole, il faut rajouter la ligne ci-dessous dans \file{/etc/apt/apt.conf} :
+
+\cmdline{Acquire::http::Proxy "http://kuzh.polytechnique.fr:8080";}
+
+Attention, le \file{apt.conf} ne g\`ere pas le protocole ftp via le proxy http.
+Pour utiliser des \url{ftp://} dans ton \file{/etc/apt/sources.list}, il faut rajouter :
+
+\cmdline{ftp\_proxy = http://kuzh:8080}
+
+dans les param\`etres de wget (car apt utilise wget), dans les fichiers \file{/etc/wgetrc} ou \file{/root/.wgetrc}.
+Tu peux aussi y mettre \`a ta guise:
+
+\cmdline{http\_proxy = http://kuzh:8080}
+
+Le BR maintient par ailleurs un miroir debian : tu peux l'utiliser avec le fichier \file{/etc/sources.list} suivant,
+où \texttt{[flavour]} est la saveur de ta debian, \`a choisir parmi
+\texttt{stable}, \texttt{testing}, \texttt{unstable} ou \texttt{experimental}
+(la ligne \texttt{debian-security} n'est n\'ecessaire que pour \texttt{stable} ou \texttt{testing}).
+
+\cmdline{
+deb ftp://miroir/debian [flavour] main contrib non-free\\
+deb ftp://miroir/debian-non-US [flavour]/non-US main $\backslash$ \\ contrib non-free\\
+deb ftp://miroir/debian-security [flavour]/updates main $\backslash$ \\ contrib non-free\\
+deb ftp://miroir/debian-marillat [flavour] main}
+
+\subsubsection{Configuration antivirus \footnotesize{(elle est dr\^ole celle-l\`a hein ?)}
+}
+
+\subsubsection{Configuration firewall}
+
+La solution la plus simple pour se faire un firewall sous linux est d'utiliser les iptables.
+Pour ceci la premi\`ere \'etape est d'installer le paquet \app{iptables} pour ta distribution.
+Ensuite, la configuration peut paraître d\'elicate mais en fait ce ne sont que des r\`egles simples,
+il suffit de comprendre le principe.
+
+Configurer les iptables c'est d\'efinir une s\'erie de r\`egles.
+Chaque r\`egle a une forme simple, elle d\'efinit une action \`a effectuer dans des conditions donn\'ees.
+Ces conditions portent sur l'origine du paquet (l'unit\'e \'el\'ementaire de ce qui circule sur le r\'eseau),
+le format du paquet, le sens de circulation, \ldots
+
+Un exemple de r\`egle serait :
+
+\cmdline{-A INPUT -i eth0 -s 129.104.201.51 -p tcp -m tcp -{}-dport 80 -j ACCEPT}
+
+Cette r\`egle accepte les paquets que l'on re\c{c}oit de \fkz\ (\server{129.104.201.51})
+sur le port 80 qui utilisent le protocole TCP. Tout se lit clairement :
+\begin{itemize}
+	\item[\texttt{-A}] d\'efinit la chaîne \`a filtrer. La chaîne indique d'où provient la requ\^ete : \texttt{INPUT} pour un paquet entrant, \texttt{OUTPUT} pour un paquet sortant sont les principales.
+	\item[\texttt{-i}] d\'efinit l'interface r\'eseau, en gros la carte r\'eseau (\texttt{eth0} le plus souvent, mais il y a aussi \texttt{lo} pour la boucle locale - localhost).
+	\item[\texttt{-s}] IP source du paquet \`a filtrer.
+	\item[\texttt{-d}] IP destination du paquet \`a filtrer.
+	\item[\texttt{-p}] protocole du paquet (tcp, udp, igmp, icmp sont les plus courants).
+	\item[\texttt{-m}] d\'efinit un module particulier \`a utiliser pour filtrer plus pr\'ecisemment. Le plus souvent on utilise les modules tcp, udp, multiport ou state.
+	\item[\texttt{-{}-dport}] port de destination du paquet (avec -m udp ou -m tcp).
+	\item[\texttt{-{}-sport}] port d'origine du paquet (avec -m udp ou -m tcp).
+	\item[\texttt{-{}-state}] d\'efinit l'\'etat de la connexion (n\'ecessite le module state). Les principales valeurs de test pour ce param\`etre sont \texttt{NEW} (nouvelle connexion), \texttt{ESTABLISHED} (connexion d\'ej\`a \'etablie), \texttt{RELATED} (connexion d\'ependante d'une autre).
+	\item[\texttt{-j}] d\'efinit l'action \`a entreprendre (\texttt{ACCEPT} pour accepter le paquet, \texttt{REJECT} pour refuser le paquet et en informer l'emmeteur, \texttt{DROP} pour faire comme si le paquet n'existait pas, \texttt{LOG} pour logguer la r\'eception du paquet.
+\end{itemize}
+
+Tout \c{c}a c'est tr\`es bien mais tu n'as pas envie de te casser la t\^ete
+\`a te faire un firewall tout seul --- on te comprend :-).
+Voici un petit firewall basique pour le r\'eseau de l'X :
+
+\noindent \cmdline{
+\# Comportement par d\'efaut pour les diff\'erentes chaines\\
+*filter\\
+:INPUT DROP [0:0]\\
+:FORWARD DROP [0:0]\\
+:OUTPUT ACCEPT [0:0]\\
+\\
+\# Pour que tout se passe bien avec localhost\\
+-A INPUT -i lo -j ACCEPT\\
+\# Pour que les connexions sur les ports > 1024 soit autoris\'ees\\
+\# pour les programmes qui les utilisent comme connexions\\
+\# secondaires (Exemple : serveur ftp)\\
+-A INPUT -p tcp -m tcp -{}-dport 1024:65535 -m state $\backslash$ \\
+ -{}-state RELATED,ESTABLISHED -j ACCEPT\\
+-A INPUT -p udp -m udp -{}-dport 1024:65535 -m state $\backslash$ \\
+ -{}-state RELATED,ESTABLISHED -j ACCEPT\\
+\\
+\# Pour ouvrir les ports des utilitaires standards :\\
+\# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix, 5054:Xplo\\
+-A INPUT -p tcp -m multiport $\backslash$ \\
+ -{}-dports 20,21,22,80,119,5050,5054 -j ACCEPT\\
+\# Pour profiter de la t\'el\'e sur le r\'eseau :\\
+-A INPUT -p upd -m udp -{}-dport 1234 -j ACCEPT\\
+\\
+\# Pour que les demandes de connexion vers l'ext\'erieur (impossible) ne ralentissent pas\\
+-A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j REJECT\\
+\\
+\# Pour pouvoir \^etre 'pingable'\\
+-A INPUT -p icmp -j ACCEPT\\
+\\
+\# Fin du fichier\\
+COMMIT
+}
+
+Pour activer ton firewall, tu n'as plus qu'\`a faire :
+
+\cmdline{iptables-restore < le\_fichier\_ci\_dessus}
+
+en rempla\c{c}ant \texttt{le\_fichier\_ci\_dessus} par le nom sous lequel tu as sauvegard\'e
+ce fichier de configuration de firewall.
+
+
+\subsubsection{Configuration navigateur web}
+
+%\image{partie1-config_reseau/nux_proxy_firefox}{0.66}{Configuration du proxy sous Firefox}
+
+%\flimage{partie1-config_reseau/nux_firefox_icon}{0.12}{l}
+Le BR te conseille d'utiliser \app{Firefox}, qui est maintenant tout \`a fait op\'erationnel.
+Il est beaucoup plus stable que \app{Konqueror} --- le navigateur fourni par d\'efaut avec KDE ---
+surtout sur les distributions r\'eput\'ees instables.
+Dans tous les cas, la seule configuration \`a mettre est celle du proxy.
+Il suffit d'aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General}
+cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{D\'etection automatique du proxy pour ce r\'eseau},
+et c'est bon.
+
+\subsubsection{Configuration mail}
+
+%\flimage{partie1-config_reseau/nux_kmail_icon}{0.12}{l}
+Le client mail le plus utilis\'e est \app{Kmail}, mais il en existe bien s\^ur d'autres comme \app{Thunderbird}.
+
+Va dans \menu{Configuration}, \menu{Configurer Kmail}.
+Choisis la rubrique \menu{R\'eseau}.
+Commence par cr\'eer un nouveau compte dans l'onglet \menu{R\'eception des messages}
+en cliquant sur le bouton \menu{Ajouter\ldots} et choisis le type POP3.
+
+%\image{partie1-config_reseau/nux_config_kmail_pop}{0.66}{Configuration de la r\'eception des messages sous Kmail}
+
+Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral} :
+\begin{description}
+  \item[Nom] le nom du compte, par exemple : Mails Poly
+  \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI \`a ton arriv\'ee sur le plateau
+  \item[Mot de passe] idem
+  \item[Serveur] \server{poly.polytechnique.fr}
+  \item[Port] 995
+\end{description}
+
+Ensuite, va dans l'onglet \menu{Extras} et coche la case \menu{Utiliser SSL pour s\'ecuriser les t\'el\'echargements}.
+
+%\image{partie1-config_reseau/nux_config_kmail_smtp}{0.66}{Configuration de l'envoi des messages sous Kmail}
+
+Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le bouton \menu{Ajouter\ldots}.
+Utilise les param\`etres suivants pour le configurer :
+\begin{description}
+  \item[Nom] le m\^eme nom de compte que pr\'ec\'edemment
+  \item[Serveur] \server{poly.polytechnique.fr}
+  \item[Port] 25
+\end{description}
+Sinon, laisse toutes les cases d\'ecoch\'ees.
+
+\subsubsection{Configuration news}
+
+%\flimage{partie1-config_reseau/nux_knode_icon}{0.12}{l}
+Le client news le plus utilis\'e est \app{Knode}.
+Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}.
+
+%\image{partie1-config_reseau/nux_config_knode}{0.7}{Configuration de Knode}
+
+Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}.
+Va dans la rubrique \menu{Comptes, Forums de discussion} et cr\'ee un compte en cliquant sur \menu{Nouveau\ldots}.
+
+Remplis l'onglet \menu{Serveur} avec les informations suivantes :
+\begin{description}
+  \item[Nom] ce que tu veux pour d\'ecrire ce compte, par exemple 'News Frankiz'
+  \item[Serveur] \server{frankiz.polytechnique.fr}
+  \item[Port] 119
+\end{description}
+
+Ensuite occupe-toi de l'onglet \menu{Identit\'e} :
+\begin{description}
+  \item[Nom] mets ton pseudo dans ce champ
+  \item[Organisation] X, École Polytechnique, comme tu le sens
+  \item[Adresse \'electronique] ton adresse mail, pour que les gens puissent te r\'epondre par mail.
+\end{description}
+
+Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller dans la rubrique \menu{Comptes},
+sous-rubrique \menu{Courrier \'electronique}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr},
+port 25 --- c'est exactement la m\^eme configuration SMTP que \app{Kmail}.
+
+Si tu veux mettre une signature \`a la fin des messages que tu posteras,
+il te suffit de la mettre dans l'onglet \menu{Identit\'e}.
+Sur la plupart des clients la signature est interpr\'et\'ee comme ext\'erieure au message
+et n'est en particulier pas incluse dans le texte cit\'e lorsque tu r\'eponds \`a un message.
+Pour d\'efinir une signature \`a la main, il suffit de mettre \verb*+-- +\ (c'est \`a dire -{}-<espace>)
+sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
+
+Il ne te reste plus qu'\`a t'inscrire \`a des newsgroups
+(reporte-toi \`a la page \pageref{newsgroups} pour plus d'infos) et \`a poster !
+
+Pour te connecter aux serveurs de news de Polytechnique.org, qui ont un acc\`es s\'ecuris\'e,
+avec \app{Knode}, il y a une petite subtilit\'e car il ne g\`ere pas le SSL.
+Il faut installer \app{stunnel} qui permet de d\'efinir une redirection SSL de port.
+Dans \file{/etc/stunnel.conf} ou \file{/etc/stunnel/stunnel.conf} selon ta distribution,
+mets les lignes suivantes (les trois premi\`eres y sont en principe d\'ej\`a) :
+
+\cmdline{\# location of pid file\\
+pid = /etc/stunnel/stunnel.pid\\
+\\
+\# user to run as\\
+setuid = stunnel\\
+setgid = stunnel\\
+\\
+\# Use it for client mode\\
+client = yes\\
+\\
+\# sample service-level configuration\\
+\\
+{[}nntps{]}\\
+accept  = 1119\\
+connect = ssl.polytechnique.org:563\\
+TIMEOUTclose = 0\\
+}
+
+Il ne te reste plus qu'\`a lancer \app{stunnel} par :
+
+\cmdline{/etc/init.d/stunnel start}
+
+Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur
+et \server{1119} comme port.
+Il faut aussi que tu coches \menu{Le serveur exige une identification}
+et que tu rentres ton nom d'utilisateur \`a Polytechnique.org et ton mot de passe,
+que tu peux d\'efinir sur \url{http://www.polytechnique.org/acces_smtp.php}.
+
+\vfill
