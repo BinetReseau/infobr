@@ -5,10 +5,10 @@
 
 Une adresse IP est une suite de quatre nombres compris entre $0$ et $255$ s\'epar\'es par des points ;
 en gros, elle identifie de mani\`ere unique toute machine connect\'ee au r\'eseau mondial.
-Exemple : l'IP de \server{frankiz} est $129.104.201.51$.
+Exemple : l'IP de \server{frankiz} est \server{129.104.201.51}.
 
-Les IP de l'X sont toutes de la forme $129.104.AAA.BBB$.
-Tu vas devoir calculer quoi mettre \`a la place de $AAA$ et $BBB$
+Les IP de l'X sont toutes de la forme \server{129.104.AAA.BBB}.
+Tu vas devoir calculer quoi mettre \`a la place de \server{AAA} et \server{BBB}
 afin que ton ordinateur ait son adresse unique.
 
 Au cas o\`u deux personnes ont (par erreur ou pas) la m\^eme adresse,
@@ -20,7 +20,7 @@ que les deux peuvent perdre l'acc\`es tant que cela n'est pas corrig\'e.
 Regarde sur ta prise r\'eseau, elle contient 4 caract\`eres.
 On note les deux premiers $xx$ et les deux derniers $zz$.
 
-$xx$ sert \`a trouver ton sous-r\'eseau ($AAA$), ta passerelle (\emph{gateway}),
+$xx$ sert \`a trouver ton sous-r\'eseau (\server{AAA}), ta passerelle (\emph{gateway}),
 et ton broadcast, selon la tabelle suivante :
 
 \vskip 12pt
@@ -44,18 +44,18 @@ et ton broadcast, selon la tabelle suivante :
 &  \bf Netmask&& \multispan{23} \vsep\vfil\hbox{\quad 255.255.252.0\quad}\vfil\vsep&\cr
 }\vrule} \hfil
 
-$zz$ sert \`a trouver les identifiants $BBB$ par la r\`egle : $BBB = 120 + zz$.
+$zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : $BBB = 120 + zz$.
 
-\emph{Exemple :} l'IP associ\'ee \`a la prise $A145$ est $129.104.209.165$ ($165 = 120 + 45$) ;
-sa passerelle (Gateway) est $129.104.211.254$, son \textit{broadcast} est $129.104.211.255$
-et son masque r\'eseau (Netmask) est $255.255.252.0$.
+\emph{Exemple :} l'IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ;
+sa passerelle (Gateway) est \server{129.104.211.254}, son \textit{broadcast} est \server{129.104.211.255}
+et son masque r\'eseau (Netmask) est \server{255.255.252.0}.
 
 \subsubsection{Pour les nouveaux caserts}
 
 Ta prise r\'eseau contient 6 chiffres de la forme $xx\ yy\ zz$.
 On prend $xx$ pour calculer le sous-r\'eseau, la passerelle et le broadcast ;
-les IP's de la passerelle et du broadcast sont de la forme $129.104.AAA.DDD$ et $129.104.AAA.EEE$.
-Ensuite, tu peux d\'eterminer la partie $BBB$ de ton IP avec $zz$ et $xx$, comme dans le tableau :
+les IP's de la passerelle et du broadcast sont de la forme \server{129.104.AAA.DDD} et \server{129.104.AAA.EEE}.
+Ensuite, tu peux d\'eterminer la partie {BBB} de ton IP avec $zz$ et $xx$, comme dans le tableau :
 
 \vskip 12pt
 \hfil \vbox{
@@ -73,7 +73,7 @@ height2pt&\omit&&\omit&&\omit&&\omit&\cr
 &    74&&   225&&   254&& $128 + zz$&\cr
 &    75&&   226&&   126&&       $zz$&\cr
 &    76&&   227&&   126&&       $zz$&\cr
-&    77&&   227&&   254&&  $128 + zz$&\cr
+&    77&&   227&&   254&& $128 + zz$&\cr
 &    78&&   228&&   126&&       $zz$&\cr
 &    79&&   229&&   126&&       $zz$&\cr
 &    80&&   226&&   254&& $128 + zz$&\cr
@@ -83,19 +83,19 @@ height2pt&\omit&&\omit&&\omit&&\omit&\cr
 
 \vskip 12pt
 
-Le masque de sous-r\'eseau est toujours $255.255.255.128$,
-le broadcast est toujours $129.104.AAA.127$.
+Le masque de sous-r\'eseau est toujours \server{255.255.255.128},
+le broadcast est toujours \server{129.104.AAA.127}.
 
 \subsubsection{Le BEM}
 Si tu habites au b\^atiment A, $AAA = 203$, au b\^atiment D, $AAA = 204$.
-Ta passerelle est $129.104.AAA.13$, le masque de sous-r\'eseau est $255.255.255.0$,
-le broadcast est $129.104.AAA.255$.
+Ta passerelle est \server{129.104.AAA.13}, le masque de sous-r\'eseau est \server{255.255.255.0},
+le broadcast est \server{129.104.AAA.255}.
 
-Pour $BBB$, c'est simple : $BBB = 50 + \mbox{le num\'ero de ta chambre}$.
+Pour \server{BBB}, c'est simple : $BBB = 50 + \mbox{le num\'ero de ta chambre}$.
 
 \subsubsection{Le PEM}
-Ici, $AAA = 214$, la passerelle est $129.104.214.13$,
-le broadcast est $129.104.214.255$ et le masque r\'eseau est $255.255.255.0$.
+Ici, $AAA = 214$, la passerelle est \server{129.104.214.13},
+le broadcast est \server{129.104.214.255} et le masque r\'eseau est \server{255.255.255.0}.
 
 Pour le num\'ero de machine, si tu habites au rez-de-chauss\'ee,
 $BBB = 15 + \mbox{le num\'ero de ta chambre}$ ;

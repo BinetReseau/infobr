@@ -3,7 +3,10 @@
 
 \usepackage[francais]{babel}
 \usepackage{fancyhdr}
+
+\usepackage{epsfig}
 \usepackage{color}
+\usepackage{url}
 
 \topmargin 5mm
 \headheight 10mm
@@ -27,11 +30,30 @@
 
 \pagestyle{fancy}
 
+% Couleurs
+\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
+\definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}
+\definecolor{Blue2}{cmyk}{0.6,0.2,0.0,0.0}
+\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
+\definecolor{GreenApp}{cmyk}{0.7,0.0,1.0,0.8}
+\definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}
+\definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}
+\definecolor{DarkOrange}{cmyk}{0.,0.4,1.0,0.4}
+\definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
+\definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
 
 % pour les serveurs
-\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
 \newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
 
+
+\newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
+  \begin{figure*}
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \caption{#3}
+    \end{center}
+  \end{figure*}
+}
 
 \begin{document}
 
@@ -56,6 +78,6 @@
 \section{Premiers pas...}
 \input{calculip}
 
+\input{config_nux}
 
 \end{document}
- 
