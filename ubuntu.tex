@@ -1,0 +1,86 @@
+\subsection{Ubuntu/Kubuntu}
+
+\subsubsection{Configuration R\'eseau}
+
+Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere interactive. Si tu n'as pas fait à ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits administrateurs \'evidemment!).
+
+\begin{itemize}
+\item Le fichier \emph{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
+\begin{verbatim}
+tonPseudo.eleves.polytechnique.fr
+\end{verbatim}
+
+\item Le fichier \emph{/etc/resolv.conf} d\'ecrit comment associer le nom d'une machine \`a une adresse IP. Il doit contenir:
+\begin{verbatim}
+search eleves.polytechnique.fr polytechnique.fr
+nameserver 129.104.201.53 129.104.201.52
+\end{verbatim}
+
+\item Le fichier \emph{/etc/network/interfaces} contient entre autres ton IP, ton sous-r\'eseau et la passerelle pour en sortir. Ce fichier doit ressembler (avec \'eventuellement une config wifi \`a la suite...)  \`a : 
+\begin{verbatim}
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# This is a list of hotpluggable network interfaces.
+# They will be activated automatically by the hotplug subsystem.
+mapping hotplug
+        script grep
+        map eth0
+
+# The primary network interface
+iface eth0 inet static
+        address 129.104.AAA.BBB
+        netmask 255.255.255.DDD
+        network 129.104.AAA.DDD
+        broadcast 129.104.AAA.EEE
+        gateway 129.104.AAA.CCC
+\end{verbatim}
+
+\end{itemize}
+
+Ensuite il faut redemarrer ta configuration r\'eseau
+\begin{verbatim}
+$ sudo /etc/init.d/networking restart
+\end{verbatim}
+
+Voila ta configuration r\'eseau est termin\'ee! Tu peux la tester en pinguant frankiz
+\begin{verbatim}
+$ ping frankiz
+\end{verbatim}
+
+Tu devrais voir:
+\begin{verbatim}
+PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.
+64 bytes from Frankiz.eleves.polytechnique.fr (129.104.201.51): icmp_seq=1 ttl=62 time=0.570 ms
+\end{verbatim}
+
+\subsubsection{Configuration du gestionnaire de paquets}
+Il faut d\'esormais configurer le gestionnaire de paquets pour qu'il utilise les miroirs du BR et non les miroirs \`a l'ext\'erieur du campus qui sont plus lents.
+
+Le fichier \emph{/etc/apt/sources.list} liste les miroirs utilis\'es par le gestionnaire de paquets. Il faut commenter la premi\'ere ligne (qui correspond au cd d'installation) ainsi que toutes les lignes non comment\'ees du fichier (qui correspondent aux miroirs ext\'erieurs au campus) de la façon suivante:
+\begin{verbatim}
+deb cdrom:[...]/ breezy main restricted
+\end{verbatim}
+devient
+\begin{verbatim}
+# deb cdrom:[...]/ breezy main restricted
+\end{verbatim}
+
+Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \textbf{d\'ebut} du fichier:
+\begin{verbatim}
+deb ftp://miroir/ubuntu/ubuntu [version] main restricted universe multiverse
+deb ftp://miroir/ubuntu/ubuntu [version]-backports main restricted universe multiverse
+deb ftp://miroir/ubuntu/ubuntu [version]-updates main restricted universe multiverse
+deb ftp://miroir/ubuntu/ubuntu [version]-security main restricted universe multiverse
+\end{verbatim}
+o\`u \textbf{[version]} correspond \`a la version d'ubuntu install\`ee. La version actuelle est \textbf{dapper} et la pr\'ec\'edente est \textbf{breezy}.
+
+On finit par v\'erifier que tout fonctionne en mettant \`a jour la liste des paquets disponibles:
+\begin{verbatim}
+$ sudo apt-get update
+\end{verbatim}
+S'il n'y a pas de message d'erreur c'est que tout fonctionne nickel.
+
+
+
