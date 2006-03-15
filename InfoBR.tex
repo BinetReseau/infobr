@@ -43,7 +43,8 @@
 \definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
 
 % pour les serveurs
-\newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
+\newcommand{\server}[1]{{\NoAutoSpaceBeforeFDP
+                         \texttt{\color{DarkBlue}#1}\xspace} }
 
 
 \newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
@@ -79,5 +80,8 @@
 \input{calculip}
 
 \input{config_nux}
+
+\markright{Pour continuer}
+\input{partie2/partie2}
 
 \end{document}
