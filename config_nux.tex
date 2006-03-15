@@ -247,11 +247,11 @@ Voici un petit firewall basique pour le r\'eseau de l'X :
  -{}-state RELATED,ESTABLISHED -j ACCEPT\\
 \\
 \# Pour ouvrir les ports des utilitaires standards :\\
-\# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix, 5054:Xplo\\
+\# 20,21:ftp, 22:ssh, 80:http, 119:news, 5050:qRezix, 5055:Xftp\\
 -A INPUT -p tcp -m multiport $\backslash$ \\
- -{}-dports 20,21,22,80,119,5050,5054 -j ACCEPT\\
-\# Pour profiter de la t\'el\'e sur le r\'eseau :\\
--A INPUT -p upd -m udp -{}-dport 1234 -j ACCEPT\\
+ -{}-dports 20,21,22,80,119,5050,5055 -j ACCEPT\\
+% \# Pour profiter de la t\'el\'e sur le r\'eseau :\\
+% -A INPUT -p upd -m udp -{}-dport 1234 -j ACCEPT\\
 \\
 \# Pour que les demandes de connexion vers l'ext\'erieur (impossible) ne ralentissent pas\\
 -A OUTPUT -d ! 129.104.0.0/255.255.0.0 -j REJECT\\
