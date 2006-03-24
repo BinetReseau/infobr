@@ -1,21 +1,5 @@
 % Commandes speciales definies ici
 
-% pour les images de fond sur les headers
-\newcommand{\bghdr}[1]{
-  \leftwatermark{
-    \raisebox{-1.5cm}{
-      \hspace{-2.4cm}
-      \includegraphics{#1}
-    }
-  }
-  \rightwatermark{
-    \raisebox{-1.5cm}{
-      \hspace{13.2cm}
-      \includegraphics{#1}
-    }
-  }
-}
-
 % pour inclure des images
 \newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
   \begin{figure*}

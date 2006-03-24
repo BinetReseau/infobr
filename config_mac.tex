@@ -1,6 +1,9 @@
 \clearpage
 \pagebreak
 
+\begin{center}
+\includegraphics{images/logo_Mac}
+\end{center}
 \subsection{Configuration sous Mac OS X}
 
 Voici une pr\'esentation de divers logiciels utiles pour utiliser les services propos\'es sur le r\'eseau avec Mac OS X, ainsi que leur configuration. Les logiciels non int\'egr\'es \`a Mac OS X et cit\'es ici sont quasiment tous t\'el\'echargeables sur \server{frankiz} : rubrique \menu{T\'el\'echarger -> Mac -> R\'eseau}.
@@ -20,27 +23,22 @@ Une fois la nouvelle configuration cr\'e\'ee, il faut configurer l'interface r\'
 
 Choisis alors \menu{Configurer IPv4} : \menu{Manuellement}. Tu trouveras toutes les valeurs d'IP n\'ecessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant au screenshot suivant. Si une partie d'IP est blanche sur le screenshot, c'est qu'elle t'est personnelle et que tu dois la calculer !
 
-\image{images/mac_config_ip}{0.7}{Configuration IP}
+\imagepos{images/mac_config_ip}{0.66}{Configuration IP}{!h}
 
 Pour avoir acc\`es \`a Internet, il faut aussi configurer le proxy. Clique sur l'onglet \menu{Proxies}. MacOS X 10.3.3 peut utiliser un script automatique pour param\'etrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'\'etait le cas avec MacOS X 10.2 et 10.3.0 ; sinon il faut mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Si tu as Mac OS X 10.3.0, mets le proxy HTTP manuellement, fais toutes les mises \`a jour (Menu Pomme, \menu{Mise \`a jour de logiciels\ldots}) et ensuite tu auras l'option \menu{Configuration automatique de proxy}.
-
-\clearpage %esth\'etique...
-
 
 \image{images/mac_config_proxy}{0.7}{Configurer le proxy}
 
 
 \subsubsection{Configuration antivirus}
 
-Reporte-toi \`a la partie Linux\ldots\ si tu penses que c'est n\'ecessaire :-þ
+Tu es sous Mac :-þ
 
 \subsubsection{Configuration web}
 
 \flimage{images/mac_safari_icone}{0.1}{l}
 \app{Safari}, le navigateur web d'Apple est maintenant enti\`erement op\'erationnel.
-Un conseil : pense \`a activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}) et la navigation par onglets (dans les \menu{Pr\'ef\'erences -> Onglets}). Pour ouvrir une page dans un nouvel onglet sans quitter ta page actuelle, clique sur le bouton du milieu de la souris --- d'ailleurs, si tu as encore la souris d'Apple, pense \`a acheter une souris \`a deux boutons + molette, c'est quand même plus commode\ldots
-
-Tu peux aussi utiliser \app{Firefox} si tu pr\'ef\`eres !
+Un conseil : pense \`a activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}). Tu peux aussi utiliser \app{Firefox} si tu pr\'ef\`eres !
 
 \subsubsection{Configuration mail}
 
@@ -51,7 +49,7 @@ Au premier lancement, \app{Mail} te demandera de remplir les informations concer
 
 \begin{description}
   \item[Nom complet] ton nom ! 
-  \item[Adresse \'electronique] de la forme \mail{prenom.nom@polytechnique.fr}
+  \item[Adresse \'electronique] de la forme \mail{prenom.nom@polytechnique.edu}
   \item[Serveur de r\'eception] \server{poly.polytechnique.fr}
   \item[Type de compte] \menu{POP}
   \item[Nom d'utilisateur] ton login \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral)
@@ -74,7 +72,7 @@ Au premier lancement, l'application te propose d'importer les param\`etres depui
 
 \begin{description}
   \item[Votre nom] ton nom ou ton pseudo 
-  \item[Adresse de courrier] \mail{prenom.nom@polytechnique.fr}
+  \item[Adresse de courrier] \mail{prenom.nom@polytechnique.edu}
   \item[Serveur de forums] \server{frankiz}
   \item[Nom du compte] News Frankiz
   \item[Nom d'utilisateur] ton login poly (les huit premi\`eres lettres de ton nom en g\'en\'eral)
@@ -107,13 +105,12 @@ Voici plusieurs logiciels que tu voudras s\^urement t\'el\'echarger pour profite
 
 \noindent Pour plus de d\'etails, voir le paragraphe consacr\'e \`a qRezix \`a la page \pageref{qrezix}.
 
-\noindent Attention, si ton firewall est activ\'e, tu dois ouvrir les ports 5050, 5053 et 5054 en TCP. Pour cela va dans \app{Pr\'ef\'erences Syst\`eme}, page \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}. S'il est \'ecrit \menu{Coupe-feu activ\'e}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur le screenshot ci-dessous pour ouvrir les ports.\\ \\
+\noindent Attention, si ton firewall est activ\'e, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP. Pour cela va dans \app{Pr\'ef\'erences Syst\`eme}, page \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}. S'il est \'ecrit \menu{Coupe-feu activ\'e}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur le screenshot ci-dessous pour ouvrir les ports.\\ \\
 
 \imagepos{images/mac_firewall}{0.5}{Ouvrir les ports pour \app{qRezix}}{!h}
 
 \flimage{images/mac_cocoaxnet_icone}{0.1}{l}
-\noindent\app{CocoaXNet} est un \'equivalent de qRezix moins complet : il ne dipose pas de moteur de recherche. Mais il est mieux int\'egr\'e \`a Mac OS X, car il est d\'evelopp\'e en Cocoa, une API sp\'ecifique \`a Mac OS X, et non pas en Qt, qui a l'avantage d'être multi-plateformes.
-\\ \\
+\noindent\app{CocoaXNet} est un \'equivalent de qRezix mieux int\'egr\'e \`a Mac OS X, car il est d\'evelopp\'e en Cocoa, un langage sp\'ecifique \`a Mac OS X. \`A toi de voir !\\ \\
 
 \flimage{images/mac_conversation_icone}{0.1}{l}
 \noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{Conversation}, assez proche de \app{Colloquy}, et \app{Irssix}.

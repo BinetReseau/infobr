@@ -1,15 +1,12 @@
 % -------------------- Header --------------------
-\documentclass[12pt]{article}
+\documentclass[12pt, twoside]{article}
 
 \usepackage[francais]{babel}
 \usepackage{fancyhdr}
 
 \usepackage{epsfig}
-\usepackage{color}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
-\AddThinSpaceBeforeFootnotes
-\FrenchFootnotes
 \usepackage{xspace}
 \usepackage{lmodern}
 \usepackage{amsfonts}
@@ -21,39 +18,28 @@
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{epstopdf}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
-\addtolength{\headwidth}{80pt}
-\addtolength{\headheight}{3pt}
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
-\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
-
-\addtolength{\evensidemargin}{-60pt}
-\addtolength{\voffset}{-24pt}
-\addtolength{\textheight}{85pt}
-\addtolength{\textwidth}{60pt}
-
-\topmargin 5mm
-\headheight 10mm
+\topmargin 1mm
+\headheight 4mm
 \headsep 10mm
 \textheight 210mm
-\evensidemargin 5mm
-\oddsidemargin 5mm
+\evensidemargin 1mm
+\oddsidemargin 1mm
 \marginparwidth 0mm
 \marginparsep 0mm
-\textwidth 150mm
+\textwidth 170mm
 
 \title{InfoBR 2006}
 \author{Thifu, BR 2k4}
 \date{f\'evrier 2006}
 
 \renewcommand{\headrulewidth}{0.5pt}
-\fancyhead[RO, LE]{\thepage}
+\fancyhead[RO]{\thepage}
+\fancyhead[LE]{ \thepage}
 \fancyhead[RE, CE, CO, LO]{}
-\fancyfoot[R, C, L]{}
 \fancyhead[C]{\footnotesize{\textsc{\rightmark}}}
-
+\fancyfoot[R, C, L]{}
 \pagestyle{fancy}
 
 % Couleurs
@@ -68,10 +54,9 @@
 \definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
 \definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
 
-\begin{document}
-
 \input{commands}
 
+\begin{document}
 
 % -------------------- Le mot du prez: ----- 'motPrez.tex' --------------------
 \thispagestyle{empty}
@@ -83,9 +68,9 @@
 \tableofcontents
 
 % -------------------- Le mot du rédacteur: ----- 'avertissement.tex' --------------------
-\markright{Introduction}
-\section*{Introduction}
-\input{avertissement}
+% \markright{Introduction}
+% \section*{Introduction}
+% \input{avertissement}
 
 \newpage
 
