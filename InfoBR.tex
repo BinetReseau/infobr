@@ -6,7 +6,33 @@
 
 \usepackage{epsfig}
 \usepackage{color}
-\usepackage{url}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\AddThinSpaceBeforeFootnotes
+\FrenchFootnotes
+\usepackage{xspace}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{ifthen}
+\usepackage{alltt}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\addtolength{\headwidth}{80pt}
+\addtolength{\headheight}{3pt}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\addtolength{\evensidemargin}{-60pt}
+\addtolength{\voffset}{-24pt}
+\addtolength{\textheight}{85pt}
+\addtolength{\textwidth}{60pt}
 
 \topmargin 5mm
 \headheight 10mm
@@ -42,21 +68,10 @@
 \definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
 \definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
 
-% pour les serveurs
-\newcommand{\server}[1]{{\NoAutoSpaceBeforeFDP
-                         \texttt{\color{DarkBlue}#1}\xspace} }
-
-
-\newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
-  \begin{figure*}
-    \begin{center}
-      \includegraphics[width=#2\textwidth]{#1}
-      \caption{#3}
-    \end{center}
-  \end{figure*}
-}
-
 \begin{document}
+
+\input{commands}
+
 
 % -------------------- Le mot du prez: ----- 'motPrez.tex' --------------------
 \thispagestyle{empty}
@@ -79,9 +94,23 @@
 \section{Premiers pas...}
 \input{calculip}
 
+% -------------------- Les differentes configs --------------------
+\newpage
+\markright{Configuration sous Windows}
+\input{config_win}
+
+\newpage
+\markright{Configuration sous MacOS}
+\input{config_mac}
+
+\newpage
+\markright{Configuration sous Linux}
 \input{config_nux}
 
+% -------------------- Puis... --------------------
+\newpage
 \markright{Pour continuer}
 \input{partie2/partie2}
+
 
 \end{document}
