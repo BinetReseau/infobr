@@ -29,30 +29,44 @@ Toutes les informations n\'ecessaires se trouvent page \pageref{calcul_ip}.
 Bien s\^ur, l'ensemble des manipulations doit se faire en tant que root.
 
 \paragraph{\distrib{Sous Mandriva}}
-
+{\bf Configuration du r\'eseau}
 Il existe dans cette distribution une interface graphique pour configurer le r\'eseau, bien qu'il soit possible,
 comme sur tout syst\`eme linux, de le faire \`a la main \`a partir des fichiers de configuration dans \file{/etc/}.
 
-Lance \app{DrakConf} en tant que root, puis l'outil de gestion du r\'eseau.
-
+Lance \app{DrakConf} en tant que root, puis clique sur l'onglet \menu{R\'eseau & Internet} et enfin sur \menu{Configurer une nouvelle connexion Internet (LAN, ISDN, ADSL, ...)}. 
+Choisis ensuite \menu{Connexion à travers un r\'eseau local(LAN)},puis la carte r\'eseau sur laquelle tu as branch\'e ton c\^able r\'eseau.
 Tu as autant de \texttt{eth0}, \texttt{eth1}, \ldots que de cartes r\'eseau d\'etect\'ees.
-S\'electionne la carte sur laquelle est branch\'e ton c\^able r\'eseau, et lance l'Assistant.
-Utilise la d\'etection automatique, puis s\'electionne \menu{LAN connection} et continue.
-Tu dois maintenant fournir les param\`etres n\'ecessaires \`a ta connexion :
 
+Sur la fen\^etre suivante, choisis l'option \menu{configuration manuelle}.  La configuration du r\'eseau commence alors. 
+Dans la première fen\^etre, entre :
 \begin{description}
-	\item[Adresse IP] entre celle que tu as calcul\'ee : \server{129.104.AAA.BBB} (cf. page \pageref{calcul_ip})
-	\item[Masque de sous-r\'eseau] \server{255.255.FFF.DDD} (cf. page \pageref{calcul_ip})
-	\item[DHCP] laisse cette case d\'ecoch\'ee
+       \item[ton adresse IP] entre celle que tu as calcul\'ee : \server{129.104.AAA.BBB} (cf. page \pageref{calcul_ip})
+       \item[ton masque de sous-r\'eseau] : \server{255.255.FFF.DDD} (cf. page \pageref{calcul_ip})
 \end{description}
 
 Ensuite, tu dois encore entrer :
 \begin{description}
-	\item[Nom d'h\^ote] \url{'ton\_pseudo'.eleves.polytechnique.fr}
-	\item[Serveur DNS] \server{129.104.201.53}
-	\item[Passerelle] tu l'as aussi calcul\'ee : \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip})
+       \item[Nom d'hôte (non obligatoire)] : ton_pseudo
+       \item[Serveur DNS 1] : \server{129.104.201.53}
+       \item[Serveur DNS 2] : \server{129.104.201.54}
+       \item[Serveur DNS 3] : \server{129.104.201.51}
+       \item[Domaine recherch\'e] : eleves.polytechnique.fr polytechnique.fr
+       \item[Passerelle] : tu l'as aussi calcul\'ee : \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip})
+       \item[P\'eriph\'erique passerelle] : aucun
 \end{description}
- 
+
+Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
+Là, tu choisis l'option oui, puis tu valides et tu as normalement un message qui t'annonce que ta configuration r\'eseau est termin\'ee.
+
+N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
+5050 pourqRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau
+
+{\bf Configuration du gestionnaire de paquets :}
+Le BR poss\`ede ses propres miroirs mandriva, que nous te conseillons d'utiliser, ceux-ci \'etant beaucoup plus rapide que les miroirs ext\'erieurs.
+Dans l'utilitaire \app{Drakconf], choisis l'onglet \menu{Gestionnaire de logiciels}, puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir serveur ftp et à mettre comme url \url{ftp://miroir/mandriva}.
+
+
+
 Voil\`a, c'est bon ! Tu peux passer au paragraphe 2 !
 
 \paragraph{\distrib{Sous Gentoo}}
