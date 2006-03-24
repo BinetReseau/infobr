@@ -1,7 +1,7 @@
 \paragraph{\distrib{Ubuntu/Kubuntu}}
 \label{Ubuntu:IP}
 
-Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere interactive. Si tu n'as pas fait à ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits administrateurs \'evidemment!).
+Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere interactive. Si tu n'as pas fait ï¿½ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits administrateurs \'evidemment!).
 
 \begin{itemize}
 \item Le fichier \emph{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
@@ -67,21 +67,21 @@ et non les miroirs \`a l'ext\'erieur du campus qui sont plus lents.
 Le fichier \emph{/etc/apt/sources.list} liste les miroirs utilis\'es par le gestionnaire de paquets.
 Il faut commenter la premi\'ere ligne (qui correspond au cd d'installation)
 ainsi que toutes les lignes non comment\'ees du fichier
-(qui correspondent aux miroirs ext\'erieurs au campus) de la façon suivante:
+(qui correspondent aux miroirs ext\'erieurs au campus) de la faï¿½n suivante:
 
 \cmdline{deb cdrom:[...]/ breezy main restricted}
 
 devient
 
-\cmdline{\# deb cdrom:[...]/ breezy main restricted}
+\cmdline{\#deb cdrom:[...]/ breezy main restricted}
 
 Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \textbf{d\'ebut} du fichier:
 
 \cmdline{
-deb ftp://miroir/ubuntu/ubuntu [version] main restricted universe multiverse\\
-deb ftp://miroir/ubuntu/ubuntu [version]-backports main restricted universe multiverse\\
-deb ftp://miroir/ubuntu/ubuntu [version]-updates main restricted universe multiverse\\
-deb ftp://miroir/ubuntu/ubuntu [version]-security main restricted universe multiverse\\
+deb ftp://miroir/ubuntu [version] main restricted universe multiverse\\
+deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse\\
+deb ftp://miroir/ubuntu [version]-updates main restricted universe multiverse\\
+deb ftp://miroir/ubuntu [version]-security main restricted universe multiverse\\
 }
 
 o\`u \textbf{[version]} correspond \`a la version d'ubuntu install\`ee. La version actuelle est \textbf{dapper} et la pr\'ec\'edente est \textbf{breezy}.
