@@ -89,6 +89,8 @@
 \newcommand{\file}[1]{\textsf{\color{DarkOrange}#1}\xspace}
 % pour les distributions Linux
 \newcommand{\distrib}[1]{{\color{green}#1}}
+% pour les liens (sous frankiz)
+\newcommand{\lien}[1]{\textsf{\color{Blue}`#1'}\xspace}
 
 
 % images des OS
@@ -102,14 +104,8 @@
 \newcommand{\fkz}{\server{frankiz}}
 \newcommand{\xshare}{la rubrique \menu{Télécharger} de \fkz}
 
-\newcommand{\exemple}[1]{
-\begin{center}
-  \begin{tabular}{|p{0.9\textwidth}|}
-  \hline
-  \\
-  \emph{Exemple :} #1 \\
-  \\
-  \hline
-  \end{tabular}
-\end{center}
-}
+\newcommand{\exemple}[1]{ \fcolorbox{black}{LightRed} {
+  \begin{minipage}{0.9\textwidth}
+    \emph{Exemple :} #1 \\
+  \end{minipage}
+}}
