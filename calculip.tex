@@ -3,7 +3,7 @@
 
 \label{calcul_ip}
 
-Une adresse IP est une suite de quatre nombres compris entre $0$ et $255$ s\'epar\'es par des points ;
+Une adresse IP est une suite de quatre nombres compris entre 0 et 255 s\'epar\'es par des points ;
 en gros, elle identifie de mani\`ere unique toute machine connect\'ee au r\'eseau mondial.
 \emph{Exemple :} l'adresse IP de \server{frankiz} est \server{129.104.201.51}.
 
@@ -20,8 +20,12 @@ que les deux perdent l'acc\`es tant que cela n'est pas corrig\'e.
 Tu trouveras sur ta prise réseau un identifiant composé d'une lettre et de trois chiffres.
 On note les deux premiers caractères $xx$ et les deux derniers $zz$.
 
-$xx$ sert \`a trouver ton sous-r\'eseau (\server{AAA}), ta passerelle,
-et ton adresse de \textit{broadcast}, selon le tableau suivant :
+\begin{itemize}
+\item $zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : $BBB = 120 + zz$.
+
+\item $xx$ sert \`a trouver ton sous-r\'eseau (\server{AAA}), ta passerelle,
+ton adresse de \textit{broadcast} et ton masque r\'eseau, selon le tableau suivant.
+\end{itemize}
 
 \vskip 12pt
 
@@ -44,11 +48,11 @@ et ton adresse de \textit{broadcast}, selon le tableau suivant :
 &  \bf Masque de &\omit& \bf sous-réseau&& \multispan{23} \vsep\vfil\hbox{\quad 255.255.252.0\quad}\vfil\vsep&\cr
 }\vrule} \hfil
 
-$zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : $BBB = 120 + zz$.
+\vskip 6pt
 
-\emph{Exemple :} l'IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ;
+\exemple{l'IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ;
 sa passerelle est \server{129.104.211.254}, son adresse de \textit{broadcast} est
-\server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.
+\server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
 
 \subsubsection{Pour les nouveaux caserts}
 
@@ -86,25 +90,31 @@ height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
 
 Le masque de sous-r\'eseau est toujours \server{255.255.255.128}.
 
-\emph{Exemple :} l'IP associ\'ee \`a la prise $70 40 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ;
+\exemple{l'IP associ\'ee \`a la prise $70 40 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ;
 sa passerelle est \server{129.104.224.254}, son adresse de \textit{broadcast} est \server{129.104.224.255}
-et son masque de sous-r\'eseau est \server{255.255.255.128}.
+et son masque de sous-r\'eseau est \server{255.255.255.128}.}
 
 \subsubsection{Le BEM}
-Si tu habites au b\^atiment A, $AAA = 203$, au b\^atiment D, $AAA = 204$.
-Ta passerelle est \server{129.104.AAA.13}, le masque de sous-r\'eseau est \server{255.255.255.0},
-le broadcast est \server{129.104.AAA.255}.
-
-Pour \server{BBB}, c'est simple : $BBB = 50 + \mbox{les deux derniers chiffres du num\'ero de ta chambre}$.
+\begin{itemize}
+ \item Sous-r\'eseau (\server{AAA}): 203 pour le b\^atiment A ; 204 au b\^atiment D,
+ \item Passerelle : \server{129.104.AAA.13},
+ \item Masque de sous-r\'eseau : \server{255.255.255.0},
+ \item Broadcast : \server{129.104.AAA.255}.
+ \item IP (\server{BBB}) : 50 + les deux derniers chiffres du num\'ero de ta chambre.
+\end{itemize}
 
 \subsubsection{Le PEM}
-Ici, $AAA = 214$, la passerelle est \server{129.104.214.13},
-le broadcast est \server{129.104.214.255} et le masque r\'eseau est \server{255.255.255.0}.
 
-Pour le num\'ero de machine:
 \begin{itemize}
-  \item au rez-de-chauss\'ee: $BBB = 15 + \mbox{les deux derniers chiffres du num\'ero de ta chambre}$;
-  \item au premier \'etage:   $BBB = 70 + \mbox{les deux derniers chiffres du num\'ero de ta chambre}$.
+ \item Sous-r\'eseau (\server{AAA}): 214,
+ \item Passerelle : \server{129.104.214.13},
+ \item Masque de sous-r\'eseau : \server{255.255.255.0},
+ \item Broadcast : \server{129.104.214.255},
+ \item IP (\server{BBB})
+ \begin{itemize}
+  \item au rez-de-chauss\'ee : 15 + les deux derniers chiffres du num\'ero de ta chambre;
+  \item au premier \'etage : 70 + les deux derniers chiffres du num\'ero de ta chambre.
+ \end{itemize}
 \end{itemize}
 
 

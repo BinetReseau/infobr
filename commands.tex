@@ -17,6 +17,15 @@
     \end{center}
   \end{figure*}
 }
+\newcommand{\imageref}[5]{ % arguments : path, largeur (entre 0 et 1), légende, positionnement, label
+  \begin{figure*}[#4]
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \label{#5}
+      \caption{#3}
+    \end{center}
+  \end{figure*}
+}
 \newcommand{\flimage}[3]{ % arguments : path, largeur (entre 0 et 1), position
   \begin{wrapfigure}{#3}{0pt}
     \includegraphics[width=#2\textwidth]{#1}
@@ -24,7 +33,7 @@
 }
 
 % texttt : ligne de commande, serveurs
-% textsf : tout les reste : url, email, dossiers
+% textsf : tout le reste : url, email, dossiers
 
 % pour les serveurs
 \definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
@@ -71,7 +80,7 @@
 \newcommand{\app}[1]{\textbf{\color{GreenApp}#1}\xspace}
 % pour les menus et les elements de menu
 \definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}
-\newcommand{\menu}[1]{\textsf{\color{GrayMenu}'#1'}\xspace}
+\newcommand{\menu}[1]{\textsf{\color{GrayMenu}`#1'}\xspace}
 % pour les repertoires
 \definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}
 \newcommand{\rep}[1]{\textsf{\color{Orange}#1}\xspace}
@@ -93,4 +102,14 @@
 \newcommand{\fkz}{\server{frankiz}}
 \newcommand{\xshare}{la rubrique \menu{Télécharger} de \fkz}
 
- 
+\newcommand{\exemple}[1]{
+\begin{center}
+  \begin{tabular}{|p{0.9\textwidth}|}
+  \hline
+  \\
+  \emph{Exemple :} #1 \\
+  \\
+  \hline
+  \end{tabular}
+\end{center}
+}
