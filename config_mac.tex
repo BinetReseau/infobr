@@ -11,9 +11,9 @@ Voici une pr\'esentation de divers logiciels utiles pour utiliser les services p
 \subsubsection{Configuration IP}
 
 \flimage{images/mac_prefs_icone}{0.1}{l}
-\app{Pr\'ef\'erences R\'eseau}, accessible depuis l'article de menu \menu{Pr\'ef\'erences Syst\`eme} du menu Pomme, permet de configurer la connexion au r\'eseau. Par ailleurs, si au d\'emarrage un assistant te propose de configurer ton r\'eseau, refuse gentiment et utilise la proc\'edure que le BR te propose --- c'est plus simple ;-)
+\app{Pr\'ef\'erences R\'eseau}, accessible depuis l'article de menu \menu{Pr\'ef\'erences Syst\`eme} du \menu{menu Pomme}, permet de configurer la connexion au r\'eseau. Par ailleurs, si au d\'emarrage un assistant te propose de configurer ton r\'eseau, refuse gentiment et utilise la proc\'edure que le BR te propose --- c'est plus simple ;-)
 
-La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs configurations et de passer en un clic de l'une \`a l'une autre avec le sous-menu \menu{Configuration R\'eseau} du menu Pomme, ce qui est tr\`es pratique pour les machines vou\'ees \`a être connect\'ees \`a plusieurs r\'eseaux successivement --- les portables par exemple. On commencera donc par cr\'eer une nouvelle configuration r\'eseau dans le menu d\'eroulant \menu{Configuration}.
+La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs configurations et de passer en un clic de l'une \`a l'une autre avec le sous-menu \menu{Configuration R\'eseau} du \menu{menu Pomme}, ce qui est tr\`es pratique pour les machines vou\'ees \`a être connect\'ees \`a plusieurs r\'eseaux successivement --- les portables par exemple, voir la page~\pageref{wifi} pour plus de pr\'ecisions sur le Wifi disponibilis\'e par le BR. On commencera donc par cr\'eer une nouvelle configuration r\'eseau dans le menu d\'eroulant \menu{Configuration}.
 
 \imagepos{images/mac_nouvelle_config}{0.5}{Cr\'eer une nouvelle configuration r\'eseau}{!hb}
 
@@ -21,11 +21,17 @@ Une fois la nouvelle configuration cr\'e\'ee, il faut configurer l'interface r\'
 
 \imagepos{images/mac_config_ethernet}{0.5}{Configurer l'interface r\'eseau Ethernet}{!hb}
 
-Choisis alors \menu{Configurer IPv4} : \menu{Manuellement}. Tu trouveras toutes les valeurs d'IP n\'ecessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant au screenshot suivant. Si une partie d'IP est blanche sur le screenshot, c'est qu'elle t'est personnelle et que tu dois la calculer !
+Choisis alors \menu{Configurer IPv4} : \menu{Manuellement}.
+Tu trouveras toutes les valeurs d'IP n\'ecessaires pour la configuration en page \pageref{calcul_ip}
+ou en te reportant à la capture d'\'ecran~\ref{config:mac:ip}.
+Si une partie d'IP est blanche sur cette capture, c'est qu'elle t'est personnelle et que tu dois la calculer !
 
-\imagepos{images/mac_config_ip}{0.66}{Configuration IP}{!h}
+\imageref{images/mac_config_ip}{0.66}{Configuration IP}{!h}{config:mac:ip}
 
-Pour avoir acc\`es \`a Internet, il faut aussi configurer le proxy. Clique sur l'onglet \menu{Proxies}. MacOS X 10.3.3 peut utiliser un script automatique pour param\'etrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'\'etait le cas avec MacOS X 10.2 et 10.3.0 ; sinon il faut mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Si tu as Mac OS X 10.3.0, mets le proxy HTTP manuellement, fais toutes les mises \`a jour (Menu Pomme, \menu{Mise \`a jour de logiciels\ldots}) et ensuite tu auras l'option \menu{Configuration automatique de proxy}.
+Pour avoir acc\`es \`a Internet, il faut aussi configurer le proxy. Clique sur l'onglet \menu{Proxys}.
+MacOS X 10.3.3 peut utiliser un script automatique pour param\'etrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'\'etait le cas avec MacOS X 10.2 et 10.3.0 ; sinon il faut mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Si tu as Mac OS X 10.3.0, mets le proxy HTTP manuellement, fais toutes les mises \`a jour (Menu Pomme, \menu{Mise \`a jour de logiciels\ldots}) et ensuite tu auras l'option \menu{Configuration automatique de proxy}.
+
+N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
 \image{images/mac_config_proxy}{0.7}{Configurer le proxy}
 
@@ -71,7 +77,10 @@ Cette configuration marche pour acc\'eder \`a ses mails depuis l'int\'erieur de 
 \subsubsection{Configuration news}
 
 \flimage{images/mac_thunderbird_icone}{0.1}{l}
-\app{Thunderbird} : un client news permettant d'acc\'eder aux forums de discussion des \'el\`eves sur \server{frankiz} (mais aussi \`a ceux de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}). Il tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la même cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même mani\`ere.
+\app{Thunderbird} : un client news permettant d'acc\'eder aux forums de discussion des \'el\`eves
+                   (voir page~\ref{newsgroups} pour les d\'etails sur \server{frankiz}
+                   (mais aussi \`a ceux de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}).
+Il tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la même cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même mani\`ere.
 
 Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant >}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant >}. On te demandera alors dans l'ordre les informations suivantes :
 
@@ -108,7 +117,10 @@ Voici plusieurs logiciels que tu voudras s\^urement t\'el\'echarger pour profite
 
 \noindent Pour plus de d\'etails, voir le paragraphe consacr\'e \`a qRezix \`a la page \pageref{qrezix}.
 
-\noindent Attention, si ton firewall est activ\'e, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP. Pour cela va dans \app{Pr\'ef\'erences Syst\`eme}, page \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}. S'il est \'ecrit \menu{Coupe-feu activ\'e}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur le screenshot ci-dessous pour ouvrir les ports.\\ \\
+\noindent Attention, si ton firewall est activ\'e, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP.
+Pour cela va dans \app{Pr\'ef\'erences Syst\`eme}, page \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}.
+S'il est \'ecrit \menu{Coupe-feu activ\'e}, clique le bouton \menu{Nouveau}
+et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouvrir les ports.\\ \\
 
 \imagepos{images/mac_firewall}{0.5}{Ouvrir les ports pour \app{qRezix}}{!h}
 
@@ -120,7 +132,7 @@ de la version 2 de \app{qRezix} telles les plans de l'\'ecole ou les groupes de 
 donc c'est \`a toi de d\'ecider lequel tu pr\'ef\`eres !
 
 \noindent Si le d\'eveloppement en Cocoa te tente (et aussi faire un logiciel utile pour tes camarades),
-n'h\'esites pas \`a contacter les developpeurs via \mail{qrezix@frankiz} \\ \\
+n'h\'esites pas \`a contacter les developpeurs via \mail{qrezix@frankiz}. \\ \\
 
 \flimage{images/mac_conversation_icone}{0.1}{l}
 \noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{Conversation}, assez proche de \app{Colloquy}, et \app{Irssix}.
