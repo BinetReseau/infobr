@@ -16,7 +16,7 @@ Tu as \'egalement besoin de connaître les informations suivantes :
 \begin{description}
   \item [ton adresse IP] not\'ee dor\'enavant \server{129.104.AAA.BBB}
   \item [l'IP de ta passerelle (\emph{gateway})] not\'ee \server{129.104.GGG.CCC}
-        (attention, pour Foch, Fayolle et Maunoury ce n'est pas n\'ecessairement vrai que $GGG = AAA$).
+        \textcolor{red}{(attention, pour Foch, Fayolle et Maunoury ce n'est pas n\'ecessairement vrai que $GGG = AAA$)}.
   \item [ton masque de sous-r\'eseau] \server{255.255.FFF.DDD}
   \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$.
 \end{description}
@@ -30,7 +30,7 @@ Bien s\^ur, l'ensemble des manipulations doit se faire en tant que root.
 Il existe dans cette distribution une interface graphique pour configurer le r\'eseau, bien qu'il soit possible,
 comme sur tout syst\`eme linux, de le faire \`a la main \`a partir des fichiers de configuration dans \rep{/etc/}.
 
-Lance \app{drakconf} en tant que root, puis clique sur l'onglet \menu{R\'eseau \& Internet} et enfin sur \menu{Configurer une nouvelle connexion Internet (LAN, ISDN, ADSL, ...)}. 
+Lance \app{drakconf} en tant que root, puis clique sur l'onglet \menu{R\'eseau \& Internet} et enfin sur \menu{Configurer une nouvelle connexion Internet (LAN, ISDN, ADSL, ...)}.
 Choisis ensuite \menu{Connexion à travers un r\'eseau local(LAN)}, puis la carte r\'eseau sur laquelle tu as branch\'e ton c\^able r\'eseau.
 Tu as autant de \texttt{eth0}, \texttt{eth1}, \ldots que de cartes r\'eseau d\'etect\'ees.
 
@@ -53,14 +53,15 @@ Ensuite, tu dois encore entrer :
 \end{description}
 
 Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
-Là, tu choisis l'option oui, puis tu valides et tu as normalement un message qui t'annonce que ta configuration r\'eseau est termin\'ee.
+Là, tu choisis l'option \menu{Oui}, puis tu valides et tu as normalement un message qui t'annonce que ta configuration r\'eseau est termin\'ee.
 
 N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
 5050 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau
 
 {\bf Configuration du gestionnaire de paquets :}
-Le BR poss\`ede ses propres miroirs Mandriva, que nous te conseillons d'utiliser, ceux-ci \'etant beaucoup plus rapide que les miroirs ext\'erieurs.
-Dans l'utilitaire \app{drakconf}, choisis l'onglet \menu{Gestionnaire de logiciels}, puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir serveur ftp et à mettre comme url \url{ftp://miroir/mandriva}.
+Le BR poss\`ede son propre miroir Mandriva, que nous te conseillons d'utiliser,
+ceux-ci \'etant beaucoup plus rapide que les miroirs ext\'erieurs.
+Dans l'utilitaire \app{drakconf}, choisis l'onglet \menu{Gestionnaire de logiciels}, puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP} et à mettre comme url \url{ftp://miroir/mandriva}.
 
 
 
@@ -92,7 +93,9 @@ nameserver 129.104.201.53\\
 namaserver 129.104.201.52}
 
 Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface r\'eseau et les informations de routage.
-Il indique ton IP, ton sous-r\'eseau, ton masque de sous-r\'eseau et la passerelle pour sortir de ton sous-r\'eseau :
+Il indique ton IP, ton sous-r\'eseau, ton masque de sous-r\'eseau et la passerelle pour sortir de ton sous-r\'eseau .
+Bien sûr, remplaces \texttt{eth0} par le nom de l'interface r\'eseau que tu utilises,
+si ce n'est pas la carte \textit{ethernet} par d\'efaut.
 
 \noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.HHH.EEE $\backslash$\\
                             netmask 255.255.FFF.DDD"\\
@@ -144,6 +147,7 @@ et c'est bon.
 
 %\flimage{partie1-config_reseau/nux_kmail_icon}{0.12}{l}
 Le client mail le plus utilis\'e est \app{Kmail}, mais il en existe bien s\^ur d'autres comme \app{Thunderbird}.
+La configuration est semblable, n'importe quel client tu utilises.
 
 Va dans \menu{Configuration}, \menu{Configurer Kmail}.
 Choisis la rubrique \menu{R\'eseau}.
@@ -156,7 +160,7 @@ Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral} :
 \begin{description}
   \item[Nom] le nom du compte, par exemple : Mails Poly
   \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI \`a ton arriv\'ee sur le plateau
-  \item[Mot de passe] idem
+  \item[Mot de passe] et l\`a le mot de passe \server{poly}
   \item[Serveur] \server{poly.polytechnique.fr}
   \item[Port] 995
 \end{description}
@@ -179,6 +183,7 @@ Sinon, laisse toutes les cases d\'ecoch\'ees.
 %\flimage{partie1-config_reseau/nux_knode_icon}{0.12}{l}
 Le client news le plus utilis\'e est \app{Knode}.
 Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}.
+Ici aussi, la configuration est presque ind\'ependante 
 
 %\image{partie1-config_reseau/nux_config_knode}{0.7}{Configuration de Knode}
 
