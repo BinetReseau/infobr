@@ -8,7 +8,7 @@ en gros, elle identifie de mani\`ere unique toute machine connect\'ee au r\'esea
 \emph{Exemple :} l'adresse IP de \server{frankiz} est \server{129.104.201.51}.
 
 Les IP de l'X sont toutes de la forme \server{129.104.AAA.BBB}.
-Les pages suivantes d'indiquent comment calculer \server{AAA} et \server{BBB} pour que ton
+Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} pour que ton
 ordinateur ait une adresse unique et correcte.
 
 Au cas o\`u deux personnes ont (par erreur ou pas) la m\^eme adresse,
@@ -21,7 +21,7 @@ Tu trouveras sur ta prise réseau un identifiant composé d'une lettre et de trois
 On note les deux premiers caractères $xx$ et les deux derniers $zz$.
 
 \begin{itemize}
-\item $zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : $BBB = 120 + zz$.
+\item $zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : \server{BBB} = $120 + zz$.
 
 \item $xx$ sert \`a trouver ton sous-r\'eseau (\server{AAA}), ta passerelle,
 ton adresse de \textit{broadcast} et ton masque r\'eseau, selon le tableau suivant.
@@ -57,10 +57,9 @@ sa passerelle est \server{129.104.211.254}, son adresse de \textit{broadcast} es
 \subsubsection{Pour les nouveaux caserts}
 
 Ta prise r\'eseau possède un numéro à 6 chiffres de la forme $xx\ yy\ zz$.
-On prend $xx$ pour calculer le sous-r\'eseau, la passerelle et l'adresse de \textit{broadcast};
-les adresses IP de la passerelle et du \textit{broadcast} sont respectivement de la forme
-\server{129.104.AAA.DDD} et \server{129.104.AAA.EEE}.
-Ensuite, tu peux d\'eterminer la partie {BBB} de ton IP avec $zz$ et $xx$ :
+On prend $xx$ pour calculer ton sous-r\'eseau, l'adresse de ta passerelle (\server{129.104.AAA.DDD})
+et l'adresse de \textit{broadcast} (\server{129.104.AAA.EEE}).
+Ensuite, tu peux d\'eterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
 
 \vskip 12pt
 \hfil \vbox{
@@ -95,28 +94,27 @@ sa passerelle est \server{129.104.224.254}, son adresse de \textit{broadcast} es
 et son masque de sous-r\'eseau est \server{255.255.255.128}.}
 
 \subsubsection{Le BEM}
-\begin{itemize}
- \item Sous-r\'eseau (\server{AAA}): 203 pour le b\^atiment A ; 204 au b\^atiment D,
- \item Passerelle : \server{129.104.AAA.13},
- \item Masque de sous-r\'eseau : \server{255.255.255.0},
- \item Broadcast : \server{129.104.AAA.255}.
- \item IP (\server{BBB}) : 50 + les deux derniers chiffres du num\'ero de ta chambre.
-\end{itemize}
+\newbox\point
+\setbox\point=\hbox{.\hskip .15em}
+\def\ecart{\hskip 1.5em plus 1fill\relax}
+\begin{tabular}{l@{\xleaders\copy\point\ecart}l}
+  Sous-r\'eseau (\server{AAA}) & 203 pour le b\^atiment A ; 204 au b\^atiment D \\
+  IP (\server{BBB})            & 50 + les deux derniers chiffres du num\'ero de ta chambre \\
+  Passerelle                   & \server{129.104.AAA.13} \\
+  Masque de sous-r\'eseau      & \server{255.255.255.0} \\
+  Broadcast                    & \server{129.104.AAA.255} \\
+\end{tabular}
 
 \subsubsection{Le PEM}
 
-\begin{itemize}
- \item Sous-r\'eseau (\server{AAA}): 214,
- \item Passerelle : \server{129.104.214.13},
- \item Masque de sous-r\'eseau : \server{255.255.255.0},
- \item Broadcast : \server{129.104.214.255},
- \item IP (\server{BBB})
- \begin{itemize}
-  \item au rez-de-chauss\'ee : 15 + les deux derniers chiffres du num\'ero de ta chambre;
-  \item au premier \'etage : 70 + les deux derniers chiffres du num\'ero de ta chambre.
- \end{itemize}
-\end{itemize}
-
+\begin{tabular}{l@{\xleaders\copy\point\ecart}l}
+  Sous-r\'eseau (\server{AAA})           & 214 \\
+  IP (\server{BBB}) au rez-de-chauss\'ee & 15 + les deux derniers chiffres du num\'ero de ta chambre \\
+  IP (\server{BBB}) au premier \'etage   & 70 + les deux derniers chiffres du num\'ero de ta chambre \\
+  Passerelle                             & \server{129.104.214.13} \\
+  Masque de sous-r\'eseau                & \server{255.255.255.0} \\
+  Broadcast                              & \server{129.104.214.255} \\
+\end{tabular}
 
 \subsubsection{Tes informations réseau}
 \emph{Maintenant, note ton IP ici, et re-v\'erifie que tu ne t'es pas tromp\'e. \c Ca t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !}
