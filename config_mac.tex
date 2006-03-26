@@ -6,8 +6,6 @@
 \end{center}
 \subsection{Configuration sous Mac OS X}
 
-Voici une pr\'esentation de divers logiciels utiles pour utiliser les services propos\'es sur le r\'eseau avec Mac OS X, ainsi que leur configuration. Les logiciels non int\'egr\'es \`a Mac OS X et cit\'es ici sont quasiment tous t\'el\'echargeables sur \server{frankiz} : rubrique \menu{T\'el\'echarger -> Mac -> R\'eseau}.
-
 \subsubsection{Configuration IP}
 
 \flimage{images/mac_prefs_icone}{0.1}{l}
@@ -19,7 +17,7 @@ La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs c
 
 Une fois la nouvelle configuration cr\'e\'ee, il faut configurer l'interface r\'eseau Ethernet. Dans le menu d\'eroulant \menu{Afficher}, s\'electionne \menu{Ethernet int\'egr\'e}.
 
-\imagepos{images/mac_config_ethernet}{0.5}{Configurer l'interface r\'eseau Ethernet}{!hb}
+\imagepos{images/mac_config_ethernet}{0.5}{Configurer l'interface r\'eseau Ethernet}{!h}
 
 Choisis alors \menu{Configurer IPv4} : \menu{Manuellement}.
 Tu trouveras toutes les valeurs d'IP n\'ecessaires pour la configuration en page \pageref{calcul_ip}
@@ -43,10 +41,8 @@ Tu es sous Mac :-þ
 \subsubsection{Configuration web}
 
 \flimage{images/mac_safari_icone}{0.1}{l}
-\app{Safari}, le navigateur web d'Apple est maintenant enti\`erement op\'erationnel.
-Un conseil : pense \`a activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}).
-Tu peux aussi utiliser \app{Firefox} si tu pr\'ef\`eres !
-
+\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorit\'e des sites web. Tu peux donc t'en servir au quotidien, en faisant appel \`a \app{Firefox} ou \app{Camino} dans les situations o\`u cela ne serait pas le cas.
+Un conseil : penses \`a activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).
 
 \subsubsection{Configuration mail}
 
@@ -72,7 +68,13 @@ Si tu as d\'ej\`a cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \m
 
 N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995.
 
-Cette configuration marche pour acc\'eder \`a ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer. Par contre depuis l'ext\'erieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas.
+Cette configuration marche pour acc\'eder \`a ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer. Par contre depuis l'ext\'erieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas. Tu peux regarder la configuration propos\'ee par \url{Polytechnique.org} pour surmonter cette difficult\'e.
+
+
+\subsubsection{Logiciels Additionnels}
+
+Voici une pr\'esentation de divers logiciels utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau, ainsi que leur configuration. Les logiciels cit\'es ici sont t\'el\'echargeables sur \server{frankiz} : rubrique \menu{T\'el\'echarger -> Mac -> R\'eseau}.
+
 
 \subsubsection{Configuration news}
 
@@ -104,7 +106,7 @@ Pour se connecter \`a un serveur, il suffit de taper son nom (exemple : \url{ftp
 
 Tu pourras ensuite naviguer sur le serveur et t\'el\'echarger ou transf\'erer des fichiers. Attention, certains serveurs configur\'es sp\'ecialement ne permettent qu'une connexion \`a la fois. Or, le t\'el\'echargement d'un fichier demande l'ouverture d'une nouvelle connexion. Il faut donc se d\'econnecter (bouton \menu{D\'econnecter}) puis lancer le t\'el\'echargement en double-cliquant sur le fichier.
 
-Les signets te permettent de sauvegarder les serveurs sur lesquels tu te connectes souvent. Enfin, tu peux \'editer des fichiers textes directement en FTP si tu as aussi \app{SubEthaEdit}, ce qui est tr\`es commode pour modifier un site web.
+Les signets te permettent de sauvegarder les serveurs sur lesquels tu te connectes souvent. Enfin, tu peux \'editer des fichiers textes directement en FTP si tu as aussi \app{TextWrangler} (voir sur les xshares), ce qui est tr\`es commode pour modifier un site web.
 
 
 \subsubsection{Autres logiciels utiles}
@@ -128,13 +130,16 @@ et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouv
 \noindent\app{CocoaXNet} est un \'equivalent de qRezix mieux int\'egr\'e \`a Mac OS X,
 car il est d\'evelopp\'e en Cocoa, un langage sp\'ecifique \`a Mac OS X.
 Pour l'instant, il est sans d\'eveloppeur, et donc ne contient pas les fonctionalit\'es
-de la version 2 de \app{qRezix} telles les plans de l'\'ecole ou les groupes de discussion,
+de la version 2 de \app{qRezix} telles les plans de l'\'ecole
 donc c'est \`a toi de d\'ecider lequel tu pr\'ef\`eres !
 
 \noindent Si le d\'eveloppement en Cocoa te tente (et aussi faire un logiciel utile pour tes camarades),
 n'h\'esites pas \`a contacter les developpeurs via \mail{qrezix@frankiz}. \\ \\
 
 \flimage{images/mac_conversation_icone}{0.1}{l}
-\noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{Conversation}, assez proche de \app{Colloquy}, et \app{Irssix}.
+\noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{Conversation}, assez proche de \app{Colloquy}, et \app{X-Chat Aqua}, plus riche en fonctionnalités. \\ \\
+
+\flimage{images/mac_rss_icone}{0.1}{l}
+\noindent\app{Vienna} est un client RSS gratuit et agr\'eable, dont le d\'eveloppement actif est prometteur. Les flux RSS permettent d'agr\'eger dans un seul logiciel des informations en provenance de nombreux sites web, ce qui permet d'acc\'elerer de fa\c{c}on significative la r\'ecolte de ces informations, qui peuvent provenir de forums de discussions, de mises \`a jour de logiciels, d'informations internationales...
 
 \vfill
