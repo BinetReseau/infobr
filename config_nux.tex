@@ -16,9 +16,9 @@ Tu as \'egalement besoin de connaître les informations suivantes :
 \begin{description}
   \item [ton adresse IP] not\'ee dor\'enavant \server{129.104.AAA.BBB}
   \item [l'IP de ta passerelle (\emph{gateway})] not\'ee \server{129.104.GGG.CCC}
-        \textcolor{red}{(attention, pour Foch, Fayolle et Maunoury ce n'est pas n\'ecessairement vrai que $GGG = AAA$)}.
   \item [ton masque de sous-r\'eseau] \server{255.255.FFF.DDD}
   \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$.
+        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle et Maunoury ce n'est donc pas n\'ecessairement vrai que $GGG = AAA$.)}
 \end{description}
 
 Toutes les informations n\'ecessaires se trouvent page \pageref{calcul_ip}.
@@ -54,18 +54,23 @@ Ensuite, tu dois encore entrer :
 
 Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
 Là, tu choisis l'option \menu{Oui}, puis tu valides et tu as normalement un message qui t'annonce que ta configuration r\'eseau est termin\'ee.
+Tu peux la tester en pinguant frankiz
+\cmdline{\$ ping frankiz}
+Tu devrais voir:
+\cmdline{
+PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
+64 bytes from Frankiz.eleves.polytechnique.fr (129.104.201.51) : icmp\_seq=1 ttl=62 time=0.570 ms\\
+}
+
 
 N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
-5050 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau
+5050, 5053 et 5055 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau
 
 {\bf Configuration du gestionnaire de paquets :}
 Le BR poss\`ede son propre miroir Mandriva, que nous te conseillons d'utiliser,
 ceux-ci \'etant beaucoup plus rapide que les miroirs ext\'erieurs.
 Dans l'utilitaire \app{drakconf}, choisis l'onglet \menu{Gestionnaire de logiciels}, puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP} et à mettre comme url \url{ftp://miroir/mandriva}.
 
-
-
-Voil\`a, c'est bon ! Tu peux passer au paragraphe 2 !
 
 \paragraph{\distrib{Sous Gentoo}}
 
@@ -97,7 +102,7 @@ Il indique ton IP, ton sous-r\'eseau, ton masque de sous-r\'eseau et la passerel
 Bien sûr, remplaces \texttt{eth0} par le nom de l'interface r\'eseau que tu utilises,
 si ce n'est pas la carte \textit{ethernet} par d\'efaut.
 
-\noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.HHH.EEE $\backslash$\\
+\noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.GGG.EEE $\backslash$\\
                             netmask 255.255.FFF.DDD"\\
                             gateway="eth0/129.104.GGG.CCC"}
 
@@ -147,7 +152,7 @@ et c'est bon.
 
 %\flimage{partie1-config_reseau/nux_kmail_icon}{0.12}{l}
 Le client mail le plus utilis\'e est \app{Kmail}, mais il en existe bien s\^ur d'autres comme \app{Thunderbird}.
-La configuration est semblable, n'importe quel client tu utilises.
+La configuration est semblable, quel que soit le client que tu utilises.
 
 Va dans \menu{Configuration}, \menu{Configurer Kmail}.
 Choisis la rubrique \menu{R\'eseau}.
