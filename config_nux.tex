@@ -53,13 +53,17 @@ Ensuite, tu dois encore entrer :
 \end{description}
 
 Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
-Là, tu choisis l'option \menu{Oui}, puis tu valides et tu as normalement un message qui t'annonce que ta configuration r\'eseau est termin\'ee.
-Tu peux la tester en pinguant frankiz
+Là, tu choisis l'option \menu{Oui}, puis tu valides et tu as normalement un message
+qui t'annonce que ta configuration r\'eseau est termin\'ee.
+Tu peux la tester en pinguant frankiz :
+
 \cmdline{\$ ping frankiz}
+
 Tu devrais voir:
+
 \cmdline{
 PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from Frankiz.eleves.polytechnique.fr (129.104.201.51) : icmp\_seq=1 ttl=62 time=0.570 ms\\
+64 bytes from Frankiz.eleves.polytechnique.fr (129.104.201.51) : icmp\_seq=1 ttl=62 time=0.570 ms
 }
 
 
@@ -69,12 +73,15 @@ N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
 {\bf Configuration du gestionnaire de paquets :}
 Le BR poss\`ede son propre miroir Mandriva, que nous te conseillons d'utiliser,
 ceux-ci \'etant beaucoup plus rapide que les miroirs ext\'erieurs.
-Dans l'utilitaire \app{drakconf}, choisis l'onglet \menu{Gestionnaire de logiciels}, puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP} et à mettre comme url \url{ftp://miroir/mandriva}.
+Dans l'utilitaire \app{drakconf}, choisis l'onglet \menu{Gestionnaire de logiciels},
+puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP}
+et à mettre comme url \url{ftp://miroir/mandriva}.
 
 
 \paragraph{\distrib{Sous Gentoo}}
 
-Si tu n'as jamais fait de configuration r\'eseau sur ta Gentoo, il faudra certainement cr\'eer les fichiers qui suivent.
+Si tu n'as jamais fait de configuration r\'eseau sur ta Gentoo,
+il faudra certainement cr\'eer les fichiers qui suivent.
 
 Le fichier \file{/etc/hostname} contient ton nom de machine.
 Tu peux \'editer \file{/etc/hostname} avec ton \'editeur pr\'ef\'er\'e
