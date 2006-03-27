@@ -91,11 +91,18 @@
 \newcommand{\distrib}[1]{{\color{green}#1}}
 % pour les liens (sous frankiz)
 \newcommand{\lien}[1]{\textsf{\color{Blue}`#1'}\xspace}
-
+% pour les pseudos
+\definecolor{GreenPseudo}{cmyk}{0.8,0.1,1.0,0.1}
+\newcommand{\mbr}[5]{\noindent#3 \bsc{\color{GreenPseudo}#1} (#4) \textbf{#2} : #5}
 
 % divers
 \newcommand{\fkz}{\server{frankiz}}
 \newcommand{\xshare}{la rubrique \menu{Télécharger} de \fkz}
+
+% Les logos win, nux et mac
+\newcommand{\nuxs}{\includegraphics{images/logo_Linux_s}}
+\newcommand{\wins}{\includegraphics{images/logo_Windows_s}}
+\newcommand{\macs}{\includegraphics{images/logo_Mac_s}}
 
 \newcommand{\exemple}[1]{ \fcolorbox{black}{LightRed} {
   \begin{minipage}{0.9\textwidth}
