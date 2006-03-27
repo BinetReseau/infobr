@@ -90,7 +90,7 @@ et tu vas alors au paragraphe \og Installation personnalis\'ee --- configuration
 
 \textbf{Avantages :}
 \begin{itemize}
-  \item Tu es responsable de ton ordinateur.
+  \item Tu es le seul à t'occuper de la gestion de ton ordinateur.
         Si ta machine est toujours \`a jour et que tu n'attrapes aucun virus, tant mieux pour toi.
 \end{itemize}
 
@@ -124,7 +124,7 @@ Symantec Antivirus, McAfee Antivirus, Norton Antivirus, et tout autre antivirus 
 
 
 Ensuite, tu vas t'inscrire sur le domaine.
-Pour cela, il faut avoir Windows XP Pro que le BR te fournit gratuitement et l\'egalement (cf. page~\pageref{xp}).
+Pour cela, il faut avoir Windows XP Pro que le BR te fournit gratuitement et l\'egalement (cf. page~\pageref{xp}) ou bien Windows 2000 ou Windows Server 2003.
 
 Clique sur le \menu{Menu D\'emarrer} puis fais un clic-droit sur \menu{Poste de travail}
 et choisis \menu{Propri\'et\'es}.
@@ -160,11 +160,12 @@ que tu avais avant d'être sur le domaine !}
 
 \paragraph{Installation personnalis\'ee} --- configuration manuelle
 
-Commence par d\'esinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqu\'e dans le paragraphe \og Installation simplifi\'ee --- configuration automatique \fg.
+\subparagraph{Configuration antivirus}
+Le BR concerné par la sécurité du réseau te propose un antivirus pour lequel tu n'auras pas à payer la license pour obtenir les mises à jour. Bien sûr libre à toi d'utiliser ton anti-virus personnel, cependant il sera à ta charge de le mettre à jour très réguli\'erement, pour cela utilise comme proxy : kuzh sur le port 8080.
 
-\subparagraph{Configuration antivirus} Installe l'antivirus que le BR te propose. Et l\`a on ne rigole plus ! Quand la s\'ecurit\'e du r\'eseau est en jeu, on prend cinq minutes pour installer proprement tout \c{c}a !
+\emph{Installation de l'anti-virus du BR}\ : Commence par d\'esinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqu\'e dans le paragraphe \og Installation simplifi\'ee --- configuration automatique \fg.
 
-Ouvre ton explorateur Windows et tape : 
+Puis ouvre ton explorateur Windows et tape : 
 \url{$\backslash\backslash$enez$\backslash$antivirus}
 et double-clique sur le fichier \file{Symantec.exe}.
 
@@ -205,18 +206,14 @@ et de laisser le SP2 faire le gros du boulot \`a ta place :-).
 
 \imageref{images/win_config_proxy}{0.7}{Configuration du proxy}{!h}{config:win:proxy}
 
-Lance \app{Internet Explorer}.
-Clique sur \menu{Options Internet} dans le menu \menu{Outils},
+Même si tu n'utilises pas \app{Internet Explorer} comme client web, Windows et d'autres programmes utilisent ces paramètres, notamment Windows Update. Donc lance \app{Internet Explorer} ou le \menu{Panneau de Configuration} et vas dans les \menu{Options Internet},
 puis sur l'onglet \menu{Connexions} de la nouvelle fenêtre et enfin sur \menu{Paramètres r\'eseau}
 dans le bas de la fenêtre.
-Remplis le champ \menu{Adresse} avec \url{http://frankiz/proxy.pac} pour finaliser ta connexion vers Internet ;
+Coches la case ''Détecter automatiquement les paramètres de connexion'', 
 tu dois alors avoir quelque chose qui ressemble \`a la capture d'\'ecran~\ref{config:win:proxy}.
 
-Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer},
-qui est soumis \`a certaines failles de s\'ecurit\'e importantes.
-Même sur le r\'eseau de l'X, les risques ne sont pas nuls.
-Le BR t'invite donc \`a installer un navigateur alternatif, \app{Mozilla Firefox}, disponible sur \xshare.
-Ce n'est pas une garantie ultime --- de toute fa\c{c}on, tu es le premier garant
+Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer}, tu peux donc \`a utiliser un navigateur alternatif, comme \app{Mozilla Firefox}, disponible sur \xshare qui est plus sécurisé.
+Mais ce n'est pas une garantie ultime --- tu es le premier garant
 de la s\'ecurit\'e de ton ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main
 --- mais tu seras sensiblement plus en s\'ecurit\'e.
 
@@ -224,8 +221,10 @@ Tes paramètres (en particulier tes favoris) seront directement import\'es depuis
 la seule configuration \`a effectuer \'etant le proxy.
 Pour cela, clique sur \menu{Options} dans le menu \app{Outils}
 puis sur \app{Paramètres de connexion} en bas \`a droite.
-La case \`a remplir est alors la même qu'avec \app{Internet Explorer},
-si ce n'est qu'elle se situe en bas de la fenêtre et pas au milieu.
+La case \`a cocher est alors la même qu'avec \app{Internet Explorer},
+si ce n'est une variation de son intitulé.
+
+Il reste une dernière configuration de proxy qui peut parfois s'avérer utile. Fais \menu{Démarrer}, \menu{Exécuter} (ou Drapeau+r), puis tape ''cmd'' dans la fenêtre qui s'affiche. Une ligne de commande apparait, il te suffit alors de taper : ''proxycfg -p http://kuzh:8080'' pour régler le proxy. Pour revenir à un accès direct il faut taper ''proxycfg -d''.
 
 \subsubsection{Configuration mail}
 
@@ -319,51 +318,19 @@ mais il y a une FAQ sur \fkz où tout ca est d\'ecrit en d\'etail !
                   son fonctionnement est expliqu\'e en d\'etails dans la FAQ. Voir aussi \textbf{Putty}
 \end{description}
 
-\subsubsection{Obtenir Windows XP Pro}
+\subsubsection{Obtenir Windows XP Pro et les licences MSDNAA}
 
 \label{xp}
+Les accords n\'egoci\'es par le BR avec Microsoft dans le cadre de MSDNAA donnent \`a chaque X le droit de poss\'eder une version de Windows XP Pro gratuite et l\'egale, ainsi que les licences pour la plupart des logiciels de la soci\'et\'e --- quasiment tous, sauf Office et les jeux --- La seule condition \`a remplir est d'être \'etudiant sur le platâl au moment de l'installation du logiciel; tu pourras ensuite le garder sur ton PC même après ton d\'epart de l'X.
 
-Les accords n\'egoci\'es par le BR avec Microsoft dans le cadre de MSDNAA donnent \`a chaque X
-le droit de poss\'eder une version de Windows XP Pro gratuite et l\'egale!
-Pour avoir la tienne, suis tout simplement la proc\'edure suivante :
+La proc\'edure pour obtenir les logiciels et les cl\'es correspondantes est la suivante :
 \begin{itemize}
-  \item Vas d'abord sur \fkz, et connectes toi, puis cliques sur le lien \menu{Licences MSDNAA}
-        qui se trouve dans la bo\^ite \menu{Liens utiles}.
-        S\'electionne ``Windows XP Pro'' et valide ta demande, tu recevras ta cl\'e par e-mail. Facile !
-  \item Maintenant que tu as ta cl\'e, il faut t\'el\'echarger le logiciel proprement dit.
-        Pour cela, deux m\'ethodes : se connecter par FTP sur \url{ftp://enez/FRENCH/Windows}
-        avec ton client FTP pr\'ef\'er\'e, ou y aller en tapant
-        \url{$\backslash\backslash$enez$\backslash$msdnaa$\backslash$FRENCH$\backslash$Windows}
-        dans l'\app{Explorateur Windows} ou \app{Internet Explorer}.
-        Dans les deux cas, tu r\'ecup\`eres l'image du CD ``fr\_winxp\_pro\_with\_sp2.iso''
-        qui te permettra d'avoir le dernier Service Pack de Windows.
-        Il te faudra ensuite graver cette image sur un CD et tu pourras installer le tout
-        comme si tu avais un vrai CD Microsoft.
-\end{itemize}
-Si tu as achet\'e un ordinateur sans OS (et ainsi \'economis\'e environ 150 \euro),
-tu vas chez un copain, et fais les demandes et graves le CD chez lui !
-
-\subsubsection{Les licences MSDNAA}
-
-En partenariat avec Microsoft, le BR te propose d'obtenir des licences pour la plupart des logiciels
-de la soci\'et\'e --- quasiment tous, sauf Office et les jeux --- \emph{gratuitement} !
-La seule condition \`a remplir est d'être \'etudiant sur le plat\^al au moment de l'installation du logiciel ;
-tu pourras ensuite le garder sur ton PC même après ton d\'epart de l'X.
-
-La proc\'edure pour obtenir les logiciels et les cl\'es correspondantes est la même que pour Windows XP Pro. 
-\begin{itemize}
-  \item Tu vas sur \fkz et tu choisis le logiciel qui t'int\'eresse afin de recevoir ta cl\'e par e-mail.
-        Si jamais le logiciel n'est pas dans la liste propos\'ee, c'est soit qu'il n'y a pas besoin de cl\'e
-        --- c'est le cas de beaucoup des logiciels autres que Windows --- soit qu'on a oubli\'e de le mettre;
-        dans ce cas, \'ecris \`a \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une cl\'e.
-  \item Puis tu t\'el\'echarges le logiciel sur \url{ftp://enez/} ou sur
-        \url{$\backslash\backslash$enez$\backslash$msdnaa} avec l'\app{Explorateur Windows}
-        ou \app{Internet Explorer}.
-        Tu peux r\'ecup\'erer soit une image du CD (\`a graver ou \`a utiliser avec \app{Daemon Tools}),
-        soit directement le contenu du CD.
+  \item Vas d'abord sur \fkz, et connectes toi, puis cliques sur le lien \menu{Licences MSDNAA} qui se trouve dans la bo\^ite \menu{Liens utiles}. S\'electionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta cl\'e par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste propos\'ee, c'est soit qu'il n'y a pas besoin de cl\'e --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oubli\'e de le mettre; dans ce cas, \'ecris \`a \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une cl\'e.
+  \item Maintenant que tu as ta cl\'e, il faut t\'el\'echarger le logiciel proprement dit. Pour cela, deux m\'ethodes : se connecter par FTP sur \url{ftp://enez/} avec ton client FTP pr\'ef\'er\'e, ou y aller en tapant \url{$\backslash\backslash$enez} dans l'\app{Explorateur Windows} ou \app{Internet Explorer}. Dans les deux cas, tu peux r\'ecup\'erer soit une image du CD (\`a graver ou \`a utiliser avec \app{Daemon Tools}), soit directement le contenu du CD. Pour Windows XP Pro récupère l'image du CD ''fr\_winxp\_pro\_with\_sp2.iso'' qui te permettra d'avoir le dernier Service Pack de Windows et grave la pour avoir un CD identique à un CD Microsoft. Si tu as achet\'e un ordinateur sans OS (et ainsi \'economis\'e environ 150 \euro), fais tout ceci chez un copain!
 \end{itemize}
 
 Si tu as encore des questions, plus de d\'etails sont donn\'es dans la FAQ de \fkz.
+
 
 \vfill
 
