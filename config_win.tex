@@ -31,15 +31,15 @@ Tu tombes alors sur l'\'ecran de configuration de ta connexion vers l'ext\'erieu
 Tu coches alors les cases \menu{Utiliser l'adresse IP suivante}
 et \menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les cinq champs d'IP.
 Tu trouveras toutes les valeurs d'IP n\'ecessaires pour la configuration en page~\pageref{tableau:mon_IP} ;
-aide-toi de la capture d'\'ecran~\ref{config:win:IP1} ci-dessus pour les placer.
-Si une partie d'IP est blanche sur la capture~\ref{config:win:IP2},
+aide-toi de la capture d'\'ecran~\ref{config:win:IP2} pour les placer.
+Si une partie d'IP est blanche sur cette capture,
 c'est qu'elle t'est personnelle et que tu dois la calculer !
 
 Ensuite, clique sur le bouton \menu{Avanc\'e}, puis sur l'onglet \menu{DNS} en haut.
 
 \imageref{images/win_config_dns2}{0.71}{Configuration IP}{!h}{config:win:IP2}
 
-Il n'y a plus qu'\`a remplir les diff\'erents champs comme sur le screenshot suivant,
+Il n'y a plus qu'\`a remplir les diff\'erents champs comme sur la capture d'\'ecran suivante,
 avec le bouton \menu{Ajouter} et les flèches pour r\'eordonner les \'el\'ements.
 
 \subsubsection{Le domaine Windows}
@@ -57,17 +57,17 @@ Le domaine met \`a jour automatiquement Windows et l'antivirus \`a partir d'\ser
 (très rapide car tu n'as pas besoin de r\'ecup\'erer des fichiers en dehors de l'\'ecole!).
 Il configure le firewall
 (pare-feu: syst\`eme de protection contre les \'eventuelles attaques par le r\'eseau) Windows,
-mais il est toujours possible de le d\'esactiver si on pr\'efère un autre firewall.
+mais il est toujours possible de le d\'esactiver si tu pr\'efères un autre firewall.
 En bref, il permet de simplifier \`a l'extr\^eme la mise \`a jour continuelle de l'ordinateur.
 
 \paragraph{Alors, domaine ou pas domaine ?}
-\subparagraph{Soit tu choisis de te mettre sur le domaine Windows}...
+\subparagraph{Soit tu choisis de te mettre sur le domaine Windows,}
 et tu vas alors au paragraphe \og Installation simplifi\'ee --- configuration automatique \fg.
 
 %% \newpage
 \textbf{Avantages :}
 \begin{itemize}
-  \item Windows est mis \`a jour automatiquement ; tu as toujours les derniers patches de s\'ecurit\'e
+  \item Windows est mis \`a jour automatiquement ; tu as toujours les derni\`eres corrections de s\'ecurit\'e
         et un antivirus \`a jour. Donc tu es mieux prot\'eg\'e contre les virus.
   \item Surtout, tu n'as plus \`a t'en occuper, presque tout est automatique.
 \end{itemize}
@@ -85,7 +85,7 @@ et tu vas alors au paragraphe \og Installation simplifi\'ee --- configuration au
 Bien sûr, tu peux sortir du domaine \`a tout instant en reprenant ta configuration
 et en suivant l'installation personnalis\'ee.
 
-\subparagraph{Soit tu choisis de configurer toi-même ton ordinateur}...
+\subparagraph{Soit tu choisis de configurer toi-même ton ordinateur, }
 et tu vas alors au paragraphe \og Installation personnalis\'ee --- configuration manuelle \fg.
 
 \textbf{Avantages :}
@@ -96,7 +96,7 @@ et tu vas alors au paragraphe \og Installation personnalis\'ee --- configuration
 
 \textbf{Inconv\'enients :}
 \begin{itemize}
-  \item Tu es responsable de ton ordinateur.
+  \item Tu es le seul à t'occuper de la gestion de ton ordinateur.
         S'il devient un foyer pour virus, sache que nous avons les moyens de l'isoler
         pour \'eviter toute propagation.
   \item Si tu ne ma\^itrises pas le firewall, l'antivirus et autres Windows Update,
@@ -161,7 +161,7 @@ que tu avais avant d'être sur le domaine !}
 \paragraph{Installation personnalis\'ee} --- configuration manuelle
 
 \subparagraph{Configuration antivirus}
-Le BR, concerné par la sécurité du réseau, te propose un antivirus pour lequel tu n'auras pas à payer la license pour obtenir les mises à jour. Bien sûr, libre à toi d'utiliser ton anti-virus personnel ; cependant il sera à ta charge de le mettre à jour très réguli\'erement. Pour cela utilise comme proxy : \server{kuzh} sur le port 8080.
+Le BR, concerné par la sécurité du réseau, te propose un antivirus pour lequel tu n'auras pas à payer la license pour obtenir les mises à jour. Bien sûr, libre à toi d'utiliser ton anti-virus personnel ; cependant il sera à ta charge de le mettre à jour très réguli\'erement. Pour cela utilise comme proxy : \server{http://kuzh} sur le port 8080.
 
 \emph{Installation de l'anti-virus du BR}\ : Commence par d\'esinstaller tous les antivirus ou firewalls que tu pourrais avoir comme expliqu\'e dans le paragraphe \og Installation simplifi\'ee --- configuration automatique \fg.
 
@@ -177,7 +177,7 @@ Maintenant, tu n'as plus \`a toucher \`a l'antivirus, normalement il sera mis \`
 
 Si tu as Windows XP avec le SP2 install\'e, tu as un firewall automatiquement activ\'e et facile d'utilisation.
 En effet, \`a chaque fois qu'un programme tentera d'aller pour la première fois sur Internet,
-il te demandera si tu veux le laisser faire ou non, comme dans la capture~\ref{config:win:firewall} :
+il te demandera si tu veux le laisser faire ou non, comme dans la capture~\ref{config:win:firewall}.
 
 \imageref{images/win_firewall}{0.8}{Un programmme --- ici GuildFTP --- demande \`a acc\'eder au r\'eseau}{!h}{config:win:firewall}
 
@@ -206,10 +206,11 @@ et de laisser le SP2 faire le gros du boulot \`a ta place :-).
 
 \imageref{images/win_config_proxy}{0.7}{Configuration du proxy}{!h}{config:win:proxy}
 
-Même si tu n'utilises pas \app{Internet Explorer} comme client web, Windows et d'autres programmes utilisent ces paramètres, notamment Windows Update. Donc lance \app{Internet Explorer} ou le \menu{Panneau de Configuration} et vas dans les \menu{Options Internet},
+Même si tu n'utilises pas \app{Internet Explorer} comme client web, Windows et d'autres programmes utilisent ses paramètres, notamment \app{Windows Update}.
+Donc lance \app{Internet Explorer} ou le \menu{Panneau de Configuration} et vas dans les \menu{Options Internet},
 puis sur l'onglet \menu{Connexions} de la nouvelle fenêtre et enfin sur \menu{Paramètres r\'eseau}
 dans le bas de la fenêtre.
-Coches la case \menu{Détecter automatiquement les paramètres de connexion},
+Coches uniquement la case \menu{Détecter automatiquement les paramètres de connexion},
 tu dois alors avoir quelque chose qui ressemble \`a la capture d'\'ecran~\ref{config:win:proxy}.
 
 Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer},
@@ -221,10 +222,10 @@ de la s\'ecurit\'e de ton ordinateur, en n'ouvrant pas tous les fichiers qui te 
 
 Tes paramètres (en particulier tes favoris) seront directement import\'es depuis \app{Internet Explorer},
 la seule configuration \`a effectuer \'etant le proxy.
-Pour cela, clique sur \menu{Options} dans le menu \app{Outils}
-puis sur \app{Paramètres de connexion} en bas \`a droite.
-La case \`a cocher est alors la même qu'avec \app{Internet Explorer},
-si ce n'est une variation de son intitulé.
+Pour cela, clique sur \menu{Options} dans le menu \menu{Outils}
+puis sur \menu{Paramètres de connexion} en bas \`a droite.
+La case \`a cocher est
+\menu{Détecter automatiquement les configurations du proxy pour cette connexion}.
 
 Il reste une dernière configuration de proxy qui peut parfois s'avérer utile en particulier pour Windows Update en mode automatique si tu n'es pas sur le domaine. Fais \menu{Démarrer}, \menu{Exécuter}, puis tape ''cmd'' dans la fenêtre qui s'affiche. Une ligne de commande apparait, il te suffit alors de taper : ''proxycfg -p http://kuzh:8080'' pour régler le proxy. Pour revenir à un accès direct il faut taper ''proxycfg -d''.
 
@@ -238,7 +239,7 @@ quelques d\'etails sont donn\'es dans la FAQ sur \fkz.
 De plus, tu trouveras des explications plus d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
 
 Lance \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}.
-Clique sur le bouton \menu{Ajouter\ldots} en haut \`a droite, \menu{Courrier\ldots}.
+Clique sur le bouton \menu{Ajouter\ldots} en haut \`a droite, puis sur \menu{Courrier\ldots}.
 
 Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
 \begin{description}
@@ -261,10 +262,12 @@ en particulier, coche la seconde case \menu{Ce serveur n\'ecessite une connexion
 
 \imageref{images/win_config_mail_avance}{0.66}{Configuration avanc\'ee des serveurs mail}{!h}{config:win:mail}
 
-Comme ca, tu peux d\'esormais recevoir des mails, avec une liaison s\'ecuris\'ee vers \server{poly}
+Comme \c{c}a, tu peux d\'esormais recevoir des mails, avec une liaison s\'ecuris\'ee vers \server{poly}
 pour que personne ne puisse les intercepter.
 
-\subsubsection{Configuration news}
+\subsubsection{Configuration newsgroups}
+Repporte-toi a la page~\pageref{newsgroups} pour la description et des d\'etails de fonctionnement
+des newsgroups \'a l'X.
 
 Comme pour les mails, ca se passe dans \app{Outlook Express},
 mais \app{Thunderbird} offre une solution alternative tout \`a fait convenable.
@@ -305,7 +308,7 @@ Donc il est quasiment indispensable que tu en installes un.
 
 Parmi les plus simples on trouve \app{FileZilla} et \app{GuildFTP}, qui sont libres de surcro\^it.
 Expliquer les d\'etails de la configuration est un peu long pour l'InfoBR,
-mais il y a une FAQ sur \fkz où tout ca est d\'ecrit en d\'etail !
+mais il y a une FAQ sur \fkz où tout \c{c}a est d\'ecrit en d\'etail !
 
 \subsubsection{Autres logiciels utiles}
 
@@ -317,7 +320,7 @@ mais il y a une FAQ sur \fkz où tout ca est d\'ecrit en d\'etail !
                  Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC.
   \item[WinSCP] : Un logiciel pratique qui te permet de te connecter en salle info.
                   Tu peux le r\'ecup\'erer lui aussi sur \xshare ;
-                  son fonctionnement est expliqu\'e en d\'etails dans la FAQ. Voir aussi \textbf{Putty}
+                  son fonctionnement est expliqu\'e en d\'etails dans la FAQ. Voir aussi \textbf{Putty}, aussi dans le \xshare.
 \end{description}
 
 \subsubsection{Obtenir Windows XP Pro et les licences MSDNAA}

@@ -89,7 +89,7 @@ height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
 
 Le masque de sous-r\'eseau est toujours \server{255.255.255.128}.
 
-\exemple{l'IP associ\'ee \`a la prise $70 40 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ;
+\exemple{l'IP associ\'ee \`a la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ;
 sa passerelle est \server{129.104.224.254}, son adresse de \textit{broadcast} est \server{129.104.224.255}
 et son masque de sous-r\'eseau est \server{255.255.255.128}.}
 
@@ -117,7 +117,9 @@ et son masque de sous-r\'eseau est \server{255.255.255.128}.}
 \end{tabular}
 
 \subsubsection{Tes informations réseau}
-\emph{Maintenant, note ton IP ici, et re-v\'erifie que tu ne t'es pas tromp\'e. \c Ca t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !}
+Maintenant, note ici ton IP et les adresses IP de ta passerelle (\trad{gateway}),
+de ton \trad{broadcast} et ton masque de sous-r\'eseau (\trad{netmask}).
+Re-v\'erifie bien que tu ne t'es pas tromp\'e,  \c ca t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !
 
 \begin{center}
   \begin{tabular}{|rp{5cm}|}
@@ -132,7 +134,7 @@ et son masque de sous-r\'eseau est \server{255.255.255.128}.}
 
 \subsubsection{IP des serveurs DNS}
 
-Le BR offre quatre serveurs DNS redondants, dont nous reparlerons :
+Le BR offre quatre serveurs DNS redondants, qui ont les IP's suivantes :
 \begin{itemize}
   \item Serveur principal : $129.104.201.53$
   \item Serveurs secondaires : $129.104.201.51$, $129.104.201.52$ et $129.104.201.54$
