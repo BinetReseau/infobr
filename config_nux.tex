@@ -69,11 +69,15 @@ N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
 5050, 5053 et 5055 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau.
 
 {\bf Configuration du gestionnaire de paquets :}
-Le BR poss\`ede son propre miroir Mandriva, que nous te conseillons d'utiliser,
-ceux-ci \'etant beaucoup plus rapide que les miroirs ext\'erieurs.
-Dans l'utilitaire \app{drakconf}, choisis l'onglet \menu{Gestionnaire de logiciels},
-puis clique sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP}
-et à mettre comme url \url{ftp://miroir/mandriva}.
+Le BR poss\`ede un miroir PLF, que tu peux utiliser en choisissant
+l'onglet \menu{Gestionnaire de logiciels} dans l'utilitaire \app{drakconf}
+puis en cliquant sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP}
+et en mettant comme url \url{ftp://miroir/plf/mandrake/free/2006.0/}
+pour le premier miroir et \url{ftp://miroir/plf/mandrake/non-free/2006.0/}
+pour le second. Il te faut aussi sp\'ecifier le chemin vers le
+hdlist.cz, en mettant dans les deux cas ./hdlist.cz dans le champ
+\menu{Chemin relatif vers hdlist/synthesis}. Enfin, n'oublie pas de
+désactiver le proxy pour les utiliser.
 
 
 \paragraph{\distrib{Sous Gentoo}}
