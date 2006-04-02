@@ -1,5 +1,23 @@
 % Commandes speciales definies ici
 
+
+% pour les images de fond sur les headers
+\newcommand{\bghdr}[1]{
+  \leftwatermark{
+    \raisebox{-1.5cm}{
+      \hspace{-2.4cm}
+      \includegraphics{#1}
+    }
+  }
+  \rightwatermark{
+    \raisebox{-1.5cm}{
+      \hspace{13.2cm}
+      \includegraphics{#1}
+    }
+  }
+}
+
+
 % pour inclure des images
 \newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
   \begin{figure*}
@@ -38,7 +56,7 @@
 % pour les serveurs
 \definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
 \newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
-% pour le ligne de commande
+% pour les lignes de commande
 \definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
 \definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
 \newcommand{\cmdline}[1]{
@@ -50,7 +68,7 @@
     \texttt{\color{BrightGreen}#1}
     \AutoSpaceBeforeFDP
     }
-  }
+  } \hfill
   \vspace{4pt}
 }
 \newcommand{\cmdlineshort}[1]{

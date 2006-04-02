@@ -1,5 +1,5 @@
 % -------------------- Header --------------------
-\documentclass[12pt, twoside]{article}
+\documentclass[12pt, twoside, a4paper]{article}
 
 \usepackage[francais]{babel}
 \usepackage{fancyhdr}
@@ -15,33 +15,37 @@
 \usepackage{eurosym}
 \usepackage{ifthen}
 \usepackage{picins}
+\usepackage{watermark}
 \usepackage{alltt}
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{color}
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
-\topmargin 1mm
-\headheight 4mm
-\headsep 10mm
-\textheight 210mm
-\evensidemargin 1mm
-\oddsidemargin 1mm
-\marginparwidth 0mm
-\marginparsep 0mm
-\textwidth 170mm
+% Mise en page : bords, en-tetes, ...
+\pagestyle{fancy}
+\addtolength{\headwidth}{80pt}
+\addtolength{\headheight}{3pt}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries{\Large\thepage}}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\MakeUppercase{\leftmark}}
+\fancypagestyle{plain}{%
+  \fancyhead{} % get rid of headers
+  \renewcommand{\headrulewidth}{0pt} % and the line
+}
+\addtolength{\evensidemargin}{-60pt}
+\addtolength{\voffset}{-24pt}
+\addtolength{\textheight}{85pt}
+\addtolength{\textwidth}{60pt}
+
 
 \title{InfoBR 2006}
 \author{Thifu, BR 2k4}
 \date{f\'evrier 2006}
 
-\renewcommand{\headrulewidth}{0.5pt}
-\fancyhead[RO]{\thepage}
-\fancyhead[LE]{ \thepage}
-\fancyhead[RE, CE, CO, LO]{}
-\fancyhead[C]{\footnotesize{\textsc{\rightmark}}}
-\fancyfoot[R, C, L]{}
-\pagestyle{fancy}
 
 % Couleurs
 \definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
@@ -65,10 +69,11 @@
 \input{motPrez}
 
 \newpage
+\bghdr{images/fond-infobr}
 \markright{Table des mati\`eres}
 \tableofcontents
 
-% -------------------- Le mot du rédacteur: ----- 'avertissement.tex' --------------------
+% -------------------- Le mot du redacteur: ----- 'avertissement.tex' --------------------
 % \markright{Introduction}
 % \section*{Introduction}
 % \input{avertissement}
@@ -86,15 +91,16 @@
 \input{config_win}
 
 \newpage
-\markright{Configuration sous MacOS}
-\input{config_mac}
-
-\newpage
 \markright{Configuration sous Linux}
 \input{config_nux}
 
+\newpage
+\markright{Configuration sous MacOS}
+\input{config_mac}
+
 % -------------------- Puis... --------------------
 \newpage
+\bghdr{images/fond-infobr}
 \markright{Pour continuer}
 \input{partie2/partie2}
 
