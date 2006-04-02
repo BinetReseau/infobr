@@ -3,11 +3,12 @@
 \clearpage
 \pagebreak
 
-% \bghdr{fond-nux}
+\bghdr{images/fond-nux}
 
-\begin{center}
-\includegraphics{images/logo_Linux}
-\end{center}
+%\begin{center}
+%\includegraphics{images/logo_Linux}
+%\end{center}
+
 \subsection{Configuration sous Linux}
 
 \subsubsection{Configuration IP}
@@ -42,15 +43,16 @@ Dans la première fen\^etre, entre :
 \end{description}
 
 Ensuite, tu dois encore entrer :
-\begin{description}
-       \item[Nom d'hôte (non obligatoire)] : ton\_pseudo
-       \item[Serveur DNS 1] : \server{129.104.201.53}
-       \item[Serveur DNS 2] : \server{129.104.201.54}
-       \item[Serveur DNS 3] : \server{129.104.201.51}
-       \item[Domaine recherch\'e] : eleves.polytechnique.fr polytechnique.fr
-       \item[Passerelle] : tu l'as aussi calcul\'ee : \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip})
-       \item[P\'eriph\'erique passerelle] : aucun
-\end{description}
+
+\begin{tabular}{@{\bf }l@{\xleaders\copy\point\ecart}l}
+       Nom d'hôte (non obligatoire) & ton\_pseudo \\
+       Serveur DNS 1       & \server{129.104.201.53} \\
+       Serveur DNS 2       & \server{129.104.201.54} \\
+       Serveur DNS 3       & \server{129.104.201.51} \\
+       Domaine recherch\'e & eleves.polytechnique.fr polytechnique.fr \\
+       Passerelle          & \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip}) \\
+       P\'eriph\'erique passerelle  & aucun  \\
+\end{tabular}
 
 Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
 Là, tu choisis l'option \menu{Oui}, puis tu valides et tu as normalement un message
@@ -68,7 +70,7 @@ PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 
 
 N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
-5050, 5053 et 5055 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau
+5050, 5053 et 5055 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau.
 
 {\bf Configuration du gestionnaire de paquets :}
 Le BR poss\`ede son propre miroir Mandriva, que nous te conseillons d'utiliser,
@@ -147,17 +149,21 @@ Pour savoir comment configurer ton firewall pour le r\'eseau de l'X, consulte la
 
 \subsubsection{Configuration navigateur web}
 
-%\image{partie1-config_reseau/nux_proxy_firefox}{0.66}{Configuration du proxy sous Firefox}
+\imagepos{images/nux_proxy_firefox}{0.66}{Configuration du proxy sous Firefox}{ht}
 
-%\flimage{partie1-config_reseau/nux_firefox_icon}{0.12}{l}
-Le BR te conseille d'utiliser \app{Firefox}, ou \app{Konqueror} (le navigateur fourni par d\'efaut avec KDE). Dans tous les cas, la seule configuration \`a mettre est celle du proxy.
-Il suffit d'aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General}
-cliquer sur \menu{Connection Settings} ; ensuite tu coches la case \menu{D\'etection automatique du proxy pour ce r\'eseau},
-et c'est bon.
+\flimage{images/nux_firefox_icon}{0.12}{l}
+Le BR te conseille d'utiliser \app{Firefox}, ou \app{Konqueror} (le navigateur fourni par d\'efaut avec KDE).
+Dans tous les cas, la seule configuration \`a mettre est celle du proxy.
+Pour \app{Firefox}, il suffit d'aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General}
+cliquer sur \menu{Connection Settings} ; ensuite tu coches la case
+\menu{D\'etection automatique du proxy pour ce r\'eseau}, et c'est bon.
+
+Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
+dans l'onglet \menu{Serveur mandataire}.
 
 \subsubsection{Configuration mail}
 
-%\flimage{partie1-config_reseau/nux_kmail_icon}{0.12}{l}
+\flimage{images/nux_kmail_icon}{0.12}{l}
 Le client mail le plus utilis\'e est \app{Kmail}, mais il en existe bien s\^ur d'autres comme \app{Thunderbird}.
 La configuration est semblable, quel que soit le client que tu utilises.
 
@@ -166,7 +172,7 @@ Choisis la rubrique \menu{R\'eseau}.
 Commence par cr\'eer un nouveau compte dans l'onglet \menu{R\'eception des messages}
 en cliquant sur le bouton \menu{Ajouter\ldots} et choisis le type POP3.
 
-%\image{partie1-config_reseau/nux_config_kmail_pop}{0.66}{Configuration de la r\'eception des messages sous Kmail}
+\imagepos{images/nux_config_kmail_pop}{0.60}{Configuration de la r\'eception des messages sous Kmail}{pht}
 
 Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral} :
 \begin{description}
@@ -179,7 +185,7 @@ Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral} :
 
 Ensuite, va dans l'onglet \menu{Extras} et coche la case \menu{Utiliser SSL pour s\'ecuriser les t\'el\'echargements}.
 
-%\image{partie1-config_reseau/nux_config_kmail_smtp}{0.66}{Configuration de l'envoi des messages sous Kmail}
+\imagepos{images/nux_config_kmail_smtp}{0.60}{Configuration de l'envoi des messages sous Kmail}{pht}
 
 Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le bouton \menu{Ajouter\ldots}.
 Utilise les param\`etres suivants pour le configurer :
@@ -192,15 +198,15 @@ Sinon, laisse toutes les cases d\'ecoch\'ees.
 
 \subsubsection{Configuration news}
 
-%\flimage{partie1-config_reseau/nux_knode_icon}{0.12}{l}
+\flimage{images/nux_knode_icon}{0.12}{l}
 Le client news le plus utilis\'e est \app{Knode}.
 Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}.
-Ici aussi, la configuration est presque ind\'ependante 
-
-%\image{partie1-config_reseau/nux_config_knode}{0.7}{Configuration de Knode}
+Ici aussi, la configuration est presque ind\'ependante du logiciel choisi.
 
 Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}.
 Va dans la rubrique \menu{Comptes, Forums de discussion} et cr\'ee un compte en cliquant sur \menu{Nouveau\ldots}.
+
+\imagepos{images/nux_config_knode}{0.7}{Configuration de Knode}{ht}
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
@@ -251,7 +257,7 @@ client = yes\\
 {[}nntps{]}\\
 accept  = 1119\\
 connect = ssl.polytechnique.org:563\\
-TIMEOUTclose = 0\\
+TIMEOUTclose = 0
 }
 
 Il ne te reste plus qu'\`a lancer \app{stunnel} par :
