@@ -59,6 +59,7 @@ sa passerelle est \server{129.104.211.254}, son adresse de \textit{broadcast} es
 Ta prise r\'eseau possède un numéro à 6 chiffres de la forme $xx\ yy\ zz$.
 On prend $xx$ pour calculer ton sous-r\'eseau, l'adresse de ta passerelle (\server{129.104.AAA.CCC})
 et l'adresse de \textit{broadcast} (\server{129.104.AAA.EEE}).
+Le masque de sous-r\'eseau est toujours \server{255.255.255.128}.
 Ensuite, tu peux d\'eterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
 
 \vskip 12pt
@@ -86,8 +87,6 @@ height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
 } \hfil
 
 \vskip 12pt
-
-Le masque de sous-r\'eseau est toujours \server{255.255.255.128}.
 
 \exemple{l'IP associ\'ee \`a la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ;
 sa passerelle est \server{129.104.224.254}, son adresse de \textit{broadcast} est \server{129.104.224.255}
