@@ -12,9 +12,9 @@
 \subsubsection{Configuration IP}
 
 \flimage{images/mac_prefs_icone}{0.1}{l}
-\app{Pr\'ef\'erences R\'eseau}, accessible depuis l'article de menu \menu{Pr\'ef\'erences Syst\`eme} du \menu{menu Pomme}, permet de configurer la connexion au r\'eseau. Par ailleurs, si au d\'emarrage un assistant te propose de configurer ton r\'eseau, refuse gentiment et utilise la proc\'edure que le BR te propose --- c'est plus simple ;-)
+\app{Pr\'ef\'erences R\'eseau}, accessible depuis l'article de menu \menu{Pr\'ef\'erences Syst\`eme} du \menu{menu Pomme}, permet de configurer la connexion au r\'eseau. Par ailleurs, si au d\'emarrage un assistant te propose de configurer ton r\'eseau, refuse gentiment et utilise la proc\'edure que le BR te propose. En effet, le r\'eseau n\'ecessite une configuration particuli\`ere à l'X, plus complexe que celle autoris\'ee par cet assistant.
 
-La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs configurations et de passer en un clic de l'une \`a l'une autre avec le sous-menu \menu{Configuration R\'eseau} du \menu{menu Pomme}, ce qui est tr\`es pratique pour les machines vou\'ees \`a être connect\'ees \`a plusieurs r\'eseaux successivement --- les portables par exemple, voir la page~\pageref{wifi} pour plus de pr\'ecisions sur le Wifi disponibilis\'e par le BR. On commencera donc par cr\'eer une nouvelle configuration r\'eseau dans le menu d\'eroulant \menu{Configuration}.
+La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs configurations et de passer en un clic de l'une \`a l'autre gr\^ace au sous-menu \menu{Configuration R\'eseau} du menu \menu{Pomme}. Cela s'av\`ere pratique pour les machines vou\'ees \`a être connect\'ees \`a plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} pour plus de pr\'ecisions sur le Wifi au bataclan). Commence donc par cr\'eer une nouvelle configuration r\'eseau dans le menu d\'eroulant \menu{Configuration}.
 
 \imagepos{images/mac_nouvelle_config}{0.5}{Cr\'eer une nouvelle configuration r\'eseau}{!hb}
 
@@ -30,35 +30,32 @@ Si une partie d'IP est blanche sur cette capture, c'est qu'elle t'est personnell
 \imageref{images/mac_config_ip}{0.66}{Configuration IP}{!h}{config:mac:ip}
 
 Pour avoir acc\`es \`a Internet, il faut aussi configurer le proxy. Clique sur l'onglet \menu{Proxys}.
-MacOS X 10.3.3 peut utiliser un script automatique pour param\'etrer les proxies, il n'est donc pas utile de donner explicitement tous les proxies comme c'\'etait le cas avec MacOS X 10.2 et 10.3.0 ; sinon il faut mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Si tu as Mac OS X 10.3.0, mets le proxy HTTP manuellement, fais toutes les mises \`a jour (Menu Pomme, \menu{Mise \`a jour de logiciels\ldots}) et ensuite tu auras l'option \menu{Configuration automatique de proxy}.
+Regarde dans le \menu{menu Pomme} : \menu{\`A Propos de ce Mac}, tu y trouveras la version pr\'ecise de Mac OS que tu as. Pour Mac OS X 10.3.2 et inférieur, il te faut sp\'ecifier tous les proxies manuellement, et mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Pour Mac OS X 10.3.3 et sup\'erieur, choisis l'option \menu{Configuration automatique de proxy}. Pour Mac OS X 10.3 à 10.3.2, n'oublie pas une fois que tu as le r\'eseau de faire la mise à jour de ton syst\`eme, pour pouvoir configurer de fa\c{c}on automatique le proxy.
 
 N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
-\imagepos{images/mac_config_proxy}{0.7}{Configurer le proxy}{ht}
+\imagepos{images/mac_config_proxy}{0.7}{Configurer le proxy}{!h}
 
 
 \subsubsection{Configuration antivirus}
 
-Tu es sous Mac :-þ
+Bien qu'il soit important de maintenir ton syst\`eme à jour, un anti-virus est pour l'instant tout à fait superflu sur Mac, puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assur\'e de la provenance, et essaie de te tenir au courant des actualit\'es concernant les failles des applications que tu utilises.
 
 \subsubsection{Configuration web}
 
 \flimage{images/mac_safari_icone}{0.1}{l}
-\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorit\'e des sites web. Tu peux donc t'en servir au quotidien, en faisant appel \`a \app{Firefox} ou \app{Camino} dans les situations o\`u cela ne serait pas le cas.
-Un conseil : penses \`a activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).
+\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorit\'e des sites web. Tu peux donc t'en servir au quotidien, en faisant appel \`a \app{Firefox} ou \app{Camino} pour les sites r\'ecalcitrants.
+Un conseil : pense \`a activer le blocage des fen\^etres pop-up (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).
 
 \subsubsection{Configuration mail}
 
 \flimage{images/mac_mail_icone}{0.1}{l}
-\app{Mail} : un client mail, offrant les fonctionnalit\'es classiques d'un bon client :
-filtre antispam, r\`egles de tri automatique des mails,
-regroupement des mails correspondant \`a une même discussion.
+\app{Mail} : un client mail, offrant les fonctionnalit\'es classiques d'un bon client : recherches instantan\'ees, filtre antispam, r\`egles de tri automatique des mails, regroupement des mails correspondant \`a une même discussion.
 
-Au premier lancement, \app{Mail} te demandera de remplir les informations concernant
-ton compte mail sur \server{poly}, il suffit de le remplir avec les donn\'ees suivantes :
+Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur \server{poly}, il suffit de le remplir avec les donn\'ees suivantes :
 
 \begin{description}
-  \item[Nom complet] ton nom ! 
+  \item[Nom complet] ton nom !
   \item[Adresse \'electronique] de la forme \mail{prenom.nom@polytechnique.edu}
   \item[Serveur de r\'eception] \server{poly.polytechnique.fr}
   \item[Type de compte] \menu{POP}
@@ -67,16 +64,16 @@ ton compte mail sur \server{poly}, il suffit de le remplir avec les donn\'ees su
   \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr}
 \end{description}
 
-Si tu as d\'ej\`a cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \menu{Pr\'ef\'erences}, onglet \menu{Comptes} (accessible depuis le menu \menu{Mail}), cr\'eer un autre compte en cliquant sur la case \menu{+} et le remplir de la même mani\`ere.
+Si tu as d\'ej\`a cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \menu{Pr\'ef\'erences} (accessibles depuis le menu \menu{Mail}), onglet \menu{Comptes}, pour cr\'eer un autre compte en cliquant sur la case \menu{+}.
 
-N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995.
+N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995. Tu souhaiteras alors certainement installer le certificat de s\'ecurit\'e de \server{poly} (tu le trouveras sur \url{http://poly/}). Une fois que tu as téléchargé le certificat, ouvre le fichier \menu{.crt} obtenu, et dans \app{Trousseau d'acc\`es}, installe le dans \menu{X509Anchors}.
 
 Cette configuration marche pour acc\'eder \`a ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer. Par contre depuis l'ext\'erieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas. Tu peux regarder la configuration propos\'ee par \url{Polytechnique.org} pour surmonter cette difficult\'e.
 
 
 \subsubsection{Logiciels Additionnels}
 
-Voici une pr\'esentation de divers logiciels utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau, ainsi que leur configuration. Les logiciels cit\'es ici sont t\'el\'echargeables sur \server{frankiz} : rubrique \menu{T\'el\'echarger -> Mac -> R\'eseau}.
+Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau, ils sont t\'el\'echargeables sur \server{frankiz}, dans la rubrique \menu{T\'el\'echarger -> Mac}.
 
 
 \subsubsection{Configuration news}
@@ -87,10 +84,10 @@ Voici une pr\'esentation de divers logiciels utiles pour utiliser avec Mac OS X 
                    (mais aussi \`a ceux de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}).
 Il tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la même cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même mani\`ere.
 
-Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant >}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant >}. On te demandera alors dans l'ordre les informations suivantes :
+Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant >}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique, et un compte RSS). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant >}. Entre alors les informations suivantes :
 
 \begin{description}
-  \item[Votre nom] ton nom ou ton pseudo 
+  \item[Votre nom] ton nom ou ton pseudo
   \item[Adresse de courrier] \mail{prenom.nom@polytechnique.edu}
   \item[Serveur de forums] \server{frankiz}
   \item[Nom du compte] News Frankiz
@@ -101,7 +98,7 @@ Au premier lancement, l'application te propose d'importer les param\`etres depui
 Pour t'abonner \`a des groupes de discussion, il te suffit de s\'electionner le compte \menu{News Frankiz} dans la fenêtre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{G\'erer les abonnements aux groupes de discussion}. Tu pourras ensuite s\'electionner les forums qui t'int\'eressent parmi la liste propos\'ee. Reporte-toi \`a la page \pageref{newsgroups} pour plus d'infos sur les newsgroups auxquels t'abonner !
 
 \subsubsection{Client FTP}
- 
+
 \flimage{images/mac_cyberduck_icone}{0.1}{l}
 \app{Cyberduck} : un client FTP tr\`es simple \`a utiliser mais performant. Il te permettra d'aller t\'el\'echarger des fichiers sur les serveurs FTP des autres \'el\`eves. Il existe aussi \app{Fugu}, que certains pr\'ef\`erent.
 
@@ -122,25 +119,17 @@ Voici plusieurs logiciels que tu voudras s\^urement t\'el\'echarger pour profite
 
 \noindent Pour plus de d\'etails, voir le paragraphe consacr\'e \`a qRezix \`a la page \pageref{qrezix}.
 
-\noindent Attention, si ton firewall est activ\'e, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP.
-Pour cela va dans \app{Pr\'ef\'erences Syst\`eme}, page \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}.
-S'il est \'ecrit \menu{Coupe-feu activ\'e}, clique le bouton \menu{Nouveau}
-et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouvrir les ports.\\ \\
+\noindent Attention, si ton firewall est activ\'e, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP. Pour cela va dans \app{Pr\'ef\'erences Syst\`eme}, dans le module \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}. S'il est \'ecrit \menu{Coupe-feu activ\'e}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouvrir les ports.\\ \\
 
 \imagepos{images/mac_firewall}{0.5}{Ouvrir les ports pour \app{qRezix}}{!h}
 
 \flimage{images/mac_cocoaxnet_icone}{0.1}{l}
-\noindent\app{CocoaXNet} est un \'equivalent de qRezix mieux int\'egr\'e \`a Mac OS X,
-car il est d\'evelopp\'e en Cocoa, un langage sp\'ecifique \`a Mac OS X.
-Pour l'instant, il est sans d\'eveloppeur, et donc ne contient pas les fonctionalit\'es
-de la version 2 de \app{qRezix} telles les plans de l'\'ecole
-donc c'est \`a toi de d\'ecider lequel tu pr\'ef\`eres !
+\noindent\app{CocoaXNet} est un \'equivalent plus léger de qRezix, avec une meilleure int\'egration \`a Mac OS X. Pour l'instant, il est sans d\'eveloppeur, et donc ne contient pas les fonctionalit\'es de la version 2 de \app{qRezix} telles les plans de l'\'ecole donc c'est \`a toi de d\'ecider lequel tu pr\'ef\`eres !
 
-\noindent Si le d\'eveloppement en Cocoa te tente (et aussi faire un logiciel utile pour tes camarades),
-n'h\'esites pas \`a contacter les developpeurs via \mail{qrezix@frankiz}. \\ \\
+\noindent Si le d\'eveloppement en Objective-C et Cocoa (les langages utilisés pour CocoaXNet) te tente, n'h\'esites pas \`a contacter les d\'eveloppeurs via \mail{qrezix@frankiz}. \\ \\
 
 \flimage{images/mac_conversation_icone}{0.1}{l}
-\noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. Comme autres clients IRC, on peut citer \app{Conversation}, assez proche de \app{Colloquy}, et \app{X-Chat Aqua}, plus riche en fonctionnalités. \\ \\
+\noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. \app{X-Chat Aqua} est un autre client IRC, plus riche en fonctionnalités. \\ \\
 
 \flimage{images/mac_rss_icone}{0.1}{l}
 \noindent\app{Vienna} est un client RSS gratuit et agr\'eable, dont le d\'eveloppement actif est prometteur. Les flux RSS permettent d'agr\'eger dans un seul logiciel des informations en provenance de nombreux sites web, ce qui permet d'acc\'elerer de fa\c{c}on significative la r\'ecolte de ces informations, qui peuvent provenir de forums de discussions, de mises \`a jour de logiciels, d'informations internationales...
