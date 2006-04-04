@@ -59,13 +59,13 @@
 % pour les lignes de commande
 \definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
 \definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
-\newcommand{\cmdline}[1]{
+\newcommand{\cmdline}[2][0.9]{
   \vspace{4pt}
   \noindent
   \colorbox{LightRed}{
-    \parbox[c]{.9\textwidth}{
+    \parbox[c]{#1\textwidth}{
     \NoAutoSpaceBeforeFDP
-    \texttt{\footnotesize{\color{BrightGreen}#1}}
+    \texttt{\footnotesize{\color{BrightGreen}#2}}
     \AutoSpaceBeforeFDP
     }
   } \hfill
