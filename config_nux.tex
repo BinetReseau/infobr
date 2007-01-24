@@ -26,59 +26,6 @@ Toutes les informations n\'ecessaires se trouvent page \pageref{calcul_ip}.
 
 Bien s\^ur, l'ensemble des manipulations doit se faire en tant que root.
 
-\paragraph{\distrib{Sous Mandriva}}
-{\bf Configuration du r\'eseau}
-Il existe dans cette distribution une interface graphique pour configurer le r\'eseau, bien qu'il soit possible,
-comme sur tout syst\`eme linux, de le faire \`a la main \`a partir des fichiers de configuration dans \rep{/etc/}.
-
-Lance \app{drakconf} en tant que root, puis clique sur l'onglet \menu{R\'eseau \& Internet} et enfin sur \menu{Configurer une nouvelle connexion Internet (LAN, ISDN, ADSL, ...)}.
-Choisis ensuite \menu{Connexion à travers un r\'eseau local(LAN)}, puis la carte r\'eseau sur laquelle tu as branch\'e ton c\^able r\'eseau.
-Tu as autant de \texttt{eth0}, \texttt{eth1}, \ldots que de cartes r\'eseau d\'etect\'ees.
-
-Sur la fen\^etre suivante, choisis l'option \menu{configuration manuelle}.  La configuration du r\'eseau commence alors. 
-Dans la première fen\^etre, entre :
-\begin{description}
-       \item[ton adresse IP] entre celle que tu as calcul\'ee : \server{129.104.AAA.BBB} (cf. page \pageref{calcul_ip})
-       \item[ton masque de sous-r\'eseau] : \server{255.255.FFF.DDD} (cf. page \pageref{calcul_ip})
-\end{description}
-
-Ensuite, tu dois encore entrer :
-
-\begin{tabular}{@{\bf }l@{\xleaders\copy\point\ecart}l}
-       Nom d'hôte (non obligatoire) & ton\_pseudo \\
-       Serveur DNS 1       & \server{129.104.201.53} \\
-       Serveur DNS 2       & \server{129.104.201.54} \\
-       Serveur DNS 3       & \server{129.104.201.51} \\
-       Domaine recherch\'e & eleves.polytechnique.fr polytechnique.fr \\
-       Passerelle          & \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip}) \\
-       P\'eriph\'erique passerelle  & aucun  \\
-\end{tabular}
-
-Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
-Là, tu choisis l'option \menu{Oui}, puis tu valides et tu as normalement un message
-qui t'annonce que ta configuration r\'eseau est termin\'ee.
-Tu peux la tester en pinguant frankiz, qui doit donner quelque chose comme :
-
-\cmdline{\$ ping frankiz\\
-PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): ...
-}
-
-
-N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp,
-5050, 5053 et 5055 pour qRezix, ...) dans ton firewall pour pouvoir pleinement profiter du r\'eseau.
-
-{\bf Configuration du gestionnaire de paquets :}
-Le BR poss\`ede un miroir PLF, que tu peux utiliser en choisissant
-l'onglet \menu{Gestionnaire de logiciels} dans l'utilitaire \app{drakconf}
-puis en cliquant sur \menu{ajouter la source personalis\'ee}, \`a choisir \menu{Serveur FTP}
-et en mettant comme url \url{ftp://miroir/plf/mandrake/free/2006.0/}
-pour le premier miroir et \url{ftp://miroir/plf/mandrake/non-free/2006.0/}
-pour le second. Il te faut aussi sp\'ecifier le chemin vers le
-hdlist.cz, en mettant dans les deux cas ./hdlist.cz dans le champ
-\menu{Chemin relatif vers hdlist/synthesis}. Enfin, n'oublie pas de
-désactiver le proxy pour les utiliser.
-
 
 \paragraph{\distrib{Sous Gentoo}}
 
@@ -125,6 +72,7 @@ puis en pingant \fkz\ par exemple. Tu dois obtenir quelque chose comme :
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from frankiz (129.104.201.51): ...}
 
+\label{gentoo_mirror}
 Pour pouvoir utiliser \app{emerge} \`a travers le proxy de l'\'ecole,
 il faut d\'efinir les variables d'environnement ci-dessous dans le fichier \file{/etc/make.conf} :
 
@@ -136,7 +84,7 @@ Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans
 mais \url{ftp://miroir} \'etant interne, il sera toujours beaucoup plus rapide que les autres.
 On te conseille ici \url{http://gentoo.osuosl.org/} qui est un miroir tr\`es complet mais tr\`es lent.
 
-\input ubuntu.tex
+\input{ubuntu.tex}
 
 \subsubsection{Configuration antivirus \footnotesize{(elle est dr\^ole celle-l\`a hein ?)}
 }
@@ -149,17 +97,17 @@ Pour savoir comment configurer ton firewall pour le r\'eseau de l'X, consulte la
 
 \subsubsection{Configuration navigateur web}
 
-\imagepos{images/nux_proxy_firefox}{0.60}{Configuration du proxy sous Firefox}{ht}
-
 \flimage{images/nux_firefox_icon}{0.12}{l}
 Le BR te conseille d'utiliser \app{Firefox}, ou \app{Konqueror} (le navigateur fourni par d\'efaut avec KDE).
 Dans tous les cas, la seule configuration \`a mettre est celle du proxy.
-Pour \app{Firefox}, il suffit d'aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{General}
-cliquer sur \menu{Connection Settings} ; ensuite tu coches la case
-\menu{D\'etection automatique du proxy pour ce r\'eseau}, et c'est bon.
+Pour \app{Firefox}, il suffit d'aller dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avancé}, puis de
+cliquer sur l'onglet \menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite tu coches la case
+\menu{Adresse de configuration automatique du proxy}, et tu rentres \url{http://frankiz/proxy.pac/}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}.
+
+\imagepos{images/nux_proxy_firefox}{0.55}{Configuration du proxy sous Firefox}{ht}
 
 % \vfill
 \pagebreak
@@ -171,11 +119,11 @@ Le client mail le plus utilis\'e est \app{Kmail}, mais il en existe bien s\^ur d
 La configuration est semblable, quel que soit le client que tu utilises.
 
 Va dans \menu{Configuration}, \menu{Configurer Kmail}.
-Choisis la rubrique \menu{R\'eseau}.
+Choisis la rubrique \menu{Comptes}.
 Commence par cr\'eer un nouveau compte dans l'onglet \menu{R\'eception des messages}
 en cliquant sur le bouton \menu{Ajouter\ldots} et choisis le type POP3.
 
-\imagepos{images/nux_config_kmail_pop}{0.66}{Configuration de la r\'eception des messages sous Kmail}{pht}
+\imagepos{images/nux_config_kmail_pop}{0.55}{Configuration de la r\'eception des messages sous Kmail}{pht}
 
 Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral} :
 \begin{description}
@@ -207,9 +155,9 @@ Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}.
 Ici aussi, la configuration est presque ind\'ependante du logiciel choisi.
 
 Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}.
-Va dans la rubrique \menu{Comptes, Forums de discussion} et cr\'ee un compte en cliquant sur \menu{Nouveau\ldots}.
+Va dans la rubrique \menu{Comptes, Forums de discussion} et cr\'ee un compte en cliquant sur \menu{Ajouter\ldots}.
 
-\imagepos{images/nux_config_knode}{0.7}{Configuration de Knode}{ht}
+\imagepos{images/nux_config_knode}{0.55}{Configuration de Knode}{ht}
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
@@ -226,7 +174,7 @@ Ensuite occupe-toi de l'onglet \menu{Identit\'e} :
 \end{description}
 
 Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller dans la rubrique \menu{Comptes},
-sous-rubrique \menu{Courrier \'electronique}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr},
+sous-rubrique \menu{Serveur de courrier (SMTP)}, et choisir comme serveur d'envoi de mails \server{poly.polytechnique.fr},
 port 25 --- c'est exactement la m\^eme configuration SMTP que \app{Kmail}.
 
 Si tu veux mettre une signature \`a la fin des messages que tu posteras,
@@ -236,8 +184,7 @@ et n'est en particulier pas incluse dans le texte cit\'e lorsque tu r\'eponds \`
 Pour d\'efinir une signature \`a la main, il suffit de mettre \verb*+-- +\ (c'est \`a dire -{}-<espace>)
 sur une ligne, et tout ce qui suivra cette ligne composera ta signature.
 
-Il ne te reste plus qu'\`a t'inscrire \`a des newsgroups
-(reporte-toi \`a la page \pageref{newsgroups} pour plus d'infos) et \`a poster !
+Il ne te reste plus qu'\`a t'inscrire \`a des newsgroups (reporte-toi \`a la page \pageref{newsgroups} pour plus d'infos) et \`a poster !
 
 Pour te connecter aux serveurs de news de Polytechnique.org, qui ont un acc\`es s\'ecuris\'e,
 avec \app{Knode}, il y a une petite subtilit\'e car il ne g\`ere pas le SSL.
