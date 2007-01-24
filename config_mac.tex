@@ -70,6 +70,10 @@ N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\
 
 Cette configuration marche pour acc\'eder \`a ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer. Par contre depuis l'ext\'erieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas. Tu peux regarder la configuration propos\'ee par \url{Polytechnique.org} pour surmonter cette difficult\'e.
 
+Enfin, tu peux disposer dans Mail de l'annuaire de l'École, mis à disposition par la DSI. Pour cela, va dans les \menu{Préférences} de Mail, puis dans la rubrique \menu{Rédaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un serveur, et remplir la fenêtre comme sur la capture.
+
+\imagepos{images/mac_config_ldap}{0.6}{Configurer l'annuaire}{!ht}
+
 
 \subsubsection{Logiciels Additionnels}
 
@@ -82,7 +86,7 @@ Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services prop
 \app{Thunderbird} : un client news permettant d'acc\'eder aux forums de discussion des \'el\`eves
                    (voir page~\ref{newsgroups} pour les d\'etails sur \server{frankiz}
                    (mais aussi \`a ceux de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}).
-Il tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la même cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même mani\`ere.
+Il est tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la même cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même mani\`ere.
 
 Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant >}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique, et un compte RSS). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant >}. Entre alors les informations suivantes :
 
@@ -117,13 +121,16 @@ Les logiciels cit\'es ici sont t\'el\'echargeables sur \server{frankiz} : rubriq
 
 \imagepos{images/mac_firewall}{0.5}{Ouvrir les ports pour \app{qRezix}}{!ht}
 
-\flimage{images/mac_cocoaxnet_icone}{0.1}{l}
-\noindent\app{CocoaXNet} est un \'equivalent plus léger de qRezix, avec une meilleure int\'egration \`a Mac OS X. Pour l'instant, il est sans d\'eveloppeur, et donc ne contient pas les fonctionalit\'es de la version 2 de \app{qRezix} telles les plans de l'\'ecole donc c'est \`a toi de d\'ecider lequel tu pr\'ef\`eres !
+%\flimage{images/mac_cocoaxnet_icone}{0.1}{l}
+%\noindent\app{CocoaXNet} est un \'equivalent plus léger de qRezix, avec une meilleure int\'egration \`a Mac OS X. Pour l'instant, il est sans d\'eveloppeur, et donc ne contient pas les fonctionalit\'es de la version 2 de \app{qRezix} telles les plans de l'\'ecole donc c'est \`a toi de d\'ecider lequel tu pr\'ef\`eres !
 
-\noindent Si le d\'eveloppement en Objective-C et Cocoa (les langages utilisés pour CocoaXNet) te tente, n'h\'esites pas \`a contacter les d\'eveloppeurs via \mail{qrezix@frankiz}. \\
+%\noindent Si le d\'eveloppement en Objective-C et Cocoa (les langages utilisés pour CocoaXNet) te tente, n'h\'esites pas \`a contacter les d\'eveloppeurs via \mail{qrezix@frankiz}. \\
 
 \flimage{images/mac_conversation_icone}{0.1}{l}
 \noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface tr\`es simple ne n\'ecessitant pas de connaître les commandes IRC. Tu peux te reporter \`a la page \pageref{irc} pour plus d'infos sur l'IRC. \app{X-Chat Aqua} est un autre client IRC, plus riche en fonctionnalités. \\
 
 \flimage{images/mac_rss_icone}{0.1}{l}
 \noindent\app{Vienna} est un client RSS gratuit et agr\'eable, dont le d\'eveloppement actif est prometteur. Les flux RSS permettent d'agr\'eger dans un seul logiciel des informations en provenance de nombreux sites web, qui peuvent provenir de forums de discussions, de mises \`a jour de logiciels, d'informations internationales...\\ \\
+
+\flimage{images/mac_fink_icone}{0.1}{l}
+\noindent\app{Fink} est la manière la plus simple d'installer sur Mac OS X nombre de logiciels issus du monde UNIX (Linux par exemple). Grâce à lui, tu pourras installer les mêmes logiciels qu'en salles informatiques. Par exemple, tu pourras installer Scilab sans trop de peine...\\ \\
