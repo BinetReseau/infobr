@@ -1,59 +1,70 @@
 \paragraph{\distrib{Sous Mandriva}}
-{\bf 1. Configuration du r\'eseau}
-Il existe dans cette distribution une interface graphique pour configurer le r\'eseau, bien qu'il soit possible,
-comme sur tout syst\`eme linux, de le faire \`a la main \`a partir des fichiers de configuration dans \file{/etc/}.
+{\bf 1. Configuration du réseau} Il existe dans cette distribution
+une interface graphique pour configurer le réseau, bien qu'il soit
+possible, comme sur tout système linux, de le faire à la main à
+partir des fichiers de configuration dans \file{/etc/}.
 
-Lance l'utilitaire \app{Drakconf] en tant que root, puis clique sur l'onglet \menu{R\'eseau & Internet} et enfin sur \menu{Configurer une nouvelle connexion Internet (LAN, ISDN, ADSL, ...)}.
-Choisis ensuite \menu{Connexion à travers un r\'eseau local(LAN)}, puis la carte r\'eseau sur laquelle tu as branch\'e ton c\^able r\'eseau.
-(Tu as autant de eth0, eth1, ... que de cartes r\'eseau d\'etect\'ees).  Dans l'exemple ci-dessous, il s'agit de eth0.
+Lance l'utilitaire \app{Drakconf] en tant que root, puis clique sur
+l'onglet \menu{Réseau & Internet} et enfin sur \menu{Configurer une
+nouvelle connexion Internet (LAN, ISDN, ADSL, ...)}. Choisis ensuite
+\menu{Connexion à travers un réseau local(LAN)}, puis la carte
+réseau sur laquelle tu as branché ton câble réseau. (Tu as autant de
+eth0, eth1, ... que de cartes réseau détectées). Dans l'exemple
+ci-dessous, il s'agit de eth0.
 
-\imagepos{images/nux_mdk_interface.png}{0.66}{S\'election de l'interface r\'eseau}{!h}
+\imagepos{images/nux_mdk_interface.png}{0.66}{Sélection de
+l'interface réseau}{!h}
 
-Sur la fen\^etre suivante, choisis l'option \menu{configuration manuelle}.  La configuration du r\'eseau commence alors. 
-Dans la première fen\^etre, entre :
+Sur la fenêtre suivante, choisis l'option \menu{configuration
+manuelle}.  La configuration du réseau commence alors. Dans la
+première fenêtre, entre :
 \begin{description}
-        \item[ton adresse IP] entre celle que tu as calcul\'ee : \server{129.104.AAA.BBB} (cf. page \pageref{calcul_ip})
-	\item[ton masque de sous-r\'eseau] : \server{255.255.FFF.DDD} (cf. page \pageref{calcul_ip})
+        \item[ton adresse IP] entre celle que tu as calculée : \server{129.104.AAA.BBB} (cf. page \pageref{calcul_ip})
+    \item[ton masque de sous-réseau] : \server{255.255.FFF.DDD} (cf. page \pageref{calcul_ip})
 \end{description}
 
 \imagepos{images/nux_mdk_ip.png}{0.66}{Configuration de l'IP}{!h}
 
-Dans la fen\^etre suivante, entre les informations suivantes : 
+Dans la fenêtre suivante, entre les informations suivantes :
 \begin{description}
         \item[Nom d'hôte (non obligatoire)] : ton_pseudo
         \item[Serveur DNS 1] : \server{129.104.201.53}
         \item[Serveur DNS 2] : \server{129.104.201.54}
         \item[Serveur DNS 3] : \server{129.104.201.51}
-        \item[Domaine recherch\'e] : eleves.polytechnique.fr polytechnique.fr
-        \item[Passerelle] : tu l'as aussi calcul\'ee : \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip})
-        \item[P\'eriph\'erique passerelle] : aucun
+        \item[Domaine recherché] : eleves.polytechnique.fr polytechnique.fr
+        \item[Passerelle] : tu l'as aussi calculée : \server{129.104.GGG.CCC} (cf. page \pageref{calcul_ip})
+        \item[Périphérique passerelle] : aucun
 \end {description}
 
-\imagepos{nux_mdk_reseau.png}{0.66}{Configuration du r\'eseau}{!h}
+\imagepos{nux_mdk_reseau.png}{0.66}{Configuration du réseau}{!h}
 
-Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer de nom d'h\^ote ZeroConf.)
-Là, tu choisis l'option oui, puis tu valides et tu as normalement un message qui t'annonce que ta configuration r\'eseau est termin\'ee.
+Clique ensuite deux fois sur suivant. (Tu n'as pas besoin d'entrer
+de nom d'h\^ote ZeroConf.) Là, tu choisis l'option oui, puis tu
+valides et tu as normalement un message qui t'annonce que ta
+configuration réseau est terminée.
 
-N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur ftp, 5050 pourqRezix, ...) dans ton firewall pour
-pouvoir pleinement profiter du r\'eseau.
+N'oublie pas d'ouvrir les ports qui vont bien (21 pour un serveur
+ftp, 5050 pourqRezix, ...) dans ton firewall pour pouvoir pleinement
+profiter du réseau.
 
-{\bf 2. Configuration du gestionnaire de paquets :}
-Dans l'utilitaire \app{Drakconf], choisis l'onglet \menu{Gestionnaire
-de logiciels}, puis clique sur \menu{S\'electionner la source de
-t\'el\'echargement des paquetages pour la mise \`a jour du syst\`eme}.
-Clique ensuite sur l'onglet \menu{mandataire} à droite, coche la case
-\menu{Nom du serveur mandataire} et inscrit dans le champ correspondant :
-\url{kuzh:8080}, puis valide. Clique ensuite sur \menu{ajouter} pour
-ajouter les sources de paquets. On te conseille de choisir deux
-miroirs pour les mises \`a jour officielles et deux miroirs pour les
-sources pour la distribution.
-On te conseille entre autres comme miroirs
+{\bf 2. Configuration du gestionnaire de paquets :} Dans
+l'utilitaire \app{Drakconf], choisis l'onglet \menu{Gestionnaire de
+logiciels}, puis clique sur \menu{Sélectionner la source de
+téléchargement des paquetages pour la mise à jour du système}.
+Clique ensuite sur l'onglet \menu{mandataire} à droite, coche la
+case \menu{Nom du serveur mandataire} et inscrit dans le champ
+correspondant : \url{kuzh:8080}, puis valide. Clique ensuite sur
+\menu{ajouter} pour ajouter les sources de paquets. On te conseille
+de choisir deux miroirs pour les mises à jour officielles et deux
+miroirs pour les sources pour la distribution. On te conseille entre
+autres comme miroirs
 \url{ftp://ftp.lip6.fr/pub/linux/distributions/Mandrakelinux/official/updates/}
 et
 \url{http://anorien.csc.warwick.ac.uk/mirrors/Mandriva/official/updates/}
 
-{\bf NB :} Il est possible qu'entre le moment o\`u j'\'ecris ces
-lignes et le moment o\`u tu arriveras sur le plateau le BR dispose de son
-propre miroir mandriva, auquel cas toutes les \'etapes pr\'ec\'edentes
-du 2. seront inutiles et tu auras juste à cliquer sur \menu{ajouter la source
-personalis\'ee}, \`a choisir serveur ftp et à mettre comme url \url{ftp://miroir/mandriva}.
+{\bf NB :} Il est possible qu'entre le moment où j'écris ces lignes
+et le moment où tu arriveras sur le plateau le BR dispose de son
+propre miroir mandriva, auquel cas toutes les étapes précédentes du
+2. seront inutiles et tu auras juste à cliquer sur \menu{ajouter la
+source personalisée}, à choisir serveur ftp et à mettre comme url
+\url{ftp://miroir/mandriva}.
