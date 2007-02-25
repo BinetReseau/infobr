@@ -8,16 +8,42 @@
 
 \subsection{Configuration sous Microsoft Windows}
 
+NOTE : cette section décrit comment configurer un ordinateur tournant sous
+Windows XP ou sous Windows Vista. Si tu possède une autre version de Windows,
+nous t'invitons à regarder directement la section sur les licences MSDNAA en
+page \pageref{msdnaa}, ou alors... à te débrouiller ! ;-)
+
 \subsubsection{Configuration IP}
 
-\flimage{images/win_connexion_icone}{0.15}{l} Va dans le \menu{Menu
-Démarrer}, \menu{Panneau de configuration} et double-clique sur
-\menu{Connexions réseau} puis sur \menu{Connexion au réseau local}.
-Clique enfin sur \menu{Propriétés}.\\
+\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
+\textbf{Sous Windows XP :} & \textbf{Sous Windows Vista :} \\
 
-Dans cette fenêtre, coche les trois cases \menu{Client pour les
-réseaux Microsoft}, \menu{Partage de fichiers} et \menu{Protocole
-Internet (TCP/IP)}:
+Va dans le \menu{Menu Démarrer},
+\menu{Panneau de configuration} et double-clique sur
+\menu{Connexions réseau} puis sur \menu{Connexion au réseau local}.
+Clique enfin sur \menu{Propriétés}. &
+
+Va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration},
+\menu{Réseau et Internet}, \menu{Centre réseau et partage}.
+Là, dans le menu à gauche, tu cliques sur \menu{Gérer les connexions réseau},
+puis clique droit sur \menu{Connexion au réseau local}, et enfin
+\menu{Propriétés}
+
+\footnote{A ce stade, ainsi qu'à plusieurs autres étapes de ce tutoriel,
+Windows Vista doit normalement t'afficher un message te demandant
+de confirmer l'action que tu viens d'effectuer.
+Donc, tu confirmes, et cela à chaque fois !}.
+
+\end{tabular}
+
+%\flimage{images/win_connexion_icone}{0.15}{l} Va dans le \menu{Menu
+%Démarrer}, \menu{Panneau de configuration} et double-clique sur
+%\menu{Connexions réseau} puis sur \menu{Connexion au réseau local}.
+%Clique enfin sur \menu{Propriétés}.\\
+
+%Dans cette fenêtre, coche les trois cases \menu{Client pour les
+%réseaux Microsoft}, \menu{Partage de fichiers} et \menu{Protocole
+%Internet (TCP/IP)}:
 
 \vspace{0.5cm}
 
@@ -27,7 +53,8 @@ Internet (TCP/IP)}:
 \imageref{images/win_config_ip2}{0.71}{Configuration de la connexion
 au réseau local et propriétés du TCP/IP}{!ht}{config:win:IP1}
 
-Sélectionne ensuite la ligne \menu{Protocole Internet (TCP/IP)},
+Sélectionne ensuite la ligne \menu{Protocole Internet Version 4 (TCP/IPv4)}
+\footnote{\menu{Protocole Internet (TCP/IP)} pour certaines versions de Windows XP},
 puis clique sur le bouton \menu{Propriétés} qui vient de se
 dégriser. Tu tombes alors sur l'écran de configuration de ta
 connexion vers l'extérieur.
@@ -46,10 +73,10 @@ Ensuite, clique sur le bouton \menu{Avancé}, puis sur l'onglet
 
 \imageref{images/win_config_dns2}{0.71}{Configuration IP}{!ht}{config:win:IP2}
 
-
 Il n'y a plus qu'à remplir les différents champs comme sur la
 capture d'écran suivante, avec le bouton \menu{Ajouter} et les
 flèches pour réordonner les éléments.
+
 
 \subsubsection{Le domaine Windows}
 
@@ -71,17 +98,18 @@ attaques par le réseau) Windows, mais il est toujours possible de le
 désactiver si tu préfères un autre firewall. En bref, il permet de
 simplifier à l'extrême la mise à jour continuelle de l'ordinateur.
 
+
 \paragraph{Alors, domaine ou pas domaine ?}
-\subparagraph{Soit tu choisis de te mettre sur le domaine Windows,}
-et tu vas alors au paragraphe <<~Installation simplifiée ---
-configuration automatique~>>.
+Soit tu choisis de te mettre sur le domaine Windows, et tu vas
+alors au paragraphe <<~Inscription sur le domaine Windows~>>.
 
 %% \newpage
 \textbf{Avantages :}
 \begin{itemize}
-  \item Windows est mis à jour automatiquement ; tu as toujours les dernières corrections de sécurité
-        et un antivirus à jour. Donc tu es mieux protégé contre les virus.
-  \item Surtout, tu n'as plus à t'en occuper, presque tout est automatique.
+\item Windows est mis à jour automatiquement ; tu as toujours les
+dernières corrections de sécurité et un pare-feu correctement
+configuré. Donc tu es mieux protégé contre les intrusions.
+\item Surtout, tu n'as plus à t'en occuper, presque tout est automatique.
 \end{itemize}
 
 \textbf{Inconvénients :}
@@ -90,31 +118,25 @@ configuration automatique~>>.
         (tout ce qui concerne la sécurité du réseau en particulier).
         Cependant, si tu ne sais pas le faire, c'est plutôt un avantage
         de laisser le BR s'en occuper à ta place.
-  \item Cela ne marche qu'avec Windows 2000, Windows XP Pro ou Windows Server 2003 ;
-        on te rappele que tu peux facilement et gratuitement passer à Windows XP Pro.
+  \item Cela ne marche qu'avec Windows 2000, Windows XP Pro ou Windows Vista Business.
+        On te rappele que tu peux facilement, gratuitement et légalement passer à
+        Windows XP Pro ou bien à Windows Vista Business (section sur les licences
+        MSDNAA en page \pageref{msdnaa}).
 \end{itemize}
 
-Bien sûr, tu peux sortir du domaine à tout instant en reprenant ta
-configuration et en suivant l'installation personnalisée.
+Bien sûr, tu peux sortir du domaine à tout instant, et effectuer manuellement
+les réglages nécessaires à la sécurité de ton ordinateur.
 
-\subparagraph{Soit tu choisis de configurer toi-même ton ordinateur,
-} et tu vas alors au paragraphe <<~Installation personnalisée ---
-configuration manuelle~>>.
+Soit tu choisis de configurer toi-même ton ordinateur,
+et tu peux passer directement à la section SECTION INSTALL ANTI-VIRUS.
+Tu trouveras les informations nécessaires à la confiration manuelle du
+pare-feu et du proxy pour \app{Windows Update} sur le WikiBR, à l'article
+ARTICLE_QUI_VA_BIEN.
 
-\textbf{Avantages :}
-\begin{itemize}
-  \item Tu es le seul à t'occuper de la gestion de ton ordinateur.
-        Si ta machine est toujours à jour et que tu n'attrapes aucun virus, tant mieux pour toi.
-\end{itemize}
-
-\textbf{Inconvénients :}
-\begin{itemize}
-  \item Tu es le seul à t'occuper de la gestion de ton ordinateur.
-        S'il devient un foyer pour virus, sache que nous avons les moyens de l'isoler
-        pour éviter toute propagation.
-  \item Si tu ne maîtrises pas le firewall, l'antivirus et autres Windows Update,
-        ça ne sert à rien d'envisager cette solution.
-\end{itemize}
+\textbf{Avantage :} Tu es le seul à t'occuper de la gestion de ton ordinateur.
+\textbf{Inconvénient :} Tu es le seul à t'occuper de la gestion de ton ordinateur. ;-)
+S'il devient un foyer pour virus, sache que nous avons les moyens de l'isoler
+pour éviter toute propagation.
 
 \begin{center}
   \fbox{
@@ -127,27 +149,45 @@ et de choisir l'installation simplifiée !
   }
 \end{center}
 
-\subsubsection{Configuration de l'ordinateur}
 
-\paragraph{Installation simplifiée} --- configuration automatique
+\paragraph{Inscription sur le domaine Windows}
 
-Tout d'abord : \emph{désinstalle tous les antivirus que tu pourrais
-avoir !} Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de
-Configuration}, \menu{Ajout/Suppression de Programmes} et
-désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton
-Antivirus, et tout autre antivirus ou firewall.
+%Tout d'abord : \emph{désinstalle tous les antivirus que tu pourrais
+%avoir !} Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de
+%Configuration}, \menu{Ajout/Suppression de Programmes} et
+%désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton
+%Antivirus, et tout autre antivirus ou firewall.
 
+On te rappelle que tu ne peux t'inscrire sur le domaine que si tu utilise
+Windows 2000, Windows XP Pro ou Windows Vista. Si tu possède Windows XP
+Familial, Windows Vista Home ou encore une version antérieure de Windows,
+tu dois effectuer toi-même tes réglages de pare-feu et de proxy
+\app{Windows Update}. Réfère-toi pour cela à l'article ARTICLE_QUI_VA_BIEN
+sur le WikiBR.
 
-Ensuite, tu vas t'inscrire sur le domaine. Pour cela, il faut avoir
-Windows XP Pro que le BR te fournit gratuitement et légalement (cf.
-page~\pageref{xp}) ou bien Windows 2000 ou Windows Server 2003.
+La procédure d'inscription est la suivante :
+\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
+\textbf{Sous Windows XP :} & \textbf{Sous Windows Vista :} \\
 
 Clique sur le \menu{Menu Démarrer} puis fais un clic-droit sur
 \menu{Poste de travail} et choisis \menu{Propriétés}. Ensuite,
 sélectionne l'onglet \menu{Nom de l'ordinateur} et clique le bouton
-\menu{Modifier}. Dans la case \menu{Nom de l'ordinateur}, rentre ton
+\menu{Modifier}. &
+
+Clique sur \menu{Menu Démarrer}, puis fais un clic-droit sur
+\menu{Ordinateur}, \menu{Propriétés}. Là tu sélectionnes
+\menu{Paramètres système avancés}, onglet \menu{Nom de l'ordinateur},
+puis tu cliques sur le bouton \menu{Modifier}.
+\end{tabular}
+
+Dans la case \menu{Nom de l'ordinateur}, rentre ton
 pseudo, puis coche la case \menu{domaine} et rentre
-\url{windows.eleves.polytechnique.fr}.
+\url{windows.eleves.polytechnique.fr}. Note bien que l'inscription au
+domaine te sera refusée par le serveur si quelqu'un d'autre utilise
+le même nom d'ordinateur que toi. Par conséquent, essaie d'utiliser un
+pseudo qui t'identifie de façon claire et unique, par exemple ``NOM_PRENOM''
+\footnote{Les Jean Dupont et les Julien Thomas sont priés de trouver
+autre chose ;-)}.
 
 \imagepos{images/win_config_domaine}{0.56}{S'inscrire sur le domaine windows}{!ht}
 
@@ -161,10 +201,10 @@ pseudo, puis coche la case \menu{domaine} et rentre
   \end{description}
   }
 & \parbox{.45\textwidth}{
-  et si tu es rouJe 2004 :
+  et si tu es rouJe 2006 :
   \begin{description}
-    \item[Nom] rouje04
-    \item[Mot de passe] rouje.2004
+    \item[Nom] rouje06
+    \item[Mot de passe] rouje.2006
   \end{description}
   }
 \\
@@ -176,63 +216,107 @@ domaine. Pour utiliser ton ordinateur, tu devras rentrer au
 démarrage les mêmes nom d'utilisateur et mot de passe que tu avais
 avant d'être sur le domaine !}
 
-\paragraph{Installation personnalisée} --- configuration manuelle
 
-\subparagraph{Configuration antivirus} Le BR, concerné par la
-sécurité du réseau, te propose un antivirus pour lequel tu n'auras
-pas à payer la license pour obtenir les mises à jour. Bien sûr,
-libre à toi d'utiliser ton anti-virus personnel ; cependant il sera
-à ta charge de le mettre à jour très réguliérement. Pour cela
-utilise comme proxy : \url{http://kuzh} sur le port 8080.
 
-\emph{Installation de l'anti-virus du BR}\ : Commence par
-désinstaller tous les antivirus ou firewalls que tu pourrais avoir
-comme expliqué dans le paragraphe <<~Installation simplifiée
---- configuration automatique~>>.
+%\paragraph{Installation personnalisée} --- configuration manuelle
 
-Puis ouvre ton explorateur Windows et tape :
-\url{$\backslash\backslash$enez$\backslash$antivirus}
-et double-clique sur le fichier \file{Symantec.exe}.
+%\subparagraph{Configuration antivirus} Le BR, concerné par la
+%sécurité du réseau, te propose un antivirus pour lequel tu n'auras
+%pas à payer la license pour obtenir les mises à jour. Bien sûr,
+%libre à toi d'utiliser ton anti-virus personnel ; cependant il sera
+%à ta charge de le mettre à jour très réguliérement. Pour cela
+%utilise comme proxy : \url{http://kuzh} sur le port 8080.
 
-Ce package contient le paramétrage de la mise à jour automatique de
-Windows sur le serveur de l'école. Attends la fin de l'installation
-et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus,
-normalement il sera mis à jour automatiquement.
+%\emph{Installation de l'anti-virus du BR}\ : Commence par
+%désinstaller tous les antivirus ou firewalls que tu pourrais avoir
+%comme expliqué dans le paragraphe <<~Installation simplifiée
+%--- configuration automatique~>>.
 
-\subparagraph{Configuration firewall}
+%Puis ouvre ton explorateur Windows et tape :
+%\url{$\backslash\backslash$enez$\backslash$antivirus}
+%et double-clique sur le fichier \file{Symantec.exe}.
 
-Si tu as Windows XP avec le SP2 installé, tu as un firewall
-automatiquement activé et facile d'utilisation. En effet, à chaque
-fois qu'un programme tentera d'aller pour la première fois sur
-Internet, il te demandera si tu veux le laisser faire ou non, comme
-dans la capture~\ref{config:win:firewall}.
+%Ce package contient le paramétrage de la mise à jour automatique de
+%Windows sur le serveur de l'école. Attends la fin de l'installation
+%et c'est fini ! Maintenant, tu n'as plus à toucher à l'antivirus,
+%normalement il sera mis à jour automatiquement.
 
-\imageref{images/win_firewall}{0.8}{Un programmme --- ici GuildFTP
---- demande à accéder au réseau}{!ht}{config:win:firewall}
+%\subparagraph{Configuration firewall}
 
-Le firewall commercial \app{ZoneAlarm}, indépendant de Windows,
-fonctionne sur le même principe. Tu peux le trouver sur \xshare.
+%Si tu as Windows XP avec le SP2 installé, tu as un firewall
+%automatiquement activé et facile d'utilisation. En effet, à chaque
+%fois qu'un programme tentera d'aller pour la première fois sur
+%Internet, il te demandera si tu veux le laisser faire ou non, comme
+%dans la capture~\ref{config:win:firewall}.
 
-Si tu préfères utiliser le firewall intégré à Windows XP (sans le
-SP2) ou à Windows Server 2003, il te faudra le configurer en détail.
-Va dans le \menu{Menu Démarrer}, \menu{Paramètres} et clique sur
-\menu{Connexions Réseau}. Choisis la connexion qui est utilisée par
-ton ordinateur (souvent il n'y en a qu'une, ou alors une seule est
-activée) et double-clique dessus. Clique sur \menu{Propriétés} en
-bas à gauche, puis sur l'onglet \menu{Avancé} et rentre dans le menu
-de \menu{Paramètres} du \menu{Pare-feu Windows}. Il te faudra alors
-ajouter manuellement tous les ports que tu veux ouvrir sur
-l'extérieur. Pour cela, clique sur \menu{Ajouter}, et remplis la
-boîte de dialogue en t'aidant de la capture
-d'écran~\ref{config:win:ouvrir_port}; mets le numéro du port que tu
-veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix}
-et 21 en TCP pour ton FTP.
+%\imageref{images/win_firewall}{0.8}{Un programmme --- ici GuildFTP
+%--- demande à accéder au réseau}{!ht}{config:win:firewall}
 
-\imageref{images/win_config_firewall}{0.7}{Ouvrir un port dans le firewall Windows}{!ht}{config:win:ouvrir_port}
+%Le firewall commercial \app{ZoneAlarm}, indépendant de Windows,
+%fonctionne sur le même principe. Tu peux le trouver sur \xshare.
 
-Comme tu peux le constater, il est beaucoup plus pratique d'aller
-sur le domaine et de laisser le SP2 faire le gros du boulot à ta
-place :-).
+%Si tu préfères utiliser le firewall intégré à Windows XP (sans le
+%SP2) ou à Windows Server 2003, il te faudra le configurer en détail.
+%Va dans le \menu{Menu Démarrer}, \menu{Paramètres} et clique sur
+%\menu{Connexions Réseau}. Choisis la connexion qui est utilisée par
+%ton ordinateur (souvent il n'y en a qu'une, ou alors une seule est
+%activée) et double-clique dessus. Clique sur \menu{Propriétés} en
+%bas à gauche, puis sur l'onglet \menu{Avancé} et rentre dans le menu
+%de \menu{Paramètres} du \menu{Pare-feu Windows}. Il te faudra alors
+%ajouter manuellement tous les ports que tu veux ouvrir sur
+%l'extérieur. Pour cela, clique sur \menu{Ajouter}, et remplis la
+%boîte de dialogue en t'aidant de la capture
+%d'écran~\ref{config:win:ouvrir_port}; mets le numéro du port que tu
+%veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix}
+%et 21 en TCP pour ton FTP.
+
+%\imageref{images/win_config_firewall}{0.7}{Ouvrir un port dans le firewall %Windows}{!ht}{config:win:ouvrir_port}
+
+%Comme tu peux le constater, il est beaucoup plus pratique d'aller
+%sur le domaine et de laisser le SP2 faire le gros du boulot à ta
+%place :-).
+
+
+\subsubsection{Installation de l'antivirus}
+
+Le BR, concerné par la sécurité du réseau, te propose un antivirus
+\footnote{En l'occurence, l'antivirus utilisé est \app{Symantec 
+Antivirus 10.2}.}
+pour lequel tu n'auras pas à payer la license pour obtenir les mises
+à jour. Bien sûr, libre à toi d'utiliser ton anti-virus personnel ;
+cependant il sera à ta charge de le mettre à jour très réguliérement.
+Pour cela utilise comme proxy : \url{http://kuzh} sur le port 8080.
+
+%Version pour vista à taper
+Tout d'abord, \emph{désinstalle tous les antivirus que tu pourrais
+avoir !} Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de
+Configuration}, \menu{Ajout/Suppression de Programmes} et
+désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton
+Antivirus, ou tout autre antivirus.
+
+Ensuite, il s'agit de télécharger la bonne version de l'antivirus :
+\begin{description}
+
+\item[Si tu as Windows Vista...]
+\begin{itemize}
+\item ...en version 32 bits : \url{ftp://enez/antivirus/Win32_Vista.zip}.
+\item ...en version 64 bits : \url{ftp://enez/antivirus/Win64_Vista.zip}.
+\end{itemize}
+
+\item[Si tu as Windows XP ou une autre version de Windows...]
+\begin{itemize}
+\item ...en version 32 bits : \url{ftp://enez/antivirus/Win32_PasVista.zip}.
+\item ...en version 64 bits : \url{ftp://enez/antivirus/Win64_PasVista.zip}.
+\end{itemize}
+\end{description}
+
+Une fois téléchargé le fichier adéquat, tu ouvres l'archive compressée
+\file{Win??_*.zip}, tu décompresses \empf{tous les fichiers} dans un dossier,
+et enfin tu exécutes le fichier \file{setup.exe} qui vient d'apparaitre
+dans ce dossier. A partir de là, tu n'as plus qu'à suivre les instructions
+du programme d'installation. Alors, tu n'auras plus à toucher à l'antivirus,
+celui-ci sera mis à jour automatiquement.
+
 
 \subsubsection{Configuration web (proxy)}
 
@@ -278,6 +362,7 @@ Fais \menu{Démarrer}, \menu{Exécuter}, puis tape ``cmd'' dans la fenêtre qui s'a
 Une ligne de commande apparait, il te suffit alors de taper :
 \cmd{proxycfg -p http://kuzh:8080} pour régler le proxy.
 Pour revenir à un accès direct il faut taper \cmd{proxycfg -d}.
+
 
 \subsubsection{Configuration mail}
 \setcounter{page}{12}
@@ -352,11 +437,12 @@ procédure en rentrant le nom du serveur qui t'intéresse à la place
 de \fkz, par exemple pour accéder aux news externes
 \server{polynews.polytechnique.fr}.
 
+
 \subsubsection{Configuration FTP}
 
 \paragraph{Client FTP}
 
-Le BR te conseille \app{SmartFTP} ou \app{FileZilla}. Pour installer
+Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer
 l'un des deux, télécharge-le sur \xshare et double-clique sur
 l'installateur.
 
@@ -370,10 +456,11 @@ afin de partager les différents projets, les films du JTX, ses
 photos, etc. Donc il est quasiment indispensable que tu en installes
 un.
 
-Parmi les plus simples on trouve \app{FileZilla} et \app{GuildFTP},
+Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP},
 qui sont libres de surcroît. Expliquer les détails de la
-configuration est un peu long pour l'InfoBR, mais il y a un Wikix
-sur \fkz où tout ça est décrit en détail !
+configuration est un peu long pour l'InfoBR, mais tu trouveras sur
+le WikiBR un tutoriel pour configurer \app{FileZilla Server} :
+\url{http://frankiz/binets/reseau/Configurer_un_serveur_FTP_sous_FileZilla_Server}.
 
 \subsubsection{Autres logiciels utiles}
 
@@ -385,14 +472,16 @@ sur \fkz où tout ça est décrit en détail !
                  Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC.
   \item[WinSCP] : Un logiciel pratique qui te permet de te connecter en salle info.
                   Tu peux le récupérer lui aussi sur \xshare ;
-                  son fonctionnement est expliqué en détails dans le Wikix. Voir aussi \textbf{Putty}, aussi dans le \xshare.
+                  son fonctionnement est expliqué en détails dans le Wikix. Voir aussi \app{Putty}, aussi dans le \xshare.
 \end{description}
+
 
 \subsubsection{Obtenir Windows XP Pro et les licences MSDNAA}
 
-\label{xp} Les accords négociés par le BR avec Microsoft dans le
+\label{msdnaa} Les accords négociés par le BR avec Microsoft dans le
 cadre de MSDNAA donnent à chaque X le droit de posséder une version
-de Windows XP Pro gratuite et légale, ainsi que les licences pour la
+de Windows XP Pro ou de Windows Vista Business gratuite et légale,
+ainsi que les licences pour la
 plupart des logiciels de la société --- quasiment tous, sauf Office
 et les jeux --- La seule condition à remplir est d'être étudiant sur
 le platâl au moment de l'installation du logiciel; tu pourras
@@ -401,9 +490,40 @@ ensuite le garder sur ton PC même après ton départ de l'X.
 La procédure pour obtenir les logiciels et les clés correspondantes
 est la suivante :
 \begin{itemize}
-  \item Va d'abord sur \fkz, et connecte toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la boîte \menu{Liens utiles}. Sélectionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oublié de le mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
-  \item Maintenant que tu as ta clé, il faut télécharger le logiciel proprement dit. Pour cela, deux méthodes : se connecter par FTP sur \url{ftp://enez/} avec ton client FTP préféré, ou y aller en tapant \url{$\backslash\backslash$enez} dans l'\app{Explorateur Windows} ou \app{Internet Explorer}. Dans les deux cas, tu peux récupérer soit une image du CD (à graver ou à utiliser avec \app{Daemon Tools}), soit directement le contenu du CD. Pour Windows XP Pro récupère l'image du CD ``fr\_winxp\_pro\_with\_sp2.iso'' qui te permettra d'avoir le dernier Service Pack de Windows et grave la pour avoir un CD identique à un CD Microsoft. Si tu as acheté un ordinateur sans OS (et ainsi économisé environ 150 \euro), tu vas chez un copain, et fais les demandes et grave le CD chez lui.
+
+\item Va d'abord sur \fkz, et connecte toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la boîte \menu{Liens utiles}. Sélectionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oublié de le mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
+
+\item Maintenant que tu as ta clé, il faut télécharger le logiciel proprement
+dit. Pour cela, connecte-toi par FTP sur \url{ftp://enez/msdnaa/} avec ton
+client FTP préféré. Alors, selon le logiciel, tu vas récupérer soit une image
+du CD de type \file{logiciel.iso} (à graver ou à utiliser avec \app{Daemon Tools}),
+soit directement le contenu du CD.
 \end{itemize}
 
-Si tu as encore des questions, plus de détails sont donnés dans le
-Wikix de \fkz.
+\begin{tabular}{p{0.5\textwidth}|p{0.5\textwidth}}
+\textbf{Pour Windows XP :} & \textbf{Pour Windows Vista :} \\
+
+L'image iso à télécharger est
+\url{ftp://enez/msdnaa/win_xp/french/win_xp_pro_sp2_fr.iso}. &
+
+Là, il y a deux possibilités :
+\begin{description}
+\item[Si tu as un processeur 64 bits :] L'image à télécharger est
+\url{ftp://enez/msdnaa/win_vista/dvd_64bits/french/vista_dvd_x64_fr.iso}.
+Attention, cette images iso est à graver sur un DVD.
+\item[Si tu as un processeur 32 bits :] Là, tu peux choisir de graver :
+\begin{itemize}
+\item soit un DVD :
+\url{ftp://enez/msdnaa/win_vista/dvd_32bits/french/vista_dvd_x86_fr.iso}.
+\item soit quatre CDs (!!) :
+\url{ftp://enez/msdnaa/win_vista/cd_32bits/french/vista_cd\[N\]_x86_fr.iso},
+N variant de 1 à 4.
+
+\end{itemize}
+\end{description}
+\end{tabular}
+
+Les versions anglophones de Windows XP et Vista sont également disponibles sur
+\server{enez}.
+
+Ainsi, si tu as acheté un ordinateur sans OS (et ainsi économisé environ 150 \euro), tu vas chez un copain, et fais les demandes et grave le CD chez lui. Si tu as encore des questions, plus de détails sont donnés dans le Wikix et le WikiBR de \fkz.
