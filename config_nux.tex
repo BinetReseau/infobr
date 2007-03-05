@@ -163,6 +163,18 @@ configurer :
 \end{description}
 Sinon, laisse toutes les cases décochées.
 
+\par Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses mail de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit:
+\begin{description}
+  \item[Hôte] \server{ldap.eleves.polytechnique.fr}
+  \item[Port] 389
+  \item[Version de LDAP] 3
+  \item[DN] dc=ldap,dc=eleves,dc=polytechnique,dc=fr
+  \item[Sécurité] Non
+  \item[Identification] Anonyme 
+\end{description}
+Une fois revenu dans \menu{Configuration LDAP}, choche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès au LDAP lors de la rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}.
+\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
+
 \subsubsection{Configuration news}
 
 \flimage{images/nux_knode_icon}{0.12}{l} Le client news le plus
