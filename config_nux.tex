@@ -81,7 +81,9 @@ le proxy de l'école, il faut définir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
 
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
-GENTOO\_MIRRORS="ftp://miroir/gentoo http://gentoo.osuosl.org/"\\
+ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
+no\_proxy=.eleves.polytechnique.fr\\
+GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
 Tu peux évidemment ajouter d'autres miroirs (séparés par des
