@@ -1,0 +1,32 @@
+%$Id: qrezix.tex 144 2005-03-25 01:11:37Z myk $
+
+\subsection{La télévision du BR}
+\label{TV}
+
+Le BR diffuse sur le réseau sept chaines de télévision et une vingtaine de radios. Pour les recevoir, nous recommandons \app{vlc}, disponible sur le X-Share.  
+
+\subsubsection{Configuration de \app{vlc}}
+
+La liste des chaines est diffusée sous forme d'annonces SAP. Pour voir ces annonces, ouvre ta liste de lecture (Vue -> Liste de lecture), et active la decouverte de services.
+
+\includegraphics[width=0.7\textwidth]{images/vlc_config_sap.png}
+
+Tu auras ainsi dans ta liste de lecture les différents chaines disponibles.
+
+\subsubsection{Méthode alternative}
+
+Si ton client préféré ne supporte pas les annonces SAP, ou que les annonces SAP ne marchent pas chez toi, tu peux récupérer la liste des chaines par PodCast, à l'adresse \url{http://tv.eleves.polytechnique.fr/tvbr.xml}. Sous \app{vlc}, active la découverte des services PodCast dans la liste de lecture (Gérer > Découverte de services > Podcast), puis va dans Paramètres > Préférences > Liste de Lecture > Découverte de services > Podcast et met l'adresse \url{http://tv.eleves.polytechnique.fr/tvbr.xml} dans le champ "Liste des URLs".
+
+\subsubsection{Et si ça ne marche toujours pas?}
+
+Verifie que tu utilises bien la dernière version de \app{vlc}. Les versions inférieurs à 0.8.5 sont connues pour ne pas fonctionner.
+
+Si rien ne marche, la raison la plus probable est un firewall qui intercepte les flux télés. Configure ton firewall afin d'autoriser ces flux. Sous Linux, les règles iptables suivantes suffisent: 
+  
+  \cmdline[0.85] {
+   -A INPUT -i eth0 -d 224.0.0.0/24 -j ACCEPT
+   -A INPUT -i eth0 -d 239.255.42.0/24 -s 192.168.225.0/24 -p udp -m udp --dport 1234 -j ACCEPT
+   -A INPUT -i eth0 -d 239.255.255.255/32 -p udp -m udp --dport 9875 -j ACCEPT
+   -A OUTPUT -o eth0 -d 224.0.0.0/4 -j ACCEPT.
+  }
+
