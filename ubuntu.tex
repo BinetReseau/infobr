@@ -1,18 +1,16 @@
 \paragraph{\distrib{Ubuntu/Kubuntu}}
 \label{Ubuntu:IP}
 
-Lors de l'installation d'une nouvelle Ubuntu, le programme
-d'installation t'a normalement demandé de rentrer toutes ces
-informations de manière interactive. Si tu n'as pas fait à ce moment
-là, tu peux les modifier comme ci-dessous avec ton éditeur de texte
-préféré (le tout avec les droits administrateurs évidemment!).
+Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demandé de rentrer toutes ces informations de manière
+interactive. Si tu ne l'as pas fait à ce moment là, tu peux les modifier comme ci-dessous avec ton éditeur de texte préféré (le tout avec les droits
+administrateur évidemment!).
 
 \begin{itemize}
-\item Le fichier \emph{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
+\item Le fichier \file{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
 
 \cmdline[0.85]{tonPseudo.eleves.polytechnique.fr}
 
-\item Le fichier \emph{/etc/resolv.conf} décrit comment associer le nom d'une machine à une adresse IP.
+\item Le fichier \file{/etc/resolv.conf} décrit comment associer le nom d'une machine à une adresse IP.
 Il doit contenir:
 
 \cmdline[0.85]{
@@ -22,7 +20,7 @@ nameserver 129.104.201.53\\
 nameserver 129.104.201.52
 }
 
-\item Le fichier \emph{/etc/network/interfaces} contient entre autres ton IP,
+\item Le fichier \file{/etc/network/interfaces} contient entre autres ton IP,
 ton sous-réseau et la passerelle pour en sortir. Ce fichier doit
 ressembler (avec éventuellement une config wifi à la suite\ldots,
 voir la page~\pageref{wifi}) à :
@@ -43,12 +41,11 @@ iface eth0 inet static\\
 
 \end{itemize}
 
-Ensuite il faut redemarrer ta configuration réseau :
+Ensuite il faut redémarrer ta configuration réseau :
 
 \cmdline{\$ sudo /etc/init.d/networking restart}
 
-Voila ta configuration réseau est terminée! Tu peux la tester en
-pinguant \fkz, où tu devrais voir quelque chose comme :
+Voilà, ta configuration réseau est terminée! Tu peux la tester en \emph{pinguant} \fkz, où tu devrais voir quelque chose comme :
 
 \cmdline{\$ ping frankiz\\
 PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
@@ -60,11 +57,9 @@ PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 qu'il utilise les miroirs du BR et non les miroirs à l'extérieur du
 campus qui sont plus lents.
 
-Le fichier \emph{/etc/apt/sources.list} liste les miroirs utilisés
-par le gestionnaire de paquets. Il faut commenter la premiére ligne
-(qui correspond au cd d'installation) ainsi que toutes les lignes
-non commentées du fichier (qui correspondent aux miroirs extérieurs
-au campus) de la façon suivante:
+Le fichier \file{/etc/apt/sources.list} liste les miroirs utilisés par le gestionnaire de paquets. Il faut commenter la première ligne (qui
+correspond au CD d'installation) ainsi que toutes les lignes non commentées du fichier (qui correspondent aux miroirs extérieurs au campus) de la
+façon suivante:
 
 \cmdline{deb cdrom:[...]/ [version] main restricted}
 
@@ -72,8 +67,7 @@ devient
 
 \cmdline{\#deb cdrom:[...]/ [version] main restricted}
 
-Il faut ensuite ajouter les lignes suivantes, qui correspondent aux
-miroirs du BR, au \textbf{début} du fichier:
+Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \emph{début} du fichier:
 
 \cmdline{
 deb ftp://miroir/ubuntu [version] main restricted universe multiverse\\
@@ -82,12 +76,12 @@ deb ftp://miroir/ubuntu [version]-updates main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-security main restricted universe multiverse
 }
 
-où \textbf{[version]} correspond à la version d'ubuntu installée. La
-version actuelle est \textbf{edgy} et la précédente est
-\textbf{dapper}.
+où \textbf{[version]} correspond à la version d'Ubuntu installée. La version actuelle est \textbf{edgy} et la précédente est \textbf{dapper}.
 
 
-Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient QRezix ainsi que des paquets très importants (codecs videos, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou éthiques. Pour en profiter, il faut rajouter à la suite des lignes précédentes:
+Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient QRezix ainsi que des paquets très importants (codecs
+vidéo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou
+éthiques. Pour en profiter, il faut rajouter à la suite des lignes précédentes:
 
 \cmdline{deb ftp://miroir/bll [version] main}
 
@@ -97,4 +91,4 @@ des paquets disponibles:
 
 \cmdline{\$ sudo apt-get update}
 
-S'il n'y a pas de message d'erreur c'est que tout fonctionne nickel.
+S'il n'y a pas de message d'erreur c'est que tout fonctionne bien.

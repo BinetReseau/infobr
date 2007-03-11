@@ -8,10 +8,8 @@
 
 \subsection{Configuration sous Microsoft Windows}
 
-NOTE : cette section décrit comment configurer un ordinateur tournant sous
-Windows XP ou sous Windows Vista. Si tu possède une autre version de Windows,
-nous t'invitons à regarder directement la section sur les licences MSDNAA en
-page \pageref{msdnaa}, ou alors... à te débrouiller ! ;-)
+Cette section décrit comment configurer un ordinateur tournant sous Windows XP ou sous Windows Vista. Si tu possède une autre version de Windows,
+nous t'invitons à regarder directement la section sur les licences MSDNAA en page \pageref{msdnaa}, ou alors... à te débrouiller ! ;-)
 
 \subsubsection{Configuration IP}
 
@@ -19,7 +17,7 @@ page \pageref{msdnaa}, ou alors... à te débrouiller ! ;-)
 
 \item \textbf{Sous Windows XP :} va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions réseau} puis sur \menu{Connexion au réseau local}. Clique enfin sur \menu{Propriétés}.
 
-\item \textbf{Sous Windows Vista :} va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration}, \menu{Réseau et Internet}, \menu{Centre réseau et partage}. Là, dans le menu à gauche, tu cliques sur \menu{Gérer les connexions réseau}, puis clique droit sur \menu{Connexion au réseau local}, et enfin \menu{Propriétés}\footnote{A ce stade, ainsi qu'à plusieurs autres étapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc, tu confirmes, et cela à chaque fois !}.
+\item \textbf{Sous Windows Vista :} va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration}, \menu{Réseau et Internet}, \menu{Centre réseau et partage}. Là, dans le menu à gauche, clique sur \menu{Gérer les connexions réseau}, puis clique droit sur \menu{Connexion au réseau local}, et enfin \menu{Propriétés}\footnote{A ce stade, ainsi qu'à plusieurs autres étapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc, tu confirmes, et cela à chaque fois !}.
 
 \end{itemize}
 
@@ -49,13 +47,10 @@ dégriser. Tu tombes alors sur l'écran de configuration de ta
 connexion vers l'extérieur.
 
 %% \newpage
-Tu coches alors les cases \menu{Utiliser l'adresse IP suivante} et
-\menu{Utiliser l'adresse de serveur DNS suivante} et tu remplis les
-cinq champs d'IP. Tu trouveras toutes les valeurs d'IP nécessaires
-pour la configuration en page~\pageref{tableau:mon_IP} ; aide-toi de
-la capture d'écran~\ref{config:win:IP1} pour les placer. Si une
-partie d'IP est blanche sur cette capture, c'est qu'elle t'est
-personnelle et que tu dois la calculer !
+Coche alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et remplis les cinq champs d'IP. Tu
+trouveras toutes les valeurs d'IP nécessaires pour la configuration en page~\pageref{tableau:mon_IP} ; aide-toi de la capture
+d'écran~\ref{config:win:IP1} pour les placer. Si une partie d'IP est blanche sur cette capture, c'est qu'elle t'est personnelle et que tu dois la
+calculer !
 
 Ensuite, clique sur le bouton \menu{Avancé}, puis sur l'onglet
 \menu{DNS} en haut.
@@ -79,13 +74,10 @@ configuration à toutes les machines du domaine directement depuis un
 serveur. Le BR possède un serveur dédié au domaine Windows,
 \server{enez}.
 
-Le domaine met à jour automatiquement Windows et l'antivirus à
-partir d'\server{enez} (très rapide car tu n'as pas besoin de
-récupérer des fichiers en dehors de l'école!). Il configure le
-firewall (pare-feu: système de protection contre les éventuelles
-attaques par le réseau) Windows, mais il est toujours possible de le
-désactiver si tu préfères un autre firewall. En bref, il permet de
-simplifier à l'extrême la mise à jour continuelle de l'ordinateur.
+Le domaine met à jour automatiquement Windows et l'antivirus à partir d'\server{enez} (très rapide car tu n'as pas besoin de récupérer des fichiers
+en dehors de l'école!). Il configure le \emph{firewall} (pare-feu: système de protection contre les éventuelles attaques par le réseau) Windows, mais
+il est toujours possible de le désactiver si tu préfères un autre \emph{firewall}. En bref, il permet de simplifier à l'extrême la mise à jour
+continuelle de l'ordinateur.
 
 
 \paragraph{Alors, domaine ou pas domaine ?}
@@ -108,7 +100,7 @@ configuré. Donc tu es mieux protégé contre les intrusions.
         Cependant, si tu ne sais pas le faire, c'est plutôt un avantage
         de laisser le BR s'en occuper à ta place.
   \item Cela ne marche qu'avec Windows 2000, Windows XP Pro ou Windows Vista Business.
-        On te rappele que tu peux facilement, gratuitement et légalement passer à
+        On te rappelle que tu peux facilement, gratuitement et légalement passer à
         Windows XP Pro ou bien à Windows Vista Business (section sur les licences
         MSDNAA en page \pageref{msdnaa}).
 \end{itemize}
@@ -116,9 +108,8 @@ configuré. Donc tu es mieux protégé contre les intrusions.
 Bien sûr, tu peux sortir du domaine à tout instant, et effectuer manuellement
 les réglages nécessaires à la sécurité de ton ordinateur.
 
-Soit tu choisis de configurer toi-même ton ordinateur, et tu peux passer directement à la section \ref{antivirus}. Tu trouveras les
-informations nécessaires à la confiration manuelle du pare-feu et du proxy pour \app{Windows Update} sur le WikiBR, à l'article
-ARTICLE\_QUI\_VA\_BIEN.
+Soit tu choisis de configurer toi-même ton ordinateur, et tu peux passer directement à la section \ref{antivirus}. Tu trouveras les informations
+nécessaires à la configuration manuelle du pare-feu et du proxy pour \app{Windows Update} sur le WikiBR, à l'article ARTICLE\_QUI\_VA\_BIEN.
 
 \textbf{Avantage :} Tu es le seul à t'occuper de la gestion de ton ordinateur.
 
@@ -156,7 +147,7 @@ La procédure d'inscription est la suivante :
 \item \textbf{Sous Windows XP :} Clique sur le \menu{Menu Démarrer} puis fais un clic-droit sur
 \menu{Poste de travail} et choisis \menu{Propriétés}. Ensuite, sélectionne l'onglet \menu{Nom de l'ordinateur} et clique le bouton \menu{Modifier}.
 
-\item \textbf{Sous Windows Vista :} Clique sur \menu{Menu Démarrer}, puis fais un clic-droit sur \menu{Ordinateur}, \menu{Propriétés}. Là tu sélectionnes \menu{Paramètres système avancés}, onglet \menu{Nom de l'ordinateur}, puis tu cliques sur le bouton \menu{Modifier}.
+\item \textbf{Sous Windows Vista :} Clique sur \menu{Menu Démarrer}, puis fais un clic-droit sur \menu{Ordinateur}, \menu{Propriétés}. Là sélectionne \menu{Paramètres système avancés}, onglet \menu{Nom de l'ordinateur}, puis clique sur le bouton \menu{Modifier}.
 
 \end{itemize}
 
@@ -170,14 +161,14 @@ Dupont et les Julien Thomas sont priés de trouver autre chose ;-)}.
 \begin{center}
 \begin{tabular}{ll}
   \parbox{.45\textwidth}{
-  Si tu es j\^one 2005, tu rentres :
+  Si tu es jône 2005, tu rentres :
   \begin{description}
     \item[Nom] jone05
     \item[Mot de passe] jone.2005
   \end{description}
   }
 & \parbox{.45\textwidth}{
-  et si tu es rouJe 2006 :
+  et si tu es rouje 2006 :
   \begin{description}
     \item[Nom] rouje06
     \item[Mot de passe] rouje.2006
@@ -254,14 +245,9 @@ avant d'être sur le domaine !}
 
 
 \subsubsection{Installation de l'antivirus}
-\label{antivirus}
-Le BR, concerné par la sécurité du réseau, te propose un antivirus
-\footnote{En l'occurence, l'antivirus utilisé est \app{Symantec
-Antivirus 10.2}.}
-pour lequel tu n'auras pas à payer la licence pour obtenir les mises
-à jour. Bien sûr, libre à toi d'utiliser ton anti-virus personnel ;
-cependant il sera à ta charge de le mettre à jour très régulièrement.
-Pour cela utilise comme proxy : \url{http://kuzh} sur le port 8080.
+\label{antivirus} Le BR, concerné par la sécurité du réseau, te propose un antivirus\footnote{En l'occurence, l'antivirus utilisé est \app{Symantec
+Antivirus 10.2}.} pour lequel tu n'auras pas à payer la licence pour obtenir les mises à jour. Bien sûr, libre à toi d'utiliser ton anti-virus
+personnel ; cependant il sera à ta charge de le mettre à jour très régulièrement. Pour cela utilise comme proxy : \url{http://kuzh} sur le port 8080.
 
 %Version pour vista à taper
 Tout d'abord, \emph{désinstalle tous les antivirus que tu pourrais
@@ -286,41 +272,30 @@ Ensuite, il s'agit de télécharger la bonne version de l'antivirus :
 \end{itemize}
 \end{itemize}
 
-Une fois téléchargé le fichier adéquat, tu ouvres l'archive compressée \file{Win??\_*.zip}, tu décompresses \emph{tous les fichiers} dans un dossier,
-et enfin tu exécutes le fichier \file{setup.exe} qui vient d'apparaitre dans ce dossier. A partir de là, tu n'as plus qu'à suivre les instructions du
-programme d'installation. Alors, tu n'auras plus à toucher à l'antivirus, celui-ci sera mis à jour automatiquement.
+Une fois le fichier adéquat téléchargé, ouvre l'archive compressée \file{Win\?\?\_*.zip}, décompresse \emph{tous les fichiers} dans un dossier, et
+enfin exécute le fichier \file{setup.exe} qui vient d'apparaitre dans ce dossier. A partir de là, tu n'as plus qu'à suivre les instructions du
+programme d'installation. Tu n'auras alors plus à toucher à l'antivirus, celui-ci sera mis à jour automatiquement.
 
 
 \subsubsection{Configuration web (proxy)}
 
 \imageref{images/win_config_proxy}{0.7}{Configuration du proxy}{!ht}{config:win:proxy}
 
-Même si tu n'utilises pas \app{Internet Explorer} comme client web,
-Windows et d'autres programmes utilisent ses paramètres, notamment
-\app{Windows Update}. Donc lance \app{Internet Explorer} et vas dans
-le menu \menu{Outils}, \menu{Options Internet}, puis sur l'onglet
-\menu{Connexions} de la nouvelle
-fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la
-fenêtre. Là, tu coches uniquement la case \menu{Utiliser un script de
-configuration automatique}, puis tu remplis le champs \menu{Adresse}
-avec \url{http://frankiz/proxy.pac}. Tu dois alors avoir quelque chose qui
+Même si tu n'utilises pas \app{Internet Explorer} comme client web, Windows et d'autres programmes utilisent ses paramètres, notamment \app{Windows
+Update}. Donc lance \app{Internet Explorer} et va dans le menu \menu{Outils}, \menu{Options Internet}, puis sur l'onglet \menu{Connexions} de la
+nouvelle fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la fenêtre. Là, coche uniquement la case \menu{Utiliser un script de
+configuration automatique}, puis remplis le champs \menu{Adresse} avec \url{http://frankiz/proxy.pac}. Tu dois alors avoir quelque chose qui
 ressemble à la capture d'écran~\ref{config:win:proxy}.
 
-Une fois que tu as fait ça, tu n'as plus forcément besoin
-d'\app{Internet Explorer}, tu peux donc utiliser un navigateur
-alternatif, comme \app{Mozilla Firefox}, disponible sur \xshare, qui
-est plus sécurisé. Mais ce n'est pas une garantie ultime --- tu es
-le premier garant de la sécurité de ton ordinateur, en n'ouvrant pas
-tous les fichiers qui te passent sous la main
+Une fois que tu as fait ça, tu n'as plus forcément besoin d'\app{Internet Explorer}, tu peux donc utiliser un autre navigateur, comme \app{Mozilla
+Firefox}, disponible sur \xshare, qui est plus sécurisé. Mais ce n'est pas une garantie ultime --- tu es le premier garant de la sécurité de ton
+ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main
 --- mais tu seras sensiblement plus en sécurité.
 
-Si tu utilises \app{Mozilla Firefox}, il faut que tu fasses, en plus,
-le même réglage de proxy pour ce navigateur. Pour ce faire, lance
-\app{Mozilla Firefox}, et va dans le menu \menu{Outils}, \menu{Options...}.
-Là, tu sélectionnes la rubrique \menu{Avancé}, onglet \menu{Réseau},
-et tu cliques sur \menu{Paramètres}. La case à cocher est alors
-\menu{Adresse de configuration automatique du proxy}, et l'adresse à
-indiquer est la même que précédemment : \url{http://frankiz/proxy.pac}.
+Si tu utilises \app{Mozilla Firefox}, il faut que tu fasses, en plus, le même réglage de proxy pour ce navigateur. Pour ce faire, lance \app{Mozilla
+Firefox}, et va dans le menu \menu{Outils}, \menu{Options...}. Là, sélectionne la rubrique \menu{Avancé}, onglet \menu{Réseau}, et clique sur
+\menu{Paramètres}. La case à cocher est alors \menu{Adresse de configuration automatique du proxy}, et l'adresse à indiquer est la même que
+précédemment : \url{http://frankiz/proxy.pac}.
 
 %Il reste une dernière configuration de proxy qui peut parfois s'avérer utile en particulier pour \app{Windows Update} en mode %automatique si tu n'es
 %pas sur le domaine. Fais \menu{Démarrer}, \menu{Exécuter}, puis tape \guillemotleft~cmd~\guillemotright  dans la fenêtre qui s'affiche. Une ligne de %commande apparait, il te
@@ -370,19 +345,18 @@ sécurisée vers \server{poly} pour que personne ne puisse les
 intercepter.
 
 % Pour le RTFIBRp11
-\setcounter{page}{34}
+\setcounter{page}{33}
 
 \noindent\rule{.4\textwidth}{.4pt}
 
-\noindent{\footnotesize Pour des raisons historiques, cette page porte le numéro 34. L'explication se trouve en page 11.} \vfill \pagebreak
+\noindent{\footnotesize Pour des raisons historiques, cette page porte le numéro 33. L'explication se trouve en page 11.} \vfill \pagebreak
 
 \setcounter{page}{12}
 
 \subsubsection{Configuration newsgroups}
-Repporte-toi a la page~\pageref{newsgroups} pour la description et
-des détails de fonctionnement des newsgroups à l'X.
+Reporte-toi a la page~\pageref{newsgroups} pour la description et des détails de fonctionnement des newsgroups à l'X.
 
-Comme pour les mails, ça se passe dans \app{Outlook Express}, mais \app{Thunderbird} offre une solution alternative tout à fait convenable. Lance
+Comme pour les mails, nous décrivons la configuration de \app{Outlook Express}, mais elle est sensiblement équivalent pour \app{Thunderbird}. Lance
 \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite,
 \menu{News\ldots}. Remplis les écrans de configuration suivants avec ces données :
 
@@ -411,9 +385,7 @@ de \fkz, par exemple pour accéder aux news externes
 
 \paragraph{Client FTP}
 
-Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer
-l'un des deux, télécharge-le sur \xshare et double-clique sur
-l'installateur.
+Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer l'un des deux, télécharge-le sur \xshare et double-clique sur l'installeur.
 
 Finis l'installation, et tu peux aller sur tous les FTP du réseau
 facilement et rapidement.
@@ -439,7 +411,7 @@ Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP}, qui s
   \item WinSCP : Un logiciel pratique qui te permet de te connecter en salle info.
                   Tu peux le récupérer lui aussi sur \xshare ;
                   son fonctionnement est expliqué en détails dans le Wikix. Voir aussi \app{Putty}, aussi dans le \xshare.
-  \item vlc : Un logiciel qui te permettra de recevoir la télévision directement dans ton casert, afin d'être vraiment sur d'avoir autre chose à faire que travailler les veilles de pâles. Configuration page \pageref{TV}.
+  \item vlc : Un logiciel qui te permettra de recevoir la télévision directement dans ton casert, afin d'être vraiment sûr d'avoir autre chose à faire que travailler les veilles de pâles. Configuration page \pageref{TV}.
 \end{itemize}
 
 
@@ -458,7 +430,7 @@ La procédure pour obtenir les logiciels et les clés correspondantes
 est la suivante :
 \begin{itemize}
 
-\item Va d'abord sur \fkz, et connecte toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la boîte \menu{Liens utiles}. Sélectionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oublié de le mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
+\item Va d'abord sur \fkz, et connecte-toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la boîte \menu{Liens utiles}. Sélectionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oublié de l'y mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
 
 \item Maintenant que tu as ta clé, il faut télécharger le logiciel proprement
 dit. Pour cela, connecte-toi par FTP sur \url{ftp://enez/msdnaa/} avec ton

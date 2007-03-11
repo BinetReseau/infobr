@@ -16,17 +16,18 @@ Quelle que soit ta distribution, il faut que tu décides d'un nom de
 machine --- ton pseudo en général. Tu as également besoin de
 connaître les informations suivantes :
 \begin{description}
-  \item [ton adresse IP] notée dorénavant \server{129.104.AAA.BBB}
-  \item [l'IP de ta passerelle (\emph{gateway})] notée \server{129.104.GGG.CCC}
-  \item [ton masque de sous-réseau] \server{255.255.FFF.DDD}
-  \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$.
-        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle et Maunoury ce n'est donc pas nécessairement vrai que $GGG = AAA$.)}
+  \item [ton adresse IP] notée dorénavant \server{129.104.AAA.BBB} ;
+  \item [l'IP de ta passerelle (\emph{gateway})] notée \server{129.104.GGG.CCC} ;
+  \item [ton masque de sous-réseau] \server{255.255.FFF.DDD} ;
+  \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$. \\
+        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle et Maunoury ce n'est donc pas nécessairement vrai que $GGG =
+        AAA$.)}.
 \end{description}
 
 Toutes les informations nécessaires se trouvent page
 \pageref{calcul_ip}.
 
-Bien s\^ur, l'ensemble des manipulations doit se faire en tant que root.
+Bien sûr, l'ensemble des manipulations doit se faire en tant que \emph{root}.
 
 
 \paragraph{\distrib{Sous Gentoo}}
@@ -41,13 +42,9 @@ commande ci-dessous est suffisante :
 
 \cmdline{echo 'ton\_pseudo' > /etc/hostname}
 
-Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms
-DNS. La première ligne donne le domaine sur lequel ta machine est,
-ensuite viennent les suffixes à utiliser par défaut, et les lignes
-suivantes indiquent les serveurs de noms, ceux qui associent le nom
-\server{frankiz} ou \server{ton\_pseudo} aux IP
-\server{129.104.201.51} ou \server{'ton\_ip'}. Le fichier contient
-donc :
+Le fichier \file{/etc/resolv.conf} décrit comment résoudre les noms DNS. La première ligne donne le domaine sur lequel ta machine est, ensuite
+viennent les suffixes à utiliser par défaut ; les lignes suivantes indiquent les serveurs de noms, ceux qui associent le nom \server{frankiz} ou
+\server{ton\_pseudo} aux IP \server{129.104.201.51} ou \server{'ton\_ip'}. Le fichier contient donc :
 
 \noindent \cmdline{
 domain eleves.polytechnique.fr\\
@@ -55,12 +52,9 @@ search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
 namaserver 129.104.201.52}
 
-Enfin, le fichier \file{/etc/conf.d/net} contient la description de
-l'interface réseau et les informations de routage. Il indique ton
-IP, ton sous-réseau, ton masque de sous-réseau et la passerelle pour
-sortir de ton sous-réseau . Bien sûr, remplaces \texttt{eth0} par le
-nom de l'interface réseau que tu utilises, si ce n'est pas la carte
-\textit{ethernet} par défaut.
+Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface réseau et les informations de routage. Il indique ton IP, ton
+sous-réseau, ton masque de sous-réseau et la passerelle pour sortir de ton sous-réseau . Bien sûr, remplace \texttt{eth0} par le nom de l'interface
+réseau que tu utilises, si ce n'est pas la carte \emph{ethernet} par défaut.
 
 \noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.GGG.EEE $\backslash$\\
                             netmask 255.255.FFF.DDD"\\
@@ -70,14 +64,13 @@ Tu fais le grand test en rechargeant ta configuration réseau par :
 
 \cmdline{/etc/init.d/net.eth0 restart}
 
-puis en pingant \fkz\ par exemple. Tu dois obtenir quelque chose comme :
+puis en \emph{pingant} \fkz\ par exemple. Tu dois obtenir quelque chose comme :
 
 \cmdline{root:~\# ping frankiz\\
 PING frankiz (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from frankiz (129.104.201.51): ...}
 
-\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à travers
-le proxy de l'école, il faut définir les variables d'environnement
+\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à travers le \emph{proxy} de l'école, il faut définir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
 
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
@@ -94,28 +87,21 @@ mais très lent.
 
 \input{ubuntu.tex}
 
-\subsubsection{Configuration antivirus \footnotesize{(elle est dr\^ole celle-là hein ?)}
+\subsubsection{Configuration antivirus \footnotesize{(elle est drôle celle-là hein ?)}
 }
 
-\subsubsection{Configuration firewall}
+\subsubsection{Configuration du pare-feu}
 
-La solution la plus simple pour se faire un firewall sous linux est
-d'utiliser les iptables. Pour ceci la première étape est d'installer
-le paquet \app{iptables} pour ta distribution. Pour savoir comment
-configurer ton firewall pour le réseau de l'X, consulte la FAQ de
-Frankiz.
+La solution la plus simple pour se faire un \emph{firewall} sous linux est d'utiliser les \emph{iptables}. Pour ceci la première étape est
+d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment configurer ton \emph{firewall} pour le réseau de l'X, consulte la FAQ
+de Frankiz.
 
 \subsubsection{Configuration navigateur web}
 
-\flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille
-d'utiliser \app{Firefox}, ou \app{Konqueror} (le navigateur fourni
-par défaut avec KDE). Dans tous les cas, la seule configuration à
-mettre est celle du proxy. Pour \app{Firefox}, il suffit d'aller
-dans \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avancé},
-puis de cliquer sur l'onglet \menu{Réseau}, et enfin
-\menu{Paramètres de connexion} ; ensuite tu coches la case
-\menu{Adresse de configuration automatique du proxy}, et tu rentres
-\url{http://frankiz/proxy.pac/}.
+\flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou \app{Konqueror} (le navigateur fourni par défaut avec KDE).
+Dans tous les cas, la seule configuration à effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il suffit d'aller dans \menu{Edit},
+\menu{Preferences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet \menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite
+coche la case \menu{Adresse de configuration automatique du proxy}, et rentre \url{http://frankiz/proxy.pac/}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}.
@@ -137,8 +123,7 @@ rubrique \menu{Comptes}. Commence par créer un nouveau compte dans
 l'onglet \menu{Réception des messages} en cliquant sur le bouton
 \menu{Ajouter\ldots} et choisis le type POP3.
 
-\imagepos{images/nux_config_kmail_pop}{0.55}{Configuration de la
-réception des messages sous Kmail}{pht}
+\imagepos{images/nux_config_kmail_pop}{0.45}{Configuration de la réception des messages sous Kmail}{pht}
 
 Utilise les paramètres suivants pour configurer l'onglet
 \menu{Général} :
@@ -153,7 +138,7 @@ Utilise les paramètres suivants pour configurer l'onglet
 Ensuite, va dans l'onglet \menu{Extras} et coche la case
 \menu{Utiliser SSL pour sécuriser les téléchargements}.
 
-\imagepos{images/nux_config_kmail_smtp}{0.55}{Configuration de l'envoi des messages sous Kmail}{pht}
+\imagepos{images/nux_config_kmail_smtp}{0.45}{Configuration de l'envoi des messages sous Kmail}{pht}
 
 Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le
 bouton \menu{Ajouter\ldots}. Utilise les paramètres suivants pour le
@@ -174,8 +159,9 @@ Sinon, laisse toutes les cases décochées.
   \item[Sécurité] Non
   \item[Identification] Anonyme
 \end{description}
-Une fois revenu dans \menu{Configuration LDAP}, choche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès au LDAP lors de la rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}.
-\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
+Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès au LDAP lors de la
+rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}. \imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous
+Kmail}{pht}
 
 \subsubsection{Configuration news}
 \flimage{images/nux_knode_icon}{0.12}{l} Le client news le plus
@@ -183,12 +169,10 @@ utilisé est \app{Knode}. Parmi les autres clients news, citons
 \app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est
 presque indépendante du logiciel choisi.
 
-Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis
-\menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums
-de discussion} et crée un compte en cliquant sur
-\menu{Ajouter\ldots}.
+Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
+crée un compte en cliquant sur \menu{Ajouter\ldots}.
 
-\imagepos{images/nux_config_knode}{0.55}{Configuration de Knode}{ht}
+\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
@@ -196,7 +180,6 @@ Remplis l'onglet \menu{Serveur} avec les informations suivantes :
   \item[Serveur] \server{frankiz.polytechnique.fr}
   \item[Port] 119
 \end{description}
-
 Ensuite occupe-toi de l'onglet \menu{Identité} :
 \begin{description}
   \item[Nom] mets ton pseudo dans ce champ
@@ -219,15 +202,11 @@ signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire
 -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne
 composera ta signature.
 
-Il ne te reste plus qu'à t'inscrire à des newsgroups (reporte-toi à
-la page \pageref{newsgroups} pour plus d'infos) et à poster !
+Il ne te reste plus qu'à t'inscrire à des \emph{newsgroups} (reporte-toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
-Pour te connecter aux serveurs de news de Polytechnique.org, qui ont
-un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car
-il ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de
-définir une redirection SSL de port. Dans \file{/etc/stunnel.conf}
-ou \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les
-lignes suivantes (les trois premières y sont en principe déjà) :
+Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il
+ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou
+\file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\

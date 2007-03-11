@@ -25,8 +25,7 @@ On note les deux premiers caractères $xx$ et les deux derniers $zz$.
 \item $zz$ sert à trouver les identifiants \server{BBB} par la règle : \server{BBB} = $120 + zz$.
 
 \item $xx$ sert à trouver ton sous-réseau (\server{AAA}), ta passerelle,
-ton adresse de \textit{broadcast} et ton masque de sous-réseau,
-selon le tableau suivant.
+ton adresse de \emph{broadcast} et ton masque de sous-réseau, selon le tableau suivant.
 \end{itemize}
 
 \vskip 12pt
@@ -42,8 +41,7 @@ selon le tableau suivant.
 & \multispan3 \vsep\vfil\hbox{\quad \bf Passerelle\quad}\vfil\vsep && \multispan7 \vsep\vfil\hbox{\quad 129.104.211.254\quad}\vfil\vsep&
                & \multispan7 \vsep\vfil\hbox{\quad 129.104.215.254\quad}\vfil\vsep&
                & \multispan7 \vsep\vfil\hbox{\quad 129.104.235.254\quad}\vfil\vsep&\cr
-\noalign{\vrule}
-&\bf Adresse &\omit& \bf de \textit{broadcast}&& \multispan7 \vsep\vfil\hbox{\quad 129.104.211.255\quad}\vfil\vsep&
+\noalign{\vrule} &\bf Adresse &\omit& \bf de \emph{broadcast}&& \multispan7 \vsep\vfil\hbox{\quad 129.104.211.255\quad}\vfil\vsep&
                & \multispan7 \vsep\vfil\hbox{\quad 129.104.215.255\quad}\vfil\vsep&
                & \multispan7 \vsep\vfil\hbox{\quad 129.104.235.255\quad}\vfil\vsep&\cr
 \noalign{\vrule}
@@ -52,20 +50,14 @@ selon le tableau suivant.
 
 \vskip 6pt
 
-\exemple{l'IP associée à la prise $A145$ est
-\server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est
-\server{129.104.211.254}, son adresse de \textit{broadcast} est
-\server{129.104.211.255} et son masque de sous-réseau est
-\server{255.255.252.0}.}
+\exemple{l'IP associée à la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
+\emph{broadcast} est \server{129.104.211.255} et son masque de sous-réseau est \server{255.255.252.0}.}
 
 \subsubsection{Pour les nouveaux caserts}
 
-Ta prise réseau possède un numéro à 6 chiffres de la forme $xx\ yy\
-zz$. On prend $xx$ pour calculer ton sous-réseau, l'adresse de ta
-passerelle (\server{129.104.AAA.CCC}) et l'adresse de
-\textit{broadcast} (\server{129.104.AAA.EEE}). Le masque de
-sous-réseau est toujours \server{255.255.255.128}. Ensuite, tu peux
-déterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
+Ta prise réseau possède un numéro à 6 chiffres de la forme $xx\ yy\ zz$. On prend $xx$ pour calculer ton sous-réseau, l'adresse de ta passerelle
+(\server{129.104.AAA.CCC}) et l'adresse de \emph{broadcast} (\server{129.104.AAA.EEE}). Le masque de sous-réseau est toujours
+\server{255.255.255.128}. Ensuite, tu peux déterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
 
 \vskip 12pt
 \hfil \vbox{
@@ -93,11 +85,8 @@ height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
 
 \vskip 12pt
 
-\exemple{l'IP associée à la prise $70 30 30$ est
-\server{129.104.224.158} ($158 = 128 + 30$) ; sa passerelle est
-\server{129.104.224.254}, son adresse de \textit{broadcast} est
-\server{129.104.224.255} et son masque de sous-réseau est
-\server{255.255.255.128}.}
+\exemple{l'IP associée à la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ; sa passerelle est \server{129.104.224.254}, son
+adresse de \emph{broadcast} est \server{129.104.224.255} et son masque de sous-réseau est \server{255.255.255.128}.}
 
 \subsubsection{Le BEM}
 \newbox\point
@@ -123,18 +112,15 @@ height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
 \end{tabular}
 
 \subsubsection{Tes informations réseau}
-Maintenant, note ici ton IP et les adresses IP de ta passerelle
-(\trad{gateway}), de ton \trad{broadcast} et ton masque de
-sous-réseau (\trad{netmask}). Re-vérifie bien que tu ne t'es pas
-trompé,  \c ca t'évitera de te prendre la tête pendant la suite de
-la configuration !
+Maintenant, note ici ton IP et les adresses IP de ta passerelle (\trad{gateway}), de ton \trad{broadcast} et ton masque de sous-réseau
+(\trad{netmask}). Re-vérifie bien que tu ne t'es pas trompé,  ça t'évitera de te prendre la tête pendant la suite de la configuration !
 
 \begin{center}
   \begin{tabular}{|rp{5cm}|}
   \hline
   \vrule height16pt depth8pt width0pt \textbf{Mon IP :} 129.104. & \\ \hline
   \vrule height16pt depth8pt width0pt \textbf{Ma passerelle :} 129.104. & \\ \hline
-  \vrule height16pt depth8pt width0pt \textbf{Mon broadcast :} 129.104. & \\ \hline
+  \vrule height16pt depth8pt width0pt \textbf{Mon \emph{broadcast} :} 129.104. & \\ \hline
   \vrule height16pt depth8pt width0pt \textbf{Mon masque de sous-réseau :} 255.255. & \\ \hline
   \end{tabular}
   \label{tableau:mon_IP}
