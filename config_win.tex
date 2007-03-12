@@ -512,5 +512,16 @@ il te suffit alors de taper : \cmd{proxycfg -p http://kuzh:8080} pour régler
 le proxy. Pour revenir à un accès direct il faut taper \cmd{proxycfg -d}.
 
 \item \textbf{Sous Windows Vista :}
+Dans le menu \menu{Démarrer}, tape \guillemotleft~Invite de commandes~\guillemotright dans le champ \menu{Rechercher}, puis clique droit sur le lien
+et choisis \menu{Exécuter en tant qu'administrateur}. Tape ensuite les commandes suivantes :
+
+\noindent \cmdline{
+C:$\backslash$Windows$\backslash$system32>netsh\\
+netsh>winhttp\\
+netsh winhttp>set proxy proxy-server="http://kuzh:8080"\\
+netsh winhttp>exit\\
+C:$\backslash$Windows$\backslash$system32>exit}
+
+
 
 \end{itemize}
