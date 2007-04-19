@@ -79,11 +79,9 @@ no\_proxy=.eleves.polytechnique.fr\\
 GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
-Tu peux évidemment ajouter d'autres miroirs (séparés par des
-espaces) dans ta liste mais \url{ftp://miroir} étant interne, il
-sera toujours beaucoup plus rapide que les autres. On te conseille
-ici \url{http://gentoo.osuosl.org/} qui est un miroir très complet
-mais très lent.
+Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais
+\urllink{ftp://miroir} étant interne, il sera toujours beaucoup plus rapide que les autres. On te
+conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir très complet mais très lent.
 
 \input{ubuntu.tex}
 
@@ -97,10 +95,12 @@ d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment c
 
 \subsubsection{Configuration navigateur web}
 
-\flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou \app{Konqueror} (le navigateur fourni par défaut avec KDE).
-Dans tous les cas, la seule configuration à effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il suffit d'aller dans \menu{Edit},
-\menu{Preferences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet \menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite
-coche la case \menu{Adresse de configuration automatique du proxy}, et rentre \url{http://frankiz/proxy.pac/}.
+\flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou
+\app{Konqueror} (le navigateur fourni par défaut avec KDE). Dans tous les cas, la seule
+configuration à effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il suffit d'aller dans
+\menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
+\menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite coche la case \menu{Adresse de
+configuration automatique du proxy}, et rentre \urllink{http://frankiz/proxy.pac/}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}.
@@ -229,9 +229,7 @@ Il ne te reste plus qu'à lancer \app{stunnel} par :
 
 \cmdline{/etc/init.d/stunnel start}
 
-Et tu peux ainsi lire les news de Polytechnique.org en mettant
-\server{localhost} comme serveur et \server{1119} comme port. Il
-faut aussi que tu coches \menu{Le serveur exige une identification}
-et que tu rentres ton nom d'utilisateur à Polytechnique.org et ton
-mot de passe, que tu peux définir sur
-\url{http://www.polytechnique.org/acces\_smtp.php}.
+Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et
+\server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
+que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir
+sur \urllink{http://www.polytechnique.org/acces\_smtp.php}.
