@@ -4,28 +4,28 @@
 \label{calcul_ip}
 
 Une adresse IP est une suite de quatre nombres compris entre 0 et
-255 séparés par des points ; en gros, elle identifie de manière
-unique toute machine connectée au réseau mondial. \emph{Exemple :}
+255 s\'epar\'es par des points ; en gros, elle identifie de mani\`ere
+unique toute machine connect\'ee au r\'eseau mondial. \emph{Exemple :}
 l'adresse IP de \server{frankiz} est \server{129.104.201.51}.
 
 Les IP de l'X sont toutes de la forme \server{129.104.AAA.BBB}.
 Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} pour que ton
 ordinateur ait une adresse unique et correcte.
 
-Au cas où deux personnes ont (par erreur ou pas) la même adresse,
-cela implique des conflits réseau qui font que les deux perdent
-l'accès tant que cela n'est pas corrigé.
+Au cas o\`u deux personnes ont (par erreur ou pas) la m\^eme adresse,
+cela implique des conflits r\'eseau qui font que les deux perdent
+l'acc\`es tant que cela n'est pas corrig\'e.
 
 \subsubsection{Pour Foch, Fayolle et Maunoury}
 
-Tu trouveras sur ta prise réseau un identifiant composé d'une lettre et de trois chiffres.
-On note les deux premiers caractères $xx$ et les deux derniers $zz$.
+Tu trouveras sur ta prise r\'eseau un identifiant compos\'e d'une lettre et de trois chiffres.
+On note les deux premiers caract\`eres $xx$ et les deux derniers $zz$.
 
 \begin{itemize}
-\item $zz$ sert à trouver les identifiants \server{BBB} par la règle : \server{BBB} = $120 + zz$.
+\item $zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : \server{BBB} = $120 + zz$.
 
-\item $xx$ sert à trouver ton sous-réseau (\server{AAA}), ta passerelle,
-ton adresse de \emph{broadcast} et ton masque de sous-réseau, selon le tableau suivant.
+\item $xx$ sert \`a trouver ton sous-r\'eseau (\server{AAA}), ta passerelle,
+ton adresse de \emph{broadcast} et ton masque de sous-r\'eseau, selon le tableau suivant.
 \end{itemize}
 
 \vskip 12pt
@@ -45,19 +45,19 @@ ton adresse de \emph{broadcast} et ton masque de sous-réseau, selon le tableau s
                & \multispan7 \vsep\vfil\hbox{\quad 129.104.215.255\quad}\vfil\vsep&
                & \multispan7 \vsep\vfil\hbox{\quad 129.104.235.255\quad}\vfil\vsep&\cr
 \noalign{\vrule}
-&  \bf Masque de &\omit& \bf sous-réseau&& \multispan{23} \vsep\vfil\hbox{\quad 255.255.252.0\quad}\vfil\vsep&\cr
+&  \bf Masque de &\omit& \bf sous-r\'eseau&& \multispan{23} \vsep\vfil\hbox{\quad 255.255.252.0\quad}\vfil\vsep&\cr
 }\vrule} \hfil
 
 \vskip 6pt
 
-\exemple{l'IP associée à la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
-\emph{broadcast} est \server{129.104.211.255} et son masque de sous-réseau est \server{255.255.252.0}.}
+\exemple{l'IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
+\emph{broadcast} est \server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
 
 \subsubsection{Pour les nouveaux caserts}
 
-Ta prise réseau possède un numéro à 6 chiffres de la forme $xx\ yy\ zz$. On prend $xx$ pour calculer ton sous-réseau, l'adresse de ta passerelle
-(\server{129.104.AAA.CCC}) et l'adresse de \emph{broadcast} (\server{129.104.AAA.EEE}). Le masque de sous-réseau est toujours
-\server{255.255.255.128}. Ensuite, tu peux déterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
+Ta prise r\'eseau poss\`ede un num\'ero \`a 6 chiffres de la forme $xx\ yy\ zz$. On prend $xx$ pour calculer ton sous-r\'eseau, l'adresse de ta passerelle
+(\server{129.104.AAA.CCC}) et l'adresse de \emph{broadcast} (\server{129.104.AAA.EEE}). Le masque de sous-r\'eseau est toujours
+\server{255.255.255.128}. Ensuite, tu peux d\'eterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
 
 \vskip 12pt
 \hfil \vbox{
@@ -85,35 +85,35 @@ height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
 
 \vskip 12pt
 
-\exemple{l'IP associée à la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ; sa passerelle est \server{129.104.224.254}, son
-adresse de \emph{broadcast} est \server{129.104.224.255} et son masque de sous-réseau est \server{255.255.255.128}.}
+\exemple{l'IP associ\'ee \`a la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ; sa passerelle est \server{129.104.224.254}, son
+adresse de \emph{broadcast} est \server{129.104.224.255} et son masque de sous-r\'eseau est \server{255.255.255.128}.}
 
 \subsubsection{Le BEM}
 \newbox\point
 \setbox\point=\hbox{.\hskip .15em}
 \def\ecart{\hskip 1.5em plus 1fill\relax}
 \noindent\begin{tabular}{l@{\xleaders\copy\point\ecart}l}
-  Sous-réseau (\server{AAA}) & 203 pour le bâtiment A ; 204 au bâtiment D \\
-  IP (\server{BBB})            & 50 + les deux derniers chiffres du numéro de ta chambre \\
+  Sous-r\'eseau (\server{AAA}) & 203 pour le bâtiment A ; 204 au bâtiment D \\
+  IP (\server{BBB})            & 50 + les deux derniers chiffres du num\'ero de ta chambre \\
   Passerelle                   & \server{129.104.AAA.13} \\
-  Masque de sous-réseau      & \server{255.255.255.0} \\
+  Masque de sous-r\'eseau      & \server{255.255.255.0} \\
   Broadcast                    & \server{129.104.AAA.255} \\
 \end{tabular}
 
 \subsubsection{Le PEM}
 
 \noindent\begin{tabular}{l@{\xleaders\copy\point\ecart}l}
-  Sous-réseau (\server{AAA})           & 205 \\
-  IP (\server{BBB}), rez-de-chaussée & 15 + les deux derniers chiffres du numéro  de ta chambre \\
-  IP (\server{BBB}), premier étage   & 70 + les deux derniers chiffres du numéro de ta chambre \\
+  Sous-r\'eseau (\server{AAA})           & 205 \\
+  IP (\server{BBB}), rez-de-chauss\'ee & 15 + les deux derniers chiffres du num\'ero  de ta chambre \\
+  IP (\server{BBB}), premier \'etage   & 70 + les deux derniers chiffres du num\'ero de ta chambre \\
   Passerelle                             & \server{129.104.205.13} \\
-  Masque de sous-réseau                & \server{255.255.255.0} \\
+  Masque de sous-r\'eseau                & \server{255.255.255.0} \\
   Broadcast                              & \server{129.104.205.255} \\
 \end{tabular}
 
-\subsubsection{Tes informations réseau}
-Maintenant, note ici ton IP et les adresses IP de ta passerelle (\emph{gateway}), de ton \emph{broadcast} et ton masque de sous-réseau
-(\emph{netmask}). Re-vérifie bien que tu ne t'es pas trompé,  ça t'évitera de te prendre la tête pendant la suite de la configuration !
+\subsubsection{Tes informations r\'eseau}
+Maintenant, note ici ton IP et les adresses IP de ta passerelle (\emph{gateway}), de ton \emph{broadcast} et ton masque de sous-r\'eseau
+(\emph{netmask}). Re-v\'erifie bien que tu ne t'es pas tromp\'e,  \c{c}a t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !
 
 \begin{center}
   \begin{tabular}{|rp{5cm}|}
@@ -121,7 +121,7 @@ Maintenant, note ici ton IP et les adresses IP de ta passerelle (\emph{gateway})
   \vrule height16pt depth8pt width0pt \textbf{Mon IP :} 129.104. & \\ \hline
   \vrule height16pt depth8pt width0pt \textbf{Ma passerelle :} 129.104. & \\ \hline
   \vrule height16pt depth8pt width0pt \textbf{Mon \emph{broadcast} :} 129.104. & \\ \hline
-  \vrule height16pt depth8pt width0pt \textbf{Mon masque de sous-réseau :} 255.255. & \\ \hline
+  \vrule height16pt depth8pt width0pt \textbf{Mon masque de sous-r\'eseau :} 255.255. & \\ \hline
   \end{tabular}
   \label{tableau:mon_IP}
 \end{center}

@@ -1,16 +1,16 @@
 \paragraph{\distrib{Ubuntu/Kubuntu}}
 \label{Ubuntu:IP}
 
-Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demandé de rentrer toutes ces informations de manière
-interactive. Si tu ne l'as pas fait à ce moment là, tu peux les modifier comme ci-dessous avec ton éditeur de texte préféré (le tout avec les droits
-administrateur évidemment!).
+Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere
+interactive. Si tu ne l'as pas fait \`a ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits
+administrateur \'evidemment!).
 
 \begin{itemize}
 \item Le fichier \file{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
 
 \cmdline[0.85]{tonPseudo.eleves.polytechnique.fr}
 
-\item Le fichier \file{/etc/resolv.conf} décrit comment associer le nom d'une machine à une adresse IP.
+\item Le fichier \file{/etc/resolv.conf} d\'ecrit comment associer le nom d'une machine \`a une adresse IP.
 Il doit contenir:
 
 \cmdline[0.85]{
@@ -21,9 +21,9 @@ nameserver 129.104.201.52
 }
 
 \item Le fichier \file{/etc/network/interfaces} contient entre autres ton IP,
-ton sous-réseau et la passerelle pour en sortir. Ce fichier doit
-ressembler (avec éventuellement une config wifi à la suite\ldots,
-voir la page~\pageref{wifi}) à :
+ton sous-r\'eseau et la passerelle pour en sortir. Ce fichier doit
+ressembler (avec \'eventuellement une config wifi \`a la suite\ldots,
+voir la page~\pageref{wifi}) \`a :
 
 \cmdline[0.85]{
 \# The loopback network interface\\
@@ -41,11 +41,11 @@ iface eth0 inet static\\
 
 \end{itemize}
 
-Ensuite il faut redémarrer ta configuration réseau :
+Ensuite il faut red\'emarrer ta configuration r\'eseau :
 
 \cmdline{\$ sudo /etc/init.d/networking restart}
 
-Voilà, ta configuration réseau est terminée! Tu peux la tester en \emph{pinguant} \fkz, où tu devrais voir quelque chose comme :
+Voil\`a, ta configuration r\'eseau est termin\'ee! Tu peux la tester en \emph{pinguant} \fkz, o\`u tu devrais voir quelque chose comme :
 
 \cmdline{\$ ping frankiz\\
 PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
@@ -53,13 +53,13 @@ PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 }
 
 \label{ubuntu_mirror} {\bf Configuration du gestionnaire de paquets
-:} Il faut désormais configurer le gestionnaire de paquets pour
-qu'il utilise les miroirs du BR et non les miroirs à l'extérieur du
+:} Il faut d\'esormais configurer le gestionnaire de paquets pour
+qu'il utilise les miroirs du BR et non les miroirs \`a l'ext\'erieur du
 campus qui sont plus lents.
 
-Le fichier \file{/etc/apt/sources.list} liste les miroirs utilisés par le gestionnaire de paquets. Il faut commenter la première ligne (qui
-correspond au CD d'installation) ainsi que toutes les lignes non commentées du fichier (qui correspondent aux miroirs extérieurs au campus) de la
-façon suivante:
+Le fichier \file{/etc/apt/sources.list} liste les miroirs utilis\'es par le gestionnaire de paquets. Il faut commenter la premi\`ere ligne (qui
+correspond au CD d'installation) ainsi que toutes les lignes non comment\'ees du fichier (qui correspondent aux miroirs ext\'erieurs au campus) de la
+fa\c{c}on suivante:
 
 \cmdline{deb cdrom:[...]/ [version] main restricted}
 
@@ -67,7 +67,7 @@ devient
 
 \cmdline{\#deb cdrom:[...]/ [version] main restricted}
 
-Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \emph{début} du fichier:
+Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \emph{d\'ebut} du fichier:
 
 \cmdline{
 deb ftp://miroir/ubuntu [version] main restricted universe multiverse\\
@@ -76,17 +76,17 @@ deb ftp://miroir/ubuntu [version]-updates main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-security main restricted universe multiverse
 }
 
-où \textbf{[version]} correspond à la version d'Ubuntu installée. La version actuelle est \textbf{edgy} et la précédente est \textbf{dapper}.
+o\`u \textbf{[version]} correspond \`a la version d'Ubuntu install\'ee. La version actuelle est \textbf{edgy} et la pr\'ec\'edente est \textbf{dapper}.
 
 
-Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient QRezix ainsi que des paquets très importants (codecs
-vidéo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou
-éthiques. Pour en profiter, il faut rajouter à la suite des lignes précédentes:
+Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient QRezix ainsi que des paquets tr\`es importants (codecs
+vid\'eo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier l\'egales ou
+\'ethiques. Pour en profiter, il faut rajouter \`a la suite des lignes pr\'ec\'edentes:
 
 \cmdline{deb ftp://miroir/bll [version] main}
 
 
-On finit par vérifier que tout fonctionne en mettant à jour la liste
+On finit par v\'erifier que tout fonctionne en mettant \`a jour la liste
 des paquets disponibles:
 
 \cmdline{\$ sudo apt-get update}
