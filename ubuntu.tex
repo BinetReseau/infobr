@@ -3,8 +3,12 @@
 
 Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere
 interactive. Si tu ne l'as pas fait \`a ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits
-administrateur \'evidemment!).
-
+administrateur \'evidemment!), ou si tu pr\'ef\`eres les outils graphiques avec \emph{KNetworkManager sous Kubuntu (KDE)} (l'ic\^one en forme de c\^able r\'eseau dans
+la barre des t\^aches) et \emph{avec l'applet réseau sous Ubuntu (GNOME)} (l'ic\^one en haut \`a droite symbolisant un r\'eseau -> propri\'et\'es).
+\newline
+\newline
+\textit{Les \'etapes qui suivent peuvent \^etres enti\`erement r\'ealis\'ees avec les outils graphiques mentionn\'es plus haut.}
+\newline
 \begin{itemize}
 \item Le fichier \file{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
 
@@ -41,11 +45,12 @@ iface eth0 inet static\\
 
 \end{itemize}
 
-Ensuite il faut red\'emarrer ta configuration r\'eseau :
+Ensuite il faut red\'emarrer ta configuration r\'eseau (les outils graphiques devraient le faire tout seuls apr\`es validation) :
 
 \cmdline{\$ sudo /etc/init.d/networking restart}
 
-Voil\`a, ta configuration r\'eseau est termin\'ee! Tu peux la tester en \emph{pinguant} \fkz, o\`u tu devrais voir quelque chose comme :
+Voil\`a, ta configuration r\'eseau est termin\'ee! Tu peux la tester en \emph{pinguant} \fkz, o\`u tu devrais voir quelque chose comme (ceci reste utile m\^eme si tu
+as fait ta configuration avec les outils graphiques) :
 
 \cmdline{\$ ping frankiz\\
 PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
@@ -71,12 +76,18 @@ Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du B
 
 \cmdline{
 deb ftp://miroir/ubuntu [version] main restricted universe multiverse\\
-deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-updates main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-security main restricted universe multiverse
 }
 
-o\`u \textbf{[version]} correspond \`a la version d'Ubuntu install\'ee. La version actuelle est \textbf{edgy} et la pr\'ec\'edente est \textbf{dapper}.
+Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels \emph{non support\'es par l'\'equipe de d\'eveloppement d'ubuntu} (en particulier la version de compiz pr\'esente
+sur ces d\'ep\^ots est bogu\'ee!!):
+
+\cmdline{
+deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse
+}
+
+o\`u \textbf{[version]} correspond \`a la version d'Ubuntu install\'ee. La version actuelle est \textbf{gutsy} et la pr\'ec\'edente est \textbf{feisty}.
 
 
 Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient QRezix ainsi que des paquets tr\`es importants (codecs
@@ -90,5 +101,7 @@ On finit par v\'erifier que tout fonctionne en mettant \`a jour la liste
 des paquets disponibles:
 
 \cmdline{\$ sudo apt-get update}
+
+NB: on peut aussi le faire depuis synaptic (ubuntu) ou adept (kubuntu)
 
 S'il n'y a pas de message d'erreur c'est que tout fonctionne bien.
