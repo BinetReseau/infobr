@@ -14,7 +14,7 @@
 \subsubsection{Configuration IP}
 Quelle que soit ta distribution, il faut que tu d\'ecides d'un nom de
 machine --- ton pseudo en g\'en\'eral. Tu as \'egalement besoin de
-connaître les informations suivantes :
+conna\^itre les informations suivantes :
 \begin{description}
   \item [ton adresse IP] not\'ee dor\'enavant \server{129.104.AAA.BBB} ;
   \item [l'IP de ta passerelle (\emph{gateway})] not\'ee \server{129.104.GGG.CCC} ;
@@ -27,7 +27,7 @@ connaître les informations suivantes :
 Toutes les informations n\'ecessaires se trouvent page
 \pageref{calcul_ip}.
 
-Bien sûr, l'ensemble des manipulations doit se faire en tant que \emph{root}.
+Bien s\^ur, l'ensemble des manipulations doit se faire en tant que \emph{root}.
 
 
 \paragraph{\distrib{Sous Gentoo}}
@@ -53,7 +53,7 @@ nameserver 129.104.201.53\\
 namaserver 129.104.201.52}
 
 Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface r\'eseau et les informations de routage. Il indique ton IP, ton
-sous-r\'eseau, ton masque de sous-r\'eseau et la passerelle pour sortir de ton sous-r\'eseau . Bien sûr, remplace \texttt{eth0} par le nom de l'interface
+sous-r\'eseau, ton masque de sous-r\'eseau et la passerelle pour sortir de ton sous-r\'eseau . Bien s\^ur, remplace \texttt{eth0} par le nom de l'interface
 r\'eseau que tu utilises, si ce n'est pas la carte \emph{ethernet} par d\'efaut.
 
 \noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.GGG.EEE $\backslash$\\
