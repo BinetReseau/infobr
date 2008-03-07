@@ -3,8 +3,8 @@
 
 Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere
 interactive. Si tu ne l'as pas fait \`a ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits
-administrateur \'evidemment!), ou si tu pr\'ef\`eres les outils graphiques avec \emph{KNetworkManager sous Kubuntu (KDE)} (l'ic\^one en forme de c\^able r\'eseau dans
-la barre des t\^aches) et \emph{avec l'applet r\'eseau sous Ubuntu (GNOME)} (l'ic\^one en haut \`a droite symbolisant un r\'eseau -> propri\'et\'es).
+administrateur \'evidemment!), ou si tu pr\'ef\`eres les outils graphiques avec \app{KNetworkManager} sous Kubuntu (KDE) (l'ic\^one en forme de c\^able r\'eseau dans
+la barre des t\^aches) et avec \app{l'applet r\'eseau} sous Ubuntu (GNOME) (l'ic\^one en haut \`a droite symbolisant un r\'eseau -> propri\'et\'es).
 \newline
 \newline
 \textit{Les \'etapes qui suivent peuvent \^etres enti\`erement r\'ealis\'ees avec les outils graphiques mentionn\'es plus haut.}
@@ -21,7 +21,7 @@ Il doit contenir:
 domain eleves.polytechnique.fr\\
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
-nameserver 129.104.201.52
+nameserver 129.104.201.51
 }
 
 \item Le fichier \file{/etc/network/interfaces} contient entre autres ton IP,
@@ -80,17 +80,16 @@ deb ftp://miroir/ubuntu [version]-updates main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-security main restricted universe multiverse
 }
 
-Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels \emph{non support\'es par l'\'equipe de d\'eveloppement d'ubuntu} (en particulier la version de compiz pr\'esente
-sur ces d\'ep\^ots est bogu\'ee!!):
+o\`u \textbf{[version]} correspond \`a la version d'Ubuntu install\'ee. La version actuelle est \textbf{hardy} et la pr\'ec\'edente est \textbf{gutsy}.
+
+Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels \emph{non support\'es par l'\'equipe de d\'eveloppement d'Ubuntu} (en particulier il peut arriver que certains logiciels soient bogu\'es !):
 
 \cmdline{
 deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse
 }
 
-o\`u \textbf{[version]} correspond \`a la version d'Ubuntu install\'ee. La version actuelle est \textbf{gutsy} et la pr\'ec\'edente est \textbf{feisty}.
 
-
-Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient QRezix ainsi que des paquets tr\`es importants (codecs
+Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient \app{QRezix} ainsi que des paquets tr\`es importants (codecs
 vid\'eo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier l\'egales ou
 \'ethiques. Pour en profiter, il faut rajouter \`a la suite des lignes pr\'ec\'edentes:
 
@@ -100,8 +99,8 @@ vid\'eo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la 
 On finit par v\'erifier que tout fonctionne en mettant \`a jour la liste
 des paquets disponibles:
 
-\cmdline{\$ sudo apt-get update}
+\cmdline{\$ sudo aptitude update}
 
-NB: on peut aussi le faire depuis synaptic (ubuntu) ou adept (kubuntu)
+NB: on peut aussi le faire depuis \app{synaptic} (ubuntu) ou \app{adept} (kubuntu)
 
 S'il n'y a pas de message d'erreur c'est que tout fonctionne bien.
