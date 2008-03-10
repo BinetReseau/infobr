@@ -13,7 +13,7 @@ La configuration est détaillée pour Mac OS 10.4 (Tiger) et Mac OS 10.5 (Leopard)
 
 \subsubsection{Configuration IP}
 
-\flimage{images/mac_prefs_icone}{0.1}{l} \app{Préférences Réseau},accessible depuis l'article de menu \menu{Préférences Système} du \menu{menu Pomme}, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse gentiment et utilise la procédure que le BR te propose. En effet, le réseau nécessite une configuration particulière à l'X, plus complexe que celle autorisée par cet assistant.
+\flimage{images/mac_prefs_icone}{0.1}{l} \app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du \menu{menu Pomme}, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse et utilise la procédure du BR. En effet, le réseau nécessite une configuration particulière à l'X, plus complexe que celle effectu\'ee par cet assistant.
 
 La gestion des configurations réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une à l'autre
 grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est très pratique pour les machines vouées à être connectées à plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} pour plus de précisions sur le Wifi). Commence donc par créer une nouvelle configuration réseau dans le menu déroulant \menu{Configuration}.
@@ -53,9 +53,8 @@ Pour avoir accès à Internet, il faut aussi configurer le \emph{proxy}.
 
 N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
-\imagepos{images/mac_config_proxy}{0.7}{Configurer le \emph{proxy} (Tiger)}{!ht}
-
-\imagepos{images/mac_config_proxy_leopard}{0.7}{Configurer le \emph{proxy} (Leopard)}{!ht}
+{\imagepos{images/mac_config_proxy}{0.4}{Configurer le \emph{proxy} (Tiger)}{!hl}
+\imagepos{images/mac_config_proxy_leopard}{0.4}{Configurer le \emph{proxy} (Leopard)}{!hr}}
 
 \subsubsection{Configuration antivirus}
 
@@ -69,7 +68,7 @@ Bien qu'il soit important de maintenir ton système à jour, un antivirus est pour
 
 \flimage{images/mac_mail_icone}{0.1}{l} \app{Mail} : un client mail offrant les fonctionnalités classiques d'un bon client : recherche instantanée, filtre antispam, règles de tri automatique des mails, regroupement des mails correspondant à une même discussion.
 
-Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur \server{poly}, il suffit de le remplir avec les données suivantes : 
+Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur \server{poly}, il suffit de le remplir avec les données suivantes :
 
 \begin{description}
   \item[Nom complet] ton nom !
@@ -87,7 +86,7 @@ N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avancé
 
 Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer. Par contre depuis l'extérieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas. Tu peux regarder la configuration proposée par \urllink{Polytechnique.org} pour surmonter cette difficulté.
 
-%Le LDAP ne marche pas à l'heure actuelle (février 2008) sous Leopard. Ce passage sera repris sur le wikiBR (ou wikix?)
+Le LDAP ne marche pas à l'heure actuelle (février 2008) sous Leopard. Contrairement aux  autres systèmes d'exploitation.
 %\subsuEnfin, tu peux disposer dans \app{Mail} de l'annuaire de l'École, mis à disposition par la DSI. Pour cela, va dans les \menu{Préférences} de Mail,
 %puis dans la rubrique \menu{Rédaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un
 %serveur, et remplir la fenêtre comme sur la capture.
@@ -131,16 +130,11 @@ Les logiciels cités ici sont téléchargeables sur \server{frankiz} : rubrique \me
 
 \noindent Pour plus de détails, voir le paragraphe consacré à qRezix à la page \pageref{qrezix}.
 
-\noindent  \app{Tiger} : Attention, si ton \emph{firewall} est activé, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP. Pour cela va dans \app{Préférences Système}, dans le module \menu{Sécurité}, onglet \menu{Coupe-feu}. S'il est écrit \menu{Coupe-feu activé}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouvrir les ports.
+\noindent  \app{Tiger} : Attention, si ton \emph{firewall} est activé, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP. Pour cela va dans \app{Préférences Système}, dans le module \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}. S'il est écrit \menu{Coupe-feu activé}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouvrir les ports.
 
 \imagepos{images/mac_firewall}{0.5}{Ouvrir les ports pour \app{qRezix} (Tiger)}{!ht}
 
 \noindent \app{Leopard} : Le coupe-feu se règle application par application, tu n'auras qu'à répondre \menu{Autoriser} lorsqu'il te demandera si tu veux \menu{Autoriser les connexions entrantes}.
-
-%\flimage{images/mac_cocoaxnet_icone}{0.1}{l}
-%\noindent\app{CocoaXNet} est un équivalent plus léger de qRezix, avec une meilleure intégration à Mac OS X. Pour l'instant, il est sans développeur, et donc ne contient pas les fonctionalités de la version 2 de \app{qRezix} telles les plans de l'école donc c'est à toi de décider lequel tu préfères !
-
-%\noindent Si le développement en Objective-C et Cocoa (les langages utilisés pour CocoaXNet) te tente, n'hésite pas à contacter les développeurs via \mail{qrezix@frankiz}. \\
 
 \flimage{images/mac_conversation_icone}{0.1}{l}
 \noindent\app{Colloquy}, un client IRC dans le même esprit qu'\app{iChat}. Il dispose d'une interface très simple ne nécessitant pas de connaître les commandes IRC. Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC. \app{X-Chat Aqua} est un autre client IRC, plus riche en fonctionnalités, mais moins agréable à utiliser. \\
