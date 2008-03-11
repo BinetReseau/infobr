@@ -32,43 +32,14 @@ Bien s\^ur, l'ensemble des manipulations doit se faire en tant que \emph{root}.
 
 \paragraph{\distrib{Sous Gentoo}}
 
-Si tu n'as jamais fait de configuration r\'eseau sur ta Gentoo, il
-faudra certainement cr\'eer les fichiers qui suivent.
-
-Le fichier \file{/etc/hostname} contient ton nom de machine. Tu peux
-\'editer \file{/etc/hostname} avec ton \'editeur pr\'ef\'er\'e (\app{vi} ou
-\app{vim}, \app{pico}, voire \app{emacs} si tu aimes), mais la
-commande ci-dessous est suffisante :
-
-\cmdline{echo 'ton\_pseudo' > /etc/hostname}
-
-Le fichier \file{/etc/resolv.conf} d\'ecrit comment r\'esoudre les noms DNS. La premi\`ere ligne donne le domaine sur lequel ta machine est, ensuite
-viennent les suffixes \`a utiliser par d\'efaut ; les lignes suivantes indiquent les serveurs de noms, ceux qui associent le nom \server{frankiz} ou
-\server{ton\_pseudo} aux IP \server{129.104.201.51} ou \server{'ton\_ip'}. Le fichier contient donc :
+Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X, donc configure le réseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment puis
+configure la r\'esolution DNS, tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 
 \noindent \cmdline{
 domain eleves.polytechnique.fr\\
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
 namaserver 129.104.201.52}
-
-Enfin, le fichier \file{/etc/conf.d/net} contient la description de l'interface r\'eseau et les informations de routage. Il indique ton IP, ton
-sous-r\'eseau, ton masque de sous-r\'eseau et la passerelle pour sortir de ton sous-r\'eseau . Bien s\^ur, remplace \texttt{eth0} par le nom de l'interface
-r\'eseau que tu utilises, si ce n'est pas la carte \emph{ethernet} par d\'efaut.
-
-\noindent \cmdline{iface\_eth0="129.104.AAA.BBB broadcast 129.104.GGG.EEE $\backslash$\\
-                            netmask 255.255.FFF.DDD"\\
-                            gateway="eth0/129.104.GGG.CCC"}
-
-Tu fais le grand test en rechargeant ta configuration r\'eseau par :
-
-\cmdline{/etc/init.d/net.eth0 restart}
-
-puis en \emph{pingant} \fkz\ par exemple. Tu dois obtenir quelque chose comme :
-
-\cmdline{root:~\# ping frankiz\\
-PING frankiz (129.104.201.51) 56(84) bytes of data.\\
-64 bytes from frankiz (129.104.201.51): ...}
 
 \label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a travers le \emph{proxy} de l'\'ecole, il faut d\'efinir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
@@ -103,7 +74,8 @@ configuration \`a effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il su
 configuration automatique du proxy}, et rentre \urllink{http://frankiz/proxy.pac/}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
-dans l'onglet \menu{Serveur mandataire}.
+dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le proxy dans Konqueror,
+les logiciels KDE (KGet, Adept, ...) n'utiliserons pas le proxy !!
 
 \imagepos{images/nux_proxy_firefox}{0.55}{Configuration du proxy sous Firefox}{ht}
 
