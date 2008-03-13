@@ -304,33 +304,29 @@ ce navigateur. Pour ce faire, lance \app{Mozilla Firefox}, et va dans le menu \m
 \menu{Param\`etres}. La case \`a cocher est alors \menu{Adresse de configuration automatique du proxy},
 et l'adresse \`a indiquer est la m\^eme que pr\'ec\'edemment : \urllink{http://frankiz/proxy.pac}.
 
-%Il reste une derni\`ere configuration de proxy qui peut parfois s'av\'erer utile en particulier pour \app{Windows Update} en mode %automatique si tu n'es
-%pas sur le domaine. Fais \menu{D\'emarrer}, \menu{Ex\'ecuter}, puis tape \guillemotleft~cmd~\guillemotright  dans la fen\^etre qui s'affiche. Une ligne de %commande apparait, il te
-%suffit alors de taper : \cmd{proxycfg -p http://kuzh:8080} pour r\'egler le proxy. Pour revenir \`a un acc\`es direct il faut taper %\cmd{proxycfg -d}.
-
 
 \subsubsection{Configuration mail}
 
 La DSI met \`a ta disposition une bo\^{i}te aux lettres \'electronique sur
 le serveur \server{poly} ; cette section t'explique comment
-configurer \app{Outlook Express} pour y avoir acc\`es. Tu peux bien
+configurer \app{Outlook Express}, et \app{Windows Mail} pour y avoir acc\`es. Tu peux bien
 s\^{u}r utiliser \app{Thunderbird} si tu pr\'ef\`eres, les donn\'ees \`a rentrer
 pour la configuration sont les m\^emes ; quelques d\'etails sont donn\'es
 dans le Wikix sur \fkz. De plus, tu trouveras des explications plus
 d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
-
+La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
 Lance \app{Outlook Express} et va dans le menu \menu{Outils},
 \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
-haut \`a droite, puis sur \menu{Courrier\ldots}.
+haut \`a droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avat d'appuyer sur suivant.
 
 Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
 \begin{description}
-  \item[Nom complet] ton nom (\guillemotleft~Jean Dupont~\guillemotright , par exemple)
+  \item[Nom complet] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
   \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
   \item[Type de serveur de messagerie pour le courrier entrant] \menu{POP3}
   \item[Serveur de messagerie pour le courrier entrant] \server{poly.polytechnique.fr}
   \item[Serveur de messagerie pour le courrier sortant] \server{poly.polytechnique.fr}
-  \item[Nom du compte] ton login \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral)
+  \item[Nom du compte] ton login \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral, si tu ne t'en souviens pas ne t'en fait pas on devrait te le redonner en cours d'informatique lors de ton premier TD. Si tu es vraiment press\'e va voir le bureau login de la DSI.)
   \item[Mot de passe] ton mot de passe \server{poly} ;
        v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
 \end{description}
@@ -344,21 +340,22 @@ configure comme sur la capture~\ref{config:win:mail} ; en
 particulier, coche la seconde case \menu{Ce serveur n\'ecessite une
 connexion s\'ecuris\'ee (SSL)}.
 
-\imageref{images/win_config_mail_avance}{0.66}{Configuration avanc\'ee
-des serveurs mail}{!h}{config:win:mail}
-
-Comme \c{c}a, tu peux d\'esormais recevoir des mails, avec une liaison
-s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
-intercepter.
-
 % Pour le RTFIBRp11
-\setcounter{page}{31}
+\setcounter{page}{34}
 
 \noindent\rule{.4\textwidth}{.4pt}
 
 \noindent{\footnotesize Pour des raisons historiques, cette page porte le num\'ero 31. L'explication se trouve en page 11.} \vfill \pagebreak
 
 \setcounter{page}{12}
+
+Comme \c{c}a, tu peux d\'esormais recevoir des mails, avec une liaison
+s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
+intercepter.
+
+
+\imageref{images/win_config_mail_avance}{0.66}{Configuration avanc\'ee
+des serveurs mail}{!h}{config:win:mail}
 
 \subsubsection{Configuration newsgroups}
 Reporte-toi a la page~\pageref{newsgroups} pour la description et des d\'etails de fonctionnement des newsgroups \`a l'X.
@@ -485,14 +482,14 @@ Si tu pr\'ef\`eres utiliser le \emph{firewall} int\'egr\'e \`a Windows XP (sans 
 \menu{Param\`etres} et clique sur \menu{Connexions R\'eseau}. Choisis la connexion qui est utilis\'ee par ton ordinateur (souvent il n'y en a qu'une, ou
 alors une seule est activ\'ee) et double-clique dessus. Clique sur \menu{Propri\'et\'es} en bas \`a gauche, puis sur l'onglet \menu{Avanc\'e} et rentre dans le
 menu de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'ext\'erieur. Pour
-cela, clique sur \menu{Ajouter}, et remplis la bo\^ite de dialogue en t'aidant de la capture d'\'ecran~\ref{config:win:ouvrir_port}; mets le num\'ero du
+cela, clique sur \menu{Ajouter}, et remplis la bo\^ite de dialogue en t'aidant de la capture d'\'ecran~\ref{config:win:ouvrir_port} ci apr\`es; mets le num\'ero du
 port que tu veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
 
 \imageref{images/win_config_firewall}{0.7}{Ouvrir un port dans le firewall Windows}{!ht}{config:win:ouvrir_port}
 
 \paragraph{Proxy pour windows update} Il reste une derni\`ere configuration de
 proxy indispensable pour que puissent se faire les mises-\`a-jour automatiques
-de Windows.
+de Windows. Il t'est fortement recommandé de le faire.
 
 \begin{itemize}
 

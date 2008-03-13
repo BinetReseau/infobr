@@ -1,32 +1,33 @@
 %$Id: qrezix.tex 144 2005-03-25 01:11:37Z myk $
 
-\subsection{La télévision du BR}
+\subsection{La t\'el\'evision du BR}
 \label{TV}
 
-Le BR diffuse sur le réseau sept chaines de télévision et une vingtaine de radios. Pour les recevoir, nous recommandons \app{vlc}, disponible sur le X-Share.
+Le BR diffuse sur le r\'eseau sept chaines de t\'el\'evision et une vingtaine de radios. Pour les recevoir, nous recommandons \app{vlc}, disponible sur le X-Share.
 
 \subsubsection{Configuration de vlc}
 
-La liste des chaines est diffusée sous forme d'annonces SAP. Pour voir ces annonces, ouvre ta liste de lecture (Vue -> Liste de lecture), et active
-la decouverte de services.
+La liste des chaines est diffus\'ee sous forme d'annonces SAP. Pour voir ces annonces, ouvre ta liste de lecture (Vue -> Liste de lecture), et active
+la decouverte de services (\ref{vlc_config_sap.png}).
+Attention sous \app{Windows Vista} un probl\`eme de compatibilit\'e connu entraine un \'ecran noir. Pour le r\'esoudre le BR t'as pr\'epar\'e une page sur le Wikix.
 
-\imagepos{images/vlc_config_sap.png}{0.75}{Configuration de vlc pour la télévision par le réseau}{h!}
+\imagepos{images/vlc_config_sap.png}{0.75}{Configuration de vlc pour la t\'el\'evision par le r\'eseau}{h!}
 
-Tu auras ainsi dans ta liste de lecture les différents chaines disponibles.
+Tu auras ainsi dans ta liste de lecture les diff\'erents chaines disponibles.
 
-\subsubsection{Autre méthode}
+\subsubsection{Autre m\'ethode}
 
-Si ton client préféré ne supporte pas les annonces SAP, ou que les annonces SAP ne marchent pas chez toi, tu peux récupérer la liste des chaines par
-PodCast, à l'adresse \url{http://tv.eleves.polytechnique.fr/tvbr.xml}. Sous \app{vlc}, active la découverte des services PodCast dans la liste de
-lecture (Gérer > Découverte de services > Podcast), puis va dans Paramètres > Préférences > Liste de Lecture > Découverte de services > Podcast et
+Si ton client pr\'ef\'er\'e ne supporte pas les annonces SAP, ou que les annonces SAP ne marchent pas chez toi, tu peux r\'ecup\'erer la liste des chaines par
+PodCast, à l'adresse \url{http://tv.eleves.polytechnique.fr/tvbr.xml}. Sous \app{vlc}, active la d\'ecouverte des services PodCast dans la liste de
+lecture (G\'erer > D\'ecouverte de services > Podcast), puis va dans Param\`etres > Pr\'ef\'erences > Liste de Lecture > D\'ecouverte de services > Podcast et
 met l'adresse \url{http://tv.eleves.polytechnique.fr/tvbr.xml} dans le champ \guillemotleft~Liste des URLs~\guillemotright .
 
 \subsubsection{Et si ça ne marche toujours pas?}
 
-Vérifie que tu utilises bien la dernière version de \app{vlc}. Les versions inférieures à 0.8.5 sont connues pour ne pas fonctionner.
+V\'erifie que tu utilises bien la derni\`ere version de \app{vlc}. Les versions inf\'erieures à 0.8.5 sont connues pour ne pas fonctionner.
 
-Si rien ne marche, la raison la plus probable est un \emph{firewall} qui intercepte les flux télés. Configure ton \emph{firewall} afin d'autoriser
-ces flux. Sous Linux, les règles \emph{iptables} suivantes suffisent:
+Si rien ne marche, la raison la plus probable est un \emph{firewall} qui intercepte les flux t\'el\'es. Configure ton \emph{firewall} afin d'autoriser
+ces flux. Sous Linux, les r\`egles \emph{iptables} suivantes suffisent:
 
   \cmdline[0.85] {
    -A INPUT -i eth0 -d 224.0.0.0/24 -j ACCEPT
