@@ -280,18 +280,9 @@ Une fois le fichier ad\'equat t\'el\'echarg\'e, ouvre l'archive compress\'ee \fi
 enfin ex\'ecute le fichier \file{setup.exe} qui vient d'apparaitre dans ce dossier. A partir de l\`a, tu n'as plus qu'\`a suivre les instructions du
 programme d'installation. Tu n'auras alors plus \`a toucher \`a l'antivirus, celui-ci sera mis \`a jour automatiquement.\footnote[11]{Pour des raisons historiques, cette page porte le num\'ero 31. L'explication se trouve en page 11.}
 
-% Pour le RTFIBRp11
-\setcounter{page}{35}
-
-\noindent\rule{.4\textwidth}{.4pt}
-
-\vfill \pagebreak
-
-\setcounter{page}{12}
-
 \subsubsection{Configuration web (proxy)}
 
-\imageref{images/win_config_proxy}{0.7}{Configuration du proxy}{!ht}{config:win:proxy}
+\imageref{images/win_config_proxy}{0.5}{Configuration du proxy}{!ht}{config:win:proxy}
 
 M\^eme si tu n'utilises pas \app{Internet Explorer} comme client web, Windows et d'autres programmes
 utilisent ses param\`etres, notamment \app{Windows Update}. Donc lance \app{Internet Explorer} et va
@@ -300,11 +291,13 @@ nouvelle fen\^etre et enfin sur \menu{Param\`etres r\'eseau} dans le bas de la f
 uniquement la case \menu{Utiliser un script de configuration automatique}, puis remplis le champs
 \menu{Adresse} avec \urllink{http://frankiz/proxy.pac}. Tu dois alors avoir quelque chose qui
 ressemble \`a la capture d'\'ecran~\ref{config:win:proxy}.
-
+% Pour le RTFIBRp11
+\setcounter{page}{33}
 Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer}, tu peux donc utiliser un autre navigateur, comme \app{Mozilla
 Firefox}, disponible sur \xshare, qui est plus s\'ecuris\'e. Mais ce n'est pas une garantie ultime --- tu es le premier garant de la s\'ecurit\'e de ton
 ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main
 --- mais tu seras sensiblement plus en s\'ecurit\'e.
+
 
 Si tu utilises \app{Mozilla Firefox}, il faut que tu fasses, en plus, le m\^eme r\'eglage de proxy pour
 ce navigateur. Pour ce faire, lance \app{Mozilla Firefox}, et va dans le menu \menu{Outils},
@@ -312,6 +305,12 @@ ce navigateur. Pour ce faire, lance \app{Mozilla Firefox}, et va dans le menu \m
 \menu{Param\`etres}. La case \`a cocher est alors \menu{Adresse de configuration automatique du proxy},
 et l'adresse \`a indiquer est la m\^eme que pr\'ec\'edemment : \urllink{http://frankiz/proxy.pac}.
 
+
+% Pour le RTFIBRp11 pour un saut de page si nécéssaire ce qui n'était pas le cas en 2008
+
+%\noindent\rule{.4\textwidth}{.4pt}
+
+%\vfill %\pagebreak
 
 \subsubsection{Configuration mail}
 
@@ -326,6 +325,10 @@ La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
 Lance \app{Outlook Express} et va dans le menu \menu{Outils},
 \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
 haut \`a droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avat d'appuyer sur suivant.
+
+% Pour le RTFIBRp11
+
+\setcounter{page}{12}
 
 Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
 \begin{description}
@@ -353,7 +356,7 @@ s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
 intercepter.
 
 
-\imageref{images/win_config_mail_avance}{0.66}{Configuration avanc\'ee
+\imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
 des serveurs mail}{!h}{config:win:mail}
 
 \subsubsection{Configuration newsgroups}
@@ -483,8 +486,6 @@ alors une seule est activ\'ee) et double-clique dessus. Clique sur \menu{Propri\
 menu de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'ext\'erieur. Pour
 cela, clique sur \menu{Ajouter}, et remplis la bo\^ite de dialogue en t'aidant de la capture d'\'ecran~\ref{config:win:ouvrir_port} ci apr\`es; mets le num\'ero du
 port que tu veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
-
-\imageref{images/win_config_firewall}{0.7}{Ouvrir un port dans le firewall Windows}{!ht}{config:win:ouvrir_port}
 
 \paragraph{Proxy pour windows update} Il reste une derni\`ere configuration de
 proxy indispensable pour que puissent se faire les mises-\`a-jour automatiques
