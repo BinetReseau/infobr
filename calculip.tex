@@ -21,30 +21,28 @@ On note les deux premiers caract\`eres $xx$ et les deux derniers $zz$.
 ton adresse de \emph{broadcast} et ton masque de sous-r\'eseau, selon le tableau suivant.
 \end{itemize}
 
-\vskip 12pt
-
-\def\vsep{\vskip0.3em \relax}
-\hfil \hbox{
-\vrule
-\valign{&\hrule#&\vsep\vfil\hbox{\quad#\quad}\vfil\vsep\cr
-&  \multispan3 \vsep\vfil\hbox{\quad $xx$\quad}\vfil\vsep &&  A0&&  A1&&  A2&&  A3&&  C0&&  C1&&  C2&&  C3&&  D0&&  D1&&  D2&&  D3&\cr
-\noalign{\vrule}
-& \multispan3 \vsep\vfil\hbox{\quad $AAA$\quad}\vfil\vsep && 208&& 209&& 210&& 211&& 212&& 213&& 214&& 215&& 232&& 233&& 234&& 235&\cr
-\noalign{\vrule}
-& \multispan3 \vsep\vfil\hbox{\quad \bf Passerelle\quad}\vfil\vsep && \multispan7 \vsep\vfil\hbox{\quad 129.104.211.254\quad}\vfil\vsep&
-               & \multispan7 \vsep\vfil\hbox{\quad 129.104.215.254\quad}\vfil\vsep&
-               & \multispan7 \vsep\vfil\hbox{\quad 129.104.235.254\quad}\vfil\vsep&\cr
-\noalign{\vrule} &\bf Adresse &\omit& \bf de \emph{broadcast}&& \multispan7 \vsep\vfil\hbox{\quad 129.104.211.255\quad}\vfil\vsep&
-               & \multispan7 \vsep\vfil\hbox{\quad 129.104.215.255\quad}\vfil\vsep&
-               & \multispan7 \vsep\vfil\hbox{\quad 129.104.235.255\quad}\vfil\vsep&\cr
-\noalign{\vrule}
-&  \bf Masque de &\omit& \bf sous-r\'eseau&& \multispan{23} \vsep\vfil\hbox{\quad 255.255.252.0\quad}\vfil\vsep&\cr
-}\vrule} \hfil
-
-\vskip 6pt
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline \rule[-3ex]{0pt}{7ex}$xx$ & $AAA$ & \bf Passerelle & \bf Adresse de {\em broadcast} & \bf Masque de sous-rÃ©seau \\ 
+\hline A0 & 208 & \multirow{4}{*}{129.104.211.254} & \multirow{4}{*}{129.104.211.255} & \multirow{12}{*}{255.255.252.0} \\ 
+\cline{1-2} A1 & 209 &  &  &  \\ 
+\cline{1-2} A2 & 210 &  &  &  \\ 
+\cline{1-2} A3 & 211 &  &  &  \\ 
+\cline{1-4}  C0 & 212  & \multirow{4}{*}{129.104.215.254} & \multirow{4}{*}{129.104.215.255} & \\ 
+\cline{1-2} C1 & 213 &  &  &  \\ 
+\cline{1-2} C2 & 214 &  &  &  \\ 
+\cline{1-2} C3 & 215 &  &  &  \\ 
+\cline{1-4}  D0 & 232  & \multirow{4}{*}{129.104.235.254} & \multirow{4}{*}{129.104.235.255} & \\ 
+\cline{1-2} D1 & 233 &  &  &  \\ 
+\cline{1-2} D2 & 234 &  &  &  \\ 
+\cline{1-2} D3 & 235 &  &  &  \\ 
+\hline
+\end{tabular} 
+\end{center}
 
 \exemple{l'IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
 \emph{broadcast} est \server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
+
 
 \subsubsection{Pour les nouveaux caserts}
 
@@ -52,31 +50,23 @@ Ta prise r\'eseau poss\`ede un num\'ero \`a 6 chiffres de la forme $xx\ yy\ zz$.
 (\server{129.104.AAA.CCC}) et l'adresse de \emph{broadcast} (\server{129.104.AAA.EEE}). Le masque de sous-r\'eseau est toujours
 \server{255.255.255.128}. Ensuite, tu peux d\'eterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
 
-\vskip 12pt
-\hfil \vbox{
-\offinterlineskip
-\hrule
-\halign{&\vrule#&\strut\quad\hfil#\hfil\quad\cr
-height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
-&  $xx$&& $AAA$&& $CCC$&& $EEE$&&      $BBB$&\cr
-height2pt&\omit&&\omit&&\omit&&\omit&&\omit&\cr
-\noalign{\hrule}
-&    70&&   224&&   254&&   255&& $128 + zz$&\cr
-&    71&&   224&&   126&&   127&&       $zz$&\cr
-&    72&&   228&&   254&&   255&& $128 + zz$&\cr
-&    73&&   225&&   126&&   127&&       $zz$&\cr
-&    74&&   225&&   254&&   255&& $128 + zz$&\cr
-&    75&&   226&&   126&&   127&&       $zz$&\cr
-&    76&&   227&&   126&&   127&&       $zz$&\cr
-&    77&&   227&&   254&&   255&& $128 + zz$&\cr
-&    78&&   228&&   126&&   127&&       $zz$&\cr
-&    79&&   229&&   126&&   127&&       $zz$&\cr
-&    80&&   226&&   254&&   255&& $128 + zz$&\cr
-}
-\hrule
-} \hfil
 
-\vskip 12pt
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline \rule[-2ex]{0pt}{5ex}$xx$ & $AAA$ & $CCC$ & $EEE$ & $BBB$\\ 
+\hline 70 & 224 & 254 & 255 & $128+zz$ \\
+71 & 224 & 126 & 127 & $zz$ \\
+72 & 228 & 254 & 255 & $128+zz$ \\
+73 & 225 & 126 & 127 & $zz$ \\
+74 & 225 & 254 & 255 & $128+zz$ \\
+75 & 226 & 126 & 127 & $zz$ \\
+76 & 227 & 254 & 255 & $zz$ \\
+77 & 227 & 126 & 127 & $128+zz$ \\
+78 & 228 & 254 & 255 & $zz$ \\
+79 & 229 & 126 & 127 & $zz$ \\
+80 & 226 & 254 & 255 & $128+zz$ \\ \hline
+\end{tabular} 
+\end{center}
 
 \exemple{l'IP associ\'ee \`a la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ; sa passerelle est \server{129.104.224.254}, son
 adresse de \emph{broadcast} est \server{129.104.224.255} et son masque de sous-r\'eseau est \server{255.255.255.128}.}
@@ -86,7 +76,7 @@ adresse de \emph{broadcast} est \server{129.104.224.255} et son masque de sous-r
 \setbox\point=\hbox{.\hskip .15em}
 \def\ecart{\hskip 1.5em plus 1fill\relax}
 \noindent\begin{tabular}{l@{\xleaders\copy\point\ecart}l}
-  Sous-r\'eseau (\server{AAA}) & 203 pour le bâtiment A ; 204 au bâtiment D \\
+  Sous-r\'eseau (\server{AAA}) & 203 pour le bï¿½timent A ; 204 au bï¿½timent D \\
   IP (\server{BBB})            & 50 + les deux derniers chiffres du num\'ero de ta chambre \\
   Passerelle                   & \server{129.104.AAA.13} \\
   Masque de sous-r\'eseau      & \server{255.255.255.0} \\
