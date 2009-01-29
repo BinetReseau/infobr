@@ -1,6 +1,3 @@
-\clearpage
-\pagebreak
-
 \bghdr{images/fond-mac}
 
 %\begin{center}
@@ -18,14 +15,24 @@ La configuration est détaillée pour Mac OS 10.4 (Tiger) et Mac OS 10.5 (Leopard)
 La gestion des configurations réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une à l'autre
 grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est très pratique pour les machines vouées à être connectées à plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} pour plus de précisions sur le Wifi). Commence donc par créer une nouvelle configuration réseau dans le menu déroulant \menu{Configuration}.
 
-\imagepos{images/mac_nouvelle_config}{0.5}{Créer une nouvelle
-configuration réseau (Tiger)}{!hl}
+  \begin{figure*}[!h]
+    \begin{center}  
+      \subfloat[Tiger]{\includegraphics[width=0.47\textwidth]{images/mac_nouvelle_config} \label{config:mac:ip} } 
+      \hfill
+      \subfloat[Leopard]{ \begin{minipage}{0.48 \textwidth}\centering 
+      \includegraphics[width=0.95\textwidth]{images/mac_nouvelle_config_leopard_1}\\  \vspace*{1ex}
+      \includegraphics[width=0.95\textwidth]{images/mac_nouvelle_config_leopard_2} 
+ \end{minipage} 
+      \label{config:mac:ip:leopard}}
+      \caption{Créer une nouvelle configuration réseau}
+    \end{center}
+  \end{figure*}
 
-\imagepos{images/mac_nouvelle_config_leopard_1}{0.5}{Créer une nouvelle
-configuration réseau (Leopard)}{!hr}
+%\imagepos{images/mac_nouvelle_config}{0.5}{Créer une nouvelle configuration réseau (Tiger)}{!hl}
 
-\imagepos{images/mac_nouvelle_config_leopard_2}{0.5}{Créer une nouvelle
-configuration réseau (Leopard, suite)}{!hb}
+%\imagepos{images/mac_nouvelle_config_leopard_1}{0.5}{Créer une nouvelle configuration réseau (Leopard)}{!hr}
+
+%\imagepos{images/mac_nouvelle_config_leopard_2}{0.5}{Créer une nouvelle configuration réseau (Leopard, suite)}{!hb}
 
 Une fois la nouvelle configuration créée, il faut configurer l'interface réseau \emph{ethernet}.
 
@@ -38,8 +45,18 @@ Une fois la nouvelle configuration créée, il faut configurer l'interface réseau 
 
 Choisis alors \menu{Configurer IPv4} : \menu{Manuellement} (\app{Tiger}) ou \menu{Configurer} : \menu{Manuellement} (\app{Leopard}). Tu trouveras toutes les valeurs d'IP nécessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant aux captures d'écran~\ref{config:mac:ip} et ~\ref{config:mac:ip:leopard}. Si une partie d'IP est blanche sur ces captures, c'est qu'elle t'est personnelle et que tu dois la calculer !
 
-{\imageref{images/mac_config_ip}{0.4}{Configuration IP (Tiger)}{!ht}{config:mac:ip}
-\imageref{images/mac_config_ip_leopard}{0.4}{Configuration IP (Leopard)}{!ht}{config:mac:ip:leopard}}
+  \begin{figure*}[!hl]
+    \begin{center}
+      \subfloat[Tiger]{\includegraphics[width=0.45\textwidth]{images/mac_config_ip} \label{config:mac:ip}} 
+      \hfill
+      \subfloat[Leopard]{\includegraphics[width=0.45\textwidth]{images/mac_config_ip_leopard} \label{config:mac:ip:leopard}} 
+      \caption{Configuration IP}
+    \end{center}
+  \end{figure*}
+  
+  
+%{\imageref{images/mac_config_ip}{0.4}{Configuration IP (Tiger)}{!ht}{config:mac:ip}
+%\imageref{images/mac_config_ip_leopard}{0.4}{Configuration IP (Leopard)}{!ht}{config:mac:ip:leopard}}
 
 Pour avoir accès à Internet, il faut aussi configurer le \emph{proxy}.
 
@@ -54,8 +71,20 @@ Pour avoir accès à Internet, il faut aussi configurer le \emph{proxy}.
 
 N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
-{\imagepos{images/mac_config_proxy}{0.4}{Configurer le \emph{proxy} (Tiger)}{!hl}
-\imagepos{images/mac_config_proxy_leopard}{0.4}{Configurer le \emph{proxy} (Leopard)}{!hr}}
+
+  \begin{figure*}[!hl]
+    \begin{center}
+      \subfloat[Tiger]{\includegraphics[width=0.4\textwidth]{images/mac_config_proxy}}
+      \hspace{0.1 \textwidth}
+      \subfloat[Leopard]{\includegraphics[width=0.4\textwidth]{images/mac_config_proxy_leopard}}
+      \caption{Configurer le \emph{proxy}}
+    \end{center}
+  \end{figure*}
+  
+%{\imagepos{images/mac_config_proxy}{0.4}{Configurer le \emph{proxy} (Tiger)}{!hl}
+%\imagepos{images/mac_config_proxy_leopard}{0.4}{Configurer le \emph{proxy} (Leopard)}{!hr}}
+
+
 \subsubsection{Configuration antivirus}
 
 Bien qu'il soit important de maintenir ton système à jour, un antivirus est pour l'instant tout à fait superflu sur Mac, puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assuré de la provenance, et essaie de te tenir au courant des actualités concernant les failles des applications que tu utilises.
