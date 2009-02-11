@@ -29,13 +29,13 @@ Bien s\^ur, l'ensemble des manipulations doit se faire en tant que \emph{root}.
 
 \paragraph{\distrib{Sous Gentoo}}
 
-Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X, donc configure le rï¿½seau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment puis
+Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X, donc configure le réseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment puis
 configure la r\'esolution DNS, tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 
 \noindent \cmdline{
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
-namaserver 129.104.201.52}
+nameserver 129.104.201.52}
 
 \label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a travers le \emph{proxy} de l'\'ecole, il faut d\'efinir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
