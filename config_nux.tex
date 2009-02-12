@@ -9,64 +9,62 @@
 \subsection{Configuration sous Linux}
 
 \subsubsection{Configuration IP}
-Quelle que soit ta distribution, il faut que tu d\'ecides d'un nom de
-machine --- ton pseudo en g\'en\'eral. Tu as \'egalement besoin de
+Quelle que soit ta distribution, il faut que tu décides d'un nom de
+machine --- ton pseudo en général. Tu as également besoin de
 conna\^itre les informations suivantes :
 \begin{description}
-  \item [ton adresse IP] not\'ee dor\'enavant \server{129.104.AAA.BBB} ;
-  \item [l'IP de ta passerelle (\emph{gateway})] not\'ee \server{129.104.GGG.CCC} ;
-  \item [ton masque de sous-r\'eseau] \server{255.255.FFF.DDD} ;
+  \item [ton adresse IP] notée dorénavant \server{129.104.AAA.BBB} ;
+  \item [l'IP de ta passerelle (\emph{gateway})] notée \server{129.104.GGG.CCC} ;
+  \item [ton masque de sous-réseau] \server{255.255.FFF.DDD} ;
   \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$. \\
-        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle et Maunoury ce n'est donc pas n\'ecessairement vrai que $GGG =
+        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle et Maunoury ce n'est donc pas nécessairement vrai que $GGG =
         AAA$.)}.
 \end{description}
 
-Toutes les informations n\'ecessaires se trouvent page
+Toutes les informations nécessaires se trouvent page
 \pageref{calcul_ip}.
 
-Bien s\^ur, l'ensemble des manipulations doit se faire en tant que \emph{root}.
+Bien sûr, l'ensemble des manipulations doit se faire en tant que \emph{root}.
 
 
 \paragraph{\distrib{Sous Gentoo}}
 
-Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X, donc configure le réseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment puis
-configure la r\'esolution DNS, tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
-
+Tu dois d'abord configurer ta Gentoo pour utiliser le réseau de l'X, donc configure le réseau en statique avec ton adresse IP calculée précédemment puis
+configure la résolution DNS, tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 \noindent \cmdline{
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
 nameserver 129.104.201.52}
 
-\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a travers le \emph{proxy} de l'\'ecole, il faut d\'efinir les variables d'environnement
+\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à travers le \emph{proxy} de l'école, il faut définir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
-
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
 no\_proxy=.eleves.polytechnique.fr\\
 GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
-Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans ta liste mais
-\urllink{ftp://miroir} \'etant interne, il sera toujours beaucoup plus rapide que les autres. On te
-conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir tr\`es complet mais tr\`es lent.
+Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais
+\urllink{ftp://miroir} étant interne, il sera toujours beaucoup plus rapide que les autres. On te
+conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir très complet mais très lent.
 
 \input{ubuntu.tex}
 
 \subsubsection{Configuration antivirus}
-\footnotesize{(elle est dr\^ole celle-l\`a hein ?)}
+\footnotesize{(elle est drôle celle-là hein ?)}
 
 \subsubsection{Configuration du pare-feu}
 
-La solution la plus simple pour se faire un \emph{firewall} sous linux est d'utiliser les \emph{iptables}. Pour ceci la premi\`ere \'etape est
-d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment configurer ton \emph{firewall} pour le r\'eseau de l'X, consulte le Wikix.
+La solution la plus simple pour se faire un \emph{firewall} sous linux est d'utiliser les \emph{iptables}. Pour ceci la première étape est
+d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment configurer ton \emph{firewall} pour le réseau de l'X, consulte le Wikix.
 
 \subsubsection{Configuration navigateur web}
 
 \flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou
-\app{Konqueror} (le navigateur fourni par d\'efaut avec KDE). Dans tous les cas, la seule
-configuration \`a effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il suffit d'aller dans
-\menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avanc\'e}, puis de cliquer sur l'onglet
-\menu{R\'eseau}, et enfin \menu{Param\`etres de connexion} ; ensuite coche la case \menu{Adresse de
+\app{Konqueror} (le navigateur fourni par défaut avec KDE). Dans tous les cas, la seule
+configuration à effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il suffit d'aller dans
+\menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
+\menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite coche la case \menu{Adresse de
 configuration automatique du proxy}, et rentre \urllink{http://frankiz/proxy.pac}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
@@ -80,77 +78,77 @@ les logiciels KDE (KGet, Adept, ...) n'utiliserons pas le proxy !!
 \subsubsection{Configuration mail}
 
 \flimage{images/nux_kmail_icon}{0.12}{l} Le client mail le plus
-utilis\'e est \app{Kmail}, mais il en existe bien s\^ur d'autres comme
+utilisé est \app{Kmail}, mais il en existe bien sûr d'autres comme
 \app{Thunderbird}. La configuration est semblable, quel que soit le
 client que tu utilises.
 
 Va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la
-rubrique \menu{Comptes}. Commence par cr\'eer un nouveau compte dans
-l'onglet \menu{R\'eception des messages} en cliquant sur le bouton
+rubrique \menu{Comptes}. Commence par créer un nouveau compte dans
+l'onglet \menu{Réception des messages} en cliquant sur le bouton
 \menu{Ajouter\ldots} et choisis le type POP3.
 
-\imagepos{images/nux_config_kmail_pop}{0.45}{Configuration de la r\'eception des messages sous Kmail}{pht}
+\imagepos{images/nux_config_kmail_pop}{0.45}{Configuration de la réception des messages sous Kmail}{pht}
 
-Utilise les param\`etres suivants pour configurer l'onglet
-\menu{G\'en\'eral} :
+Utilise les paramètres suivants pour configurer l'onglet
+\menu{Général} :
 \begin{description}
   \item[Nom] le nom du compte, par exemple : Mails Poly
-  \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI \`a ton arriv\'ee sur le plateau
-  \item[Mot de passe] et l\`a le mot de passe \server{poly}
+  \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI à ton arrivée sur le plateau
+  \item[Mot de passe] et là le mot de passe \server{poly}
   \item[Serveur] \server{poly.polytechnique.fr}
   \item[Port] 995
 \end{description}
 
 Ensuite, va dans l'onglet \menu{Extras} et coche la case
-\menu{Utiliser SSL pour s\'ecuriser les t\'el\'echargements}.
+\menu{Utiliser SSL pour sécuriser les téléchargements}.
 
 \imagepos{images/nux_config_kmail_smtp}{0.45}{Configuration de l'envoi des messages sous Kmail}{pht}
 
 Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le
-bouton \menu{Ajouter\ldots}. Utilise les param\`etres suivants pour le
+bouton \menu{Ajouter\ldots}. Utilise les paramètres suivants pour le
 configurer :
 \begin{description}
-  \item[Nom] le m\^eme nom de compte que pr\'ec\'edemment
+  \item[Nom] le m\^eme nom de compte que précédemment
   \item[Serveur] \server{poly.polytechnique.fr}
   \item[Port] 25
 \end{description}
-Sinon, laisse toutes les cases d\'ecoch\'ees.
+Sinon, laisse toutes les cases décochées.
 
-\par Tu peux aussi configurer l'acc\`es \`a \app{l'annuaire LDAP} de l'\'ecole, sorte de carnet d'adresses en ligne qui contient les adresses mail de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un h\^ote}, et configure comme suit:
+\par Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses mail de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit:
 \begin{description}
-  \item[H\^ote] \server{ldap.eleves.polytechnique.fr}
+  \item[Hôte] \server{ldap.eleves.polytechnique.fr}
   \item[Port] 389
   \item[Version de LDAP] 3
   \item[DN] dc=ldap,dc=eleves,dc=polytechnique,dc=fr
-  \item[S\'ecurit\'e] Non
+  \item[Sécurité] Non
   \item[Identification] Anonyme
 \end{description}
-Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant acc\`es au LDAP lors de la
-r\'edaction de messages, avec tout au plus un red\'emarrage de \app{Kmail}. \imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous
+Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès au LDAP lors de la
+rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}. \imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous
 Kmail}{pht}
 
 \subsubsection{Configuration news}
 \flimage{images/nux_knode_icon}{0.12}{l} Le client news le plus
-utilis\'e est \app{Knode}. Parmi les autres clients news, citons
+utilisé est \app{Knode}. Parmi les autres clients news, citons
 \app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est
-presque ind\'ependante du logiciel choisi.
+presque indépendante du logiciel choisi.
 
 Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
-cr\'ee un compte en cliquant sur \menu{Ajouter\ldots}.
+crée un compte en cliquant sur \menu{Ajouter\ldots}.
 
 \imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
-  \item[Nom] ce que tu veux pour d\'ecrire ce compte, par exemple 'News Frankiz'
+  \item[Nom] ce que tu veux pour décrire ce compte, par exemple 'News Frankiz'
   \item[Serveur] \server{frankiz.polytechnique.fr}
   \item[Port] 119
 \end{description}
-Ensuite occupe-toi de l'onglet \menu{Identit\'e} :
+Ensuite occupe-toi de l'onglet \menu{Identité} :
 \begin{description}
   \item[Nom] mets ton pseudo dans ce champ
-  \item[Organisation] X, \'ecole Polytechnique, comme tu le sens
-  \item[Adresse \'electronique] ton adresse mail, pour que les gens puissent te r\'epondre par mail.
+  \item[Organisation] X, école Polytechnique, comme tu le sens
+  \item[Adresse électronique] ton adresse mail, pour que les gens puissent te répondre par mail.
 \end{description}
 
 Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller
@@ -159,20 +157,20 @@ courrier (SMTP)}, et choisir comme serveur d'envoi de mails
 \server{poly.polytechnique.fr}, port 25 --- c'est exactement la m\^eme
 configuration SMTP que \app{Kmail}.
 
-Si tu veux mettre une signature \`a la fin des messages que tu
-posteras, il te suffit de la mettre dans l'onglet \menu{Identit\'e}.
-Sur la plupart des clients la signature est interpr\'et\'ee comme
-ext\'erieure au message et n'est en particulier pas incluse dans le
-texte cit\'e lorsque tu r\'eponds \`a un message. Pour d\'efinir une
-signature \`a la main, il suffit de mettre \verb*+-- +\ (c'est \`a dire
+Si tu veux mettre une signature à la fin des messages que tu
+posteras, il te suffit de la mettre dans l'onglet \menu{Identité}.
+Sur la plupart des clients la signature est interprétée comme
+extérieure au message et n'est en particulier pas incluse dans le
+texte cité lorsque tu réponds à un message. Pour définir une
+signature à la main, il suffit de mettre \verb*+-- +\ (c'est à dire
 -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne
 composera ta signature.
 
-Il ne te reste plus qu'\`a t'inscrire \`a des \emph{newsgroups} (reporte-toi \`a la page \pageref{newsgroups} pour plus d'infos) et \`a poster !
+Il ne te reste plus qu'à t'inscrire à des \emph{newsgroups} (reporte-toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
-Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un acc\`es s\'ecuris\'e, avec \app{Knode}, il y a une petite subtilit\'e car il
-ne g\`ere pas le SSL. Il faut installer \app{stunnel} qui permet de d\'efinir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou
-\file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premi\`eres y sont en principe d\'ej\`a) :
+Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il
+ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou
+\file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
 
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
@@ -192,11 +190,11 @@ connect = ssl.polytechnique.org:563\\
 TIMEOUTclose = 0
 }
 
-Il ne te reste plus qu'\`a lancer \app{stunnel} par :
+Il ne te reste plus qu'à lancer \app{stunnel} par :
 
 \cmdline{/etc/init.d/stunnel start}
 
 Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et
 \server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
-que tu rentres ton nom d'utilisateur \`a Polytechnique.org et ton mot de passe, que tu peux d\'efinir
+que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir
 sur \urllink{http://www.polytechnique.org/acces\_smtp.php}.

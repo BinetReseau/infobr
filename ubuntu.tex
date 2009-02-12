@@ -1,31 +1,31 @@
 \paragraph{\distrib{Ubuntu/Kubuntu}}
 \label{Ubuntu:IP}
 
-Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere
-interactive. Si tu ne l'as pas fait \`a ce moment l\`a tu peux modifier tes paramètres réseaux via l'ic\^one pr\'esente dans ta barre des t\^aches symbolisant
-le r\'eseau. Un simple clic droit dessus affiche un menu te permettant d'ouvrir la fenêtre de configuration. \emph{Attention} ici le r\'eseau est \`a configurer en
-\emph{statique} pas en automatique avec DHCP !! Rentre ensuite ton adresse IP, ta passerelle, ton adresse de broadcast et ton masque de sous-r\'eseau.
+Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demandé de rentrer toutes ces informations de manière
+interactive. Si tu ne l'as pas fait à ce moment là tu peux modifier tes paramètres réseaux via l'icône présente dans ta barre des tâches symbolisant
+le réseau. Un simple clic droit dessus affiche un menu te permettant d'ouvrir la fenêtre de configuration. \emph{Attention} ici le réseau est à configurer en
+\emph{statique} pas en automatique avec DHCP !! Rentre ensuite ton adresse IP, ta passerelle, ton adresse de \emph{broadcast} et ton masque de sous-réseau.
 
-Ensuite il faut configurer la r\'esolution DNS, sous Kubuntu va sur l'onglet \textit{Syst\`eme de noms de domaines} ou dans l'outils de configuration du r\'eseau
-(param\`etres du Syst\`eme -> r\'eseau). Les adresses IP des serveurs DNS sont les suivantes: \server{129.104.201.53} et \server{129.104.201.51}, le domaine r\'eseau
-est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechnique.fr} pour acc\'eder plus facilement aux machines des salles info. Choisis un nom de machine
-(en g\'en\'eral ton pseudo) que tu reporteras dans qRezix pour qu'il soit enregistr\'e.
-\imagepos{images/kubuntu_config_reseau0}{0.65}{Configuration du r\'eseau sous Kubuntu}{!ht}
-\imagepos{images/kubuntu_config_reseau1}{0.55}{Configuration de la r\'esolution DNS sous Kubuntu}{!ht}
-% Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demand\'e de rentrer toutes ces informations de mani\`ere
-% interactive. Si tu ne l'as pas fait \`a ce moment l\`a, tu peux les modifier comme ci-dessous avec ton \'editeur de texte pr\'ef\'er\'e (le tout avec les droits
-% administrateur \'evidemment!), ou si tu pr\'ef\`eres les outils graphiques avec \app{KNetworkManager} sous Kubuntu (KDE) (l'ic\^one en forme de c\^able r\'eseau dans
-% la barre des t\^aches) et avec \app{l'applet r\'eseau} sous Ubuntu (GNOME) (l'ic\^one en haut \`a droite symbolisant un r\'eseau -> propri\'et\'es).
+Ensuite il faut configurer la résolution DNS, sous Kubuntu va sur l'onglet \textit{Système de noms de domaines} ou dans l'outils de configuration du réseau
+(paramètres du Système -> réseau). Les adresses IP des serveurs DNS sont les suivantes: \server{129.104.201.53} et \server{129.104.201.51}, le domaine réseau
+est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechnique.fr} pour accéder plus facilement aux machines des salles info. Choisis un nom de machine
+(en général ton pseudo) que tu reporteras dans qRezix pour qu'il soit enregistré.
+\imagepos{images/kubuntu_config_reseau0}{0.65}{Configuration du réseau sous Kubuntu}{!ht}
+\imagepos{images/kubuntu_config_reseau1}{0.55}{Configuration de la résolution DNS sous Kubuntu}{!ht}
+% Lors de l'installation d'une nouvelle Ubuntu, le programme d'installation t'a normalement demandé de rentrer toutes ces informations de manière
+% interactive. Si tu ne l'as pas fait à ce moment là, tu peux les modifier comme ci-dessous avec ton éditeur de texte préféré (le tout avec les droits
+% administrateur évidemment!), ou si tu préfères les outils graphiques avec \app{KNetworkManager} sous Kubuntu (KDE) (l'ic\^one en forme de c\^able réseau dans
+% la barre des t\^aches) et avec \app{l'applet réseau} sous Ubuntu (GNOME) (l'ic\^one en haut à droite symbolisant un réseau -> propriétés).
 % \newline
 % \newline
-% \textit{Les \'etapes qui suivent peuvent \^etres enti\`erement r\'ealis\'ees avec les outils graphiques mentionn\'es plus haut.}
+% \textit{Les étapes qui suivent peuvent \^etres entièrement réalisées avec les outils graphiques mentionnés plus haut.}
 % \newline
 % \begin{itemize}
 % \item Le fichier \file{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement:
 % 
 % \cmdline[0.85]{tonPseudo.eleves.polytechnique.fr}
 % 
-% \item Le fichier \file{/etc/resolv.conf} d\'ecrit comment associer le nom d'une machine \`a une adresse IP.
+% \item Le fichier \file{/etc/resolv.conf} décrit comment associer le nom d'une machine à une adresse IP.
 % Il doit contenir:
 % 
 % \cmdline[0.85]{
@@ -36,9 +36,9 @@ est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechniqu
 % }
 % 
 % \item Le fichier \file{/etc/network/interfaces} contient entre autres ton IP,
-% ton sous-r\'eseau et la passerelle pour en sortir. Ce fichier doit
-% ressembler (avec \'eventuellement une config wifi \`a la suite\ldots,
-% voir la page~\pageref{wifi}) \`a :
+% ton sous-réseau et la passerelle pour en sortir. Ce fichier doit
+% ressembler (avec éventuellement une config wifi à la suite\ldots,
+% voir la page~\pageref{wifi}) à :
 % 
 % \cmdline[0.85]{
 % \# The loopback network interface\\
@@ -56,61 +56,54 @@ est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechniqu
 % 
 % \end{itemize}
 % 
-% Ensuite il faut red\'emarrer ta configuration r\'eseau (les outils graphiques devraient le faire tout seuls apr\`es validation) :
+% Ensuite il faut redémarrer ta configuration réseau (les outils graphiques devraient le faire tout seuls après validation) :
 % 
 % \cmdline{\$ sudo /etc/init.d/networking restart}
 
-% Voil\`a, ta configuration r\'eseau est termin\'ee! Tu peux la tester en \emph{pinguant} \fkz, o\`u tu devrais voir quelque chose comme (ceci reste utile m\^eme si tu
+% Voilà, ta configuration réseau est terminée! Tu peux la tester en \emph{pinguant} \fkz, où tu devrais voir quelque chose comme (ceci reste utile m\^eme si tu
 % as fait ta configuration avec les outils graphiques) :
 
-Une fois ta configuration r\'eseau termin\'ee, tu peux la tester en \emph{pinguant} \fkz (dans une console), o\`u tu devrais voir quelque chose comme :
+Une fois ta configuration réseau terminée, tu peux la tester en \emph{pinguant} \fkz (dans une console), où tu devrais voir quelque chose comme :
 
 \cmdline{\$ ping frankiz\\
 PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 64 bytes from Frankiz.eleves.polytechnique.fr ...}
 
 \label{ubuntu_mirror} {\bf Configuration du gestionnaire de paquets
-:} Il faut d\'esormais configurer le gestionnaire de paquets pour
-qu'il utilise les miroirs du BR et non les miroirs \`a l'ext\'erieur du
+:} Il faut désormais configurer le gestionnaire de paquets pour
+qu'il utilise les miroirs du BR et non les miroirs à l'extérieur du
 campus qui sont plus lents.
 
-Le fichier \file{/etc/apt/sources.list} liste les miroirs utilis\'es par le gestionnaire de paquets. Il faut commenter la premi\`ere ligne (qui
-correspond au CD d'installation) ainsi que toutes les lignes non comment\'ees du fichier (qui correspondent aux miroirs ext\'erieurs au campus) de la
-fa\c{c}on suivante:
-
+Le fichier \file{/etc/apt/sources.list} liste les miroirs utilisés par le gestionnaire de paquets. Il faut commenter la première ligne (qui
+correspond au CD d'installation) ainsi que toutes les lignes non commentées du fichier (qui correspondent aux miroirs extérieurs au campus) de la
+façon suivante:
 \cmdline{deb cdrom:[...]/ [version] main restricted}
-
 devient
-
 \cmdline{\#deb cdrom:[...]/ [version] main restricted}
 
-Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \emph{d\'ebut} du fichier:
-
+Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \emph{début} du fichier:
 \cmdline{
 deb ftp://miroir/ubuntu [version] main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-updates main restricted universe multiverse\\
 deb ftp://miroir/ubuntu [version]-security main restricted universe multiverse
 }
+où \textbf{[version]} correspond à la version d'Ubuntu installée. La version actuelle est \textbf{intrepid} et la précédente est \textbf{hardy}.
 
-o\`u \textbf{[version]} correspond \`a la version d'Ubuntu install\'ee. La version actuelle est \textbf{intrepid} et la pr\'ec\'edente est \textbf{hardy}.
+Tu peux aussi utiliser le dép\^ot suivant mais attention il contient des logiciels \emph{non supportés par l'équipe de développement d'Ubuntu} (en particulier il peut arriver que certains logiciels soient bogués !):
+\cmdline{deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse}
 
-Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels \emph{non support\'es par l'\'equipe de d\'eveloppement d'Ubuntu} (en particulier il peut arriver que certains logiciels soient bogu\'es !):
-
-\cmdline{
-deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse}
-
-Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient \app{QRezix} ainsi que des paquets tr\`es importants (codecs
-vid\'eo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier l\'egales ou
-\'ethiques. Pour en profiter, il faut rajouter \`a la suite des lignes pr\'ec\'edentes:
+Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient \app{QRezix} ainsi que des paquets très importants (codecs
+vidéo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou
+éthiques. Pour en profiter, il faut rajouter à la suite des lignes précédentes:
 
 \cmdline{deb ftp://miroir/bll [version] main}
 
 
-On finit par v\'erifier que tout fonctionne en mettant \`a jour la liste
+On finit par vérifier que tout fonctionne en mettant à jour la liste
 des paquets disponibles:
 
 \cmdline{\$ sudo aptitude update}
 
 S'il n'y a pas de message d'erreur c'est que tout fonctionne bien.
 
-\textbf{NB:} on peut aussi faire cette configuration depuis \app{synaptic} (ubuntu) ou \app{adept} (kubuntu), il suffit d'aller dans le menu faisant r\'ef\'erence aux d\'ep\^ots.
+\textbf{NB:} on peut aussi faire cette configuration depuis \app{synaptic} (ubuntu) ou \app{adept} (kubuntu), il suffit d'aller dans le menu faisant référence aux dép\^ots.
