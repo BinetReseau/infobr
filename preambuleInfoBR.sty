@@ -1,0 +1,219 @@
+\ProvidesPackage{preambuleInfoBR}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Les extensions utilisées
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{xspace}
+\usepackage[ec]{aeguill}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eurosym}
+\usepackage{watermark}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{color}
+\usepackage{microtype}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
+\usepackage[francais]{babel}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Mise en page
+
+
+
+
+
+
+%On rend les fins de pages homogènes (par rapport aux marges)
+\flushbottom
+
+%Suppression veuves et orphelines
+\clubpenalty=10000
+\widowpenalty=10000
+
+% En-têtes et pieds-de-page personalisés
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries{\Large\thepage}}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\sc{\leftmark}}
+\fancypagestyle{plain}{%
+  \fancyhead{} % get rid of headers
+  \renewcommand{\headrulewidth}{0pt} % and the line
+}
+
+%On agrandit les marges
+\addtolength{\headwidth}{80pt}
+\addtolength{\headheight}{3pt}
+\addtolength{\evensidemargin}{-60pt}
+\addtolength{\voffset}{-24pt}
+\addtolength{\textheight}{85pt}
+\addtolength{\textwidth}{60pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Quelques couleurs perso
+
+\definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}
+\definecolor{Blue2}{cmyk}{0.6,0.2,0.0,0.0}
+\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
+\definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
+\definecolor{GreenApp}{cmyk}{0.7,0.0,1.0,0.8}
+\definecolor{GreenPseudo}{cmyk}{0.8,0.1,1.0,0.1}
+\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
+\definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}
+\definecolor{DarkOrange}{cmyk}{0.,0.4,1.0,0.4}
+\definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
+\definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Gestion de l'iconographie
+
+
+% pour les images de fond sous les en-têtes
+\newcommand{\bghdr}[1]{
+  \leftwatermark{
+    \raisebox{-1.5cm}{ \hspace{-2.5cm} \includegraphics{#1} }
+  }
+  \rightwatermark{
+    \raisebox{-1.5cm}{ \hspace{14.1cm} \includegraphics{#1} }
+  }
+}
+
+
+% pour inclure des images: différentes possibilités
+
+\newcommand{\image}[3]{ % arguments : path, largeur (entre 0 et 1), légende
+  \begin{figure*}
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \caption{#3}
+    \end{center}
+  \end{figure*}
+}
+
+\newcommand{\imagepos}[4]{ % arguments : path, largeur (entre 0 et 1), légende, positionnement
+  \begin{figure*}[#4]
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \caption{#3}
+    \end{center}
+  \end{figure*}
+}
+\newcommand{\imageref}[5]{ % arguments : path, largeur (entre 0 et 1), l\'egende, positionnement, label
+  \begin{figure*}[#4]
+    \begin{center}
+      \includegraphics[width=#2\textwidth]{#1}
+      \caption{#3} \label{#5}
+    \end{center}
+  \end{figure*}
+}
+\newcommand{\flimage}[3]{ % arguments : path, largeur (entre 0 et 1), position
+  \begin{wrapfigure}{#3}{0pt}
+    \includegraphics[width=#2\textwidth]{#1}
+  \end{wrapfigure}
+}
+
+% Les logos win, nux et mac
+\newcommand{\nuxs}{\includegraphics{images/logo_Linux_s}}
+\newcommand{\wins}{\includegraphics{images/logo_Windows_s}}
+\newcommand{\macs}{\includegraphics{images/logo_Mac_s}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Environnement ligne de commande et exemples
+
+\newcommand{\cmdline}[2][0.9]{
+  \vspace{4pt plus 1.5pt minus 1.5pt}
+  \noindent
+  \begin{center}
+\colorbox{LightRed}{
+    \parbox[c]{#1\textwidth}{ 
+    \NoAutoSpaceBeforeFDP
+    \texttt{\footnotesize{\color{BrightGreen}#2}}
+    \AutoSpaceBeforeFDP
+    }
+  } 
+\end{center}
+  \vspace{4pt plus 1.5pt minus 1.5pt}
+}
+
+\newcommand{\cmdlineshort}[1]{
+  \noindent
+  \colorbox{LightRed}{
+    \parbox{.2\textwidth}{
+    \NoAutoSpaceBeforeFDP
+    \texttt{\normalsize{\color{BrightGreen}#1}}
+    \AutoSpaceBeforeFDP
+    }
+  }
+  \vspace{4pt}
+}
+
+\newcommand{\exemple}[1]{ \fcolorbox{black}{LightRed} {
+  \begin{minipage}{0.9\textwidth}
+    \emph{Exemple :} #1
+  \end{minipage}
+}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Quelques styles prédéfinis
+% texttt : ligne de commande, serveurs
+% textsf : tout le reste : url, email, dossiers
+
+% pour les serveurs
+\newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
+
+% pour les URLs
+\newcommand{\urllink}[1]{\NoAutoSpaceBeforeFDP\textsf{\color{Blue}#1}\AutoSpaceBeforeFDP\xspace}
+
+% pour les mails
+\newcommand{\mail}[1]{\textsf{\color{Blue2}#1}\xspace}
+
+% pour les newsgroups
+\newcommand{\ngname}[1]{\textsf{\color{DarkGreen}#1}\xspace}
+
+% pour les applications
+\newcommand{\app}[1]{\textbf{\color{GreenApp}#1}\xspace}
+
+% pour les menus et les elements de menu
+\newcommand{\menu}[1]{\textsf{\color{GrayMenu}`#1'}\xspace}
+
+% pour les repertoires
+\newcommand{\rep}[1]{\textsf{\color{Orange}#1}\xspace}
+
+% pour les fichiers
+\newcommand{\file}[1]{\textsf{\color{DarkOrange}#1}\xspace}
+
+% pour les distributions Linux
+\newcommand{\distrib}[1]{{\color{green}#1}}
+
+% pour les liens (sous frankiz)
+\newcommand{\lien}[1]{\textsf{\color{Blue}`#1'}\xspace}
+
+% pour les pseudos
+\newcommand{\mbr}[5]{\noindent#3 \bsc{\color{GreenPseudo}#1} (#4) \textbf{#2} : #5}
+
+% Pour les commandes DOS
+\newcommand{\cmd}[1]{\NoAutoSpaceBeforeFDP\guillemotleft~#1~\guillemotright \AutoSpaceBeforeFDP\xspace}
+
+% divers
+\newcommand{\fkz}{\server{frankiz}}
+\newcommand{\xshare}{la rubrique \menu{Télécharger} de \fkz}
+
