@@ -6,14 +6,16 @@
 
 \subsection{Configuration sous Mac OS X}
 
-La configuration est détaillée pour Mac OS 10.4 (Tiger) et Mac OS 10.5 (Leopard). Afin de connaître la version que tu utilises, va dans le \menu{menu Pomme} puis sélectionne \menu{À propos de ce Mac}).
+La configuration est détaillée pour Mac OS 10.5 (Leopard) et encore un peu pour Mac OS 10.4 (Tiger). Afin de connaître la version que tu utilises, va dans le \menu{menu Pomme} puis slectionne \menu{ propos de ce Mac}).
 
 \subsubsection{Configuration IP}
 
-\flimage{images/mac_prefs_icone}{0.1}{l} \app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du \menu{menu Pomme}, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse et utilise la procédure du BR. En effet, le réseau nécessite une configuration particulière à l'X, plus complexe que celle effectu\'ee par cet assistant.
+\flimage{images/mac_prefs_icone}{0.1}{l} \app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du \menu{menu Pomme}, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse et utilise la procédure du BR. En effet, le réseau nécessite une configuration particulière  l'X, plus complexe que celle effectuée par cet assistant.
 
-La gestion des configurations réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une à l'autre
-grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est très pratique pour les machines vouées à être connectées à plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} pour plus de précisions sur le Wifi). Commence donc par créer une nouvelle configuration réseau dans le menu déroulant \menu{Configuration}.
+
+
+La gestion des configurations réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une  l'autre grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est trés pratique pour les machines vouées à être connectées à plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} puis la section \emph{wifi} pour plus de pércisions sur le Wifi). Commence donc par crer une nouvelle configuration réseau dans le menu déroulant \menu{Configuration}.
+
 
   \begin{figure*}[!h]
     \begin{center}  
@@ -22,10 +24,13 @@ grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est 
       \subfloat[Leopard]{ \begin{minipage}{0.48 \textwidth}\centering 
       \includegraphics[width=0.95\textwidth]{images/mac_nouvelle_config_leopard_1}\\  \vspace*{1ex}
       \includegraphics[width=0.95\textwidth]{images/mac_nouvelle_config_leopard_2} 
- \end{minipage} }
-      \caption{Créer une nouvelle configuration réseau}
+
+ 		\end{minipage} }
+     	 \caption{Créer une nouvelle configuration réseau}
+
     \end{center}
   \end{figure*}
+
 
 %\imagepos{images/mac_nouvelle_config}{0.5}{Créer une nouvelle configuration réseau (Tiger)}{!hl}
 
@@ -34,6 +39,8 @@ grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est 
 %\imagepos{images/mac_nouvelle_config_leopard_2}{0.5}{Créer une nouvelle configuration réseau (Leopard, suite)}{!hb}
 
 Une fois la nouvelle configuration créée, il faut configurer l'interface réseau \emph{ethernet}.
+
+
 
 \app{Tiger} : Dans le menu déroulant \menu{Afficher}, sélectionne
 \menu{Ethernet intégré}.
@@ -57,7 +64,9 @@ Choisis alors \menu{Configurer IPv4} : \menu{Manuellement} (\app{Tiger}) ou \men
 %{\imageref{images/mac_config_ip}{0.4}{Configuration IP (Tiger)}{!ht}{config:mac:ip}
 %\imageref{images/mac_config_ip_leopard}{0.4}{Configuration IP (Leopard)}{!ht}{config:mac:ip:leopard}}
 
+
 Pour avoir accès à Internet, il faut aussi configurer le \emph{proxy}.
+
 
 \app{Mac OS X 10.3.2 et inférieur} : il te faut spécifier tous les
 \emph{proxies} manuellement, et mettre \server{kuzh.polytechnique.fr}, port \server{8080}.
@@ -83,10 +92,22 @@ N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la 
 %{\imagepos{images/mac_config_proxy}{0.4}{Configurer le \emph{proxy} (Tiger)}{!hl}
 %\imagepos{images/mac_config_proxy_leopard}{0.4}{Configurer le \emph{proxy} (Leopard)}{!hr}}
 
+\subsubsection{Configuration Wifi Bataclan}
+Pour configurer le Wifi au Bataclan, d'abord télécharger le certificat sur \emph{http://wifi/certificats.html}.
+Dans l'onglet Airport, choisir comme réseau \menu{kastell} puis dans l'onglet avancé, choisir \menu{802.1W} et saisir votre login poly (seulement 8 caractères max) et votre mot de passe frankiz. Ne pas oublier de cocher la case TTLS comme dans la capture.
+
+\begin{figure*}[!hl]
+    \begin{center}
+      \includegraphics[width=0.4\textwidth]{images/mac_config_wifi.png} 
+      \caption{Configurer le \emph{Wifi} du Bataclan}
+    \end{center}
+  \end{figure*}
+
 
 \subsubsection{Configuration antivirus}
 
 Bien qu'il soit important de maintenir ton système à jour, un antivirus est pour l'instant tout à fait superflu sur Mac, puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assuré de la provenance, et essaie de te tenir au courant des actualités concernant les failles des applications que tu utilises.
+
 
 \subsubsection{Configuration web}
 
@@ -105,22 +126,33 @@ Au premier lancement, \app{Mail} te demandera de remplir les informations concer
   \item[Type de compte] \menu{POP}
   \item[Nom d'utilisateur] ton login \server{poly} (les huit premières lettres de ton nom en général)
   \item[Mot de passe] ton mot de passe \server{poly}
-  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr}
+  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
 \end{description}
 
 Si tu as déjà créé un compte précédemment, il faut aller dans les \menu{Préférences} (accessibles depuis le menu \menu{Mail}), onglet \menu{Comptes}, pour créer un autre compte en cliquant sur la case \menu{+}.
 
 N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avancé}, port 995. Tu souhaiteras alors certainement installer le certificat de sécurité de \server{poly} (tu le trouveras sur \urllink{http://poly/}). Une fois que tu as téléchargé le certificat, ouvre le fichier \menu{.crt} obtenu, et dans \app{Trousseau d'accès}, installe le dans \menu{X509Anchors} (Tiger) ou \menu{session} (Leopard).
 
-Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer. Par contre depuis l'extérieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas. Tu peux regarder la configuration proposée par \urllink{Polytechnique.org} pour surmonter cette difficulté.
+Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X mais aussi de l'extérieur, sans rien changer. Par contre depuis l'extérieur tu ne peux pas envoyer de mails, car le serveur \server{poly} ne le permet pas. Nous te conseillons vivement d'utiliser le serveur SMTP \server{Polytechnique.org} et de regarder la configuration proposée par \urllink{Polytechnique.org}. Celle-ci permet d'envoyer des mail sûr à l'extérieurs de l'école sans modifier ta configuration par la suite. Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Préférences} de mail et régler dans l'onglet \menu{Avancés} comme dans la capture.
 
-Le LDAP ne marche pas à l'heure actuelle (mars 2008) sous Leopard, contrairement aux  autres systèmes d'exploitation.
+\begin{figure*}[!hl]
+    \begin{center}
+
+	      \includegraphics[width=0.4\textwidth]{images/mac_config_smtp_poltechnique.png} 
+      \caption{Configurer le serveur SMTP \server{Polytechnique.org}}
+    \end{center}
+  \end{figure*}
+
+
+
+Le LDAP ne marche pas à l'heure actuelle avec Mail (mars 2009) sous Leopard, contrairement aux  autres systèmes d'exploitation (fonctionne cependant avec Thunderbird).
 %\subsuEnfin, tu peux disposer dans \app{Mail} de l'annuaire de l'École, mis à disposition par la DSI. Pour cela, va dans les \menu{Préférences} de Mail,
 %puis dans la rubrique \menu{Rédaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un
 %serveur, et remplir la fenêtre comme sur la capture.
 
 %\imagepos{images/mac_config_ldap}{0.6}{Configurer l'annuaire}{!ht}
 %bsection{Logiciels additionnels}
+
 
 Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services proposés sur le réseau ; ils sont téléchargeables sur \server{frankiz}, dans la rubrique \menu{Télécharger -> Mac}.
 
@@ -137,10 +169,14 @@ Au premier lancement, l'application te propose d'importer les paramètres depuis
   \item[Serveur de forums] \server{frankiz}
   \item[Nom du compte] News Frankiz
   \item[Nom d'utilisateur] ton login poly (les huit premières lettres de ton nom en général)
-  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr}
+  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
 \end{description}
 
+
 Pour t'abonner à des groupes de discussion, il te suffit de sélectionner le compte \menu{News Frankiz} dans la fenêtre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{Gérer les abonnements aux groupes de discussion}. Tu pourras ensuite sélectionner les forums qui t'intéressent parmi la liste proposée. Reporte-toi à la page \pageref{newsgroups} pour plus d'infos sur les \emph{newsgroups} auxquels t'abonner !
+
+\subsubsection{Firefox}
+Un point particulier dans la configuration du proxy de Firefox : dans les \menu{Préférences} dans l'onglet \menu{Avancés} dans Connexions cliquer sur \menu{Paramètres} et choisir \emph{Adresse de configuration de proxy automatique} : \urllink{http://frankiz/proxy.pac}
 
 \subsubsection{FTP}
 
@@ -173,4 +209,4 @@ Les logiciels cités ici sont téléchargeables sur \server{frankiz} : rubrique 
 \flimage{images/logo_Windows}{0.1}{l}
 \noindent \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows grâce à \app{Boot Camp}, livré avec Leopard. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux également virtualiser Windows (utiliser Windows en utilisant en même temps Mac OS) grâce à \app{VMware Fusion} ou \app{Parallels Desktop}. Le  défaut de cette solution est que tu n'as pas d'accélération 3D,donc pour les jeux, il te faudra redémarrer. Ces deux logiciels sont disponibles en version d'essai sur leurs sites web respectifs. A toi de choisir !
 
-Vérifie tout de même que tu as bien un processeur Intel (\menu{menu Pomme} puis sélectionne \menu{À propos de ce Mac}). 
+Vérifie tout de même que tu as bien un processeur Intel (\menu{menu Pomme} puis sélectionne \menu{À propos de ce Mac}).
