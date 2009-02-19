@@ -12,15 +12,20 @@
 Quelle que soit ta distribution, il faut que tu décides d'un nom de
 machine --- ton pseudo en général. Tu as également besoin de
 conna\^itre les informations suivantes :
-\begin{description}
-  \item [ton adresse IP] notée dorénavant \server{129.104.AAA.BBB} ;
-  \item [l'IP de ta passerelle (\emph{gateway})] notée \server{129.104.GGG.CCC} ;
-  \item [ton masque de sous-réseau] \server{255.255.FFF.DDD} ;
-  \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$. \\
-        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle et Maunoury ce n'est donc pas nécessairement vrai que $GGG =
-        AAA$.)}.
-\end{description}
-
+\begin{itemize}
+  \item ton adresse IP %notée dorénavant \server{129.104.AAA.BBB} ;
+  \item l'IP de ta passerelle (\emph{gateway})
+  \item ton masque de sous-réseau
+  \item ton \emph{broadcast}
+\end{itemize}
+%\begin{description}
+%  \item [ton adresse IP] notée dorénavant \server{129.104.AAA.BBB} ;
+%  \item [l'IP de ta passerelle (\emph{gateway})] notée \server{129.104.GGG.CCC} ;
+%  \item [ton masque de sous-réseau] \server{255.255.FFF.DDD} ;
+%  \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$. \\
+%        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle %et Maunoury ce n'est donc pas nécessairement vrai que $GGG =
+%        AAA$.)}.
+%\end{description}
 Toutes les informations nécessaires se trouvent page
 \pageref{calcul_ip}.
 
@@ -29,8 +34,8 @@ Bien sûr, l'ensemble des manipulations doit se faire en tant que \emph{root}.
 
 \paragraph{\distrib{Sous Gentoo}}
 
-Tu dois d'abord configurer ta Gentoo pour utiliser le réseau de l'X, donc configure le réseau en statique avec ton adresse IP calculée précédemment puis
-configure la résolution DNS, tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
+Tu dois d'abord configurer ta Gentoo pour utiliser le réseau de l'X, donc configure le réseau en statique avec ton adresse IP calculée précédemment, puis
+configure la résolution DNS. Tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 \noindent \cmdline{
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
