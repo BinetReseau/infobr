@@ -45,7 +45,7 @@
 % En-têtes et pieds-de-page personalisés
 \pagestyle{fancy}
 
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markboth{\MakeUppercase{#1}}{}}
 \renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
 \fancyhf{}
 \fancyhead[LE,RO]{\bfseries{\Large\thepage}}
