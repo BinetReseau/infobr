@@ -11,29 +11,14 @@
 \subsubsection{Configuration IP}
 Quelle que soit ta distribution, il faut que tu décides d'un nom de
 machine --- ton pseudo en général. Tu as également besoin de
-conna\^itre les informations suivantes :
-\begin{itemize}
-  \item ton adresse IP %notée dorénavant \server{129.104.AAA.BBB} ;
-  \item l'IP de ta passerelle (\emph{gateway})
-  \item ton masque de sous-réseau
-  \item ton \emph{broadcast}
-\end{itemize}
-%\begin{description}
-%  \item [ton adresse IP] notée dorénavant \server{129.104.AAA.BBB} ;
-%  \item [l'IP de ta passerelle (\emph{gateway})] notée \server{129.104.GGG.CCC} ;
-%  \item [ton masque de sous-réseau] \server{255.255.FFF.DDD} ;
-%  \item [ton broadcast] qui est de la forme \server{129.104.GGG.EEE} avec $EEE = 255 - DDD$. \\
-%        \textcolor{red}{(attention, $GGG = AAA$ n'est valable que dans les nouveaux caserts, le PEM et le BEM. Pour Foch, Fayolle %et Maunoury ce n'est donc pas nécessairement vrai que $GGG =
-%        AAA$.)}.
-%\end{description}
+conna\^itre ton adresse IP, l'IP de ta passerelle (\emph{gateway}), ton masque de sous-réseau et ton adresse de diffusion (\emph{broadcast}).
 Toutes les informations nécessaires se trouvent page
 \pageref{calcul_ip}.
 
-Bien sûr, l'ensemble des manipulations doit se faire en tant que \emph{root}.
+Bien sûr, l'ensemble des manipulations décrites ci-dessous doit se faire en tant que \emph{root}!
 
 
 \paragraph{\distrib{Sous Gentoo}}
-
 Tu dois d'abord configurer ta Gentoo pour utiliser le réseau de l'X, donc configure le réseau en statique avec ton adresse IP calculée précédemment, puis
 configure la résolution DNS. Tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 \noindent \cmdline{
@@ -41,7 +26,7 @@ search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
 nameserver 129.104.201.52}
 
-\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à travers le \emph{proxy} de l'école, il faut définir les variables d'environnement
+\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à travers le serveur mandataire (\emph{proxy}) de l'école, il faut définir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
@@ -56,6 +41,7 @@ conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir très comple
 \input{ubuntu.tex}
 
 \subsubsection{Configuration antivirus}
+
 \footnotesize{(elle est drôle celle-là hein ?)}
 
 \subsubsection{Configuration du pare-feu}
@@ -67,18 +53,18 @@ d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment c
 
 \flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou
 \app{Konqueror} (le navigateur fourni par défaut avec KDE). Dans tous les cas, la seule
-configuration à effectuer est celle du \emph{proxy}. Pour \app{Firefox}, il suffit d'aller dans
+configuration à effectuer est celle du serveur mandataire. Pour \app{Firefox}, il suffit d'aller dans
 \menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
 \menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite coche la case \menu{Adresse de
 configuration automatique du proxy}, et rentre \urllink{http://frankiz/proxy.pac}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
-dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le proxy dans Konqueror,
-les logiciels KDE (KGet, Adept, ...) n'utiliserons pas le proxy !!
+dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
+les logiciels KDE (KGet, Adept, ...) ne l'utiliserons pas!
 
-\imagepos{images/nux_proxy_firefox}{0.35}{Configuration du proxy sous Firefox}{ht}
+\imagepos{images/nux_proxy_firefox}{0.35}{Configuration du serveur mandataire sous Firefox}{ht}
 
-
+\pagebreak
 
 \subsubsection{Configuration mail}
 
@@ -92,10 +78,21 @@ rubrique \menu{Comptes}. Commence par créer un nouveau compte dans
 l'onglet \menu{Réception des messages} en cliquant sur le bouton
 \menu{Ajouter\ldots} et choisis le type POP3.
 
-\imagepos{images/nux_config_kmail_pop}{0.45}{Configuration de la réception des messages sous Kmail}{pht}
 
-Utilise les paramètres suivants pour configurer l'onglet
-\menu{Général} :
+\noindent
+  \begin{figure*}[!h]
+    \begin{center}  
+      \subfloat[Réception des messages]{ 
+      \includegraphics[width=0.48\textwidth]{images/nux_config_kmail_pop} }
+      \hspace{\stretch{1}}
+      \subfloat[Envoi des messages]{ 
+ 		\includegraphics[width=0.48 \textwidth]{images/nux_config_kmail_smtp} }
+         	 \caption{Configuration sous \app{Kmail}}
+    \end{center}
+  \end{figure*}
+
+
+Utilise les paramètres suivants pour configurer l'onglet \menu{Général} :
 \begin{description}
   \item[Nom] le nom du compte, par exemple : Mails Poly
   \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI à ton arrivée sur le plateau
@@ -103,11 +100,8 @@ Utilise les paramètres suivants pour configurer l'onglet
   \item[Serveur] \server{poly.polytechnique.fr}
   \item[Port] 995
 \end{description}
-
 Ensuite, va dans l'onglet \menu{Extras} et coche la case
 \menu{Utiliser SSL pour sécuriser les téléchargements}.
-
-\imagepos{images/nux_config_kmail_smtp}{0.45}{Configuration de l'envoi des messages sous Kmail}{pht}
 
 Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le
 bouton \menu{Ajouter\ldots}. Utilise les paramètres suivants pour le
@@ -119,36 +113,61 @@ configurer :
 \end{description}
 Sinon, laisse toutes les cases décochées.
 
-\par Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses mail de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit:
+Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses mail de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit: \\
+\smallskip
+\begin{minipage}{0.48\textwidth}
 \begin{description}
   \item[Hôte] \server{ldap.eleves.polytechnique.fr}
   \item[Port] 389
   \item[Version de LDAP] 3
+\end{description}  
+\end{minipage} 
+\begin{minipage}{0.48\textwidth}
+\begin{description}  
   \item[DN] dc=ldap,dc=eleves,dc=polytechnique,dc=fr
   \item[Sécurité] Non
   \item[Identification] Anonyme
 \end{description}
+\end{minipage} \\
 Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès au LDAP lors de la
-rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}. \imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous
-Kmail}{pht}
+rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}. 
+%
+%\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
+%\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
+%
+\noindent
+  \begin{figure*}[!h]
+    \begin{center}  
+      \subfloat[Configuration de l'annuaire LDAP sous Kmail]{ 
+      \includegraphics[width=0.48\textwidth]{images/nux_config_ldap}}
+      \hspace{\stretch{1}}
+      \subfloat[Configuration de Knode]{ 
+ 		\includegraphics[width=0.48 \textwidth]{images/nux_config_ldap} }
+	\caption{Configurations LDAP et news}
+    \end{center}
+ \end{figure*}
+
+\pagebreak
 
 \subsubsection{Configuration news}
-\flimage{images/nux_knode_icon}{0.12}{l} Le client news le plus
-utilisé est \app{Knode}. Parmi les autres clients news, citons
-\app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est
-presque indépendante du logiciel choisi.
+
+\flimage{images/nux_knode_icon}{0.12}{l} Le client news le plus utilisé est \app{Knode}. Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est presque indépendante du logiciel choisi.
+
 
 Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
 crée un compte en cliquant sur \menu{Ajouter\ldots}.
 
-\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
+%\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
 
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
   \item[Nom] ce que tu veux pour décrire ce compte, par exemple 'News Frankiz'
   \item[Serveur] \server{frankiz.polytechnique.fr}
-  \item[Port] 119
+\nopagebreak  \item[Port] 119
 \end{description}
+
+
+ 
 Ensuite occupe-toi de l'onglet \menu{Identité} :
 \begin{description}
   \item[Nom] mets ton pseudo dans ce champ
@@ -176,7 +195,6 @@ Il ne te reste plus qu'à t'inscrire à des \emph{newsgroups} (reporte-toi à la
 Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il
 ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou
 \file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
-
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
 \\
@@ -188,7 +206,6 @@ setgid = stunnel\\
 client = yes\\
 \\
 \# sample service-level configuration\\
-\\
 {[}nntps{]}\\
 accept  = 1119\\
 connect = ssl.polytechnique.org:563\\
@@ -196,7 +213,6 @@ TIMEOUTclose = 0
 }
 
 Il ne te reste plus qu'à lancer \app{stunnel} par :
-
 \cmdline{/etc/init.d/stunnel start}
 
 Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et

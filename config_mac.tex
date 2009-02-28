@@ -4,6 +4,8 @@
 %\includegraphics{images/logo_Mac}
 %\end{center}
 
+\pagebreak
+
 \subsection{Configuration sous Mac OS X}
 
 La configuration est détaillée pour Mac OS 10.5 (\app{Leopard}) %et encore un peu pour Mac OS 10.4 (Tiger).
@@ -11,11 +13,9 @@ Afin de connaître la version que tu utilises, va dans le \menu{menu Pomme} puis
 
 \subsubsection{Configuration IP}
 
-\flimage{images/mac_prefs_icone}{0.1}{l} \app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du \menu{menu Pomme}, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse et utilise la procédure du BR. En effet, le réseau nécessite une configuration particulière  l'X, plus complexe que celle effectuée par cet assistant.
+\flimage{images/mac_prefs_icone}{0.07}{l}
+ \app{Préférences Réseau}, accessible depuis l'article de menu \menu{Préférences Système} du \menu{menu Pomme}, permet de configurer la connexion au réseau. Par ailleurs, si au démarrage un assistant te propose de configurer ton réseau, refuse et utilise la procédure du BR. En effet, le réseau nécessite une configuration particulière  l'X, plus complexe que celle effectuée par cet assistant.
 
-
-
-La gestion des configurations réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une  l'autre grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est trés pratique pour les machines vouées à être connectées à plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} puis la section \emph{wifi} pour plus de précisions sur le Wifi). Commence donc par crer une nouvelle configuration réseau dans le menu déroulant \menu{Configuration}.
 
 \noindent
   \begin{figure*}[!h]
@@ -23,16 +23,17 @@ La gestion des configurations réseau de Mac OS X permet de créer plusieurs con
      % \subfloat[Tiger]{\includegraphics[width=0.47\textwidth]{images/mac_nouvelle_config} } 
      % \hfill
       \subfloat[Créer une nouvelle configuration réseau]{ 
-      \begin{minipage}{0.49 \textwidth}\centering 
-      \fbox{\includegraphics[width=0.98\textwidth]{images/mac_nouvelle_config_leopard_1}}\\ \vspace*{2cm}
-      \fbox{\includegraphics[width=0.98\textwidth]{images/mac_nouvelle_config_leopard_2}} 
- 		\end{minipage}
+      \begin{minipage}{0.49 \textwidth}\begin{flushleft}
+      {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_1}}\\ \vspace*{2cm}
+      {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_2}} 
+ 		\end{flushleft}  \end{minipage}
  		 } 		
  		\subfloat[Configuration de l'interface réseau \emph{ethernet}, de l'adresse IP et du \emph{proxy}]{ 
- 		 \begin{minipage}{0.49 \textwidth}\centering
- 		\fbox{\includegraphics[width=0.98 \textwidth]{images/mac_config_ethernet}} \\ 
- 		\fbox{\includegraphics[width=0.98 \textwidth]{images/mac_config_ip_leopard}} \\
- 		\fbox{\includegraphics[width=0.98 \textwidth]{images/mac_config_proxy_leopard}}
+ 		 \begin{minipage}{0.49 \textwidth}\begin{flushright}
+ 		{\includegraphics[width=0.96 \textwidth]{images/mac_config_ethernet}} \\ 
+ 		{\includegraphics[width=0.96 \textwidth]{images/mac_config_ip_leopard}} \\
+ 		{\includegraphics[width=0.96 \textwidth]{images/mac_config_proxy_leopard}}
+\end{flushright}
  		\end{minipage}
  		 	\label{config:mac:ip:leopard}	}
      	 \caption{Créer une nouvelle configuration réseau}
@@ -40,21 +41,13 @@ La gestion des configurations réseau de Mac OS X permet de créer plusieurs con
     \end{center}
   \end{figure*}
 
+La gestion des configurations réseau de Mac OS X permet de créer plusieurs configurations et de passer en un clic de l'une  l'autre grâce au sous-menu \menu{Configuration Réseau} du \menu{menu Pomme}. Cela est trés pratique pour les machines vouées à être connectées à plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} puis la section \emph{wifi} pour plus de précisions sur le Wifi). Commence donc par crer une nouvelle configuration réseau dans le menu déroulant \menu{Configuration}.
 
-%\imagepos{images/mac_nouvelle_config}{0.5}{Créer une nouvelle configuration réseau (Tiger)}{!hl}
 
-%\imagepos{images/mac_nouvelle_config_leopard_1}{0.5}{Créer une nouvelle configuration réseau (Leopard)}{!hr}
-
-%\imagepos{images/mac_nouvelle_config_leopard_2}{0.5}{Créer une nouvelle configuration réseau (Leopard, suite)}{!hb}
 
 Une fois la nouvelle configuration créée, il faut configurer l'interface réseau \emph{ethernet}.
 
 
-
-% \app{Tiger} : Dans le menu déroulant \menu{Afficher}, sélectionne
-% \menu{Ethernet intégré}.
-
-%\imagepos{images/mac_config_ethernet}{0.5}{Configurer l'interface réseau \emph{ethernet}}{!h}
 
 \app{Leopard} : Dans la colonne de gauche, sélectionne \menu{Ethernet intégré}
 
@@ -82,26 +75,15 @@ Pour avoir accès à Internet, il faut aussi configurer le \emph{proxy}.
 N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
 
-%  \begin{figure*}[!hl]
-%    \begin{center}
-%     % \subfloat[Tiger]{\includegraphics[width=0.4\textwidth]{images/mac_config_proxy}}
-%     % \hspace{0.1 \textwidth}
-%      \subfloat[Leopard]{\includegraphics[width=0.4\textwidth]{images/mac_config_proxy_leopard}}
-%      \caption{Configurer le \emph{proxy}}
-%    \end{center}
-%  \end{figure*}
-  
-%{\imagepos{images/mac_config_proxy}{0.4}{Configurer le \emph{proxy} (Tiger)}{!hl}
-%\imagepos{images/mac_config_proxy_leopard}{0.4}{Configurer le \emph{proxy} (Leopard)}{!hr}}
-%\imagepos{images/mac_config_proxy_leopard}{0.4}{Configurer le \emph{proxy}}{hl!}
 
+  
 \subsubsection{Configuration Wifi Bataclan}
-Pour configurer le Wifi au Bataclan, d'abord télécharger le certificat sur \emph{http://wifi/certificats.html}.
+Pour configurer le Wifi au Bataclan, d'abord télécharger le certificat sur \urllink{http://wifi/certificats.html}.
 Dans l'onglet \menu{Airport}, choisir comme réseau \menu{kastell} puis dans l'onglet \menu{Avancé}, choisir \menu{802.1W} et saisir votre login poly (seulement 8 caractères max) et votre mot de passe \server{Frankiz}. Ne pas oublier de cocher la case TTLS comme dans la capture.
 
-\begin{figure*}[!hl]
+\begin{figure*}[!h]
     \begin{center}
-      \includegraphics[width=0.4\textwidth]{images/mac_config_wifi.png} 
+      \includegraphics[width=0.3\textwidth]{images/mac_config_wifi.png} 
       \caption{Configurer le \emph{Wifi} du Bataclan}
     \end{center}
   \end{figure*}
@@ -115,16 +97,15 @@ Bien qu'il soit important de maintenir ton système à jour, un antivirus est po
 
 \subsubsection{Configuration web}
 
-\flimage{images/mac_safari_icone}{0.1}{l} \app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorité des sites web. Tu peux donc t'en servir au quotidien, en faisant appel à \app{Firefox} ou \app{Camino} pour les sites récalcitrants. Un conseil : pense à activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).\\
+\flimage{images/mac_safari_icone}{0.07}{l}
+\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorité des sites web. Tu peux donc t'en servir au quotidien, en faisant appel à \app{Firefox} ou \app{Camino} pour les sites récalcitrants. Un conseil : pense à activer le blocage des fenêtres pop-up (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).\\
+
+%\pagebreak
 
 \subsubsection{Configuration mail}
-
-
-
-\flimage{images/mac_mail_icone}{0.1}{l} \app{Mail} : un client mail offrant les fonctionnalités classiques d'un bon client : recherche instantanée, filtre antispam, règles de tri automatique des mails, regroupement des mails correspondant à une même discussion.
+\flimage{images/mac_mail_icone}{0.07}{r} \app{Mail} : un client mail offrant les fonctionnalités classiques d'un bon client : recherche instantanée, filtre antispam, règles de tri automatique des mails, regroupement des mails correspondant à une même discussion.
 
 Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte mail sur \server{poly}, il suffit de le remplir avec les données suivantes :
-
 \begin{description}
   \item[Nom complet] ton nom !
   \item[Adresse électronique] de la forme \mail{prenom.nom@polytechnique.edu}
@@ -144,7 +125,6 @@ Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X
 
 \begin{figure*}[!hl]
     \begin{center}
-
 	      \includegraphics[width=0.4\textwidth]{images/mac_config_smtp_poltechnique.png} 
       \caption{Configurer le serveur SMTP \server{Polytechnique.org}}
     \end{center}
@@ -163,10 +143,12 @@ Le LDAP ne marche pas à l'heure actuelle avec Mail (mars 2009) sous Leopard, co
 
 Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services proposés sur le réseau ; ils sont téléchargeables sur \server{frankiz}, dans la rubrique \menu{Télécharger -> Mac}.
 
+\pagebreak
 
 \subsubsection{Configuration news}
 
-\flimage{images/mac_thunderbird_icone}{0.1}{l} \app{Thunderbird} : un client news permettant d'accéder aux forums de discussion des élèves (voir page~\pageref{newsgroups} pour les détails sur \server{frankiz} (mais aussi à ceux de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}). Il est très proche d'\app{Outlook Express} dans son esprit. Dans la même catégorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même manière.
+\flimage{images/mac_thunderbird_icone}{0.07}{l} 
+\app{Thunderbird} : un client news permettant d'accéder aux forums de discussion des élèves (voir page~\pageref{newsgroups} pour les détails sur \server{frankiz} (mais aussi à ceux de \server{usenet} grâce au serveur \server{polynews.polytechnique.fr}). Il est très proche d'\app{Outlook Express} dans son esprit. Dans la même catégorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la même manière.
 
 Au premier lancement, l'application te propose d'importer les paramètres depuis une autre application. Clique sur \menu{Suivant >}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi créer un compte courrier électronique, et un compte RSS). Sélectionne \menu{Compte forums de discussion} et clique sur \menu{Suivant >}. Entre alors les informations suivantes :
 
@@ -187,7 +169,7 @@ Un point particulier dans la configuration du proxy de Firefox : dans les \menu{
 
 \subsubsection{FTP}
 
-\flimage{images/mac_cyberduck_icone}{0.1}{l} \app{Cyberduck} : un client FTP très simple à utiliser mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs FTP des autres élèves.
+\flimage{images/mac_cyberduck_icone}{0.07}{l} \app{Cyberduck} : un client FTP très simple à utiliser mais performant. Il te permettra d'aller télécharger des fichiers sur les serveurs FTP des autres élèves.
  %Il existe aussi \app{Transmit} (partagiciel), ou encore \app{Fugu}, que certains préfèrent.
 Pour se connecter à un serveur, il suffit de taper son nom (exemple : \urllink{jtx}) dans le cadre \menu{Connexion rapide} et appuyer sur Entrée.\\
 Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de partager les différents projets, les films du JTX, ses photos, etc. Donc il est quasiment indispensable que tu en installes un. Nous te conseillons \app{PureFTPd Manager}, qui dispose d'une interface très facile à utiliser (même pour un débutant) et en même temps de fonctionnalités avancées très puissantes. Tu trouveras le détail de sa configuration sur le \app{Wikix}.
@@ -196,7 +178,7 @@ Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de pa
 
 Les logiciels cités ici sont téléchargeables sur \server{frankiz} : rubrique \menu{Télécharger -> Mac -> Réseau}.
 
-\flimage{images/mac_qrezix_icone}{0.1}{l} \noindent\app{qRezix} : En deux mots, c'est un programme développé par le BR pour faciliter la vie sur le réseau. Tu peux le récupérer dans la partie Mac de \xshare.
+\flimage{images/mac_qrezix_icone}{0.07}{l} \noindent\app{qRezix} : En deux mots, c'est un programme développé par le BR pour faciliter la vie sur le réseau. Tu peux le récupérer dans la partie Mac de \xshare.
 
 \noindent Pour plus de détails, voir le paragraphe consacré à qRezix à la page \pageref{qrezix}.
 
@@ -212,10 +194,9 @@ Les logiciels cités ici sont téléchargeables sur \server{frankiz} : rubrique 
 %\flimage{images/mac_netnewswire_icone}{0.1}{l}
 %\noindent\app{NetNewsWire} est la référence des clients RSS sur Mac, et est maintenant gratuit. Dans le même genre, on peut citer \app{Vienna}, un client RSS open source, dont le développement actif est prometteur. Les flux RSS permettent d'agréger dans un seul logiciel des informations en provenance de nombreux sites web, qui peuvent provenir de forums de discussions, de mises à jour de logiciels, d'informations internationales\dots \\ \\
 
-\flimage{images/mac_fink_icone}{0.1}{l}
+%\flimage{images/mac_fink_icone}{0.1}{l}
 \noindent\app{Fink} est la manière la plus simple d'installer sur Mac OS X nombre de logiciels issus du monde UNIX (Linux par exemple). Grâce à lui, tu pourras installer les mêmes logiciels que dans les salles informatiques. Par exemple, tu pourras installer Scilab sans trop de peine\dots La configuration nécessaire se trouve sur \urllink{http://frankiz/binets/reseau/Miroir\_Fink}. \\ \\
 
 \flimage{images/logo_Windows}{0.1}{l}
 \noindent \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows grâce à \app{Boot Camp}, livré avec Leopard. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux également virtualiser Windows (utiliser Windows en utilisant en même temps Mac OS) grâce à \app{VMware Fusion}, \app{VirtualBox} ou \app{Parallels Desktop}. Le  défaut de cette solution est que tu n'as pas d'accélération 3D,donc pour les jeux, il te faudra redémarrer. Ces deux logiciels sont disponibles en version d'essai sur leurs sites web respectifs. A toi de choisir !
-
-Vérifie tout de même que tu as bien un processeur Intel (\menu{menu Pomme} puis sélectionne \menu{À propos de ce Mac}).
+Mais vérifie tout de même que tu as bien un processeur Intel (\menu{menu Pomme} puis sélectionne \menu{À propos de ce Mac}).

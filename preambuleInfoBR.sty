@@ -30,17 +30,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Mise en page
 
-
-
-
-
-
 %On rend les fins de pages homogènes (par rapport aux marges)
 \flushbottom
 
 %Suppression veuves et orphelines
 \clubpenalty=10000
 \widowpenalty=10000
+
 
 % En-têtes et pieds-de-page personalisés
 \pagestyle{fancy}
@@ -139,7 +135,7 @@
 %Environnement ligne de commande et exemples
 
 \newcommand{\cmdline}[2][0.9]{
-  \vspace{4pt plus 1.5pt minus 1.5pt}
+  \vspace{2pt plus 1pt minus 1pt}
   \noindent
   \begin{center}
 \colorbox{LightRed}{
@@ -150,7 +146,7 @@
     }
   } 
 \end{center}
-  \vspace{4pt plus 1.5pt minus 1.5pt}
+  \vspace{2pt plus 1pt minus 1pt}
 }
 
 \newcommand{\cmdlineshort}[1]{
@@ -211,7 +207,7 @@
 \newcommand{\mbr}[5]{\noindent#3 \bsc{\color{GreenPseudo}#1} (#4) \textbf{#2} : #5}
 
 % Pour les commandes DOS
-\newcommand{\cmd}[1]{\NoAutoSpaceBeforeFDP\guillemotleft~#1~\guillemotright \AutoSpaceBeforeFDP\xspace}
+\newcommand{\cmd}[1]{\NoAutoSpaceBeforeFDP\guillemotleft~\texttt{#1}~\guillemotright \AutoSpaceBeforeFDP\xspace}
 
 % divers
 \newcommand{\fkz}{\server{frankiz}}
