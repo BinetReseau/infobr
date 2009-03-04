@@ -2,6 +2,8 @@
 
 \bghdr{images/fond-nux}
 
+\clearpage
+
 %\begin{center}
 %\includegraphics{images/logo_Linux}
 %\end{center}
@@ -31,7 +33,7 @@ ci-dessous dans le fichier \file{/etc/make.conf} :
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
 no\_proxy=.eleves.polytechnique.fr\\
-GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuosl.org/"\\
+GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.\linebreak{}osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
 Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais
@@ -42,7 +44,8 @@ conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir très comple
 
 \subsubsection{Configuration antivirus}
 
-\footnotesize{(elle est drôle celle-là hein ?)}
+{\footnotesize (elle est drôle celle-là hein ?)}
+
 
 \subsubsection{Configuration du pare-feu}
 
@@ -62,7 +65,7 @@ Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Co
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
 les logiciels KDE (KGet, Adept, ...) ne l'utiliserons pas!
 
-\imagepos{images/nux_proxy_firefox}{0.35}{Configuration du serveur mandataire sous Firefox}{ht}
+\imagepos{images/nux_proxy_firefox}{0.33}{Configuration du serveur mandataire sous Firefox}{ht}
 
 \pagebreak
 
@@ -147,7 +150,7 @@ rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}.
     \end{center}
  \end{figure*}
 
-\pagebreak
+
 
 \subsubsection{Configuration news}
 
@@ -178,7 +181,7 @@ Ensuite occupe-toi de l'onglet \menu{Identité} :
 Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller
 dans la rubrique \menu{Comptes}, sous-rubrique \menu{Serveur de
 courrier (SMTP)}, et choisir comme serveur d'envoi de mails
-\server{poly.polytechnique.fr}, port 25 --- c'est exactement la m\^eme
+\server{poly.poly\linebreak{}technique.fr}, port 25 --- c'est exactement la m\^eme
 configuration SMTP que \app{Kmail}.
 
 Si tu veux mettre une signature à la fin des messages que tu
@@ -218,4 +221,4 @@ Il ne te reste plus qu'à lancer \app{stunnel} par :
 Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et
 \server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
 que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir
-sur \urllink{http://www.polytechnique.org/acces\_smtp.php}.
+sur \urllink{http://www.poly\-tech\-nique.org/acces\_smtp.php}.
