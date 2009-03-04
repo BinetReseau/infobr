@@ -4,12 +4,11 @@
 %\includegraphics{images/logo_Windows}
 %\end{center}
 
-\clearpage
 
 \subsection{Configuration sous Microsoft Windows}
 
-Cette section décrit comment configurer un ordinateur tournant sous Windows XP ou sous Windows Vista. Si tu possède une autre version de Windows,
-nous t'invitons à regarder directement la section sur les licences MSDNAA en page \pageref{msdnaa}, ou alors\dots à te débrouiller ! ;-)
+Cette section décrit comment configurer un ordinateur tournant sous Windows XP ou sous Windows Vista. Si tu possèdes une autre version de Windows,
+nous t'invitons à regarder directement la section sur les licences MSDNAA en page \pageref{msdnaa}\dots ou alors à te débrouiller ! ;-)
 
 \subsubsection{Configuration IP}
 
@@ -17,7 +16,7 @@ nous t'invitons à regarder directement la section sur les licences MSDNAA en pa
 
 \item \textbf{Sous Windows XP :} va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions réseau} puis sur \menu{Connexion au réseau local}. Clique enfin sur \menu{Propriétés}.
 
-\item \textbf{Sous Windows Vista :} va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration}, \menu{Réseau et Internet}, \menu{Centre réseau et partage}. Là, dans le menu à gauche, clique sur \menu{Gérer les connexions réseau}, puis clique droit sur \menu{Connexion au réseau local}, et enfin \menu{Propriétés}\footnote{A ce stade, ainsi qu'à plusieurs autres étapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc, tu confirmes, et cela à chaque fois !}.
+\item \textbf{Sous Windows Vista :} va dans le \menu{Menu Démarrer}, \menu{Panneau de configuration}, \menu{Réseau et Internet}, \menu{Centre réseau et partage}. Là, dans le menu à gauche, clique sur \menu{Gérer les connexions réseau}, puis clique droit sur \menu{Connexion au réseau local} et enfin  \menu{Propriétés}~\footnote{\`A ce stade, ainsi qu'à plusieurs autres étapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc tu confirmes, et cela à chaque fois !}.
 
 \end{itemize}
 
@@ -40,8 +39,7 @@ nous t'invitons à regarder directement la section sur les licences MSDNAA en pa
 %%%%\imageref{images/win_config_ip2}{0.71}{Configuration de la connexion
 %au réseau local et propriétés du TCP/IP}{!ht}{config:win:IP1}
 
-Sélectionne ensuite la ligne \menu{Protocole Internet Version 4 (TCP/IPv4)}
-\footnote{\menu{Protocole Internet (TCP/IP)} pour certaines versions de Windows XP},
+Sélectionne ensuite la ligne \menu{Protocole Internet Version 4 (TCP/IPv4)}~\footnote{\menu{Protocole Internet (TCP/IP)} pour certaines versions de Windows XP.},
 puis clique sur le bouton \menu{Propriétés} qui vient de se
 dégriser. Tu tombes alors sur l'écran de configuration de ta
 connexion vers l'extérieur.
@@ -61,8 +59,8 @@ connexion vers l'extérieur.
 
 
 %% \newpage
-Coche alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et remplis les cinq champs d'IP. Tu trouveras toutes les valeurs d'IP nécessaires pour la configuration en page~\pageref{tableau:mon_IP} ; aide-toi de la capture d'écran~\ref{config:win:IP1} pour les placer. Si une partie d'IP est blanche sur cette capture, c'est qu'elle t'est personnelle et que tu dois la calculer !
-Ensuite, clique sur le bouton \menu{Avancé}, puis sur l'onglet
+Coche alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et remplis les cinq champs d'adresse IP. Tu trouveras toutes les valeurs d'adresse IP nécessaires pour la configuration en page~\pageref{tableau:mon_IP} ; aide-toi de la capture d'écran~\ref{config:win:IP1} pour les placer. Si une partie d'adresse IP est blanche sur cette capture, c'est qu'elle t'est personnelle et que tu dois la calculer !
+Clique, ensuite sur le bouton \menu{Avancé}, puis sur l'onglet
 \menu{DNS} en haut.
 Il n'y a plus qu'à remplir les différents champs comme sur la
 capture d'écran suivante, avec le bouton \menu{Ajouter} et les
@@ -253,21 +251,21 @@ flèches pour réordonner les éléments.
 
 
 \subsubsection{Installation de l'antivirus}
-\label{antivirus} Le BR, concerné par la sécurité du réseau, te propose un antivirus\footnote{En
+\label{antivirus} Le BR, préoccupé par la sécurité du réseau, te propose un antivirus~\footnote{En
 l'occurence, l'antivirus utilisé est \app{Symantec Antivirus 10.2}.} pour lequel tu n'auras pas à
-payer la licence pour obtenir les mises à jour. Bien s\^{u}r, libre à toi d'utiliser ton antivirus
+payer de licence pour obtenir les mises à jour. Bien s\^{u}r, libre à toi d'utiliser ton antivirus
 personnel ; cependant il sera à ta charge de le mettre à jour très régulièrement. Pour cela,
-utilise comme serveur mandataire (\emph{proxy}) : \urllink{kuzh.polytechnique.fr} sur le port 8080 (Il y a aussi des fois o\`u il 
+utilise comme serveur mandataire (\emph{proxy}) : \urllink{kuzh.polytechnique.fr} sur le port 8080 (il y a aussi des fois o\`u il 
 faut rentrer \urllink{http://kuzh.polytechnique.fr}).
 
 %Version pour vista à taper
 Tout d'abord, \emph{désinstalle tous les antivirus que tu pourrais
-avoir} ! Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de
+avoir !} Dans le \menu{Menu Démarrer}, va dans \menu{Panneau de
 Configuration}, \menu{Ajout/Suppression de Programmes} et
-désinstalle si tu l'as Symantec Antivirus, McAfee Antivirus, Norton
-Antivirus, ou tout autre antivirus.
+désinstalle si tu l'as \app{Symantec Antivirus}, \app{McAfee Antivirus}, \app{Norton
+Antivirus}, ou tout autre antivirus.
 
-Ensuite, il s'agit de télécharger la bonne version de l'antivirus :
+Il s'agit ensuite de télécharger la bonne version de l'antivirus :
 \begin{itemize}
 
 \item Si tu as Windows Vista\dots
@@ -286,23 +284,22 @@ Ensuite, il s'agit de télécharger la bonne version de l'antivirus :
 Si tu ne sais pas si ton Windows est 64 ou 32 bits, le plus problable est qu'il
 soit 32 bits, donc tu peux commencer à essayer avec cette version.
 
-Une fois le fichier adéquat téléchargé, ouvre l'archive compressée \file{Win\?\?\_*.zip}, décompresse \emph{tous les fichiers} dans un dossier, et
-enfin exécute le fichier \file{setup.exe} qui vient d'apparaitre dans ce dossier. A partir de là, tu n'as plus qu'à suivre les instructions du
+Une fois le fichier adéquat téléchargé, ouvre l'archive compressée \file{Win\?\?\_*.zip}, décompresse \emph{tous les fichiers} dans un dossier et exécute le fichier \file{setup.exe} qui vient d'apparaître dans ce dossier. \`A partir de là, tu n'as plus qu'à suivre les instructions du
 programme d'installation. Tu n'auras alors plus à toucher à l'antivirus, celui-ci sera mis à jour automatiquement.%\footnote{Pour des raisons historiques, cette page porte le numéro 31. L'explication se trouve en page 11.}
 
-\subsubsection{Configuration web (serveur mandataire)}
+\subsubsection{Configuration \emph{web} (serveur mandataire)}
 
-\imageref{images/win_config_proxy}{0.5}{Configuration du serveur mandataire}{!ht}{config:win:proxy}
+\imageref{images/win_config_proxy}{0.5}{Configuration du serveur mandataire (\emph{proxy})}{!ht}{config:win:proxy}
 
-Même si tu n'utilises pas \app{Internet Explorer} comme client web, Windows et d'autres programmes
+Même si tu n'utilises pas \app{Internet Explorer} comme client \emph{web}, Windows et d'autres programmes
 utilisent ses paramètres, notamment \app{Windows Update}. Donc lance \app{Internet Explorer} et va
 dans le menu \menu{Outils}, \menu{Options Internet}, puis sur l'onglet \menu{Connexions} de la
 nouvelle fenêtre et enfin sur \menu{Paramètres réseau} dans le bas de la fenêtre. Là, coche
-uniquement la case \menu{Utiliser un script de configuration automatique}, puis remplis le champs
+uniquement la case \menu{Utiliser un script de configuration automatique}, puis remplis le champ
 \menu{Adresse} avec \urllink{http://frankiz/proxy.pac}. Tu dois alors avoir quelque chose qui
 ressemble à la capture d'écran~\ref{config:win:proxy}.
 
-Une fois que tu as fait \c{c}a, tu n'as plus forcément besoin d'\app{Internet Explorer}, tu peux donc utiliser un autre navigateur, comme \app{Mozilla
+Une fois que tu as fait \c{c}a, tu n'as plus forcément besoin d'\app{Internet Explorer} tu peux donc utiliser un autre navigateur, comme \app{Mozilla
 Firefox}, disponible sur \xshare, qui est plus sécurisé. Mais ce n'est pas une garantie ultime --- tu es le premier garant de la sécurité de ton
 ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main
 --- mais tu seras sensiblement plus en sécurité.
@@ -321,19 +318,19 @@ et l'adresse à indiquer est la même que précédemment : \urllink{http://frank
 
 %\vfill %\pagebreak
 
-\subsubsection{Configuration mail}
+\subsubsection{Configuration \emph{mail}}
 
 La DSI met à ta disposition une bo\^{i}te aux lettres électronique sur
 le serveur \server{poly} ; cette section t'explique comment
-configurer \app{Outlook Express}, et \app{Windows Mail} pour y avoir accès. Tu peux bien
+configurer \app{Outlook Express} et \app{Windows Mail} pour y avoir accès. Tu peux bien
 s\^{u}r utiliser \app{Thunderbird} si tu préfères, les données à rentrer
 pour la configuration sont les mêmes ; quelques détails sont donnés
-dans le Wikix sur \fkz. De plus, tu trouveras des explications plus
+dans le WikiX sur \fkz. De plus, tu trouveras des explications plus
 détaillées dans le manuel rédigé par la DSI.
 La procédure suivante fonctionne aussi avec \app{Windows Mail}.
 Lance \app{Outlook Express} et va dans le menu \menu{Outils},
 \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
-haut à droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avat d'appuyer sur suivant.
+haut à droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
 
 
 
@@ -344,7 +341,7 @@ Remplis les écrans de configuration suivants avec ces données :
   \item[Type de serveur de messagerie pour le courrier entrant] \menu{POP3}
   \item[Serveur de messagerie pour le courrier entrant] \server{poly.polytechnique.fr}
   \item[Serveur de messagerie pour le courrier sortant] \server{poly.polytechnique.fr}
-  \item[Nom du compte] ton login \server{poly} (les huit premières lettres de ton nom en général, si tu ne t'en souviens pas ne t'en fait pas on devrait te le redonner en cours d'informatique lors de ton premier TD. Si tu es vraiment pressé va voir le bureau login de la DSI.)
+  \item[Nom du compte] ton \emph{login} \server{poly} (les huit premières lettres de ton nom en général; si tu ne t'en souviens pas ne t'en fais pas on devrait te le redonner en cours d'informatique lors de ton premier TD. Si tu es vraiment pressé va voir le bureau \emph{login} de la DSI.)
   \item[Mot de passe] ton mot de passe \server{poly} ;
        vérifie bien que la case \menu{Mémoriser le mot de passe} est cochée.
 \end{description}
@@ -358,18 +355,18 @@ configure comme sur la capture~\ref{config:win:mail} ; en
 particulier, coche la seconde case \menu{Ce serveur nécessite une
 connexion sécurisée (SSL)}.
 
-Comme \c{c}a, tu peux désormais recevoir des mails, avec une liaison
+Comme \c{c}a, tu peux désormais recevoir des \emph{mails} avec une liaison
 sécurisée vers \server{poly} pour que personne ne puisse les
 intercepter.
 
 
 \imageref{images/win_config_mail_avance}{0.5}{Configuration avancée
-des serveurs mail}{!h}{config:win:mail}
+des serveurs \emph{mail}}{!h}{config:win:mail}
 
-\subsubsection{Configuration newsgroups}
-Reporte-toi a la page~\pageref{newsgroups} pour la description et des détails de fonctionnement des newsgroups à l'X.
+\subsubsection{Configuration \emph{newsgroups}}
+Reporte-toi a la page~\pageref{newsgroups} pour la description et des détails de fonctionnement des \emph{newsgroups} à l'X.
 
-Comme pour les mails, nous décrivons la configuration de \app{Outlook Express}, mais elle est sensiblement équivalente pour \app{Thunderbird}. Lance
+Comme pour les \emph{mails}, nous décrivons la configuration de \app{Outlook Express} mais elle est sensiblement équivalente pour \app{Thunderbird}. Lance
 \app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut à droite,
 \menu{News\ldots}. Remplis les écrans de configuration suivants avec ces données :
 \begin{description}
@@ -378,48 +375,46 @@ Comme pour les mails, nous décrivons la configuration de \app{Outlook Express},
   \item[Serveur de news (NNTP)] \fkz ; vérifie à ce moment que la case
        \menu{Connexion à mon serveur de news requise} n'est pas cochée.
 \end{description}
-Voilà, clique sur \menu{Continuer}, \menu{Terminer} et tu es abonné
-au serveur news des élèves.
+Voilà, clique sur \menu{Continuer}, \menu{Terminer}; tu es abonné
+au serveur \emph{news} des élèves.
 
 Quand tu fermeras la fenêtre `Comptes Internet', il va te demander à
-quels newsgroups tu veux t'abonner, tu n'auras qu'à sélectionner
+quels \emph{newsgroups} tu veux t'abonner, tu n'auras qu'à sélectionner
 ceux qui t'intéressent. Reporte-toi à la page \pageref{newsgroups}
-pour plus d'infos sur les newsgroups auquels t'abonner !
+pour plus d'infos sur les newsgroups auxquels t'abonner !
 
-Si tu veux t'inscrire à d'autres serveurs news, refais cette
+Si tu veux t'inscrire à d'autres serveurs \emph{news}, refais cette
 procédure en rentrant le nom du serveur qui t'intéresse à la place
-de \fkz, par exemple pour accéder aux news externes
-\server{polynews.polytechnique.fr}.
+de \fkz, par exemple \server{polynews.polytechnique.fr} pour accéder aux news externes.
 
 
 \subsubsection{Configuration FTP}
 
 \paragraph{Client FTP}
 Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer l'un des deux, télécharge-le sur \xshare et double-clique sur l'installeur.
-Finis l'installation, et tu peux aller sur tous les FTP du réseau
+Tu pourras dès la fin de l'installation aller sur tous les FTP du réseau
 facilement et rapidement.
 
 \paragraph{Serveur FTP}
 Tu verras rapidement que tout le monde à l'X possède un serveur FTP
 afin de partager les différents projets, les films du JTX, ses
-photos, etc. Donc il est quasiment indispensable que tu en installes
+photos, etc. Il est donc quasiment indispensable que tu en installes
 un.
 
-Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP}, qui sont libres de surcro\^{i}t. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais tu trouveras sur le Wikix un tutoriel expliquant cela : \\
-\urllink{http://wikix.polytechnique.org/eleves/wikix/FTP}.
+Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP}, qui sont libres de surcro\^{i}t. Expliquer les détails de la configuration est un peu long pour l'InfoBR, mais tu trouveras sur le WikiX un tutoriel expliquant cela : \urllink{http://wikix.polytechnique.org/eleves/wikix/FTP}.
 
 \subsubsection{Autres logiciels utiles}
 
 \begin{itemize}
   \item \app{qRezix} : Un programme développé par le BR pour faciliter la vie sur le réseau,
-                  à récupérer sur \xshare. Pour plus de détails, voir le paragraphe consacrée
+                  à récupérer sur \xshare. Pour plus de détails, voir le paragraphe consacré
                   à \app{qRezix} à la page \pageref{qrezix}.
   \item \app{XChat} : Un client IRC directement issu du monde Unix.
                  Tu peux te reporter à la page \pageref{irc} pour plus d'infos sur l'IRC.
   \item \app{WinSCP} : Un logiciel pratique qui te permet de te connecter en salle info.
                   Tu peux le récupérer lui aussi sur \xshare ;
-                  son fonctionnement est expliqué en détails dans le Wikix. Voir aussi \app{Putty}, aussi dans le \xshare.
-  \item \app{vlc} : Un logiciel qui te permettra de recevoir la télévision directement dans ton casert, afin d'être vraiment s\^{u}r d'avoir autre chose à faire que travailler les veilles de p\^ales. Configuration page \pageref{TV}.
+                  son fonctionnement est expliqué en détails dans le WikiX. Voir aussi \app{Putty}, également dans le \xshare.
+ % \item \app{vlc} : Un logiciel qui te permettra de recevoir la télévision directement dans ton casert, afin d'être vraiment s\^{u}r d'avoir autre chose à faire que travailler les veilles de p\^ales. Configuration page \pageref{TV}.
 \end{itemize}
 
 
@@ -434,15 +429,14 @@ La procédure pour obtenir les logiciels et les clés correspondantes
 est la suivante :
 \begin{itemize}
 
-\item Va d'abord sur \fkz, et connecte-toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la bo\^ite \menu{Liens utiles}. Sélectionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oublié de l'y mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
+\item Va d'abord sur \fkz et connecte-toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la bo\^ite \menu{Liens utiles}. Sélectionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta clé par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste proposée, c'est soit qu'il n'y a pas besoin de clé --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oublié de l'y mettre ; dans ce cas, écris à \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une clé.
 
 \item Maintenant que tu as ta clé, il faut télécharger le logiciel proprement
-dit. Pour cela, connecte-toi par FTP sur \urllink{ftp://enez/msdnaa/} avec ton client FTP préféré.
-Alors, selon le logiciel, tu vas récupérer soit une image du CD de type \file{logiciel.iso} (à
+dit. Pour cela, connecte-toi par FTP sur \urllink{ftp://enez/msdnaa/} avec ton client FTP préféré.Tu pourrais, selon le logiciel, y récupérer soit une image du CD de type \file{logiciel.iso} (à
 graver ou à utiliser avec \app{Daemon Tools}), soit directement le contenu du CD.
 \end{itemize}
 
-Pour Windows, les fichiers iso télécharger sont les suivants :
+Pour Windows, les fichiers ISO à télécharger sont les suivants :
 \begin{description}
 \item[Pour Windows XP]
 \urllink{ftp://enez/msdnaa/win\_xp/french/win\_xp\_pro\_sp2\_fr.iso}.
@@ -452,13 +446,13 @@ Là, il y a deux possibilités :
 \begin{description}
 \item[Si tu as un processeur 64 bits :] L'image à télécharger est \\
 \urllink{ftp://enez/msdnaa/win\_vista/dvd\_64bits/french/vista\_dvd\_x64\_fr.iso}. Attention, cette
-image iso est à graver sur un DVD. On remarque aussi que parfois, même sur un processeur 64 bits il
-vaut mieux choisir la version 32 bits de Windows (celle qui est dans le prochain item) pour des
+image ISO est à graver sur un DVD. On remarque aussi que parfois, même sur un processeur 64 bits il
+vaut mieux choisir la version 32 bits de Windows (celle qui est dans le prochain \emph{item}) pour des
 raisons de disponibilité de pilotes.
 \item[Si tu as un processeur 32 bits :] Là, tu peux choisir de graver :
 \begin{itemize}
 \item soit un DVD : \\
-\urllink{ftp://enez/msdnaa/win\_vista/dvd\_32bits/french/vista\_dvd\_x86\_fr.iso}.
+\urllink{ftp://enez/msdnaa/win\_vista/dvd\_32bits/french/vista\_dvd\_x86\_fr.iso};
 \item soit quatre CDs (!) : \\
 \urllink{ftp://enez/msdnaa/win\_vista/cd\_32bits/french/vista\_cd\( N\) \_x86\_fr.iso}, N variant
 de 1 à 4.
@@ -469,7 +463,7 @@ de 1 à 4.
 \end{description}
 
 Les versions anglophones de Windows XP et Vista sont également disponibles sur \server{enez}.
-Ainsi, si tu as acheté un ordinateur sans OS (et ainsi économisé environ 150 \euro), tu vas chez un copain, et fais les demandes et grave le CD chez lui. Si tu as encore des questions, plus de détails sont donnés dans le Wikix et le WikiBR de \fkz.
+Ainsi, si tu as acheté un ordinateur sans OS (et ainsi économisé environ 150 \euro), tu vas chez un copain, fais les demandes et graves le CD chez lui. Si tu as encore des questions, plus de détails sont donnés dans le Wikix et le WikiBR de \fkz.
 
 
 \subsubsection{Annexe}
@@ -489,7 +483,7 @@ cela, clique sur \menu{Ajouter}, et remplis la boîte de dialogue% en t'aidant d
 ; mets le numéro du port que tu veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
 
 \paragraph{Serveur mandataire pour windows update} Il reste une dernière configuration de
-serveur mandatataire indispensable pour que puissent se faire les mises-à-jour automatiques
+serveur mandatataire indispensable pour que puissent se faire les mises à jour automatiques
 de Windows. Il t'est fortement recommandé de le faire.
 
 \begin{description}
@@ -500,7 +494,7 @@ il te suffit alors de taper : \cmd{proxycfg -p http://kuzh:8080} pour régler
 le serveur mandataire. Pour revenir à un accès direct il faut taper \cmd{proxycfg -d}.
 
 \item[Sous Windows Vista]
-Dans le menu \menu{Démarrer}, tape \guillemotleft~Invite de commandes~\guillemotright dans le champ \menu{Rechercher}, puis clique droit sur le lien
+Dans le menu \menu{Démarrer}, tape \guillemotleft~Invite de commandes~\guillemotright{} dans le champ \menu{Rechercher}, puis clique droit sur le lien
 et choisis \menu{Exécuter en tant qu'administrateur}. Tape ensuite les commandes suivantes :
 \cmdline{
 C:\textbackslash{}Windows\textbackslash{}system32$>$netsh\\

@@ -4,13 +4,12 @@ Il existe deux manières de configurer tes paramètres réseaux: l'une utilise l
 
 \begin{description}
 \item[Configuration à l'aide des outils graphiques]
-Tu peux modifier tes paramètres réseaux via l'icône présente dans ta barre des tâches symbolisant le réseau: c'est un raccourci vers \app{KNetworkManager} sous Kubuntu (KDE) (l'icône représente un c\^able réseau) et vers \app{l'applet réseau} sous Ubuntu (Gnome) (l'icône en haut à droite symbolisant un réseau, menu \menu{Propriétés}).
+Tu peux modifier tes paramètres réseau \emph{via} l'icône présente dans ta barre des tâches symbolisant le réseau: c'est un raccourci vers \app{KNetworkManager} sous Kubuntu (KDE; l'icône représente un c\^able réseau) et vers \app{l'applet réseau} sous Ubuntu (Gnome; l'icône en haut à droite symbolisant un réseau, menu \menu{Propriétés}).
 
-Un simple clic droit dessus affiche un menu te permettant d'ouvrir la fenêtre de configuration. \emph{Attention} ici le réseau est à configurer en
-\emph{statique} pas en automatique avec DHCP !! Rentre ensuite ton adresse IP, ta passerelle, ton adresse de \emph{broadcast} et ton masque de sous-réseau.
+Un simple clic droit dessus affiche un menu te permettant d'ouvrir la fenêtre de configuration. \emph{Attention}, ici le réseau est à configurer en \emph{statique}; pas en automatique avec DHCP ! Rentre ensuite ton adresse IP, ta passerelle, ton adresse de \emph{broadcast} et ton masque de sous-réseau.
 
 Ensuite il faut configurer la résolution DNS, sous Kubuntu va sur l'onglet \textit{Système de noms de domaines} ou dans l'outils de configuration du réseau
-(\menu{paramètres du Système}, \menu{réseau}). Les adresses IP des serveurs DNS sont les suivantes: \server{129.104.201.53} et \server{129.104\-.201.51}, le domaine réseau
+(\menu{Paramètres du système}, \menu{Réseau}). Les adresses IP des serveurs DNS sont les suivantes: \server{129.104.201.53} et \server{129.104\-.201.51}, le domaine réseau
 est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechnique.fr} pour accéder plus facilement aux machines des salles info. Choisis un nom de machine
 (en général ton pseudo) que tu reporteras dans \app{qRezix} pour qu'il soit enregistré.
 
@@ -36,7 +35,7 @@ est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechniqu
 
 \item[Configuration en ligne de commande]
  Tu peux également modifier directement les fichiers de configuration réseau comme indiqué ci-dessous avec ton éditeur de texte préféré (\app{vim}, \app{emacs}, \dots), le tout avec les droits
- administrateur évidemment! Encore une fois,  les étapes qui suivent peuvent \^etres entièrement réalisées avec les outils graphiques mentionnés plus haut!
+ administrateur évidemment! Encore une fois,  les étapes qui suivent peuvent \^etres entièrement réalisées avec les outils graphiques mentionnés plus haut.
 
  \begin{itemize}
  \item Le fichier \file{/etc/hostname} contient ton nom de machine. Il doit contenir uniquement: 
@@ -51,9 +50,9 @@ est \textit{eleves.polytechnique.fr}, tu peux aussi ajouter \textit{polytechniqu
  nameserver 129.104.201.51
  }
  
- \item Le fichier \file{/etc/network/interfaces} contient entre autres ton IP,
+ \item Le fichier \file{/etc/network/interfaces} contient entre autres ton adresse IP,
  ton sous-réseau et la passerelle pour en sortir. Ce fichier doit
- ressembler (avec éventuellement une config wifi à la suite\ldots,
+ ressembler (avec éventuellement une configuration wifi à la suite\ldots,
  voir la page~\pageref{wifi}) à :
   \cmdline[0.85]{
  \# The loopback network interface\\
@@ -88,14 +87,14 @@ PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 
  \subparagraph{Configuration du gestionnaire de paquets} \label{ubuntu_mirror} Il faut désormais configurer le gestionnaire de paquets pour
 qu'il utilise les miroirs du BR et non les miroirs à l'extérieur du
-campus qui sont plus lents.
+campus, qui sont plus lents.
 
 Le fichier \file{/etc/apt/sources.list} liste les miroirs utilisés par le gestionnaire de paquets. Il faut commenter la première ligne (qui
 correspond au CD d'installation) ainsi que toutes les lignes non commentées du fichier (qui correspondent aux miroirs extérieurs au campus) de la
 façon suivante:
-\cmdline{deb cdrom:[...]/ [version] main restricted}
+\cmdline{deb cdrom:[...]/ version main restricted}
 devient
-\cmdline{\#deb cdrom:[...]/ [version] main restricted}
+\cmdline{\#deb cdrom:[...]/ version main restricted}
 
 Il faut ensuite ajouter les lignes suivantes, qui correspondent aux miroirs du BR, au \emph{début} du fichier:
 \cmdline{
@@ -105,19 +104,17 @@ deb ftp://miroir/ubuntu version-security main restricted universe multiverse
 }
 où \textbf{version} correspond à la version d'Ubuntu installée sur ton ordinateur. La version actuelle est \textbf{intrepid} et la précédente est \textbf{hardy}.
 
-Tu peux aussi utiliser le dépôt suivant mais attention il contient des logiciels \emph{non supportés par l'équipe de développement d'Ubuntu} (en particulier il peut arriver que certains logiciels contiennent des erreurs !):
+Tu peux aussi utiliser le dépôt suivant mais attention il contient des logiciels \emph{non supportés par l'équipe de développement d'Ubuntu} (en particulier il peut arriver que certains logiciels contiennent des erreurs):
 \cmdline{deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse}
 
 Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient \app{qRezix} ainsi que des paquets très importants (codecs
-vidéo, java,\dots) ou pas (bureau 3d, google earth,\dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou
+vidéo, java,\dots) ou pas (\app{bureau 3D}, \app{Google Earth}, \dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou
 éthiques. Pour en profiter, il faut rajouter à la suite des lignes précédentes:
-
 \cmdline{deb ftp://miroir/bll [version] main}
 
 
 On finit par vérifier que tout fonctionne en mettant à jour la liste
 des paquets disponibles:
-
 \cmdline{\$ sudo aptitude update}
 
 S'il n'y a pas de message d'erreur c'est que tout fonctionne bien.

@@ -2,7 +2,7 @@
 
 \bghdr{images/fond-nux}
 
-\clearpage
+
 
 %\begin{center}
 %\includegraphics{images/logo_Linux}
@@ -13,7 +13,7 @@
 \subsubsection{Configuration IP}
 Quelle que soit ta distribution, il faut que tu décides d'un nom de
 machine --- ton pseudo en général. Tu as également besoin de
-conna\^itre ton adresse IP, l'IP de ta passerelle (\emph{gateway}), ton masque de sous-réseau et ton adresse de diffusion (\emph{broadcast}).
+conna\^itre ton adresse IP, l'adresse IP de ta passerelle (\emph{gateway}), ton masque de sous-réseau et ton adresse de diffusion (\emph{broadcast}).
 Toutes les informations nécessaires se trouvent page
 \pageref{calcul_ip}.
 
@@ -44,7 +44,7 @@ conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir très comple
 
 \subsubsection{Configuration antivirus}
 
-{\footnotesize (elle est drôle celle-là hein ?)}
+{(elle est drôle celle-là hein ?)}
 
 
 \subsubsection{Configuration du pare-feu}
@@ -57,13 +57,13 @@ d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment c
 \flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou
 \app{Konqueror} (le navigateur fourni par défaut avec KDE). Dans tous les cas, la seule
 configuration à effectuer est celle du serveur mandataire. Pour \app{Firefox}, il suffit d'aller dans
-\menu{Edit}, \menu{Preferences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
+\menu{\'Edition}, \menu{Préférences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
 \menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite coche la case \menu{Adresse de
 configuration automatique du proxy}, et rentre \urllink{http://frankiz/proxy.pac}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
-les logiciels KDE (KGet, Adept, ...) ne l'utiliserons pas!
+les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas!
 
 \imagepos{images/nux_proxy_firefox}{0.33}{Configuration du serveur mandataire sous Firefox}{ht}
 
@@ -71,7 +71,7 @@ les logiciels KDE (KGet, Adept, ...) ne l'utiliserons pas!
 
 \subsubsection{Configuration mail}
 
-\flimage{images/nux_kmail_icon}{0.12}{l} Le client mail le plus
+\flimage{images/nux_kmail_icon}{0.12}{l} Le client \emph{mail} le plus
 utilisé est \app{Kmail}, mais il en existe bien sûr d'autres comme
 \app{Thunderbird}. La configuration est semblable, quel que soit le
 client que tu utilises.
@@ -98,7 +98,7 @@ l'onglet \menu{Réception des messages} en cliquant sur le bouton
 Utilise les paramètres suivants pour configurer l'onglet \menu{Général} :
 \begin{description}
   \item[Nom] le nom du compte, par exemple : Mails Poly
-  \item[Utilisateur] rentre le login \server{poly} que t'a fourni la DSI à ton arrivée sur le plateau
+  \item[Utilisateur] rentre le \emph{login} \server{poly} que t'a fourni la DSI à ton arrivée sur le plateau
   \item[Mot de passe] et là le mot de passe \server{poly}
   \item[Serveur] \server{poly.polytechnique.fr}
   \item[Port] 995
@@ -116,7 +116,7 @@ configurer :
 \end{description}
 Sinon, laisse toutes les cases décochées.
 
-Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses mail de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit: \\
+Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses \emph{mail} de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit: \\
 \smallskip
 \begin{minipage}{0.48\textwidth}
 \begin{description}
@@ -127,12 +127,12 @@ Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de
 \end{minipage} 
 \begin{minipage}{0.48\textwidth}
 \begin{description}  
-  \item[DN] dc=ldap,dc=eleves,dc=polytechnique,dc=fr
+  \item[DN] \server{dc=ldap,dc=eleves,dc=polytechnique,dc=fr}
   \item[Sécurité] Non
   \item[Identification] Anonyme
 \end{description}
 \end{minipage} \\
-Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès au LDAP lors de la
+Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant accès à l'annuaire LDAP lors de la
 rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}. 
 %
 %\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
@@ -146,15 +146,15 @@ rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}.
       \hspace{\stretch{1}}
       \subfloat[Configuration de Knode]{ 
  		\includegraphics[width=0.48 \textwidth]{images/nux_config_ldap} }
-	\caption{Configurations LDAP et news}
+	\caption{Configurations LDAP et \emph{news}}
     \end{center}
  \end{figure*}
 
 
 
-\subsubsection{Configuration news}
+\subsubsection{Configuration \emph{news}}
 
-\flimage{images/nux_knode_icon}{0.12}{l} Le client news le plus utilisé est \app{Knode}. Parmi les autres clients news, citons \app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est presque indépendante du logiciel choisi.
+\flimage{images/nux_knode_icon}{0.12}{l} Le client \emph{news} le plus utilisé est \app{Knode}. Parmi les autres clients \emph{news}, citons \app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est presque indépendante du logiciel choisi.
 
 
 Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
@@ -174,14 +174,14 @@ Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 Ensuite occupe-toi de l'onglet \menu{Identité} :
 \begin{description}
   \item[Nom] mets ton pseudo dans ce champ
-  \item[Organisation] X, école Polytechnique, comme tu le sens
-  \item[Adresse électronique] ton adresse mail, pour que les gens puissent te répondre par mail.
+  \item[Organisation] X, \'Ecole polytechnique, comme tu le sens
+  \item[Adresse électronique] ton adresse \emph{mail}, pour que les gens puissent te répondre par \emph{mail}.
 \end{description}
 
-Enfin, pour que \app{Knode} puisse envoyer des mails, il faut aller
+Enfin, pour que \app{Knode} puisse envoyer des \emph{mails}, il faut aller
 dans la rubrique \menu{Comptes}, sous-rubrique \menu{Serveur de
-courrier (SMTP)}, et choisir comme serveur d'envoi de mails
-\server{poly.poly\linebreak{}technique.fr}, port 25 --- c'est exactement la m\^eme
+courrier (SMTP)}, et choisir comme serveur d'envoi de \emph{mails}
+\server{poly.polytechnique.fr}, port 25 --- c'est exactement la m\^eme
 configuration SMTP que \app{Kmail}.
 
 Si tu veux mettre une signature à la fin des messages que tu
@@ -218,7 +218,7 @@ TIMEOUTclose = 0
 Il ne te reste plus qu'à lancer \app{stunnel} par :
 \cmdline{/etc/init.d/stunnel start}
 
-Et tu peux ainsi lire les news de Polytechnique.org en mettant \server{localhost} comme serveur et
+Et tu peux ainsi lire les \emph{news} de Polytechnique.org en mettant \server{localhost} comme serveur et
 \server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
 que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir
-sur \urllink{http://www.poly\-tech\-nique.org/acces\_smtp.php}.
+sur \urllink{http://www.polytechnique.org/acces\_smtp.php}.
