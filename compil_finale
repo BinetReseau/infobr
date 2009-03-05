@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#on s'assure que la modification de la toc a été effectuée correctement!
+
+# numéro de la page à intervertir
+page=$(sed -n -e 's/^\\setcounter{cptr}{\(.*\)}/\1/p' preambuleInfoBR.sty)
+
+pdflatex InfoBR.tex > /dev/null
+echo "première compilation"
+sed -i -e "s/11/mOtIf/"  InfoBR.toc
+sed -i -e "s/$page/11/" InfoBR.toc
+sed -i -e "s/mOtIf/$page/" InfoBR.toc
+pdflatex InfoBR.tex > /dev/null
+echo ok

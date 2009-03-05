@@ -22,6 +22,7 @@
 \usepackage{array}
 \usepackage{color}
 \usepackage{microtype}
+\usepackage{ifthen}
 \usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
 \usepackage[francais]{babel}
 
@@ -44,9 +45,27 @@
 \renewcommand{\sectionmark}[1]{\markboth{\MakeUppercase{#1}}{}}
 \renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
 \fancyhf{}
-\fancyhead[LE,RO]{\bfseries{\Large\thepage}}
+
+
+% Le compteur, à changer manuellement, garde en mémoire le numéro de la page contenant les informations sur les cross-posts.
+% Il suffit de changer le numéro de la page, puis de lancer compil_finale
+\newcounter{cptr}
+\setcounter{cptr}{30}
+
+% On prend en compte la modification pour la page 11
+
+\fancyhead[LE,RO]{%\Large \thepage}%
+\ifthenelse{\thepage=11}%
+    { \bfseries{\Large \thecptr} }% si test = vrai
+    { \ifthenelse{\thepage=\thecptr}%
+         {\bfseries{\Large 11}}% test vrai
+         {\Large \thepage}%test faux
+     }%
+}
+
 \fancyhead[LO]{\rightmark}
 \fancyhead[RE]{\sc{\leftmark}}
+
 \fancypagestyle{plain}{%
   \fancyhead{} % get rid of headers
   \renewcommand{\headrulewidth}{0pt} % and the line
