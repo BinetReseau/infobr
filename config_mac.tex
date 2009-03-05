@@ -18,18 +18,18 @@ Afin de connaître la version que tu utilises, va dans le \menu{menu Pomme} puis
 
 
 \noindent
-  \begin{figure*}[!h]
+  \begin{figure*}[p]
     \begin{center}  
      % \subfloat[Tiger]{\includegraphics[width=0.47\textwidth]{images/mac_nouvelle_config} } 
      % \hfill
       \subfloat[Créer une nouvelle configuration réseau]{ 
-      \begin{minipage}{0.49 \textwidth}\begin{flushleft}
+      \begin{minipage}{0.43 \textwidth}\begin{flushleft}
       {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_1}}\\ \vspace*{2cm}
       {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_2}} 
  		\end{flushleft}  \end{minipage}
  		 } 		
  		\subfloat[Configuration de l'interface réseau \emph{Ethernet}, de l'adresse IP et du \emph{proxy}]{ 
- 		 \begin{minipage}{0.49 \textwidth}\begin{flushright}
+ 		 \begin{minipage}{0.43 \textwidth}\begin{flushright}
  		{\includegraphics[width=0.96 \textwidth]{images/mac_config_ethernet}} \\ 
  		{\includegraphics[width=0.96 \textwidth]{images/mac_config_ip_leopard}} \\
  		{\includegraphics[width=0.96 \textwidth]{images/mac_config_proxy_leopard}}
@@ -49,7 +49,7 @@ Une fois la nouvelle configuration créée, il faut configurer l'interface rése
 
 
 
-\app{Leopard} : Dans la colonne de gauche, sélectionne \menu{Ethernet intégré}
+\app{Leopard} : Dans la colonne de gauche, sélectionne \menu{Ethernet intégré}.
 
 Choisis alors \menu{Configurer IPv4} :% \menu{Manuellement} (\app{Tiger}) ou 
 \menu{Configurer} : \menu{Manuellement} (\app{Leopard}). Tu trouveras toutes les valeurs d'adresses IP nécessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant aux captures d'écran~\ref{config:mac:ip:leopard}. Si une partie d'adresse IP est blanche sur ces captures, c'est qu'elle t'est personnelle et que tu dois la calculer !
@@ -78,12 +78,12 @@ N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la 
 
   
 \subsubsection{Configuration \emph{Wi-Fi} Bataclan}
-Pour configurer le \emph{Wi-Fi} au Bataclan, télécharge d'abord  le certificat sur \urllink{http://wifi/certificats.html}.
+Pour configurer le \emph{Wi-Fi} au Bataclan, il faut tout d'abord que tu télécharges  le certificat sur \urllink{http://wifi/certificats.html}.
 Dans l'onglet \menu{Airport}, choisis comme réseau \menu{kastell} puis dans l'onglet \menu{Avancé}, choisis \menu{802.1W} et saisis ton \emph{login} poly (seulement 8 caractères max) et votre mot de passe \server{Frankiz}. N'oublie pas de cocher la case TTLS comme dans la capture.
 
-\begin{figure*}[!h]
+\begin{figure*}[p]
     \begin{center}
-      \includegraphics[width=0.3\textwidth]{images/mac_config_wifi.png} 
+      \includegraphics[width=0.4\textwidth]{images/mac_config_wifi.png} 
       \caption{Configurer le \emph{Wi-Fi} du Bataclan}
     \end{center}
   \end{figure*}
@@ -197,7 +197,7 @@ Les logiciels cités ici sont téléchargeables sur \server{frankiz}, rubrique \
 %\noindent\app{NetNewsWire} est la référence des clients RSS sur Mac, et est maintenant gratuit. Dans le même genre, on peut citer \app{Vienna}, un client RSS open source, dont le développement actif est prometteur. Les flux RSS permettent d'agréger dans un seul logiciel des informations en provenance de nombreux sites web, qui peuvent provenir de forums de discussions, de mises à jour de logiciels, d'informations internationales\dots \\ \\
 
 %\flimage{images/mac_fink_icone}{0.1}{l}
-\noindent\app{Fink} est la manière la plus simple d'installer sur Mac OS X nombre de logiciels issus du monde Unix (Linux par exemple). Grâce à lui, tu pourras installer les mêmes logiciels que dans les salles informatiques. Par exemple, tu pourras installer Scilab sans trop de peine\dots La configuration nécessaire se trouve sur \urllink{http://frankiz/binets/reseau/Miroir\_Fink}. \\ \\
+\noindent\app{Fink} est la manière la plus simple d'installer sur Mac OS X nombre de logiciels issus du monde Unix (Linux par exemple). Grâce à lui, tu pourras installer les mêmes logiciels que dans les salles informatiques. Par exemple, tu pourras installer Scilab sans trop de peine\dots La configuration nécessaire se trouve sur \urllink{http://frankiz/binets/reseau/Miroir\_Fink}. \\ 
 
 \flimage{images/logo_Windows}{0.1}{l}
 \noindent \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows grâce à \app{Boot Camp}, livré avec \app{Leopard}. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux également virtualiser Windows (utiliser Windows en utilisant en même temps Mac OS) grâce à \app{VMware Fusion}, \app{VirtualBox} ou \app{Parallels Desktop}. Le  défaut de cette solution est que tu n'as pas d'accélération 3D, donc pour les jeux il te faudra redémarrer. Ces deux logiciels sont disponibles en version d'essai sur leurs sites \emph{web} respectifs. \`A toi de choisir !

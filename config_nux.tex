@@ -33,7 +33,7 @@ ci-dessous dans le fichier \file{/etc/make.conf} :
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
 no\_proxy=.eleves.polytechnique.fr\\
-GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.\linebreak{}osuosl.org/"\\
+GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
 Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais
@@ -65,7 +65,7 @@ Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Co
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
 les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas!
 
-\imagepos{images/nux_proxy_firefox}{0.33}{Configuration du serveur mandataire sous Firefox}{ht}
+\imagepos{images/nux_proxy_firefox}{0.45}{Configuration du serveur mandataire sous Firefox}{ht}
 
 \pagebreak
 
@@ -118,16 +118,16 @@ Sinon, laisse toutes les cases décochées.
 
 Tu peux aussi configurer l'accès à \app{l'annuaire LDAP} de l'école, sorte de carnet d'adresses en ligne qui contient les adresses \emph{mail} de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un hôte}, et configure comme suit: \\
 \smallskip
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
 \begin{description}
   \item[Hôte] \server{ldap.eleves.polytechnique.fr}
   \item[Port] 389
   \item[Version de LDAP] 3
 \end{description}  
 \end{minipage} 
-\begin{minipage}{0.48\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
 \begin{description}  
-  \item[DN] \server{dc=ldap,dc=eleves,dc=polytechnique,dc=fr}
+  \item[DN] \server{dc=polytechnique, dc=ldap, dc=eleves, dc=fr}
   \item[Sécurité] Non
   \item[Identification] Anonyme
 \end{description}
@@ -169,7 +169,7 @@ Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \nopagebreak  \item[Port] 119
 \end{description}
 
-
+\pagebreak
  
 Ensuite occupe-toi de l'onglet \menu{Identité} :
 \begin{description}
@@ -196,8 +196,7 @@ composera ta signature.
 Il ne te reste plus qu'à t'inscrire à des \emph{newsgroups} (reporte-toi à la page \pageref{newsgroups} pour plus d'infos) et à poster !
 
 Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un accès sécurisé, avec \app{Knode}, il y a une petite subtilité car il
-ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} ou
-\file{/etc/stunnel/stunnel.conf} selon ta distribution, mets les lignes suivantes (les trois premières y sont en principe déjà) :
+ne gère pas le SSL. Il faut installer \app{stunnel} qui permet de définir une redirection SSL de port. Dans \file{/etc/stunnel.conf} (ou parfois \file{/etc/stunnel/stunnel.conf}), mets les lignes suivantes (les trois premières y sont en principe déjà) :
 \cmdline{\# location of pid file\\
 pid = /etc/stunnel/stunnel.pid\\
 \\
