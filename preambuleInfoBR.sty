@@ -56,8 +56,8 @@
 
 \fancyhead[LE,RO]{%\Large \thepage}%
 \ifthenelse{\thepage=11}%
-    { \bfseries{\Large \thecptr} }% si test = vrai
-    { \ifthenelse{\thepage=\thecptr}%
+    {\bfseries{\Large \thecptr}}% si test = vrai
+    {\ifthenelse{\thepage=\thecptr}%
          {\bfseries{\Large 11}}% test vrai
          {\Large \thepage}%test faux
      }%
@@ -103,10 +103,10 @@
 % pour les images de fond sous les en-têtes
 \newcommand{\bghdr}[1]{
   \leftwatermark{
-    \raisebox{-1.5cm}{ \hspace{-2.5cm} \includegraphics{#1} }
+    \raisebox{-1.5cm}{ \hspace{-2.5cm} \includegraphics[width=3.5cm]{#1} }
   }
   \rightwatermark{
-    \raisebox{-1.5cm}{ \hspace{14.1cm} \includegraphics{#1} }
+    \raisebox{-1.5cm}{ \hspace{14.1cm} \includegraphics[width=3.5cm]{#1} }
   }
 }
 

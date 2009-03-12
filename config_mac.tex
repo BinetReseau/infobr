@@ -78,6 +78,7 @@ N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la 
 
   
 \subsubsection{Configuration \emph{Wi-Fi} Bataclan}
+
 Pour configurer le \emph{Wi-Fi} au Bataclan, il faut tout d'abord que tu télécharges  le certificat sur \urllink{http://wifi/certificats.html}.
 Dans l'onglet \menu{Airport}, choisis comme réseau \menu{kastell} puis dans l'onglet \menu{Avancé}, choisis \menu{802.1W} et saisis ton \emph{login} poly (seulement 8 caractères max) et ton mot de passe \server{Frankiz}. Ensuite, coche la case TTLS comme dans la capture~\ref{wifi:mac:bataclan}, rends-toi sur \menu{Configurer\ldots} et sélectionne \menu{PAP}.
 
@@ -181,11 +182,9 @@ Tu verras rapidement que tout le monde à l'X possède un serveur FTP afin de pa
 
 Les logiciels cités ici sont téléchargeables sur \server{frankiz}, rubrique \menu{Télécharger}, \menu{Mac}, \menu{Réseau}.
 
-\flimage{images/mac_qrezix_icone}{0.07}{l} \noindent\app{qRezix} : en deux mots, c'est un programme développé par le BR pour faciliter la vie sur le réseau. Tu peux le récupérer dans la partie Mac de \xshare.
+\flimage{images/mac_qrezix_icone}{0.07}{l} \app{qRezix} : en deux mots, c'est un programme développé par le BR pour faciliter la vie sur le réseau. Tu peux le récupérer dans la partie Mac de \xshare. Pour plus de détails, voir le paragraphe consacré à qRezix à la page \pageref{qrezix}.
 
-\noindent Pour plus de détails, voir le paragraphe consacré à qRezix à la page \pageref{qrezix}.
-
-\noindent \app{Leopard} : le pare-feu se règle application par application, tu n'auras qu'à répondre \menu{Autoriser} lorsqu'il te demandera si tu veux \menu{Autoriser les connexions entrantes}.
+ \app{Leopard} : le pare-feu se règle pour chaque application; tu n'auras qu'à répondre \menu{Autoriser} lorsqu'il te demandera si tu veux \menu{Autoriser les connexions entrantes}.
 
 %\noindent  \app{Tiger} : Attention, si ton \emph{firewall} est activé, tu dois ouvrir les ports 5050, 5053 et 5055 en TCP. Pour cela va dans \app{Préférences Système}, dans le module \menu{S\'ecurit\'e}, onglet \menu{Coupe-feu}. S'il est écrit \menu{Coupe-feu activé}, clique le bouton \menu{Nouveau} et remplis la boîte de dialogue comme sur la capture d'écran ci-dessous pour ouvrir les ports.
 
@@ -197,11 +196,11 @@ Les logiciels cités ici sont téléchargeables sur \server{frankiz}, rubrique \
 %\flimage{images/mac_netnewswire_icone}{0.1}{l}
 %\noindent\app{NetNewsWire} est la référence des clients RSS sur Mac, et est maintenant gratuit. Dans le même genre, on peut citer \app{Vienna}, un client RSS open source, dont le développement actif est prometteur. Les flux RSS permettent d'agréger dans un seul logiciel des informations en provenance de nombreux sites web, qui peuvent provenir de forums de discussions, de mises à jour de logiciels, d'informations internationales\dots \\ \\
 
-%\flimage{images/mac_fink_icone}{0.1}{l}
-\noindent\app{Fink} est la manière la plus simple d'installer sur Mac OS X nombre de logiciels issus du monde Unix (Linux par exemple). Grâce à lui, tu pourras installer les mêmes logiciels que dans les salles informatiques. Par exemple, tu pourras installer Scilab sans trop de peine\dots La configuration nécessaire se trouve sur \urllink{http://frankiz/binets/reseau/Miroir\_Fink}. \\ 
+\flimage{images/mac_fink_icone}{0.07}{l}
+\app{Fink} est la manière la plus simple d'installer sur Mac OS X nombre de logiciels issus du monde Unix (Linux par exemple). Grâce à lui, tu pourras installer les mêmes logiciels que dans les salles informatiques. Par exemple, tu pourras installer Scilab sans trop de peine\dots La configuration nécessaire se trouve sur la page  \urllink{http://frankiz/binets/reseau/Miroir\_Fink}. \\ 
 
 \flimage{images/logo_Windows}{0.1}{l}
-\noindent \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows grâce à \app{Boot Camp}, livré avec \app{Leopard}. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux également virtualiser Windows (utiliser Windows en utilisant en même temps Mac OS) grâce à \app{VMware Fusion}, \app{VirtualBox} ou \app{Parallels Desktop}. Le  défaut de cette solution est que tu n'as pas d'accélération 3D, donc pour les jeux il te faudra redémarrer. Ces deux logiciels sont disponibles en version d'essai sur leurs sites \emph{web} respectifs. \`A toi de choisir !
+ \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows grâce à \app{Boot Camp}, livré avec \app{Leopard}. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux également virtualiser Windows (utiliser Windows en utilisant en même temps Mac OS) grâce à \app{VMware Fusion}, \app{VirtualBox} ou \app{Parallels Desktop}. Le  défaut de cette solution est que tu n'as pas d'accélération 3D, donc pour les jeux il te faudra redémarrer. Ces deux logiciels sont disponibles en version d'essai sur leurs sites \emph{web} respectifs. \`A toi de choisir !
 Mais vérifie tout de même que tu as bien un processeur Intel (\menu{Pomme} puis sélectionne \menu{À propos de ce Mac}).
 
 \clearpage
