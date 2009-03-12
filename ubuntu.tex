@@ -17,17 +17,7 @@ est \server{eleves.polytechnique.fr}, tu peux aussi ajouter \server{polytechniqu
 %\imagepos{images/kubuntu_config_reseau0}{0.65}{Configuration du réseau sous Kubuntu}{!ht}
 %\imagepos{images/kubuntu_config_reseau1}{0.55}{Configuration de la résolution DNS sous Kubuntu}{!ht}
 
-\noindent
-  \begin{figure*}[!h]
-    \begin{center}  
-      \subfloat[Configuration IP]{ 
-      \includegraphics[width=0.65\textwidth]{images/kubuntu_config_reseau0}} \\
-%      \hspace{\stretch{1}}
-      \subfloat[Configuration DNS]{ 
-	\includegraphics[width=0.65 \textwidth]{images/kubuntu_config_reseau1}}
-         	 \caption{Configuration réseau}
-    \end{center}
-  \end{figure*}
+
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -49,6 +39,17 @@ est \server{eleves.polytechnique.fr}, tu peux aussi ajouter \server{polytechniqu
  nameserver 129.104.201.53\\
  nameserver 129.104.201.51
  }
+ 
+\noindent
+  \begin{figure*}[!h]
+    \begin{center}  
+      \subfloat[Configuration IP]{ 
+      \includegraphics[width=0.65\textwidth]{images/kubuntu_config_reseau0}} \\
+      \subfloat[Configuration DNS]{ 
+	\includegraphics[width=0.65 \textwidth]{images/kubuntu_config_reseau1}}
+         	 \caption{Configuration réseau}
+    \end{center}
+  \end{figure*} 
  
  \item Le fichier \file{/etc/network/interfaces} contient entre autres ton adresse IP,
  ton sous-réseau et la passerelle pour en sortir. Ce fichier doit
