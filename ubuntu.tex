@@ -103,12 +103,12 @@ deb ftp://miroir/ubuntu version-security main restricted universe multiverse
 où \textbf{version} correspond à la version d'Ubuntu installée sur ton ordinateur. La version actuelle est \textbf{intrepid} et la précédente est \textbf{hardy}.
 
 Tu peux aussi utiliser le dépôt suivant mais attention il contient des logiciels \emph{non supportés par l'équipe de développement d'Ubuntu} (en particulier il peut arriver que certains logiciels contiennent des erreurs):
-\cmdline{deb ftp://miroir/ubuntu [version]-backports main restricted universe multiverse}
+\cmdline{deb ftp://miroir/ubuntu version-backports main restricted universe multiverse}
 
 Le BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir non-officiel qui contient \app{qRezix} ainsi que des paquets très importants (codecs
 vidéo, java,\dots) ou pas (\app{bureau 3D}, \app{Google Earth}, \dots), non inclus dans la distribution de base pour diverses raisons, en particulier légales ou
 éthiques. Pour en profiter, il faut rajouter à la suite des lignes précédentes:
-\cmdline{deb ftp://miroir/bll [version] main}
+\cmdline{deb ftp://miroir/bll version main}
 
 
 On finit par vérifier que tout fonctionne en mettant à jour la liste

@@ -5,13 +5,17 @@
 \title{InfoBR 2007}
 \author{Binet R\'eseau 2k7}
 \date{ }
-\usepackage{garamond}
+%\usepackage{garamond}
 
+\usepackage{fontspec}
 
+%\setromanfont{Garamond Premier Pro}
+%\setromanfont{Bauer Bodoni Std 1}
+\setmainfont[Mapping=tex-text,Numbers={OldStyle},ItalicFeatures={Ligatures=Rare}]{Garamond Premier Pro}
 
 \begin{document}
 
-\garamond
+%\garamond
 \setlength{\parskip}{0pt plus 2ex}
 
 
@@ -20,7 +24,7 @@
 % ------------------------------ Exergue ------------------------------
 % on peut l'enlever, selon le nombre de pages à atteindre
 
-\input{dedicace.tex}
+%\input{dedicace.tex}
 
 
 \newpage
@@ -83,7 +87,7 @@
 \input{partie3/partie3}
 
 % -------------------- Pour rajouter une page -------------------
-\leftwatermark{}
+%\leftwatermark{}
 \newpage
 \thispagestyle{plain}
 \hrulefill \, \begin{Large}Notes personnelles\end{Large} \hrulefill
