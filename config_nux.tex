@@ -21,8 +21,8 @@ Bien sûr, l'ensemble des manipulations décrites ci-dessous doit se faire en ta
 
 
 \paragraph{Sous Gentoo}
-Tu dois d'abord configurer ta Gentoo pour utiliser le réseau de l'X, donc configure le réseau en statique avec ton adresse IP calculée précédemment, puis
-configure la résolution DNS. Tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
+Tu dois d'abord configurer ta Gentoo pour utiliser le réseau de l'X. Configure le réseau en statique avec ton adresse IP calculée précédemment ; 
+puis configure la résolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 \noindent \cmdline{
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
@@ -37,8 +37,7 @@ GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuos
 SYNC="rsync://rsync/gentoo-portage"}
 
 Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais
-\urllink{ftp://miroir} étant interne, il sera toujours beaucoup plus rapide que les autres. On te
-conseille ici \urllink{http://gentoo.osuosl.org/} qui est un miroir très complet mais très lent.
+\urllink{ftp://miroir} étant interne, il sera toujours beaucoup plus rapide que les autres.
 
 \input{ubuntu.tex}
 
@@ -56,10 +55,11 @@ d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment c
 
 \flimage{images/nux_firefox_icon}{0.12}{l} Le BR te conseille d'utiliser \app{Firefox} ou
 \app{Konqueror} (le navigateur fourni par défaut avec KDE). Dans tous les cas, la seule
-configuration à effectuer est celle du serveur mandataire. Pour \app{Firefox}, il suffit d'aller dans
-\menu{\'Edition}, \menu{Préférences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
-\menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite coche la case \menu{Adresse de
-configuration automatique du proxy}, et rentre \urllink{http://frankiz/proxy.pac}.
+configuration à effectuer est celle du serveur mandataire.
+
+Pour \app{Firefox}, il suffit d'aller dans \menu{\'Edition}, \menu{Préférences} et dans l'onglet \menu{Avancé}, puis de cliquer sur l'onglet
+\menu{Réseau}, et enfin \menu{Paramètres de connexion} ; ensuite coche la case \menu{Adresse de configuration automatique du proxy}, et rentre 
+\urllink{http://config/proxy.pac}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
@@ -71,12 +71,11 @@ les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas!
 
 \subsubsection{Configuration \emph{mail}}
 
-\flimage{images/nux_kmail_icon}{0.12}{l} Le client \emph{mail} le plus
-utilisé est \app{Kmail}, mais il en existe bien sûr d'autres comme
-\app{Thunderbird}. La configuration est semblable, quel que soit le
-client que tu utilises.
+\flimage{images/nux_kmail_icon}{0.12}{l} Les clients \emph{mail} les plus
+utilisés sont \app{Kmail} et \app{Thunderbird}. La configuration est semblable, quel que soit le
+client utilisé.
 
-Va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la
+Pour \app{Kmail}, va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la
 rubrique \menu{Comptes}. Commence par créer un nouveau compte dans
 l'onglet \menu{Réception des messages} en cliquant sur le bouton
 \menu{Ajouter\ldots} et choisis le type POP3.
@@ -154,7 +153,8 @@ rédaction de messages, avec tout au plus un redémarrage de \app{Kmail}.
 
 \subsubsection{Configuration \emph{news}}
 
-\flimage{images/nux_knode_icon}{0.12}{l} Le client \emph{news} le plus utilisé est \app{Knode}. Parmi les autres clients \emph{news}, citons \app{Thunderbird} ou \app{slrn}. Ici aussi, la configuration est presque indépendante du logiciel choisi.
+\flimage{images/nux_knode_icon}{0.12}{l} Le client \emph{news} le plus utilisé est \app{Knode}. Parmi les autres clients \emph{news}, citons 
+\app{Thunderbird}, \app{Pan} ou \app{slrn}. Ici aussi, la configuration est presque indépendante du logiciel choisi.
 
 
 Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
@@ -220,6 +220,6 @@ Il ne te reste plus qu'à lancer \app{stunnel} par :
 Et tu peux ainsi lire les \emph{news} de Polytechnique.org en mettant \server{localhost} comme serveur et
 \server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
 que tu rentres ton nom d'utilisateur à Polytechnique.org et ton mot de passe, que tu peux définir
-sur \urllink{http://www.polytechnique.org/acces\_smtp.php}.
+sur \urllink{https://www.polytechnique.org/Xorg/SMTPSecurise}.
 
 \pagebreak
