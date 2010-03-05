@@ -1,0 +1,128 @@
+\section{Premiers pas\ldots}
+
+\subsection{Comment calculer ton adresse IP ?}
+%% Calculer l'adresse \emph{IP} de son casert
+
+\label{calcul_ip}
+
+Une adresse IP est une suite de quatre nombres compris entre 0 et
+255 s\'epar\'es par des points ; en gros, elle identifie de mani\`ere
+unique toute machine connect\'ee au r\'eseau mondial. \emph{Exemple :}
+l'adresse IP de \server{frankiz} est \server{129.104.201.51}.
+
+Les adresses IP de l'X sont toutes de la forme \server{129.104.AAA.BBB}.
+Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} pour que ton
+ordinateur ait une adresse unique et correcte. Une erreur sur cette adresse t'emp\^eche tout simplement d'acc\'eder au r\'eseau, donc assure-toi que ton calcul est juste !
+
+
+\subsubsection{En Foch, Fayolle, Joffre et Maunoury}
+Tu trouveras sur ta prise r\'eseau un identifiant compos\'e d'une lettre et de trois chiffres.
+On note les deux premiers caract\`eres $xx$ et les deux derniers $zz$.
+\begin{itemize}
+\item $zz$ sert \`a trouver les identifiants \server{BBB} par la r\`egle : \server{BBB} = $120 + zz$.
+
+\item $xx$ sert \`a trouver ton sous-r\'eseau (\server{AAA}), ta passerelle (\emph{gateway}),
+ton adresse de diffusion (\emph{broadcast}) et ton masque de sous-réseau (\emph{netmask}), selon le tableau suivant.
+\end{itemize}
+
+
+\begin{center}
+\begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|c|c|c|}
+\hline \multirow{2}{*}{$xx$} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
+ & & & \bf{diffusion} & \bf sous-réseau \\
+\hline A0 & 208 & \multirow{4}{*}{\server{129.104.211.254}} & \multirow{4}{*}{\server{129.104.211.255}} & \multirow{16}{*}{\server{255.255.252.0}} \\ 
+\cline{1-2} A1 & 209 &  &  &  \\ 
+\cline{1-2} A2 & 210 &  &  &  \\ 
+\cline{1-2} A3 & 211 &  &  &  \\ 
+\cline{1-4}  B0 & 216  & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \\ 
+\cline{1-2} B1 & 217 &  &  &  \\ 
+\cline{1-2} B2 & 218 &  &  &  \\ 
+\cline{1-2} B3 & 219 &  &  &  \\ 
+\cline{1-4}  C0 & 212  & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \\ 
+\cline{1-2} C1 & 213 &  &  &  \\ 
+\cline{1-2} C2 & 214 &  &  &  \\ 
+\cline{1-2} C3 & 215 &  &  &  \\ 
+\cline{1-4}  D0 & 232  & \multirow{4}{*}{\server{129.104.235.254}} & \multirow{4}{*}{\server{129.104.235.255}} & \\ 
+\cline{1-2} D1 & 233 &  &  &  \\ 
+\cline{1-2} D2 & 234 &  &  &  \\ 
+\cline{1-2} D3 & 235 &  &  &  \\ 
+\hline
+\end{tabular} 
+\end{center}
+
+\exemple{l'adresse IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
+diffusion est \server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
+
+
+\subsubsection{Dans les nouveaux caserts}
+
+Ta prise r\'eseau poss\`ede un num\'ero \`a 6 chiffres de la forme $xx\ yy\ zz$. On prend $xx$ pour calculer ton sous-r\'eseau, l'adresse de ta passerelle (\emph{gateway}): \server{129.104.AAA.CCC} et l'adresse de diffusion (\emph{broadcast}): \server{129.104.AAA.EEE}. Le masque de sous-r\'eseau (\emph{netmask}) est toujours
+\server{255.255.255.128}. Ensuite, tu peux d\'eterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
+
+
+\begin{center}
+\begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|>{\ungaramond}c|>{\ungaramond}c|>{\ungaramond}c|}
+\hline \rule[-2ex]{0pt}{5ex}$xx$ & $AAA$ & $CCC$ & $EEE$ & $BBB$\\ 
+\hline 70 & 224 & 254 & 255 & $128+zz$ \\
+71 & 224 & 126 & 127 & $zz$ \\
+72 & 228 & 254 & 255 & $128+zz$ \\
+73 & 225 & 126 & 127 & $zz$ \\
+74 & 225 & 254 & 255 & $128+zz$ \\
+75 & 226 & 126 & 127 & $zz$ \\
+76 & 227 & 126 & 127 & $zz$ \\
+77 & 227 & 254 & 255 & $128+zz$ \\
+78 & 228 & 126 & 127 & $zz$ \\
+79 & 229 & 126 & 127 & $zz$ \\
+80 & 226 & 254 & 255 & $128+zz$ \\ \hline
+\end{tabular} 
+\end{center}
+
+\exemple{l'adresse IP associ\'ee \`a la prise $70 30 30$ est \server{129.104.224.158} ($158 = 128 + 30$) ; sa passerelle est \server{129.104.224.254}, son
+adresse de diffusion est \server{129.104.224.255} et son masque de sous-r\'eseau est \server{255.255.255.128}.}
+
+\subsubsection{Au BEM}
+
+\newlength{\ecart}
+\settowidth{\ecart}{Masque de sous-reseau}
+\addtolength{\ecart}{2em}
+\noindent \begin{tabular}{p{\ecart}<{\dotfill}@{}l}
+  Sous-r\'eseau (\server{AAA}) & {\ungaramond 203} pour le bâtiment A ; {\ungaramond 204} pour le bâtiment D\\
+  IP (\server{BBB})            & {\ungaramond 50} + les deux derniers chiffres du num\'ero de ta chambre \\
+  Passerelle                   & \server{129.104.AAA.13} \\
+  Masque de sous-r\'eseau     & \server{255.255.255.0} \\
+    Adresse de diffusion       & \server{129.104.AAA.255} \\
+\end{tabular}
+
+\subsubsection{Le PEM}
+
+ \noindent \begin{tabular}{p{\ecart}<{\dotfill}@{}l}
+  Sous-r\'eseau (\server{AAA})           & {\ungaramond 205} \\
+  IP (\server{BBB}), rez-de-chauss\'ee & {\ungaramond 15} + les deux derniers chiffres du num\'ero  de ta chambre \\
+  IP (\server{BBB}), premier \'etage   & {\ungaramond 70} + les deux derniers chiffres du num\'ero de ta chambre \\
+  Passerelle                             & \server{129.104.205.13} \\
+  Masque de sous-r\'eseau                & \server{255.255.255.0} \\
+  Adresse de diffusion                   & \server{129.104.205.255} \\
+\end{tabular}
+
+\subsubsection{Tes informations r\'eseau}
+Maintenant, note ici ton adresse IP, celle de ta passerelle (\emph{gateway}) et de ton masque de sous-r\'eseau
+(\emph{netmask}) et enfin ton l'adresse de diffusion (\emph{broadcast}). Rev\'erifie bien que tu ne t'es pas tromp\'e,  \c{c}a t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !
+
+\begin{center}
+  \begin{tabular}{|rp{5cm}|}
+  \hline
+  \rule[-8pt]{0pt}{24pt} \textbf{Mon adresse IP :} \ungaramond 129.104. & \\ \hline
+  \rule[-8pt]{0pt}{24pt} \textbf{Ma passerelle :} \ungaramond 129.104. & \\ \hline
+  \rule[-8pt]{0pt}{24pt} \textbf{Mon adresse de diffusion :} \ungaramond 129.104. & \\ \hline
+  \rule[-8pt]{0pt}{24pt} \textbf{Mon masque de sous-r\'eseau :} \ungaramond 255.255. & \\ \hline
+  \end{tabular}
+  \label{tableau:mon_IP}
+\end{center}
+
+% \subsubsection{IP des serveurs DNS}
+%
+% Le BR offre quatre serveurs DNS redondants, qui ont les IP's suivantes :
+% \begin{itemize}
+%   \item Serveur principal : $129.104.201.53$
+%   \item Serveurs secondaires : $129.104.201.51$, $129.104.201.52$ et $129.104.201.54$
+% \end{itemize}
