@@ -1,0 +1,92 @@
+% -------------------- Header --------------------
+\documentclass[12pt, a4paper, twoside]{article}
+\usepackage{preambuleInfoBR}
+
+\title{InfoBR 2009}
+\author{Binet R\'eseau 2k8}
+\date{ }
+\usepackage{garamond}
+
+
+
+\begin{document}
+
+\garamond
+\setlength{\parskip}{0pt plus 2ex}
+
+
+
+
+% ------------------------------ Exergue ------------------------------
+% on peut l'enlever, selon le nombre de pages \`a atteindre
+
+\input{dedicace.tex}
+
+
+\newpage
+
+% -------------------- Le mot du prez: ----- 'motPrez.tex' --------------------
+\thispagestyle{empty}
+%\setcounter{page}{1}
+\markright{Mot du prez}
+
+
+\input{motPrez}
+
+
+\newpage
+
+
+
+% -------------------- Le mot du redacteur: ----- 'avertissement.tex' --------------------
+\markright{Introduction}
+
+\input{avertissement}
+
+
+\newpage
+
+
+\bghdr{images/fond-infobr} \markright{Table des matières}
+
+\tableofcontents
+
+\newpage
+
+% -------------------- Premiers pas: ----- 'calculip.tex' --------------------
+
+\markright{Pour bien commencer}
+\input{calculip}
+
+
+% -------------------- Les differentes configs --------------------
+
+\markright{Configuration sous Windows}
+\input{config_win}
+
+
+\markright{Configuration sous Linux}
+\input{config_nux}
+
+
+\markright{Configuration sous Mac OS}
+\input{config_mac}
+
+% -------------------- Puis... --------------------
+%\setlength{\parskip}{7pt}
+\bghdr{images/fond-infobr}
+\markright{Pour continuer}
+\input{partie2/partie2}
+
+% -------------------- Enfin -------------------
+%\setlength{\parskip}{8pt}
+\input{partie3/partie3}
+
+% -------------------- Pour rajouter une page -------------------
+%\leftwatermark{}
+%\newpage
+%\thispagestyle{plain}
+%\hrulefill \, \begin{Large}Notes personnelles\end{Large} \hrulefill
+
+\end{document}
+
