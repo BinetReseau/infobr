@@ -2,38 +2,38 @@
 
 \subsection{La télévision du BR}
 \label{TV}
-
-   \begin{quote}
-   Attention : suite à des problèmes au niveau du matériel de la DSI, il est possible que tu constates des problèmes de réception. Si tel est le cas, n'hésite pas à envoyer un mail décrivant le problème (nature, heure, chaine, ton numéro de prise, ton batiment) à \mail{tv@frankiz.polytechnique.fr}.
-   \end{quote}
+Le BR travaille actuellement d'arrache pied à la mise en place d'un service TV dans les caserts.
+%   \begin{quote}
+%   Attention : suite à des problèmes au niveau du matériel de la DSI, il est possible que tu constates des problèmes de réception. Si tel est le cas, n'hésite pas à envoyer un mail décrivant le problème (nature, heure, chaine, ton numéro de prise, ton batiment) à \mail{tv@frankiz.polytechnique.fr}.
+%   \end{quote}
 %Le BR propose depuis 2006 un service de télévision. Cependant, celui-ci connaît actuellement des problèmes, et il est possible que tu ne puisses pas accéder aux chaînes proposées. Pour connaître la configuration qui te permettrait théoriquement de recevoir les chaînes, rends-toi sur: \urllink{http://tv.eleves.polytechnique.fr/}, qui sera maintenue à jour autant que possible.
 
-Le BR diffuse sur le réseau plusieurs dizaines de chaines de télévision et radios. Pour les recevoir, nous recommandons \app{vlc}, disponible sur le X-Share.
+%Le BR diffuse sur le réseau plusieurs dizaines de chaines de télévision et radios. Pour les recevoir, nous recommandons \app{vlc}, disponible sur le X-Share.
 
-\subsubsection{Configuration de vlc}
+%\subsubsection{Configuration de vlc}
 
-La liste des cha\^ines est diffusée sous forme d'annonces SAP. Pour voir ces annonces, ouvre ta liste de lecture (\menu{Vue}, puis \menu{Liste de lecture}), et active la découverte de services. Attention sous \app{Windows Vista} un probl\`eme de compatibilité connu entra\^ine un écran noir. Pour le résoudre le BR t'a préparé une page sur le WikiX.
+%La liste des cha\^ines est diffusée sous forme d'annonces SAP. Pour voir ces annonces, ouvre ta liste de lecture (\menu{Vue}, puis \menu{Liste de lecture}), et active la découverte de services. Attention sous \app{Windows Vista} un probl\`eme de compatibilité connu entra\^ine un écran noir. Pour le résoudre le BR t'a préparé une page sur le WikiX.
 
-\imagepos{images/vlc_config_sap.png}{0.75}{Configuration de vlc pour la télévision par le réseau}{h!}
+%\imagepos{images/vlc_config_sap.png}{0.75}{Configuration de vlc pour la télévision par le réseau}{h!}
 
-Tu auras ainsi dans ta liste de lecture les différents cha\^{i}nes disponibles.
+%Tu auras ainsi dans ta liste de lecture les différents cha\^{i}nes disponibles.
 
-\subsubsection{Autre méthode}
+%\subsubsection{Autre méthode}
 
-Si ton client préféré ne supporte pas les annonces SAP ou que les annonces SAP ne marchent pas chez toi, il t'est aussi possible de récupérer la liste des cha\^ines par
-\emph{PodCast}, à l'adresse \urllink{http://tv.eleves.polytechnique.fr/tvbr.xml}. Sous \app{vlc}, active la découverte des services \emph{PodCast} dans la liste de
-lecture (\menu{Gérer}, \menu{Découverte de services}, \menu{Podcast}), puis va dans \menu{Param\`etres}, \menu{Préférences}, \menu{Liste de Lecture}, \menu{Découverte de services} et enfin \menu{Podcast} et
-mets l'adresse \urllink{http://tv.eleves.polytechnique.fr/tvbr.xml} dans le champ \guillemotleft~Liste des URLs~\guillemotright .
+%Si ton client préféré ne supporte pas les annonces SAP ou que les annonces SAP ne marchent pas chez toi, il t'est aussi possible de récupérer la liste des cha\^ines par
+%\emph{PodCast}, à l'adresse \urllink{http://tv.eleves.polytechnique.fr/tvbr.xml}. Sous \app{vlc}, active la découverte des services \emph{PodCast} dans la liste de
+%lecture (\menu{Gérer}, \menu{Découverte de services}, \menu{Podcast}), puis va dans \menu{Param\`etres}, \menu{Préférences}, \menu{Liste de Lecture}, \menu{Découverte de services} et enfin \menu{Podcast} et
+%mets l'adresse \urllink{http://tv.eleves.polytechnique.fr/tvbr.xml} dans le champ \guillemotleft~Liste des URLs~\guillemotright .
 
-\subsubsection{Et si ça ne marche toujours pas?}
+%\subsubsection{Et si ça ne marche toujours pas?}
 
-Vérifie que tu utilises bien la derni\`ere version de \app{vlc}. Les versions inférieures à 0.8.5 sont connues pour ne pas fonctionner.
+%Vérifie que tu utilises bien la derni\`ere version de \app{vlc}. Les versions inférieures à 0.8.5 sont connues pour ne pas fonctionner.
 
-Si rien ne marche, la raison la plus probable est un \emph{firewall} qui intercepte les flux TV. Configure ton \emph{firewall} afin d'autoriser
-ces flux. Sous Linux, les r\`egles \emph{iptables} suivantes suffisent:
+%Si rien ne marche, la raison la plus probable est un \emph{firewall} qui intercepte les flux TV. Configure ton \emph{firewall} afin d'autoriser
+%ces flux. Sous Linux, les r\`egles \emph{iptables} suivantes suffisent:
 
-\cmdline{ -A INPUT -i eth0 -d 224.0.0.0/24 -j ACCEPT \\
-   -A INPUT -i eth0 -d 239.255.42.0/24 -s 192.168.225.0/24 -p udp -m udp --dport 1234 -j ACCEPT\\
-    -A INPUT -i eth0 -d 239.255.255.255/32 -p udp -m udp --dport 9875 -j ACCEPT\\
-   -A OUTPUT -o eth0 -d 224.0.0.0/4 -j ACCEPT.}
+%\cmdline{ -A INPUT -i eth0 -d 224.0.0.0/24 -j ACCEPT \\
+%   -A INPUT -i eth0 -d 239.255.42.0/24 -s 192.168.225.0/24 -p udp -m udp --dport 1234 -j ACCEPT\\
+%    -A INPUT -i eth0 -d 239.255.255.255/32 -p udp -m udp --dport 9875 -j ACCEPT\\
+%   -A OUTPUT -o eth0 -d 224.0.0.0/4 -j ACCEPT.}
    
