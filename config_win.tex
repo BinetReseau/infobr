@@ -470,23 +470,23 @@ Les versions anglophones de Windows XP et Vista sont \'egalement disponibles sur
 Ainsi, si tu as achet\'e un ordinateur sans OS (et ainsi \'economis\'e environ 150 \euro), tu vas chez un copain, fais les demandes et graves le CD chez lui. Si tu as encore des questions, plus de d\'etails sont donn\'es dans le Wikix et le WikiBR de \fkz.
 
 
-\subsubsection{Annexe}
+\subsubsection{Windows Update}
 
 \label{horsdomaine} %\emph{Cette sous-section ne concerne pas les gens qui ont choisi de s'inscrire sur le domaine.}
 
-\paragraph{Pare-feu} Si tu as Windows XP avec le SP2 install\'e, ou \emph{a fortiori}
-Windows Vista, tu as un \emph{firewall} automatiquement activ\'e et facile d'utilisation. En effet, \`a  chaque fois qu'un programme tentera d'aller pour
-la premi\`ere fois sur Internet, il te demandera si tu veux le laisser faire ou non. Si tu pr\'ef\`eres une protection ind\'ependante de Windows, le
-\emph{firewall} commercial \app{Zone\-Alarm} fonctionne sur le m\^eme principe. Tu peux le trouver sur \xshare.
+%\paragraph{Pare-feu} Si tu as Windows XP avec le SP2 install\'e, ou \emph{a fortiori}
+%Windows Vista, tu as un \emph{firewall} automatiquement activ\'e et facile d'utilisation. En effet, \`a  chaque fois qu'un programme tentera d'aller pour
+%la premi\`ere fois sur Internet, il te demandera si tu veux le laisser faire ou non. Si tu pr\'ef\`eres une protection ind\'ependante de Windows, le
+%\emph{firewall} commercial \app{Zone\-Alarm} fonctionne sur le m\^eme principe. Tu peux le trouver sur \xshare.
 
-Si tu pr\'ef\`eres utiliser le \emph{firewall} int\'egr\'e \`a  Windows XP (sans le SP2), il te faudra le configurer en d\'etail. Va dans le \menu{Menu D\'emarrer},
-\menu{Param\`etres} et clique sur \menu{Connexions R\'eseau}. Choisis la connexion qui est utilis\'ee par ton ordinateur (souvent il n'y en a qu'une, ou
-alors une seule est activ\'ee) et double-clique dessus. Clique sur \menu{Propri\'et\'es} en bas \`a  gauche, puis sur l'onglet \menu{Avanc\'e} et rentre dans le
-menu de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'ext\'erieur. Pour
-cela, clique sur \menu{Ajouter}, et remplis la bo\^ite de dialogue% en t'aidant de la capture d'\'ecran~\ref{config:win:ouvrir_port} ci apr\`es
-; mets le num\'ero du port que tu veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
+%Si tu pr\'ef\`eres utiliser le \emph{firewall} int\'egr\'e \`a  Windows XP (sans le SP2), il te faudra le configurer en d\'etail. Va dans le \menu{Menu D\'emarrer},
+%\menu{Param\`etres} et clique sur \menu{Connexions R\'eseau}. Choisis la connexion qui est utilis\'ee par ton ordinateur (souvent il n'y en a qu'une, ou
+%alors une seule est activ\'ee) et double-clique dessus. Clique sur \menu{Propri\'et\'es} en bas \`a  gauche, puis sur l'onglet \menu{Avanc\'e} et rentre dans le
+%menu de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'ext\'erieur. Pour
+%cela, clique sur \menu{Ajouter}, et remplis la bo\^ite de dialogue% en t'aidant de la capture d'\'ecran~\ref{config:win:ouvrir_port} ci apr\`es
+%; mets le num\'ero du port que tu veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
 
-\paragraph{Serveur mandataire pour Windows Update} Il reste une derni\`ere configuration de
+Il reste une derni\`ere configuration de
 serveur mandatataire indispensable pour que puissent se faire les mises \`a  jour automatiques
 de Windows. Il t'est fortement recommand\'e de le faire.
 
@@ -507,6 +507,6 @@ netsh winhttp>set proxy proxy-server="http://kuzh:8080"\\
 netsh winhttp>exit\\
 C:\textbackslash{}Windows\textbackslash{}system32>exit }
 
-
+% TODO : pour win 7
 
 \end{description}
