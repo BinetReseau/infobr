@@ -1,0 +1,512 @@
+\bghdr{images/fond-win}
+
+%\begin{center}
+%\includegraphics{images/logo_Windows}
+%\end{center}
+
+
+\subsection{Configuration sous Microsoft Windows}
+
+Cette section d\'ecrit comment configurer un ordinateur tournant sous Windows XP ou sous Windows Vista. Si tu poss\`edes une autre version de Windows,
+nous t'invitons \`a  regarder directement la section sur les licences MSDNAA en page \pageref{msdnaa}\dots ou alors \`a  te d\'ebrouiller ! ;-)
+
+\subsubsection{Configuration IP}
+
+\begin{itemize}
+
+\item \textbf{Sous Windows XP :} va dans le \menu{Menu D\'emarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions r\'eseau} puis sur \menu{Connexion au r\'eseau local}. Clique enfin sur \menu{Propri\'et\'es}.
+
+\item \textbf{Sous Windows Vista :} va dans le \menu{Menu D\'emarrer}, \menu{Panneau de configuration}, \menu{R\'eseau et Internet}, \menu{Centre r\'eseau et partage}. L\`a , dans le menu \`a  gauche, clique sur \menu{G\'erer les connexions r\'eseau}, puis clique droit sur \menu{Connexion au r\'eseau local} et enfin  \menu{Propri\'et\'es}~\footnote{\`A ce stade, ainsi qu'\`a  plusieurs autres \'etapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc tu confirmes, et cela \`a  chaque fois !}.
+
+\end{itemize}
+
+
+
+%\flimage{images/win_connexion_icone}{0.15}{l} Va dans le \menu{Menu
+%D\'emarrer}, \menu{Panneau de configuration} et double-clique sur
+%\menu{Connexions r\'eseau} puis sur \menu{Connexion au r\'eseau local}.
+%Clique enfin sur \menu{Propri\'et\'es}.\\
+
+%Dans cette fen\^etre, coche les trois cases \menu{Client pour les
+%r\'eseaux Microsoft}, \menu{Partage de fichiers} et \menu{Protocole
+%Internet (TCP/IP)}:
+
+\imagepos{images/win_config_connexion2}{0.5}{Configurer la connexion au r\'eseau local}{!h}
+
+
+
+%\imageref{images/win_config_ip}{0.5}{Configuration IP --- Propri\'et\'es de protocole Internet (TCP/IP)}{!ht}{config:win:IP1}
+%%%%\imageref{images/win_config_ip2}{0.71}{Configuration de la connexion
+%au r\'eseau local et propri\'et\'es du TCP/IP}{!ht}{config:win:IP1}
+
+S\'electionne ensuite la ligne \menu{Protocole Internet Version 4 (TCP/IPv4)}~\footnote{\menu{Protocole Internet (TCP/IP)} pour certaines versions de Windows XP.},
+puis clique sur le bouton \menu{Propri\'et\'es} qui vient de se
+d\'egriser. Tu tombes alors sur l'\'ecran de configuration de ta
+connexion vers l'ext\'erieur.
+
+\noindent
+  \begin{figure*}[!h]
+    \begin{center}  
+      \subfloat[Configuration IP --- Propri\'et\'es de protocole Internet (TCP/IP)]{ 
+      \includegraphics[width=0.48\textwidth]{images/win_config_ip} \label{config:win:IP1}}
+      \hspace{\stretch{1}}
+      \subfloat[Configuration DNS]{ 
+ 		\includegraphics[width=0.48 \textwidth]{images/win_config_dns2} \label{config:win:IP2}}
+         	 \caption{Configuration r\'eseau}
+    \end{center}
+  \end{figure*}
+
+
+
+%% \newpage
+Coche alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et remplis les cinq champs d'adresse IP. Tu trouveras toutes les valeurs d'adresse IP n\'ecessaires pour la configuration en page~\pageref{tableau:mon_IP} ; aide-toi de la capture d'\'ecran~\ref{config:win:IP1} pour les placer. Si une partie d'adresse IP est blanche sur cette capture, c'est qu'elle t'est personnelle et que tu dois la calculer !
+Clique, ensuite sur le bouton \menu{Avanc\'e}, puis sur l'onglet
+\menu{DNS} en haut.
+Il n'y a plus qu'\`a  remplir les diff\'erents champs comme sur la
+capture d'\'ecran suivante, avec le bouton \menu{Ajouter} et les
+fl\`eches pour r\'eordonner les \'el\'ements.
+
+
+%\subsubsection{Le domaine Windows}
+
+%\paragraph{Qu'est ce que c'est ?}
+%Le domaine Windows est un syst\`eme d'automatisation de la
+%configuration de plusieurs ordinateurs sous Windows situ\'es sur le
+%m\^eme r\'eseau. En fait, c'est un outil d'administration, con\c{c}u par
+%exemple pour des entreprises o\`u un service informatique doit g\'erer
+%de nombreuses machines; il permet d'appliquer des modifications de
+%configuration \`a  toutes les machines du domaine directement depuis un
+%serveur. Le BR poss\`ede un serveur d\'edi\'e au domaine Windows,
+%\server{enez}.
+
+%Le domaine met \`a  jour automatiquement Windows et l'antivirus \`a  partir d'\server{enez} (tr\`es rapide car tu n'as pas besoin de r\'ecup\'erer des fichiers
+%en dehors de l'\'ecole!). Il configure le \emph{firewall} (pare-feu: syst\`eme de protection contre les \'eventuelles attaques par le r\'eseau) Windows, mais
+%il est toujours possible de le d\'esactiver si tu pr\'ef\`eres un autre \emph{firewall}. En bref, il permet de simplifier \`a  l'extr\^eme %la mise \`a  jour
+%continuelle de l'ordinateur.%
+
+
+%\paragraph{Alors, domaine ou pas domaine ?} Soit tu choisis de te
+%mettre sur le domaine Windows, et tu vas alors au paragraphe
+%\guillemotleft~Inscription sur le domaine Windows~\guillemotright.%
+
+%% \newpage
+%\textbf{Avantages :}
+%\begin{itemize}
+%\item Windows est mis \`a  jour automatiquement ; tu as toujours les
+%derni\`eres corrections de s\'ecurit\'e et un pare-feu correctement
+%configur\'e. Donc tu es mieux prot\'eg\'e contre les intrusions.
+%\item Surtout, tu n'as plus \`a  t'en occuper, presque tout est automatique.
+%\end{itemize}%
+
+%\textbf{Inconv\'enients :}
+%\begin{itemize}
+%  \item Tu d\'el\`egues une partie des droits d'administration de ta machine au BR
+%        (tout ce qui concerne la s\'ecurit\'e du r\'eseau en particulier).
+%        Cependant, si tu ne sais pas le faire, c'est plut\^ot un avantage
+%        de laisser le BR s'en occuper \`a  ta place.
+%  \item Cela ne marche qu'avec Windows 2000, Windows XP Pro ou Windows Vista Business.
+%        On te rappelle que tu peux facilement, gratuitement et l\'egalement passer \`a 
+%        Windows XP Pro ou bien \`a  Windows Vista Business (section sur les licences
+%        MSDNAA en page \pageref{msdnaa}).
+%\end{itemize}
+
+%Bien s\^{u}r, tu peux sortir du domaine \`a  tout instant, et effectuer manuellement les r\'eglages n\'ecessaires \`a  la s\'ecurit\'e de ton ordinateur.
+
+%Soit tu choisis de configurer toi-m\^eme ton ordinateur, et tu peux passer
+%directement \`a  la section \guillemotleft Installation de l'antivirus
+%\guillemotright. Tu trouveras les informations n\'ecessaires \`a  la configuration
+%manuelle du pare-feu et du proxy pour \app{Windows Update} en annexe \`a  la
+%fin de cette section, en page \pageref{horsdomaine}.
+
+%\textbf{Avantage :} Tu es le seul \`a  t'occuper de la gestion de ton ordinateur.
+
+%\textbf{Inconv\'enient :} Tu es le seul \`a  t'occuper de la gestion de ton ordinateur. ;-)
+%S'il devient un foyer pour virus, sache que nous avons les moyens de l'isoler
+%pour \'eviter toute propagation.
+
+%\begin{center}
+%  \fbox{
+%    \begin{minipage}{.7\textwidth}
+%      \begin{center}
+%Le BR te conseille \emph{tr\`es fortement} de te mettre sur le domaine
+%et de choisir l'installation simplifi\'ee !
+%      \end{center}
+%    \end{minipage}
+%  }
+%\end{center}
+
+
+%\paragraph{Inscription sur le domaine Windows}
+
+%On te rappelle que tu ne peux t'inscrire sur le domaine que si tu utilise
+%Windows 2000, Windows XP Pro ou Windows Vista. Si tu poss\`ede Windows XP
+%Familial, Windows Vista Home ou encore une version ant\'erieure de Windows,
+%tu dois effectuer toi-m\^eme tes r\'eglages de pare-feu et de proxy
+%\app{Windows Update}. R\'ef\`ere-toi pour cela \`a  l'annexe ad hoc \`a  la fin de
+%cette section, en page \pageref{horsdomaine}.
+
+%La proc\'edure d'inscription est la suivante :
+%\begin{itemize}
+
+%\item \textbf{Sous Windows XP :} Clique sur le \menu{Menu D\'emarrer} puis fais un clic-droit sur
+%\menu{Poste de travail} et choisis \menu{Propri\'et\'es}. Ensuite, s\'electionne l'onglet \menu{Nom de l'ordinateur} et clique le bouton \menu{Modifier}.
+
+%\item \textbf{Sous Windows Vista :} Clique sur \menu{Menu D\'emarrer}, puis fais un clic-droit sur \menu{Ordinateur}, \menu{Propri\'et\'es}. L\`a  s\'electionne \menu{Param\`etres syst\`eme avanc\'es}, onglet \menu{Nom de l'ordinateur}, puis clique sur le bouton \menu{Modifier}.
+
+%\end{itemize}
+
+%Dans la case \menu{Nom de l'ordinateur}, rentre ton pseudo, puis coche la case \menu{domaine} et
+%rentre \urllink{windows.eleves.polytechnique.fr}. Note bien que l'inscription au domaine te sera
+%refus\'ee par le serveur si quelqu'un d'autre utilise d\'ej\`a  le m\^eme nom d'ordinateur que toi. Par
+%cons\'equent, essaie d'opter pour un pseudo qui t'identifie de fa\c{c}on claire et unique, par exemple
+%\cmd{NOM\_PRENOM} \footnote{Les Jean Dupont et les Julien Thomas sont pri\'es de trouver autre chose
+%;-)}.
+
+%\imagepos{images/win_config_domaine}{0.5}{S'inscrire sur le domaine windows}{!ht}
+
+%\begin{center}
+%\begin{tabular}{ll}
+% \parbox{.45\textwidth}{
+%  et si tu es rouje 2006 :
+%  \begin{description}
+%    \item[Nom] rouje06
+%    \item[Mot de passe] rouje.2006
+%  \end{description}
+ % }
+% & \parbox{.45\textwidth}{
+%  Si tu es j\^one 2007, tu rentres :
+%  \begin{description}
+%    \item[Nom] jone07
+%    \item[Mot de passe] jone.2007
+%  \end{description}
+%  }
+%\\
+%\end{tabular}
+%\end{center}
+
+%\emph{Attention, ces identifiants servent juste \`a  t'inscrire sur le
+%domaine. Pour utiliser ton ordinateur, tu devras rentrer au
+%d\'emarrage les m\^emes nom d'utilisateur et mot de passe que tu avais
+%avant d'\^etre sur le domaine !}
+%
+%
+%
+%%\paragraph{Installation personnalis\'ee} --- configuration manuelle
+
+%\subparagraph{Configuration antivirus} Le BR, concern\'e par la
+%s\'ecurit\'e du r\'eseau, te propose un antivirus pour lequel tu n'auras
+%pas \`a  payer la license pour obtenir les mises \`a  jour. Bien s\`a�¿½r,
+%libre \`a  toi d'utiliser ton anti-virus personnel ; cependant il sera
+%\`a  ta charge de le mettre \`a  jour tr\`es r\'eguli\'erement. Pour cela
+%utilise comme proxy : \urllink{http://kuzh} sur le port 8080.
+
+%\emph{Installation de l'anti-virus du BR}\ : Commence par
+%d\'esinstaller tous les antivirus ou firewalls que tu pourrais avoir
+%comme expliqu\'e dans le paragraphe \guillemotleft~Installation simplifi\'ee
+%--- configuration automatique~\guillemotright .
+
+%Puis ouvre ton explorateur Windows et tape :
+%\urllink{$\backslash\backslash$enez$\backslash$antivirus}
+%et double-clique sur le fichier \file{Symantec.exe}.
+
+%Ce package contient le param\'etrage de la mise \`a  jour automatique de
+%Windows sur le serveur de l'\'ecole. Attends la fin de l'installation
+%et c'est fini ! Maintenant, tu n'as plus \`a  toucher \`a  l'antivirus,
+%normalement il sera mis \`a  jour automatiquement.
+
+%\subparagraph{Configuration firewall}
+
+%Si tu as Windows XP avec le SP2 install\'e, tu as un firewall
+%automatiquement activ\'e et facile d'utilisation. En effet, \`a  chaque
+%fois qu'un programme tentera d'aller pour la premi\`ere fois sur
+%Internet, il te demandera si tu veux le laisser faire ou non, comme
+%dans la capture~\ref{config:win:firewall}.
+
+%\imageref{images/win_firewall}{0.8}{Un programmme --- ici GuildFTP
+%--- demande \`a  acc\'eder au r\'eseau}{!ht}{config:win:firewall}
+
+%Le firewall commercial \app{ZoneAlarm}, ind\'ependant de Windows,
+%fonctionne sur le m\^eme principe. Tu peux le trouver sur \xshare.
+
+%Si tu pr\'ef\`eres utiliser le firewall int\'egr\'e \`a  Windows XP (sans le
+%SP2) ou \`a  Windows Server 2003, il te faudra le configurer en d\'etail.
+%Va dans le \menu{Menu D\'emarrer}, \menu{Param\`etres} et clique sur
+%\menu{Connexions R\'eseau}. Choisis la connexion qui est utilis\'ee par
+%ton ordinateur (souvent il n'y en a qu'une, ou alors une seule est
+%activ\'ee) et double-clique dessus. Clique sur \menu{Propri\'et\'es} en
+%bas \`a  gauche, puis sur l'onglet \menu{Avanc\'e} et rentre dans le menu
+%de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors
+%ajouter manuellement tous les ports que tu veux ouvrir sur
+%l'ext\'erieur. Pour cela, clique sur \menu{Ajouter}, et remplis la
+%bo\`a�¿½te de dialogue en t'aidant de la capture
+%d'\'ecran~\ref{config:win:ouvrir_port}; mets le num\'ero du port que tu
+%veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix}
+%et 21 en TCP pour ton FTP.
+
+%\imageref{images/win_config_firewall}{0.7}{Ouvrir un port dans le firewall %Windows}{!ht}{config:win:ouvrir_port}
+
+%Comme tu peux le constater, il est beaucoup plus pratique d'aller
+%sur le domaine et de laisser le SP2 faire le gros du boulot \`a  ta
+%place :-).
+
+
+\subsubsection{Installation de l'antivirus}
+\label{antivirus} Le BR, pr\'eoccup\'e par la s\'ecurit\'e du r\'eseau, te propose un antivirus~\footnote{En
+l'occurence, l'antivirus utilis\'e est \app{Symantec Antivirus 10.2}.} pour lequel tu n'auras pas \`a 
+payer de licence pour obtenir les mises \`a  jour. Bien s\^{u}r, libre \`a  toi d'utiliser ton antivirus
+personnel ; cependant il sera \`a  ta charge de le mettre \`a  jour tr\`es r\'eguli\`erement. Pour cela,
+utilise comme serveur mandataire (\emph{proxy}) : \urllink{kuzh.polytechnique.fr} sur le port 8080 (il y a aussi des fois o\`u il 
+faut rentrer \urllink{http://kuzh.polytechnique.fr}).
+
+%Version pour vista \`a  taper
+\footnote{Pour des raisons historiques, cette page porte le num\'ero \thecptr. L'explication se trouve en page 11.} Tout d'abord, \emph{d\'esinstalle tous les antivirus que tu pourrais
+avoir !} Dans le \menu{Menu D\'emarrer}, va dans \menu{Panneau de
+Configuration}, \menu{Ajout/Suppression de Programmes} et
+d\'esinstalle si tu l'as \app{Symantec Antivirus}, \app{McAfee Antivirus}, \app{Norton
+Antivirus}, ou tout autre antivirus.
+
+Il s'agit ensuite de t\'el\'echarger la bonne version de l'antivirus :
+\begin{itemize}
+
+\item Si tu as Windows Vista\dots
+\begin{itemize}
+\item en version 32 bits : \urllink{ftp://enez/antivirus/Win32\_Vista.zip}.
+\item en version 64 bits : \urllink{ftp://enez/antivirus/Win64\_Vista.zip}.
+\end{itemize}
+
+\item Si tu as Windows XP ou une autre version de Windows\dots
+\begin{itemize}
+\item en version 32 bits : \urllink{ftp://enez/antivirus/Win32\_PasVista.zip}.
+\item en version 64 bits : \urllink{ftp://enez/antivirus/Win64\_PasVista.zip}.
+\end{itemize}
+\end{itemize}
+
+Si tu ne sais pas si ton Windows est 64 ou 32 bits, le plus problable est qu'il
+soit 32 bits, donc tu peux commencer \`a  essayer avec cette version.
+
+Une fois le fichier ad\'equat t\'el\'echarg\'e, ouvre l'archive compress\'ee \file{Win\?\?\_*.zip}, d\'ecompresse \emph{tous les fichiers} dans un dossier et ex\'ecute le fichier \file{setup.exe} qui vient d'appara\^itre dans ce dossier. \`A partir de l\`a , tu n'as plus qu'\`a  suivre les instructions du
+programme d'installation. Tu n'auras alors plus \`a  toucher \`a  l'antivirus, celui-ci sera mis \`a  jour automatiquement.
+
+\subsubsection{Configuration \emph{web} (serveur mandataire)}
+
+\imageref{images/win_config_proxy}{0.5}{Configuration du serveur mandataire (\emph{proxy})}{!ht}{config:win:proxy}
+
+M\^eme si tu n'utilises pas \app{Internet Explorer} comme client \emph{web}, Windows et d'autres programmes
+utilisent ses param\`etres, notamment \app{Windows Update}. Donc lance \app{Internet Explorer} et va
+dans le menu \menu{Outils}, \menu{Options Internet}, puis sur l'onglet \menu{Connexions} de la
+nouvelle fen\^etre et enfin sur \menu{Param\`etres r\'eseau} dans le bas de la fen\^etre. Tu dois \^etre arriv\'e sur une fen\^etre semblable \`a celle de la capture d'\'ecran~\ref{config:win:proxy}. L\`a, coche
+uniquement la case \menu{Utiliser un script de configuration automatique}, puis remplis le champ
+\menu{Adresse} avec \urllink{http://frankiz.polytechnique.fr/proxy.pac}.
+
+Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer} tu peux donc utiliser un autre navigateur, comme \app{Mozilla
+Firefox}, disponible sur \xshare, qui est plus s\'ecuris\'e. Mais ce n'est pas une garantie ultime --- tu es le premier garant de la s\'ecurit\'e de ton
+ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main
+--- mais tu seras sensiblement plus en s\'ecurit\'e.
+
+
+
+Si tu utilises \app{Mozilla Firefox}, il faut que tu fasses, en plus, le m\^eme r\'eglage de serveur mandataire pour
+ce navigateur. Pour ce faire, lance \app{Mozilla Firefox}, et va dans le menu \menu{Outils},
+\menu{Options...}. L\`a , s\'electionne la rubrique \menu{Avanc\'e}, onglet \menu{R\'eseau}, et clique sur
+\menu{Param\`etres}. La case \`a  cocher est alors \menu{Adresse de configuration automatique du proxy},
+et l'adresse \`a  indiquer est la m\^eme que pr\'ec\'edemment : \urllink{http://frankiz.polytechnique.fr/proxy.pac}.
+
+%
+% Pour le RTFIBRp11 pour un saut de page si n\'ec\'essaire ce qui n'\'etait pas le cas en 2008
+
+%\noindent\rule{.4\textwidth}{.4pt}
+
+%\vfill %\pagebreak
+
+\subsubsection{Configuration \emph{mail}}
+
+ La DSI met \`a  ta disposition une bo\^{i}te aux lettres \'electronique sur
+le serveur \server{poly} ; cette section t'explique comment
+configurer \app{Outlook Express} et \app{Windows Mail} pour y avoir acc\`es. Tu peux bien
+s\^{u}r utiliser \app{Thunderbird} si tu pr\'ef\`eres, les donn\'ees \`a  rentrer
+pour la configuration sont les m\^emes ; quelques d\'etails sont donn\'es
+dans le WikiX sur \fkz. De plus, tu trouveras des explications plus
+d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
+La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
+Lance \app{Outlook Express} et va dans le menu \menu{Outils},
+\menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
+haut \`a  droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
+
+%\setcounter{page}{31}
+
+
+Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
+\begin{description}
+  \item[Nom complet] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
+  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
+  \item[Type de serveur de messagerie pour le courrier entrant] \menu{POP3}
+  \item[Serveur de messagerie pour le courrier entrant] \server{poly.polytechnique.fr}
+  \item[Serveur de messagerie pour le courrier sortant] \server{poly.polytechnique.fr}
+  \item[Nom du compte] ton \emph{login} \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral; si tu ne t'en souviens pas ne t'en fais pas on devrait te le redonner en cours d'informatique lors de ton premier TD. Si tu es vraiment press\'e va voir le bureau \emph{login} de la DSI.)
+  \item[Mot de passe] ton mot de passe \server{poly} ;
+       v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
+\end{description}
+
+Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}.
+
+Tu te retrouves alors sur la fen\^etre \menu{Comptes Internet}. Va sur
+l'onglet \menu{Courrier}, clique sur le compte que tu viens de cr\'eer
+puis sur \menu{Propri\'et\'es}. Clique sur l'onglet \menu{Avanc\'e} et
+configure comme sur la capture~\ref{config:win:mail} ; en
+particulier, coche la seconde case \menu{Ce serveur n\'ecessite une
+connexion s\'ecuris\'ee (SSL)}.
+
+Comme \c{c}a, tu peux d\'esormais recevoir des \emph{mails} avec une liaison
+s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
+intercepter.
+
+
+\imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
+des serveurs \emph{mail}}{!h}{config:win:mail}
+
+\subsubsection{Configuration \emph{newsgroups}}
+
+Reporte-toi a la page~\pageref{newsgroups} pour la description et des d\'etails de fonctionnement des \emph{newsgroups} \`a  l'X.
+
+Comme pour les \emph{mails}, nous d\'ecrivons la configuration de \app{Outlook Express} mais elle est sensiblement \'equivalente pour \app{Thunderbird}. Lance
+\app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut \`a  droite,
+\menu{News\ldots}. Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
+\begin{description}
+  \item[Nom complet] ton nom !
+  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
+  \item[Serveur de news (NNTP)] \fkz ; v\'erifie \`a  ce moment que la case
+       \menu{Connexion \`a  mon serveur de news requise} n'est pas coch\'ee.
+\end{description}
+Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}; tu es abonn\'e
+au serveur \emph{news} des \'el\`eves.
+
+Quand tu fermeras la fen\^etre `Comptes Internet', il va te demander \`a 
+quels \emph{newsgroups} tu veux t'abonner, tu n'auras qu'\`a  s\'electionner
+ceux qui t'int\'eressent. Reporte-toi \`a  la page \pageref{newsgroups}
+pour plus d'infos sur les newsgroups auxquels t'abonner !
+
+Si tu veux t'inscrire \`a  d'autres serveurs \emph{news}, refais cette
+proc\'edure en rentrant le nom du serveur qui t'int\'eresse \`a  la place
+de \fkz.
+%\setcounter{page}{12}
+
+\subsubsection{Configuration FTP}
+
+\paragraph{Client FTP}
+Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer l'un des deux, t\'el\'echarge-le sur \xshare et double-clique sur l'installeur.
+Tu pourras d\`es la fin de l'installation aller sur tous les FTP du r\'eseau
+facilement et rapidement.
+
+\paragraph{Serveur FTP}
+Tu verras rapidement que tout le monde \`a  l'X poss\`ede un serveur FTP
+afin de partager les diff\'erents projets, les films du JTX, ses
+photos, etc. Il est donc quasiment indispensable que tu en installes
+un.
+
+Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP}, qui sont libres de surcro\^{i}t. Expliquer les d\'etails de la configuration est un peu long pour l'InfoBR, mais tu trouveras sur le WikiX un tutoriel expliquant cela : \urllink{http://wikix.polytechnique.org/eleves/wikix/FTP}.
+
+\subsubsection{Autres logiciels utiles}
+
+%\begin{itemize}
+  \paragraph{qRezix} Un programme d\'evelopp\'e par le BR pour faciliter la vie sur le r\'eseau,
+                  \`a  r\'ecup\'erer sur \xshare. Pour plus de d\'etails, voir le paragraphe qui lui est consacr\'e
+                  \`a  la page \pageref{qrezix}.
+                  
+  \paragraph{XChat}  Un client IRC directement issu du monde Unix.
+                 Tu peux te reporter \`a  la page \pageref{irc} pour plus d'infos sur l'IRC.
+                 
+  \paragraph{WinSCP} Un logiciel pratique qui te permet de te connecter en salle info.
+                  Tu peux le r\'ecup\'erer lui aussi sur \xshare ;
+                  son fonctionnement est expliqu\'e en d\'etails dans le WikiX. Voir aussi \app{Putty}, \'egalement dans le \xshare.
+ % \item \app{vlc} : Un logiciel qui te permettra de recevoir la t\'el\'evision directement dans ton casert, afin d'\^etre vraiment s\^{u}r d'avoir autre chose \`a  faire que travailler les veilles de p\^ales. Configuration page \pageref{TV}.
+%\end{itemize}
+
+
+\subsubsection{Obtenir un Windows gr\^ace aux licences MSDNAA}
+
+\label{msdnaa} Les accords n\'egoci\'es par le BR avec Microsoft dans le cadre de MSDNAA donnent \`a  chaque X le droit de poss\'eder une version de Windows
+XP Pro ou de Windows Vista Business gratuite et l\'egale, ainsi que les licences pour la plupart des logiciels de la soci\'et\'e (quasiment tous, sauf
+Office et les jeux). La seule condition \`a  remplir est d'\^etre \'etudiant sur le plat\^al au moment de l'installation du logiciel ; tu pourras ensuite le
+garder sur ton PC m\^eme apr\`es ton d\'epart de l'X.
+
+La proc\'edure pour obtenir les logiciels et les cl\'es correspondantes
+est la suivante :
+\begin{itemize}
+
+\item Va d'abord sur \fkz et connecte-toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la bo\^ite \menu{Liens utiles}. S\'electionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta cl\'e par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste propos\'ee, c'est soit qu'il n'y a pas besoin de cl\'e --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oubli\'e de l'y mettre ; dans ce cas, \'ecris \`a  \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une cl\'e.
+
+\item Maintenant que tu as ta cl\'e, il faut t\'el\'echarger le logiciel proprement
+dit. Pour cela, connecte-toi par FTP sur \urllink{ftp://enez/msdnaa/} avec ton client FTP pr\'ef\'er\'e.Tu pourrais, selon le logiciel, y r\'ecup\'erer soit une image du CD de type \file{logiciel.iso} (\`a 
+graver ou \`a  utiliser avec \app{Daemon Tools}), soit directement le contenu du CD.
+\end{itemize}
+
+Pour Windows, les fichiers ISO \`a  t\'el\'echarger sont les suivants :
+\begin{description}
+\item[Pour Windows XP]
+\urllink{ftp://enez/msdnaa/win\_xp/french/win\_xp\_pro\_sp2\_fr.iso}.
+
+\item[Pour Windows Vista]
+L\`a , il y a deux possibilit\'es :
+\begin{description}
+\item[Si tu as un processeur 64 bits :] L'image \`a  t\'el\'echarger est \\
+\urllink{ftp://enez/msdnaa/win\_vista/dvd\_64bits/french/vista\_dvd\_x64\_fr.iso}. Attention, cette
+image ISO est \`a  graver sur un DVD. On remarque aussi que parfois, m\^eme sur un processeur 64 bits il
+vaut mieux choisir la version 32 bits de Windows (celle qui est dans le prochain \emph{item}) pour des
+raisons de disponibilit\'e de pilotes.
+\item[Si tu as un processeur 32 bits :] L\`a , tu peux choisir de graver :
+\begin{itemize}
+\item soit un DVD : \\
+\urllink{ftp://enez/msdnaa/win\_vista/dvd\_32bits/french/vista\_dvd\_x86\_fr.iso};
+\item soit quatre CDs (!) : \\
+\urllink{ftp://enez/msdnaa/win\_vista/cd\_32bits/french/vista\_cd\( N\) \_x86\_fr.iso}, N variant
+de 1 \`a  4.
+
+\end{itemize}
+\end{description}
+
+\end{description}
+
+Les versions anglophones de Windows XP et Vista sont \'egalement disponibles sur \server{enez}.
+Ainsi, si tu as achet\'e un ordinateur sans OS (et ainsi \'economis\'e environ 150 \euro), tu vas chez un copain, fais les demandes et graves le CD chez lui. Si tu as encore des questions, plus de d\'etails sont donn\'es dans le Wikix et le WikiBR de \fkz.
+
+
+\subsubsection{Annexe}
+
+\label{horsdomaine} %\emph{Cette sous-section ne concerne pas les gens qui ont choisi de s'inscrire sur le domaine.}
+
+\paragraph{Pare-feu} Si tu as Windows XP avec le SP2 install\'e, ou \emph{a fortiori}
+Windows Vista, tu as un \emph{firewall} automatiquement activ\'e et facile d'utilisation. En effet, \`a  chaque fois qu'un programme tentera d'aller pour
+la premi\`ere fois sur Internet, il te demandera si tu veux le laisser faire ou non. Si tu pr\'ef\`eres une protection ind\'ependante de Windows, le
+\emph{firewall} commercial \app{Zone\-Alarm} fonctionne sur le m\^eme principe. Tu peux le trouver sur \xshare.
+
+Si tu pr\'ef\`eres utiliser le \emph{firewall} int\'egr\'e \`a  Windows XP (sans le SP2), il te faudra le configurer en d\'etail. Va dans le \menu{Menu D\'emarrer},
+\menu{Param\`etres} et clique sur \menu{Connexions R\'eseau}. Choisis la connexion qui est utilis\'ee par ton ordinateur (souvent il n'y en a qu'une, ou
+alors une seule est activ\'ee) et double-clique dessus. Clique sur \menu{Propri\'et\'es} en bas \`a  gauche, puis sur l'onglet \menu{Avanc\'e} et rentre dans le
+menu de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors ajouter manuellement tous les ports que tu veux ouvrir sur l'ext\'erieur. Pour
+cela, clique sur \menu{Ajouter}, et remplis la bo\^ite de dialogue% en t'aidant de la capture d'\'ecran~\ref{config:win:ouvrir_port} ci apr\`es
+; mets le num\'ero du port que tu veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix} et 21 en TCP pour ton FTP.
+
+\paragraph{Serveur mandataire pour Windows Update} Il reste une derni\`ere configuration de
+serveur mandatataire indispensable pour que puissent se faire les mises \`a  jour automatiques
+de Windows. Il t'est fortement recommand\'e de le faire.
+
+\begin{description}
+
+\item[Sous Windows XP] Fais \menu{D\'emarrer}, \menu{Ex\'ecuter}, puis
+tape \cmd{cmd} dans la fen\^etre qui s'affiche. Une ligne de commande apparait,
+il te suffit alors de taper : \cmd{proxycfg -p http://kuzh:8080} pour r\'egler
+le serveur mandataire. Pour revenir \`a  un acc\`es direct il faut taper \cmd{proxycfg -d}.
+
+\item[Sous Windows Vista]
+Dans le menu \menu{D\'emarrer}, tape \guillemotleft~Invite de commandes~\guillemotright{} dans le champ \menu{Rechercher}, puis clique droit sur le lien
+et choisis \menu{Ex\'ecuter en tant qu'administrateur}. Tape ensuite les commandes suivantes :
+\cmdline{
+C:\textbackslash{}Windows\textbackslash{}system32$>$netsh\\
+netsh>winhttp\\
+netsh winhttp>set proxy proxy-server="http://kuzh:8080"\\
+netsh winhttp>exit\\
+C:\textbackslash{}Windows\textbackslash{}system32>exit }
+
+
+
+\end{description}
