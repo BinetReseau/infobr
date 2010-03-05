@@ -74,35 +74,15 @@ Pour avoir accès à Internet, il faut aussi configurer le \emph{proxy}.
 
 N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
-
-
-  
-\subsubsection{Configuration \emph{Wi-Fi} Bataclan}
-
-Pour configurer le \emph{Wi-Fi} au Bataclan, il faut tout d'abord que tu télécharges  le certificat sur \urllink{http://wifi/certificats.html}.
-Dans l'onglet \menu{Airport}, choisis comme réseau \menu{kastell} puis dans l'onglet \menu{Avancé}, choisis \menu{802.1W} et saisis ton \emph{login} poly (seulement 8 caractères max) et ton mot de passe \server{Frankiz}. Ensuite, coche la case TTLS comme dans la capture~\ref{wifi:mac:bataclan}, rends-toi sur \menu{Configurer\ldots} et sélectionne \menu{PAP}.
-
-\begin{figure*}[p]
-    \begin{center}
-      \includegraphics[width=0.4\textwidth]{images/mac_config_wifi.png} 
-      \caption{Configurer le \emph{Wi-Fi} du Bataclan}
-      \label{wifi:mac:bataclan}
-    \end{center}
-  \end{figure*}
-
-%cette section est redondante un peu avec celle du \emph{Wi-Fi}
-
 \subsubsection{Configuration antivirus}
 
 Bien qu'il soit important de maintenir ton système à jour, un antivirus est pour l'instant tout à fait superflu sur Mac, puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assuré de la provenance, et essaie de te tenir au courant des actualités concernant les failles des applications que tu utilises.
 
-
-
 \subsubsection{Configuration web}
+Un point particulier pour la configuration du \emph{proxy} de \app{Firefox} : dans \menu{Préférences}, \menu{Avancé}, \menu{Réseau}, clique sur \menu{Paramètres} et choisis \emph{Adresse de configuration automatique du proxy} : \urllink{http://frankiz/proxy.pac}.
 
 \flimage{images/mac_safari_icone}{0.07}{l}
-\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorité des sites \emph{web}. Tu peux donc t'en servir au quotidien, en faisant appel à \app{Firefox} ou \app{Camino} pour les sites récalcitrants. Un conseil : pense à activer le blocage des fenêtres \emph{pop-up} (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).\\
-
+\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorité des sites \emph{web}. Tu peux donc t'en servir au quotidien, en faisant appel à \app{Firefox} pour les sites récalcitrants. Un conseil : pense à activer le blocage des fenêtres \emph{pop-up} (dans le menu \menu{Safari}). \app{Safari} peut aussi servir de client RSS (voir plus bas).\\
 
 \subsubsection{Configuration \emph{mail}}
 \flimage{images/mac_mail_icone}{0.07}{l} \app{Mail} : un client \emph{mail} offrant les fonctionnalités classiques d'un bon client : recherche instantanée, filtre antispam, règles de tri automatique des \emph{mails}, regroupement des \emph{mails} correspondant à une même discussion.
@@ -132,8 +112,6 @@ Cette configuration marche pour accéder à ses mails depuis l'intérieur de l'X
     \end{center}
   \end{figure*}
 
-
-
 Le LDAP ne fonctionne pas à l'heure actuelle avec \app{Mail} (mars 2009) sous \app{Leopard}, contrairement aux  autres systèmes d'exploitation (fonctionne cependant avec \app{Thunderbird}).
 %\subsuEnfin, tu peux disposer dans \app{Mail} de l'annuaire de l'École, mis à disposition par la DSI. Pour cela, va dans les \menu{Préférences} de Mail,
 %puis dans la rubrique \menu{Rédaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un
@@ -142,10 +120,7 @@ Le LDAP ne fonctionne pas à l'heure actuelle avec \app{Mail} (mars 2009) sous \
 %\imagepos{images/mac_config_ldap}{0.6}{Configurer l'annuaire}{!ht}
 %bsection{Logiciels additionnels}
 
-
 Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services proposés sur le réseau ; ils sont téléchargeables sur \server{frankiz}, dans la rubrique \menu{Télécharger}, \menu{Mac}.
-
-
 
 \subsubsection{Configuration \emph{news}}
 
@@ -165,11 +140,6 @@ Au premier lancement, l'application te propose d'importer les paramètres depuis
 
 
 Pour t'abonner à des groupes de discussion, il te suffit de sélectionner le compte \menu{News Frankiz} dans la fenêtre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{Gérer les abonnements aux groupes de discussion}. Tu pourras ensuite sélectionner les forums qui t'intéressent parmi la liste proposée. Reporte-toi à la page \pageref{newsgroups} pour plus d'infos sur les \emph{newsgroups} auxquels t'abonner !
-
-\subsubsection{Firefox}
-Un point particulier pour la configuration du \emph{proxy} de Firefox : dans \menu{Préférences}, \menu{Avancé}, \menu{Réseau}, clique sur \menu{Paramètres} et choisis \emph{Adresse de configuration de proxy automatique} : \urllink{http://frankiz/proxy.pac}.
-
-
 
 \subsubsection{FTP}
 
