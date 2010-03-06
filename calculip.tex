@@ -15,7 +15,7 @@ Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} po
 ordinateur ait une adresse unique et correcte. Une erreur sur cette adresse t'emp\^eche tout simplement d'acc\'eder au r\'eseau, donc assure-toi que ton calcul est juste !
 
 
-\subsubsection{En Foch, Fayolle, Joffre et Maunoury}
+\subsubsection{En Foch, Fayolle et Maunoury}
 Tu trouveras sur ta prise r\'eseau un identifiant compos\'e d'une lettre et de trois chiffres.
 On note les deux premiers caract\`eres $xx$ et les deux derniers $zz$.
 \begin{itemize}
@@ -30,14 +30,10 @@ ton adresse de diffusion (\emph{broadcast}) et ton masque de sous-réseau (\emph
 \begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|c|c|c|}
 \hline \multirow{2}{*}{$xx$} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
  & & & \bf{diffusion} & \bf sous-réseau \\
-\hline A0 & 208 & \multirow{4}{*}{\server{129.104.211.254}} & \multirow{4}{*}{\server{129.104.211.255}} & \multirow{16}{*}{\server{255.255.252.0}} \\ 
+\hline A0 & 208 & \multirow{4}{*}{\server{129.104.211.254}} & \multirow{4}{*}{\server{129.104.211.255}} & \multirow{12}{*}{\server{255.255.252.0}} \\ 
 \cline{1-2} A1 & 209 &  &  &  \\ 
 \cline{1-2} A2 & 210 &  &  &  \\ 
 \cline{1-2} A3 & 211 &  &  &  \\ 
-\cline{1-4}  B0 & 216  & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \\ 
-\cline{1-2} B1 & 217 &  &  &  \\ 
-\cline{1-2} B2 & 218 &  &  &  \\ 
-\cline{1-2} B3 & 219 &  &  &  \\ 
 \cline{1-4}  C0 & 212  & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \\ 
 \cline{1-2} C1 & 213 &  &  &  \\ 
 \cline{1-2} C2 & 214 &  &  &  \\ 
@@ -53,6 +49,20 @@ ton adresse de diffusion (\emph{broadcast}) et ton masque de sous-réseau (\emph
 \exemple{l'adresse IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
 diffusion est \server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
 
+\subsubsection{En Joffre}
+Les identifiants \server{AAA} et \server{BBB} se calculent \`a partir de ton num\'ero de casert. \server{BBB} correspond aux deux derniers chiffres. Par exemple, pour le casert $12.10.61$, \server{BBB} $= 61$. \server{AAA} et les autres adresses n\'ecessaires \`a la configuration sont indiqu\'ees dans le tableau ci-dessous :
+\\
+\begin{center}
+\begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|c|c|c|}
+\hline \multirow{2}{*}{\'Etage} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
+ & & & \bf{diffusion} & \bf sous-r\'eseau \\
+\hline 10 & 216 & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \multirow{4}{*}{\server{255.255.252.0}} \\ 
+\cline{1-2} 20 & 217 &  &  &  \\ 
+\cline{1-2} 30 & 218 &  &  &  \\ 
+\cline{1-2} 40 & 219 &  &  &  \\ 
+\hline
+\end{tabular} 
+\end{center}
 
 \subsubsection{Dans les nouveaux caserts}
 
