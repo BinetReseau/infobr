@@ -15,7 +15,7 @@ Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} po
 ordinateur ait une adresse unique et correcte. Une erreur sur cette adresse t'emp\^eche tout simplement d'acc\'eder au r\'eseau, donc assure-toi que ton calcul est juste !
 
 
-\subsubsection{En Foch, Fayolle et Maunoury}
+\subsubsection{En Fayolle et Maunoury}
 Tu trouveras sur ta prise r\'eseau un identifiant compos\'e d'une lettre et de trois chiffres.
 On note les deux premiers caract\`eres $xx$ et les deux derniers $zz$.
 \begin{itemize}
@@ -30,11 +30,7 @@ ton adresse de diffusion (\emph{broadcast}) et ton masque de sous-réseau (\emph
 \begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|c|c|c|}
 \hline \multirow{2}{*}{$xx$} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
  & & & \bf{diffusion} & \bf sous-réseau \\
-\hline A0 & 208 & \multirow{4}{*}{\server{129.104.211.254}} & \multirow{4}{*}{\server{129.104.211.255}} & \multirow{12}{*}{\server{255.255.252.0}} \\ 
-\cline{1-2} A1 & 209 &  &  &  \\ 
-\cline{1-2} A2 & 210 &  &  &  \\ 
-\cline{1-2} A3 & 211 &  &  &  \\ 
-\cline{1-4}  C0 & 212  & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \\ 
+\hline C0 & 212 & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \multirow{8}{*}{\server{255.255.252.0}} \\ 
 \cline{1-2} C1 & 213 &  &  &  \\ 
 \cline{1-2} C2 & 214 &  &  &  \\ 
 \cline{1-2} C3 & 215 &  &  &  \\ 
@@ -46,23 +42,30 @@ ton adresse de diffusion (\emph{broadcast}) et ton masque de sous-réseau (\emph
 \end{tabular} 
 \end{center}
 
-\exemple{l'adresse IP associ\'ee \`a la prise $A145$ est \server{129.104.209.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.211.254}, son adresse de
-diffusion est \server{129.104.211.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
+\exemple{l'adresse IP associ\'ee \`a la prise $C145$ est \server{129.104.213.165} ($165 = 120 + 45$) ; sa passerelle est \server{129.104.215.254}, son adresse de
+diffusion est \server{129.104.215.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
 
-\subsubsection{En Joffre}
-Les identifiants \server{AAA} et \server{BBB} se calculent \`a partir de ton num\'ero de casert. \server{BBB} correspond aux deux derniers chiffres. Par exemple, pour le casert $12.10.61$, \server{BBB} $= 61$. \server{AAA} et les autres adresses n\'ecessaires \`a la configuration sont indiqu\'ees dans le tableau ci-dessous :
+\subsubsection{En Foch et Joffre}
+Les identifiants \server{AAA} et \server{BBB} se calculent \`a partir de ton num\'ero de casert. \server{BBB} correspond aux deux derniers chiffres. Par exemple, pour le casert $12.10.61$, \server{BBB} $= 61$. \server{AAA} et les autres adresses n\'ecessaires \`a la configuration sont indiqu\'ees dans le tableau ci-dessous, et d\'ependent des quatre premiers chiffres de ton num\'ero de casert, not\'es $xx\ yy$ :
 \\
 \begin{center}
 \begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|c|c|c|}
-\hline \multirow{2}{*}{\'Etage} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
+\hline \multirow{2}{*}{$xx\ yy$} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
  & & & \bf{diffusion} & \bf sous-r\'eseau \\
-\hline 10 & 216 & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \multirow{4}{*}{\server{255.255.252.0}} \\ 
-\cline{1-2} 20 & 217 &  &  &  \\ 
-\cline{1-2} 30 & 218 &  &  &  \\ 
-\cline{1-2} 40 & 219 &  &  &  \\ 
+\hline 10 10 & 212 & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \multirow{8}{*}{\server{255.255.252.0}} \\ 
+\cline{1-2} 10 20 & 213 &  &  &  \\ 
+\cline{1-2} 10 30 & 214 &  &  &  \\ 
+\cline{1-2} 10 40 & 215 &  &  &  \\ 
+\cline{1-4} 12 10 & 216 & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \\ 
+\cline{1-2} 12 20 & 217 &  &  &  \\ 
+\cline{1-2} 12 30 & 218 &  &  &  \\ 
+\cline{1-2} 12 40 & 219 &  &  &  \\ 
 \hline
 \end{tabular} 
 \end{center}
+
+\exemple{l'adresse IP associ\'ee au casert $12.10.61$ est \server{129.104.216.61}, sa passerelle est \server{129.104.219.254}, son adresse de
+diffusion est \server{129.104.219.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
 
 \subsubsection{Dans les nouveaux caserts}
 
@@ -103,7 +106,7 @@ adresse de diffusion est \server{129.104.224.255} et son masque de sous-r\'eseau
     Adresse de diffusion       & \server{129.104.AAA.255} \\
 \end{tabular}
 
-\subsubsection{Le PEM}
+\subsubsection{Au PEM}
 
  \noindent \begin{tabular}{p{\ecart}<{\dotfill}@{}l}
   Sous-r\'eseau (\server{AAA})           & {\ungaramond 205} \\
