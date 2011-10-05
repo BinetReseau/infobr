@@ -1,3 +1,4 @@
+
 \bghdr{images/fond-win}
 
 %\begin{center}
@@ -6,6 +7,7 @@
 
 
 \subsection{Configuration sous Microsoft Windows}
+
 
 Cette section d\'ecrit comment configurer un ordinateur tournant sous Windows XP, Windows Vista ou Windows 7. Si tu poss\`edes une autre version de Windows,
 nous t'invitons \`a  regarder directement la section sur les licences MSDNAA en page \pageref{msdnaa}\dots ou alors \`a  te d\'ebrouiller ! ;-)
@@ -197,7 +199,7 @@ fl\`eches pour r\'eordonner les \'el\'ements.
 
 %\subparagraph{Configuration antivirus} Le BR, concern\'e par la
 %s\'ecurit\'e du r\'eseau, te propose un antivirus pour lequel tu n'auras
-%pas \`a  payer la license pour obtenir les mises \`a  jour. Bien s\`a�¿½r,
+%pas \`a  payer la license pour obtenir les mises \`a  jour. Bien s\`a�¿½r,
 %libre \`a  toi d'utiliser ton anti-virus personnel ; cependant il sera
 %\`a  ta charge de le mettre \`a  jour tr\`es r\'eguli\'erement. Pour cela
 %utilise comme proxy : \urllink{http://kuzh} sur le port 8080.
@@ -240,7 +242,7 @@ fl\`eches pour r\'eordonner les \'el\'ements.
 %de \menu{Param\`etres} du \menu{Pare-feu Windows}. Il te faudra alors
 %ajouter manuellement tous les ports que tu veux ouvrir sur
 %l'ext\'erieur. Pour cela, clique sur \menu{Ajouter}, et remplis la
-%bo\`a�¿½te de dialogue en t'aidant de la capture
+%bo\`a�¿½te de dialogue en t'aidant de la capture
 %d'\'ecran~\ref{config:win:ouvrir_port}; mets le num\'ero du port que tu
 %veux ouvrir, par exemple 5050, 5053 et 5055 en TCP pour \app{qRezix}
 %et 21 en TCP pour ton FTP.
@@ -253,41 +255,9 @@ fl\`eches pour r\'eordonner les \'el\'ements.
 
 
 \subsubsection{Installation de l'antivirus}
-\label{antivirus} Le BR, pr\'eoccup\'e par la s\'ecurit\'e du r\'eseau, te propose un antivirus~\footnote{En
-l'occurence, l'antivirus utilis\'e est \app{Symantec Antivirus 10.2}.} pour lequel tu n'auras pas \`a 
-payer de licence pour obtenir les mises \`a  jour. Bien s\^{u}r, libre \`a  toi d'utiliser ton antivirus
-personnel ; cependant il sera \`a  ta charge de le mettre \`a  jour tr\`es r\'eguli\`erement. Pour cela,
-utilise comme serveur mandataire (\emph{proxy}) : \urllink{kuzh.polytechnique.fr} sur le port 8080 (il y a aussi des fois o\`u il 
-faut rentrer \urllink{http://kuzh.polytechnique.fr}).
+\label{antivirus} 
 
-%Version pour vista \`a  taper
-\footnote{Pour des raisons historiques, cette page porte le num\'ero \thecptr. L'explication se trouve en page 11.} Tout d'abord, \emph{d\'esinstalle tous les antivirus que tu pourrais
-avoir !} Dans le \menu{Menu D\'emarrer}, va dans \menu{Panneau de
-Configuration}, \menu{Ajout/Suppression de Programmes} et
-d\'esinstalle si tu l'as \app{Symantec Antivirus}, \app{McAfee Antivirus}, \app{Norton
-Antivirus}, ou tout autre antivirus.
-
-Il s'agit ensuite de t\'el\'echarger la bonne version de l'antivirus :
-\begin{itemize}
-
-\item Si tu as Windows Vista\dots
-\begin{itemize}
-\item en version 32 bits : \urllink{ftp://enez/antivirus/Win32\_Vista.zip}.
-\item en version 64 bits : \urllink{ftp://enez/antivirus/Win64\_Vista.zip}.
-\end{itemize}
-
-\item Si tu as Windows XP ou une autre version de Windows\dots
-\begin{itemize}
-\item en version 32 bits : \urllink{ftp://enez/antivirus/Win32\_PasVista.zip}.
-\item en version 64 bits : \urllink{ftp://enez/antivirus/Win64\_PasVista.zip}.
-\end{itemize}
-\end{itemize}
-
-Si tu ne sais pas si ton Windows est 64 ou 32 bits, le plus problable est qu'il
-soit 32 bits, donc tu peux commencer \`a  essayer avec cette version.
-
-Une fois le fichier ad\'equat t\'el\'echarg\'e, ouvre l'archive compress\'ee \file{Win\?\?\_*.zip}, d\'ecompresse \emph{tous les fichiers} dans un dossier et ex\'ecute le fichier \file{setup.exe} qui vient d'appara\^itre dans ce dossier. \`A partir de l\`a , tu n'as plus qu'\`a  suivre les instructions du
-programme d'installation. Tu n'auras alors plus \`a  toucher \`a  l'antivirus, celui-ci sera mis \`a  jour automatiquement.
+N'oublie pas d'installer un antivirus. Tu peux par exemple télécharger Avast! (gratuit) à l'adresse suivante : \urllink{http://www.avast.com/fr-fr/free-antivirus-download}. Pour la mise à jour, il te suffit de suivre la procédure détaillée dans le paragraphe suivant.
 
 \subsubsection{Configuration \emph{web} (serveur mandataire)}
 
@@ -301,9 +271,7 @@ uniquement la case \menu{Utiliser un script de configuration automatique}, puis 
 \menu{Adresse} avec \urllink{http://frankiz.polytechnique.fr/proxy.pac}.
 
 Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer} tu peux donc utiliser un autre navigateur, comme \app{Mozilla
-Firefox}, disponible sur \xshare, qui est plus s\'ecuris\'e. Mais ce n'est pas une garantie ultime --- tu es le premier garant de la s\'ecurit\'e de ton
-ordinateur, en n'ouvrant pas tous les fichiers qui te passent sous la main
---- mais tu seras sensiblement plus en s\'ecurit\'e.
+Firefox}, disponible sur \urllink{http://www.mozilla-europe.org/fr/products/}.
 
 
 
@@ -313,6 +281,8 @@ ce navigateur. Pour ce faire, lance \app{Mozilla Firefox}, et va dans le menu \m
 \menu{Param\`etres}. La case \`a  cocher est alors \menu{Adresse de configuration automatique du proxy},
 et l'adresse \`a  indiquer est la m\^eme que pr\'ec\'edemment : \urllink{http://frankiz.polytechnique.fr/proxy.pac}.
 
+
+Enfin, si tu utilises \app{Google Chrome}, celui-ci se configure automatiquement avec les param\`etres du syst\`eme.
 %
 % Pour le RTFIBRp11 pour un saut de page si n\'ec\'essaire ce qui n'\'etait pas le cas en 2008
 
@@ -322,6 +292,7 @@ et l'adresse \`a  indiquer est la m\^eme que pr\'ec\'edemment : \urllink{http://
 
 \subsubsection{Configuration \emph{mail}}
 
+ \footnote{Pour des raisons historiques, cette page porte le num\'ero \thecptr. L'explication se trouve en page 11.}
  La DSI met \`a  ta disposition une bo\^{i}te aux lettres \'electronique sur
 le serveur \server{poly} ; cette section t'explique comment
 configurer \app{Outlook Express} et \app{Windows Mail} pour y avoir acc\`es. Tu peux bien
@@ -376,7 +347,7 @@ Comme pour les \emph{mails}, nous d\'ecrivons la configuration de \app{Outlook E
 \begin{description}
   \item[Nom complet] ton nom !
   \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
-  \item[Serveur de news (NNTP)] \fkz ; v\'erifie \`a  ce moment que la case
+  \item[Serveur de news (NNTP)] \server{news} ; v\'erifie \`a  ce moment que la case
        \menu{Connexion \`a  mon serveur de news requise} n'est pas coch\'ee.
 \end{description}
 Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}; tu es abonn\'e
@@ -395,7 +366,7 @@ de \fkz.
 \subsubsection{Configuration FTP}
 
 \paragraph{Client FTP}
-Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer l'un des deux, t\'el\'echarge-le sur \xshare et double-clique sur l'installeur.
+Le BR te conseille \app{FileZilla} ou \app{SmartFTP}. Pour installer l'un des deux, t\'el\'echarge-le sur \urllink{http://www.filezilla.fr} et double-clique sur l'installeur.
 Tu pourras d\`es la fin de l'installation aller sur tous les FTP du r\'eseau
 facilement et rapidement.
 
@@ -411,15 +382,15 @@ Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP}, qui s
 
 %\begin{itemize}
   \paragraph{qRezix} Un programme d\'evelopp\'e par le BR pour faciliter la vie sur le r\'eseau,
-                  \`a  r\'ecup\'erer sur \xshare. Pour plus de d\'etails, voir le paragraphe qui lui est consacr\'e
+                  \`a  r\'ecup\'erer en cliquant sur le lien dans la barre de \fkz. Pour plus de d\'etails, voir le paragraphe qui lui est consacr\'e
                   \`a  la page \pageref{qrezix}.
                   
   \paragraph{XChat}  Un client IRC directement issu du monde Unix.
                  Tu peux te reporter \`a  la page \pageref{irc} pour plus d'infos sur l'IRC.
                  
   \paragraph{WinSCP} Un logiciel pratique qui te permet de te connecter en salle info.
-                  Tu peux le r\'ecup\'erer lui aussi sur \xshare ;
-                  son fonctionnement est expliqu\'e en d\'etails dans le WikiX. Voir aussi \app{Putty}, \'egalement dans le \xshare.
+                  Son fonctionnement est expliqu\'e en d\'etails dans le WikiX (\urllink{http://winscp.net}).  \\
+                  Voir aussi \app{Putty} (\urllink{http://www.putty.org/}).
  % \item \app{vlc} : Un logiciel qui te permettra de recevoir la t\'el\'evision directement dans ton casert, afin d'\^etre vraiment s\^{u}r d'avoir autre chose \`a  faire que travailler les veilles de p\^ales. Configuration page \pageref{TV}.
 %\end{itemize}
 
@@ -427,7 +398,7 @@ Parmi les plus simples on trouve \app{FileZilla Server} et \app{GuildFTP}, qui s
 \subsubsection{Obtenir un Windows gr\^ace aux licences MSDNAA}
 
 \label{msdnaa} Les accords n\'egoci\'es par le BR avec Microsoft dans le cadre de MSDNAA donnent \`a  chaque X le droit de poss\'eder une version de Windows
-XP Pro ou de Windows Vista Business gratuite et l\'egale, ainsi que les licences pour la plupart des logiciels de la soci\'et\'e (quasiment tous, sauf
+XP Pro, de Windows Vista Business ou de Windows 7 Pro gratuite et l\'egale, ainsi que les licences pour la plupart des logiciels de la soci\'et\'e (quasiment tous, sauf
 Office et les jeux). La seule condition \`a  remplir est d'\^etre \'etudiant sur le plat\^al au moment de l'installation du logiciel ; tu pourras ensuite le
 garder sur ton PC m\^eme apr\`es ton d\'epart de l'X.
 
@@ -435,32 +406,32 @@ La proc\'edure pour obtenir les logiciels et les cl\'es correspondantes
 est la suivante :
 \begin{itemize}
 
-\item Va d'abord sur \fkz et connecte-toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la bo\^ite \menu{Liens utiles}. S\'electionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta cl\'e par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste propos\'ee, c'est soit qu'il n'y a pas besoin de cl\'e --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oubli\'e de l'y mettre ; dans ce cas, \'ecris \`a  \mail{msdnaa@frankiz} pour qu'on t'attribue manuellement une cl\'e.
+\item Va d'abord sur \fkz et connecte-toi, puis clique sur le lien \menu{Licences MSDNAA} qui se trouve dans la rubrique \menu{Administration}. S\'electionne le logiciel que tu souhaites installer et valide ta demande, tu recevras ta cl\'e par e-mail. Facile ! Si jamais le logiciel n'est pas dans la liste propos\'ee, c'est soit qu'il n'y a pas besoin de cl\'e --- c'est le cas de beaucoup des logiciels autres que Windows, soit qu'on a oubli\'e de l'y mettre ; dans ce cas, \'ecris \`a  \mail{msdnaa@eleves} pour qu'on t'attribue manuellement une cl\'e.
 
 \item Maintenant que tu as ta cl\'e, il faut t\'el\'echarger le logiciel proprement
-dit. Pour cela, connecte-toi par FTP sur \urllink{ftp://enez/msdnaa/} avec ton client FTP pr\'ef\'er\'e.Tu pourrais, selon le logiciel, y r\'ecup\'erer soit une image du CD de type \file{logiciel.iso} (\`a 
+dit. Pour cela, connecte-toi par FTP sur \urllink{ftp://miroir/windows/msdnaa/} avec ton client FTP pr\'ef\'er\'e.Tu pourrais, selon le logiciel, y r\'ecup\'erer soit une image du CD de type \file{logiciel.iso} (\`a 
 graver ou \`a  utiliser avec \app{Daemon Tools}), soit directement le contenu du CD.
 \end{itemize}
 
 Pour Windows, les fichiers ISO \`a  t\'el\'echarger sont les suivants :
 \begin{description}
 \item[Pour Windows XP]
-\urllink{ftp://enez/msdnaa/win\_xp/french/win\_xp\_pro\_sp2\_fr.iso}.
+\urllink{ftp://miroir/msdnaa/win\_xp/french/win\_xp\_pro\_sp2\_fr.iso}.
 
 \item[Pour Windows Vista]
 L\`a , il y a deux possibilit\'es :
 \begin{description}
 \item[Si tu as un processeur 64 bits :] L'image \`a  t\'el\'echarger est dans\\
-\urllink{ftp://enez/msdnaa/win\_vista\_business\_avec\_sp1/dvd\_64bits/francais/}. Attention, cette
+\urllink{ftp://miroir/msdnaa/win\_vista\_business\_avec\_sp1/dvd\_64bits/francais/}. Attention, cette
 image ISO est \`a  graver sur un DVD. On remarque aussi que parfois, m\^eme sur un processeur 64 bits il
 vaut mieux choisir la version 32 bits de Windows (celle qui est dans le prochain \emph{item}) pour des
 raisons de disponibilit\'e de pilotes.
 \item[Si tu as un processeur 32 bits :] L\`a , tu peux choisir de graver :
 \begin{itemize}
 \item soit un DVD, dans \\
-\urllink{ftp://enez/msdnaa/win\_vista\_business\_avec\_sp1/dvd\_32bits/francais/};
+\urllink{ftp://miroir/msdnaa/win\_vista\_business\_avec\_sp1/dvd\_32bits/francais/};
 \item soit quatre CDs, que tu trouveras dans \\
-\urllink{ftp://enez/msdnaa/win\_vista (version CD)/cd\_32bits/french/}.
+\urllink{ftp://miroir/msdnaa/win\_vista (version CD)/cd\_32bits/french/}.
 
 \end{itemize}
 \end{description}
@@ -469,14 +440,14 @@ raisons de disponibilit\'e de pilotes.
 Comme pour Vista, deux possibilit\'es selon ton processeur. Attention, les images sont \`a graver sur DVD :
 \begin{description}
 \item[Si tu as un processeur 64 bits :] L'image \`a  t\'el\'echarger est dans\\
-\urllink{ftp://enez/msdnaa/win\_7/french/64 bits/}.
+\urllink{ftp://miroir/msdnaa/win\_7/french/64 bits/}.
 \item[Si tu as un processeur 32 bits :] L'image \`a  t\'el\'echarger est dans\\
-\urllink{ftp://enez/msdnaa/win\_7/french/32 bits/}.
+\urllink{ftp://miroir/msdnaa/win\_7/french/32 bits/}.
 
 \end{description}
 \end{description}
 
-Les versions anglophones de Windows XP, Vista et 7 sont \'egalement disponibles sur \server{enez}.
+Les versions anglophones de Windows XP, Vista et 7 sont \'egalement disponibles sur \server{miroir}.
 Ainsi, si tu as achet\'e un ordinateur sans OS (et ainsi \'economis\'e environ 150 \euro), tu vas chez un copain, fais les demandes et graves le CD chez lui. Si tu as encore des questions, plus de d\'etails sont donn\'es dans le Wikix et le WikiBR de \fkz.
 
 
@@ -502,6 +473,8 @@ de Windows. Il t'est fortement recommand\'e de le faire.
 
 \begin{description}
 
+\item[Sous Windows 7] Si tu as correctement configuré ton serveur web mandataire, les mises à jours se font automatiquement.
+
 \item[Sous Windows XP] Fais \menu{D\'emarrer}, \menu{Ex\'ecuter}, puis
 tape \cmd{cmd} dans la fen\^etre qui s'affiche. Une ligne de commande apparait,
 il te suffit alors de taper : \cmd{proxycfg -p http://kuzh:8080} pour r\'egler
@@ -517,6 +490,7 @@ netsh winhttp>set proxy proxy-server="http://kuzh:8080"\\
 netsh winhttp>exit\\
 C:\textbackslash{}Windows\textbackslash{}system32>exit }
 
-% TODO : pour win 7
 
 \end{description}
+
+\clearpage

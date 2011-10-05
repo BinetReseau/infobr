@@ -11,14 +11,7 @@
 \subsection{Configuration sous Linux}
 
 \subsubsection{Configuration IP}
-Quelle que soit ta distribution, il faut que tu d\'ecides d'un nom de
-machine --- ton pseudo en g\'en\'eral. Tu as \'egalement besoin de
-conna\^itre ton adresse IP, l'adresse IP de ta passerelle (\emph{gateway}), ton masque de sous-r\'eseau et ton adresse de diffusion (\emph{broadcast}).
-Toutes les informations n\'ecessaires se trouvent page
-\pageref{calcul_ip}.
-
-Bien s\^ur, l'ensemble des manipulations d\'ecrites ci-dessous doit se faire en tant que \emph{root}!
-
+Tu as besoin de conna\^itre ton adresse IP, ton masque de sous-r\'eseau et ta  passerelle. Toutes les informations se trouvent page \pageref{calcul_ip}. Bien s\^ur, pour  l'ensemble des manipulations d\'ecrites ci-dessous tu auras besoin de ton  mot de passe super-utilisateur (\emph{root}) !
 
 \paragraph{Sous Gentoo}
 Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X. Configure le r\'eseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment ; 
@@ -26,14 +19,14 @@ puis configure la r\'esolution DNS : tu dois avoir ceci dans le fichier \file{/e
 \noindent \cmdline{
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
-nameserver 129.104.201.52}
+nameserver 129.104.201.51}
 
 \label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a  travers le serveur mandataire (\emph{proxy}) de l'\'Ecole, il faut d\'efinir les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
 no\_proxy=.eleves.polytechnique.fr\\
-GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/gentoo http://gentoo.osuosl.org/"\\
+GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/linux/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
 Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans ta liste mais
@@ -41,10 +34,30 @@ Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans
 
 \input{ubuntu.tex}
 
+\subsubsection{Configuration du gestionnaire de paquets}
+
+Il faut d\'esormais configurer le gestionnaire de paquets pour qu'il utilise les miroirs du BR et non les miroirs à l'ext\'erieur du campus, qui sont plus lents. \
+Va  dans \menu{Applications}, \menu{Logith\`eque Ubuntu} puis menu \menu{\'edition}, \menu{Sources de logiciels...}. 
+Entre ton  mot de passe super-utilisateur puis s\'electionne l'onglet \menu{Autres  logiciels}. 
+D\'ecoche les cases comprenant une adresse du type \urllink{http://archive.canonical.com/ubuntu version}, o\`u \textit{version} correspond à la version d'Ubuntu install\'ee sur ton ordinateur. 
+À l'impression de l'InfoBR, la version actuelle est \textbf{maverick} et la pr\'ec\'edente est \textbf{lucid}. \
+Clique sur \menu{Ajouter}, puis entre dans le champ \menu{Ligne APT} :
+\cmdline{deb ftp://miroir/linux/ubuntu version main restricted universe multiverse}
+Tu auras bien s\^ur remplac\'e \textit{version} par ta version d'Ubuntu (\textit{maverick}/\textit{lucid}/\textit{karmic}/...). \\
+Clique ensuite sur \menu{Ajouter une source de mise à jour}. Fais de même pour les lignes suivantes :
+\cmdline{deb ftp://miroir/linux/ubuntu version-updates main restricted universe  multiverse \\
+deb ftp://miroir/linux/ubuntu version-security main restricted universe  multiverse}
+Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels non support\'es par Canonical, l'\'equipe de d\'eveloppement d'Ubuntu (en particulier il peut arriver que certains logiciels contiennent des erreurs) :
+\cmdline{deb ftp://miroir/linux/ubuntu version-backports main restricted universe multiverse}
+Le  BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir  non-officiel qui contient qRezix ainsi que des paquets (flash, ...) non  inclus dans la distribution de base pour diverses raisons, en paticulier l\'egales ou \'ethiques. Pour en profiter, rajoute aussi la ligne :
+\cmdline{deb ftp://miroir/linux/bll version main}
+Clique enfin sur \menu{Fermer} puis r\'eponds \menu{Actualiser} à la fenêtre de dialogue qui appara\^it. \\
+
+Note : il n'est pas n\'ecessaire de configurer Synaptic dans ses Pr\'ef\'erences pour y sp\'ecifier un proxy quelconque.
+
 \subsubsection{Configuration antivirus}
 
-{(elle est dr\^ole celle-l\`a  hein ?)}
-
+{C'est pas non plus comme si y'en avait besoin \dots}
 
 \subsubsection{Configuration du pare-feu}
 
@@ -64,6 +77,8 @@ Pour \app{Firefox}, il suffit d'aller dans \menu{\'Edition}, \menu{Pr\'ef\'erenc
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
 les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas!
+
+Pour \app{Google Chrome}, la configuration se règle automatique sur celle du système. Tu n'as donc rien à faire si le reste est correctement configuré.
 
 \imagepos{images/nux_proxy_firefox}{0.65}{Configuration du serveur mandataire sous Firefox}{ht}
 
@@ -167,7 +182,7 @@ cr\'ee un compte en cliquant sur \menu{Ajouter\ldots}.
 Remplis l'onglet \menu{Serveur} avec les informations suivantes :
 \begin{description}
   \item[Nom] ce que tu veux pour d\'ecrire ce compte, par exemple 'News Frankiz'
-  \item[Serveur] \server{frankiz.polytechnique.fr}
+  \item[Serveur] \server{news}
 \nopagebreak  \item[Port] 119
 \end{description}
 
@@ -195,9 +210,7 @@ signature \`a  la main, il suffit de mettre \verb*+-- +\ (c'est \`a  dire
 -{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne
 composera ta signature.
 
-Il ne te reste plus qu'\`a  t'inscrire \`a  des \emph{newsgroups} (reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos) et \`a  poster !
-
-\pagebreak
+Il ne te reste plus qu'\`a  t'inscrire \`a  des \emph{newsgroups} (reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos) et \`a  poster ! \\
 
 Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un acc\`es s\'ecuris\'e, avec \app{Knode}, il y a une petite subtilit\'e car il
 ne g\`ere pas le SSL. Il faut installer \app{stunnel} qui permet de d\'efinir une redirection SSL de port. Dans \file{/etc/stunnel.conf} (ou parfois \file{/etc/stunnel/stunnel.conf}), mets les lignes suivantes (les trois premi\`eres y sont en principe d\'ej\`a ) :
@@ -226,4 +239,4 @@ Et tu peux ainsi lire les \emph{news} de Polytechnique.org en mettant \server{lo
 que tu rentres ton nom d'utilisateur \`a  Polytechnique.org et ton mot de passe, que tu peux d\'efinir
 sur \urllink{https://www.polytechnique.org/Xorg/SMTPSecurise}.
 
-%\pagebreak
+\clearpage
