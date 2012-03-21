@@ -68,10 +68,10 @@ Pour avoir acc\`es \`a  Internet, il faut aussi configurer le \emph{proxy}.
 \app{Leopard} : Clique sur le bouton \menu{Avanc\'e...} puis sur l'onglet \menu{Proxys}.
 
 
-\app{Mac OS X 10.3.3 et sup\'erieur} :  choisis l'option \menu{Configuration automatique de proxy}. Pour Mac OS X 10.3 \`a  10.3.2, n'oublie pas une fois que tu as le r\'eseau de faire la mise \`a  jour de ton syst\`eme, pour pouvoir configurer de fa\c con automatique le \emph{proxy}.
+\app{Mac OS X 10.3.3 et sup\'erieur} :  choisis l'option \menu{Configuration automatique de proxy} et indique http://config/proxy.pac comme URL de fichier PAC. Pour Mac OS X 10.3 \`a  10.3.2, n'oublie pas une fois que tu as le r\'eseau de faire la mise \`a  jour de ton syst\`eme, pour pouvoir configurer de fa\c con automatique le \emph{proxy}.
 
 \app{Mac OS X 10.3.2 et inf\'erieur} : il te faut sp\'ecifier tous les
-\emph{proxies} manuellement, et mettre \server{kuzh.polytechnique.fr}, port \server{8080}.
+\emph{proxies} manuellement, et mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Malheureusement, cele te permettra uniquement d'acc\'eder aux sites h\'eb\'erg\'es hors du plat\^al : les sites \'el\`eves ne fonctionneront pas.
 
 
 N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
@@ -82,7 +82,7 @@ Bien qu'il soit important de maintenir ton syst\`eme \`a  jour, un antivirus est
 
 \subsubsection{Configuration web}
 \flimage{images/nux_firefox_icon}{0.07}{l}
-Un point particulier pour la configuration du \emph{proxy} de \app{Firefox} : dans \menu{Pr\'ef\'erences}, \menu{Avanc\'e}, \menu{R\'eseau}, clique sur \menu{Param\`etres} et, dans le champ \menu{Adresse de configuration automatique du proxy}, inscris : \urllink{http://frankiz.polytechnique.fr/proxy.pac}. 
+Un point particulier pour la configuration du \emph{proxy} de \app{Firefox} : dans \menu{Pr\'ef\'erences}, \menu{Avanc\'e}, \menu{R\'eseau}, clique sur \menu{Param\`etres} et, dans le champ \menu{Adresse de configuration automatique du proxy}, inscris : \urllink{http://config/proxy.pac}. 
 \\
 \\
 
@@ -131,25 +131,25 @@ Le LDAP ne fonctionne pas \`a  l'heure actuelle avec \app{Mail} (mars 2009) sous
 
 Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau ; ils sont t\'el\'echargeables sur \server{frankiz}, dans la rubrique \menu{T\'el\'echarger}, \menu{Mac}.
 
-\subsubsection{Configuration \emph{news}}
-
-\flimage{images/mac_thunderbird_icone}{0.07}{l} 
-\app{Thunderbird} : un client \emph{news} permettant d'acc\'eder aux forums de discussion des \'el\`eves (voir page~\pageref{newsgroups} pour les d\'etails sur \server{frankiz}), mais aussi \`a  ceux de \server{usenet} gr\^ace au serveur \server{polynews.polytechnique.fr}. Il est tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la m\^eme cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la m\^eme mani\`ere.
-
-Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique, et un compte RSS). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant}. Entre alors les informations suivantes :
-
-\begin{description}
-  \item[Votre nom] ton nom ou ton pseudo
-  \item[Adresse de courrier] \mail{prenom.nom@polytechnique.edu}
-  \item[Serveur de forums] \server{news}
-  \item[Nom du compte] News Frankiz
-  \item[Nom d'utilisateur] ton \emph{login }poly (les huit premi\`eres lettres de ton nom en g\'en\'eral)
-  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
-\end{description}
-
-
-Pour t'abonner \`a  des groupes de discussion, il te suffit de s\'electionner le compte \menu{News Frankiz} dans la fen\^etre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{G\'erer les abonnements aux groupes de discussion}. Tu pourras ensuite s\'electionner les forums qui t'int\'eressent parmi la liste propos\'ee. Reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos sur les \emph{newsgroups} auxquels t'abonner !
-
+%\subsubsection{Configuration \emph{news}}
+%
+%\flimage{images/mac_thunderbird_icone}{0.07}{l} 
+%\app{Thunderbird} : un client \emph{news} permettant d'acc\'eder aux forums de discussion des \'el\`eves (voir page~\pageref{newsgroups} pour les d\'etails sur \server{frankiz}), mais aussi \`a  ceux de \server{usenet} gr\^ace au serveur \server{polynews.polytechnique.fr}. Il est tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la m\^eme cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la m\^eme mani\`ere.
+%
+%Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique, et un compte RSS). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant}. Entre alors les informations suivantes :
+%
+%\begin{description}
+%  \item[Votre nom] ton nom ou ton pseudo
+%  \item[Adresse de courrier] \mail{prenom.nom@polytechnique.edu}
+%  \item[Serveur de forums] \server{news}
+%  \item[Nom du compte] News Frankiz
+%  \item[Nom d'utilisateur] ton \emph{login }poly (les huit premi\`eres lettres de ton nom en g\'en\'eral)
+%  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
+%\end{description}
+%
+%
+%Pour t'abonner \`a  des groupes de discussion, il te suffit de s\'electionner le compte \menu{News Frankiz} dans la fen\^etre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{G\'erer les abonnements aux groupes de discussion}. Tu pourras ensuite s\'electionner les forums qui t'int\'eressent parmi la liste propos\'ee. Reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos sur les \emph{newsgroups} auxquels t'abonner !
+%
 \subsubsection{FTP}
 
 \flimage{images/mac_cyberduck_icone}{0.07}{l} \app{Cyberduck} : un client FTP tr\`es simple \`a  utiliser mais performant. Il te permettra d'aller t\'el\'echarger des fichiers sur les serveurs FTP des autres \'el\`eves.
@@ -159,7 +159,7 @@ Tu verras rapidement que tout le monde \`a  l'X poss\`ede un serveur FTP afin de
 
 \subsubsection{Autres logiciels utiles}
 
-\flimage{images/mac_qrezix_icone}{0.07}{l} \app{qRezix} : en deux mots, c'est un programme d\'evelopp\'e par le BR pour faciliter la vie sur le r\'eseau. Tu peux le r\'ecup\'erer via le lien qRezix sur \server{Frankiz} ou sur \urllink{http://br.frankiz.net/qrezix/mac/}. Pour plus de d\'etails, voir le paragraphe consacr\'e \`a  qRezix \`a  la page \pageref{qrezix}. \\
+%\flimage{images/mac_qrezix_icone}{0.07}{l} \app{qRezix} : en deux mots, c'est un programme d\'evelopp\'e par le BR pour faciliter la vie sur le r\'eseau. Tu peux le r\'ecup\'erer via le lien qRezix sur \server{Frankiz} ou sur \urllink{http://br.frankiz.net/qrezix/mac/}. Pour plus de d\'etails, voir le paragraphe consacr\'e \`a  qRezix \`a  la page \pageref{qrezix}. \\
 
 %\app{Leopard} : le pare-feu se r\`egle pour chaque application; tu n'auras qu'\`a  r\'epondre \menu{Autoriser} lorsqu'il te demandera si tu veux \menu{Autoriser les connexions entrantes}.
 

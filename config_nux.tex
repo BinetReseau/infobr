@@ -13,24 +13,24 @@
 \subsubsection{Configuration IP}
 Tu as besoin de conna\^itre ton adresse IP, ton masque de sous-r\'eseau et ta  passerelle. Toutes les informations se trouvent page \pageref{calcul_ip}. Bien s\^ur, pour  l'ensemble des manipulations d\'ecrites ci-dessous tu auras besoin de ton  mot de passe super-utilisateur (\emph{root}) !
 
-\paragraph{Sous Gentoo}
-Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X. Configure le r\'eseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment ; 
-puis configure la r\'esolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
-\noindent \cmdline{
-search eleves.polytechnique.fr polytechnique.fr\\
-nameserver 129.104.201.53\\
-nameserver 129.104.201.51}
-
-\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a  travers le serveur mandataire (\emph{proxy}) de l'\'Ecole, il faut d\'efinir les variables d'environnement
-ci-dessous dans le fichier \file{/etc/make.conf} :
-\cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
-ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
-no\_proxy=.eleves.polytechnique.fr\\
-GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/linux/gentoo http://gentoo.osuosl.org/"\\
-SYNC="rsync://rsync/gentoo-portage"}
-
-Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans ta liste mais
-\urllink{ftp://miroir} \'etant interne, il sera toujours beaucoup plus rapide que les autres.
+%\paragraph{Sous Gentoo}
+%Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X. Configure le r\'eseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment ; 
+%puis configure la r\'esolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
+%\noindent \cmdline{
+%search eleves.polytechnique.fr polytechnique.fr\\
+%nameserver 129.104.201.53\\
+%nameserver 129.104.201.51}
+%
+%\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a  travers le serveur mandataire (\emph{proxy}) de l'\'Ecole, il faut d\'efinir %les variables d'environnement
+%ci-dessous dans le fichier \file{/etc/make.conf} :
+%\cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
+%ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
+%no\_proxy=.eleves.polytechnique.fr\\
+%GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/linux/gentoo http://gentoo.osuosl.org/"\\
+%SYNC="rsync://rsync/gentoo-portage"}
+%
+%Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans ta liste mais
+%\urllink{ftp://miroir} \'etant interne, il sera toujours beaucoup plus rapide que les autres.
 
 \input{ubuntu.tex}
 
@@ -40,7 +40,7 @@ Il faut d\'esormais configurer le gestionnaire de paquets pour qu'il utilise les
 Va  dans \menu{Applications}, \menu{Logith\`eque Ubuntu} puis menu \menu{\'edition}, \menu{Sources de logiciels...}. 
 Entre ton  mot de passe super-utilisateur puis s\'electionne l'onglet \menu{Autres  logiciels}. 
 D\'ecoche les cases comprenant une adresse du type \urllink{http://archive.canonical.com/ubuntu version}, o\`u \textit{version} correspond à la version d'Ubuntu install\'ee sur ton ordinateur. 
-À l'impression de l'InfoBR, la version actuelle est \textbf{maverick} et la pr\'ec\'edente est \textbf{lucid}. \
+À l'impression de l'InfoBR, la version actuelle est \textbf{oneiric} et la pr\'ec\'edente est \textbf{natty}. \
 Clique sur \menu{Ajouter}, puis entre dans le champ \menu{Ligne APT} :
 \cmdline{deb ftp://miroir/linux/ubuntu version main restricted universe multiverse}
 Tu auras bien s\^ur remplac\'e \textit{version} par ta version d'Ubuntu (\textit{maverick}/\textit{lucid}/\textit{karmic}/...). \\
@@ -59,10 +59,10 @@ Note : il n'est pas n\'ecessaire de configurer Synaptic dans ses Pr\'ef\'erences
 
 {C'est pas non plus comme si y'en avait besoin \dots}
 
-\subsubsection{Configuration du pare-feu}
-
-La solution la plus simple pour se faire un \emph{firewall} sous linux est d'utiliser les \emph{iptables}. Pour ceci la premi\`ere \'etape est
-d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment configurer ton \emph{firewall} pour le r\'eseau de l'X, consulte le Wikix.
+%\subsubsection{Configuration du pare-feu}
+%
+%La solution la plus simple pour se faire un \emph{firewall} sous linux est d'utiliser les \emph{iptables}. Pour ceci la premi\`ere \'etape est
+%d'installer le paquet \app{iptables} pour ta distribution. Pour savoir comment configurer ton \emph{firewall} pour le r\'eseau de l'X, consulte le Wikix.
 
 \subsubsection{Configuration navigateur web}
 
@@ -72,7 +72,7 @@ configuration \`a  effectuer est celle du serveur mandataire.
 
 Pour \app{Firefox}, il suffit d'aller dans \menu{\'Edition}, \menu{Pr\'ef\'erences} et dans l'onglet \menu{Avanc\'e}, puis de cliquer sur l'onglet
 \menu{R\'eseau}, et enfin \menu{Param\`etres de connexion} ; ensuite coche la case \menu{Adresse de configuration automatique du proxy}, et rentre 
-\urllink{http://frankiz.polytechnique.fr/proxy.pac}.
+\urllink{http://config/proxy.pac}.
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
@@ -166,77 +166,77 @@ r\'edaction de messages, avec tout au plus un red\'emarrage de \app{Kmail}.
 
 
 
-\subsubsection{Configuration \emph{news}}
-
-\flimage{images/nux_knode_icon}{0.12}{l} Le client \emph{news} le plus utilis\'e est \app{Knode}. Parmi les autres clients \emph{news}, citons 
-\app{Thunderbird}, \app{Pan} ou \app{slrn}. Ici aussi, la configuration est presque ind\'ependante du logiciel choisi.
-
-
-Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
-cr\'ee un compte en cliquant sur \menu{Ajouter\ldots}.
-
+%\subsubsection{Configuration \emph{news}}
+%
+%\flimage{images/nux_knode_icon}{0.12}{l} Le client \emph{news} le plus utilis\'e est \app{Knode}. Parmi les autres clients \emph{news}, citons 
+%\app{Thunderbird}, \app{Pan} ou \app{slrn}. Ici aussi, la configuration est presque ind\'ependante du logiciel choisi.
+%
+%
+%Sous \app{Knode}, c'est dans le menu \menu{Configuration}, puis \menu{Configurer Knode}. Va dans la rubrique \menu{Comptes, Forums de discussion} et
+%cr\'ee un compte en cliquant sur \menu{Ajouter\ldots}.
+%
 %\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
-
-\pagebreak
-
-Remplis l'onglet \menu{Serveur} avec les informations suivantes :
-\begin{description}
-  \item[Nom] ce que tu veux pour d\'ecrire ce compte, par exemple 'News Frankiz'
-  \item[Serveur] \server{news}
-\nopagebreak  \item[Port] 119
-\end{description}
-
+%
 %\pagebreak
- 
-Ensuite occupe-toi de l'onglet \menu{Identit\'e} :
-\begin{description}
-  \item[Nom] mets ton pseudo dans ce champ
-  \item[Organisation] X, \'Ecole polytechnique, comme tu le sens
-  \item[Adresse \'electronique] ton adresse \emph{mail}, pour que les gens puissent te r\'epondre par \emph{mail}.
-\end{description}
-
-Enfin, pour que \app{Knode} puisse envoyer des \emph{mails}, il faut aller
-dans la rubrique \menu{Comptes}, sous-rubrique \menu{Serveur de
-courrier (SMTP)}, et choisir comme serveur d'envoi de \emph{mails}
-\server{poly.polytechnique.fr}, port 25 --- c'est exactement la m\^eme
-configuration SMTP que \app{Kmail}.
-
-Si tu veux mettre une signature \`a  la fin des messages que tu
-posteras, il te suffit de la mettre dans l'onglet \menu{Identit\'e}.
-Sur la plupart des clients la signature est interpr\'et\'ee comme
-ext\'erieure au message et n'est en particulier pas incluse dans le
-texte cit\'e lorsque tu r\'eponds \`a  un message. Pour d\'efinir une
-signature \`a  la main, il suffit de mettre \verb*+-- +\ (c'est \`a  dire
--{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne
-composera ta signature.
-
-Il ne te reste plus qu'\`a  t'inscrire \`a  des \emph{newsgroups} (reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos) et \`a  poster ! \\
-
-Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un acc\`es s\'ecuris\'e, avec \app{Knode}, il y a une petite subtilit\'e car il
-ne g\`ere pas le SSL. Il faut installer \app{stunnel} qui permet de d\'efinir une redirection SSL de port. Dans \file{/etc/stunnel.conf} (ou parfois \file{/etc/stunnel/stunnel.conf}), mets les lignes suivantes (les trois premi\`eres y sont en principe d\'ej\`a ) :
-\cmdline{\# location of pid file\\
-pid = /etc/stunnel/stunnel.pid\\
-\\
-\# user to run as\\
-setuid = stunnel\\
-setgid = stunnel\\
-\\
-\# Use it for client mode\\
-client = yes\\
-\\
-\# sample service-level configuration\\
-{[}nntps{]}\\
-accept  = 1119\\
-connect = ssl.polytechnique.org:563\\
-TIMEOUTclose = 0
-}
-
-Il ne te reste plus qu'\`a  lancer \app{stunnel} par :
-\cmdline{/etc/init.d/stunnel start}
-
-Et tu peux ainsi lire les \emph{news} de Polytechnique.org en mettant \server{localhost} comme serveur et
-\server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
-que tu rentres ton nom d'utilisateur \`a  Polytechnique.org et ton mot de passe, que tu peux d\'efinir
-sur \urllink{https://www.polytechnique.org/Xorg/SMTPSecurise}.
+%
+%Remplis l'onglet \menu{Serveur} avec les informations suivantes :
+%\begin{description}
+%  \item[Nom] ce que tu veux pour d\'ecrire ce compte, par exemple 'News Frankiz'
+%  \item[Serveur] \server{news}
+%\nopagebreak  \item[Port] 119
+%\end{description}
+%
+%\pagebreak
+% 
+%Ensuite occupe-toi de l'onglet \menu{Identit\'e} :
+%\begin{description}
+%  \item[Nom] mets ton pseudo dans ce champ
+%  \item[Organisation] X, \'Ecole polytechnique, comme tu le sens
+%  \item[Adresse \'electronique] ton adresse \emph{mail}, pour que les gens puissent te r\'epondre par \emph{mail}.
+%\end{description}
+%
+%Enfin, pour que \app{Knode} puisse envoyer des \emph{mails}, il faut aller
+%dans la rubrique \menu{Comptes}, sous-rubrique \menu{Serveur de
+%courrier (SMTP)}, et choisir comme serveur d'envoi de \emph{mails}
+%\server{poly.polytechnique.fr}, port 25 --- c'est exactement la m\^eme
+%configuration SMTP que \app{Kmail}.
+%
+%Si tu veux mettre une signature \`a  la fin des messages que tu
+%posteras, il te suffit de la mettre dans l'onglet \menu{Identit\'e}.
+%Sur la plupart des clients la signature est interpr\'et\'ee comme
+%ext\'erieure au message et n'est en particulier pas incluse dans le
+%texte cit\'e lorsque tu r\'eponds \`a  un message. Pour d\'efinir une
+%signature \`a  la main, il suffit de mettre \verb*+-- +\ (c'est \`a  dire
+%-{}-<espace>) sur une ligne, et tout ce qui suivra cette ligne
+%composera ta signature.
+%
+%Il ne te reste plus qu'\`a  t'inscrire \`a  des \emph{newsgroups} (reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos) et \`a  poster ! \\
+%
+%Pour te connecter aux serveurs de \emph{news} de Polytechnique.org, qui ont un acc\`es s\'ecuris\'e, avec \app{Knode}, il y a une petite subtilit\'e car il
+%ne g\`ere pas le SSL. Il faut installer \app{stunnel} qui permet de d\'efinir une redirection SSL de port. Dans \file{/etc/stunnel.conf} (ou parfois \file{/etc/stunnel/stunnel.conf}), mets les lignes suivantes (les trois premi\`eres y sont en principe d\'ej\`a ) :
+%\cmdline{\# location of pid file\\
+%pid = /etc/stunnel/stunnel.pid\\
+%\\
+%\# user to run as\\
+%setuid = stunnel\\
+%setgid = stunnel\\
+%\\
+%\# Use it for client mode\\
+%client = yes\\
+%\\
+%\# sample service-level configuration\\
+%{[}nntps{]}\\
+%accept  = 1119\\
+%connect = ssl.polytechnique.org:563\\
+%TIMEOUTclose = 0
+%}
+%
+%Il ne te reste plus qu'\`a  lancer \app{stunnel} par :
+%\cmdline{/etc/init.d/stunnel start}
+%
+%Et tu peux ainsi lire les \emph{news} de Polytechnique.org en mettant \server{localhost} comme serveur et
+%\server{1119} comme port. Il faut aussi que tu coches \menu{Le serveur exige une identification} et
+%que tu rentres ton nom d'utilisateur \`a  Polytechnique.org et ton mot de passe, que tu peux d\'efinir
+%sur \urllink{https://www.polytechnique.org/Xorg/SMTPSecurise}.
 
 \clearpage
