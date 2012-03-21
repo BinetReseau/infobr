@@ -14,25 +14,29 @@ Les adresses IP de l'X sont toutes de la forme \server{129.104.AAA.BBB}.
 Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} pour que ton
 ordinateur ait une adresse unique et correcte. Une erreur sur cette adresse t'emp\^eche tout simplement d'acc\'eder au r\'eseau, donc assure-toi que ton calcul est juste !
 
-\subsubsection{En Foch, Joffre et Fayolle}
+\subsubsection{En Maunoury, Foch, Fayolle et Joffre}
 Les identifiants \server{AAA} et \server{BBB} se calculent \`a partir de ton num\'ero de casert. \server{BBB} correspond aux deux derniers chiffres. Par exemple, pour le casert $12.10.61$, \server{BBB} $= 61$. \server{AAA} et les autres adresses n\'ecessaires \`a la configuration sont indiqu\'ees dans le tableau ci-dessous, et d\'ependent des quatre premiers chiffres de ton num\'ero de casert, not\'es $xx\ yy$ :
 \\
 \begin{center}
 \begin{tabular}{|>{\ungaramond}c|>{\ungaramond}c|c|c|c|}
 \hline \multirow{2}{*}{$xx\ yy$} & \multirow{2}{*}{AAA} & \multirow{2}{*}{\bf Passerelle} & \bf Adresse de  & \bf Masque de  \\ 
  & & & \bf{diffusion} & \bf sous-r\'eseau \\
-\hline 10 10 & 212 & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \multirow{12}{*}{\server{255.255.252.0}} \\ 
+\hline 09 10 & 220 & \multirow{4}{*}{\server{129.104.223.254}} & \multirow{4}{*}{\server{129.104.223.255}} & \multirow{16}{*}{\server{255.255.252.0}} \\ 
+\cline{1-2} 09 20 & 221 &  &  &  \\ 
+\cline{1-2} 09 30 & 222 &  &  &  \\ 
+\cline{1-2} 09 40 & 223 &  &  &  \\ 
+\cline{1-4} 10 10 & 212 & \multirow{4}{*}{\server{129.104.215.254}} & \multirow{4}{*}{\server{129.104.215.255}} & \\ 
 \cline{1-2} 10 20 & 213 &  &  &  \\ 
 \cline{1-2} 10 30 & 214 &  &  &  \\ 
 \cline{1-2} 10 40 & 215 &  &  &  \\ 
-\cline{1-4} 12 10 & 216 & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \\ 
-\cline{1-2} 12 20 & 217 &  &  &  \\ 
-\cline{1-2} 12 30 & 218 &  &  &  \\ 
-\cline{1-2} 12 40 & 219 &  &  &  \\ 
 \cline{1-4} 11 10 & 232 & \multirow{4}{*}{\server{129.104.235.254}} & \multirow{4}{*}{\server{129.104.235.255}} & \\ 
 \cline{1-2} 11 20 & 233 &  &  &  \\ 
 \cline{1-2} 11 30 & 234 &  &  &  \\ 
 \cline{1-2} 11 40 & 235 &  &  &  \\ 
+\cline{1-4} 12 10 & 216 & \multirow{4}{*}{\server{129.104.219.254}} & \multirow{4}{*}{\server{129.104.219.255}} & \\ 
+\cline{1-2} 12 20 & 217 &  &  &  \\ 
+\cline{1-2} 12 30 & 218 &  &  &  \\ 
+\cline{1-2} 12 40 & 219 &  &  &  \\ 
 \hline
 \end{tabular} 
 \end{center}
@@ -40,7 +44,7 @@ Les identifiants \server{AAA} et \server{BBB} se calculent \`a partir de ton num
 \exemple{l'adresse IP associ\'ee au casert $12.10.61$ est \server{129.104.216.61}, sa passerelle est \server{129.104.219.254}, son adresse de
 diffusion est \server{129.104.219.255} et son masque de sous-r\'eseau est \server{255.255.252.0}.}
 
-\subsubsection{Dans les caserts roujes (Résidences Schaeffer et Lemonnier)}
+\subsubsection{Résidences Schaeffer et Lemonnier}
 
 Ta prise r\'eseau poss\`ede un num\'ero \`a 6 chiffres de la forme $xx\ yy\ zz$. On prend $xx$ pour calculer ton sous-r\'eseau, l'adresse de ta passerelle (\emph{gateway}): \server{129.104.AAA.CCC} et l'adresse de diffusion (\emph{broadcast}): \server{129.104.AAA.EEE}. Le masque de sous-r\'eseau (\emph{netmask}) est toujours
 \server{255.255.255.128}. Ensuite, tu peux d\'eterminer la partie \server{BBB} de ton IP avec $zz$ et $xx$ :
@@ -93,17 +97,6 @@ adresse de diffusion est \server{129.104.224.255} et son masque de sous-r\'eseau
 \subsubsection{Tes informations r\'eseau}
 Maintenant, note ici ton adresse IP, celle de ta passerelle (\emph{gateway}) et de ton masque de sous-r\'eseau
 (\emph{netmask}) et enfin ton l'adresse de diffusion (\emph{broadcast}). Rev\'erifie bien que tu ne t'es pas tromp\'e,  \c{c}a t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !
-
-\begin{center}
-  \begin{tabular}{|rp{5cm}|}
-  \hline
-  \rule[-8pt]{0pt}{24pt} \textbf{Mon adresse IP :} \ungaramond 129.104. & \\ \hline
-  \rule[-8pt]{0pt}{24pt} \textbf{Ma passerelle :} \ungaramond 129.104. & \\ \hline
-  \rule[-8pt]{0pt}{24pt} \textbf{Mon adresse de diffusion :} \ungaramond 129.104. & \\ \hline
-  \rule[-8pt]{0pt}{24pt} \textbf{Mon masque de sous-r\'eseau :} \ungaramond 255.255. & \\ \hline
-  \end{tabular}
-  \label{tableau:mon_IP}
-\end{center}
 
 % \subsubsection{IP des serveurs DNS}
 %
