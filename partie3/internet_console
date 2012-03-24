@@ -1,0 +1,9 @@
+\subsection{Paramétrer la connexion Internet avec la console}
+
+Tu dois d'abord configurer ta Gentoo pour utiliser le r\'eseau de l'X. Configure le r\'eseau en statique avec ton adresse IP calcul\'ee pr\'ec\'edemment ; 
+puis configure la r\'esolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
+\noindent \cmdline{
+search eleves.polytechnique.fr polytechnique.fr\\
+nameserver 129.104.201.53\\
+nameserver 129.104.201.51}
+
