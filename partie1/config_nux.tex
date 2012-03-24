@@ -35,16 +35,15 @@ m\^eme r\'esultat en ligne de commande il faut utiliser un script.
 
 \item[\'Etape 2 : configuration du proxy (= serveur mandataire)] \
 \begin{itemize}
-\item Va  dans \menu{Syst\`eme}, \menu{Pr\'ef\'erences} puis \menu{Serveur mandataire}.
-\item S\'electionne  les options \menu{Configuration manuelle du serveur mandataire} et \menu{Utiliser  le m\^eme serveur mandataire pour tous les protocoles}.
-\item Compl\`ete le champ  \menu{Serveur mandataire HTTP} par \server{kuzh} et le champ \menu{Port} par \server{8080}. 
-\item Clique sur \menu{Appliquer à l'ensemble du syst\`eme...} puis rentre ton mot de passe super-utilisateur deux fois.
+\item Va  dans \menu{Param\`etres Syst\`eme}, \menu{R\'eseau} puis \menu{Serveur Mandataire}.
+\item S\'electionne  la \menu{M\'ethode} \menu{Automatique}.
+\item Compl\`ete le champ  \menu{URL de configuration} par \urllink{http://config/proxy.pac}. 
+\item Clique sur \menu{Appliquer à tout le syst\`eme...} et rentre ton mot de passe super-utilisateur si on te le demande.
 \end{itemize}
 
 \item[\'Etape 3 (\'eventuellement)] \
 \begin{itemize}
 \item Clique  sur l'ic\^one de l'applet R\'eseau dans la zone de notification, en forme  de fl\`eches t\^ete-b\^eche ou d'ondes. S\'electionne le r\'eseau que tu as  configur\'e dans la 1\`ere \'etape, et te voilà connect\'e à Internet !
-\item Tu choisiras par ailleurs un nom de machine (en g\'en\'eral ton pseudo) que tu reporteras dans qRezix pour qu'il soit enregistr\'e.
 \item Une fois ta configuration r\'eseau termin\'ee, tu peux la tester en \emph{pinguant} \fkz (dans une console), o\`u tu devrais voir quelque chose comme :
 \end{itemize}
 
@@ -71,7 +70,7 @@ Clique ensuite sur \menu{Ajouter une source de mise à jour}. Fais de même pour
 deb ftp://miroir/linux/ubuntu version-security main restricted universe  multiverse}
 Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels non support\'es par Canonical, l'\'equipe de d\'eveloppement d'Ubuntu (en particulier il peut arriver que certains logiciels contiennent des erreurs) :
 \cmdline{deb ftp://miroir/linux/ubuntu version-backports main restricted universe multiverse}
-Le  BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir  non-officiel qui contient qRezix ainsi que des paquets (flash, ...) non  inclus dans la distribution de base pour diverses raisons, en paticulier l\'egales ou \'ethiques. Pour en profiter, rajoute aussi la ligne :
+Le  BLL (Binet Logiciels Libres) dispose par ailleurs d'un miroir  non-officiel qui contient des paquets (flash, ...) non  inclus dans la distribution de base pour diverses raisons, en paticulier l\'egales ou \'ethiques. Pour en profiter, rajoute aussi la ligne :
 \cmdline{deb ftp://miroir/linux/bll version main}
 Clique enfin sur \menu{Fermer} puis r\'eponds \menu{Actualiser} à la fenêtre de dialogue qui appara\^it. \\
 
@@ -152,39 +151,39 @@ configurer :
 \end{description}
 Sinon, laisse toutes les cases d\'ecoch\'ees.
 
-Tu peux aussi configurer l'acc\`es \`a  \app{l'annuaire LDAP} de l'\'Ecole, sorte de carnet d'adresses en ligne qui contient les adresses \emph{mail} de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un h\^ote}, et configure comme suit: \\
-\smallskip
-\begin{minipage}[t]{0.48\textwidth}
-\begin{description}
-  \item[H\^ote] \server{ldap.eleves.polytechnique.fr}
-  \item[Port] 389
-  \item[Version de LDAP] 3
-\end{description}  
-\end{minipage} 
-\begin{minipage}[t]{0.48\textwidth}
-\begin{description}  
-  \item[DN] \server{dc=polytechnique, dc=ldap, dc=eleves, dc=fr}
-  \item[S\'ecurit\'e] Non
-  \item[Identification] Anonyme
-\end{description}
-\end{minipage} \\
-Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant acc\`es \`a  l'annuaire LDAP lors de la
-r\'edaction de messages, avec tout au plus un red\'emarrage de \app{Kmail}. 
+%Tu peux aussi configurer l'acc\`es \`a  \app{l'annuaire LDAP} de l'\'Ecole, sorte de carnet d'adresses en ligne qui contient les adresses \emph{mail} de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un h\^ote}, et configure comme suit: \\
+%\smallskip
+%\begin{minipage}[t]{0.48\textwidth}
+%\begin{description}
+%  \item[H\^ote] \server{ldap.eleves.polytechnique.fr}
+%  \item[Port] 389
+%  \item[Version de LDAP] 3
+%\end{description}  
+%\end{minipage} 
+%\begin{minipage}[t]{0.48\textwidth}
+%\begin{description}  
+%  \item[DN] \server{dc=polytechnique, dc=ldap, dc=eleves, dc=fr}
+%  \item[S\'ecurit\'e] Non
+%  \item[Identification] Anonyme
+%\end{description}
+%\end{minipage} \\
+%Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant acc\`es \`a  l'annuaire LDAP lors de la
+%r\'edaction de messages, avec tout au plus un red\'emarrage de \app{Kmail}. 
 %
 %\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
 %\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
 %
-\noindent
-  \begin{figure*}[!h]
-    \begin{center}  
-      \subfloat[Configuration de l'annuaire LDAP sous Kmail]{ 
-      \includegraphics[width=0.48\textwidth]{images/nux_config_ldap}}
-      \hspace{\stretch{1}}
-      \subfloat[Configuration de Knode]{ 
- 		\includegraphics[width=0.48 \textwidth]{images/nux_config_ldap} }
-	\caption{Configurations LDAP et \emph{news}}
-    \end{center}
- \end{figure*}
+%\noindent
+%  \begin{figure*}[!h]
+%    \begin{center}  
+%      \subfloat[Configuration de l'annuaire LDAP sous Kmail]{ 
+%      \includegraphics[width=0.48\textwidth]{images/nux_config_ldap}}
+%      \hspace{\stretch{1}}
+%      \subfloat[Configuration de Knode]{ 
+% 		\includegraphics[width=0.48 \textwidth]{images/nux_config_ldap} }
+%	\caption{Configurations LDAP et \emph{news}}
+%    \end{center}
+% \end{figure*}
 
 
 
