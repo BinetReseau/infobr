@@ -96,15 +96,34 @@ configuration \`a  effectuer est celle du serveur mandataire.
 
 Pour \app{Firefox}, il suffit d'aller dans \menu{\'Edition}, \menu{Pr\'ef\'erences} et dans l'onglet \menu{Avanc\'e}, puis de cliquer sur l'onglet
 \menu{R\'eseau}, et enfin \menu{Param\`etres de connexion} ; ensuite coche la case \menu{Adresse de configuration automatique du proxy}, et rentre 
-\urllink{http://config/proxy.pac}.
+\urllink{http://config/proxy.pac} \\
+Ensuite, il te faut acc\'epter le certificat SSL du BR. Cela consiste \`a indiquer que tu fais confiance au BR pour authentifier les sites des binets.\\
+Il suffit se se rendre sur \urllink{http://config/ca-br.crt} et de cocher toutes les cases.\\
+
+\noindent
+  \begin{figure*}[!h]
+    \begin{center}  
+      \subfloat[Configuration du serveur mandataire]{ 
+      \includegraphics[width=0.48\textwidth]{images/nux_proxy_firefox}}
+      \hspace{\stretch{1}}
+      \subfloat[Acceptation du certificat BR]{ 
+ 		\includegraphics[width=0.48 \textwidth]{images/ca-br-ff}}
+         	 \caption{Configuration de firefox}
+    \end{center}
+  \end{figure*}
+%\imagepos{images/nux_proxy_firefox}{0.65}{Configuration du serveur mandataire sous Firefox}{ht}\\
+%\imagepos{images/ca-br}{1}{Acceptation du certificat BR}{ht}
+
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
 dans l'onglet \menu{Serveur mandataire}. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
 les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas!
 
-Pour \app{Google Chrome}, la configuration se règle automatique sur celle du système. Tu n'as donc rien à faire si le reste est correctement configuré.
+Pour \app{Google Chrome}, la configuration du serveur mandataire se r\`egle automatique sur celle du système. Tu n'as donc rien à faire si le reste est correctement configur\'e.\\
+Pour accepter le certificat BR, il te faut d'abord le t\'el\'echarger sur \urllink{http://config/ca-br.crt}. Puis, dans Chrome, rends toi dans \menu{Pr\'eferences}, \menu{Options avancées}, \menu{G\'erer les certificats}i, \menu{Autorit\'es} et clique sur \menu{Importer}. Il suffit alors de s\'electionner l'emplacement o\`u tu avais stock\'e le certificat et de cocher toutes les cases.
+\imagepos{images/ca-br-chrome}{1}{Acceptation du certificat BR}{ht}
 
-\imagepos{images/nux_proxy_firefox}{0.65}{Configuration du serveur mandataire sous Firefox}{ht}
+
 
 \pagebreak
 
