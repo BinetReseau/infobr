@@ -10,10 +10,12 @@
 
 \subsection{Configuration sous Linux}
 
+Cette section décrit la configuration de ta connexion Internet sous Ubuntu GNU/Linux (ou une de ses variantes). Pour les autres distributions, tu peux adapter les instructions ci-dessous ou consulter la version 
+en ligne de commande, page \pageref{linux_cmdline}.
+
 \subsubsection{Configuration IP}
 Tu as besoin de conna\^itre ton adresse IP, ton masque de sous-r\'eseau et ta  passerelle. Toutes les informations se trouvent page \pageref{calcul_ip}. Bien s\^ur, pour  l'ensemble des manipulations d\'ecrites ci-dessous tu auras besoin de ton  mot de passe super-utilisateur (\emph{root}) !
 
-\paragraph{Sous Ubuntu/Kubuntu}
 \label{Ubuntu:IP}
 Il existe deux mani\`eres de configurer tes param\`etres r\'eseaux: l'une utilise les outils graphiques de l'environnement que tu as choisi (Gnome ou KDE), 
 l'autre utilise simplement la ligne de commande. Bien sûr, les outils graphiques ne sont qu'un interm\'ediaire modifiant les fichiers dont on te parle 
@@ -53,9 +55,10 @@ PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 
 \end{description}
 
-\label{ubuntu_mirror}
+
 
 \subsubsection{Configuration du gestionnaire de paquets}
+\label{ubuntu_mirror}
 
 Il faut d\'esormais configurer le gestionnaire de paquets pour qu'il utilise les miroirs du BR et non les miroirs à l'ext\'erieur du campus, qui sont plus lents. \
 Va  dans \menu{Applications}, \menu{Logith\`eque Ubuntu} puis menu \menu{\'edition}, \menu{Sources de logiciels...}. 
