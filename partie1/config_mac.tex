@@ -26,17 +26,17 @@ Afin de conna\^itre la version que tu utilises, va dans le \menu{menu Pomme} pui
       \begin{minipage}{0.43 \textwidth}\begin{flushleft}
       {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_1}}\\ \vspace*{2cm}
       {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_2}} 
- 		\end{flushleft}  \end{minipage}
- 		 } 		
- 		\subfloat[Configuration de l'interface r\'eseau \emph{Ethernet}, de l'adresse IP et du \emph{proxy}]{ 
- 		 \begin{minipage}{0.43 \textwidth}\begin{flushright}
- 		{\includegraphics[width=0.96 \textwidth]{images/mac_config_ethernet}} \\ 
- 		{\includegraphics[width=0.96 \textwidth]{images/mac_config_ip_leopard}} \\
- 		{\includegraphics[width=0.96 \textwidth]{images/mac_config_proxy_leopard}}
-\end{flushright}
- 		\end{minipage}
- 		 	\label{config:mac:ip:leopard}	}
-     	 \caption{Cr\'eer une nouvelle configuration r\'eseau}
+        \end{flushleft}  \end{minipage}
+        }
+        \subfloat[Configuration de l'interface r\'eseau \emph{Ethernet}, de l'adresse IP et du \emph{proxy}]{ 
+        \begin{minipage}{0.43 \textwidth}\begin{flushright}
+        {\includegraphics[width=0.96 \textwidth]{images/mac_config_ethernet}} \\ 
+        {\includegraphics[width=0.96 \textwidth]{images/mac_config_ip_leopard}} \\
+        {\includegraphics[width=0.96 \textwidth]{images/mac_config_proxy_leopard}}
+        \end{flushright}
+        \end{minipage}
+            \label{config:mac:ip:leopard}   }
+        \caption{Cr\'eer une nouvelle configuration r\'eseau}
 
     \end{center}
   \end{figure*}
@@ -78,78 +78,10 @@ N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la 
 
 \subsubsection{Configuration antivirus}
 
-Bien qu'il soit important de maintenir ton syst\`eme \`a  jour, un antivirus est pour l'instant tout \`a  fait superflu sur Mac, puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assur\'e de la provenance, et essaie de te tenir au courant des actualit\'es concernant les failles des applications que tu utilises.
+Bien qu'il soit important de maintenir ton syst\`eme \`a  jour, un antivirus est pour l'instant tout \`a  fait superflu sur Mac,
+puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assur\'e de la provenance,
+et essaie de te tenir au courant des actualit\'es concernant les failles des applications que tu utilises.
 
-\subsubsection{Configuration web}
-\flimage{images/nux_firefox_icon}{0.07}{l}
-Un point particulier pour la configuration du \emph{proxy} de \app{Firefox} : dans \menu{Pr\'ef\'erences}, \menu{Avanc\'e}, \menu{R\'eseau}, clique sur \menu{Param\`etres} et, dans le champ \menu{Adresse de configuration automatique du proxy}, inscris : \urllink{http://config/proxy.pac}. 
-\\
-\\
-
-\flimage{images/mac_safari_icone}{0.07}{l}
-\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorit\'e des sites \emph{web}. Tu peux donc t'en servir au quotidien, en faisant appel \`a  \app{Firefox} pour les sites r\'ecalcitrants. Un conseil : pense \`a  activer le blocage des fen\^etres \emph{pop-up} (dans le menu \menu{Safari}). \\
-\\
-
-\app{Google Chrome} se règle quant à lui automatiquement sur la configuration du système. 
-\\
-
-\subsubsection{Configuration \emph{mail}}
-\flimage{images/mac_mail_icone}{0.07}{l} \app{Mail} : un client \emph{mail} offrant les fonctionnalit\'es classiques d'un bon client : recherche instantan\'ee, filtre antispam, r\`egles de tri automatique des \emph{mails}, regroupement des \emph{mails} correspondant \`a  une m\^eme discussion.
-
-Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte \emph{mail} sur \server{poly}, il suffit de le remplir avec les donn\'ees suivantes :
-\begin{description}
-  \item[Nom complet] ton nom !
-  \item[Adresse \'electronique] de la forme \mail{prenom.nom@polytechnique.edu}
-  \item[Serveur de r\'eception] \server{poly.polytechnique.fr}
-  \item[Type de compte] \menu{POP}
-  \item[Nom d'utilisateur] ton \emph{login} \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral)
-  \item[Mot de passe] ton mot de passe \server{poly}
-  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
-\end{description}
-
-Si tu as d\'ej\`a  cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \menu{Pr\'ef\'erences} (accessibles depuis le menu \menu{Mail}), onglet \menu{Comptes}, pour cr\'eer un autre compte en cliquant sur la case \menu{+}.
-
-N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995. Tu souhaiteras alors certainement installer le certificat de s\'ecurit\'e de \server{poly} (tu le trouveras sur \urllink{http://poly/}). Une fois que tu as t\'el\'echarg\'e le certificat, ouvre le fichier \menu{.CRT} obtenu, et dans \app{Trousseau d'acc\`es}, installe-le dans %\menu{X509Anchors} (Tiger) ou 
-\menu{session} (Leopard).
-
-Cette configuration marche pour acc\'eder \`a  ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer. En revanche tu ne peux pas envoyer de \emph{mails} depuis l'ext\'erieur , car le serveur \server{poly} ne le permet pas. Nous te conseillons vivement d'utiliser le serveur SMTP \server{polytechnique.org} et de regarder la configuration propos\'ee par \urllink{Polytechnique.org}. Celle-ci permet d'envoyer des \emph{mails} s\^urs \`a  l'ext\'erieur de l'\'Ecole sans modifier ta configuration par la suite. Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Pr\'ef\'erences} de \emph{mail} et r\'egler dans l'onglet \menu{Avanc\'es} comme dans la capture.
-
-\begin{figure*}[!hl]
-    \begin{center}
-	      \includegraphics[width=0.4\textwidth]{images/mac_config_smtp_poltechnique.png} 
-      \caption{Configurer le serveur SMTP \server{Polytechnique.org}}
-    \end{center}
-  \end{figure*}
-
-%Le LDAP ne fonctionne pas \`a  l'heure actuelle avec \app{Mail} (mars 2009) sous \app{Leopard}, contrairement aux  autres syst\`emes d'exploitation (fonctionne cependant avec \app{Thunderbird}).
-%\subsuEnfin, tu peux disposer dans \app{Mail} de l'annuaire de l'\`acole, mis \`a  disposition par la DSI. Pour cela, va dans les \menu{Pr\'ef\'erences} de Mail,
-%puis dans la rubrique \menu{R\'edaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un
-%serveur, et remplir la fen\^etre comme sur la capture.
-
-%\imagepos{images/mac_config_ldap}{0.6}{Configurer l'annuaire}{!ht}
-%bsection{Logiciels additionnels}
-
-%Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau ; ils sont t\'el\'echargeables sur \server{frankiz}, dans la rubrique \menu{T\'el\'echarger}, \menu{Mac}.
-
-%\subsubsection{Configuration \emph{news}}
-%
-%\flimage{images/mac_thunderbird_icone}{0.07}{l} 
-%\app{Thunderbird} : un client \emph{news} permettant d'acc\'eder aux forums de discussion des \'el\`eves (voir page~\pageref{newsgroups} pour les d\'etails sur \server{frankiz}), mais aussi \`a  ceux de \server{usenet} gr\^ace au serveur \server{polynews.polytechnique.fr}. Il est tr\`es proche d'\app{Outlook Express} dans son esprit. Dans la m\^eme cat\'egorie, il existe \app{MacSOUP}, \app{Unison} ou encore \app{MT-NewsWatcher}. La configuration se fait de la m\^eme mani\`ere.
-%
-%Au premier lancement, l'application te propose d'importer les param\`etres depuis une autre application. Clique sur \menu{Suivant}. Tu peux alors choisir quel type de compte tu veux configurer (tu remarqueras que tu peux aussi cr\'eer un compte courrier \'electronique, et un compte RSS). S\'electionne \menu{Compte forums de discussion} et clique sur \menu{Suivant}. Entre alors les informations suivantes :
-%
-%\begin{description}
-%  \item[Votre nom] ton nom ou ton pseudo
-%  \item[Adresse de courrier] \mail{prenom.nom@polytechnique.edu}
-%  \item[Serveur de forums] \server{news}
-%  \item[Nom du compte] News Frankiz
-%  \item[Nom d'utilisateur] ton \emph{login }poly (les huit premi\`eres lettres de ton nom en g\'en\'eral)
-%  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
-%\end{description}
-%
-%
-%Pour t'abonner \`a  des groupes de discussion, il te suffit de s\'electionner le compte \menu{News Frankiz} dans la fen\^etre \menu{Dossiers} de \app{Thunderbird}, puis de cliquer sur \menu{G\'erer les abonnements aux groupes de discussion}. Tu pourras ensuite s\'electionner les forums qui t'int\'eressent parmi la liste propos\'ee. Reporte-toi \`a  la page \pageref{newsgroups} pour plus d'infos sur les \emph{newsgroups} auxquels t'abonner !
-%
 
 \subsubsection{Autres logiciels utiles}
 

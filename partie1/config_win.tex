@@ -1,4 +1,3 @@
-
 \bghdr{images/fond-win}
 
 %\begin{center}
@@ -55,8 +54,8 @@ connexion vers l'ext\'erieur.
       \includegraphics[width=0.48\textwidth]{images/win_config_ip} \label{config:win:IP1}}
       \hspace{\stretch{1}}
       \subfloat[Configuration DNS]{ 
- 		\includegraphics[width=0.48 \textwidth]{images/win_config_dns2} \label{config:win:IP2}}
-         	 \caption{Configuration r\'eseau}
+         \includegraphics[width=0.48 \textwidth]{images/win_config_dns2} \label{config:win:IP2}}
+             \caption{Configuration r\'eseau}
     \end{center}
   \end{figure*}
 
@@ -274,96 +273,8 @@ Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet 
 Firefox}, disponible sur \urllink{http://www.mozilla-europe.org/fr/products/}.
 
 
+%%TODO pageref config commune
 
-Si tu utilises \app{Mozilla Firefox}, il faut que tu fasses, en plus, le m\^eme r\'eglage de serveur mandataire pour
-ce navigateur. Pour ce faire, lance \app{Mozilla Firefox}, et va dans le menu \menu{Outils},
-\menu{Options...}. L\`a , s\'electionne la rubrique \menu{Avanc\'e}, onglet \menu{R\'eseau}, et clique sur
-\menu{Param\`etres}. La case \`a  cocher est alors \menu{Adresse de configuration automatique du proxy},
-et l'adresse \`a  indiquer est la m\^eme que pr\'ec\'edemment : \urllink{http://config/proxy.pac}.
-
-
-Enfin, si tu utilises \app{Google Chrome}, celui-ci se configure automatiquement avec les param\`etres du syst\`eme.
-%
-% Pour le RTFIBRp11 pour un saut de page si n\'ec\'essaire ce qui n'\'etait pas le cas en 2008
-
-%\noindent\rule{.4\textwidth}{.4pt}
-
-%\vfill %\pagebreak
-
-\subsubsection{Configuration \emph{mail}}
-
- \footnote{Pour des raisons historiques, cette page porte le num\'ero \thecptr. L'explication se trouve en page 11.}
- La DSI met \`a  ta disposition une bo\^{i}te aux lettres \'electronique sur
-le serveur \server{poly} ; cette section t'explique comment
-configurer \app{Outlook Express} et \app{Windows Mail} pour y avoir acc\`es. Tu peux bien
-s\^{u}r utiliser \app{Thunderbird} si tu pr\'ef\`eres, les donn\'ees \`a  rentrer
-pour la configuration sont les m\^emes ; quelques d\'etails sont donn\'es
-dans le WikiX sur \fkz. De plus, tu trouveras des explications plus
-d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
-La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
-Lance \app{Outlook Express} et va dans le menu \menu{Outils},
-\menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
-haut \`a  droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
-
-%\setcounter{page}{31}
-
-
-Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
-\begin{description}
-  \item[Nom complet] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
-  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
-  \item[Type de serveur de messagerie pour le courrier entrant] \menu{POP3}
-  \item[Serveur de messagerie pour le courrier entrant] \server{poly.polytechnique.fr}
-  \item[Serveur de messagerie pour le courrier sortant] \server{poly.polytechnique.fr}
-  \item[Nom du compte] ton \emph{login} \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral; si tu ne t'en souviens pas ne t'en fais pas on devrait te le redonner en cours d'informatique lors de ton premier TD. Si tu es vraiment press\'e va voir le bureau \emph{login} de la DSI.)
-  \item[Mot de passe] ton mot de passe \server{poly} ;
-       v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
-\end{description}
-
-Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}.
-
-Tu te retrouves alors sur la fen\^etre \menu{Comptes Internet}. Va sur
-l'onglet \menu{Courrier}, clique sur le compte que tu viens de cr\'eer
-puis sur \menu{Propri\'et\'es}. Clique sur l'onglet \menu{Avanc\'e} et
-configure comme sur la capture~\ref{config:win:mail} ; en
-particulier, coche la seconde case \menu{Ce serveur n\'ecessite une
-connexion s\'ecuris\'ee (SSL)}.
-
-Comme \c{c}a, tu peux d\'esormais recevoir des \emph{mails} avec une liaison
-s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
-intercepter.
-
-
-\imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
-des serveurs \emph{mail}}{!h}{config:win:mail}
-
-%\subsubsection{Configuration \emph{newsgroups}}
-%
-%Reporte-toi a la page~\pageref{newsgroups} pour la description et des d\'etails de fonctionnement des \emph{newsgroups} \`a  l'X.
-%
-%Comme pour les \emph{mails}, nous d\'ecrivons la configuration de \app{Outlook Express} mais elle est sensiblement \'equivalente pour \app{Thunderbird}. Lance
-%\app{Outlook Express} et va dans le menu \menu{Outils}, \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en haut \`a  droite,
-%\menu{News\ldots}. Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
-%\begin{description}
-%  \item[Nom complet] ton nom !
-%  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
-%  \item[Serveur de news (NNTP)] \server{news} ; v\'erifie \`a  ce moment que la case
-%       \menu{Connexion \`a  mon serveur de news requise} n'est pas coch\'ee.
-%\end{description}
-%Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}; tu es abonn\'e
-%au serveur \emph{news} des \'el\`eves.
-%
-%Quand tu fermeras la fen\^etre `Comptes Internet', il va te demander \`a 
-%quels \emph{newsgroups} tu veux t'abonner, tu n'auras qu'\`a  s\'electionner
-%ceux qui t'int\'eressent. Reporte-toi \`a  la page \pageref{newsgroups}
-%pour plus d'infos sur les newsgroups auxquels t'abonner !
-%
-%Si tu veux t'inscrire \`a  d'autres serveurs \emph{news}, refais cette
-%proc\'edure en rentrant le nom du serveur qui t'int\'eresse \`a  la place
-%de \fkz.
-%\setcounter{page}{12}
-
- % \item \app{vlc} : Un logiciel qui te permettra de recevoir la t\'el\'evision directement dans ton casert, afin d'\^etre vraiment s\^{u}r d'avoir autre chose \`a  faire que travailler les veilles de p\^ales. Configuration page \pageref{TV}.
 
 \subsubsection{Windows Update}
 
@@ -403,6 +314,8 @@ netsh>winhttp\\
 netsh winhttp>set proxy proxy-server="http://kuzh:8080"\\
 netsh winhttp>exit\\
 C:\textbackslash{}Windows\textbackslash{}system32>exit }
+
+%%TODO pageref config commune
 
 
 \end{description}
