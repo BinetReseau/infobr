@@ -3,7 +3,28 @@
 Le DSI propose actuellement un réseau \emph{Wi-Fi}, qui couvre le grand hall, les amphis, les salles de PC, le bataclan (bâtiment qui va de la Kès au bâtiment des
 binets/langues), le bâtiment des binets/langues.
 
- Pour te connecter au \emph{Wi-Fi} avec Windows, Mac, Linux ou un iPhone, tu trouveras les instructions sur la page \urllink{http://wifi}.
+Pour te connecter au \emph{Wi-Fi} avec Windows, Mac, Linux ou un iPhone, tu trouveras les instructions sur la page \urllink{http://wifi}.
+
+Avec Windows, tu dois t\'el\'echager un logiciel appel\'e SecureW2 qui est fourni par la DSI sur son site, \urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/}.
+
+Avec MacOS ou iOS (iPhone, iPad), il faut t\'el\'echarger un fichier \file{wifi.mobileconfig} dont le lien se trouve sur le wikiBR (l\`a encore, suis les intructions de \urllink{http://wifi}).
+
+Avec Linux ou Android, les noms des param\`etres d\'ependent du syst\`me utilis\'e, mais voici un tableau r\'ecapitulatif :
+\begin{center}
+\begin{tabular}{|r|l|}
+ SSID & Polytechnique \\
+ Nom d'utilisateur/Mot de passe & Identifiants DSI (salle info) \\
+ S\'ecurit\'e & WPA1 Entreprise \\
+ Gestion des cl\'es & WPA-EAP \\
+ Pairwise & TKIP \\
+ Authentification & Tunneled TLS (TTLS) ou EAP-FAST \\
+ Authentification interne & PAP \\
+ Proxy HTTP pour tous les protocoles & 129.104.247.2 (port 8080) \\
+ Serveurs DNS & 129.104.201.53, 129.104.201.51
+\end{tabular}
+\end{center}
+
+
 
 
 %Deux réseaux ont été déployés :
