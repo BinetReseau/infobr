@@ -12,6 +12,11 @@ Les adresses IP de l'X sont toutes de la forme \server{129.104.AAA.BBB}.
 Les pages suivantes t'indiquent comment calculer \server{AAA} et \server{BBB} pour que ton
 ordinateur ait une adresse unique et correcte. Une erreur sur cette adresse t'emp\^eche tout simplement d'acc\'eder au r\'eseau, donc assure-toi que ton calcul est juste !
 
+Calcule ci-dessous ton adresse IP, celle de ta passerelle (\emph{gateway}), ton masque de sous-r\'eseau
+(\emph{netmask}) et enfin ton adresse de diffusion (\emph{broadcast}).
+Rev\'erifie bien que tu ne t'es pas tromp\'e,  \c{c}a t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !
+Note-les soigneusement au bas de la page \pageref{tableauIp} pour référence ultérieure.
+
 \subsubsection{En Maunoury, Foch, Fayolle et Joffre}
 Les identifiants \server{AAA} et \server{BBB} se calculent \`a partir de ton num\'ero de casert. \server{BBB} correspond aux deux derniers chiffres. Par exemple, pour le casert $12.10.61$, \server{BBB} $= 61$. \server{AAA} et les autres adresses n\'ecessaires \`a la configuration sont indiqu\'ees dans le tableau ci-dessous, et d\'ependent des quatre premiers chiffres de ton num\'ero de casert, not\'es $xx\ yy$ :
 \\
@@ -91,10 +96,6 @@ adresse de diffusion est \server{129.104.224.255} et son masque de sous-r\'eseau
   Masque de sous-r\'eseau                & \server{255.255.255.0} \\
   Adresse de diffusion                   & \server{129.104.205.255} \\
 \end{tabular}
-
-\subsubsection{Tes informations r\'eseau}
-Maintenant, note ici ton adresse IP, celle de ta passerelle (\emph{gateway}) et de ton masque de sous-r\'eseau
-(\emph{netmask}) et enfin ton l'adresse de diffusion (\emph{broadcast}). Rev\'erifie bien que tu ne t'es pas tromp\'e,  \c{c}a t'\'evitera de te prendre la t\^ete pendant la suite de la configuration !
 
 % \subsubsection{IP des serveurs DNS}
 %
