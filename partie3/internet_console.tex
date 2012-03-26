@@ -23,3 +23,12 @@ nameserver 129.104.201.53\\
 nameserver 129.104.201.51}
 
 N'oublie pas de r\'egler ensuite le proxy dans ton navigateur web pr\'ef\'er\'e.
+En ligne de commande, les logiciels usuels (wget, curl, rsync, apt-get, pacman) reconnaissent certaines variables d'environnement qui uilisent le suffixe ''\_proxy'' :
+\noindent \cmdline{
+export all\_proxy="http://kuzh.polytechnique.fr:8080/"\\
+export http\_proxy="http://kuzh.polytechnique.fr:8080/"\\
+export https\_proxy="http://kuzh.polytechnique.fr:8080/"\\
+export RSYNC\_PROXY="http://kuzh.polytechnique.fr:8080/"\\
+export no\_proxy="eleves.polytechnique.fr"
+}
+Si tu configures un ordinateur de binet, il est intéressant de mettre ces lignes dans le fichier de configuration de chaque utilisateur, dans son \file{\~/.bashrc}.
