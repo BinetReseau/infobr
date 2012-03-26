@@ -17,7 +17,7 @@ distclean: clean
 InfoBR.pdf: $(DEPS)
 	pdflatex InfoBR.tex
 
-# Cette partie vaut si on remplace directement le numéro de la page 11 par celui défini dans preambuleInfoBR.sty
+# Cette partie vaut si on remplace directement le numéro de la page 11 par celui défini dans preambuleInfoBR.sty m(a
 	sed -i -e "s/11/$(PAGE)/" InfoBR.toc
 	
 ## Cette partie vaut si on switche les numéros de la page 11 et de celle sur les crossposts.	
