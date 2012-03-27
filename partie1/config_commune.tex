@@ -38,17 +38,20 @@ Il suffit se se rendre sur \urllink{http://config/ca-br.crt} et de cocher toutes
 \paragraph{Google Chrome}
 \flimage{images/google-chrome-logo}{0.07}{l}
 
-Pour \app{Google Chrome}, la configuration du serveur mandataire se r\`egle automatique sur celle du système. Tu n'es donc pas obligé de régler le proxy toi-même. Cependant, pour le faire manuellement, clique sur la
+Pour \app{Google Chrome}, la configuration du serveur mandataire se r\`egle automatique sur celle du système. Tu n'es donc pas obligé de régler le \emph{proxy} toi-même. Cependant, pour le faire manuellement, clique sur la
 clef à molette en haut à droite, choisis \menu{Options}, va dans l'onglet \menu{Paramètres avancés} (ou \menu{Under the Hood}), clique sur \menu{Modifier les paramètres du Proxy...} et règle comme ci-dessus.\\
 
-Pour accepter le certificat BR, il te faut d'abord le t\'el\'echarger sur \urllink{http://config/ca-br.crt}. Puis, dans Chrome, rends-toi dans \menu{Pr\'eferences}, \menu{Options avancées}, \menu{G\'erer les certificats}i, \menu{Autorit\'es} et clique sur \menu{Importer}. Il suffit alors de s\'electionner l'emplacement o\`u tu avais stock\'e le certificat et de cocher toutes les cases.
+Pour accepter le certificat BR, il te faut d'abord le t\'el\'echarger sur \urllink{http://config/ca-br.crt}.
+Puis, dans Chrome, rends-toi dans \menu{Pr\'eferences}, \menu{Options avancées}, \menu{G\'erer les certificats},
+\menu{Autorit\'es} et clique sur \menu{Importer}. Il suffit alors de s\'electionner l'emplacement o\`u tu avais stock\'e le certificat et de cocher toutes les cases.
 \imagepos{images/ca-br-chrome}{1}{Acceptation du certificat BR sous Google Chrome}{ht}
 
 \paragraph{Konqueror}
 \flimage{images/konqueror-logo}{0.07}{l}
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
-dans l'onglet \menu{Serveur mandataire} ; ensuite, choisis les même réglages que pour \app{Firefox} ci-dessus. \emph{Attention}: si tu ne configures pas le serveur mandataire dans Konqueror,
+dans l'onglet \menu{Serveur mandataire} ; ensuite, choisis les même réglages que pour \app{Firefox} ci-dessus.
+Attention : si tu ne configures pas le serveur mandataire dans Konqueror,
 les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas !
 
 \paragraph{Safari}
@@ -84,17 +87,19 @@ d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
 La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
 Lance \app{Outlook Express} et va dans le menu \menu{Outils},
 \menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
-haut \`a  droite, puis sur \menu{Courrier\ldots}, pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
+haut \`a  droite, puis sur \menu{Courrier\ldots}.
 
-Remplis les \'ecrans de configuration suivants avec ces donn\'ees :
+Pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
+
+Remplis les \'ecrans de configuration avec les donn\'ees suivantes.
 \begin{description}
-  \item[Nom complet] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
-  \item[Adresse de messagerie] de la forme \mail{prenom.nom@polytechnique.edu}
-  \item[Type de serveur de messagerie pour le courrier entrant] \menu{POP3}
-  \item[Serveur de messagerie pour le courrier entrant] \server{poly.polytechnique.fr}
-  \item[Serveur de messagerie pour le courrier sortant] \server{poly.polytechnique.fr}
-  \item[Nom du compte] ton \emph{login} \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral; si tu ne t'en souviens pas ne t'en fais pas on devrait te le redonner en cours d'informatique lors de ton premier TD. Si tu es vraiment press\'e va voir le bureau \emph{login} de la DSI.)
-  \item[Mot de passe] ton mot de passe \server{poly} ;
+  \item[Nom complet : ] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
+  \item[Adresse de messagerie : ] de la forme \mail{prenom.nom@polytechnique.edu}
+  \item[Type de serveur de messagerie pour le courrier entrant : ] \menu{POP3}
+  \item[Serveur de messagerie pour le courrier entrant : ] \server{poly.polytechnique.fr}
+  \item[Serveur de messagerie pour le courrier sortant : ] \server{poly.polytechnique.fr}
+  \item[Nom du compte : ] ton identifiant \server{poly} (en général c'est \texttt{prenom.nom}, si ça ne marche pas, va voir le bureau \emph{login} de la DSI.)
+  \item[Mot de passe : ] ton mot de passe \server{poly}
        v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
 \end{description}
 
@@ -109,9 +114,7 @@ connexion s\'ecuris\'ee (SSL)}.
 
 Comme \c{c}a, tu peux d\'esormais recevoir des \emph{mails} avec une liaison
 s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
-intercepter.
-
-Il est possible que tu aies à accepter manuellement le certificat utilisé par l'\'Ecole pour que cela fonctionne correctement. Tu le trouveras sur \urllink{http://poly}. Une fois téléchargé, il suffit de l'importer.
+intercepter. Il est possible que tu aies à accepter manuellement le certificat utilisé par l'\'Ecole pour que cela fonctionne correctement. Tu le trouveras sur \urllink{http://poly}. Une fois téléchargé, il suffit de l'importer.
 
 \imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
 des serveurs \emph{mail}}{!h}{config:win:mail}
@@ -140,13 +143,13 @@ l'onglet \menu{R\'eception des messages} en cliquant sur le bouton
   \end{figure*}
 
 
-Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral} :
+Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral}.
 \begin{description}
-  \item[Nom] le nom du compte, par exemple : Mails Poly
-  \item[Utilisateur] rentre le \emph{login} \server{poly} que t'a fourni la DSI \`a  ton arriv\'ee sur le plateau
-  \item[Mot de passe] et l\`a  le mot de passe \server{poly}
-  \item[Serveur] \server{poly.polytechnique.fr}
-  \item[Port] 995
+  \item[Nom : ] le nom du compte, par exemple : Mails Poly
+  \item[Utilisateur : ] l'identifiant \server{poly} que t'a fourni la DSI \`a  ton arriv\'ee sur le plateau
+  \item[Mot de passe : ] le mot de passe \server{poly}
+  \item[Serveur : ] \server{poly.polytechnique.fr}
+  \item[Port : ] 995
 \end{description}
 Ensuite, va dans l'onglet \menu{Extras} et coche la case
 \menu{Utiliser SSL pour s\'ecuriser les t\'el\'echargements}.
@@ -216,7 +219,11 @@ Si tu as d\'ej\`a  cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \
 N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995. Tu souhaiteras alors certainement installer le certificat de s\'ecurit\'e de \server{poly} (tu le trouveras sur \urllink{http://poly/}). Une fois que tu as t\'el\'echarg\'e le certificat, ouvre le fichier \menu{.CRT} obtenu, et dans \app{Trousseau d'acc\`es}, installe-le dans %\menu{X509Anchors} (Tiger) ou 
 \menu{session} (Leopard).
 
-Cette configuration marche pour acc\'eder \`a  ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer. En revanche tu ne peux pas envoyer de \emph{mails} depuis l'ext\'erieur , car le serveur \server{poly} ne le permet pas. Nous te conseillons vivement d'utiliser le serveur SMTP \server{polytechnique.org} et de regarder la configuration propos\'ee par \urllink{Polytechnique.org}. Celle-ci permet d'envoyer des \emph{mails} s\^urs \`a  l'ext\'erieur de l'\'Ecole sans modifier ta configuration par la suite. Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Pr\'ef\'erences} de \emph{mail} et r\'egler dans l'onglet \menu{Avanc\'es} comme dans la capture.
+Cette configuration marche pour acc\'eder \`a  ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer.
+En revanche tu ne peux pas envoyer de \emph{mails} depuis l'ext\'erieur, car le serveur \server{poly} ne le permet pas.
+Nous te conseillons vivement d'utiliser le serveur SMTP \server{polytechnique.org} et de regarder la configuration propos\'ee par \urllink{Polytechnique.org}.
+Celle-ci permet d'envoyer des \emph{mails} \`a  l'ext\'erieur de l'\'Ecole de façon sécurisée, sans modifier ta configuration par la suite.
+Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Pr\'ef\'erences} de \emph{mail} et r\'egler dans l'onglet \menu{Avanc\'es} comme dans la capture.
 
 \begin{figure*}[!hl]
     \begin{center}
