@@ -1,0 +1,34 @@
+\subsection{Se connecter à des serveurs à travers le proxy}
+
+\subsubsection{Socat}
+
+\app{Socat} est un utilitaire qui permet d'établir des connections à travers le proxy. Pour l'installer la procédure dépend de ton système d'exploitation :
+
+\paragraph{Sous Windows} Télécharge-le sur \urllink{http://blog.gentilkiwi.com/programmes/socat}
+\paragraph{Sous Linux} Fais \cmd{sudo apt-get install socat} dans une console (si tu n'es pas sous Ubuntu/Kubuntu il faudra adapter la ligne)
+\paragraph{Sous Mac} Il faut avoir installé \app{Fink} (page \pageref{mac-fink}) puis faire dans une console
+\cmdline{fink selfupdate \\
+fink update-all \\
+fink install socat
+}
+
+\subsubsection{Ssh et Git}
+
+Sous Windows il n'y a pas de problème car \app{Putty} permet de paramétrer le proxy en allant dans \menu{Connection} puis \menu{Proxy} et en mettant les options comme ci-dessous :
+
+\imagepos{images/putty_proxy}{0.5}{Connexion à travers le proxy avec \app{Putty}}{!h}
+
+Pour les autres le mieux est de définir une commande sshExt qui fonctionnera comme un ssh normal mais en passant à travers le proxy :
+\cmdline{alias scpExt="scp -o ProxyCommand='socat - PROXY:kuzh:\%h:\%p,proxyport=8080'" \\
+alias sshExt="ssh -o ProxyCommand='socat - PROXY:kuzh:\%h:\%p,proxyport=8080'"}
+
+Lorsque tu as la flemme de taper sshExt ou que tu veux utiliser git il faut rajouter deux lignes dans \file{/home/user/.ssh/config}, par exemple pour toujours passer par le proxy lorsque tu te connectes à \server{github.com} :
+\cmdline{Host github.com \\
+    ProxyCommand socat - PROXY:kuzh:\%h:\%p,proxyport=8080
+}
+
+\subsubsection{Mail}
+
+Si tu dois absolument utiliser un serveur mail et que tu ne peux pas faire de redirections mail alors tu peux créer un tunnel vers le serveur de mail en utilisant dans une console :
+\cmdline{socat TCP-L:6663,fork,reuseaddr PROXY:kuzh:<nom de ton serveur>:993}
+Ensuite tu devras configurer ton logiciel de mail pour qu'il se connecte à \server{127.0.0.1} sur le port 6663.
