@@ -17,7 +17,7 @@ nous t'invitons \`a  regarder directement la section sur les licences MSDNAA en 
 
 \item \textbf{Sous Windows XP :} va dans le \menu{Menu D\'emarrer}, \menu{Panneau de configuration} et double-clique sur \menu{Connexions r\'eseau} puis sur \menu{Connexion au r\'eseau local}. Clique enfin sur \menu{Propri\'et\'es}.
 
-\item \textbf{Sous Windows Vista :} va dans le \menu{Menu D\'emarrer}, \menu{Panneau de configuration}, \menu{R\'eseau et Internet}, \menu{Centre r\'eseau et partage}. L\`a , dans le menu \`a  gauche, clique sur \menu{G\'erer les connexions r\'eseau}, puis clique droit sur \menu{Connexion au r\'eseau local} et enfin  \menu{Propri\'et\'es}~\footnote{\`A ce stade, ainsi qu'\`a  plusieurs autres \'etapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc tu confirmes, et cela \`a  chaque fois !}.
+\item \textbf{Sous Windows Vista :} va dans le \menu{Menu D\'emarrer}, \menu{Panneau de configuration}, \menu{R\'eseau et Internet}, \menu{Centre r\'eseau et partage}. L\`a, dans le menu \`a  gauche, clique sur \menu{G\'erer les connexions r\'eseau}, puis clique droit sur \menu{Connexion au r\'eseau local} et enfin  \menu{Propri\'et\'es}~\footnote{\`A ce stade, ainsi qu'\`a  plusieurs autres \'etapes de ce tutoriel, Windows Vista doit normalement t'afficher un message te demandant de confirmer l'action que tu viens d'effectuer. Donc tu confirmes, et cela \`a  chaque fois !}.
 
 \item \textbf{Sous Windows 7 :} va dans le \menu{Menu D\'emarrer}, \menu{Panneau de configuration}, \menu{R\'eseau et Internet}, \menu{Centre r\'eseau et partage}, \menu{Modifier les param\`etres de la carte}. Puis clique droit sur \menu{Connexion au r\'eseau local} et enfin  \menu{Propri\'et\'es}.
 
@@ -63,7 +63,7 @@ connexion vers l'ext\'erieur.
 
 %% \newpage
 Coche alors les cases \menu{Utiliser l'adresse IP suivante} et \menu{Utiliser l'adresse de serveur DNS suivante} et remplis les cinq champs d'adresse IP. Tu trouveras toutes les valeurs d'adresse IP n\'ecessaires pour la configuration en page~\pageref{tableau:mon_IP} ; aide-toi de la capture d'\'ecran~\ref{config:win:IP1} pour les placer. Si une partie d'adresse IP est blanche sur cette capture, c'est qu'elle t'est personnelle et que tu dois la calculer !
-Clique, ensuite sur le bouton \menu{Avanc\'e}, puis sur l'onglet
+Clique ensuite sur le bouton \menu{Avanc\'e}, puis sur l'onglet
 \menu{DNS} en haut.
 Il n'y a plus qu'\`a  remplir les diff\'erents champs comme sur la
 capture d'\'ecran suivante, avec le bouton \menu{Ajouter} et les
@@ -256,23 +256,23 @@ fl\`eches pour r\'eordonner les \'el\'ements.
 \subsubsection{Installation de l'antivirus}
 \label{antivirus} 
 
-N'oublie pas d'installer un antivirus. Tu peux par exemple télécharger Avast! (gratuit) à l'adresse suivante : \urllink{http://www.avast.com/fr-fr/free-antivirus-download}. Pour la mise à jour, il te suffit de suivre la procédure détaillée dans le paragraphe suivant.
+N'oublie pas d'installer un antivirus. Tu peux par exemple télécharger Avast! (gratuit) à l'adresse \urllink{http://www.avast.com/fr-fr/free-antivirus-download}. Pour la mise à jour, il te suffit de suivre la procédure détaillée dans le paragraphe suivant.
 
 \subsubsection{Configuration \emph{web} (serveur mandataire)}
 
 \imageref{images/win_config_proxy}{0.5}{Configuration du serveur mandataire (\emph{proxy})}{!ht}{config:win:proxy}
 
 M\^eme si tu n'utilises pas \app{Internet Explorer} comme client \emph{web}, Windows et d'autres programmes
-utilisent ses param\`etres, notamment \app{Windows Update}. Donc lance \app{Internet Explorer} et va
+utilisent ses param\`etres, notamment \app{Windows Update}. Par conséquent lance \app{Internet Explorer} et va
 dans le menu \menu{Outils}, \menu{Options Internet}, puis sur l'onglet \menu{Connexions} de la
 nouvelle fen\^etre et enfin sur \menu{Param\`etres r\'eseau} dans le bas de la fen\^etre. Tu dois \^etre arriv\'e sur une fen\^etre semblable \`a celle de la capture d'\'ecran~\ref{config:win:proxy}. L\`a, coche
 uniquement la case \menu{Utiliser un script de configuration automatique}, puis remplis le champ
 \menu{Adresse} avec \urllink{http://config/proxy.pac}.
 
-Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer} tu peux donc utiliser un autre navigateur, comme \app{Mozilla
+Une fois que tu as fait \c{c}a, tu n'as plus forc\'ement besoin d'\app{Internet Explorer}, tu peux donc utiliser un autre navigateur, comme \app{Mozilla
 Firefox}, disponible sur \urllink{http://www.mozilla-europe.org/fr/products/}.
 
-Même si tu ne configures pas Windows Update avec le paragraphe ci-dessous, n'oublie pas de régler ton navigateur web et ton client mail si tu en as un : reporte-toi page \pageref{browser}.
+Même si tu ne configures pas Windows Update avec le paragraphe ci-dessous, n'oublie pas de régler ton navigateur \emph{web} et ton client \emph{mail} si tu en as un : reporte-toi page \pageref{browser}.
 
 \subsubsection{Windows Update}
 
@@ -296,10 +296,10 @@ de Windows. Il t'est fortement recommand\'e de le faire.
 
 \begin{description}
 
-\item[Sous Windows 7] Si tu as correctement configuré ton serveur web mandataire, les mises à jours se font automatiquement.
+\item[Sous Windows 7] Si tu as correctement configuré ton serveur \emph{web} mandataire, les mises à jours se font automatiquement.
 
 \item[Sous Windows XP] Fais \menu{D\'emarrer}, \menu{Ex\'ecuter}, puis
-tape \cmd{cmd} dans la fen\^etre qui s'affiche. Une ligne de commande apparait,
+tape \cmd{cmd} dans la fen\^etre qui s'affiche. Une ligne de commande apparaît,
 il te suffit alors de taper : \cmd{proxycfg -p http://kuzh:8080} pour r\'egler
 le serveur mandataire. Pour revenir \`a  un acc\`es direct il faut taper \cmd{proxycfg -d}.
 

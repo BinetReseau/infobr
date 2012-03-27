@@ -32,10 +32,10 @@ m\^eme r\'esultat en ligne de commande il faut utiliser un script.
 \item S\'electionne la m\'ethode \menu{Manuel}.
 \item Clique sur \menu{Ajouter}, puis remplis les champs \menu{Adresse}, \menu{Masque de r\'eseau} et  \menu{Passerelle} par les donn\'ees qui te sont propres. 
 \item Compl\`ete le  champ \menu{Serveurs DNS} par \server{129.104.201.53, 129.104.201.51} et le champ \menu{Domaines de recherche} par \server{eleves.polytechnique.fr, polytechnique.fr}. 
-\item Coche enfin l'option \menu{Disponible pour tous les utilisateurs}, clique sur \menu{Appliquer} et enfin rentre ton mot de passe super-utilisateur (root).
+\item Coche enfin l'option \menu{Disponible pour tous les utilisateurs}, clique sur \menu{Appliquer} et enfin rentre ton mot de passe super-utilisateur (\emph{root}).
 \end{itemize}
 
-\item[\'Etape 2 : configuration du proxy (= serveur mandataire)] \
+\item[\'Etape 2 : configuration du \emph{proxy} (serveur mandataire)] \
 \begin{itemize}
 \item Va  dans \menu{Param\`etres Syst\`eme}, \menu{R\'eseau} puis \menu{Serveur Mandataire}.
 \item S\'electionne  la \menu{M\'ethode} \menu{Automatique}.
@@ -45,7 +45,7 @@ m\^eme r\'esultat en ligne de commande il faut utiliser un script.
 
 \item[\'Etape 3 (\'eventuellement)] \
 \begin{itemize}
-\item Clique  sur l'ic\^one de l'applet R\'eseau dans la zone de notification, en forme  de fl\`eches t\^ete-b\^eche ou d'ondes. S\'electionne le r\'eseau que tu as  configur\'e dans la 1\`ere \'etape,
+\item Clique  sur l'ic\^one de l'applet R\'eseau dans la zone de notification, en forme  de fl\`eches t\^ete-b\^eche ou d'ondes. S\'electionne le r\'eseau que tu as  configur\'e dans la première \'etape,
 et te voilà connect\'e à Internet !
 \item Une fois ta configuration r\'eseau termin\'ee, tu peux la tester en \emph{pinguant} \fkz (dans une console), o\`u tu devrais voir quelque chose comme :
 \end{itemize}
@@ -64,20 +64,20 @@ PING frankiz.eleves.polytechnique.fr (129.104.201.51) 56(84) bytes of data.\\
 Il faut d\'esormais configurer le gestionnaire de paquets pour qu'il utilise les miroirs du BR et non les miroirs à l'ext\'erieur du campus, qui sont plus lents. \
 Va  dans \menu{Applications}, \menu{Logith\`eque Ubuntu} puis menu \menu{\'edition}, \menu{Sources de logiciels...}. 
 Entre ton  mot de passe super-utilisateur puis s\'electionne l'onglet \menu{Autres  logiciels}. 
-D\'ecoche les cases comprenant une adresse du type \urllink{http://archive.canonical.com/ubuntu version}, o\`u \textit{version} correspond à la version d'Ubuntu install\'ee sur ton ordinateur. 
-À l'impression de l'InfoBR, la version actuelle est \textbf{oneiric} et la pr\'ec\'edente est \textbf{natty}. \
+D\'ecoche les cases comprenant une adresse du type \urllink{http://archive.canonical.com/ubuntu version}, o\`u \urllink{version} correspond à la version d'Ubuntu install\'ee sur ton ordinateur. 
+À l'impression de l'InfoBR, la version actuelle est \urllink{oneiric} et la pr\'ec\'edente est \urllink{natty}. \
 Clique sur \menu{Ajouter}, puis entre dans le champ \menu{Ligne APT} :
-\cmdline{deb ftp://miroir/linux/ubuntu version main restricted universe multiverse}
-Tu auras bien s\^ur remplac\'e \textit{version} par ta version d'Ubuntu (\textit{oneiric}/\textit{natty}/\textit{maverick}/...). \\
+\cmdline{deb ftp://miroir/linux/ubuntu \urllink{version} main restricted universe multiverse}
+Tu auras bien s\^ur remplac\'e \urllink{version} par ta version d'Ubuntu (\textit{oneiric}/\textit{natty}/\textit{maverick}/...). \\
 Clique ensuite sur \menu{Ajouter une source de mise à jour}. Fais de même pour les lignes suivantes :
-\cmdline{deb ftp://miroir/linux/ubuntu version-updates main restricted universe  multiverse \\
-deb ftp://miroir/linux/ubuntu version-security main restricted universe  multiverse}
+\cmdline{deb ftp://miroir/linux/ubuntu \urllink{version}-updates main restricted universe  multiverse \\
+deb ftp://miroir/linux/ubuntu \urllink{version}-security main restricted universe  multiverse}
 Tu peux aussi utiliser le d\'ep\^ot suivant mais attention il contient des logiciels non support\'es par Canonical, l'\'equipe de d\'eveloppement d'Ubuntu (en particulier il peut arriver que certains logiciels contiennent des erreurs) :
-\cmdline{deb ftp://miroir/linux/ubuntu version-backports main restricted universe multiverse}
+\cmdline{deb ftp://miroir/linux/ubuntu \urllink{version}-backports main restricted universe multiverse}
 
 Clique enfin sur \menu{Fermer} puis r\'eponds \menu{Actualiser} à la fenêtre de dialogue qui appara\^it. \\
 
-Note : il n'est pas n\'ecessaire de configurer Synaptic dans ses Pr\'ef\'erences pour y sp\'ecifier un proxy quelconque.
+Note : il n'est pas n\'ecessaire de configurer Synaptic dans ses Pr\'ef\'erences pour y sp\'ecifier un \emph{proxy} quelconque.
 
 \subsubsection{Configuration antivirus}
 
