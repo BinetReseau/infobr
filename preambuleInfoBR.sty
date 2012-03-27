@@ -26,6 +26,11 @@
 \usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=false,pdfborder={0 0 0}]{hyperref}
 \usepackage[french]{babel}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Attempt by marteo to fix the "missing nonbreakable space before ':'" bug.
+\makeatletter
+\renewcommand{\fnum@figure}{\figurename~\thefigure~}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
