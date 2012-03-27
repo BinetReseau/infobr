@@ -22,7 +22,7 @@ Pour les autres, le mieux est de définir une commande sshExt qui fonctionnera c
 \cmdline{alias scpExt="scp -o ProxyCommand='socat - PROXY:kuzh:\%h:\%p,proxyport=8080'" \\
 alias sshExt="ssh -o ProxyCommand='socat - PROXY:kuzh:\%h:\%p,proxyport=8080'"}
 
-Lorsque tu as la flemme de taper sshExt ou que tu veux utiliser git il faut rajouter deux lignes dans \file{/home/user/.ssh/config}, par exemple pour toujours passer par le \proxy{proxy} lorsque tu te connectes à \server{github.com} :
+Lorsque tu as la flemme de taper sshExt ou que tu veux utiliser git il faut rajouter deux lignes dans \file{/home/user/.ssh/config}, par exemple pour toujours passer par le \emph{proxy} lorsque tu te connectes à \server{github.com} :
 \cmdline{Host github.com \\
     ProxyCommand socat - PROXY:kuzh:\%h:\%p,proxyport=8080
 }
