@@ -1,7 +1,7 @@
 all: InfoBR.pdf
 
 InfoBR.pdf: InfoBR.ps
-	ps2pdf $< $@
+	sed '1,/^%%EndComments/ s/^%%Title:.*/%%Title: InfoBR/' < $<| ps2pdf - $@
 
 InfoBR.ps: couv.ps page.ps 4eme.ps content.ps
 	a2ps --portrait --columns=1 -o$@ couv.ps page.ps content.ps page.ps 4eme.ps
