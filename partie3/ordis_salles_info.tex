@@ -1,24 +1,28 @@
 \subsection{Acc\`es \`a des serveurs distants depuis chez toi}
 
+\subsubsection{Se connecter aux salles infos}
+
+Les machines des salles infos ont des noms sympathiques \`a base de noms d'oiseaux, marques de voitures, noms d'os, noms de poisson\dots Essaye un serveur avec un nom de ce type avec ton utilisateur et mot de passe des salles infos (les m\^emes que pour ENEX). Tu n'as pas besoin de te connecter \`a chaque fois \`a la m\^eme machine, ton compte sera le m\^eme sur toutes. Pour plus de d\'etails sur la connexion \`a distance, consulte \newline \urllink{http://wikix.polytechnique.org/Acc\%C3\%A8s\_\%C3\%A0\_distance\_aux\_machines\_des\_salles\_info} 
+
+
+
 \subsubsection{Ssh pour Linux et Mac}
 
-Sous Linux et Mac, pour te connecter en ligne de commande à un serveur distant il suffit d'ouvrir une console puis de taper en remplaçant utilisateur et serveur comme il faut : \cmd{ssh utilisateur@serveur} Pour récupérer des fichiers des ordis des salles infos tu peux utiliser \app{FileZilla} de la même façon que sous Windows.
+Sous Linux et Mac, pour te connecter en ligne de commande \`a un serveur distant il suffit d'ouvrir une console puis de taper en rempla\c{c}ant utilisateur et serveur comme il faut : \cmd{ssh -X utilisateur@serveur}. Le -X n'est pas indispensable, mais il permet d'utiliser une interface graphique et d'ouvrir des applications. Pour r\'ecup\'erer des fichiers des ordis des salles infos tu peux utiliser \app{FileZilla} de la m\^eme fa\c{c}on que sous Windows.
 
 \subsubsection{Putty et FileZilla (SFTP) pour Windows}
 
-Pour ouvrir une ligne de commande à distance tu vas devoir utiliser \app{Putty} à télécharger sur \urllink{http://www.putty.org/} ;
-ensuite pour te connecter à un serveur ouvre \app{Putty} et tape le nom du serveur puis clique sur \menu{Open}.
-Une console s'ouvrira et te demandera ton um d'utilisateur et ton mot de passe, puis tu auras accès aux fichiers sur le serveur distant.
+Pour ouvrir une ligne de commande \`a distance tu vas devoir utiliser \app{Putty} \`a t\'el\'echarger sur \urllink{http://www.putty.org/} ;
+ensuite pour te connecter \`a un serveur ouvre \app{Putty} et tape le nom du serveur puis clique sur \menu{Open}.
+Une console s'ouvrira et te demandera ton um d'utilisateur et ton mot de passe, puis tu auras acc\`es aux fichiers sur le serveur distant.
 
 \imagepos{images/putty_connexion}{0.5}{Connexion au serveur \server{Moselle} avec \app{Putty}}{!h}
 
-Lorsque tu voudras télécharger des fichiers depuis un serveur (comme dans les salles infos) tu pourras utiliser \app{FileZilla} en allant dans \menu{Fichier} puis \menu{Gestionnaire de Sites} et en rajoutant un site en SFTP (comme sur l'image).
+Lorsque tu voudras t\'el\'echarger des fichiers depuis un serveur (comme dans les salles infos) tu pourras utiliser \app{FileZilla} en allant dans \menu{Fichier} puis \menu{Gestionnaire de Sites} et en rajoutant un site en SFTP (comme sur l'image).
 
 \imagepos{images/filezilla_connexion}{0.5}{Connexion en SFTP avec \app{FileZilla}}{!h}
 
-\subsubsection{Se connecter aux salles infos}
 
-Les machines des salles infos ont des noms sympathiques à base de noms d'oiseaux, marques de voitures, noms d'os, noms de poisson\dots Essaye un serveur avec un nom de ce type avec ton utilisateur et mot de passe des salles infos (les mêmes que pour ENEX). Tu n'as pas besoin de te connecter à chaque fois à la même machine, ton compte sera le même sur toutes. 
 
 %  \paragraph{WinSCP} Un logiciel pratique qui te permet de te connecter en salle info.
  %                 Son fonctionnement est expliqu\'e en d\'etails dans le WikiX (\urllink{http://winscp.net}).  \\

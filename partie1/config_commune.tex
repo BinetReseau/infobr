@@ -7,7 +7,7 @@
 \flimage{images/firefox-logo}{0.07}{l}
 
 Lance \app{Mozilla Firefox}, et va dans le menu \menu{Outils},
-\menu{Options...} (ou \menu{\'Edition}, \menu{Préférences...} sous Linux.) L\`a , s\'electionne la rubrique \menu{Avanc\'e}, onglet \menu{R\'eseau}, et clique sur
+\menu{Options...} (ou \menu{\'Edition}, \menu{Pr\`ef\`erences...} sous Linux). L\`a , s\'electionne la rubrique \menu{Avanc\'e}, onglet \menu{R\'eseau}, et clique sur
 \menu{Param\`etres}. La case \`a  cocher est alors \menu{Adresse de configuration automatique du proxy},
 et l'adresse \`a  indiquer est : \urllink{http://config/proxy.pac}.
 
@@ -38,11 +38,11 @@ Il suffit se se rendre sur \urllink{http://config/ca-br.crt} et de cocher toutes
 \paragraph{Google Chrome}
 \flimage{images/google-chrome-logo}{0.07}{l}
 
-Pour \app{Google Chrome}, la configuration du serveur mandataire se r\`egle automatique sur celle du système. Tu n'es donc pas obligé de régler le \emph{proxy} toi-même. Cependant, pour le faire manuellement, clique sur la
-clef à molette en haut à droite, choisis \menu{Options}, va dans l'onglet \menu{Paramètres avancés} (ou \menu{Under the Hood}), clique sur \menu{Modifier les paramètres du Proxy...} et règle comme ci-dessus.\\
+Pour \app{Google Chrome}, la configuration du serveur mandataire se r\`egle automatique sur celle du système. Tu n'es donc pas oblig\`e de r\`egler le \emph{proxy} toi-même. Cependant, pour le faire manuellement, clique sur la
+clef à molette en haut à droite, choisis \menu{Options}, va dans l'onglet \menu{Paramètres avanc\`es} (ou \menu{Under the Hood}), clique sur \menu{Modifier les paramètres du Proxy...} et règle comme ci-dessus.\\
 
 Pour accepter le certificat BR, il te faut d'abord le t\'el\'echarger sur \urllink{http://config/ca-br.crt}.
-Puis, dans Chrome, rends-toi dans \menu{Pr\'eferences}, \menu{Options avancées}, \menu{G\'erer les certificats},
+Puis, dans Chrome, rends-toi dans \menu{Pr\'eferences}, \menu{Options avanc\`ees}, \menu{G\'erer les certificats},
 \menu{Autorit\'es} et clique sur \menu{Importer}. Il suffit alors de s\'electionner l'emplacement o\`u tu avais stock\'e le certificat et de cocher toutes les cases.
 \imagepos{images/ca-br-chrome}{1}{Acceptation du certificat BR sous Google Chrome}{ht}
 
@@ -50,16 +50,17 @@ Puis, dans Chrome, rends-toi dans \menu{Pr\'eferences}, \menu{Options avancées}
 \flimage{images/konqueror-logo}{0.07}{l}
 
 Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
-dans l'onglet \menu{Serveur mandataire} ; ensuite, choisis les même réglages que pour \app{Firefox} ci-dessus.
+dans l'onglet \menu{Serveur mandataire} ; ensuite, choisis les même r\`eglages que pour \app{Firefox} ci-dessus.
 Attention : si tu ne configures pas le serveur mandataire dans Konqueror,
 les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas !
 
-\paragraph{Safari}
-\flimage{images/mac_safari_icone}{0.07}{l}
 
-\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorit\'e des sites \emph{web}. Tu peux donc t'en servir au quotidien,
-en faisant appel \`a  \app{Firefox} pour les sites r\'ecalcitrants. Un conseil : pense \`a  activer le blocage des fen\^etres \emph{pop-up} (dans le menu \menu{Safari}). \\
+%%% pas besoin de configurer au niveau navigateur sur Mac OS
+%\paragraph{Safari}
+%\flimage{images/mac_safari_icone}{0.07}{l}
 
+%\app{Safari}, le navigateur web d'Apple, est maintenant compatible avec la majorit\'e des sites \emph{web}. Tu peux donc t'en servir au quotidien,
+%en faisant appel \`a  \app{Firefox} pour les sites r\'ecalcitrants. 
 
 %% CE TRUC EST PAS A SA PLACE ICI.
 
@@ -97,8 +98,8 @@ Remplis les \'ecrans de configuration avec les donn\'ees suivantes.
   \item[Adresse de messagerie : ] de la forme \mail{prenom.nom@polytechnique.edu}
   \item[Type de serveur de messagerie pour le courrier entrant : ] \menu{POP3}
   \item[Serveur de messagerie pour le courrier entrant : ] \server{poly.polytechnique.fr}
-  \item[Serveur de messagerie pour le courrier sortant : ] \server{poly.polytechnique.fr}
-  \item[Nom du compte : ] ton identifiant \server{poly} (en général c'est \texttt{prenom.nom}, si ça ne marche pas, va voir le bureau \emph{login} de la DSI.)
+  \item[Serveur de messagerie pour le courrier sortant : ] \server{poly.polytechnique.fr} ou \newline \server{ssl.polytechnique.org}
+  \item[Nom du compte : ] ton identifiant \server{poly} (en g\`en\`eral c'est \texttt{prenom.nom}, si ça ne marche pas, va voir le bureau \emph{login} de la DSI.)
   \item[Mot de passe : ] ton mot de passe \server{poly}
        v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
 \end{description}
@@ -114,7 +115,7 @@ connexion s\'ecuris\'ee (SSL)}.
 
 Comme \c{c}a, tu peux d\'esormais recevoir des \emph{mails} avec une liaison
 s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
-intercepter. Il est possible que tu aies à accepter manuellement le certificat utilisé par l'\'Ecole pour que cela fonctionne correctement. Tu le trouveras sur \urllink{http://poly}. Une fois téléchargé, il suffit de l'importer.
+intercepter. Il est possible que tu aies à accepter manuellement le certificat utilis\`e par l'\'Ecole pour que cela fonctionne correctement. Tu le trouveras sur \urllink{http://poly}. Une fois t\'el\'echarg\'e, il suffit de l'importer.
 
 \imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
 des serveurs \emph{mail}}{!h}{config:win:mail}
@@ -159,7 +160,7 @@ bouton \menu{Ajouter\ldots}. Utilise les param\`etres suivants pour le
 configurer :
 \begin{description}
   \item[Nom] le m\^eme nom de compte que pr\'ec\'edemment
-  \item[Serveur] \server{poly.polytechnique.fr}
+  \item[Serveur] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
   \item[Port] 25
 \end{description}
 Sinon, laisse toutes les cases d\'ecoch\'ees.
@@ -222,7 +223,7 @@ N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\
 Cette configuration marche pour acc\'eder \`a  ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer.
 En revanche tu ne peux pas envoyer de \emph{mails} depuis l'ext\'erieur, car le serveur \server{poly} ne le permet pas.
 Nous te conseillons vivement d'utiliser le serveur SMTP \server{polytechnique.org} et de regarder la configuration propos\'ee par \urllink{Polytechnique.org}.
-Celle-ci permet d'envoyer des \emph{mails} \`a  l'ext\'erieur de l'\'Ecole de façon sécurisée, sans modifier ta configuration par la suite.
+Celle-ci permet d'envoyer des \emph{mails} \`a  l'ext\'erieur de l'\'Ecole de façon s\`ecuris\`ee, sans modifier ta configuration par la suite.
 Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Pr\'ef\'erences} de \emph{mail} et r\'egler dans l'onglet \menu{Avanc\'es} comme dans la capture.
 
 \begin{figure*}[!hl]

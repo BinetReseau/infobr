@@ -8,13 +8,13 @@
 
 \subsection{Configuration sous Mac OS X}
 
-La configuration est d\'etaill\'ee pour Mac OS 10.5 (\app{Leopard}). %et encore un peu pour Mac OS 10.4 (Tiger).
+La configuration est d\'etaill\'ee pour Mac OS 10.8 (\app{Mountain Lion}), elle est sensiblement identique sur Mac OS 10.7 (\app{Lion}), Mac OS 10.6 (\app{Snow Leopard}) et Mac OS 10.5 (\app{Leopard}).
 Afin de conna\^itre la version que tu utilises, va dans le \menu{menu Pomme} puis s\'electionne \menu{\`A propos de ce Mac}.
 
 \subsubsection{Configuration IP}
 
 \flimage{images/mac_prefs_icone}{0.07}{l}
- \app{Pr\'ef\'erences R\'eseau}, accessible depuis l'article de menu \menu{Pr\'ef\'erences syst\`eme} du menu \menu{Pomme}, permet de configurer la connexion au r\'eseau. Par ailleurs, si au d\'emarrage un assistant te propose de configurer ton r\'eseau, refuse et utilise la proc\'edure du BR. En effet, le r\'eseau n\'ecessite une configuration particuli\`ere  \`a l'X, plus complexe que celle effectu\'ee par cet assistant.
+ \app{Pr\'ef\'erences R\'eseau}, accessible depuis l'article de menu \menu{Pr\'ef\'erences syst\`eme} du menu \menu{Pomme}, permet de configurer la connexion au r\'eseau. Par ailleurs, si au d\'emarrage un assistant te propose de configurer ton r\'eseau, refuse et utilise la proc\'edure du BR. En effet, le r\'eseau n\'ecessite une configuration particuli\`ere \`a l'X, plus complexe que celle effectu\'ee par cet assistant.
 
 
 \noindent
@@ -24,37 +24,33 @@ Afin de conna\^itre la version que tu utilises, va dans le \menu{menu Pomme} pui
      % \hfill
       \subfloat[Cr\'eer une nouvelle configuration r\'eseau]{ 
       \begin{minipage}{0.43 \textwidth}\begin{flushleft}
-      {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_1}}\\ \vspace*{2cm}
-      {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_leopard_2}} 
+      {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_mountain_lion_1}}\\ \vspace*{2cm}
+      {\includegraphics[width=0.96\textwidth]{images/mac_nouvelle_config_mountain_lion_2}} 
         \end{flushleft}  \end{minipage}
         }
         \subfloat[Configuration de l'interface r\'eseau \emph{Ethernet}, de l'adresse IP et du \emph{proxy}]{ 
         \begin{minipage}{0.43 \textwidth}\begin{flushright}
-        {\includegraphics[width=0.96 \textwidth]{images/mac_config_ethernet}} \\ 
-        {\includegraphics[width=0.96 \textwidth]{images/mac_config_ip_leopard}} \\
-        {\includegraphics[width=0.96 \textwidth]{images/mac_config_proxy_leopard}}
+        {\includegraphics[width=0.96 \textwidth]{images/mac_config_ip_mountain_lion}} \\
+        {\includegraphics[width=0.96 \textwidth]{images/mac_config_proxy_mountain_lion}}
         \end{flushright}
         \end{minipage}
-            \label{config:mac:ip:leopard}   }
+            \label{config:mac:ip:mountain_lion}   }
         \caption{Cr\'eer une nouvelle configuration r\'eseau}
 
     \end{center}
   \end{figure*}
 
-\pagebreak
+%\pagebreak
 
-La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs configurations et de passer en un clic de l'une  l'autre gr\^ace au sous-menu \menu{Configuration R\'eseau} du menu \menu{Pomme}. Cela est tr\`es pratique pour les machines vou\'ees \`a  \^etre connect\'ees \`a  plusieurs endroits successivement --- les portables par exemple (voir la page~\pageref{wifi} puis la section \emph{Wi-Fi} pour plus de pr\'ecisions sur le \emph{Wi-Fi}). Commence donc par cr\'eer une nouvelle configuration r\'eseau dans le menu d\'eroulant \menu{Configuration}.
-
-
-
+La gestion des configurations r\'eseau de Mac OS X permet de cr\'eer plusieurs configurations et de passer en un clic de l'une  l'autre gr\^ace au sous-menu \menu{Configuration R\'eseau} du menu \menu{Pomme}. Cela est tr\`es pratique pour les machines vou\'ees \`a  \^etre connect\'ees \`a  plusieurs endroits successivement, typiquement les portables (voir la section \emph{Wi-Fi} page~\pageref{wifi} pour plus de pr\'ecisions sur le \emph{Wi-Fi}). Commence donc par cr\'eer une nouvelle configuration r\'eseau dans le menu d\'eroulant \menu{Configuration}.
+\\
+\\
 Une fois la nouvelle configuration cr\'e\'ee, il faut configurer l'interface r\'eseau \emph{Ethernet}.
 
 
+\app{Mountain Lion} : Dans la colonne de gauche, s\'electionne \menu{Ethernet}.
 
-\app{Leopard} : Dans la colonne de gauche, s\'electionne \menu{Ethernet int\'egr\'e}.
-
-Choisis alors \menu{Configurer IPv4} :% \menu{Manuellement} (\app{Tiger}) ou 
-\menu{Configurer} : \menu{Manuellement} (\app{Leopard}). Tu trouveras toutes les valeurs d'adresses IP n\'ecessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant aux captures d'\'ecran~\ref{config:mac:ip:leopard}. Si une partie d'adresse IP est blanche sur ces captures, c'est qu'elle t'est personnelle et que tu dois la calculer !
+Choisis alors \menu{Configurer IPv4} : \menu{Manuellement}. Tu trouveras toutes les valeurs d'adresses IP n\'ecessaires pour la configuration en page \pageref{calcul_ip} ou en te reportant aux captures d'\'ecran~\ref{config:mac:ip:mountain_lion}. Remplis le champ \emph{Routeur} avec l'adresse de passerelle que tu as calcul\'ee. Si une partie d'adresse IP est blanche sur ces captures, c'est qu'elle t'est personnelle et que tu dois la calculer !
 
 
   
@@ -63,24 +59,23 @@ Choisis alors \menu{Configurer IPv4} :% \menu{Manuellement} (\app{Tiger}) ou
 %\imageref{images/mac_config_ip_leopard}{0.4}{Configuration IP (Leopard)}{!ht}{config:mac:ip:leopard}}
 \vspace{4mm}
 
-Pour avoir acc\`es \`a  Internet, il faut aussi configurer le \emph{proxy}.
+\textbf{Pour avoir acc\`es \`a  Internet, il faut aussi configurer le \emph{serveur DNS} et le \emph{proxy}.}
 
-\app{Leopard} : Clique sur le bouton \menu{Avanc\'e...} puis sur l'onglet \menu{Proxys}.
-
-
-\app{Mac OS X 10.3.3 et sup\'erieur} :  choisis l'option \menu{Configuration automatique de proxy} et indique \urllink{http://config/proxy.pac} comme URL de fichier PAC. Pour Mac OS X 10.3 \`a 10.3.2, n'oublie pas, une fois que tu as le r\'eseau, de faire la mise \`a  jour de ton syst\`eme, pour pouvoir configurer de fa\c con automatique le \emph{proxy}.
-
-\app{Mac OS X 10.3.2 et inf\'erieur} : il te faut sp\'ecifier tous les
-\emph{proxies} manuellement, et mettre \server{kuzh.polytechnique.fr}, port \server{8080}. Malheureusement, cele te permettra uniquement d'acc\'eder aux sites h\'eb\'erg\'es hors du pl\^atal : les sites \'el\`eves ne fonctionneront pas.
+Configuration du \emph{serveur DNS} : clique sur le bouton \menu{Avanc\'e...} puis va dans l'onglet \menu{DNS}. Ajoute les serveurs DNS 129.104.201.53 et 129.104.201.51 dans la colonne de gauche et les domaines de recherche \emph{eleves.polytechnique.fr} et \emph{polytechnique.fr} dans la colonne de droite.
 
 
-N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
-\subsubsection{Configuration antivirus}
+Configuration du \emph{proxy} : va dans l'onglet \menu{Proxys} et rempli l'URL comme dans la capture d'\'ecran. N'oublie pas d'activer le mode passif pour les transferts en FTP, en cochant la case comme dans la capture.
 
-Bien qu'il soit important de maintenir ton syst\`eme \`a  jour, un antivirus est pour l'instant tout \`a  fait superflu sur Mac,
-puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assur\'e la provenance,
-et essaie de te tenir au courant des actualit\'es concernant les failles des applications que tu utilises.
+Sous Mac OS, le r\'eglage du proxy se fait au niveau des pr\'ef\'erences syst\`emes et n'a donc pas \`a \^etre sp\'ecifi\'e pour chaque navigateur. Tu peux donc sauter la partie \emph{Configuration de ton navigateur Web}.
+
+
+
+%\subsubsection{Configuration antivirus}
+
+%Bien qu'il soit important de maintenir ton syst\`eme \`a  jour, un antivirus est pour l'instant tout \`a  fait superflu sur Mac,
+%puisqu'aucun virus fonctionnel n'a encore vu le jour. Attention cependant, n'ouvre pas des fichiers dont tu ne te sois pas assur\'e la provenance,
+%et essaie de te tenir au courant des actualit\'es concernant les failles des applications que tu utilises.
 
 
 \subsubsection{Autres logiciels utiles}
@@ -105,6 +100,6 @@ et essaie de te tenir au courant des actualit\'es concernant les failles des app
 
 \paragraph{}
 \flimage{images/logo_Windows}{0.1}{l}
- \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows gr\^ace \`a  \app{Boot Camp}, livr\'e avec \app{Leopard}. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux \'egalement virtualiser Windows (utiliser Windows en utilisant en m\^eme temps Mac OS) gr\^ace \`a  \app{VMware Fusion}, \app{VirtualBox} ou \app{Parallels Desktop}. Le  d\'efaut de cette solution est que tu n'as pas d'acc\'el\'eration 3D, donc pour les jeux il te faudra red\'emarrer. Ces trois logiciels sont disponibles sur leurs sites \emph{web} respectifs. \`A toi de choisir !
+ \app{Windows et les Mac Intel} : Maintenant il est possible d'installer Windows gr\^ace \`a  \app{Boot Camp}, livr\'e avec \app{Leopard} et les version suivantes. Cela te permettra de profiter des quelques applications du monde PC qui valent le coup tout en gardant ton Mac. Tu peux \'egalement virtualiser Windows (utiliser Windows en utilisant en m\^eme temps Mac OS) gr\^ace \`a  \app{VMware Fusion}, \app{VirtualBox} ou \app{Parallels Desktop}. Le  d\'efaut de cette solution est que tu n'as pas d'acc\'el\'eration 3D, donc pour les jeux il te faudra red\'emarrer. Ces trois logiciels sont disponibles sur leurs sites \emph{web} respectifs. \`A toi de choisir !
 
 \clearpage
