@@ -9,7 +9,7 @@
 
   \item[Client] (voir serveur) : programme qui permet de se connecter \`a un serveur. Par exemple un client \emph{mail}
 	(comme \app{Thunderbird}) ou un client FTP (comme \app{FileZilla}).
-%   \item[Crosspost] Paradis perdu. Voir page 11.
+  \item[Crosspost] Paradis perdu. Voir page 11.
   \item[DNS] \emph{Domain Name Server} : associe un nom de machine \`a une adresse IP, par exemple \server{frankiz} \`a  $129.104.201.51$.
   \item[DSI] (Direction des Syst\`emes d'Information) ce sont eux qui g\`erent tout le mat\'eriel informatique de l'\'Ecole, ton t\'el\'ephone, ton acc\`es internet, tes \emph{mails}\ldots\ un conseil : ne joue pas au plus malin avec eux.
 
@@ -24,7 +24,7 @@
   \item[InfoGeek et Inf'Autiste] Respectivement INF422 : \og Composants d'un syst\`eme informatique \fg, et INF423 : \og Fondements de l'informatique : logique, mod\`eles, calculs \fg.
 Deux cours courts que le BR t'encourage vivement \`a choisir pour ta 2A.
 
-%   \item[Iooss] Personnage mythique du BR. Certains racontent que son \^ame hante toujours le r\'eseau de l'\'Ecole...
+  \item[Iooss] Personnage mythique du BR. Certains racontent que son \^ame hante toujours le r\'eseau de l'\'Ecole...
   
    \item[Java] Langage de programmation utilis\'e dans le cadre des cours d'informatique. Ses qualit\'es sont sujettes \`a d\'ebat.
    
@@ -47,9 +47,5 @@ Deux cours courts que le BR t'encourage vivement \`a choisir pour ta 2A.
   
   \item[Wiki*] Mot hawa\"ien pour \og rapide \fg, a donn\'e son nom \`a la c\'el\`ebre Wikip\'edia, encyclop\'edie \'editable par tous.
   Par extension, d\'esigne tout site construit sur ce mod\`ele, par exemple le WikiX et le WikiBR (enfin, le BR ne te permet pas de tout \'editer sur ses pages).
-  
   \item[Windows] Moyen le plus efficace de t\'el\'echarger Linux.
-  
-  \item[Internet Explorer] Seul moyen de t\'el\'echarger Firefox.
-  
 \end{description}
