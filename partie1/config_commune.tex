@@ -72,176 +72,182 @@ les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas !
 %                            MAIL                                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Configuration de ton client \emph{mail}}
+\subsection{Les mails}
 
-La DSI met \`a  ta disposition une bo\^{i}te aux lettres \'electronique sur
-le serveur \server{poly} ; cette section t'explique comment
-configurer \app{Windows Mail}, \app{Kmail} et \app{Mac OS Mail} pour y avoir acc\`es. Tu peux bien
-s\^{u}r utiliser \app{Thunderbird} si tu pr\'ef\`eres, les donn\'ees \`a  rentrer
-pour la configuration sont les m\^emes ; quelques d\'etails sont donn\'es
-dans le WikiX sur \fkz. De plus, tu trouveras des explications plus
-d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
+La DSI met à ta disposition l'adresse \mail{prenom.nom@polytechnique.edu}. Par d\'efaut cette adresse redirige vers l'adresse que tu as fournie à SCEI-Concours. Tu peux changer cette redirection en allant sur \urllink{https://mail.polytechnique.fr/}. Ne t'inquiètes pas si ton navigateur affiche un avertissement quand tu te connectes, c'est juste que le certificat de la DSI n'est pas approuv\'e. Commence par cliquer sur connexion en haut à droite, le login est \mail{prenom.nom}. Attention, le mot de passe n'est pas ton mot de passe ENEX/Salles info, c'en est un que la DSI a d\^u te donner à l'inkhorpo. Mais ce n'est pas grave si tu l'as perdu, tu peux en r\'ecup\'erer un nouveau en cliquant sur "Si vous avez perdu votre mot de passe...". Le nouveau mot de passe te sera renvoyé sur ton adresse \mail{polytechnique.edu}, donc redirig\'e par d\'efaut vers l'adresse que tu as donn\'ee à SCEI. Si tu ne peux plus acc\'eder à cette adresse, il va falloir aller voir la DSI... Ils pourront changer tes redirections.
 
-\paragraph{Outlook et Windows Mail}
-\flimage{images/outlook-logo}{0.07}{l}
+Si tu veux envoyer des mails avec ton adresse en \mail{polytechnique.edu}, la DSI a mis en place cette ann\'ee un nouveau webmail, auquel tu peux acc\'eder en allant sur \urllink{webmail/}, ou depuis l'extérieur du pl\^atal \urllink{webmail.polytechnique.edu}. 
 
-La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
-Lance \app{Outlook Express} et va dans le menu \menu{Outils},
-\menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
-haut \`a  droite, puis sur \menu{Courrier\ldots}.
-
-Pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
-
-Remplis les \'ecrans de configuration avec les donn\'ees suivantes.
-\begin{description}
-  \item[Nom complet : ] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
-  \item[Adresse de messagerie : ] de la forme \mail{prenom.nom@polytechnique.edu}
-  \item[Type de serveur de messagerie pour le courrier entrant : ] \menu{POP3}
-  \item[Serveur de messagerie pour le courrier entrant : ] \server{poly.polytechnique.fr}
-  \item[Serveur de messagerie pour le courrier sortant : ] \server{poly.polytechnique.fr} ou \newline \server{ssl.polytechnique.org}
-  \item[Nom du compte : ] ton identifiant \server{poly} (en g\`en\`eral c'est \texttt{prenom.nom}, si ça ne marche pas, va voir le bureau \emph{login} de la DSI.)
-  \item[Mot de passe : ] ton mot de passe \server{poly}
-       v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
-\end{description}
-
-Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}.
-
-Tu te retrouves alors sur la fen\^etre \menu{Comptes Internet}. Va sur
-l'onglet \menu{Courrier}, clique sur le compte que tu viens de cr\'eer
-puis sur \menu{Propri\'et\'es}. Clique sur l'onglet \menu{Avanc\'e} et
-configure comme sur la capture~\ref{config:win:mail} ; en
-particulier, coche la seconde case \menu{Ce serveur n\'ecessite une
-connexion s\'ecuris\'ee (SSL)}.
-
-Comme \c{c}a, tu peux d\'esormais recevoir des \emph{mails} avec une liaison
-s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
-intercepter. Il est possible que tu aies à accepter manuellement le certificat utilis\`e par l'\'Ecole pour que cela fonctionne correctement. Tu le trouveras sur \urllink{http://poly}. Une fois t\'el\'echarg\'e, il suffit de l'importer.
-
-\imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
-des serveurs \emph{mail}}{!h}{config:win:mail}
-
-
-
-\paragraph{Kmail}
-\flimage{images/kmail-logo}{0.07}{l}
-
-Pour \app{Kmail}, va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la
-rubrique \menu{Comptes}. Commence par cr\'eer un nouveau compte dans
-l'onglet \menu{R\'eception des messages} en cliquant sur le bouton
-\menu{Ajouter\ldots} et choisis le type POP3.
-
-
-\noindent
-  \begin{figure*}[!h]
-    \begin{center}  
-      \subfloat[R\'eception des messages]{ 
-      \includegraphics[width=0.48\textwidth]{images/nux_config_kmail_pop} }
-      \hspace{\stretch{1}}
-      \subfloat[Envoi des messages]{ 
- \includegraphics[width=0.48 \textwidth]{images/nux_config_kmail_smtp} }
- \caption{Configuration sous \app{Kmail}}
-    \end{center}
-  \end{figure*}
-
-
-Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral}.
-\begin{description}
-  \item[Nom : ] le nom du compte, par exemple : Mails Poly
-  \item[Utilisateur : ] l'identifiant \server{poly} que t'a fourni la DSI \`a  ton arriv\'ee sur le plateau
-  \item[Mot de passe : ] le mot de passe \server{poly}
-  \item[Serveur : ] \server{poly.polytechnique.fr}
-  \item[Port : ] 995
-\end{description}
-Ensuite, va dans l'onglet \menu{Extras} et coche la case
-\menu{Utiliser SSL pour s\'ecuriser les t\'el\'echargements}.
-
-Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le
-bouton \menu{Ajouter\ldots}. Utilise les param\`etres suivants pour le
-configurer :
-\begin{description}
-  \item[Nom] le m\^eme nom de compte que pr\'ec\'edemment
-  \item[Serveur] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
-  \item[Port] 25
-\end{description}
-Sinon, laisse toutes les cases d\'ecoch\'ees.
-
-%Tu peux aussi configurer l'acc\`es \`a  \app{l'annuaire LDAP} de l'\'Ecole, sorte de carnet d'adresses en ligne qui contient les adresses \emph{mail} de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un h\^ote}, et configure comme suit: \\
-%\smallskip
-%\begin{minipage}[t]{0.48\textwidth}
-%\begin{description}
-%  \item[H\^ote] \server{ldap.eleves.polytechnique.fr}
-%  \item[Port] 389
-%  \item[Version de LDAP] 3
-%\end{description}  
-%\end{minipage} 
-%\begin{minipage}[t]{0.48\textwidth}
-%\begin{description}  
-%  \item[DN] \server{dc=polytechnique, dc=ldap, dc=eleves, dc=fr}
-%  \item[S\'ecurit\'e] Non
-%  \item[Identification] Anonyme
-%\end{description}
-%\end{minipage} \\
-%Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant acc\`es \`a  l'annuaire LDAP lors de la
-%r\'edaction de messages, avec tout au plus un red\'emarrage de \app{Kmail}. 
+%\subsection{Configuration de ton client \emph{mail}}
 %
-%\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
-%\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
+%La DSI met \`a  ta disposition une bo\^{i}te aux lettres \'electronique sur
+%le serveur \server{poly} ; cette section t'explique comment
+%configurer \app{Windows Mail}, \app{Kmail} et \app{Mac OS Mail} pour y avoir acc\`es. Tu peux bien
+%s\^{u}r utiliser \app{Thunderbird} si tu pr\'ef\`eres, les donn\'ees \`a  rentrer
+%pour la configuration sont les m\^emes ; quelques d\'etails sont donn\'es
+%dans le WikiX sur \fkz. De plus, tu trouveras des explications plus
+%d\'etaill\'ees dans le manuel r\'edig\'e par la DSI.
+%
+%\paragraph{Outlook et Windows Mail}
+%\flimage{images/outlook-logo}{0.07}{l}
+%
+%La proc\'edure suivante fonctionne aussi avec \app{Windows Mail}.
+%Lance \app{Outlook Express} et va dans le menu \menu{Outils},
+%\menu{Comptes\ldots}. Clique sur le bouton \menu{Ajouter\ldots} en
+%haut \`a  droite, puis sur \menu{Courrier\ldots}.
+%
+%Pour \app{Windows Mail} c'est sur compte de messagerie qu'il faut cliquer, avant de cliquer sur suivant.
+%
+%Remplis les \'ecrans de configuration avec les donn\'ees suivantes.
+%\begin{description}
+%  \item[Nom complet : ] ton nom (\guillemotleft~Martin Durand~\guillemotright , par exemple)
+%  \item[Adresse de messagerie : ] de la forme \mail{prenom.nom@polytechnique.edu}
+%  \item[Type de serveur de messagerie pour le courrier entrant : ] \menu{POP3}
+%  \item[Serveur de messagerie pour le courrier entrant : ] \server{poly.polytechnique.fr}
+%  \item[Serveur de messagerie pour le courrier sortant : ] \server{poly.polytechnique.fr} ou \newline \server{ssl.polytechnique.org}
+%  \item[Nom du compte : ] ton identifiant \server{poly} (en g\`en\`eral c'est \texttt{prenom.nom}, si ça ne marche pas, va voir le bureau \emph{login} de la DSI.)
+%  \item[Mot de passe : ] ton mot de passe \server{poly}
+%       v\'erifie bien que la case \menu{M\'emoriser le mot de passe} est coch\'ee.
+%\end{description}
+%
+%Voil\`a , clique sur \menu{Continuer}, \menu{Terminer}.
+%
+%Tu te retrouves alors sur la fen\^etre \menu{Comptes Internet}. Va sur
+%l'onglet \menu{Courrier}, clique sur le compte que tu viens de cr\'eer
+%puis sur \menu{Propri\'et\'es}. Clique sur l'onglet \menu{Avanc\'e} et
+%configure comme sur la capture~\ref{config:win:mail} ; en
+%particulier, coche la seconde case \menu{Ce serveur n\'ecessite une
+%connexion s\'ecuris\'ee (SSL)}.
+%
+%Comme \c{c}a, tu peux d\'esormais recevoir des \emph{mails} avec une liaison
+%s\'ecuris\'ee vers \server{poly} pour que personne ne puisse les
+%intercepter. Il est possible que tu aies à accepter manuellement le certificat utilis\`e par l'\'Ecole pour que cela fonctionne correctement. Tu le trouveras sur \urllink{http://poly}. Une fois t\'el\'echarg\'e, il suffit de l'importer.
+%
+%\imageref{images/win_config_mail_avance}{0.5}{Configuration avanc\'ee
+%des serveurs \emph{mail}}{!h}{config:win:mail}
+%
+%
+%
+%\paragraph{Kmail}
+%\flimage{images/kmail-logo}{0.07}{l}
+%
+%Pour \app{Kmail}, va dans \menu{Configuration}, \menu{Configurer Kmail}. Choisis la
+%rubrique \menu{Comptes}. Commence par cr\'eer un nouveau compte dans
+%l'onglet \menu{R\'eception des messages} en cliquant sur le bouton
+%\menu{Ajouter\ldots} et choisis le type POP3.
+%
 %
 %\noindent
 %  \begin{figure*}[!h]
 %    \begin{center}  
-%      \subfloat[Configuration de l'annuaire LDAP sous Kmail]{ 
-%      \includegraphics[width=0.48\textwidth]{images/nux_config_ldap}}
+%      \subfloat[R\'eception des messages]{ 
+%      \includegraphics[width=0.48\textwidth]{images/nux_config_kmail_pop} }
 %      \hspace{\stretch{1}}
-%      \subfloat[Configuration de Knode]{ 
-% \includegraphics[width=0.48 \textwidth]{images/nux_config_ldap} }
-% \caption{Configurations LDAP et \emph{news}}
+%      \subfloat[Envoi des messages]{ 
+% \includegraphics[width=0.48 \textwidth]{images/nux_config_kmail_smtp} }
+% \caption{Configuration sous \app{Kmail}}
 %    \end{center}
-% \end{figure*}
-
-
-\paragraph{Mac OS Mail}
-
-\flimage{images/mac_mail_icone}{0.07}{l} \app{Mail} : un client \emph{mail} offrant les fonctionnalit\'es classiques d'un bon client : recherche instantan\'ee, filtre antispam, r\`egles de tri automatique des \emph{mails}, regroupement des \emph{mails} correspondant \`a  une m\^eme discussion.
-
-Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte \emph{mail} sur \server{poly}, il suffit de le remplir avec les donn\'ees suivantes :
-\begin{description}
-  \item[Nom complet] ton nom !
-  \item[Adresse \'electronique] de la forme \mail{prenom.nom@polytechnique.edu}
-  \item[Serveur de r\'eception] \server{poly.polytechnique.fr}
-  \item[Type de compte] \menu{POP}
-  \item[Nom d'utilisateur] ton \emph{login} \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral)
-  \item[Mot de passe] ton mot de passe \server{poly}
-  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
-\end{description}
-
-Si tu as d\'ej\`a  cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \menu{Pr\'ef\'erences} (accessibles depuis le menu \menu{Mail}), onglet \menu{Comptes}, pour cr\'eer un autre compte en cliquant sur la case \menu{+}.
-
-N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995. Tu souhaiteras alors certainement installer le certificat de s\'ecurit\'e de \server{poly} (tu le trouveras sur \urllink{http://poly/}). Une fois que tu as t\'el\'echarg\'e le certificat, ouvre le fichier \menu{.CRT} obtenu, et dans \app{Trousseau d'acc\`es}, installe-le dans %\menu{X509Anchors} (Tiger) ou 
-\menu{session} (Leopard).
-
-Cette configuration marche pour acc\'eder \`a  ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer.
-En revanche tu ne peux pas envoyer de \emph{mails} depuis l'ext\'erieur, car le serveur \server{poly} ne le permet pas.
-Nous te conseillons vivement d'utiliser le serveur SMTP \server{polytechnique.org} et de regarder la configuration propos\'ee par \urllink{Polytechnique.org}.
-Celle-ci permet d'envoyer des \emph{mails} \`a  l'ext\'erieur de l'\'Ecole de façon s\`ecuris\`ee, sans modifier ta configuration par la suite.
-Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Pr\'ef\'erences} de \emph{mail} et r\'egler dans l'onglet \menu{Avanc\'es} comme dans la capture.
-
-\begin{figure*}[!hl]
-    \begin{center}
-            \includegraphics[width=0.4\textwidth]{images/mac_config_smtp_poltechnique.png} 
-      \caption{Configurer le serveur SMTP \server{Polytechnique.org}}
-    \end{center}
-  \end{figure*}
-
-%Le LDAP ne fonctionne pas \`a  l'heure actuelle avec \app{Mail} (mars 2009) sous \app{Leopard}, contrairement aux  autres syst\`emes d'exploitation (fonctionne cependant avec \app{Thunderbird}).
-%\subsuEnfin, tu peux disposer dans \app{Mail} de l'annuaire de l'\`acole, mis \`a  disposition par la DSI. Pour cela, va dans les \menu{Pr\'ef\'erences} de Mail,
-%puis dans la rubrique \menu{R\'edaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un
-%serveur, et remplir la fen\^etre comme sur la capture.
-
-%\imagepos{images/mac_config_ldap}{0.6}{Configurer l'annuaire}{!ht}
-%bsection{Logiciels additionnels}
-
-%Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau ; ils sont t\'el\'echargeables sur \server{frankiz}, dans la rubrique \menu{T\'el\'echarger}, \menu{Mac}.
+%  \end{figure*}
+%
+%
+%Utilise les param\`etres suivants pour configurer l'onglet \menu{G\'en\'eral}.
+%\begin{description}
+%  \item[Nom : ] le nom du compte, par exemple : Mails Poly
+%  \item[Utilisateur : ] l'identifiant \server{poly} que t'a fourni la DSI \`a  ton arriv\'ee sur le plateau
+%  \item[Mot de passe : ] le mot de passe \server{poly}
+%  \item[Serveur : ] \server{poly.polytechnique.fr}
+%  \item[Port : ] 995
+%\end{description}
+%Ensuite, va dans l'onglet \menu{Extras} et coche la case
+%\menu{Utiliser SSL pour s\'ecuriser les t\'el\'echargements}.
+%
+%Maintenant, dans l'onglet \menu{Envoi des messages} clique sur le
+%bouton \menu{Ajouter\ldots}. Utilise les param\`etres suivants pour le
+%configurer :
+%\begin{description}
+%  \item[Nom] le m\^eme nom de compte que pr\'ec\'edemment
+%  \item[Serveur] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
+%  \item[Port] 25
+%\end{description}
+%Sinon, laisse toutes les cases d\'ecoch\'ees.
+%
+%%Tu peux aussi configurer l'acc\`es \`a  \app{l'annuaire LDAP} de l'\'Ecole, sorte de carnet d'adresses en ligne qui contient les adresses \emph{mail} de tout le monde sur le campus. Pour ce faire, commence par ouvrir \menu{Outils}, \menu{Carnet d'adresses}, puis va dans \menu{Configuration}, \menu{Configurer kAdressBook}, \menu{Consultation LDAP}. Clique ensuite sur \menu{Ajouter un h\^ote}, et configure comme suit: \\
+%%\smallskip
+%%\begin{minipage}[t]{0.48\textwidth}
+%%\begin{description}
+%%  \item[H\^ote] \server{ldap.eleves.polytechnique.fr}
+%%  \item[Port] 389
+%%  \item[Version de LDAP] 3
+%%\end{description}  
+%%\end{minipage} 
+%%\begin{minipage}[t]{0.48\textwidth}
+%%\begin{description}  
+%%  \item[DN] \server{dc=polytechnique, dc=ldap, dc=eleves, dc=fr}
+%%  \item[S\'ecurit\'e] Non
+%%  \item[Identification] Anonyme
+%%\end{description}
+%%\end{minipage} \\
+%%Une fois revenu dans \menu{Configuration LDAP}, coche la case \server{ldap.eleves.polytechnique.fr}. Tu as maintenant acc\`es \`a  l'annuaire LDAP lors de la
+%%r\'edaction de messages, avec tout au plus un red\'emarrage de \app{Kmail}. 
+%%
+%%\imagepos{images/nux_config_ldap}{0.55}{Configuration de l'annuaire LDAP sous Kmail}{pht}
+%%\imagepos{images/nux_config_knode}{0.45}{Configuration de Knode}{ht}
+%%
+%%\noindent
+%%  \begin{figure*}[!h]
+%%    \begin{center}  
+%%      \subfloat[Configuration de l'annuaire LDAP sous Kmail]{ 
+%%      \includegraphics[width=0.48\textwidth]{images/nux_config_ldap}}
+%%      \hspace{\stretch{1}}
+%%      \subfloat[Configuration de Knode]{ 
+%% \includegraphics[width=0.48 \textwidth]{images/nux_config_ldap} }
+%% \caption{Configurations LDAP et \emph{news}}
+%%    \end{center}
+%% \end{figure*}
+%
+%
+%\paragraph{Mac OS Mail}
+%
+%\flimage{images/mac_mail_icone}{0.07}{l} \app{Mail} : un client \emph{mail} offrant les fonctionnalit\'es classiques d'un bon client : recherche instantan\'ee, filtre antispam, r\`egles de tri automatique des \emph{mails}, regroupement des \emph{mails} correspondant \`a  une m\^eme discussion.
+%
+%Au premier lancement, \app{Mail} te demandera de remplir les informations concernant ton compte \emph{mail} sur \server{poly}, il suffit de le remplir avec les donn\'ees suivantes :
+%\begin{description}
+%  \item[Nom complet] ton nom !
+%  \item[Adresse \'electronique] de la forme \mail{prenom.nom@polytechnique.edu}
+%  \item[Serveur de r\'eception] \server{poly.polytechnique.fr}
+%  \item[Type de compte] \menu{POP}
+%  \item[Nom d'utilisateur] ton \emph{login} \server{poly} (les huit premi\`eres lettres de ton nom en g\'en\'eral)
+%  \item[Mot de passe] ton mot de passe \server{poly}
+%  \item[Serveur d'envoi (SMTP)] \server{poly.polytechnique.fr} ou \server{ssl.polytechnique.org}
+%\end{description}
+%
+%Si tu as d\'ej\`a  cr\'e\'e un compte pr\'ec\'edemment, il faut aller dans les \menu{Pr\'ef\'erences} (accessibles depuis le menu \menu{Mail}), onglet \menu{Comptes}, pour cr\'eer un autre compte en cliquant sur la case \menu{+}.
+%
+%N'oublie pas de cocher \menu{Activer le cryptage SSL} dans l'onglet \menu{Avanc\'e}, port 995. Tu souhaiteras alors certainement installer le certificat de s\'ecurit\'e de \server{poly} (tu le trouveras sur \urllink{http://poly/}). Une fois que tu as t\'el\'echarg\'e le certificat, ouvre le fichier \menu{.CRT} obtenu, et dans \app{Trousseau d'acc\`es}, installe-le dans %\menu{X509Anchors} (Tiger) ou 
+%\menu{session} (Leopard).
+%
+%Cette configuration marche pour acc\'eder \`a  ses mails depuis l'int\'erieur de l'X mais aussi de l'ext\'erieur, sans rien changer.
+%En revanche tu ne peux pas envoyer de \emph{mails} depuis l'ext\'erieur, car le serveur \server{poly} ne le permet pas.
+%Nous te conseillons vivement d'utiliser le serveur SMTP \server{polytechnique.org} et de regarder la configuration propos\'ee par \urllink{Polytechnique.org}.
+%Celle-ci permet d'envoyer des \emph{mails} \`a  l'ext\'erieur de l'\'Ecole de façon s\`ecuris\`ee, sans modifier ta configuration par la suite.
+%Tu peux ajouter ce SMTP dans l'onglet \menu{Comptes} des \menu{Pr\'ef\'erences} de \emph{mail} et r\'egler dans l'onglet \menu{Avanc\'es} comme dans la capture.
+%
+%\begin{figure*}[!hl]
+%    \begin{center}
+%            \includegraphics[width=0.4\textwidth]{images/mac_config_smtp_poltechnique.png} 
+%      \caption{Configurer le serveur SMTP \server{Polytechnique.org}}
+%    \end{center}
+%  \end{figure*}
+%
+%%Le LDAP ne fonctionne pas \`a  l'heure actuelle avec \app{Mail} (mars 2009) sous \app{Leopard}, contrairement aux  autres syst\`emes d'exploitation (fonctionne cependant avec \app{Thunderbird}).
+%%\subsuEnfin, tu peux disposer dans \app{Mail} de l'annuaire de l'\`acole, mis \`a  disposition par la DSI. Pour cela, va dans les \menu{Pr\'ef\'erences} de Mail,
+%%puis dans la rubrique \menu{R\'edaction} et clique sur \menu{Configurer LDAP\ldots}. Tu peux ensuite utiliser le bouton \menu{+} pour ajouter un
+%%serveur, et remplir la fen\^etre comme sur la capture.
+%
+%%\imagepos{images/mac_config_ldap}{0.6}{Configurer l'annuaire}{!ht}
+%%bsection{Logiciels additionnels}
+%
+%%Les logiciels suivants sont utiles pour utiliser avec Mac OS X les services propos\'es sur le r\'eseau ; ils sont t\'el\'echargeables sur \server{frankiz}, dans la rubrique \menu{T\'el\'echarger}, \menu{Mac}.
 
 
 
