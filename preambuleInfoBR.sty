@@ -94,17 +94,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Quelques couleurs perso
 
-\definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}
-\definecolor{Blue2}{cmyk}{0.6,0.2,0.0,0.0}
-\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}
-\definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}
-\definecolor{GreenApp}{cmyk}{0.7,0.0,1.0,0.8}
-\definecolor{GreenPseudo}{cmyk}{0.8,0.1,1.0,0.1}
-\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}
-\definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}
-\definecolor{DarkOrange}{cmyk}{0.,0.4,1.0,0.4}
-\definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}
-\definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}
+
+\definecolor{Blue}{cmyk}{0.6,0.0,0.05,0.0}        %#66FFF2
+\definecolor{Blue2}{cmyk}{0.6,0.2,0.0,0.0}        %#66CCFF
+\definecolor{DarkBlue}{cmyk}{0.95,0.8,0.0,0.0}    %#0D33FF
+\definecolor{BrightGreen}{cmyk}{0.8,0.,1.0,0.0}   %#0D33FF
+\definecolor{GreenApp}{cmyk}{0.7,0.0,1.0,0.8}     %#0F0033
+\definecolor{GreenPseudo}{cmyk}{0.8,0.1,1.0,0.1}  %#2ECF00
+\definecolor{DarkGreen}{cmyk}{0.8,0.1,0.9,0.4}    %#1F8A0F
+\definecolor{Orange}{cmyk}{0.,0.2,1.0,0.2}        %#CCA300
+\definecolor{DarkOrange}{cmyk}{0.,0.4,1.0,0.4}    %#995C00
+\definecolor{LightRed}{cmyk}{0.,0.1,0.15,0.0}     %#FFE6D9
+\definecolor{GrayMenu}{cmyk}{0.7,0.5,0.6,0.4}     %#2E4D3D
+
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{med-gray}{gray}{0.70}
+\definecolor{dark-gray}{gray}{0.30}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,10 +173,10 @@
   \vspace{2pt plus 1pt minus 1pt}
   \noindent
   \begin{center}
-\colorbox{LightRed}{
+\colorbox{med-gray}{
     \parbox[c]{#1\textwidth}{ 
     \NoAutoSpaceBeforeFDP
-    \texttt{\footnotesize{\color{BrightGreen}#2}}
+    \texttt{\footnotesize{\color{dark-gray}#2}}
     \AutoSpaceBeforeFDP
     }
   } 
@@ -181,17 +186,17 @@
 
 \newcommand{\cmdlineshort}[1]{
   \noindent
-  \colorbox{LightRed}{
+  \colorbox{med-gray}{
     \parbox{.2\textwidth}{
     \NoAutoSpaceBeforeFDP
-    \texttt{\normalsize{\color{BrightGreen}#1}}
+    \texttt{\normalsize{\color{dark-gray}#1}}
     \AutoSpaceBeforeFDP
     }
   }
   \vspace{4pt}
 }
 
-\newcommand{\exemple}[1]{ \fcolorbox{black}{LightRed} {
+\newcommand{\exemple}[1]{ \fcolorbox{black}{light-gray} {
   \begin{minipage}{0.9\textwidth}
     \emph{Exemple :} #1
   \end{minipage}
@@ -202,44 +207,45 @@
 %Quelques styles prédéfinis
 % texttt : ligne de commande, serveurs
 % textsf : tout le reste : url, email, dossiers
+% BR2012: passage en niveaux de gris
 
 % pour les serveurs
-\newcommand{\server}[1]{\texttt{\color{DarkBlue}#1}\xspace}
+\newcommand{\server}[1]{\texttt{\color{dark-gray}#1}\xspace}
 
 % pour les URLs
-\newcommand{\urllink}[1]{\NoAutoSpaceBeforeFDP\textsf{\color{Blue}#1}\AutoSpaceBeforeFDP\xspace}
+\newcommand{\urllink}[1]{\NoAutoSpaceBeforeFDP\textsf{\color{dark-gray}#1}\AutoSpaceBeforeFDP\xspace}
 
 % pour les mails
-\newcommand{\mail}[1]{\textsf{\color{Blue2}#1}\xspace}
+\newcommand{\mail}[1]{\textsf{\color{dark-gray}#1}\xspace}
 
 % pour les newsgroups
-\newcommand{\ngname}[1]{\textsf{\color{DarkGreen}#1}\xspace}
+\newcommand{\ngname}[1]{\textsf{\color{dark-gray}#1}\xspace}
 
 % pour les applications
-\newcommand{\app}[1]{\textbf{\color{GreenApp}#1}\xspace}
+\newcommand{\app}[1]{\textbf{\color{dark-gray}#1}\xspace}
 
 % pour les menus et les elements de menu
-\newcommand{\menu}[1]{\textsf{\color{GrayMenu}`#1'}\xspace}
+\newcommand{\menu}[1]{\textsf{\color{dark-gray}`#1'}\xspace}
 
 % pour les repertoires
-\newcommand{\rep}[1]{\textsf{\color{Orange}#1}\xspace}
+\newcommand{\rep}[1]{\textsf{\color{dark-gray}#1}\xspace}
 
 % pour les fichiers
-\newcommand{\file}[1]{\textsf{\color{DarkOrange}#1}\xspace}
+\newcommand{\file}[1]{\textsf{\color{dark-gray}#1}\xspace}
 
 % pour les distributions Linux
-\newcommand{\distrib}[1]{{\color{green}#1}}
+\newcommand{\distrib}[1]{{\color{dark-gray}#1}}
 
 % pour les liens (sous frankiz)
-\newcommand{\lien}[1]{\textsf{\color{Blue}`#1'}\xspace}
+\newcommand{\lien}[1]{\textsf{\color{dark-gray}`#1'}\xspace}
 
 % pour les pseudos
-\newcommand{\mbr}[5]{\noindent#3 \bsc{\color{GreenPseudo}#1} (#4) \textbf{#2} : #5}
+\newcommand{\mbr}[5]{\noindent#3 \bsc{\color{dark-gray}#1} (#4) \textbf{#2} : #5}
 
 % Pour les commandes DOS
 \newcommand{\cmd}[1]{\NoAutoSpaceBeforeFDP\guillemotleft~\texttt{#1}~\guillemotright \AutoSpaceBeforeFDP\xspace}
 
 % divers
 \newcommand{\fkz}{\server{Frankiz}}
-\newcommand{\xshare}{la rubrique \menu{Télécharger} de \fkz}
+\newcommand{\xshare}{la rubrique \menu{T\'el\'echarger} de \fkz}
 
