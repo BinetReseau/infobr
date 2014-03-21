@@ -1,10 +1,13 @@
 all: InfoBR.pdf
 
-InfoBR.pdf: InfoBR.ps
-	sed '1,/^%%EndComments/ s/^%%Title:.*/%%Title: InfoBR/' < $<| ps2pdf - $@
+InfoBR.pdf: couv.pdf page.pdf 4eme.pdf content.ps
+	gs -sOutputFile=grayscale.pdf -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH content.ps
+	gs -o InfoBR2k13.pdf -sDEVICE=pdfwrite couv.pdf page.pdf grayscale.pdf page.pdf 4eme.pdf
 
-InfoBR.ps: couv.ps page.ps 4eme.ps content.ps
-	a2ps --portrait --columns=1 -o$@ couv.ps page.ps content.ps page.ps 4eme.ps
+	#sed '1,/^%%EndComments/ s/^%%Title:.*/%%Title: InfoBR/' < $<| ps2pdf - $@
+
+#InfoBR.ps: couv.ps page.ps 4eme.ps content.ps
+#	a2ps --portrait --columns=1 -o$@ couv.ps page.ps content.ps page.ps 4eme.ps
 
 
 # Compile d'abord l'infoBR
@@ -36,7 +39,7 @@ page.pdf: page.tex
 # Nettoyage
 clean:
 	rm -f couv.aux couv.log couv.pdf couv.ps page.aux page.log page.pdf page.ps 4eme.aux 4eme.log 4eme.pdf 4eme.ps \
-		content.ps InfoBR.ps
+		content.ps InfoBR.ps grayscale.pdf
 
 distclean: clean
 	rm -f InfoBR.pdf
