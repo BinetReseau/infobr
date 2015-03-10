@@ -1,8 +1,8 @@
-\subsection{Param\'etrer la connexion Internet avec la console}
+\subsection{Paramétrer la connexion Internet avec la console}
 \label{linux_cmdline}
-Si tu utilises une distribution de Linux dans laquelle il est plus simple de configurer le r\'eseau en ligne de commande, voici la marche \`a suivre :
+Si tu utilises une distribution de Linux dans laquelle il est plus simple de configurer le réseau en ligne de commande, voici la marche à suivre :
 
-Tout d'abord, renseigne ta configuration r\'eseau dans le fichier \file{/etc/network/interfaces}. Il doit ressembler \`a ceci :
+Tout d'abord, renseigne ta configuration réseau dans le fichier \file{/etc/network/interfaces}. Il doit ressembler à ceci :
 \noindent \cmdline{
 auto lo eth0\\
 iface lo inet loopback\\
@@ -13,16 +13,16 @@ netmask 255.255.xxx.xxx\\
 broadcast 129.104.xxx.xxx\\
 gateway 129.104.xxx.xxx
 }
-\emph{gateway} d\'esigne la passerelle et \emph{broadcast} l'adresse de diffusion.
+\emph{gateway} désigne la passerelle et \emph{broadcast} l'adresse de diffusion.
 \newline
 
-Ensuite, configure la r\'esolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
+Ensuite, configure la résolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
 \noindent \cmdline{
 search eleves.polytechnique.fr polytechnique.fr\\
 nameserver 129.104.201.53\\
 nameserver 129.104.201.51}
 
-N'oublie pas de r\'egler ensuite le \emph{proxy} dans ton navigateur \emph{web} pr\'ef\'er\'e.
+N'oublie pas de régler ensuite le \emph{proxy} dans ton navigateur \emph{web} préféré.
 En ligne de commande, les logiciels usuels (wget, curl, rsync, apt-get, pacman) reconnaissent certaines variables d'environnement qui uilisent le suffixe ''\_proxy'' :
 \noindent \cmdline{
 export all\_proxy="http://kuzh.polytechnique.fr:8080/"\\

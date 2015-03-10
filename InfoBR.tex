@@ -1,13 +1,13 @@
-%note pour les g\'en\'erations suivantes : ceci est la version 2012 de l'infoBR par les infoBRmen 2011 : Arcos, gerard, Thunder ainsi que Chantal pour les couv. 
+%note pour les générations suivantes : ceci est la version 2012 de l'infoBR par les infoBRmen 2011 : Arcos, gerard, Thunder ainsi que Chantal pour les couv. 
 
 
-%La structure g\'en\'erale du document date de 2009 au moins, nous n'y avons pas touch\'e. Elle est tr\`es pratique pour ne pas avoir un .tex \'enorme dans lequel on ne retrouve rien. Si suite \`a une erreur quelconque dans un des fichiers (typiquement : une balise de fin de liste oubli\'ee), la compilation m\`ene \`a une erreur et ne termine pas, corriger l'erreur dans le fichier concern\'e et relancer la compilation. Le fichier peut alors refuser de compiler (affiche une erreur \`a la ligne \begin{document}. Balancer le fichier .aux \`a la poubelle r\`egle le probl\`eme.
+%La structure générale du document date de 2009 au moins, nous n'y avons pas touché. Elle est très pratique pour ne pas avoir un .tex énorme dans lequel on ne retrouve rien. Si suite à une erreur quelconque dans un des fichiers (typiquement : une balise de fin de liste oubliée), la compilation mène à une erreur et ne termine pas, corriger l'erreur dans le fichier concerné et relancer la compilation. Le fichier peut alors refuser de compiler (affiche une erreur à la ligne \begin{document}. Balancer le fichier .aux à la poubelle règle le problème.
 
 
-%Le gros changement dans cette version est la baisse drastique du nombre de pages, qui passent de 42 pages pour la version 2011 \`a 28 pages pour cette version 2012. La principale raison de ce changement est le co\^ut d'impression. On ne peut pas demander \`a la promo de payer des milliers d'euros pour des pages compl\`etement inutiles ou qui ne sont lues que par 3 personnes. L'autre est qu'un document aussi long d\'ecourageait toute lecture. Nous avons donc vir\'e pas mal de trucs, en essayant au maximum de mettre les info concern\'ees sur le wikiBR et d'inciter les gens \`a y aller. 
+%Le gros changement dans cette version est la baisse drastique du nombre de pages, qui passent de 42 pages pour la version 2011 à 28 pages pour cette version 2012. La principale raison de ce changement est le coût d'impression. On ne peut pas demander à la promo de payer des milliers d'euros pour des pages complètement inutiles ou qui ne sont lues que par 3 personnes. L'autre est qu'un document aussi long décourageait toute lecture. Nous avons donc viré pas mal de trucs, en essayant au maximum de mettre les info concernées sur le wikiBR et d'inciter les gens à y aller. 
 
 
-% il peut rester des restes de cet \'elagage, nous avons comment\'e certains appels \`a des fichiers  ou morceaux de texte plut�t que de tout effacer.
+% il peut rester des restes de cet élagage, nous avons commenté certains appels à des fichiers  ou morceaux de texte plut�t que de tout effacer.
 
 %Note du BR 2012: nous avons réintroduit la section sur Frankiz, pour essayer de maximiser le nombre de gens qui sont au courant des diverses possibilités du site.
 %La section est longue, mais le nombre de pages devant être multiple de 4 elle ne change pas le nombre de pages total (28).
@@ -16,9 +16,10 @@
 % -------------------- Header --------------------
 \documentclass[12pt, a4paper, twoside]{article}
 \usepackage{preambuleInfoBR}
+\usepackage[utf8]{inputenc}
 
 \title{InfoBR 2012}
-\author{Binet R\'eseau 2k12}
+\author{Binet Réseau 2k12}
 \date{ }
 \usepackage{garamond}
 
@@ -33,7 +34,7 @@
 
 
 % ------------------------------ Exergue ------------------------------
-% on peut l'enlever, selon le nombre de pages \`a atteindre
+% on peut l'enlever, selon le nombre de pages à atteindre
 
 %\input{dedicace.tex}
 
@@ -49,7 +50,7 @@
 %\input{motPrez2010}
 
 
-%note : cette page a \'et\'e supprim\'ee dans la version 2012 et le mot du prez a fusionn\'e avec la partie avertissement (cf la section suivante).
+%note : cette page a été supprimée dans la version 2012 et le mot du prez a fusionné avec la partie avertissement (cf la section suivante).
 
 \newpage
 
@@ -65,7 +66,7 @@
 \newpage
 
 \renewcommand{\contentsname}{Sommaire}
-\bghdr{images/fond-infobr} \markright{Table des mati\`eres}
+\bghdr{images/fond-infobr} \markright{Table des matières}
 
 \tableofcontents
 
@@ -96,7 +97,7 @@
 %\thispagestyle{plain}
 %\hrulefill \, \begin{Large}Notes personnelles\end{Large} \hrulefill
 
-% -------------------- Pour rajouter une deuxi\`eme page ----------
+% -------------------- Pour rajouter une deuxième page ----------
 %\newpage 
 %\thispagestyle{plain} 
 %\hrulefill \, \begin{Large}Fais dédicacer ton InfoBR !\end{Large} \hrulefill 

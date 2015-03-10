@@ -1,10 +1,10 @@
 \subsection{Configurer le gestionnaire de paquets}
 
-La fa\c con la plus simple de param\'etrer son gestionnaire de paquets est d'utiliser les miroirs du BR. Cependant, si tu as besoin d'utiliser des d\'ep\^ots suppl\'ementaires \`a l'ext\'erieur de l'X, tu peux choisir
-la configuration pr\'esent\'ee ici.
+La fa\c con la plus simple de paramétrer son gestionnaire de paquets est d'utiliser les miroirs du BR. Cependant, si tu as besoin d'utiliser des dépôts supplémentaires à l'extérieur de l'X, tu peux choisir
+la configuration présentée ici.
 
 \paragraph{Sous Gentoo}
-\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} \`a  travers le serveur mandataire (\emph{proxy}) de l'\'Ecole, il faut d\'efinir %les variables d'environnement
+\label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à  travers le serveur mandataire (\emph{proxy}) de l'École, il faut définir %les variables d'environnement
 ci-dessous dans le fichier \file{/etc/make.conf} :
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
@@ -12,10 +12,10 @@ no\_proxy=.eleves.polytechnique.fr\\
 GENTOO\_MIRRORS="ftp://miroir.eleves.polytechnique.fr/linux/gentoo http://gentoo.osuosl.org/"\\
 SYNC="rsync://rsync/gentoo-portage"}
 
-Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans ta liste mais \urllink{ftp://miroir} \'etant interne, il sera toujours beaucoup plus rapide que les autres.
+Tu peux évidemment ajouter d'autres miroirs (séparés par des espaces) dans ta liste mais \urllink{ftp://miroir} étant interne, il sera toujours beaucoup plus rapide que les autres.
 
 % \paragraph{Sous Archlinux}
-% Pour pouvoir utiliser \app{pacman} \`a travers le \emph{proxy} de l'\'Ecole, il suffit de configurer les variables d'environnement ''\_proxy''.
+% Pour pouvoir utiliser \app{pacman} à travers le \emph{proxy} de l'École, il suffit de configurer les variables d'environnement ''\_proxy''.
 % \noindent \cmdline{
 % export http\_proxy="http://kuzh.polytechnique.fr:8080/"\\
 % export https\_proxy="http://kuzh.polytechnique.fr:8080/"
@@ -23,8 +23,8 @@ Tu peux \'evidemment ajouter d'autres miroirs (s\'epar\'es par des espaces) dans
 
 
 \paragraph{Sous Debian}
-\label{debian_mirror} Pour pouvoir utiliser \app{APT} (via \app{apt-get} ou \app{aptitude}) \`a travers le \emph{proxy} de l'\'Ecole, il faut ajouter dans \file{/etc/apt/apt.conf} la ligne :
+\label{debian_mirror} Pour pouvoir utiliser \app{APT} (via \app{apt-get} ou \app{aptitude}) à travers le \emph{proxy} de l'École, il faut ajouter dans \file{/etc/apt/apt.conf} la ligne :
 \cmdline{Acquire::http::Proxy "http://129.104.247.2:8080/";}
-Le cas \'ech\'eant, il faudra cr\'eer ce fichier, qui est vide la plupart du temps.
+Le cas échéant, il faudra créer ce fichier, qui est vide la plupart du temps.
 
-Pour le reste, le param\'etrage des d\'ep\^ots se fait comme toujours dans \file{/etc/apt/sources.list} ou via ton gestionnaire graphique pr\'ef\'er\'e.
+Pour le reste, le paramétrage des dépôts se fait comme toujours dans \file{/etc/apt/sources.list} ou via ton gestionnaire graphique préféré.
