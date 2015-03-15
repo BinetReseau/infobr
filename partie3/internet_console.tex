@@ -1,29 +1,31 @@
 \subsection{Paramétrer la connexion Internet avec la console}
 \label{linux_cmdline}
-Si tu utilises une distribution de Linux dans laquelle il est plus simple de configurer le réseau en ligne de commande, voici la marche à suivre :
+Pour connecter ton ordinateur au réseau, c'est la même chose qu'en graphique : ouvre un navigateur (\emph{links} par exemple) et accède à \urllink{http://infobr.eleves.polytechnique.fr}.
 
-Tout d'abord, renseigne ta configuration réseau dans le fichier \file{/etc/network/interfaces}. Il doit ressembler à ceci :
-\noindent \cmdline{
-auto lo eth0\\
-iface lo inet loopback\\
-\\
-iface eth0 inet static\\
-address 129.104.xxx.xxx\\
-netmask 255.255.xxx.xxx\\
-broadcast 129.104.xxx.xxx\\
-gateway 129.104.xxx.xxx
-}
-\emph{gateway} désigne la passerelle et \emph{broadcast} l'adresse de diffusion.
-\newline
-
-Ensuite, configure la résolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
-\noindent \cmdline{
-search eleves.polytechnique.fr polytechnique.fr\\
-nameserver 129.104.201.53\\
-nameserver 129.104.201.51}
-
-N'oublie pas de régler ensuite le \emph{proxy} dans ton navigateur \emph{web} préféré.
-En ligne de commande, les logiciels usuels (wget, curl, rsync, apt-get, pacman) reconnaissent certaines variables d'environnement qui uilisent le suffixe ''\_proxy'' :
+%Si tu utilises une distribution de Linux dans laquelle il est plus simple de configurer le réseau en ligne de commande, voici la marche à suivre :
+%
+%Tout d'abord, renseigne ta configuration réseau dans le fichier \file{/etc/network/interfaces}. Il doit ressembler à ceci :
+%\noindent \cmdline{
+%auto lo eth0\\
+%iface lo inet loopback\\
+%\\
+%iface eth0 inet static\\
+%address 129.104.xxx.xxx\\
+%netmask 255.255.xxx.xxx\\
+%broadcast 129.104.xxx.xxx\\
+%gateway 129.104.xxx.xxx
+%}
+%\emph{gateway} désigne la passerelle et \emph{broadcast} l'adresse de diffusion.
+%\newline
+%
+%Ensuite, configure la résolution DNS : tu dois avoir ceci dans le fichier \file{/etc/resolv.conf} :
+%\noindent \cmdline{
+%search eleves.polytechnique.fr polytechnique.fr\\
+%nameserver 129.104.201.53\\
+%nameserver 129.104.201.51}
+%
+%N'oublie pas de régler ensuite le \emph{proxy} dans ton navigateur \emph{web} préféré.
+Ensuite, la plupart des programmes en console reconnaissent certaines variables d'environnement suffixées par ''\_proxy'' :
 \noindent \cmdline{
 export all\_proxy="http://kuzh.polytechnique.fr:8080/"\\
 export http\_proxy="http://kuzh.polytechnique.fr:8080/"\\
