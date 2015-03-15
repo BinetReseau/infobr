@@ -10,6 +10,9 @@ Les machines des salles infos ont des noms sympathiques à base de noms d'oiseau
 
 Sous Linux et Mac, pour te connecter en ligne de commande à un serveur distant il suffit d'ouvrir une console puis de taper en remplaçant utilisateur et serveur comme il faut : \cmd{ssh -X utilisateur@serveur}. Le -X n'est pas indispensable, mais il permet d'utiliser une interface graphique et d'ouvrir des applications. Pour récupérer des fichiers des ordis des salles infos tu peux utiliser \app{FileZilla} de la même façon que sous Windows.
 
+Si tu souhaite te connecter à un serveur SSH situé à l'extérieur du plâtal, il faut proxyfier la connexion, et ssh n'utilise pas les variables d'environnement \cmd{http\_proxy}. Il faut installer le programme \cmd{socat} puis utiliser la commande suivante :
+\cmdline{ssh utilisateur@serveur -o ProxyCommand="/emplacement/de/socat - PROXY:kuzh.polytechnique.fr:\%h:\%p,proxyport=8080"}
+
 \subsubsection{Putty et FileZilla (SFTP) pour Windows}
 
 Pour ouvrir une ligne de commande à distance tu vas devoir utiliser \app{Putty} à télécharger sur \urllink{http://www.putty.org/} ;
