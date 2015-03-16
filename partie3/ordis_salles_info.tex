@@ -13,6 +13,7 @@ Sous Linux et Mac, pour te connecter en ligne de commande à un serveur distant 
 Si tu souhaite te connecter à un serveur SSH situé à l'extérieur du plâtal, il faut proxyfier la connexion, et ssh n'utilise pas les variables d'environnement \cmd{http\_proxy}. Il faut installer le programme \cmd{socat} puis utiliser la commande suivante :
 \cmdline{ssh utilisateur@serveur -o ProxyCommand="/emplacement/de/socat - PROXY:kuzh.polytechnique.fr:\%h:\%p,proxyport=8080"}
 
+\newpage
 \subsubsection{Putty et FileZilla (SFTP) pour Windows}
 
 Pour ouvrir une ligne de commande à distance tu vas devoir utiliser \app{Putty} à télécharger sur \urllink{http://www.putty.org/} ;

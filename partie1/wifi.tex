@@ -2,7 +2,10 @@
 La DSI propose actuellement un réseau \emph{Wi-Fi}, qui couvre le grand hall, les amphis, les salles de PC, le bataclan (bâtiment qui va de la Kès au bâtiment des
 binets/langues), le bâtiment des binets/langues.
 
-Pour te connecter au \emph{Wi-Fi} Polytechnique avec Windows, Mac, Linux ou un iPhone, tu trouveras les instructions sur la page \urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/wifi-73063.kjsp}.
+%Pour te connecter au \emph{Wi-Fi} Polytechnique avec Windows, Mac, Linux ou un iPhone, tu trouveras les instructions sur la page :
+%\begin{center}
+%\urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/wifi-73063.kjsp}
+%\end{center}
 
 %Avec Windows, \textbf{avant Windows 8}, tu dois téléchager un logiciel appelé \app{SecureW2} qui est fourni par la DSI sur son site, \urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/}. Ce n'est plus nécessaire depuis Windows 8 mais des paramètres supplémentaires portant sur l'authenfication 802.1x sont à modifier, la procédure est décrite sur la page susmentionnée.
 %
@@ -23,6 +26,36 @@ Pour te connecter au \emph{Wi-Fi} Polytechnique avec Windows, Mac, Linux ou un i
 % Serveurs DNS & 129.104.201.53, 129.104.201.51
 %\end{tabular}
 %\end{center}
+
+Pour te connecter au \emph{Wi-Fi} avec Windows, Mac, Linux ou un iPhone, tu trouveras les instructions sur la page : 
+\begin{center}
+\urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/wifi-73063.kjsp}
+\end{center}
+
+Avec Windows, \textbf{avant Windows 8}, tu dois téléchager un logiciel appelé \app{SecureW2} qui est fourni par la DSI sur son site, \urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/}. Ce n'est plus nécessaire depuis Windows 8.\\
+
+Avec Mac OS X Lion ou iOS (iPhone, iPad), il faut télécharger un fichier intitulé
+\newline \file{Ecole-Polytechnique.mobileconfig} dont le lien se trouve sur :
+\begin{center}
+\urllink{http://www.dsi.polytechnique.fr/fr/telecommunications/wifi/wifi-73063.kjsp}
+\end{center}
+
+Pour des versions plus anciennes de Mac OS, consulte :\\ \urllink{http://br.binets.fr/Configuration\_du\_WiFi\_sous\_Mac}. Attention, avec iOS7, il arrive que le fichier .mobileconfig fourni par la DSI ne marche pas, tu peux essayer avec celui là : \urllink{br.binets.fr/files/WifiPoly.mobileconfig}.\\
+
+Avec Linux ou Android, les noms des paramètres dépendent du système utilisé, mais voici un tableau récapitulatif :
+\begin{center}
+\begin{tabular}{r|l}
+ SSID & Polytechnique \\
+ Nom d'utilisateur/Mot de passe & Identifiants DSI (salle info) \\
+ Sécurité & WPA1 Entreprise \\
+ Gestion des clés & WPA-EAP \\
+ Pairwise & TKIP \\
+ Authentification & Tunneled TLS (TTLS) ou EAP-FAST \\
+ Authentification interne & PAP \\
+ Proxy HTTP pour tous les protocoles & 129.104.247.2 (port 8080) \\
+ Serveurs DNS & 129.104.201.53, 129.104.201.51
+\end{tabular}
+\end{center}
 
 
 
