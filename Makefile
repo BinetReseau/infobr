@@ -1,4 +1,5 @@
 DEPS = *.tex *.sty
+DEPS += partie1/*.tex
 DEPS += partie2/*.tex
 DEPS += partie3/*.tex
 DEPS += partie4/*.tex
