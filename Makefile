@@ -1,6 +1,7 @@
 DEPS = *.tex *.sty
 DEPS += partie2/*.tex
 DEPS += partie3/*.tex
+DEPS += partie4/*.tex
 DEPS += images/*.pdf
 DEPS += images/*.png
 
