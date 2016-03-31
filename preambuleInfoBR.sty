@@ -55,23 +55,24 @@
 
 %Note du BR2k13 : Pas compris le coup de la page 11... supprimé la modif pour rétablir une bonne numérotation de pages
 
+%Note du BR2k14 : Rétablissement d'une page 11, sur un sujet récurrent.
+
 % Le compteur, �  changer manuellement, garde en mémoire le numéro de la page contenant les informations sur les cross-posts.
 % Il suffit de changer le numéro de la page, puis de lancer compil_finale
 % Modif de marteo : provisoirement, c'est 37, c'est à dire n+1, vu qu'il n'y a plus rien sur les crossposts.
-%\newcounter{cptr}
-%\setcounter{cptr}{31}
+\newcounter{cptr}
+\setcounter{cptr}{15}
 
 % On prend en compte la modification pour la page 11
 
-\fancyhead[LE,RO]{\Large \thepage}%
-%\ifthenelse{\thepage=11}%
-%    {\bfseries{\Large \thecptr}}% si test = vrai
-%    {\ifthenelse{\thepage=\thecptr}%
-%         {\bfseries{\Large 11}}% test vrai
-%         {\Large \thepage}%test faux
-%     }%
-%}
-
+\fancyhead[LE,RO]{%\Large \thepage}%
+\ifthenelse{\thepage=11}%
+    {\bfseries{\Large \thecptr}}% si test = vrai
+    {\ifthenelse{\thepage=\thecptr}%
+         {\bfseries{\Large 11}}% test vrai
+         {\Large \thepage}%test faux
+     }%
+}
 
 \fancyhead[LO]{\rightmark}
 \fancyhead[RE]{\sc{\leftmark}}

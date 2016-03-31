@@ -19,12 +19,13 @@ InfoBR.pdf: $(DEPS)
 	pdflatex InfoBR.tex
 
 # Cette partie vaut si on remplace directement le numéro de la page 11 par celui défini dans preambuleInfoBR.sty m(a
-	sed -i -e "s/11/$(PAGE)/" InfoBR.toc
+#	sed -i -e "s/11/$(PAGE)/" InfoBR.toc
 	
-## Cette partie vaut si on switche les numéros de la page 11 et de celle sur les crossposts.	
-#	sed -i -e "s/11/mOtIf/"  InfoBR.toc
-#	sed -i -e "s/$(PAGE)/11/" InfoBR.toc
-#	sed -i -e "s/mOtIf/$(PAGE)/" InfoBR.toc
+## Cette partie vaut si on switche les numéros de la page 11 et de celle sur les crossposts/le nouveau sujet de la page 11.
+	sed -i -e "s/11/mOtIf/"  InfoBR.toc
+	sed -i -e "s/$(PAGE)/11/" InfoBR.toc
+	sed -i -e "s/mOtIf/$(PAGE)/" InfoBR.toc
 	pdflatex InfoBR.tex
+	echo $(PAGE)
 
 .PHONY: all clean distclean
