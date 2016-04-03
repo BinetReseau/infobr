@@ -1,8 +1,8 @@
 all: InfoBR2k15.pdf
 
-InfoBR2k15.pdf: couv.pdf page.pdf 4eme.pdf content.ps
+InfoBR2k15.pdf: couv.pdf page.pdf 4eme.pdf xkcd.pdf content.ps
 	gs -sOutputFile=grayscale.pdf -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH content.ps
-	gs -o InfoBR2k15.pdf -sDEVICE=pdfwrite couv.pdf page.pdf grayscale.pdf 4eme.pdf
+	gs -o InfoBR2k15.pdf -sDEVICE=pdfwrite couv.pdf xkcd.pdf grayscale.pdf 4eme.pdf
 
 	#sed '1,/^%%EndComments/ s/^%%Title:.*/%%Title: InfoBR/' < $<| ps2pdf - $@
 
@@ -24,11 +24,18 @@ couv.ps: couv.pdf
 page.ps: page.pdf
 	pdf2ps $< $@
 
+xkcd.ps: xkcd.pdf
+	pdf2ps $< $@
+
 4eme.ps: 4eme.pdf
 	pdf2ps $< $@
 
 couv.pdf: couv.tex
 	pdflatex $<
+
+xkcd.pdf: xkcd.tex
+	pdflatex $<
+
 
 page.pdf: page.tex
 	pdflatex $<
