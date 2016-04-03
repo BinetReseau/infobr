@@ -1,30 +1,30 @@
 \bghdr{images/fond-infobr}
 
-\subsection{Configuration de ton navigateur \emph{Web}}
-\label{browser}
+%\subsection{Configuration de ton navigateur \emph{Web}}
+%\label{browser}
+%Si ce n'est pas indiqué ici penses à configurer le proxy en suivant les instructions sur l'InfoBR en ligne (\urllink{https://portail.polytechnique.edu/dsi/acces-internet/proxy-eleves}
+%\paragraph{Firefox}
+%\flimage{images/firefox-logo}{0.07}{l}
 
-\paragraph{Firefox}
-\flimage{images/firefox-logo}{0.07}{l}
+%Lance \app{Mozilla Firefox}, et va dans le menu \menu{Outils},
+%\menu{Options...} (ou \menu{Édition}, \menu{Prèfèrences...} sous Linux). Là , sélectionne la rubrique \menu{Avancé}, onglet \menu{Réseau}, et clique sur
+%\menu{Paramètres}. La case à  cocher est alors \menu{Adresse de configuration automatique du proxy},
+%et l'adresse à  indiquer est : \urllink{http://config/proxy.pac}.
 
-Lance \app{Mozilla Firefox}, et va dans le menu \menu{Outils},
-\menu{Options...} (ou \menu{Édition}, \menu{Prèfèrences...} sous Linux). Là , sélectionne la rubrique \menu{Avancé}, onglet \menu{Réseau}, et clique sur
-\menu{Paramètres}. La case à  cocher est alors \menu{Adresse de configuration automatique du proxy},
-et l'adresse à  indiquer est : \urllink{http://config/proxy.pac}.
-
-Ensuite, il te faut accepter le certificat SSL du BR. Cela consiste à indiquer que tu fais confiance au BR pour authentifier les sites des binets.\\
-Il suffit se se rendre sur \urllink{http://config/ca-br.crt} et de cocher toutes les cases.\\
-
-\noindent
-  \begin{figure*}[!h]
-    \begin{center}  
-      \subfloat[Configuration du serveur mandataire]{ 
-      \includegraphics[width=0.48\textwidth]{images/nux_proxy_firefox}}
-      \hspace{\stretch{1}}
-      \subfloat[Acceptation du certificat BR]{ 
-         \includegraphics[width=0.48 \textwidth]{images/ca-br-ff}}
-           \caption{Configuration de Firefox}
-    \end{center}
-  \end{figure*}
+%Il te faut accepter le certificat SSL du BR. Cela consiste à indiquer que tu fais confiance au BR pour authentifier les sites des binets.\\
+%Il suffit se se rendre sur \urllink{http://config/ca-br.crt} et de cocher toutes les cases.\\
+%
+%\noindent
+%  \begin{figure*}[!h]
+%    \begin{center}  
+%      %\subfloat[Configuration du serveur mandataire]{ 
+%      %\includegraphics[width=0.48\textwidth]{images/nux_proxy_firefox}}
+%      %\hspace{\stretch{1}}
+%      \subfloat[Acceptation du certificat BR]{ 
+%         \includegraphics[width=0.48 \textwidth]{images/ca-br-ff}}
+%           \caption{Configuration de Firefox}
+%    \end{center}
+%  \end{figure*}
 %\imagepos{images/nux_proxy_firefox}{0.65}{Configuration du serveur mandataire sous Firefox}{ht}\\
 %\imagepos{images/ca-br}{1}{Acceptation du certificat BR}{ht}
 %
@@ -35,24 +35,25 @@ Il suffit se se rendre sur \urllink{http://config/ca-br.crt} et de cocher toutes
 %\vfill %\pagebreak
 
 
-\paragraph{Google Chrome}
-\flimage{images/google-chrome-logo}{0.07}{l}
+%\paragraph{Google Chrome}
+%\flimage{images/google-chrome-logo}{0.07}{l}
 
-Pour \app{Google Chrome}, la configuration du serveur mandataire se règle automatique sur celle du système. Tu n'es donc pas obligè de règler le \emph{proxy} toi-même. Cependant, pour le faire manuellement, clique sur la
-clef à molette en haut à droite, choisis \menu{Options}, va dans l'onglet \menu{Paramètres avancès} (ou \menu{Under the Hood}), clique sur \menu{Modifier les paramètres du Proxy...} et règle comme ci-dessus.\\
+%Pour \app{Google Chrome}, la configuration du serveur mandataire se règle automatique sur celle du système. Tu n'es donc pas obligè de règler le \emph{proxy} toi-même. Cependant, pour le faire manuellement, clique sur la
+%clef à molette en haut à droite, choisis \menu{Options}, va dans l'onglet \menu{Paramètres avancès} (ou \menu{Under the Hood}), clique sur \menu{Modifier les paramètres du Proxy...} et règle comme ci-dessus.\\
 
-Pour accepter le certificat BR, il te faut d'abord le télécharger sur \urllink{http://config/ca-br.crt}.
-Puis, dans Chrome, rends-toi dans \menu{Préferences}, \menu{Options avancées}, \menu{Gérer les certificats},
-\menu{Autorités} et clique sur \menu{Importer}. Il suffit alors de sélectionner l'emplacement où tu avais stocké le certificat et de cocher toutes les cases.
-\imagepos{images/ca-br-chrome}{1}{Acceptation du certificat BR sous Google Chrome}{ht}
+%Pour accepter le certificat BR, il te faut d'abord le télécharger sur \urllink{http://config/ca-br.crt}.
+%Puis, dans Chrome, rends-toi dans \menu{Préferences}, \menu{Options avancées}, \menu{Gérer les certificats},
+%\menu{Autorités} et clique sur \menu{Importer}. Il suffit alors de sélectionner l'emplacement où tu avais stocké le certificat et de cocher toutes les cases.
+%\imagepos{images/ca-br-chrome}{1}{Acceptation du certificat BR sous Google Chrome}{ht}
 
-\paragraph{Konqueror}
-\flimage{images/konqueror-logo}{0.07}{l}
+%\paragraph{Konqueror}
+%\flimage{images/konqueror-logo}{0.07}{l}
 
-Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
-dans l'onglet \menu{Serveur mandataire} ; ensuite, choisis les même règlages que pour \app{Firefox} ci-dessus.
-Attention : si tu ne configures pas le serveur mandataire dans Konqueror,
-les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas !
+%Sous \app{Konqueror}, cela se trouve dans le menu \menu{Configuration}, \menu{Configurer Konqueror},
+%dans l'onglet \menu{Serveur mandataire} ; ensuite, choisis les même règlages que pour \app{Firefox} ci-dessus.
+%Konqueror se configure de la même manière que \app{firefox} ci dessus.
+%Attention : si tu ne configures pas le serveur mandataire dans Konqueror,
+%les logiciels KDE (\app{KGet}, \app{Adept},\dots) ne l'utiliseront pas !
 
 
 %%% pas besoin de configurer au niveau navigateur sur Mac OS
