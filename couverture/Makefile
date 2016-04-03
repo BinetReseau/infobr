@@ -2,7 +2,7 @@ all: InfoBR2k15.pdf
 
 InfoBR2k15.pdf: couv.pdf page.pdf 4eme.pdf content.ps
 	gs -sOutputFile=grayscale.pdf -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dCompatibilityLevel=1.4 -dNOPAUSE -dBATCH content.ps
-	gs -o InfoBR2k15.pdf -sDEVICE=pdfwrite couv.pdf page.pdf grayscale.pdf page.pdf 4eme.pdf
+	gs -o InfoBR2k15.pdf -sDEVICE=pdfwrite couv.pdf page.pdf grayscale.pdf 4eme.pdf
 
 	#sed '1,/^%%EndComments/ s/^%%Title:.*/%%Title: InfoBR/' < $<| ps2pdf - $@
 
