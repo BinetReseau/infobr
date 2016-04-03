@@ -6,17 +6,14 @@ Pour savoir quelle étape de la connexion à internet pose problème, il vous fa
 
 \subsubsection{Linux}
 Ouvrir un terminal et lance la commande :
-
 \cmdline{ip addr | grep "inet " | sed "s/\textasciicircum{}.*inet \textbackslash{}([\textasciicircum\space]*\textbackslash{}) .*\$/\textbackslash{}1/" | grep -v 127.0.0.}
 
 Si ip n'est pas installé, alors tu peux utiliser :
-
 \cmdline{ifconfig | grep "inet adr" | sed "s/\textasciicircum{}.*inet adr:\textbackslash{}([\textasciicircum{}\space{}]*\textbackslash{}) .*\$/\textbackslash{}1/" | grep -v 127.0.0.}
 si nécessaire en tant que root.
  
 \subsubsection{Windows}
 Ouvrir l'invite de commande (Windows+R, taper cmd puis entrée.)
-
 \cmdline{ipconfig | findstr /I ipv4}
  
 \subsubsection{Mac}
