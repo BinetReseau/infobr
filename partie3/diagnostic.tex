@@ -17,10 +17,11 @@ Ouvrir l'invite de commande (Windows+R, taper cmd puis entrée.)
 \cmdline{ipconfig | findstr /I ipv4}
 
 \subsubsection{Mac}
-Par l'interface graphique
-Ouvrir les Préférences réseaux, et chercher la ligne qui contient l'adresse ip
-En ligne de commande
-Ouvre un terminal et tape la commande suivante~:
+Par l'interface graphique, 
+ouvre les Préférences réseaux, et cherche la ligne qui contient l'adresse ip.
+
+En ligne de commande,
+ouvre un terminal et tape la commande suivante~:
 \cmdline{ifconfig | grep "inet " | sed "s/\textasciicircum.*inet \textbackslash{}([\textasciicircum\space]*\textbackslash{}) .*\$/\textbackslash{}1/" | grep -v 127.0.}
 
 \subsection{Diagnostic}
@@ -30,7 +31,7 @@ Le tableau suivant permet de savoir quelle est l'étape qui bloque:
 \hline
 IP & Autres symptômes & Procédure à suivre \\
 \hline
-169.… & Pas d'Internet du tout & Débrancher et rebrancher les deux bouts du câbles ethernet. Oui ça paraît bête, mais ça marche. \\
+169.… & Pas d'Internet du tout & Débrancher et rebrancher les deux bouts du câble ethernet. Oui ça paraît bête, mais ça marche. \\
 \hline
 192.168.… & Redirection systématique vers l'InfoBR & Configurer le $802.1$X (voir InfoBR en ligne) \\
 \hline
