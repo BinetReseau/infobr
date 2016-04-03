@@ -2,21 +2,21 @@
 
 \subsubsection{Se connecter aux salles infos}
 
-Les machines des salles infos ont des noms sympathiques à base de noms d'oiseaux, marques de voitures, noms d'os, noms de poisson\dots Essaye un serveur avec un nom de ce type avec ton utilisateur et mot de passe des salles infos (les mêmes que pour ENEX). Tu n'as pas besoin de te connecter à chaque fois à la même machine, ton compte sera le même sur toutes. Pour plus de détails sur la connexion à distance, consulte \newline \urllink{http://wikix.polytechnique.org/Acc\%C3\%A8s\_\%C3\%A0\_distance\_aux\_machines\_des\_salles\_info} 
+Les machines des salles infos ont des noms sympathiques à base de noms d'oiseaux, marques de voitures, noms d'os, noms de poisson\dots Essaye un serveur avec un nom de ce type avec ton utilisateur et mot de passe des salles infos (les mêmes que pour ENEX). Tu n'as pas besoin de te connecter à chaque fois à la même machine, ton compte sera le même sur toutes. Pour plus de détails sur la connexion à distance, consulte \newline \urllink{http://wikix.polytechnique.org/Acc\%C3\%A8s\_\%C3\%A0\_distance\_aux\_machines\_des\_salles\_info}
 
 
 
 \subsubsection{Ssh pour Linux et Mac}
 
-Sous Linux et Mac, pour te connecter en ligne de commande à un serveur distant il suffit d'ouvrir une console puis de taper en remplaçant utilisateur et serveur comme il faut : \cmd{ssh -X utilisateur@serveur}. Le -X n'est pas indispensable, mais il permet d'utiliser une interface graphique et d'ouvrir des applications. Pour récupérer des fichiers des ordis des salles infos tu peux utiliser \app{FileZilla} de la même façon que sous Windows.
+Sous Linux et Mac, pour te connecter en ligne de commande à un serveur distant il suffit d'ouvrir une console puis de taper en remplaçant utilisateur et serveur comme il faut~: \cmd{ssh -X utilisateur@serveur}. Le -X n'est pas indispensable, mais il permet d'utiliser une interface graphique et d'ouvrir des applications. Pour récupérer des fichiers des ordis des salles infos tu peux utiliser \app{FileZilla} de la même façon que sous Windows.
 
-Si tu souhaite te connecter à un serveur SSH situé à l'extérieur du plâtal, il faut proxyfier la connexion, et ssh n'utilise pas les variables d'environnement \cmd{http\_proxy}. Il faut installer le programme \cmd{socat} puis utiliser la commande suivante :
+Si tu souhaite te connecter à un serveur SSH situé à l'extérieur du plâtal, il faut proxyfier la connexion, et ssh n'utilise pas les variables d'environnement \cmd{http\_proxy}. Il faut installer le programme \cmd{socat} puis utiliser la commande suivante~:
 \cmdline{ssh utilisateur@serveur -o ProxyCommand="/emplacement/de/socat - PROXY:kuzh.polytechnique.fr:\%h:\%p,proxyport=8080"}
 
 \newpage
 \subsubsection{Putty et FileZilla (SFTP) pour Windows}
 
-Pour ouvrir une ligne de commande à distance tu vas devoir utiliser \app{Putty} à télécharger sur \urllink{http://www.putty.org/} ;
+Pour ouvrir une ligne de commande à distance tu vas devoir utiliser \app{Putty} à télécharger sur \urllink{http://www.putty.org/}~;
 ensuite pour te connecter à un serveur ouvre \app{Putty} et tape le nom du serveur puis clique sur \menu{Open}.
 Une console s'ouvrira et te demandera ton um d'utilisateur et ton mot de passe, puis tu auras accès aux fichiers sur le serveur distant.
 

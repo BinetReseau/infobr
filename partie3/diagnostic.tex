@@ -1,49 +1,49 @@
 \label{diagnostic}
-Vous n'avez plus Internet ? Voici quelques tests usuels qui permettent de déterminer tout seul précisément d'où vient le problème. Cela est utile avant de contacter un BRman.\footnote{Ces instructions sont identiques à celles disponibles sur l'InfoBR en ligne, qui seront peut-être plus à jour.}
+Vous n'avez plus Internet~? Voici quelques tests usuels qui permettent de déterminer tout seul précisément d'où vient le problème. Cela est utile avant de contacter un BRman.\footnote{Ces instructions sont identiques à celles disponibles sur l'InfoBR en ligne, qui seront peut-être plus à jour.}
 
 \subsection{Obtenir son adresse IP}
-Pour savoir quelle étape de la connexion à Internet pose problème, il vous faut votre adresse IP. Il s'agit d'une suite de 4 nombres entre $0$ et $255$ séparés par des points : par exemple l'adresse IP du proxy est $129.104.247.2$. Après avoir pris soin de ne pas être connecté en Wifi et en filaire à la fois :
+Pour savoir quelle étape de la connexion à Internet pose problème, il vous faut votre adresse IP. Il s'agit d'une suite de 4 nombres entre $0$ et $255$ séparés par des points~: par exemple l'adresse IP du proxy est $129.104.247.2$. Après avoir pris soin de ne pas être connecté en Wifi et en filaire à la fois~:
 
 \subsubsection{Linux}
-Ouvrir un terminal et lance la commande :
+Ouvrir un terminal et lance la commande~:
 \cmdline{ip addr | grep "inet " | sed "s/\textasciicircum{}.*inet \textbackslash{}([\textasciicircum\space]*\textbackslash{}) .*\$/\textbackslash{}1/" | grep -v 127.0.0.}
 
-Si ip n'est pas installé, alors tu peux utiliser :
+Si ip n'est pas installé, alors tu peux utiliser~:
 \cmdline{ifconfig | grep "inet adr" | sed "s/\textasciicircum{}.*inet adr:\textbackslash{}([\textasciicircum{}\space{}]*\textbackslash{}) .*\$/\textbackslash{}1/" | grep -v 127.0.0.}
 si nécessaire en tant que root.
- 
+
 \subsubsection{Windows}
 Ouvrir l'invite de commande (Windows+R, taper cmd puis entrée.)
 \cmdline{ipconfig | findstr /I ipv4}
- 
+
 \subsubsection{Mac}
 Par l'interface graphique
 Ouvrir les Préférences réseaux, et chercher la ligne qui contient l'adresse ip
 En ligne de commande
-Ouvre un terminal et tape la commande suivante :
+Ouvre un terminal et tape la commande suivante~:
 \cmdline{ifconfig | grep "inet " | sed "s/\textasciicircum.*inet \textbackslash{}([\textasciicircum\space]*\textbackslash{}) .*\$/\textbackslash{}1/" | grep -v 127.0.}
 
 \subsection{Diagnostic}
 Le tableau suivant permet de savoir quelle est l'étape qui bloque:
 
 \begin{tabu}{|X[1,l,m,$]|X[4,j,m]|X[3,j,m]|}%$
-\hline 
-IP & Autres symptômes & Procédure à suivre \\ 
-\hline 
-169.… & Pas d'Internet du tout & Débrancher et rebrancher les deux bouts du câbles ethernet. Oui ça paraît bête, mais ça marche. \\ 
-\hline 
-192.168.… & Redirection systématique vers l'InfoBR & Configurer le $802.1$X (voir InfoBR en ligne) \\ 
-\hline 
-129.104.… & Seul frankiz et quelques sites binets fonctionnent & Configurer le proxy (voir InfoBR en ligne) \\ 
-\hline 
-129.104.… & Tout Internet fonctionne y compris \urllink{http://chocapix.eleves.polytechnique.fr} mais pas \urllink{http://chocapix/} & Configurer les domaines de recherche. \\ 
-\hline 
+\hline
+IP & Autres symptômes & Procédure à suivre \\
+\hline
+169.… & Pas d'Internet du tout & Débrancher et rebrancher les deux bouts du câbles ethernet. Oui ça paraît bête, mais ça marche. \\
+\hline
+192.168.… & Redirection systématique vers l'InfoBR & Configurer le $802.1$X (voir InfoBR en ligne) \\
+\hline
+129.104.… & Seul frankiz et quelques sites binets fonctionnent & Configurer le proxy (voir InfoBR en ligne) \\
+\hline
+129.104.… & Tout Internet fonctionne y compris \urllink{http://chocapix.eleves.polytechnique.fr} mais pas \urllink{http://chocapix/} & Configurer les domaines de recherche. \\
+\hline
 \end{tabu}
 
 Si vous avez un doute, rien de tel que de reprendre la procédure depuis le début.
 
-\subsection{Toujours un problème ?}
-Cette page est trop synthétique pour être exhaustive. Si malgré les tests proposés des problèmes réseaux persistent, n'hésitez pas à contacter :
+\subsection{Toujours un problème~?}
+Cette page est trop synthétique pour être exhaustive. Si malgré les tests proposés des problèmes réseaux persistent, n'hésitez pas à contacter~:
 \begin{itemize}
     \item pour les élèves, le support du BR à \mail{support@eleves.polytechnique.fr}
     \item pour les autres, le support de la DSI à \mail{support@polytechnique.fr}

@@ -10,13 +10,13 @@
 % }
 
 \paragraph{Sous Debian}
-\label{debian_mirror} Pour pouvoir utiliser \app{APT} (via \app{apt-get} ou \app{aptitude}) à travers le \emph{proxy} de l'École, il faut ajouter dans \file{/etc/apt/apt.conf} la ligne :
+\label{debian_mirror} Pour pouvoir utiliser \app{APT} (via \app{apt-get} ou \app{aptitude}) à travers le \emph{proxy} de l'École, il faut ajouter dans \file{/etc/apt/apt.conf} la ligne~:
 \cmdline{Acquire::http::Proxy "http://129.104.247.2:8080/";}
 Le cas échéant, il faudra créer ce fichier, qui est vide la plupart du temps.
 
 \paragraph{Sous Gentoo}
 \label{gentoo_mirror} Pour pouvoir utiliser \app{emerge} à  travers le serveur mandataire (\emph{proxy}) de l'École, il faut définir %les variables d'environnement
-ci-dessous dans le fichier \file{/etc/make.conf} :
+ci-dessous dans le fichier \file{/etc/make.conf}~:
 \cmdline{http\_proxy=http://kuzh.polytechnique.fr:8080\\
 ftp\_proxy=http://kuzh.polytechnique.fr:8080\\
 no\_proxy=.eleves.polytechnique.fr\\
